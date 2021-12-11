@@ -203,7 +203,7 @@ public class RoleService extends SystemService implements RoleUserState.Callback
 
     @MainThread
     private void maybeGrantDefaultRolesSync(@UserIdInt int userId) {
-        AndroidFuture<Void> future = maybeGrantDefaultRolesInternal(userId);
+        AndroidFuture<Void> future = maybeGrantDefaultRolesInternal(userId, true);
         try {
             future.get(30, TimeUnit.SECONDS);
         } catch (InterruptedException | ExecutionException | TimeoutException e) {
@@ -218,20 +218,38 @@ public class RoleService extends SystemService implements RoleUserState.Callback
             if (runnable == null) {
                 runnable = new ThrottledRunnable(ForegroundThread.getHandler(),
                         GRANT_DEFAULT_ROLES_INTERVAL_MILLIS,
-                        () -> maybeGrantDefaultRolesInternal(userId));
+                        () -> maybeGrantDefaultRolesInternal(userId, false));
                 mGrantDefaultRolesThrottledRunnables.put(userId, runnable);
             }
         }
         runnable.run();
     }
 
+    private boolean checkCriticalRolePermission(boolean isUserStarting) {
+        if (!isUserStarting) {
+            Log.i(LOG_TAG, "Only check critical role in User Starting!");
+            return true;
+        }
+        PackageManager packageManager = getContext().getPackageManager();
+        UserHandle user = Process.myUserHandle();
+        if (packageManager.getPermissionFlags("android.permission.OBSERVE_SENSOR_PRIVACY",
+            "com.android.systemui", user) > 0) {
+                Log.i(LOG_TAG, "Critical Role Permission has been granted!");
+                return true;
+        }
+        Log.i(LOG_TAG, "Grant default role permission again!");
+        return false;
+    }
+
     @AnyThread
     @NonNull
-    private AndroidFuture<Void> maybeGrantDefaultRolesInternal(@UserIdInt int userId) {
+    private AndroidFuture<Void> maybeGrantDefaultRolesInternal(@UserIdInt int userId,
+                                                               boolean isUserStarting) {
         RoleUserState userState = getOrCreateUserState(userId);
         String oldPackagesHash = userState.getPackagesHash();
         String newPackagesHash = mPlatformHelper.computePackageStateHash(userId);
-        if (Objects.equals(oldPackagesHash, newPackagesHash)) {
+        if (Objects.equals(oldPackagesHash, newPackagesHash) &&
+            checkCriticalRolePermission(isUserStarting)) {
             if (DEBUG) {
                 Log.i(LOG_TAG, "Already granted default roles for packages hash "
                         + newPackagesHash);
