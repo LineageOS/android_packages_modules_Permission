@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea6483bd_4798a858",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16208
+      },
+      "writtenOn": "2022-06-01T09:07:58Z",
+      "side": 1,
+      "message": "According to zhanghai@google.com, the fix in T is sth like:\n\nif (Binder.getCallingUid \u003d\u003d getUidForPackage(\"com.android.systemui\")) {\n    return;\n}\nthrow new SecurityException(e);\n\nwhich is a worse workaround.",
+      "revId": "158bc4366580138ddce6d61dc6f9f195cad79f69",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
