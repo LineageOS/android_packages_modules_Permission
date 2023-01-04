@@ -27,6 +27,17 @@ flag {
 }
 
 flag {
+    name: "use_api_for_clipboard_privacy_toggle"
+    namespace: "permissions"
+    description: "This flag guards whether the Privacy Controls page uses a hardcoded string or an API to control clipboard privacy"
+    bug: "263305143"
+    metadata {
+        purpose: PURPOSE_BUGFIX
+    }
+    is_fixed_read_only: true
+}
+
+flag {
     name: "archiving_read_only"
     namespace: "permissions"
     description: "Feature flag to enable the archiving feature."
