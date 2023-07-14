@@ -118,10 +118,7 @@ class SafetyCenterTestData(context: Context) {
     ): SafetyCenterStatus =
         SafetyCenterStatus.Builder(
                 safetyCenterResourcesContext.getStringByName("overall_severity_level_ok_title"),
-                safetyCenterResourcesContext.getStringByName(
-                    "overall_severity_level_tip_summary",
-                    numTipIssues
-                )
+                getIcuPluralsString("overall_severity_level_tip_summary", numTipIssues)
             )
             .setSeverityLevel(OVERALL_SEVERITY_LEVEL_OK)
             .build()
@@ -135,7 +132,7 @@ class SafetyCenterTestData(context: Context) {
     ): SafetyCenterStatus =
         SafetyCenterStatus.Builder(
                 safetyCenterResourcesContext.getStringByName("overall_severity_level_ok_title"),
-                safetyCenterResourcesContext.getStringByName(
+                getIcuPluralsString(
                     "overall_severity_level_action_taken_summary",
                     numAutomaticIssues
                 )

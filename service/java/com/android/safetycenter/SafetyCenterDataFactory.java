@@ -1178,11 +1178,10 @@ public final class SafetyCenterDataFactory {
                     return mSafetyCenterResourcesContext.getStringByName(
                             "overall_severity_level_ok_summary");
                 } else if (isTip(topNonDismissedIssue.getSafetySourceIssue())) {
-                    return mSafetyCenterResourcesContext.getStringByName(
-                            "overall_severity_level_tip_summary", numTipIssues);
+                    return getIcuPluralsString("overall_severity_level_tip_summary", numTipIssues);
 
                 } else if (isAutomatic(topNonDismissedIssue.getSafetySourceIssue())) {
-                    return mSafetyCenterResourcesContext.getStringByName(
+                    return getIcuPluralsString(
                             "overall_severity_level_action_taken_summary", numAutomaticIssues);
                 }
                 // Fall through.
