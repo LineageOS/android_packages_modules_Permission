@@ -146,6 +146,15 @@ public final class RoleManager {
     public static final String ROLE_NOTES = "android.app.role.NOTES";
 
     /**
+     * The name of the Wallet role.
+     *
+     * @see android.nfc.cardemulation.CardEmulation
+     */
+    @FlaggedApi(Flags.FLAG_WALLET_ROLE_ENABLED)
+    @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
+    public static final String ROLE_WALLET = "android.app.role.WALLET";
+
+    /**
      * The name of the system wellbeing role.
      *
      * @hide

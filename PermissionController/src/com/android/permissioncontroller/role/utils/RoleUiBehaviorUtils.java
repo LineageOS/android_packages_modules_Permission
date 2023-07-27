@@ -33,6 +33,8 @@ import com.android.permissioncontroller.role.ui.UserRestrictionAwarePreference;
 import com.android.permissioncontroller.role.ui.behavior.RoleUiBehavior;
 import com.android.role.controller.model.Role;
 
+import java.util.List;
+
 /**
  * Utility methods for Role UI behavior
  */
@@ -78,15 +80,15 @@ public final class RoleUiBehaviorUtils {
      * @see RoleUiBehavior#preparePreferenceAsUser
      */
     public static void preparePreferenceAsUser(@NonNull Role role,
-            @NonNull RolePreference preference, @NonNull UserHandle user,
-            @NonNull Context context) {
+            @NonNull List<ApplicationInfo> applicationInfos, @NonNull RolePreference preference,
+            @NonNull UserHandle user, @NonNull Context context) {
         prepareUserRestrictionAwarePreferenceAsUser(role, preference, user, context);
 
         RoleUiBehavior uiBehavior = getUiBehavior(role);
         if (uiBehavior == null) {
             return;
         }
-        uiBehavior.preparePreferenceAsUser(role, preference, user, context);
+        uiBehavior.preparePreferenceAsUser(role, preference, applicationInfos, user, context);
     }
 
     /**
