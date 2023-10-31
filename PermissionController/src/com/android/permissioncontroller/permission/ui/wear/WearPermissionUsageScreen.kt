@@ -30,7 +30,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.android.permissioncontroller.R
 import com.android.permissioncontroller.permission.ui.handheld.v31.PermissionUsageControlPreference
-import com.android.permissioncontroller.permission.ui.model.v31.PermissionUsageViewModel
+import com.android.permissioncontroller.permission.ui.legacy.PermissionUsageViewModel
 import com.android.permissioncontroller.permission.ui.wear.elements.Chip
 import com.android.permissioncontroller.permission.ui.wear.elements.ScrollableScreen
 import java.text.Collator
@@ -40,15 +40,15 @@ import java.text.Collator
 fun WearPermissionUsageScreen(sessionId: Long, viewModel: PermissionUsageViewModel) {
     val context = LocalContext.current
     val permissionUsagesUiData = viewModel.permissionUsagesUiLiveData.observeAsState(null)
-    val showSystem = viewModel.showSystemAppsLiveData.observeAsState(false)
-    val show7Days = viewModel.show7DaysLiveData.observeAsState(false)
+    val showSystem = viewModel.getShowSystemApps()
+    val show7Days = viewModel.getShow7DaysData()
     var isLoading by remember { mutableStateOf(true) }
 
-    val hasSystemApps: Boolean = permissionUsagesUiData.value?.containsSystemAppUsages ?: false
+    val hasSystemApps: Boolean = permissionUsagesUiData.value?.shouldShowSystemToggle ?: false
     val onShowSystemClick: (Boolean) -> Unit = { show -> run { viewModel.updateShowSystem(show) } }
 
     val permissionGroupWithUsageCounts: Map<String, Int> =
-        permissionUsagesUiData.value?.permissionGroupsWithUsageCount ?: emptyMap()
+        permissionUsagesUiData.value?.permissionGroupUsageCount ?: emptyMap()
     val permissionGroupWithUsageCountsEntries: List<Map.Entry<String, Int>> =
         ArrayList<Map.Entry<String, Int>>(permissionGroupWithUsageCounts.entries)
 
@@ -60,9 +60,9 @@ fun WearPermissionUsageScreen(sessionId: Long, viewModel: PermissionUsageViewMod
                     context,
                     it.key,
                     it.value,
-                    showSystem.value,
+                    showSystem,
                     sessionId,
-                    show7Days.value
+                    show7Days
                 )
             }
             .sortedWith { o1, o2 ->
@@ -77,7 +77,7 @@ fun WearPermissionUsageScreen(sessionId: Long, viewModel: PermissionUsageViewMod
     WearPermissionUsageContent(
         isLoading,
         hasSystemApps,
-        showSystem.value,
+        showSystem,
         onShowSystemClick,
         permissionGroupPreferences
     )
