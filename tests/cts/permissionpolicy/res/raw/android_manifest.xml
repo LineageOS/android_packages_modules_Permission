@@ -2869,6 +2869,16 @@
     <permission android:name="android.permission.MANAGE_SENSORS"
         android:protectionLevel="signature" />
 
+    <!-- Must be required by a DomainSelectionService to ensure that only the
+         system can bind to it.
+         <p>Protection level: signature
+         @SystemApi
+         @hide
+         @FlaggedApi("com.android.internal.telephony.flags.ap_domain_selection_enabled")
+    -->
+    <permission android:name="android.permission.BIND_DOMAIN_SELECTION_SERVICE"
+        android:protectionLevel="signature" />
+
     <!-- Must be required by an ImsService to ensure that only the
          system can bind to it.
          <p>Protection level: signature|privileged|vendorPrivileged
@@ -7504,7 +7514,7 @@
      -->
     <permission android:name="android.permission.CREDENTIAL_MANAGER_SET_ORIGIN"
       android:protectionLevel="normal"/>
-      
+
     <!-- Allows specifying candidate credential providers to be queried in Credential Manager
     get flows, or to be preferred as a default in the Credential Manager create flows.
      <p>Protection level: normal -->
