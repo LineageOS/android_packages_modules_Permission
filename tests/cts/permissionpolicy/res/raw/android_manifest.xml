@@ -1020,6 +1020,13 @@
     <permission android:name="android.permission.BIND_SATELLITE_GATEWAY_SERVICE"
                 android:protectionLevel="signature" />
 
+    <!-- @SystemApi @hide Required for an application in order to access the last known cell id.
+         @FlaggedApi("com.android.server.telecom.flags.telecom_resolve_hidden_dependencies") -->
+    <permission android:name="android.permission.ACCESS_LAST_KNOWN_CELL_ID"
+                android:protectionLevel="signature"
+                android:label="@string/permlab_accessLastKnownCellId"
+                android:description="@string/permdesc_accessLastKnownCellId"/>
+
     <!-- ====================================================================== -->
     <!-- Permissions for accessing external storage                             -->
     <!-- ====================================================================== -->
