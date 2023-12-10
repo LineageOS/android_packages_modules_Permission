@@ -40,8 +40,8 @@
     <string name="grant_dialog_button_deny_anyway" msgid="7225905870668915151">"Усе одно не дозволяти"</string>
     <string name="grant_dialog_button_dismiss" msgid="1930399742250226393">"Закрити"</string>
     <string name="current_permission_template" msgid="7452035392573329375">"<xliff:g id="CURRENT_PERMISSION_INDEX">%1$s</xliff:g> з <xliff:g id="PERMISSION_COUNT">%2$s</xliff:g>"</string>
-    <string name="permission_warning_template" msgid="2247087781222679458">"Дозволити додатку &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; таке: <xliff:g id="ACTION">%2$s</xliff:g>?"</string>
-    <string name="permission_add_background_warning_template" msgid="1812914855915092273">"Завжди дозволяти додатку &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; таке: <xliff:g id="ACTION">%2$s</xliff:g>?"</string>
+    <string name="permission_warning_template" msgid="2247087781222679458">"Дозволити додатку &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; <xliff:g id="ACTION">%2$s</xliff:g>?"</string>
+    <string name="permission_add_background_warning_template" msgid="1812914855915092273">"Завжди дозволяти додатку &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; <xliff:g id="ACTION">%2$s</xliff:g>?"</string>
     <string name="allow_permission_foreground_only" msgid="116465816039675404">"Лише коли додаток активний"</string>
     <string name="allow_permission_always" msgid="5194342531206054051">"Завжди"</string>
     <string name="deny_permission_deny_and_dont_ask_again" msgid="6106035221490102341">"Не дозволяти й більше не запитувати"</string>
@@ -513,7 +513,7 @@
     <string name="privdash_label_24h" msgid="1512532123865375319">"Минулі\n24 години"</string>
     <string name="privdash_label_7d" msgid="5645301995348656931">"Останні\n7 днів"</string>
     <string name="exempt_mic_camera_info_label" msgid="6273581737010902815">"Додаток <xliff:g id="APP_NAME">%1$s</xliff:g> захищено системою Android. Оскільки ваші дані обробляються на цьому пристрої, дозволи, які використовує цей додаток, не відображаються на панелі керування дозволами чи в рядку стану."</string>
-    <string name="exempt_info_label" msgid="6286190981253476699">"Додаток <xliff:g id="APP_NAME">%1$s</xliff:g> захищено системою Android. Оскільки ваші дані обробляються на цьому пристрої, дозволи, які використовує цей додаток, не відображаються на панелі керування дозволами чи в рядку стану."</string>
+    <string name="exempt_info_label" msgid="6286190981253476699">"Додаток <xliff:g id="APP_NAME">%1$s</xliff:g> захищено системою Android. Оскільки ваші дані обробляються на цьому пристрої, дозволи, які використовує цей додаток, не відображаються на панелі керування дозволами."</string>
     <string name="blocked_camera_title" msgid="1128510551791284384">"Камеру пристрою заблоковано"</string>
     <string name="blocked_microphone_title" msgid="1631517143648232585">"Мікрофон пристрою заблоковано"</string>
     <string name="blocked_location_title" msgid="2005608279812892383">"Геодані пристрою вимкнено"</string>

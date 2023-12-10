@@ -196,7 +196,7 @@
     <string name="app_permission_location_accuracy" msgid="7166912915040018669">"Gamitin ang eksaktong lokasyon"</string>
     <string name="app_permission_location_accuracy_subtitle" msgid="2654077606404987210">"Kapag naka-off ang eksaktong lokasyon, puwedeng i-access ng mga app ang iyong tinatantyang lokasyon"</string>
     <string name="app_permission_title" msgid="2090897901051370711">"Pahintulot sa <xliff:g id="PERM">%1$s</xliff:g>"</string>
-    <string name="app_permission_header" msgid="2951363137032603806">"access sa <xliff:g id="PERM">%1$s</xliff:g> para sa app na ito"</string>
+    <string name="app_permission_header" msgid="2951363137032603806">"Access sa <xliff:g id="PERM">%1$s</xliff:g> para sa app na ito"</string>
     <string name="app_permission_footer_app_permissions_link" msgid="4926890342636587393">"Tingnan ang lahat ng pahintulot ng <xliff:g id="APP">%1$s</xliff:g>"</string>
     <string name="app_permission_footer_permission_apps_link" msgid="3941988129992794327">"Tingnan ang lahat ng app na may ganitong pahintulot"</string>
     <string name="assistant_mic_label" msgid="1011432357152323896">"Ipakita ang paggamit ng mikropono ng assistant"</string>
@@ -462,7 +462,7 @@
     <string name="permgroupbackgroundrequestdetail_location" msgid="8021219324989662957">"Posibleng gustong i-access ng app na ito ang iyong lokasyon sa lahat ng oras, kahit na hindi mo ginagamit ang app. "<annotation id="link">"Payagan sa mga setting."</annotation></string>
     <string name="permgroupupgraderequest_location" msgid="8328408946822691636">"Baguhin ang access sa lokasyon para sa &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgroupupgraderequestdetail_location" msgid="1550899076845189165">"Gustong i-access ng app na ito ang iyong lokasyon sa lahat ng oras, kahit na hindi mo ginagamit ang app. "<annotation id="link">"Payagan sa mga setting."</annotation></string>
-    <string name="permgrouprequest_nearby_devices" msgid="2272829282660436700">"Payagan ang &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; na hanapin at tukuyin ang, at kumonekta sa relatibong posisyon ng mga kalapit na device?"</string>
+    <string name="permgrouprequest_nearby_devices" msgid="2272829282660436700">"Payagan ang &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; na maghanap, kumonekta sa, at tukuyin ang relatibong posisyon ng mga kalapit na device?"</string>
     <string name="permgroupupgraderequestdetail_nearby_devices" msgid="6877531270654738614">"Payagan ang &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; na hanapin at tukuyin ang, at kumonekta sa relatibong posisyon ng mga kalapit na device? "<annotation id="link">"Payagan sa mga setting."</annotation></string>
     <string name="permgrouprequest_fineupgrade" msgid="2334242928821697672">"Gawing eksakto ang access sa lokasyon ng <xliff:g id="APP_NAME">&lt;b&gt;%1$s&lt;/b&gt;</xliff:g> mula sa pagiging tinatantya?"</string>
     <string name="permgrouprequest_coarselocation" msgid="7244605063736425232">"Payagan ang &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; na i-access ang tinatantyang lokasyon ng device na ito?"</string>

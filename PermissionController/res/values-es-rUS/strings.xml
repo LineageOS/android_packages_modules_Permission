@@ -41,7 +41,7 @@
     <string name="grant_dialog_button_dismiss" msgid="1930399742250226393">"Ignorar"</string>
     <string name="current_permission_template" msgid="7452035392573329375">"<xliff:g id="CURRENT_PERMISSION_INDEX">%1$s</xliff:g> de <xliff:g id="PERMISSION_COUNT">%2$s</xliff:g>"</string>
     <string name="permission_warning_template" msgid="2247087781222679458">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; realice la siguiente acción: <xliff:g id="ACTION">%2$s</xliff:g>?"</string>
-    <string name="permission_add_background_warning_template" msgid="1812914855915092273">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; pueda <xliff:g id="ACTION">%2$s</xliff:g> siempre?"</string>
+    <string name="permission_add_background_warning_template" msgid="1812914855915092273">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; siempre pueda realizar la siguiente acción: <xliff:g id="ACTION">%2$s</xliff:g>?"</string>
     <string name="allow_permission_foreground_only" msgid="116465816039675404">"Solo cuando se usa la app"</string>
     <string name="allow_permission_always" msgid="5194342531206054051">"Siempre"</string>
     <string name="deny_permission_deny_and_dont_ask_again" msgid="6106035221490102341">"No permitir y no volver a preguntar"</string>
@@ -513,7 +513,7 @@
     <string name="privdash_label_24h" msgid="1512532123865375319">"Últimas\n24 horas"</string>
     <string name="privdash_label_7d" msgid="5645301995348656931">"Últimos\n7 días"</string>
     <string name="exempt_mic_camera_info_label" msgid="6273581737010902815">"<xliff:g id="APP_NAME">%1$s</xliff:g> está protegida por Android. Tus datos se procesan en este dispositivo, por eso no se muestra el uso de permisos de esta app en la barra de estado ni en el panel de privacidad."</string>
-    <string name="exempt_info_label" msgid="6286190981253476699">"protege <xliff:g id="APP_NAME">%1$s</xliff:g> está protegida por Android. Tus datos se procesan en este dispositivo, por eso no se muestra el uso de permisos de esta app en la barra de estado ni en el panel de privacidad."</string>
+    <string name="exempt_info_label" msgid="6286190981253476699">"<xliff:g id="APP_NAME">%1$s</xliff:g> está protegida por Android. Tus datos se procesan en este dispositivo, por eso no se muestra el uso de permisos de esta app en el panel de privacidad."</string>
     <string name="blocked_camera_title" msgid="1128510551791284384">"La cámara del dispositivo está bloqueada"</string>
     <string name="blocked_microphone_title" msgid="1631517143648232585">"El micrófono del dispositivo está bloqueado"</string>
     <string name="blocked_location_title" msgid="2005608279812892383">"La ubicación del dispositivo está desactivada"</string>

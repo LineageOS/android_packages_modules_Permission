@@ -71,7 +71,7 @@
     <string name="days_ago" msgid="6650359081551335629">"{count,plural, =0{今日}=1{1 日前}other{# 日前}}"</string>
     <string name="app_disable_dlg_positive" msgid="7418444149981904940">"アプリを無効にする"</string>
     <string name="app_disable_dlg_text" msgid="3126943217146120240">"このアプリを無効にすると、Android などの他のアプリが正しく動作しなくなるおそれがあります。このアプリはデバイスにプリインストールされているため、削除できません。無効にするには、このアプリをオフにし、デバイスにアプリが表示されないようにします。"</string>
-    <string name="app_permission_manager" msgid="3903811137630909550">"権限マネージャー"</string>
+    <string name="app_permission_manager" msgid="3903811137630909550">"権限マネージャ"</string>
     <string name="never_ask_again" msgid="4728762438198560329">"今後表示しない"</string>
     <string name="no_permissions" msgid="3881676756371148563">"権限がありません"</string>
     <string name="additional_permissions" msgid="5801285469338873430">"その他の権限"</string>
@@ -589,8 +589,8 @@
     <string name="permission_rationale_message_location" msgid="2153841534298068414">"このアプリは、位置情報をサードパーティと共有する可能性があります"</string>
     <string name="permission_rationale_location_title" msgid="2404797182678793506">"データ共有と位置情報"</string>
     <string name="permission_rationale_data_sharing_source_title" msgid="6874604543125814316">"データ共有情報の提供元"</string>
-    <string name="permission_rationale_data_sharing_device_manufacturer_message" msgid="7569261218145653185">"デベロッパーは、このアプリがデータを共有する方法に関する情報を、このデバイスのメーカーに提供しています。この情報は時間が経つと更新される可能性があります。"</string>
-    <string name="permission_rationale_data_sharing_source_message" msgid="8330794595417986883">"デベロッパーは、このアプリがデータを共有する方法に関する情報を "<annotation id="link"><annotation id="install_source" example="App Store">"%1$s"</annotation></annotation>" に提供しています。この情報は時間が経つと更新される可能性があります。"</string>
+    <string name="permission_rationale_data_sharing_device_manufacturer_message" msgid="7569261218145653185">"デベロッパーは、このデバイスのメーカーに、このアプリによるデータ共有方法についての情報を提供しています。この情報は将来更新される場合があります。"</string>
+    <string name="permission_rationale_data_sharing_source_message" msgid="8330794595417986883">"デベロッパーは、このアプリによるデータ共有方法についての情報を "<annotation id="link"><annotation id="install_source" example="App Store">"%1$s"</annotation></annotation>" に提供しています。この情報は将来更新される場合があります。"</string>
     <string name="permission_rationale_location_purpose_title" msgid="5115877143670012618">"このアプリが位置情報を共有する目的"</string>
     <string name="permission_rationale_permission_data_sharing_varies_title" msgid="9103718980919908316">"さまざまなデータ共有方法"</string>
     <string name="permission_rationale_data_sharing_varies_message" msgid="4224469559084489222">"データの取り扱いは、アプリのバージョンや使用方法、ユーザーの年齢やお住まいの地域によって異なることがあります。"<annotation id="link">"データ共有の詳細"</annotation></string>
