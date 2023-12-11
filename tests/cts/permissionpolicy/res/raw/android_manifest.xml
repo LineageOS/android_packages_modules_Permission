@@ -8108,6 +8108,14 @@
     <permission android:name="android.permission.OVERRIDE_SYSTEM_KEY_BEHAVIOR_IN_FOCUSED_WINDOW"
         android:protectionLevel="signature|privileged" />
 
+    <!-- Allows internal applications to restrict display modes
+        <p>Protection level: signature
+        @FlaggedApi("com.android.server.display.feature.flags.enable_restrict_display_modes")
+        @hide
+    -->
+    <permission android:name="android.permission.RESTRICT_DISPLAY_MODES"
+        android:protectionLevel="signature" />
+
     <!-- @hide @SystemApi
         @FlaggedApi("com.android.server.notification.flags.redact_otp_notifications_from_untrusted_listeners")
         Allows apps with a NotificationListenerService to receive notifications with sensitive
