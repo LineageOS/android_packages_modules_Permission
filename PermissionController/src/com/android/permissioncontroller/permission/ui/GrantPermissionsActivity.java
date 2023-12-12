@@ -56,6 +56,7 @@ import android.text.style.ClickableSpan;
 import android.util.ArraySet;
 import android.util.Log;
 import android.util.Pair;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnAttachStateChangeListener;
@@ -705,6 +706,30 @@ public class GrantPermissionsActivity extends SettingsActivity
         return super.dispatchTouchEvent(ev);
     }
     // LINT.ThenChange(PermissionRationaleActivity.java:dispatchTouchEvent)
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_ESCAPE
+                && event.getRepeatCount() == 0
+                && event.hasNoModifiers()) {
+            event.startTracking();
+            mViewHandler.onCancelled();
+            finishAfterTransition();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_ESCAPE
+                && event.isTracking()
+                && !event.isCanceled()) {
+            // Mark it as handled since we did handle the down event
+            return true;
+        }
+        return super.onKeyUp(keyCode, event);
+    }
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
