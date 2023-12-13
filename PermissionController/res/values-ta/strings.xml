@@ -116,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"அனைத்து அனுமதிகளும்"</string>
     <string name="other_permissions" msgid="2901186127193849594">"ஆப்ஸிற்கான பிற அனுமதிகள்"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"அனுமதி கோரிக்கை"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"நிறுவல்/நிறுவல் நீக்குதலை Wearரில் செய்ய இயலாது."</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; எவற்றையெல்லாம் அணுகலாம் என்பதைத் தேர்வுசெய்யவும்"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; புதுப்பிக்கப்பட்டது. இந்த ஆப்ஸ் எவற்றையெல்லாம் அணுகலாம் என்பதைத் தேர்வுசெய்யவும்."</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"வேண்டாம்"</string>

@@ -116,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"모든 권한"</string>
     <string name="other_permissions" msgid="2901186127193849594">"다른 앱 기능"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"권한 요청"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"Wear에서는 설치/제거 작업이 지원되지 않습니다"</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;에서 액세스하도록 허용할 항목 선택"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;이(가) 업데이트되었습니다. 이 앱에서 액세스하도록 허용할 항목을 선택하세요."</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"취소"</string>

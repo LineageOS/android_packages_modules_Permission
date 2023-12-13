@@ -116,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"सबै अनुमति"</string>
     <string name="other_permissions" msgid="2901186127193849594">"एपका अन्य क्षमताहरू"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"अनुमति दिन भनी गरिएको अनुरोध"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"Wear मा स्थापना/स्थापना रद्द गर्ने कारबाहीहरू समर्थित छैनन्।"</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; लाई केमाथि पहुँच राख्न दिने हो छनौट गर्नुहोस्"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; अद्यावधिक गरिएको छ। यस एपलाई केमाथि पहुँच राख्न दिने हो छनौट गर्नुहोस्।"</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"रद्द गर्नुहोस्"</string>

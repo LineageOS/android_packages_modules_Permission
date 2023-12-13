@@ -116,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"Zonke izimvume"</string>
     <string name="other_permissions" msgid="2901186127193849594">"Amanye amakhono wohlelo lokusebenza"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"Isicelo semvume"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"I-Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"Izenzo zokufaka/ukukhipha azisekelwe ku-Wear."</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"Khetha ukuthi uzovumela ini ukuthi i-&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ifinyelele kuyo"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"I-&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ibuyekeziwe. Khetha ukuthi uzovumela ini ukuthi ifinyelelwe ilolu hlelo lokusebenza."</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"Khansela"</string>

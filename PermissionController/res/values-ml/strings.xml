@@ -116,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"എല്ലാ അനുമതികളും"</string>
     <string name="other_permissions" msgid="2901186127193849594">"മറ്റ് ആപ്പ് ശേഷികൾ"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"അനുമതി അഭ്യർത്ഥന"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"ഇൻസ്‌റ്റാൾ/അൺഇൻസ്‌റ്റാൾ ചെയ്യുന്നതിന് Wear-ൽ പിന്തുണയില്ല."</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"എന്തൊക്കെ ആക്‌സസ് ചെയ്യാനാണ് &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ആപ്പിനെ അനുവദിക്കേണ്ടതെന്ന് തിരഞ്ഞെടുക്കുക"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; അപ്‌ഡേറ്റ് ചെയ്‌തിരിക്കുന്നു. എന്തൊക്കെ ആക്‌സസ് ചെയ്യാൻ ഈ ആപ്പിനെ അനുവദിക്കണമെന്ന് തിരഞ്ഞെടുക്കുക."</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"റദ്ദാക്കുക"</string>
