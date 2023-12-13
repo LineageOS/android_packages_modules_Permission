@@ -48,7 +48,7 @@
     <string name="deny_permission_deny_and_dont_ask_again" msgid="6106035221490102341">"Тыюу салам жана экинчи суралбасын"</string>
     <string name="permission_revoked_count" msgid="4785082705441547086">"<xliff:g id="COUNT">%1$d</xliff:g> өчүрүлгөн"</string>
     <string name="permission_revoked_all" msgid="3397649017727222283">"баары өчүрүлгөн"</string>
-    <string name="permission_revoked_none" msgid="9213345075484381180">"эч бири өчүрүлгөн жок"</string>
+    <string name="permission_revoked_none" msgid="9213345075484381180">"эч бири өчкөн жок"</string>
     <string name="grant_dialog_button_allow" msgid="5314677880021102550">"Уруксат берүү"</string>
     <string name="grant_dialog_button_allow_always" msgid="4485552579273565981">"Бардык учурда уруксат берилет"</string>
     <string name="grant_dialog_button_allow_foreground" msgid="501896824973636533">"Колдонмо ачылып турганда"</string>
