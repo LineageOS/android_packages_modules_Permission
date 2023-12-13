@@ -416,10 +416,14 @@ public class Role {
     @NonNull
     public List<String> getDefaultHoldersAsUser(@NonNull UserHandle user,
             @NonNull Context context) {
-        if (mDefaultHoldersResourceName == null) {
-            if (mBehavior != null) {
-                return mBehavior.getDefaultHoldersAsUser(this, user, context);
+        if (mBehavior != null) {
+            List<String> defaultHolders = mBehavior.getDefaultHoldersAsUser(this, user, context);
+            if (defaultHolders != null) {
+                return defaultHolders;
             }
+        }
+
+        if (mDefaultHoldersResourceName == null) {
             return Collections.emptyList();
         }
 
