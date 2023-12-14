@@ -22,6 +22,7 @@ import android.content.ContextWrapper
 import android.graphics.drawable.Drawable
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.focusable
+import androidx.compose.foundation.gestures.animateScrollBy
 import androidx.compose.foundation.gestures.scrollBy
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -150,7 +151,10 @@ internal fun Scaffold(
         Scaffold(
             modifier =
                 Modifier.onRotaryScrollEvent {
-                        coroutineScope.launch { listState.scrollBy(it.verticalScrollPixels) }
+                        coroutineScope.launch {
+                            listState.scrollBy(it.verticalScrollPixels)
+                            listState.animateScrollBy(0f)
+                        }
                         true
                     }
                     .focusRequester(focusRequester)
