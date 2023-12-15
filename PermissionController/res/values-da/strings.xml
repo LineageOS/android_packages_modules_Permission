@@ -31,7 +31,7 @@
     <string name="grant_dialog_button_deny_and_dont_ask_again" msgid="1748925431574312595">"Tillad ikke, og spørg ikke igen"</string>
     <string name="grant_dialog_button_no_upgrade" msgid="8344732743633736625">"Behold \"Mens appen er i brug\""</string>
     <string name="grant_dialog_button_no_upgrade_one_time" msgid="5125892775684968694">"Behold \"Kun denne ene gang\""</string>
-    <string name="grant_dialog_button_more_info" msgid="213350268561945193">"Mere info"</string>
+    <string name="grant_dialog_button_more_info" msgid="213350268561945193">"Flere oplysninger"</string>
     <string name="grant_dialog_button_allow_all" msgid="5939066403732409516">"Tillad alle"</string>
     <string name="grant_dialog_button_always_allow_all" msgid="1719900027660252167">"Tillad altid alle"</string>
     <string name="grant_dialog_button_allow_limited_access" msgid="5713551784422137594">"Tillad begrænset adgang"</string>
@@ -116,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"Alle tilladelser"</string>
     <string name="other_permissions" msgid="2901186127193849594">"Andre app-egenskaber"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"Anmodning om tilladelse"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"Det er ikke muligt at installere/afinstallere på Wear."</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"Vælg, hvad &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; må få adgang til"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; er blevet opdateret. Vælg, hvad denne app må få adgang til."</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"Annuller"</string>

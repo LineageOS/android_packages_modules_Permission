@@ -116,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"Baimen guztiak"</string>
     <string name="other_permissions" msgid="2901186127193849594">"Aplikazioaren beste gaitasun batzuk"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"Baimen-eskaera"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"Instalatzeko eta desinstalatzeko ekintzak ezin dira gauzatu Wear gailuetan."</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"Aukeratu zer atzi dezakeen &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; aplikazioak"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"Eguneratu egin da &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;. Aukeratu aplikazioak zer atzi dezakeen."</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"Utzi"</string>

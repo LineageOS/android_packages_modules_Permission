@@ -116,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"Alle Berechtigungen"</string>
     <string name="other_permissions" msgid="2901186127193849594">"Andere App-Funktionen"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"Berechtigungsanfrage"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"Installations-/Deinstallationsaktion auf Android Wear nicht unterstützt."</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"Worauf darf die App &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; zugreifen?"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"Die App &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; wurde aktualisiert. Worauf darf diese App zugreifen?"</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"Abbrechen"</string>

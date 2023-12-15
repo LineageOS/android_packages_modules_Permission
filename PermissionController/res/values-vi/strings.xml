@@ -116,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"Tất cả các quyền"</string>
     <string name="other_permissions" msgid="2901186127193849594">"Các khả năng khác của ứng dụng"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"Yêu cầu quyền"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"Các hành động Cài đặt/Gỡ cài đặt không được hỗ trợ trên Wear."</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"Chọn nội dung &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; được phép truy cập vào"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"Đã cập nhật &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;. Chọn nội dung ứng dụng này được phép truy cập vào."</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"Hủy"</string>

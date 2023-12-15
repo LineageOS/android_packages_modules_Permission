@@ -116,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"Všetky povolenia"</string>
     <string name="other_permissions" msgid="2901186127193849594">"Ďalšie možnosti aplikácie"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"Žiadosť o povolenie"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"Wear nepodporuje akciu inštalácie/odinštalovania."</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"Vyberte, k čomu môže pristupovať aplikácia &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"Aplikácia &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; bola aktualizovaná. Vyberte, k čomu bude mať prístup."</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"Zrušiť"</string>

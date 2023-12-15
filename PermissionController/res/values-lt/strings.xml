@@ -116,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"Visi leidimai"</string>
     <string name="other_permissions" msgid="2901186127193849594">"Kitos programos galimybės"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"Leidimo užklausa"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"Diegimo / pašalinimo veiksmai nepalaikomi sistemoje „Wear“."</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"Pasirinkite, ką norite leisti programai &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; pasiekti"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"Programa &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; buvo atnaujinta. Pasirinkite, ką norite leisti šiai programai pasiekti."</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"Atšaukti"</string>
