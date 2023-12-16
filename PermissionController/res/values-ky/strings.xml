@@ -34,8 +34,7 @@
     <string name="grant_dialog_button_more_info" msgid="213350268561945193">"Дагы маалымат"</string>
     <string name="grant_dialog_button_allow_all" msgid="5939066403732409516">"Баарына уруксат берүү"</string>
     <string name="grant_dialog_button_always_allow_all" msgid="1719900027660252167">"Ар дайым баарына уруксат берүү"</string>
-    <!-- no translation found for grant_dialog_button_allow_limited_access (5713551784422137594) -->
-    <skip />
+    <string name="grant_dialog_button_allow_limited_access" msgid="5713551784422137594">"Чектелген мүмкүнчүлүк берүү"</string>
     <string name="grant_dialog_button_allow_selected_photos" msgid="5497042471576153842">"Сүрөттөрдү жана видеолорду тандаңыз"</string>
     <string name="grant_dialog_button_allow_more_selected_photos" msgid="5145657877588697709">"Дагы тандоо"</string>
     <string name="grant_dialog_button_dont_select_more" msgid="6643552729129461268">"Башка тандалбасын"</string>
@@ -49,7 +48,7 @@
     <string name="deny_permission_deny_and_dont_ask_again" msgid="6106035221490102341">"Тыюу салам жана экинчи суралбасын"</string>
     <string name="permission_revoked_count" msgid="4785082705441547086">"<xliff:g id="COUNT">%1$d</xliff:g> өчүрүлгөн"</string>
     <string name="permission_revoked_all" msgid="3397649017727222283">"баары өчүрүлгөн"</string>
-    <string name="permission_revoked_none" msgid="9213345075484381180">"эч бири өчүрүлгөн жок"</string>
+    <string name="permission_revoked_none" msgid="9213345075484381180">"эч бири өчкөн жок"</string>
     <string name="grant_dialog_button_allow" msgid="5314677880021102550">"Уруксат берүү"</string>
     <string name="grant_dialog_button_allow_always" msgid="4485552579273565981">"Бардык учурда уруксат берилет"</string>
     <string name="grant_dialog_button_allow_foreground" msgid="501896824973636533">"Колдонмо ачылып турганда"</string>
@@ -117,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"Бардык уруксаттар"</string>
     <string name="other_permissions" msgid="2901186127193849594">"Колдонмонун башка мүмкүнчүлүктөрү"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"Уруксат суроо"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"Орнотуу/чыгарып салуу аракеттери Android Wear\'де колдоого алынбайт."</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; колдонмосу үчүн уруксаттарды тандаңыз"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; жаңырды. Ал үчүн уруксаттарды тандаңыз."</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"Жок"</string>

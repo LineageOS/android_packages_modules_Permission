@@ -34,8 +34,7 @@
     <string name="grant_dialog_button_more_info" msgid="213350268561945193">"আরও তথ্য"</string>
     <string name="grant_dialog_button_allow_all" msgid="5939066403732409516">"সব অনুমোদন করুন"</string>
     <string name="grant_dialog_button_always_allow_all" msgid="1719900027660252167">"সবসময় সব অনুমতি দিন"</string>
-    <!-- no translation found for grant_dialog_button_allow_limited_access (5713551784422137594) -->
-    <skip />
+    <string name="grant_dialog_button_allow_limited_access" msgid="5713551784422137594">"সীমিত অ্যাক্সেসের অনুমতি দিন"</string>
     <string name="grant_dialog_button_allow_selected_photos" msgid="5497042471576153842">"ফটো এবং ভিডিও বেছে নিন"</string>
     <string name="grant_dialog_button_allow_more_selected_photos" msgid="5145657877588697709">"আরও বেছে নিন"</string>
     <string name="grant_dialog_button_dont_select_more" msgid="6643552729129461268">"আর বেছে নেবেন না"</string>
@@ -46,13 +45,13 @@
     <string name="permission_add_background_warning_template" msgid="1812914855915092273">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; অ্যাপটিকে সব সময় এটি করার অনুমতি দেবেন?: <xliff:g id="ACTION">%2$s</xliff:g>"</string>
     <string name="allow_permission_foreground_only" msgid="116465816039675404">"শুধুমাত্র অ্যাপ ব্যবহার করার সময়"</string>
     <string name="allow_permission_always" msgid="5194342531206054051">"সব সময়"</string>
-    <string name="deny_permission_deny_and_dont_ask_again" msgid="6106035221490102341">"অনুমতি দেবেন না এবং আর জিজ্ঞাসা করবেন না"</string>
+    <string name="deny_permission_deny_and_dont_ask_again" msgid="6106035221490102341">"অনুমতি দেবেন না ও আবার জিজ্ঞাসা করা হোক তা চান না"</string>
     <string name="permission_revoked_count" msgid="4785082705441547086">"<xliff:g id="COUNT">%1$d</xliff:g>টি বন্ধ করা হয়েছে"</string>
     <string name="permission_revoked_all" msgid="3397649017727222283">"সবগুলি বন্ধ করা হয়েছে"</string>
     <string name="permission_revoked_none" msgid="9213345075484381180">"কোনওটিই বন্ধ করা হয়নি"</string>
     <string name="grant_dialog_button_allow" msgid="5314677880021102550">"অনুমতি দিন"</string>
     <string name="grant_dialog_button_allow_always" msgid="4485552579273565981">"সর্বদা অনুমতি দিন"</string>
-    <string name="grant_dialog_button_allow_foreground" msgid="501896824973636533">"অ্যাপ ব্যবহার করার সময়"</string>
+    <string name="grant_dialog_button_allow_foreground" msgid="501896824973636533">"শুধুমাত্র অ্যাপ ব্যবহার করার সময়"</string>
     <string name="grant_dialog_button_change_to_precise_location" msgid="3273115879467236033">"সুনির্দিষ্ট লোকেশনে পরিবর্তন করুন"</string>
     <string name="grant_dialog_button_keey_approximate_location" msgid="438025182769080011">"আনুমানিক লোকেশন রাখুন"</string>
     <string name="grant_dialog_button_allow_one_time" msgid="2618088516449706391">"শুধুমাত্র এই সময়ে"</string>
@@ -117,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"সব অনুমতি"</string>
     <string name="other_permissions" msgid="2901186127193849594">"অ্যাপের অন্যান্য কার্যক্ষমতা"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"অনুমতির অনুরোধ"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"Wear-এ ইনস্টল/আনইনস্টল করা যাবে না।"</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; অ্যাপটিকে কিসে কিসে অ্যাক্সেস দেবেন তা বেছে নিন"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; আপডেট করা হয়েছে৷ অ্যাপটিকে কিসে কিসে অ্যাক্সেস দেবেন তা বেছে নিন।"</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"বাতিল করুন"</string>

@@ -2285,7 +2285,7 @@
          @hide
     -->
     <permission android:name="android.permission.SUSPEND_APPS"
-        android:protectionLevel="signature|role" />
+        android:protectionLevel="signature|role|verifier" />
 
     <!-- @SystemApi
          @hide
@@ -5555,10 +5555,10 @@
     <permission android:name="android.permission.DELIVER_COMPANION_MESSAGES"
                 android:protectionLevel="normal" />
 
-    <!-- @SystemApi Allows an application to send and receive messages via CDM transports.
+    <!-- Allows an application to use companion transports
          @hide -->
     <permission android:name="android.permission.USE_COMPANION_TRANSPORTS"
-        android:protectionLevel="signature|module" />
+        android:protectionLevel="signature" />
 
     <!-- Allows an application to create new companion device associations.
          @SystemApi
@@ -7070,6 +7070,13 @@
     <permission android:name="android.permission.MANAGE_ACCESSIBILITY"
         android:protectionLevel="signature|setup|recents|role" />
 
+    <!-- @FlaggedApi("com.android.server.accessibility.motion_event_observing")
+    @hide
+    @TestApi
+    Allows an accessibility service to observe motion events without consuming them. -->
+    <permission android:name="android.permission.ACCESSIBILITY_MOTION_EVENT_OBSERVING"
+                android:protectionLevel="signature" />
+                
     <!-- @SystemApi Allows an app to grant a profile owner access to device identifiers.
          <p>Not for use by third-party applications.
          @deprecated
@@ -7301,6 +7308,13 @@
          @hide -->
     <permission android:name="android.permission.MODIFY_TOUCH_MODE_STATE"
         android:protectionLevel="signature" />
+
+    <!-- @SystemApi Allows the holder to launch an Intent Resolver flow with custom presentation
+         and/or targets.
+         @FlaggedApi("android.service.chooser.support_nfc_resolver")
+         @hide -->
+    <permission android:name="android.permission.SHOW_CUSTOMIZED_RESOLVER"
+            android:protectionLevel="signature|privileged" />
 
     <!-- @hide Allows an application to get a People Tile preview for a given shortcut. -->
     <permission android:name="android.permission.GET_PEOPLE_TILE_PREVIEW"
@@ -7644,6 +7658,39 @@
      @hide -->
     <permission android:name="android.permission.RESET_HOTWORD_TRAINING_DATA_EGRESS_COUNT"
                 android:protectionLevel="signature" />
+
+    <!-- @SystemApi Allows an app to track all preparations for a complete factory reset.
+     <p>Protection level: signature|privileged
+     @FlaggedApi("android.permission.flags.factory_reset_prep_permission_apis")
+     @hide -->
+    <permission android:name="android.permission.PREPARE_FACTORY_RESET"
+        android:protectionLevel="signature|privileged" />
+
+    <!-- @SystemApi Allows focused window to override the default behavior of supported system keys.
+        The following keycodes are supported:
+        <p> KEYCODE_STEM_PRIMARY
+        <p>If an app is granted this permission and has a focused window, it will be allowed to
+           receive supported key events that are otherwise handled by the system. The app can choose
+           to consume the key events and trigger its own behavior, in which case the default key
+           behavior will be skipped.
+        <p>For example, KEYCODE_STEM_PRIMARY by default opens recent app launcher. If the foreground
+           fitness app is granted this permission, it can repurpose the KEYCODE_STEM_PRIMARY button
+           to pause/resume the current fitness session.
+        <p>Protection level: signature|privileged
+        @FlaggedApi("com.android.input.flags.override_key_behavior_permission_apis")
+        @hide -->
+    <permission android:name="android.permission.OVERRIDE_SYSTEM_KEY_BEHAVIOR_IN_FOCUSED_WINDOW"
+        android:protectionLevel="signature|privileged" />
+
+    <!-- @FlaggedApi("com.android.server.notification.flags.redact_otp_notifications_from_untrusted_listeners")
+        Allows apps with a NotificationListenerService to receive notifications with sensitive
+        information
+        <p>Apps with a NotificationListenerService without this permission will not be able
+        to view certain types of sensitive information contained in notifications
+        <p>Protection level: signature|role
+    -->
+    <permission android:name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS"
+        android:protectionLevel="signature|role" />
 
     <!-- Attribution for Geofencing service. -->
     <attribution android:tag="GeofencingService" android:label="@string/geofencing_service"/>

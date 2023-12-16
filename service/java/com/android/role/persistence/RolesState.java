@@ -22,7 +22,6 @@ import android.annotation.Nullable;
 import android.annotation.SystemApi;
 import android.annotation.SystemApi.Client;
 import android.permission.flags.Flags;
-import android.util.ArraySet;
 
 import java.util.Map;
 import java.util.Objects;
@@ -68,7 +67,7 @@ public final class RolesState {
      */
     public RolesState(int version, @Nullable String packagesHash,
             @NonNull Map<String, Set<String>> roles) {
-        this(version, packagesHash, roles, new ArraySet<>());
+        this(version, packagesHash, roles, roles.keySet());
     }
 
     /**
@@ -79,7 +78,7 @@ public final class RolesState {
      * @param roles the roles
      * @param fallbackEnabledRoles the roles with fallback enabled
      */
-    @FlaggedApi(Flags.FLAG_ROLE_CONTROLLER_IN_SYSTEM_SERVER)
+    @FlaggedApi(Flags.FLAG_SYSTEM_SERVER_ROLE_CONTROLLER_ENABLED)
     public RolesState(int version, @Nullable String packagesHash,
             @NonNull Map<String, Set<String>> roles, @NonNull Set<String> fallbackEnabledRoles) {
         mVersion = version;
@@ -123,7 +122,7 @@ public final class RolesState {
      * @return fallback enabled roles
      */
     @NonNull
-    @FlaggedApi(Flags.FLAG_ROLE_CONTROLLER_IN_SYSTEM_SERVER)
+    @FlaggedApi(Flags.FLAG_SYSTEM_SERVER_ROLE_CONTROLLER_ENABLED)
     public Set<String> getFallbackEnabledRoles() {
         return mFallbackEnabledRoles;
     }

@@ -34,8 +34,7 @@
     <string name="grant_dialog_button_more_info" msgid="213350268561945193">"ព័ត៌មាន​បន្ថែម"</string>
     <string name="grant_dialog_button_allow_all" msgid="5939066403732409516">"អនុញ្ញាតទាំងអស់"</string>
     <string name="grant_dialog_button_always_allow_all" msgid="1719900027660252167">"អនុញ្ញាតទាំងអស់ជានិច្ច"</string>
-    <!-- no translation found for grant_dialog_button_allow_limited_access (5713551784422137594) -->
-    <skip />
+    <string name="grant_dialog_button_allow_limited_access" msgid="5713551784422137594">"អនុញ្ញាតឱ្យចូលប្រើដោយមានកម្រិត"</string>
     <string name="grant_dialog_button_allow_selected_photos" msgid="5497042471576153842">"ជ្រើសរើស​រូបថត និង​វីដេអូ"</string>
     <string name="grant_dialog_button_allow_more_selected_photos" msgid="5145657877588697709">"ជ្រើសរើស​ច្រើន​ទៀត"</string>
     <string name="grant_dialog_button_dont_select_more" msgid="6643552729129461268">"កុំជ្រើសរើសទៀត"</string>
@@ -117,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"ការអនុញ្ញាត​ទាំងអស់"</string>
     <string name="other_permissions" msgid="2901186127193849594">"សមត្ថភាពកម្មវិធីផ្សេងទៀត"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"សំណើសុំ​ការអនុញ្ញាត"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"សកម្មភាព​ដំឡើង/លុបចេញមិនអាចប្រើ​នៅលើ Wear បានទេ។"</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"ជ្រើសរើស​អ្វីដែលត្រូវ​អនុញ្ញាតឱ្យ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ចូលប្រើ"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ត្រូវបាន​ដំឡើងជំនាន់។ ជ្រើសរើស​អ្វីដែលត្រូវ​អនុញ្ញាតឱ្យ​កម្មវិធីនេះ​ចូលប្រើ។"</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"បោះបង់"</string>

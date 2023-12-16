@@ -116,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"ခွင့်ပြုချက် အားလုံး"</string>
     <string name="other_permissions" msgid="2901186127193849594">"အခြားအက်ပ်၏ စွမ်းရည်များ"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"ခွင့်ပြုချက် တောင်းခံမှု"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"Wear ပေါ်တွင် ထည့်သွင်းခြင်း/ဖြုတ်ခြင်းများကို ပံ့ပိုးမထားပါ။"</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"&amp;It;b7gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&amp;It;/b&gt; က အသုံးပြုခွင့်ရမည့် အရာတို့ကို ရွေးပါ"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"&amp;It;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&amp;It;/b&gt; ကို အပ်ဒိတ်လုပ်ပြီးပါပြီ။ ဤအက်ပ်က အသုံးပြုခွင့်ရမည့်အရာတို့ကို ရွေးပါ။"</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"မလုပ်တော့"</string>
