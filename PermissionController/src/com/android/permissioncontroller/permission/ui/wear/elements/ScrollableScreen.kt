@@ -69,6 +69,7 @@ import androidx.wear.compose.material.TimeText
 import androidx.wear.compose.material.Vignette
 import androidx.wear.compose.material.VignettePosition
 import androidx.wear.compose.material.scrollAway
+import com.android.permissioncontroller.permission.ui.wear.theme.WearPermissionTheme
 import kotlinx.coroutines.launch
 
 /**
@@ -147,7 +148,7 @@ internal fun Scaffold(
     val listState = remember { ScalingLazyListState(initialCenterItemIndex = initialCenterIndex) }
     val coroutineScope = rememberCoroutineScope()
 
-    MaterialTheme {
+    WearPermissionTheme {
         Scaffold(
             modifier =
                 Modifier.onRotaryScrollEvent {
