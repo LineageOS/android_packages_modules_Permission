@@ -1934,4 +1934,13 @@ Allow <xliff:g id="app_name" example="Gmail">%4$s</xliff:g> to upload a bug repo
     <string name="safety_label_changes_gear_description">Settings</string>
 
     <!-- Safety Label Change Notifications End -->
+
+    <!-- Summary for showing the last access text for today for Wear [CHAR LIMIT=50] -->
+    <string name="wear_app_perms_24h_access">Accessed <xliff:g id="time_date" example="12:42 PM">%1$s</xliff:g></string>
+
+    <!-- Summary for showing the last access text for yesterday for Wear [CHAR LIMIT=50] -->
+    <string name="wear_app_perms_24h_access_yest">Accessed yesterday <xliff:g id="time_date" example="12:42 PM">%1$s</xliff:g></string>
+
+    <!-- Summary for showing the last access text for 7 days for Wear [CHAR LIMIT=50] -->
+    <string name="wear_app_perms_7d_access">Accessed <xliff:g id="time_date" example="Jan 3">%1$s</xliff:g> <xliff:g id="time_date" example="12:42 PM">%2$s</xliff:g></string>
 </resources>
