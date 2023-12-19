@@ -36,6 +36,7 @@ android_test {
         "androidx.test.ext.junit-nodeps",
         "truth",
         "permission-test-util-lib",
+        "androidx.test.rules",
     ],
     srcs: [
         "src/**/*.java",
