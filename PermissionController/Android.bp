@@ -37,8 +37,8 @@ genrule {
     name: "statslog-permissioncontroller-java-gen",
     tools: ["stats-log-api-gen"],
     cmd: "$(location stats-log-api-gen) --java $(out) --module permissioncontroller" +
-         " --javaPackage com.android.permissioncontroller" +
-         " --javaClass PermissionControllerStatsLog --minApiLevel 30",
+        " --javaPackage com.android.permissioncontroller" +
+        " --javaClass PermissionControllerStatsLog --minApiLevel 30",
     out: ["com/android/permissioncontroller/PermissionControllerStatsLog.java"],
 }
 
@@ -52,6 +52,9 @@ java_library {
     srcs: [
         ":statslog-permissioncontroller-java-gen",
     ],
+    lint: {
+        baseline_filename: "lint-baseline.xml",
+    },
 }
 
 // File to be included by permission controller app an mocking tests
@@ -90,7 +93,7 @@ android_app {
     kotlincflags: [
         "-Werror",
         "-opt-in=kotlinx.coroutines.DelicateCoroutinesApi",
-        "-Xjvm-default=all"
+        "-Xjvm-default=all",
     ],
 
     libs: [
@@ -162,6 +165,7 @@ android_app {
     lint: {
         strict_updatability_linting: true,
         error_checks: ["Recycle"],
+        baseline_filename: "lint-baseline.xml",
     },
 
     optimize: {
