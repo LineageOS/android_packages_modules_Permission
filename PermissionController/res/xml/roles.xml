@@ -548,7 +548,7 @@
             <permission-set name="notifications" minSdkVersion="35" />
             <!-- If this role holder has a NotificationListenerService, let that service receive
                  notifications with sensitive content unredacted-->
-            <permission name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS" />
+            <permission name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS" minSdkVersion="35"/>
         </permissions>
         <app-op-permissions>
             <app-op-permission name="android.permission.MANAGE_ONGOING_CALLS" />
@@ -586,7 +586,7 @@
             <permission name="android.permission.ASSOCIATE_COMPANION_DEVICES" minSdkVersion="34"/>
             <!-- If this role holder has a NotificationListenerService, let that service receive
                  notifications with sensitive content unredacted-->
-            <permission name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS" />
+            <permission name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS" minSdkVersion="35"/>
         </permissions>
     </role>
 
@@ -970,7 +970,7 @@
             <permission name="android.permission.SYSTEM_APPLICATION_OVERLAY" />
             <!-- If this role holder has a NotificationListenerService, let that service receive
                  notifications with sensitive content unredacted-->
-            <permission name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS" />
+            <permission name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS" minSdkVersion="35"/>
         </permissions>
     </role>
 
@@ -1126,7 +1126,7 @@
             <permission name="android.permission.ACCESS_AMBIENT_CONTEXT_EVENT" minSdkVersion="33"/>
             <!-- If this role holder has a NotificationListenerService, let that service receive
                  notifications with sensitive content unredacted-->
-            <permission name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS" />
+            <permission name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS" minSdkVersion="35"/>
         </permissions>
     </role>
 
@@ -1191,7 +1191,7 @@
             <permission-set name="storage" />
             <!-- If this role holder has a NotificationListenerService, let that service receive
                  notifications with sensitive content unredacted-->
-            <permission name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS" />
+            <permission name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS" minSdkVersion="35"/>
        </permissions>
     </role>
 
@@ -1211,7 +1211,7 @@
             <permission-set name="sms" />
             <!-- If this role holder has a NotificationListenerService, let that service receive
                  notifications with sensitive content unredacted-->
-            <permission name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS" />
+            <permission name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS" minSdkVersion="35"/>
        </permissions>
        <app-op-permissions>
            <app-op-permission name="android.permission.MANAGE_ONGOING_CALLS" />
