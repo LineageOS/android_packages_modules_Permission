@@ -37,7 +37,6 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import com.android.modules.utils.build.SdkLevel;
-import com.android.permission.util.UserUtils;
 import com.android.safetycenter.SafetyCenterFlags;
 import com.android.safetycenter.SafetySourceIssueInfo;
 import com.android.safetycenter.SafetySourceIssues;
@@ -387,7 +386,7 @@ public final class SafetyCenterNotificationSender {
             mNotifiedIssues.put(key, issue);
             SafetyCenterStatsdLogger.writeNotificationPostedEvent(
                     key.getSafetySourceId(),
-                    UserUtils.isManagedProfile(key.getUserId(), mContext),
+                    UserProfileGroup.getProfileTypeOfUser(key.getUserId(), mContext),
                     issue.getIssueTypeId(),
                     issue.getSeverityLevel());
         }

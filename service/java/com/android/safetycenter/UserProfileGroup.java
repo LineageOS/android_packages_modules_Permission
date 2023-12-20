@@ -277,7 +277,7 @@ public final class UserProfileGroup {
      * Returns the profiles of the specified type. Returns an empty array if no profile of the
      * specified type exists.
      */
-    int[] getProfilesOfType(@ProfileType int profileType) {
+    public int[] getProfilesOfType(@ProfileType int profileType) {
         switch (profileType) {
             case PROFILE_TYPE_PRIMARY:
                 return new int[] {mProfileParentUserId};
@@ -290,6 +290,21 @@ public final class UserProfileGroup {
                 Log.w(TAG, "profiles requested for unexpected profile type " + profileType);
                 return new int[] {};
         }
+    }
+
+    /**
+     * Returns the {@link ProfileType} for the provided {@code userId}. Note that the provided
+     * {@code userId} must be supported by the {@link UserProfileGroup} i.e.
+     * {@link #isSupported(int, Context)} should return true for {@code userId}.
+     */
+    public static @ProfileType int getProfileTypeOfUser(@UserIdInt int userId, Context context) {
+        if (UserUtils.isManagedProfile(userId, context)) {
+            return PROFILE_TYPE_MANAGED;
+        }
+        if (UserUtils.isPrivateProfile(userId, context)) {
+            return PROFILE_TYPE_PRIVATE;
+        }
+        return PROFILE_TYPE_PRIMARY;
     }
 
     /**
