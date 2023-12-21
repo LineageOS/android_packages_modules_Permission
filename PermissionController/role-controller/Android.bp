@@ -34,4 +34,7 @@ java_library {
     installable: false,
     min_sdk_version: "30",
     sdk_version: "system_current",
+    lint: {
+        baseline_filename: "lint-baseline.xml",
+    },
 }
