@@ -56,7 +56,6 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import com.android.modules.utils.build.SdkLevel;
-import com.android.permission.util.UserUtils;
 import com.android.safetycenter.UserProfileGroup.ProfileType;
 import com.android.safetycenter.data.SafetyCenterDataManager;
 import com.android.safetycenter.internaldata.SafetyCenterBundles;
@@ -532,7 +531,8 @@ public final class SafetyCenterDataFactory {
                 SafetyCenterEntry entry = entries.get(i);
                 SafetyCenterEntryId entryId = SafetyCenterIds.entryIdFromString(entry.getId());
 
-                if (UserUtils.isManagedProfile(entryId.getUserId(), mContext)) {
+                if (UserProfileGroup.getProfileTypeOfUser(entryId.getUserId(), mContext)
+                        != PROFILE_TYPE_PRIMARY) {
                     continue;
                 }
 
