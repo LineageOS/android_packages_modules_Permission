@@ -49,6 +49,7 @@ import java.util.Objects;
 public final class UserProfileGroup {
 
     private static final String TAG = "UserProfileGroup";
+    // UserHandle#USER_NULL is a @TestApi so it cannot be accessed from the mainline module.
     public static final @UserIdInt int USER_NULL = -10000;
 
     @UserIdInt private final int mProfileParentUserId;
@@ -245,14 +246,32 @@ public final class UserProfileGroup {
         return mProfileParentUserId;
     }
 
-    /** Returns the managed profile user ids of the {@link UserProfileGroup}. */
-    public int[] getManagedProfilesUserIds() {
-        return mManagedProfilesUserIds;
-    }
-
     /** Returns the running managed profile user ids of the {@link UserProfileGroup}. */
     public int[] getManagedRunningProfilesUserIds() {
         return mManagedRunningProfilesUserIds;
+    }
+
+    /**
+     * A convenience method to get all the profile ids of all the users of all profile types. So, in
+     * essence, this is equivalent to iterating through all the profile types using
+     * {@link ProfileType#ALL_PROFILE_TYPES} and getting all the users for each of the profile type
+     * using {@link #getProfilesOfType(int profileType)}
+     */
+    public int[] getAllProfilesUserIds() {
+        int[] allProfileIds = new int[getNumProfiles()];
+        allProfileIds[0] = mProfileParentUserId;
+        System.arraycopy(
+                mManagedProfilesUserIds,
+                /* srcPos= */ 0,
+                allProfileIds,
+                /* destPos= */ 1,
+                mManagedProfilesUserIds.length);
+
+        if (mPrivateProfileUserId != USER_NULL) {
+            allProfileIds[allProfileIds.length - 1] = mPrivateProfileUserId;
+        }
+
+        return allProfileIds;
     }
 
     /**
@@ -290,6 +309,13 @@ public final class UserProfileGroup {
                 Log.w(TAG, "profiles requested for unexpected profile type " + profileType);
                 return new int[] {};
         }
+    }
+
+    /** Returns the total number of profiles in this user profile group */
+    public int getNumProfiles() {
+        return 1
+                + mManagedProfilesUserIds.length
+                + (mPrivateProfileUserId == USER_NULL ? 0 : 1);
     }
 
     /**

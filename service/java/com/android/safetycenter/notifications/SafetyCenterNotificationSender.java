@@ -209,11 +209,9 @@ public final class SafetyCenterNotificationSender {
 
     /** Updates Safety Center notifications for the given {@link UserProfileGroup}. */
     public void updateNotifications(UserProfileGroup userProfileGroup) {
-        updateNotifications(userProfileGroup.getProfileParentUserId());
-
-        int[] managedProfileUserIds = userProfileGroup.getManagedProfilesUserIds();
-        for (int i = 0; i < managedProfileUserIds.length; i++) {
-            updateNotifications(managedProfileUserIds[i]);
+        int[] allProfilesUserIds = userProfileGroup.getAllProfilesUserIds();
+        for (int i = 0; i < allProfilesUserIds.length; i++) {
+            updateNotifications(allProfilesUserIds[i]);
         }
     }
 
