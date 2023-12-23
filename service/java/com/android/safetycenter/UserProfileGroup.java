@@ -311,8 +311,35 @@ public final class UserProfileGroup {
         }
     }
 
+    /**
+     * Returns the running profiles of the specified type. Returns an empty array if no profile of
+     * the specified type exists.
+     */
+    public int[] getRunningProfilesOfType(@ProfileType int profileType) {
+        switch (profileType) {
+            case PROFILE_TYPE_PRIMARY:
+                return new int[] {mProfileParentUserId};
+            case PROFILE_TYPE_MANAGED:
+                return mManagedRunningProfilesUserIds;
+            case PROFILE_TYPE_PRIVATE:
+                //TODO(b/286539356) add the new feature flag protection when available.
+                return mPrivateProfileRunning
+                    ? new int[] {} : new int[] {mPrivateProfileUserId};
+            default:
+                Log.w(TAG, "Unexpected profile type " + profileType);
+                return new int[] {};
+        }
+    }
+
+    /** Returns the total number of running profiles in this user profile group */
+    public int getNumRunningProfiles() {
+        return 1
+                + mManagedRunningProfilesUserIds.length
+                + (mPrivateProfileRunning ? 1 : 0);
+    }
+
     /** Returns the total number of profiles in this user profile group */
-    public int getNumProfiles() {
+    private int getNumProfiles() {
         return 1
                 + mManagedProfilesUserIds.length
                 + (mPrivateProfileUserId == USER_NULL ? 0 : 1);
