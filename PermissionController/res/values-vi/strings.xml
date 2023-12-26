@@ -537,7 +537,7 @@
     <string name="safety_privacy_qs_tile_subtitle" msgid="3621544532041936749">"Kiểm tra trạng thái"</string>
     <string name="privacy_controls_qs" msgid="5780144882040591169">"Các chế độ kiểm soát quyền riêng tư"</string>
     <string name="security_settings_button_label_qs" msgid="8280343822465962330">"Tùy chọn cài đặt khác"</string>
-    <string name="camera_toggle_label_qs" msgid="3880261453066157285">"Quyền truy cập máy ảnh"</string>
+    <string name="camera_toggle_label_qs" msgid="3880261453066157285">"Quyền truy cập camera"</string>
     <string name="microphone_toggle_label_qs" msgid="8132912469813396552">"Quyền truy cập micrô"</string>
     <string name="permissions_removed_qs" msgid="8957319130625294572">"Đã thu hồi quyền sử dụng"</string>
     <string name="camera_usage_qs" msgid="4394233566086665994">"Xem mức sử dụng của máy ảnh gần đây"</string>
@@ -579,7 +579,7 @@
     <string name="safety_center_background_location_access_revoked" msgid="6972274943343442213">"Đã thay đổi quyền truy cập"</string>
     <string name="safety_center_view_recent_location_access" msgid="3524391299490678243">"Xem thông tin về hoạt động sử dụng thông tin vị trí gần đây"</string>
     <string name="privacy_controls_title" msgid="7605929972256835199">"Chế độ kiểm soát quyền riêng tư"</string>
-    <string name="camera_toggle_title" msgid="1251201397431837666">"Quyền truy cập máy ảnh"</string>
+    <string name="camera_toggle_title" msgid="1251201397431837666">"Quyền truy cập camera"</string>
     <string name="mic_toggle_title" msgid="2649991093496110162">"Quyền truy cập micrô"</string>
     <string name="perm_toggle_description" msgid="7801326363741451379">"Áp dụng cho các ứng dụng và dịch vụ"</string>
     <string name="mic_toggle_description" msgid="9163104307990677157">"Áp dụng cho các ứng dụng và dịch vụ. Nếu bạn tắt chế độ cài đặt, dữ liệu thu được qua micrô vẫn có thể được chia sẻ khi bạn gọi đến số khẩn cấp."</string>
