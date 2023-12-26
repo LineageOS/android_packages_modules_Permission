@@ -563,7 +563,7 @@
     <string name="privacy_controls_qs" msgid="5780144882040591169">"तपाईंका गोपनीयतासम्बन्धी सेटिङ"</string>
     <string name="security_settings_button_label_qs" msgid="8280343822465962330">"थप सेटिङ"</string>
     <string name="camera_toggle_label_qs" msgid="3880261453066157285">"क्यामेरा प्रयोग गर्ने अनुमति"</string>
-    <string name="microphone_toggle_label_qs" msgid="8132912469813396552">"माइक प्रयोग गर्ने अनुमति"</string>
+    <string name="microphone_toggle_label_qs" msgid="8132912469813396552">"माइक एक्सेस"</string>
     <string name="permissions_removed_qs" msgid="8957319130625294572">"अनुमति हटाइएको छ"</string>
     <string name="camera_usage_qs" msgid="4394233566086665994">"हालसालै गरिएको क्यामेराको प्रयोगसम्बन्धी जानकारी हेर्नुहोस्"</string>
     <string name="microphone_usage_qs" msgid="8527666682168170417">"हालसालै गरिएको माइकको प्रयोगसम्बन्धी जानकारी हेर्नुहोस्"</string>
