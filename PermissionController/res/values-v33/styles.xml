@@ -596,11 +596,10 @@
 
     <style name="SafetyCenterMoreIssuesCounter"
            parent="android:Widget.DeviceDefault">
-        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:orientation">horizontal</item>
-        <item name="android:paddingStart">@dimen/sc_spacing_xsmall</item>
-        <item name="android:paddingEnd">@dimen/sc_spacing_xsmall</item>
+        <item name="android:paddingHorizontal">@dimen/sc_spacing_xsmall</item>
         <item name="android:background">@drawable/safety_center_card_widget_background</item>
         <item name="android:gravity">center_vertical</item>
         <item name="layout_constraintTop_toTopOf">parent</item>
@@ -612,6 +611,7 @@
            parent="SafetyCenterBaseTextContainer">
         <item name="android:textAppearance">@style/TextAppearance.SafetyCenter.Body</item>
         <item name="android:lineHeight">@dimen/sc_line_height_medium</item>
+        <item name="android:paddingVertical">@dimen/sc_spacing_xxxsmall</item>
         <item name="android:textColor">?android:attr/textColorPrimary</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
