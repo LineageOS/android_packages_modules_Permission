@@ -28,7 +28,6 @@ import com.android.permissioncontroller.permission.ui.wear.model.WearAppPermissi
 import com.android.permissioncontroller.permission.utils.KotlinUtils
 import com.android.permissioncontroller.permission.utils.KotlinUtils.getPermGroupDescription
 import com.android.permissioncontroller.permission.utils.KotlinUtils.getPermGroupLabel
-import com.android.permissioncontroller.permission.utils.Utils
 import com.android.settingslib.utils.applications.AppUtils
 import java.text.Collator
 import java.util.Random
@@ -162,16 +161,7 @@ class WearPermissionAppsHelper(
         }
         val summary =
             if (Flags.wearPrivacyDashboardEnabled()) {
-                lastAccessTime?.let {
-                    viewModel.getPreferenceSummary(
-                        application.resources,
-                        Utils.getPermissionLastAccessSummaryTimestamp(
-                            lastAccessTime,
-                            application,
-                            permGroupName
-                        )
-                    )
-                }
+                lastAccessTime?.let { WearUtils.getPreferenceSummary(application, lastAccessTime) }
             } else {
                 null
             }
