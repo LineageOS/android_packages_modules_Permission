@@ -551,12 +551,12 @@
     <string name="safety_center_rescan_button" msgid="4517514567809409596">"اسکن کردن دستگاه"</string>
     <string name="safety_center_issue_card_dismiss_button" msgid="5113965506144222402">"رد کردن"</string>
     <string name="safety_center_issue_card_dismiss_confirmation_title" msgid="2734809473425036382">"این هشدار رد شود؟"</string>
-    <string name="safety_center_issue_card_dismiss_confirmation_message" msgid="3775418736671093563">"هرزمان خواستید تنظیمات امنیت و حریم خصوصی را مرور کنید تا محافظت بیشتری اضافه کنید"</string>
+    <string name="safety_center_issue_card_dismiss_confirmation_message" msgid="3775418736671093563">"هرزمان خواستید تنظیمات ایمنی و حریم خصوصی را مرور کنید تا محافظت بیشتری اضافه کنید"</string>
     <string name="safety_center_issue_card_confirm_dismiss_button" msgid="5884137843083634556">"رد شدن"</string>
     <string name="safety_center_issue_card_cancel_dismiss_button" msgid="2874578798877712346">"لغو"</string>
     <string name="safety_center_entries_category_title" msgid="34356964062813115">"تنظیمات"</string>
     <string name="safety_status_preference_title_and_summary_content_description" msgid="3511373256505058464">"وضعیت حریم خصوصی و امنیت. <xliff:g id="OVERALL_SAFETY_STATUS">%1$s</xliff:g>. <xliff:g id="SUMMARY_OF_DEVICE_STATUS">%2$s</xliff:g>"</string>
-    <string name="security_settings" msgid="3808106921175271317">"تنظیمات امنیتی"</string>
+    <string name="security_settings" msgid="3808106921175271317">"تنظیمات ایمنی"</string>
     <string name="sensor_permissions_qs" msgid="1022267900031317472">"اجازه‌ها"</string>
     <string name="safety_privacy_qs_tile_title" msgid="727301867710374052">"امنیت و حریم خصوصی"</string>
     <string name="safety_privacy_qs_tile_subtitle" msgid="3621544532041936749">"بررسی وضعیت"</string>
@@ -646,4 +646,10 @@
     <string name="safety_label_changes_notification_title" msgid="4479955083472203839">"به‌روزرسانی‌های هم‌رسانی داده"</string>
     <string name="safety_label_changes_notification_desc" msgid="7808764283266234675">"برخی‌از برنامه‌ها روش هم‌رسانی داده‌های مکان شما را تغییر داده‌اند"</string>
     <string name="safety_label_changes_gear_description" msgid="2655887555599138509">"تنظیمات"</string>
+    <!-- no translation found for wear_app_perms_24h_access (8668121661337328895) -->
+    <skip />
+    <!-- no translation found for wear_app_perms_24h_access_yest (7069312481704735679) -->
+    <skip />
+    <!-- no translation found for wear_app_perms_7d_access (4608069019194676432) -->
+    <skip />
 </resources>
