@@ -268,7 +268,7 @@
     <string name="unused_apps_notification_title" msgid="4314832015894238019">"{count,plural, =1{# ఉపయోగించని యాప్}other{# ఉపయోగించని యాప్‌లు}}"</string>
     <string name="unused_apps_notification_content" msgid="9195026773244581246">"అనుమతులు, తాత్కాలిక ఫైళ్లు తీసివేయబడ్డాయి అలాగే నోటిఫికేషన్‌లు ఆపివేయబడ్డాయి. రివ్యూ చేయడానికి ట్యాప్ చేయండి."</string>
     <string name="unused_apps_safety_center_card_title" msgid="5638409355530099149">"అనుమతులు తీసివేయబడిన యాప్‌లను రివ్యూ చేయండి"</string>
-    <string name="unused_apps_safety_center_card_content" msgid="1088557243627427820">"కొంతకాలంగా మీరు ఉపయోగించని యాప్‌లకు సంబంధించిన అనుమతులు, తాత్కాలిక ఫైల్‌లు తొలగించబడ్డాయి, అలాగే నోటిఫికేషన్‌లు నిలిపివేయబడ్డాయి."</string>
+    <string name="unused_apps_safety_center_card_content" msgid="1088557243627427820">"కొంతకాలంగా మీరు ఉపయోగించని యాప్‌లకు సంబంధించిన అనుమతులు, తాత్కాలిక ఫైళ్లు తొలగించబడ్డాయి, అలాగే నోటిఫికేషన్‌లు నిలిపివేయబడ్డాయి."</string>
     <string name="unused_apps_safety_center_action_title" msgid="8865914432518993194">"యాప్‌లను రివ్యూ చేయండి"</string>
     <string name="post_drive_permission_decision_reminder_title" msgid="1290697371418139976">"ఇటీవలి అనుమతులను చెక్ చేయండి"</string>
     <string name="post_drive_permission_decision_reminder_summary_1_app_1_permission" msgid="670521503734140711">"డ్రైవింగ్‌లో ఉన్నప్పుడు, మీరు <xliff:g id="APP">%1$s</xliff:g> యాప్‌నకు <xliff:g id="PERMISSION">%2$s</xliff:g>‌కు యాక్సెస్‌ను ఇచ్చారు"</string>
