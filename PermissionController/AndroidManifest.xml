@@ -593,6 +593,7 @@
             android:name="com.android.permissioncontroller.safetycenter.ui.SafetyCenterActivity"
             android:enabled="@bool/is_at_least_t"
             android:exported="true"
+            android:enableOnBackInvokedCallback="true"
             android:theme="@style/Theme.SafetyCenter">
             <intent-filter android:priority="1">
                 <action android:name="android.intent.action.SAFETY_CENTER"/>
