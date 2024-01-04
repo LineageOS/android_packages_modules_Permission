@@ -41,6 +41,7 @@ import com.android.permissioncontroller.permission.ui.model.UnusedAppsViewModel.
 import com.android.permissioncontroller.permission.ui.model.UnusedAppsViewModelFactory
 import com.android.permissioncontroller.permission.ui.wear.model.WearUnusedAppsViewModel
 import com.android.permissioncontroller.permission.ui.wear.model.WearUnusedAppsViewModel.UnusedAppChip
+import com.android.permissioncontroller.permission.ui.wear.theme.WearPermissionTheme
 import com.android.permissioncontroller.permission.utils.KotlinUtils
 import com.android.settingslib.utils.applications.AppUtils
 import java.text.Collator
@@ -131,7 +132,9 @@ class WearUnusedAppsFragment : Fragment() {
             updateWearViewModel(false)
         }
 
-        return ComposeView(activity).apply { setContent { WearUnusedAppsScreen(wearViewModel) } }
+        return ComposeView(activity).apply {
+            setContent { WearPermissionTheme { WearUnusedAppsScreen(wearViewModel) } }
+        }
     }
 
     private fun initUnusedAppsMap(): MutableMap<UnusedPeriod, MutableMap<String, UnusedAppChip>> {
