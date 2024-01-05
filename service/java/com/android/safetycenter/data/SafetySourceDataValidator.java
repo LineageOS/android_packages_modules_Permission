@@ -106,6 +106,8 @@ final class SafetySourceDataValidator {
         }
 
         if (safetySource.getType() == SafetySource.SAFETY_SOURCE_TYPE_DYNAMIC
+                && safetySource.getInitialDisplayState()
+                        != SafetySource.INITIAL_DISPLAY_STATE_HIDDEN
                 && safetySourceStatus == null) {
             throw new IllegalArgumentException(
                     "Missing status for dynamic safety source: " + safetySourceId);
