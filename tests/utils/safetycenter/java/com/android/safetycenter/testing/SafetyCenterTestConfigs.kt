@@ -159,6 +159,14 @@ class SafetyCenterTestConfigs(private val context: Context) {
     /** A [SafetyCenterConfig] with a dynamic source in a different, missing package. */
     val singleSourceOtherPackageConfig = singleSourceConfig(dynamicOtherPackageSafetySource)
 
+    /** A [SafetyCenterConfig] with a dynamic hidden-by-default source. */
+    val hiddenSourceConfig =
+        singleSourceConfig(
+            dynamicSafetySourceBuilder(DYNAMIC_HIDDEN_ID)
+                .setInitialDisplayState(SafetySource.INITIAL_DISPLAY_STATE_HIDDEN)
+                .build()
+        )
+
     /** A simple [SafetyCenterConfig] with a source supporting all profiles. */
     val singleSourceAllProfileConfig =
         singleSourceConfig(
