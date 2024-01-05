@@ -20,3 +20,10 @@ flag {
     description: "This flag is used to support Privacy dashboard for Wear"
     bug: "309721061"
 }
+
+flag {
+    name: "archiving"
+    namespace: "permissions"
+    description: "Feature flag to enable the archiving feature."
+    bug: "278553670"
+}
