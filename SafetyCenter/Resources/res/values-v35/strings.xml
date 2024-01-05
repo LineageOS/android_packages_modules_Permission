@@ -16,6 +16,10 @@
   -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Cellular Network Security -->
+    <string name="cellular_network_security_title" description="The title of the group of safety settings relating to cellular network security">Cellular network security</string>
+    <string name="cellular_network_security_summary" description="The summary of the group of safety settings relating to cellular network security, which describes the group contents">Network type, encryption, notification controls</string>
+
   <!-- More settings -->
   <string name="private_space_title" description="The title of the entry for Private Space">Private Space</string>
   <string name="private_space_summary" description="The summary of the entry for Private Space settings, which describes the page contents">Setup Private Space, and more</string>
