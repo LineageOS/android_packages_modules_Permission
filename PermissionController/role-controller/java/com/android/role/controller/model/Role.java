@@ -128,6 +128,11 @@ public class Role {
     private final int mMinSdkVersion;
 
     /**
+     * Whether this role should only grant privileges when a role holder is actively added.
+     */
+    private final boolean mOnlyGrantWhenAdded;
+
+    /**
      * Whether this role should override user's choice about privileges when granting.
      */
     private final boolean mOverrideUserWhenGranting;
@@ -224,11 +229,11 @@ public class Role {
             @Nullable RoleBehavior behavior, @Nullable String defaultHoldersResourceName,
             @StringRes int descriptionResource, boolean exclusive, boolean fallBackToDefaultHolder,
             @StringRes int labelResource, int maxSdkVersion, int minSdkVersion,
-            boolean overrideUserWhenGranting, @StringRes int requestDescriptionResource,
-            @StringRes int requestTitleResource, boolean requestable,
-            @StringRes int searchKeywordsResource, @StringRes int shortLabelResource,
-            boolean showNone, boolean statik, boolean systemOnly, boolean visible,
-            @NonNull List<RequiredComponent> requiredComponents,
+            boolean onlyGrantWhenAdded, boolean overrideUserWhenGranting,
+            @StringRes int requestDescriptionResource, @StringRes int requestTitleResource,
+            boolean requestable, @StringRes int searchKeywordsResource,
+            @StringRes int shortLabelResource, boolean showNone, boolean statik, boolean systemOnly,
+            boolean visible, @NonNull List<RequiredComponent> requiredComponents,
             @NonNull List<Permission> permissions, @NonNull List<Permission> appOpPermissions,
             @NonNull List<AppOp> appOps, @NonNull List<PreferredActivity> preferredActivities,
             @Nullable String uiBehaviorName) {
@@ -242,6 +247,7 @@ public class Role {
         mLabelResource = labelResource;
         mMaxSdkVersion = maxSdkVersion;
         mMinSdkVersion = minSdkVersion;
+        mOnlyGrantWhenAdded = onlyGrantWhenAdded;
         mOverrideUserWhenGranting = overrideUserWhenGranting;
         mRequestDescriptionResource = requestDescriptionResource;
         mRequestTitleResource = requestTitleResource;
@@ -306,6 +312,13 @@ public class Role {
     @StringRes
     public int getShortLabelResource() {
         return mShortLabelResource;
+    }
+
+    /**
+     * @see #mOnlyGrantWhenAdded
+     */
+    public boolean shouldOnlyGrantWhenAdded() {
+        return mOnlyGrantWhenAdded;
     }
 
     /**
@@ -1000,6 +1013,7 @@ public class Role {
                 + ", mLabelResource=" + mLabelResource
                 + ", mMaxSdkVersion=" + mMaxSdkVersion
                 + ", mMinSdkVersion=" + mMinSdkVersion
+                + ", mOnlyGrantWhenAdded=" + mOnlyGrantWhenAdded
                 + ", mOverrideUserWhenGranting=" + mOverrideUserWhenGranting
                 + ", mRequestDescriptionResource=" + mRequestDescriptionResource
                 + ", mRequestTitleResource=" + mRequestTitleResource
