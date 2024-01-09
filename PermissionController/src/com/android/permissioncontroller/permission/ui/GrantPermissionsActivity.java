@@ -68,7 +68,6 @@ import androidx.annotation.GuardedBy;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
-import androidx.core.util.Consumer;
 import androidx.core.util.Preconditions;
 
 import com.android.modules.utils.build.SdkLevel;
@@ -489,7 +488,7 @@ public class GrantPermissionsActivity extends SettingsActivity
             mViewModel.sendDirectlyToSettings(top, info.getGroupName());
             return;
         } else if (info.getPrompt() == Prompt.NO_UI_PHOTO_PICKER_REDIRECT) {
-            mViewModel.openPhotoPicker(top, GRANTED_USER_SELECTED);
+            mViewModel.openPhotoPicker(top);
             return;
         } else if (info.getPrompt() == Prompt.NO_UI_FILTER_THIS_GROUP) {
             // Filtered permissions should be removed from the requested permissions list entirely,
@@ -760,16 +759,14 @@ public class GrantPermissionsActivity extends SettingsActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Consumer<Intent> callback = mViewModel.getActivityResultCallback();
-        if (callback == null || (requestCode != APP_PERMISSION_REQUEST_CODE
-                && requestCode != PHOTO_PICKER_REQUEST_CODE)) {
+        if (requestCode != APP_PERMISSION_REQUEST_CODE
+                && requestCode != PHOTO_PICKER_REQUEST_CODE) {
             return;
         }
         if (requestCode == PHOTO_PICKER_REQUEST_CODE) {
             data = new Intent("").putExtra(INTENT_PHOTOS_SELECTED, resultCode == RESULT_OK);
         }
-        callback.accept(data);
-        mViewModel.setActivityResultCallback(null);
+        mViewModel.handleCallback(data, requestCode);
     }
 
     @Override
@@ -789,11 +786,10 @@ public class GrantPermissionsActivity extends SettingsActivity
             mPreMergeShownGroupName = null;
         }
 
-        if (Objects.equals(READ_MEDIA_VISUAL, name)
-                && result == GrantPermissionsViewHandler.GRANTED_USER_SELECTED) {
+        if (Objects.equals(READ_MEDIA_VISUAL, name) && result == GRANTED_USER_SELECTED) {
             // Only the top activity can receive activity results
             Activity top = mFollowerActivities.isEmpty() ? this : mFollowerActivities.get(0);
-            mViewModel.openPhotoPicker(top, result);
+            mViewModel.openPhotoPicker(top);
             logGrantPermissionActivityButtons(name, affectedForegroundPermissions, result);
             return;
         }
