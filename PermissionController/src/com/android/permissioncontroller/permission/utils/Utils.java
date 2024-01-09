@@ -392,6 +392,8 @@ public final class Utils {
         /* do nothing - hide constructor */
     }
 
+    private static Object sLock = new Object();
+
     private static ArrayMap<UserHandle, Context> sUserContexts = new ArrayMap<>();
 
     /**
@@ -406,11 +408,13 @@ public final class Utils {
      * @throws RuntimeException If the app has no package name attached, which should never happen
      */
     public static @NonNull Context getUserContext(Context context, UserHandle user) {
-        if (!sUserContexts.containsKey(user)) {
-            sUserContexts.put(user, context.getApplicationContext()
-                    .createContextAsUser(user, 0));
+        synchronized (sLock) {
+            if (!sUserContexts.containsKey(user)) {
+                sUserContexts.put(user, context.getApplicationContext()
+                        .createContextAsUser(user, 0));
+            }
+            return Preconditions.checkNotNull(sUserContexts.get(user));
         }
-        return Preconditions.checkNotNull(sUserContexts.get(user));
     }
 
     /**
