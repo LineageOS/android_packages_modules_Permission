@@ -54,6 +54,7 @@ android_test {
         "platform-test-rules",
         "CtsVirtualDeviceCommonLib",
         "android.permission.flags-aconfig-java",
+        "androidx.test.rules",
     ],
     jni_libs: [
         "libctspermission_jni",
