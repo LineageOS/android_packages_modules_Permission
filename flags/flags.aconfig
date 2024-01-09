@@ -7,6 +7,14 @@ flag {
     bug: "292252664"
 }
 
+flag {
+    name: "private_profile_supported"
+    namespace: "permissions"
+    description: "This flag is used to support private profile in safety center"
+    bug: "286539356"
+    is_fixed_read_only: true
+}
+
 # TODO: Remove when wear_privacy_dashboard_enabled_read_only reaches to the next stage.
 flag {
     name: "wear_privacy_dashboard_enabled"

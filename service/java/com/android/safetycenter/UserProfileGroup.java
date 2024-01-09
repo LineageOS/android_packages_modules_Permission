@@ -18,6 +18,7 @@ package com.android.safetycenter;
 
 import static java.util.Objects.requireNonNull;
 
+import android.annotation.IntDef;
 import android.annotation.UserIdInt;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -31,6 +32,8 @@ import androidx.annotation.Nullable;
 
 import com.android.permission.util.UserUtils;
 
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -42,21 +45,46 @@ import java.util.Objects;
  *
  * @hide
  */
+//TODO(b/286539356) Do not expose the private profile when it's not running.
 public final class UserProfileGroup {
 
     private static final String TAG = "UserProfileGroup";
+    public static final @UserIdInt int USER_NULL = -10000;
 
     @UserIdInt private final int mProfileParentUserId;
     private final int[] mManagedProfilesUserIds;
     private final int[] mManagedRunningProfilesUserIds;
 
+    @UserIdInt private final int mPrivateProfileUserId;
+    private final boolean mPrivateProfileRunning;
+
+    /** Respresents the profile type of the primary user. */
+    public static final int PROFILE_TYPE_PRIMARY = 0;
+    /** Respresents the profile type of the managed profile. */
+    public static final int PROFILE_TYPE_MANAGED = 1;
+    /** Respresents the profile type of the private profile. */
+    public static final int PROFILE_TYPE_PRIVATE = 2;
+
+    @Retention(RetentionPolicy.SOURCE)
+    @IntDef(value = {PROFILE_TYPE_PRIMARY, PROFILE_TYPE_MANAGED, PROFILE_TYPE_PRIVATE})
+    public @interface ProfileType {
+        // This array needs to cover all profile types. So whenever a new entry is added above then
+        // please remember to include it in this array as well.
+        int[] ALL_PROFILE_TYPES =
+                {PROFILE_TYPE_PRIMARY, PROFILE_TYPE_MANAGED, PROFILE_TYPE_PRIVATE};
+    }
+
     private UserProfileGroup(
             @UserIdInt int profileParentUserId,
             int[] managedProfilesUserIds,
-            int[] managedRunningProfilesUserIds) {
+            int[] managedRunningProfilesUserIds,
+            @UserIdInt int privateProfileUserId,
+            boolean privateProfileRunning) {
         mProfileParentUserId = profileParentUserId;
         mManagedProfilesUserIds = managedProfilesUserIds;
         mManagedRunningProfilesUserIds = managedRunningProfilesUserIds;
+        mPrivateProfileUserId = privateProfileUserId;
+        mPrivateProfileRunning = privateProfileRunning;
     }
 
     /** Returns all the alive {@link UserProfileGroup}s. */
@@ -117,6 +145,10 @@ public final class UserProfileGroup {
         int[] managedRunningProfilesUserIds = new int[userProfiles.size()];
         int managedProfilesUserIdsLen = 0;
         int managedRunningProfilesUserIdsLen = 0;
+
+        int privateProfileUserId = USER_NULL;
+        boolean privateProfileRunning = false;
+
         for (int i = 0; i < userProfiles.size(); i++) {
             UserHandle userProfileHandle = userProfiles.get(i);
             int userProfileId = userProfileHandle.getIdentifier();
@@ -127,15 +159,19 @@ public final class UserProfileGroup {
                     managedRunningProfilesUserIds[managedRunningProfilesUserIdsLen++] =
                             userProfileId;
                 }
+            } else if (UserUtils.isPrivateProfile(userProfileId, context)) {
+                privateProfileUserId = userProfileId;
+                privateProfileRunning = UserUtils.isProfileRunning(userProfileId, context);
             }
         }
 
-        UserProfileGroup userProfileGroup =
-                new UserProfileGroup(
-                        profileParentUserId,
-                        Arrays.copyOf(managedProfilesUserIds, managedProfilesUserIdsLen),
-                        Arrays.copyOf(
-                                managedRunningProfilesUserIds, managedRunningProfilesUserIdsLen));
+        UserProfileGroup userProfileGroup = new UserProfileGroup(
+                profileParentUserId,
+                Arrays.copyOf(managedProfilesUserIds, managedProfilesUserIdsLen),
+                Arrays.copyOf(managedRunningProfilesUserIds, managedRunningProfilesUserIdsLen),
+                privateProfileUserId,
+                privateProfileRunning
+        );
         if (!userProfileGroup.contains(userId)) {
             Log.i(
                     TAG,
@@ -150,7 +186,8 @@ public final class UserProfileGroup {
         if (!isProfile(userId, context)) {
             return true;
         }
-        return UserUtils.isManagedProfile(userId, context);
+        return UserUtils.isManagedProfile(userId, context)
+                || UserUtils.isPrivateProfile(userId, context);
     }
 
     private static UserManager getUserManagerForUser(@UserIdInt int userId, Context context) {
@@ -236,6 +273,48 @@ public final class UserProfileGroup {
         return profileParentAndManagedRunningProfilesUserIds;
     }
 
+    /**
+     * Returns the profiles of the specified type. Returns an empty array if no profile of the
+     * specified type exists.
+     */
+    int[] getProfilesOfType(@ProfileType int profileType) {
+        switch (profileType) {
+            case PROFILE_TYPE_PRIMARY:
+                return new int[] {mProfileParentUserId};
+            case PROFILE_TYPE_MANAGED:
+                return mManagedProfilesUserIds;
+            case PROFILE_TYPE_PRIVATE:
+                return mPrivateProfileUserId != USER_NULL
+                        ? new int[]{mPrivateProfileUserId} : new int[]{};
+            default:
+                Log.w(TAG, "profiles requested for unexpected profile type " + profileType);
+                return new int[] {};
+        }
+    }
+
+    /**
+     * Returns true iff the given userId is contained in this {@link UserProfileGroup} and it's
+     * running.
+     */
+    boolean containsRunningUserId(@UserIdInt int userId, @ProfileType int profileType) {
+        switch (profileType) {
+            case PROFILE_TYPE_PRIMARY:
+                return true;
+            case PROFILE_TYPE_MANAGED:
+                for (int i = 0; i < mManagedRunningProfilesUserIds.length; i++) {
+                    if (mManagedRunningProfilesUserIds[i] == userId) {
+                        return true;
+                    }
+                }
+                return false;
+            case PROFILE_TYPE_PRIVATE:
+                return mPrivateProfileRunning;
+            default:
+                Log.w(TAG, "Unexpected profile type " + profileType);
+                return false;
+        }
+    }
+
     /** Returns whether the {@link UserProfileGroup} contains the given {@code userId}. */
     public boolean contains(@UserIdInt int userId) {
         if (userId == mProfileParentUserId) {
@@ -248,17 +327,7 @@ public final class UserProfileGroup {
             }
         }
 
-        return false;
-    }
-
-    /** Returns whether the given {@code userId} is associated with a running managed profile. */
-    boolean isManagedUserRunning(@UserIdInt int userId) {
-        for (int i = 0; i < mManagedRunningProfilesUserIds.length; i++) {
-            if (userId == mManagedRunningProfilesUserIds[i]) {
-                return true;
-            }
-        }
-        return false;
+        return USER_NULL != mPrivateProfileUserId && userId == mPrivateProfileUserId;
     }
 
     @Override
@@ -269,7 +338,9 @@ public final class UserProfileGroup {
         return mProfileParentUserId == that.mProfileParentUserId
                 && Arrays.equals(mManagedProfilesUserIds, that.mManagedProfilesUserIds)
                 && Arrays.equals(
-                        mManagedRunningProfilesUserIds, that.mManagedRunningProfilesUserIds);
+                        mManagedRunningProfilesUserIds, that.mManagedRunningProfilesUserIds)
+                && mPrivateProfileUserId == that.mPrivateProfileUserId
+                && mPrivateProfileRunning == that.mPrivateProfileRunning;
     }
 
     @Override
@@ -277,7 +348,9 @@ public final class UserProfileGroup {
         return Objects.hash(
                 mProfileParentUserId,
                 Arrays.hashCode(mManagedProfilesUserIds),
-                Arrays.hashCode(mManagedRunningProfilesUserIds));
+                Arrays.hashCode(mManagedRunningProfilesUserIds),
+                mPrivateProfileUserId,
+                mPrivateProfileRunning);
     }
 
     @Override
@@ -289,6 +362,10 @@ public final class UserProfileGroup {
                 + Arrays.toString(mManagedProfilesUserIds)
                 + ", mManagedRunningProfilesUserIds="
                 + Arrays.toString(mManagedRunningProfilesUserIds)
+                + ", mPrivateProfileUserId"
+                + mPrivateProfileUserId
+                + ", mPrivateProfileRunning"
+                + mPrivateProfileRunning
                 + '}';
     }
 }
