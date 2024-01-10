@@ -52,9 +52,6 @@ java_library {
     srcs: [
         ":statslog-permissioncontroller-java-gen",
     ],
-    lint: {
-        baseline_filename: "lint-baseline.xml",
-    },
 }
 
 java_library {
@@ -72,9 +69,6 @@ java_library {
         "//apex_available:platform",
         "com.android.permission",
     ],
-    lint: {
-        baseline_filename: "lint-baseline.xml",
-    },
 }
 
 android_library {
@@ -165,6 +159,7 @@ android_library {
         strict_updatability_linting: true,
         error_checks: ["Recycle"],
         baseline_filename: "lint-baseline.xml",
+
     },
 
     apex_available: [
@@ -195,7 +190,7 @@ android_app {
     lint: {
         strict_updatability_linting: true,
         error_checks: ["Recycle"],
-        baseline_filename: "lint-baseline.xml",
+
     },
 
     optimize: {

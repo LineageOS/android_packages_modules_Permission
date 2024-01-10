@@ -94,7 +94,7 @@ java_sdk_library {
     jarjar_rules: "jarjar-rules.txt",
     lint: {
         strict_updatability_linting: true,
-        baseline_filename: "lint-baseline.xml",
+
     },
     min_sdk_version: "31",
     permitted_packages: [
