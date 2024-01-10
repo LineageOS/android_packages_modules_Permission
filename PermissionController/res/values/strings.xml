@@ -1223,6 +1223,15 @@
     <!-- Search keywords for the NOTES role. [CHAR LIMIT=NONE] -->
     <string name="role_notes_search_keywords">notes</string>
 
+    <!-- Label for the wallet role. [CHAR LIMIT=30] -->
+    <string name="role_wallet_label">Default wallet app</string>
+    <!-- Short label for the wallet role. [CHAR LIMIT=30] -->
+    <string name="role_wallet_short_label">Wallet app</string>
+    <!-- Description for the wallet role. [CHAR LIMIT=NONE] -->
+    <string name="role_wallet_description">Wallet apps can store your credit and loyalty cards, car keys and other things to help with various forms of transactions.</string>
+    <string name="role_wallet_request_title">Set <xliff:g id="app_name" example="Super Wallet">%1$s</xliff:g> as your default wallet app?</string>
+    <string name="role_wallet_request_description">No permissions needed</string>
+
     <!-- Subtitle for the application that is the current default application [CHAR LIMIT=30] -->
     <string name="request_role_current_default">Current default</string>
 
