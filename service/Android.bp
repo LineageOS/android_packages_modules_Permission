@@ -44,9 +44,6 @@ java_library {
         "com.android.permission",
         "test_com.android.permission",
     ],
-    lint: {
-        baseline_filename: "lint-baseline.xml",
-    },
 }
 
 java_library {
@@ -65,9 +62,6 @@ java_library {
     installable: false,
     min_sdk_version: "30",
     sdk_version: "system_server_current",
-    lint: {
-        baseline_filename: "lint-baseline.xml",
-    },
 }
 
 java_sdk_library {
@@ -132,6 +126,7 @@ java_sdk_library {
     lint: {
         strict_updatability_linting: true,
         baseline_filename: "lint-baseline.xml",
+
     },
     min_sdk_version: "30",
     sdk_version: "system_server_current",
@@ -174,7 +169,4 @@ java_library {
     ],
     min_sdk_version: "30",
     sdk_version: "system_server_current",
-    lint: {
-        baseline_filename: "lint-baseline.xml",
-    },
 }
