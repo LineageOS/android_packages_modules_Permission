@@ -856,7 +856,9 @@ class SafetyCenterTestConfigs(private val context: Context) {
          * ID of the only source provided in [singleSourceConfig], [severityZeroConfig] and
          * [noPageOpenConfig].
          */
+        // LINT.IfChange(single_source_id)
         const val SINGLE_SOURCE_ID = "test_single_source_id"
+        // LINT.ThenChange(/tests/hostside/safetycenter/src/android/safetycenter/hostside/SafetyCenterInteractionLoggingHostTest.kt:single_source_id)
 
         /** ID of the only source provided in [singleSourceAllProfileConfig]. */
         const val SINGLE_SOURCE_ALL_PROFILE_ID = "test_single_source_all_profile_id"

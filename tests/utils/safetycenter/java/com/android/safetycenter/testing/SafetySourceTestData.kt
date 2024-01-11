@@ -802,7 +802,9 @@ class SafetySourceTestData(private val context: Context) {
         const val CRITICAL_ISSUE_ACTION_ID = "critical_issue_action_id"
 
         /** Issue type ID for all the issues in this file */
+        // LINT.IfChange(issue_type_id)
         const val ISSUE_TYPE_ID = "issue_type_id"
+        // LINT.ThenChange(/tests/hostside/safetycenter/src/android/safetycenter/hostside/SafetyCenterInteractionLoggingHostTest.kt:issue_type_id)
 
         const val CONFIRMATION_TITLE = "Confirmation title"
         const val CONFIRMATION_TEXT = "Confirmation text"

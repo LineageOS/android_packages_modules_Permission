@@ -19,14 +19,21 @@ package android.safetycenter.hostside.device
 import android.content.Context
 import android.os.Bundle
 import android.safetycenter.SafetyCenterManager.EXTRA_SAFETY_SOURCES_GROUP_ID
+import android.safetycenter.SafetyCenterManager.EXTRA_SAFETY_SOURCE_ID
+import android.safetycenter.SafetyCenterManager.EXTRA_SAFETY_SOURCE_ISSUE_ID
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.android.safetycenter.testing.SafetyCenterActivityLauncher.launchSafetyCenterActivity
+import com.android.safetycenter.testing.SafetyCenterActivityLauncher.launchSafetyCenterQsActivity
 import com.android.safetycenter.testing.SafetyCenterActivityLauncher.openPageAndExit
 import com.android.safetycenter.testing.SafetyCenterFlags
 import com.android.safetycenter.testing.SafetyCenterTestConfigs
+import com.android.safetycenter.testing.SafetyCenterTestConfigs.Companion.SINGLE_SOURCE_ID
 import com.android.safetycenter.testing.SafetyCenterTestHelper
 import com.android.safetycenter.testing.SafetyCenterTestRule
+import com.android.safetycenter.testing.SafetySourceTestData
+import com.android.safetycenter.testing.SafetySourceTestData.Companion.INFORMATION_ISSUE_ID
+import com.android.safetycenter.testing.UiTestHelper.waitAllTextDisplayed
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -47,6 +54,7 @@ class SafetyCenterInteractionLoggingHelperTests {
     private val context: Context = ApplicationProvider.getApplicationContext()
     private val safetyCenterTestHelper = SafetyCenterTestHelper(context)
     private val safetyCenterTestConfigs = SafetyCenterTestConfigs(context)
+    private val safetySourceTestData = SafetySourceTestData(context)
 
     @get:Rule val safetyCenterTestRule = SafetyCenterTestRule(safetyCenterTestHelper)
 
@@ -58,6 +66,34 @@ class SafetyCenterInteractionLoggingHelperTests {
     @Test
     fun openSafetyCenter() {
         context.launchSafetyCenterActivity {}
+    }
+
+    @Test
+    fun openSafetyCenterFullFromQs() {
+        safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.singleSourceConfig)
+        safetyCenterTestHelper.setData(SINGLE_SOURCE_ID, safetySourceTestData.informationWithIssue)
+
+        context.launchSafetyCenterQsActivity {
+            openPageAndExit("Settings") { waitAllTextDisplayed("OK") }
+        }
+    }
+
+    @Test
+    fun openSafetyCenterWithIssueIntent() {
+        safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.singleSourceConfig)
+
+        safetyCenterTestHelper.setData(SINGLE_SOURCE_ID, safetySourceTestData.informationWithIssue)
+
+        val extras = Bundle()
+        extras.putString(EXTRA_SAFETY_SOURCE_ID, SINGLE_SOURCE_ID)
+        extras.putString(EXTRA_SAFETY_SOURCE_ISSUE_ID, INFORMATION_ISSUE_ID)
+
+        context.launchSafetyCenterActivity(extras) {}
+    }
+
+    @Test
+    fun openSafetyCenterQs() {
+        context.launchSafetyCenterQsActivity {}
     }
 
     @Test
