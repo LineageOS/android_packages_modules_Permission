@@ -30,6 +30,7 @@ android_test_helper_app {
     static_libs: [
         "androidx.test.rules",
         "androidx.test.ext.junit",
+        "safety-center-pending-intents",
         "safety-center-test-util-lib",
     ],
 }
