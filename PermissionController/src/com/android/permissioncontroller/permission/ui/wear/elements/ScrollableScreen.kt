@@ -43,6 +43,7 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.input.rotary.onRotaryScrollEvent
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.platform.testTag
@@ -50,6 +51,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Lifecycle
@@ -144,6 +146,10 @@ internal fun Scaffold(
 ) {
     val initialCenterIndex = 0
     val scrollContentTopPadding = 32.dp
+    val centerHeightDp = Dp(LocalConfiguration.current.screenHeightDp / 2.0f)
+    val initialCenterItemScrollOffset = scrollContentTopPadding + 10.dp
+    val scrollAwayOffset = centerHeightDp - initialCenterItemScrollOffset
+
     val focusRequester = remember { FocusRequester() }
     val listState = remember { ScalingLazyListState(initialCenterItemIndex = initialCenterIndex) }
     val coroutineScope = rememberCoroutineScope()
@@ -165,12 +171,8 @@ internal fun Scaffold(
                 if (showTimeText && !isLoading) {
                     TimeText(
                         modifier =
-                            Modifier.scrollAway(
-                                listState,
-                                initialCenterIndex,
-                                scrollContentTopPadding
-                            ),
-                        contentPadding = PaddingValues(15.dp)
+                            Modifier.scrollAway(listState, initialCenterIndex, scrollAwayOffset),
+                        contentPadding = PaddingValues(5.dp)
                     )
                 }
             },
