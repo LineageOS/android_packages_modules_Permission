@@ -28,6 +28,8 @@ import androidx.preference.Preference;
 import com.android.permissioncontroller.role.ui.TwoTargetPreference;
 import com.android.role.controller.model.Role;
 
+import java.util.List;
+
 /***
  * Interface for UI behavior for roles
  */
@@ -53,11 +55,13 @@ public interface RoleUiBehavior {
      *
      * @param role the role to prepare the preference for
      * @param preference the {@link Preference} for this role
+     * @param applicationInfos a list {@link ApplicationInfo} for the current role holders
      * @param user the user for this role
      * @param context the {@code Context} to retrieve system services
      */
     default void preparePreferenceAsUser(@NonNull Role role,
             @NonNull TwoTargetPreference preference,
+            @NonNull List<ApplicationInfo> applicationInfos,
             @NonNull UserHandle user,
             @NonNull Context context) {}
 

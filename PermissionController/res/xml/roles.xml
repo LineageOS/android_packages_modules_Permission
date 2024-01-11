@@ -1655,4 +1655,22 @@
             <app-op-permission name="android.permission.PACKAGE_USAGE_STATS" />
         </app-op-permissions>
     </role>
+
+    <role
+        name="android.app.role.WALLET"
+        behavior="WalletRoleBehavior"
+        defaultHolders="config_defaultWallet"
+        description="@string/role_wallet_description"
+        exclusive="true"
+        label="@string/role_wallet_label"
+        minSdkVersion="35"
+        overrideUserWhenGranting="true"
+        requestable="true"
+        requestDescription="@string/role_wallet_request_description"
+        requestTitle="@string/role_wallet_request_title"
+        showNone="true"
+        shortLabel="@string/role_wallet_short_label"
+        uiBehavior="WalletRoleUiBehavior"/>
+
+
 </roles>

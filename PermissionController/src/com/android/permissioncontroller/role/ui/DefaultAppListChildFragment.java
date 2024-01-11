@@ -191,7 +191,8 @@ public class DefaultAppListChildFragment<PF extends PreferenceFragmentCompat
                 preference.setIcon(Utils.getBadgedIcon(context, holderApplicationInfo));
                 preference.setSummary(Utils.getAppLabel(holderApplicationInfo, context));
             }
-            RoleUiBehaviorUtils.preparePreferenceAsUser(role, rolePreference, user, context);
+            RoleUiBehaviorUtils.preparePreferenceAsUser(role, holderApplicationInfos,
+                    rolePreference, user, context);
             preferenceGroup.addPreference(preference);
         }
     }

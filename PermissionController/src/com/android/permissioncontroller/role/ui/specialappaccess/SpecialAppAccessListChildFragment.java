@@ -115,7 +115,8 @@ public class SpecialAppAccessListChildFragment<PF extends PreferenceFragmentComp
             } else {
                 preference = rolePreference.asPreference();
             }
-            RoleUiBehaviorUtils.preparePreferenceAsUser(role, rolePreference,
+            RoleUiBehaviorUtils.preparePreferenceAsUser(role, roleItem.getHolderApplicationInfos(),
+                    rolePreference,
                     Process.myUserHandle(),
                     context);
             preferenceScreen.addPreference(preference);
