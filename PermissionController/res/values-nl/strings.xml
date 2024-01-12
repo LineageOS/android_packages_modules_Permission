@@ -204,7 +204,9 @@
     <string name="auto_revoke_label" msgid="5068393642936571656">"Rechten intrekken als app niet wordt gebruikt"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"Rechten intrekken en ruimte vrijmaken"</string>
     <string name="unused_apps_label_v2" msgid="7058776770056517980">"App-activiteit onderbreken indien niet gebruikt"</string>
+    <string name="unused_apps_label_v3" msgid="693340578642156657">"App beheren indien ongebruikt"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Verwijder rechten en tijdelijke bestanden, en stop meldingen"</string>
+    <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Verwijder rechten en tijdelijke bestanden, stop meldingen en archiveer de app"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"Om je gegevens te beschermen worden de rechten voor deze app verwijderd als de app een aantal maanden niet is gebruikt."</string>
     <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"Om je gegevens te beschermen worden de volgende rechten ingetrokken als de app een paar maanden niet is gebruikt: <xliff:g id="PERMS">%1$s</xliff:g>"</string>
     <string name="auto_revoked_apps_page_summary" msgid="6594753657893756536">"Om je gegevens te beschermen zijn de rechten verwijderd van apps die al een paar maanden niet zijn gebruikt."</string>
@@ -401,6 +403,16 @@
     <string name="role_notes_short_label" msgid="8796604147546125285">"Notitie-app"</string>
     <string name="role_notes_description" msgid="8496852798616883551">"Apps waarmee je notities op je apparaat kunt maken"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"notities"</string>
+    <!-- no translation found for role_wallet_label (3719419175656204207) -->
+    <skip />
+    <!-- no translation found for role_wallet_short_label (6521288403762457452) -->
+    <skip />
+    <!-- no translation found for role_wallet_description (3726535836165949838) -->
+    <skip />
+    <!-- no translation found for role_wallet_request_title (4770217108262737093) -->
+    <skip />
+    <!-- no translation found for role_wallet_request_description (6305487425777483053) -->
+    <skip />
     <string name="request_role_current_default" msgid="738722892438247184">"Huidige standaard-app"</string>
     <string name="request_role_dont_ask_again" msgid="3556017886029520306">"Niet meer vragen"</string>
     <string name="request_role_set_as_default" msgid="4253949643984172880">"Standaard instellen"</string>
@@ -646,10 +658,7 @@
     <string name="safety_label_changes_notification_title" msgid="4479955083472203839">"Updates voor gegevens delen"</string>
     <string name="safety_label_changes_notification_desc" msgid="7808764283266234675">"Sommige apps kunnen je locatiegegevens nu op een andere manier delen"</string>
     <string name="safety_label_changes_gear_description" msgid="2655887555599138509">"Instellingen"</string>
-    <!-- no translation found for wear_app_perms_24h_access (8668121661337328895) -->
-    <skip />
-    <!-- no translation found for wear_app_perms_24h_access_yest (7069312481704735679) -->
-    <skip />
-    <!-- no translation found for wear_app_perms_7d_access (4608069019194676432) -->
-    <skip />
+    <string name="wear_app_perms_24h_access" msgid="8668121661337328895">"Geopend: <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
+    <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"Geopend: gisteren om <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
+    <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"Geopend: <xliff:g id="TIME_DATE_0">%1$s</xliff:g> om <xliff:g id="TIME_DATE_1">%2$s</xliff:g>"</string>
 </resources>

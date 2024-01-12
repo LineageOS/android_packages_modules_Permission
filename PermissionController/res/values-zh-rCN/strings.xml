@@ -204,7 +204,9 @@
     <string name="auto_revoke_label" msgid="5068393642936571656">"如果未使用此应用，则移除相关权限"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"撤消权限并释放空间"</string>
     <string name="unused_apps_label_v2" msgid="7058776770056517980">"暂停闲置应用的活动"</string>
+    <string name="unused_apps_label_v3" msgid="693340578642156657">"管理闲置应用"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"移除权限、删除临时文件并停止发送通知"</string>
+    <string name="unused_apps_summary_v2" msgid="5011313200815115802">"撤消权限、删除临时文件、停止发送通知并归档应用"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"为了保护您的数据，如果您连续几个月未使用此应用，系统会移除它的权限。"</string>
     <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"为了保护您的数据，如果您连续几个月未使用此应用，系统会移除其以下权限：<xliff:g id="PERMS">%1$s</xliff:g>"</string>
     <string name="auto_revoked_apps_page_summary" msgid="6594753657893756536">"为了保护您的数据，对于您连续几个月未使用过的应用，系统已将其权限移除。"</string>
@@ -401,6 +403,16 @@
     <string name="role_notes_short_label" msgid="8796604147546125285">"记事应用"</string>
     <string name="role_notes_description" msgid="8496852798616883551">"允许您在设备上记事的应用"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"记事"</string>
+    <!-- no translation found for role_wallet_label (3719419175656204207) -->
+    <skip />
+    <!-- no translation found for role_wallet_short_label (6521288403762457452) -->
+    <skip />
+    <!-- no translation found for role_wallet_description (3726535836165949838) -->
+    <skip />
+    <!-- no translation found for role_wallet_request_title (4770217108262737093) -->
+    <skip />
+    <!-- no translation found for role_wallet_request_description (6305487425777483053) -->
+    <skip />
     <string name="request_role_current_default" msgid="738722892438247184">"当前默认应用"</string>
     <string name="request_role_dont_ask_again" msgid="3556017886029520306">"不再询问"</string>
     <string name="request_role_set_as_default" msgid="4253949643984172880">"设为默认应用"</string>
@@ -646,10 +658,7 @@
     <string name="safety_label_changes_notification_title" msgid="4479955083472203839">"数据分享方式变更"</string>
     <string name="safety_label_changes_notification_desc" msgid="7808764283266234675">"部分应用更改了位置数据分享方式"</string>
     <string name="safety_label_changes_gear_description" msgid="2655887555599138509">"设置"</string>
-    <!-- no translation found for wear_app_perms_24h_access (8668121661337328895) -->
-    <skip />
-    <!-- no translation found for wear_app_perms_24h_access_yest (7069312481704735679) -->
-    <skip />
-    <!-- no translation found for wear_app_perms_7d_access (4608069019194676432) -->
-    <skip />
+    <string name="wear_app_perms_24h_access" msgid="8668121661337328895">"<xliff:g id="TIME_DATE">%1$s</xliff:g>访问过"</string>
+    <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"昨天<xliff:g id="TIME_DATE">%1$s</xliff:g>访问过"</string>
+    <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"<xliff:g id="TIME_DATE_0">%1$s</xliff:g><xliff:g id="TIME_DATE_1">%2$s</xliff:g>访问过"</string>
 </resources>

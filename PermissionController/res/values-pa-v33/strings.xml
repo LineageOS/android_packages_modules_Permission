@@ -28,7 +28,7 @@
     <string name="safety_center_entry_group_item_content_description" msgid="7348298582877249787">"ਸੂਚੀ ਆਈਟਮ। <xliff:g id="ENTRY_ITEM_TITLE">%1$s</xliff:g>. <xliff:g id="ENTRY_ITEM_SUMMARY">%2$s</xliff:g>"</string>
     <string name="safety_center_entry_content_description" msgid="3639565652938224321">"<xliff:g id="ENTRY_ITEM_TITLE">%1$s</xliff:g>. <xliff:g id="ENTRY_ITEM_SUMMARY">%2$s</xliff:g>"</string>
     <string name="safety_center_more_issues_card_title" msgid="7425844746197493312">"ਹੋਰ ਅਲਰਟ"</string>
-    <string name="safety_center_dismissed_issues_card_title" msgid="2340129842725145733">"ਖਾਰਜ ਕੀਤੀਆਂ ਗਈਆਂ ਸੁਚੇਤਨਾਵਾਂ"</string>
+    <string name="safety_center_dismissed_issues_card_title" msgid="2340129842725145733">"ਖਾਰਜ ਕੀਤੇ ਅਲਰਟ"</string>
     <string name="safety_center_more_issues_card_expand_action" msgid="7109451851052272946">"{count,plural, =1{ਵਿਸਤਾਰ ਕਰੋ ਅਤੇ ਇੱਕ ਹੋਰ ਅਲਰਟ ਦੇਖੋ}one{ਵਿਸਤਾਰ ਕਰੋ ਅਤੇ # ਹੋਰ ਅਲਰਟ ਦੇਖੋ}other{ਵਿਸਤਾਰ ਕਰੋ ਅਤੇ # ਹੋਰ ਅਲਰਟ ਦੇਖੋ}}"</string>
     <string name="safety_center_issue_card_prefix_content_description" msgid="1447445289637043544">"ਅਲਰਟ। <xliff:g id="ISSUE_CARD_TITLE">%1$s</xliff:g>"</string>
     <string name="safety_center_resolved_issue_fallback" msgid="8548932070610766651">"ਕਾਰਵਾਈ ਪੂਰੀ ਹੋਈ"</string>
