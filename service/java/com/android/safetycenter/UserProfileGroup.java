@@ -246,11 +246,6 @@ public final class UserProfileGroup {
         return mProfileParentUserId;
     }
 
-    /** Returns the running managed profile user ids of the {@link UserProfileGroup}. */
-    public int[] getManagedRunningProfilesUserIds() {
-        return mManagedRunningProfilesUserIds;
-    }
-
     /**
      * A convenience method to get all the profile ids of all the users of all profile types. So, in
      * essence, this is equivalent to iterating through all the profile types using
@@ -275,21 +270,26 @@ public final class UserProfileGroup {
     }
 
     /**
-     * Convenience method that combines the results of {@link
-     * UserProfileGroup#getProfileParentUserId()} and {@link
-     * UserProfileGroup#getManagedRunningProfilesUserIds()}.
+     * A convenience method to get all the profile ids of all the users (that are currently running)
+     * of all profile types. So, in essence, this is equivalent to iterating through all the profile
+     * {types using {@link ProfileType#ALL_PROFILE_TYPES} and getting all the users for each of the
+     * profile type using {@link #getProfilesOfType(int profileType)} only if they are running.
      */
-    public int[] getProfileParentAndManagedRunningProfilesUserIds() {
-        int[] profileParentAndManagedRunningProfilesUserIds =
-                new int[mManagedRunningProfilesUserIds.length + 1];
-        profileParentAndManagedRunningProfilesUserIds[0] = mProfileParentUserId;
+    public int[] getAllRunningProfilesUserIds() {
+        int[] allRunningProfileIds = new int[getNumRunningProfiles()];
+        allRunningProfileIds[0] = mProfileParentUserId;
         System.arraycopy(
                 mManagedRunningProfilesUserIds,
                 /* srcPos= */ 0,
-                profileParentAndManagedRunningProfilesUserIds,
+                allRunningProfileIds,
                 /* destPos= */ 1,
                 mManagedRunningProfilesUserIds.length);
-        return profileParentAndManagedRunningProfilesUserIds;
+
+        if (mPrivateProfileRunning) {
+            allRunningProfileIds[allRunningProfileIds.length - 1] = mPrivateProfileUserId;
+        }
+
+        return allRunningProfileIds;
     }
 
     /**
