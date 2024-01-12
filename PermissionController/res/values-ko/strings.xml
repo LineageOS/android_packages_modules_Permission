@@ -349,7 +349,7 @@
     <string name="accessibility_service_dialog_bottom_text_multiple" msgid="7009848932395519852">"이 앱이 내 화면, 작업, 입력 내용을 보고 작업을 실행하며 디스플레이를 제어할 수 있습니다."</string>
     <string name="role_assistant_label" msgid="4727586018198208128">"기본 디지털 어시스턴트 앱"</string>
     <string name="role_assistant_short_label" msgid="3369003713187703399">"디지털 어시스턴트 앱"</string>
-    <string name="role_assistant_description" msgid="6622458130459922952">"지원 앱은 화면에 표시된 정보에 맞게 도움을 줄 수 있습니다. 일부 앱은 통합된 지원을 제공하기 위해 런처와 음성 입력 서비스를 모두 지원합니다."</string>
+    <string name="role_assistant_description" msgid="6622458130459922952">"지원 앱은 화면에 표시된 정보를 기반으로 도움을 줄 수 있습니다. 일부 앱은 통합된 지원을 제공하기 위해 런처와 음성 입력 서비스를 모두 지원합니다."</string>
     <string name="role_browser_label" msgid="2877796144554070207">"기본 브라우저 앱"</string>
     <string name="role_browser_short_label" msgid="6745009127123292296">"브라우저 앱"</string>
     <string name="role_browser_description" msgid="3465253637499842671">"인터넷에 액세스하고 탭하는 링크를 표시하는 앱"</string>
