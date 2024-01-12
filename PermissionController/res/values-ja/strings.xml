@@ -351,7 +351,7 @@
     <string name="accessibility_service_dialog_bottom_text_multiple" msgid="7009848932395519852">"これらのアプリでは、画面、アクション、入力の表示、アクションの実行、ディスプレイの操作を行えます。"</string>
     <string name="role_assistant_label" msgid="4727586018198208128">"デフォルトのデジタル アシスタント アプリ"</string>
     <string name="role_assistant_short_label" msgid="3369003713187703399">"デジタル アシスタント アプリ"</string>
-    <string name="role_assistant_description" msgid="6622458130459922952">"アシストアプリは、表示している画面の情報に基づいてアシスタントを提供します。一部のアプリはランチャーと音声入力サービスの両方に対応しており、統合されたアシスタントを提供します。"</string>
+    <string name="role_assistant_description" msgid="6622458130459922952">"アシストアプリは、表示している画面の情報に基づいてサポートを提供します。一部のアプリはランチャーと音声入力サービスの両方に対応しており、統合されたサポートを提供します。"</string>
     <string name="role_browser_label" msgid="2877796144554070207">"デフォルトのブラウザアプリ"</string>
     <string name="role_browser_short_label" msgid="6745009127123292296">"ブラウザアプリ"</string>
     <string name="role_browser_description" msgid="3465253637499842671">"インターネットにアクセスするためのアプリです。タップしたリンクは、このアプリで開きます。"</string>

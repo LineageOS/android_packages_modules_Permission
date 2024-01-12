@@ -371,7 +371,7 @@
     <string name="role_sms_search_keywords" msgid="8022048144395047352">"ਲਿਖਤ ਸੁਨੇਹਾ, ਲਿਖਤ ਭੇਜਣਾ, ਸੁਨੇਹੇ, ਸੁਨੇਹਾ ਭੇਜਣਾ"</string>
     <string name="role_emergency_label" msgid="7028825857206842366">"ਪੂਰਵ-ਨਿਰਧਾਰਤ ਸੰਕਟਕਾਲੀਨ ਐਪ"</string>
     <string name="role_emergency_short_label" msgid="2388431453335350348">"ਸੰਕਟਕਾਲੀਨ ਐਪ"</string>
-    <string name="role_emergency_description" msgid="5051840234887686630">"ਐਪਾਂ ਜੋ ਤੁਹਾਨੂੰ ਤੁਹਾਡੀ ਡਾਕਟਰੀ ਜਾਣਕਾਰੀ ਰਿਕਾਰਡ ਕਰਨ ਅਤੇ ਇਸਨੂੰ ਸੰਕਟਕਾਲੀਨ ਮਦਦਗਾਰਾਂ ਤੱਕ ਪਹੁੰਚਯੋਗ ਬਣਾਉਣ ਦਿੰਦੀਆਂ ਹਨ; ਗੰਭੀਰ ਮੌਸਮੀ ਘਟਨਾਵਾਂ ਅਤੇ ਆਫ਼ਤਾਂ ਬਾਰੇ ਸੁਚੇਤਨਾਵਾਂ ਪ੍ਰਾਪਤ ਕਰਨ ਦਿੰਦੀਆਂ ਹਨ; ਤੁਹਾਨੂੰ ਮਦਦ ਦੀ ਲੋੜ ਪੈਣ \'ਤੇ ਹੋਰਾਂ ਨੂੰ ਸੂਚਿਤ ਕਰਨ ਦਿੰਦੀਆਂ ਹਨ"</string>
+    <string name="role_emergency_description" msgid="5051840234887686630">"ਐਪਾਂ ਜੋ ਤੁਹਾਨੂੰ ਤੁਹਾਡੀ ਡਾਕਟਰੀ ਜਾਣਕਾਰੀ ਰਿਕਾਰਡ ਕਰਨ ਅਤੇ ਇਸਨੂੰ ਐਮਰਜੈਂਸੀ ਮਦਦਗਾਰਾਂ ਤੱਕ ਪਹੁੰਚਯੋਗ ਬਣਾਉਣ ਦਿੰਦੀਆਂ ਹਨ; ਬਹੁਤ ਜ਼ਿਆਦਾ ਖਰਾਬ ਮੌਸਮੀ ਘਟਨਾਵਾਂ ਅਤੇ ਆਫ਼ਤਾਂ ਬਾਰੇ ਅਲਰਟ ਪ੍ਰਾਪਤ ਕਰਨ ਦਿੰਦੀਆਂ ਹਨ; ਤੁਹਾਨੂੰ ਮਦਦ ਦੀ ਲੋੜ ਪੈਣ \'ਤੇ ਹੋਰਾਂ ਨੂੰ ਸੂਚਿਤ ਕਰਨ ਦਿੰਦੀਆਂ ਹਨ"</string>
     <string name="role_emergency_request_title" msgid="8469579020654348567">"ਕੀ <xliff:g id="APP_NAME">%1$s</xliff:g> ਨੂੰ ਤੁਹਾਡੀ ਪੂਰਵ-ਨਿਰਧਾਰਤ ਸੰਕਟਕਾਲੀਨ ਐਪ ਵਜੋਂ ਸੈੱਟ ਕਰਨਾ ਹੈ?"</string>
     <string name="role_emergency_request_description" msgid="131645948770262850">"ਕਿਸੇ ਇਜਾਜ਼ਤ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ"</string>
     <string name="role_emergency_search_keywords" msgid="1920007722599213358">"ice"</string>
