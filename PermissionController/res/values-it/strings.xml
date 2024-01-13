@@ -204,7 +204,9 @@
     <string name="auto_revoke_label" msgid="5068393642936571656">"Rimuovi autorizzazioni se non in uso"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"Rimuovi autorizzazioni e libera spazio"</string>
     <string name="unused_apps_label_v2" msgid="7058776770056517980">"Sospendi attività app se inutilizzata"</string>
+    <string name="unused_apps_label_v3" msgid="693340578642156657">"Gestisci l\'app se inutilizzata"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Rimuovi le autorizzazioni, elimina i file temporanei e interrompi le notifiche"</string>
+    <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Rimuovi le autorizzazioni, elimina i file temporanei, interrompi le notifiche e archivia l\'app"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"Per proteggere i tuoi dati, le autorizzazioni di questa app verranno rimosse se l\'app non viene usata per alcuni mesi."</string>
     <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"Per proteggere i tuoi dati, se l\'app non viene usata per alcuni mesi, le seguenti autorizzazioni verranno rimosse: <xliff:g id="PERMS">%1$s</xliff:g>"</string>
     <string name="auto_revoked_apps_page_summary" msgid="6594753657893756536">"Per proteggere i tuoi dati, sono state rimosse le autorizzazioni dalle app che non hai utilizzato per alcuni mesi."</string>
@@ -401,6 +403,16 @@
     <string name="role_notes_short_label" msgid="8796604147546125285">"App per le note"</string>
     <string name="role_notes_description" msgid="8496852798616883551">"App che ti permettono di prendere appunti sul tuo dispositivo"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"note"</string>
+    <!-- no translation found for role_wallet_label (3719419175656204207) -->
+    <skip />
+    <!-- no translation found for role_wallet_short_label (6521288403762457452) -->
+    <skip />
+    <!-- no translation found for role_wallet_description (3726535836165949838) -->
+    <skip />
+    <!-- no translation found for role_wallet_request_title (4770217108262737093) -->
+    <skip />
+    <!-- no translation found for role_wallet_request_description (6305487425777483053) -->
+    <skip />
     <string name="request_role_current_default" msgid="738722892438247184">"Valore predefinito attuale"</string>
     <string name="request_role_dont_ask_again" msgid="3556017886029520306">"Non chiedermelo più"</string>
     <string name="request_role_set_as_default" msgid="4253949643984172880">"Imposta predefinito"</string>
@@ -646,10 +658,7 @@
     <string name="safety_label_changes_notification_title" msgid="4479955083472203839">"Aggiornamenti relativi alla condivisione dei dati"</string>
     <string name="safety_label_changes_notification_desc" msgid="7808764283266234675">"Alcune app hanno cambiato la modalità di condivisione dei tuoi dati sulla posizione"</string>
     <string name="safety_label_changes_gear_description" msgid="2655887555599138509">"Impostazioni"</string>
-    <!-- no translation found for wear_app_perms_24h_access (8668121661337328895) -->
-    <skip />
-    <!-- no translation found for wear_app_perms_24h_access_yest (7069312481704735679) -->
-    <skip />
-    <!-- no translation found for wear_app_perms_7d_access (4608069019194676432) -->
-    <skip />
+    <string name="wear_app_perms_24h_access" msgid="8668121661337328895">"Ultimo accesso: <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
+    <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"Ultimo accesso ieri: <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
+    <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"Ultimo accesso: <xliff:g id="TIME_DATE_0">%1$s</xliff:g> <xliff:g id="TIME_DATE_1">%2$s</xliff:g>"</string>
 </resources>

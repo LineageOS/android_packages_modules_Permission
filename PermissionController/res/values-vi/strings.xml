@@ -204,7 +204,9 @@
     <string name="auto_revoke_label" msgid="5068393642936571656">"Thu hồi quyền nếu bạn không dùng ứng dụng"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"Thu hồi quyền và giải phóng dung lượng"</string>
     <string name="unused_apps_label_v2" msgid="7058776770056517980">"Tạm dừng hoạt động trong ứng dụng nếu không dùng"</string>
+    <string name="unused_apps_label_v3" msgid="693340578642156657">"Quản lý ứng dụng nếu không dùng"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Loại bỏ quyền, xoá tệp tạm thời và dừng thông báo"</string>
+    <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Loại bỏ quyền, xoá tệp tạm thời, dừng thông báo và lưu trữ ứng dụng"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"Để bảo vệ dữ liệu của bạn, các quyền cấp cho ứng dụng này sẽ bị thu hồi nếu bạn không dùng ứng dụng trong vài tháng."</string>
     <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"Để bảo vệ dữ liệu của bạn, nếu bạn không dùng ứng dụng này trong vài tháng thì các quyền sau đây sẽ bị thu hồi: <xliff:g id="PERMS">%1$s</xliff:g>"</string>
     <string name="auto_revoked_apps_page_summary" msgid="6594753657893756536">"Để bảo vệ dữ liệu của bạn, quản trị viên CNTT đã thu hồi các quyền đối với những ứng dụng bạn không dùng trong vài tháng."</string>
@@ -401,6 +403,16 @@
     <string name="role_notes_short_label" msgid="8796604147546125285">"Ứng dụng ghi chú"</string>
     <string name="role_notes_description" msgid="8496852798616883551">"Các ứng dụng cho phép bạn tạo ghi chú trên thiết bị"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"ghi chú"</string>
+    <!-- no translation found for role_wallet_label (3719419175656204207) -->
+    <skip />
+    <!-- no translation found for role_wallet_short_label (6521288403762457452) -->
+    <skip />
+    <!-- no translation found for role_wallet_description (3726535836165949838) -->
+    <skip />
+    <!-- no translation found for role_wallet_request_title (4770217108262737093) -->
+    <skip />
+    <!-- no translation found for role_wallet_request_description (6305487425777483053) -->
+    <skip />
     <string name="request_role_current_default" msgid="738722892438247184">"Ứng dụng mặc định hiện tại"</string>
     <string name="request_role_dont_ask_again" msgid="3556017886029520306">"Không hỏi lại"</string>
     <string name="request_role_set_as_default" msgid="4253949643984172880">"Đặt làm mặc định"</string>
@@ -646,10 +658,7 @@
     <string name="safety_label_changes_notification_title" msgid="4479955083472203839">"Nội dung cập nhật về cách thức chia sẻ dữ liệu"</string>
     <string name="safety_label_changes_notification_desc" msgid="7808764283266234675">"Một số ứng dụng đã thay đổi cách thức có thể được dùng để chia sẻ dữ liệu vị trí của bạn"</string>
     <string name="safety_label_changes_gear_description" msgid="2655887555599138509">"Cài đặt"</string>
-    <!-- no translation found for wear_app_perms_24h_access (8668121661337328895) -->
-    <skip />
-    <!-- no translation found for wear_app_perms_24h_access_yest (7069312481704735679) -->
-    <skip />
-    <!-- no translation found for wear_app_perms_7d_access (4608069019194676432) -->
-    <skip />
+    <string name="wear_app_perms_24h_access" msgid="8668121661337328895">"Truy cập lúc <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
+    <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"Truy cập hôm qua lúc <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
+    <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"Truy cập lúc <xliff:g id="TIME_DATE_1">%2$s</xliff:g> ngày <xliff:g id="TIME_DATE_0">%1$s</xliff:g>"</string>
 </resources>

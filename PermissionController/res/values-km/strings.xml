@@ -204,7 +204,9 @@
     <string name="auto_revoke_label" msgid="5068393642936571656">"ដកការ​អនុញ្ញាតចេញ ប្រសិនបើ​មិនប្រើប្រាស់​កម្មវិធី"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"ដក​ការអនុញ្ញាតចេញ និងបង្កើន​ទំហំផ្ទុក"</string>
     <string name="unused_apps_label_v2" msgid="7058776770056517980">"ផ្អាក​សកម្មភាព​កម្មវិធី ប្រសិនបើមិនប្រើ"</string>
+    <string name="unused_apps_label_v3" msgid="693340578642156657">"គ្រប់គ្រងកម្មវិធី ប្រសិនបើមិនបានប្រើ"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"ដកការអនុញ្ញាតចេញ លុបឯកសារបណ្ដោះអាសន្ន និងបញ្ឈប់ការជូនដំណឹង"</string>
+    <string name="unused_apps_summary_v2" msgid="5011313200815115802">"ដកការអនុញ្ញាតចេញ លុបឯកសារបណ្ដោះអាសន្ន បញ្ឈប់ការជូនដំណឹង និងទុកកម្មវិធីក្នុងបណ្ណសារ"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"ដើម្បីការពារ​ទិន្នន័យរបស់អ្នក ការអនុញ្ញាត​សម្រាប់កម្មវិធីនេះ​នឹងត្រូវ​ដកចេញ ប្រសិនបើ​មិនប្រើប្រាស់​កម្មវិធីនេះ​រយៈពេល​ពីរបីខែ។"</string>
     <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"ដើម្បីការពារ​ទិន្នន័យរបស់អ្នក ការអនុញ្ញាត​ខាងក្រោម​នឹងត្រូវដកចេញ ប្រសិនបើ​មិនប្រើប្រាស់​កម្មវិធីនេះ​រយៈពេល​ពីរបីខែ៖ <xliff:g id="PERMS">%1$s</xliff:g>"</string>
     <string name="auto_revoked_apps_page_summary" msgid="6594753657893756536">"ដើម្បីការពារ​ទិន្នន័យរបស់អ្នក ការអនុញ្ញាត​ត្រូវបាន​ដកចេញ​ពីកម្មវិធី​ដែល​អ្នកមិនបាន​ប្រើប្រាស់​រយៈពេល​ពីរបីខែ។"</string>
@@ -401,6 +403,16 @@
     <string name="role_notes_short_label" msgid="8796604147546125285">"កម្មវិធី​កំណត់ចំណាំ"</string>
     <string name="role_notes_description" msgid="8496852798616883551">"កម្មវិធីដែលអនុញ្ញាតឱ្យអ្នក​កត់ចំណាំនៅលើឧបករណ៍របស់អ្នក"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"កំណត់ចំណាំ"</string>
+    <!-- no translation found for role_wallet_label (3719419175656204207) -->
+    <skip />
+    <!-- no translation found for role_wallet_short_label (6521288403762457452) -->
+    <skip />
+    <!-- no translation found for role_wallet_description (3726535836165949838) -->
+    <skip />
+    <!-- no translation found for role_wallet_request_title (4770217108262737093) -->
+    <skip />
+    <!-- no translation found for role_wallet_request_description (6305487425777483053) -->
+    <skip />
     <string name="request_role_current_default" msgid="738722892438247184">"លំនាំដើម​បច្ចុប្បន្ន"</string>
     <string name="request_role_dont_ask_again" msgid="3556017886029520306">"កុំសួរទៀត"</string>
     <string name="request_role_set_as_default" msgid="4253949643984172880">"កំណត់ជាលំនាំដើម"</string>
@@ -646,10 +658,7 @@
     <string name="safety_label_changes_notification_title" msgid="4479955083472203839">"បច្ចុប្បន្នភាពការចែករំលែកទិន្នន័យ"</string>
     <string name="safety_label_changes_notification_desc" msgid="7808764283266234675">"កម្មវិធីមួយចំនួន​បានផ្លាស់ប្ដូររបៀបដែលវាអាចចែករំលែកទិន្នន័យ​ទីតាំងរបស់អ្នក"</string>
     <string name="safety_label_changes_gear_description" msgid="2655887555599138509">"ការកំណត់"</string>
-    <!-- no translation found for wear_app_perms_24h_access (8668121661337328895) -->
-    <skip />
-    <!-- no translation found for wear_app_perms_24h_access_yest (7069312481704735679) -->
-    <skip />
-    <!-- no translation found for wear_app_perms_7d_access (4608069019194676432) -->
-    <skip />
+    <string name="wear_app_perms_24h_access" msgid="8668121661337328895">"បានចូលប្រើនៅម៉ោង <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
+    <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"បានចូលប្រើម្សិលមិញនៅម៉ោង <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
+    <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"បានចូលប្រើនៅថ្ងៃទី <xliff:g id="TIME_DATE_0">%1$s</xliff:g> <xliff:g id="TIME_DATE_1">%2$s</xliff:g>"</string>
 </resources>
