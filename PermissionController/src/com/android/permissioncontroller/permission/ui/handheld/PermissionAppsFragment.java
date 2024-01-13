@@ -35,6 +35,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.safetycenter.SafetyCenterManager;
 import android.util.ArrayMap;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -92,6 +93,8 @@ public final class PermissionAppsFragment extends SettingsWithLargeHeader implem
     private static final int SHOW_LOAD_DELAY_MS = 200;
 
     private static final int MENU_PERMISSION_USAGE = MENU_HIDE_SYSTEM + 1;
+
+    private static final String PRIVACY_CONTROLS_ACTION = "android.settings.PRIVACY_CONTROLS";
 
     /**
      * Create a bundle with the arguments needed by this fragment
@@ -281,12 +284,30 @@ public final class PermissionAppsFragment extends SettingsWithLargeHeader implem
         findPreference(ALLOWED_FOREGROUND.getCategoryName()).setVisible(false);
     }
 
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    private String getPrivacyControlsIntent() {
+        SafetyCenterManager safetyCenterManager =
+                getContext().getSystemService(SafetyCenterManager.class);
+        if (safetyCenterManager.isSafetyCenterEnabled()) {
+            return PRIVACY_CONTROLS_ACTION;
+        } else {
+            return Settings.ACTION_PRIVACY_SETTINGS;
+        }
+    }
+
     @RequiresApi(Build.VERSION_CODES.S)
     private CardViewPreference createSensorCard() {
         boolean isLocation = Manifest.permission_group.LOCATION.equals(mPermGroupName);
         Context context = getPreferenceManager().getContext();
-        String action = isLocation ? Settings.ACTION_LOCATION_SOURCE_SETTINGS
-                : Settings.ACTION_PRIVACY_SETTINGS;
+
+        String action;
+        if (isLocation) {
+            action = Settings.ACTION_LOCATION_SOURCE_SETTINGS;
+        } else  if (SdkLevel.isAtLeastT()) {
+            action = getPrivacyControlsIntent();
+        } else {
+            action = Settings.ACTION_PRIVACY_SETTINGS;
+        }
         CardViewPreference sensorCard = new CardViewPreference(context, action);
         sensorCard.setKey(BLOCKED_SENSOR_PREF_KEY);
         sensorCard.setIcon(Utils.getBlockedIcon(mPermGroupName));
