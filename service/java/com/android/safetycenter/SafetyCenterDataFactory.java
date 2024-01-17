@@ -17,6 +17,7 @@
 package com.android.safetycenter;
 
 import static android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE;
+import static android.os.Build.VERSION_CODES.VANILLA_ICE_CREAM;
 
 import static com.android.safetycenter.UserProfileGroup.PROFILE_TYPE_MANAGED;
 import static com.android.safetycenter.UserProfileGroup.PROFILE_TYPE_PRIMARY;
@@ -56,6 +57,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import com.android.modules.utils.build.SdkLevel;
+import com.android.permission.flags.Flags;
 import com.android.safetycenter.UserProfileGroup.ProfileType;
 import com.android.safetycenter.data.SafetyCenterDataManager;
 import com.android.safetycenter.internaldata.SafetyCenterBundles;
@@ -1234,8 +1236,11 @@ public final class SafetyCenterDataFactory {
                     safetySource.getId(),
                     safetySource.getTitleForWorkResId());
             case PROFILE_TYPE_PRIVATE:
-                //TODO(b/286539356) replace with the appropriate way to get the title when
-                // available
+                if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                    return mSafetyCenterResourcesApk.getString(
+                            safetySource.getTitleForPrivateProfileResId());
+                }
+                Log.w(TAG, "unsupported private profile type encountered");
                 return mSafetyCenterResourcesApk.getString(safetySource.getTitleResId());
             default:
                 Log.w(TAG, "unexpected value for the profile type " + profileType);

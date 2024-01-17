@@ -283,11 +283,7 @@ class SafetyCenterMultiUsersTest {
                 .safetyCenterEntryDefaultStaticBuilder(
                     STATIC_ALL_OPTIONAL_ID,
                     userId = deviceState.privateProfile().id(),
-                    // TODO(b/286539356): Change this to a profile specific
-                    // title when private profile starts reading the title from
-                    // the config - currently it relies on the primary profile's
-                    // title
-                    title = "OK"
+                    title = "Unknown"
                 )
                 .setPendingIntent(
                     createTestActivityRedirectPendingIntentForUser(
@@ -325,11 +321,7 @@ class SafetyCenterMultiUsersTest {
             )
 
     private fun staticEntryForPrivateBuilder(
-        // TODO(b/286539356): Change this to a profile specific
-        // title when private profile starts reading the title from
-        // the config - currently it relies on the primary profile's
-        // title
-        title: CharSequence = "OK",
+        title: CharSequence = "Unknown",
         explicit: Boolean = true
     ) =
         SafetyCenterStaticEntry.Builder(title)
@@ -949,6 +941,7 @@ class SafetyCenterMultiUsersTest {
         val apiSafetyCenterData = safetyCenterManager.getSafetyCenterDataWithPermission()
 
         val managedUserId = deviceState.workProfile().id()
+        val privateProfileId = deviceState.privateProfile().id()
         val safetyCenterDataFromComplexConfig =
             SafetyCenterData(
                 safetyCenterTestData.safetyCenterStatusCritical(11),
@@ -1003,6 +996,32 @@ class SafetyCenterMultiUsersTest {
                     safetyCenterTestData.safetyCenterIssueInformation(
                         ISSUE_ONLY_IN_STATELESS_ID,
                         managedUserId,
+                        groupId = MIXED_STATELESS_GROUP_ID
+                    ),
+                    safetyCenterTestData.safetyCenterIssueInformation(
+                        DYNAMIC_DISABLED_ID,
+                        privateProfileId,
+                        groupId = DYNAMIC_GROUP_ID
+                    ),
+                    safetyCenterTestData.safetyCenterIssueInformation(
+                        DYNAMIC_HIDDEN_ID,
+                        privateProfileId,
+                        groupId = DYNAMIC_GROUP_ID
+                    ),
+                    safetyCenterTestData.safetyCenterIssueInformation(
+                        ISSUE_ONLY_ALL_OPTIONAL_ID,
+                        privateProfileId,
+                        attributionTitle = null,
+                        groupId = ISSUE_ONLY_GROUP_ID
+                    ),
+                    safetyCenterTestData.safetyCenterIssueInformation(
+                        DYNAMIC_IN_STATELESS_ID,
+                        privateProfileId,
+                        groupId = MIXED_STATELESS_GROUP_ID
+                    ),
+                    safetyCenterTestData.safetyCenterIssueInformation(
+                        ISSUE_ONLY_IN_STATELESS_ID,
+                        privateProfileId,
                         groupId = MIXED_STATELESS_GROUP_ID
                     )
                 ),
@@ -1238,11 +1257,7 @@ class SafetyCenterMultiUsersTest {
                                     safetyCenterTestData.safetyCenterEntryDefault(
                                         SINGLE_SOURCE_ALL_PROFILE_ID,
                                         deviceState.privateProfile().id(),
-                                        // TODO(b/286539356): Change this to a profile specific
-                                        // title when private profile starts reading the title from
-                                        // the config - currently it relies on the primary profile's
-                                        // title
-                                        title = "OK",
+                                        title = "Unknown",
                                         pendingIntent =
                                             createTestActivityRedirectPendingIntentForUser(
                                                 deviceState.privateProfile().userHandle()
@@ -1259,14 +1274,14 @@ class SafetyCenterMultiUsersTest {
                 emptyList()
             )
 
-        // TODO(b/286539356): Add checks for the SafetyCenterData once that's adapted for the
-        // private profile.
-        assertThat(safetyCenterManager.getSafetyCenterDataWithPermission())
-            .isEqualTo(safetyCenterDataWithPrivateProfile)
-        assertThat(
-                privateSafetyCenterManager.getSafetyCenterDataWithInteractAcrossUsersPermission()
-            )
-            .isEqualTo(safetyCenterDataWithPrivateProfile)
+        checkState(
+            safetyCenterManager.getSafetyCenterDataWithPermission() ==
+                safetyCenterDataWithPrivateProfile
+        )
+        checkState(
+            privateSafetyCenterManager.getSafetyCenterDataWithInteractAcrossUsersPermission() ==
+                safetyCenterDataWithPrivateProfile
+        )
 
         deviceState.privateProfile().remove()
 

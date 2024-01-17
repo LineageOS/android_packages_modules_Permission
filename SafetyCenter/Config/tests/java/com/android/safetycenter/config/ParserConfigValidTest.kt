@@ -77,6 +77,9 @@ class ParserConfigValidTest {
                                         addPackageCertificateHash("feed1")
                                         addPackageCertificateHash("feed2")
                                     }
+                                    if (SdkLevel.isAtLeastV()) {
+                                        setTitleForPrivateProfileResId(R.string.reference)
+                                    }
                                 }
                                 .build()
                         )
@@ -100,6 +103,9 @@ class ParserConfigValidTest {
                                         setDeduplicationGroup("group")
                                         addPackageCertificateHash("feed1")
                                         addPackageCertificateHash("feed2")
+                                    }
+                                    if (SdkLevel.isAtLeastV()) {
+                                        setTitleForPrivateProfileResId(R.string.reference)
                                     }
                                 }
                                 .build()
@@ -133,6 +139,11 @@ class ParserConfigValidTest {
                                 .setProfile(SafetySource.PROFILE_ALL)
                                 .setInitialDisplayState(SafetySource.INITIAL_DISPLAY_STATE_HIDDEN)
                                 .setSearchTermsResId(R.string.reference)
+                                .apply {
+                                    if (SdkLevel.isAtLeastV()) {
+                                        setTitleForPrivateProfileResId(R.string.reference)
+                                    }
+                                }
                                 .build()
                         )
                         .build()
@@ -159,6 +170,11 @@ class ParserConfigValidTest {
                                 .setIntentAction("intent")
                                 .setProfile(SafetySource.PROFILE_ALL)
                                 .setSearchTermsResId(R.string.reference)
+                                .apply {
+                                    if (SdkLevel.isAtLeastV()) {
+                                        setTitleForPrivateProfileResId(R.string.reference)
+                                    }
+                                }
                                 .build()
                         )
                         .build()

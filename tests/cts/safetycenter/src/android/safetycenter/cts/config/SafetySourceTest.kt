@@ -18,11 +18,13 @@ package android.safetycenter.cts.config
 
 import android.content.res.Resources
 import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
+import android.os.Build.VERSION_CODES.VANILLA_ICE_CREAM
 import android.safetycenter.config.SafetySource
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.ext.truth.os.ParcelableSubject.assertThat
 import androidx.test.filters.SdkSuppress
 import com.android.modules.utils.build.SdkLevel
+import com.android.permission.flags.Flags
 import com.android.safetycenter.testing.EqualsHashCodeToStringTester
 import com.google.common.truth.Truth.assertThat
 import org.junit.Assert.assertThrows
@@ -123,6 +125,31 @@ class SafetySourceTest {
         }
         assertThrows(UnsupportedOperationException::class.java) {
             issueOnlyAllOptional().titleForWorkResId
+        }
+    }
+
+    @SdkSuppress(minSdkVersion = VANILLA_ICE_CREAM)
+    @Test
+    fun getTitleForPrivateProfileResId_returnsTitleForPrivateProfileResIdOrThrows() {
+        assertThrows(UnsupportedOperationException::class.java) {
+            DYNAMIC_BAREBONE.titleForPrivateProfileResId
+        }
+        assertThat(dynamicAllOptional().titleForPrivateProfileResId).isEqualTo(REFERENCE_RES_ID)
+        assertThrows(UnsupportedOperationException::class.java) {
+            DYNAMIC_DISABLED.titleForPrivateProfileResId
+        }
+        assertThat(DYNAMIC_HIDDEN.titleForPrivateProfileResId).isEqualTo(Resources.ID_NULL)
+        assertThat(DYNAMIC_HIDDEN_WITH_SEARCH.titleForPrivateProfileResId)
+            .isEqualTo(REFERENCE_RES_ID)
+        assertThrows(UnsupportedOperationException::class.java) {
+            STATIC_BAREBONE.titleForPrivateProfileResId
+        }
+        assertThat(STATIC_ALL_OPTIONAL.titleForPrivateProfileResId).isEqualTo(REFERENCE_RES_ID)
+        assertThrows(UnsupportedOperationException::class.java) {
+            ISSUE_ONLY_BAREBONE.titleForPrivateProfileResId
+        }
+        assertThrows(UnsupportedOperationException::class.java) {
+            issueOnlyAllOptional().titleForPrivateProfileResId
         }
     }
 
@@ -360,6 +387,9 @@ class SafetySourceTest {
                             setDeduplicationGroup(DEDUPLICATION_GROUP)
                             addPackageCertificateHash(HASH1)
                         }
+                        if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                            setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                        }
                     }
                     .build()
             )
@@ -390,6 +420,9 @@ class SafetySourceTest {
                             setDeduplicationGroup(DEDUPLICATION_GROUP)
                             addPackageCertificateHash(HASH1)
                         }
+                        if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                            setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                        }
                     }
                     .build()
             )
@@ -412,6 +445,9 @@ class SafetySourceTest {
                             setNotificationsAllowed(true)
                             setDeduplicationGroup(DEDUPLICATION_GROUP)
                             addPackageCertificateHash(HASH1)
+                        }
+                        if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                            setTitleForPrivateProfileResId(REFERENCE_RES_ID)
                         }
                     }
                     .build()
@@ -436,6 +472,9 @@ class SafetySourceTest {
                             setDeduplicationGroup(DEDUPLICATION_GROUP)
                             addPackageCertificateHash(HASH1)
                         }
+                        if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                            setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                        }
                     }
                     .build()
             )
@@ -458,6 +497,9 @@ class SafetySourceTest {
                             setNotificationsAllowed(true)
                             setDeduplicationGroup(DEDUPLICATION_GROUP)
                             addPackageCertificateHash(HASH1)
+                        }
+                        if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                            setTitleForPrivateProfileResId(REFERENCE_RES_ID)
                         }
                     }
                     .build()
@@ -482,6 +524,9 @@ class SafetySourceTest {
                             setDeduplicationGroup(DEDUPLICATION_GROUP)
                             addPackageCertificateHash(HASH1)
                         }
+                        if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                            setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                        }
                     }
                     .build()
             )
@@ -504,6 +549,9 @@ class SafetySourceTest {
                             setNotificationsAllowed(true)
                             setDeduplicationGroup(DEDUPLICATION_GROUP)
                             addPackageCertificateHash(HASH1)
+                        }
+                        if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                            setTitleForPrivateProfileResId(REFERENCE_RES_ID)
                         }
                     }
                     .build()
@@ -536,6 +584,9 @@ class SafetySourceTest {
                             setDeduplicationGroup(DEDUPLICATION_GROUP)
                             addPackageCertificateHash(HASH1)
                         }
+                        if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                            setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                        }
                     }
                     .build()
             )
@@ -558,6 +609,9 @@ class SafetySourceTest {
                             setNotificationsAllowed(true)
                             setDeduplicationGroup(DEDUPLICATION_GROUP)
                             addPackageCertificateHash(HASH1)
+                        }
+                        if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                            setTitleForPrivateProfileResId(REFERENCE_RES_ID)
                         }
                     }
                     .build()
@@ -582,6 +636,9 @@ class SafetySourceTest {
                             setDeduplicationGroup(DEDUPLICATION_GROUP)
                             addPackageCertificateHash(HASH1)
                         }
+                        if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                            setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                        }
                     }
                     .build()
             )
@@ -604,6 +661,9 @@ class SafetySourceTest {
                             setNotificationsAllowed(true)
                             setDeduplicationGroup(DEDUPLICATION_GROUP)
                             addPackageCertificateHash(HASH1)
+                        }
+                        if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                            setTitleForPrivateProfileResId(REFERENCE_RES_ID)
                         }
                     }
                     .build()
@@ -628,6 +688,9 @@ class SafetySourceTest {
                             setDeduplicationGroup(DEDUPLICATION_GROUP)
                             addPackageCertificateHash(HASH1)
                         }
+                        if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                            setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                        }
                     }
                     .build()
             )
@@ -650,6 +713,11 @@ class SafetySourceTest {
                             .setNotificationsAllowed(false)
                             .setDeduplicationGroup(DEDUPLICATION_GROUP)
                             .addPackageCertificateHash(HASH1)
+                            .apply {
+                                if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                                    setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                                }
+                            }
                             .build()
                     )
                     addEqualityGroup(
@@ -669,6 +737,11 @@ class SafetySourceTest {
                             .setNotificationsAllowed(true)
                             .setDeduplicationGroup("other_deduplication_group")
                             .addPackageCertificateHash(HASH1)
+                            .apply {
+                                if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                                    setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                                }
+                            }
                             .build()
                     )
                     // With no package cert hashes provided
@@ -688,6 +761,11 @@ class SafetySourceTest {
                             .setRefreshOnPageOpenAllowed(true)
                             .setNotificationsAllowed(true)
                             .setDeduplicationGroup(DEDUPLICATION_GROUP)
+                            .apply {
+                                if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                                    setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                                }
+                            }
                             .build()
                     )
                     // With longer package cert hash list
@@ -709,6 +787,11 @@ class SafetySourceTest {
                             .setDeduplicationGroup(DEDUPLICATION_GROUP)
                             .addPackageCertificateHash(HASH1)
                             .addPackageCertificateHash(HASH2)
+                            .apply {
+                                if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                                    setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                                }
+                            }
                             .build()
                     )
                     // With package cert hash list with different value
@@ -729,6 +812,11 @@ class SafetySourceTest {
                             .setNotificationsAllowed(true)
                             .setDeduplicationGroup(DEDUPLICATION_GROUP)
                             .addPackageCertificateHash(HASH2)
+                            .apply {
+                                if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                                    setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                                }
+                            }
                             .build()
                     )
                 }
@@ -785,6 +873,9 @@ class SafetySourceTest {
                         setDeduplicationGroup(DEDUPLICATION_GROUP)
                         addPackageCertificateHash(HASH1)
                     }
+                    if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                        setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                    }
                 }
                 .build()
 
@@ -817,6 +908,11 @@ class SafetySourceTest {
                 .setProfile(SafetySource.PROFILE_ALL)
                 .setInitialDisplayState(SafetySource.INITIAL_DISPLAY_STATE_HIDDEN)
                 .setSearchTermsResId(REFERENCE_RES_ID)
+                .apply {
+                    if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                        setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                    }
+                }
                 .build()
 
         internal val STATIC_BAREBONE =
@@ -837,6 +933,11 @@ class SafetySourceTest {
                 .setIntentAction(INTENT_ACTION)
                 .setProfile(SafetySource.PROFILE_ALL)
                 .setSearchTermsResId(REFERENCE_RES_ID)
+                .apply {
+                    if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                        setTitleForPrivateProfileResId(REFERENCE_RES_ID)
+                    }
+                }
                 .build()
 
         internal val ISSUE_ONLY_BAREBONE =
