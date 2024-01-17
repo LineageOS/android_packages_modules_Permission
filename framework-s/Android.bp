@@ -100,6 +100,7 @@ java_sdk_library {
     permitted_packages: [
         "android.permission",
         "android.app.role",
+        "android.app.ecm",
         "android.safetycenter",
         "android.safetylabel",
     ],

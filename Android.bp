@@ -107,6 +107,7 @@ bootclasspath_fragment {
         // result in a build failure due to inconsistent flags.
         package_prefixes: [
             "android.app.role",
+            "android.app.ecm",
             "android.permission.jarjar",
             "android.safetycenter",
             "android.safetylabel",
