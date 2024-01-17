@@ -140,9 +140,6 @@ object KotlinUtils {
     /** Whether to show the location indicators. */
     private const val PROPERTY_LOCATION_INDICATORS_ENABLED = "location_indicators_enabled"
 
-    /** Whether location accuracy feature is enabled */
-    private const val PROPERTY_LOCATION_ACCURACY_ENABLED = "location_accuracy_enabled"
-
     /** Whether to show 7-day toggle in privacy hub.  */
     private const val PRIVACY_DASHBOARD_7_DAY_TOGGLE = "privacy_dashboard_7_day_toggle"
 
@@ -238,8 +235,7 @@ object KotlinUtils {
      */
     @ChecksSdkIntAtLeast(Build.VERSION_CODES.S)
     fun isLocationAccuracyEnabled(): Boolean {
-        return SdkLevel.isAtLeastS() && DeviceConfig.getBoolean(DeviceConfig.NAMESPACE_PRIVACY,
-            PROPERTY_LOCATION_ACCURACY_ENABLED, true)
+        return SdkLevel.isAtLeastS()
     }
 
     /**
