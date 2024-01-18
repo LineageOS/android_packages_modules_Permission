@@ -124,9 +124,7 @@ java_sdk_library {
         "-Xno-receiver-assertions",
     ],
     lint: {
-        strict_updatability_linting: true,
         baseline_filename: "lint-baseline.xml",
-
     },
     min_sdk_version: "30",
     sdk_version: "system_server_current",
