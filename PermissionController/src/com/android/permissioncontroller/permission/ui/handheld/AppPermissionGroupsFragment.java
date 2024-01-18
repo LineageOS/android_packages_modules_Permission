@@ -460,7 +460,7 @@ public final class AppPermissionGroupsFragment extends SettingsWithLargeHeader i
     }
 
     private boolean isArchivingEnabled() {
-        return SdkLevel.isAtLeastV() && Flags.archiving();
+        return SdkLevel.isAtLeastV() && Flags.archivingReadOnly();
     }
 
     private void setAutoRevokeToggleState(HibernationSettingState state) {
