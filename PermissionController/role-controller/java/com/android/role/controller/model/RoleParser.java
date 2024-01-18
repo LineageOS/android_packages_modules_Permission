@@ -92,6 +92,7 @@ public class RoleParser {
     private static final String ATTRIBUTE_LABEL = "label";
     private static final String ATTRIBUTE_MAX_SDK_VERSION = "maxSdkVersion";
     private static final String ATTRIBUTE_MIN_SDK_VERSION = "minSdkVersion";
+    private static final String ATTRIBUTE_ONLY_GRANT_WHEN_ADDED = "onlyGrantWhenAdded";
     private static final String ATTRIBUTE_OVERRIDE_USER_WHEN_GRANTING = "overrideUserWhenGranting";
     private static final String ATTRIBUTE_QUERY_FLAGS = "queryFlags";
     private static final String ATTRIBUTE_REQUEST_TITLE = "requestTitle";
@@ -396,6 +397,9 @@ public class RoleParser {
             return null;
         }
 
+        boolean onlyGrantWhenAdded = getAttributeBooleanValue(parser,
+                ATTRIBUTE_ONLY_GRANT_WHEN_ADDED, false);
+
         boolean overrideUserWhenGranting = getAttributeBooleanValue(parser,
                 ATTRIBUTE_OVERRIDE_USER_WHEN_GRANTING, false);
 
@@ -523,10 +527,11 @@ public class RoleParser {
         }
         return new Role(name, allowBypassingQualification, behavior, defaultHoldersResourceName,
                 descriptionResource, exclusive, fallBackToDefaultHolder, labelResource,
-                maxSdkVersion, minSdkVersion, overrideUserWhenGranting, requestDescriptionResource,
-                requestTitleResource, requestable, searchKeywordsResource, shortLabelResource,
-                showNone, statik, systemOnly, visible, requiredComponents, permissions,
-                appOpPermissions, appOps, preferredActivities, uiBehaviorName);
+                maxSdkVersion, minSdkVersion, onlyGrantWhenAdded, overrideUserWhenGranting,
+                requestDescriptionResource, requestTitleResource, requestable,
+                searchKeywordsResource, shortLabelResource, showNone, statik, systemOnly, visible,
+                requiredComponents, permissions, appOpPermissions, appOps, preferredActivities,
+                uiBehaviorName);
     }
 
     @NonNull
