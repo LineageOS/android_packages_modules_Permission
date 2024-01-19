@@ -352,10 +352,10 @@
     <string name="role_assistant_label" msgid="4727586018198208128">"Standardapp for digital assistent"</string>
     <string name="role_assistant_short_label" msgid="3369003713187703399">"App for digital assistent"</string>
     <string name="role_assistant_description" msgid="6622458130459922952">"Assistanceapps kan hjælpe dig på baggrund af oplysningerne på den aktuelle skærm. Nogle apps understøtter både startertjenester og tjenester til indtaling for at give dig integreret assistance."</string>
-    <string name="role_browser_label" msgid="2877796144554070207">"Standardbrowserapp"</string>
+    <string name="role_browser_label" msgid="2877796144554070207">"Standardapp til browsing"</string>
     <string name="role_browser_short_label" msgid="6745009127123292296">"Browserapp"</string>
     <string name="role_browser_description" msgid="3465253637499842671">"Apps, der giver dig adgang til internettet og viser links, som du trykker på"</string>
-    <string name="role_browser_request_title" msgid="2895200507835937192">"Vil du angive <xliff:g id="APP_NAME">%1$s</xliff:g> som din standardbrowserapp?"</string>
+    <string name="role_browser_request_title" msgid="2895200507835937192">"Vil du angive <xliff:g id="APP_NAME">%1$s</xliff:g> som din standardapp til browsing?"</string>
     <string name="role_browser_request_description" msgid="5888803407905985941">"Der kræves ingen tilladelser"</string>
     <string name="role_dialer_label" msgid="1100224146343237968">"Standardapp til opkald"</string>
     <string name="role_dialer_short_label" msgid="7186888549465352489">"Opkaldsapp"</string>
@@ -403,16 +403,11 @@
     <string name="role_notes_short_label" msgid="8796604147546125285">"App til notetagning"</string>
     <string name="role_notes_description" msgid="8496852798616883551">"Apps, som giver dig mulighed for at tage noter på din enhed"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"noter"</string>
-    <!-- no translation found for role_wallet_label (3719419175656204207) -->
-    <skip />
-    <!-- no translation found for role_wallet_short_label (6521288403762457452) -->
-    <skip />
-    <!-- no translation found for role_wallet_description (3726535836165949838) -->
-    <skip />
-    <!-- no translation found for role_wallet_request_title (4770217108262737093) -->
-    <skip />
-    <!-- no translation found for role_wallet_request_description (6305487425777483053) -->
-    <skip />
+    <string name="role_wallet_label" msgid="3719419175656204207">"Standardapp til digital pung"</string>
+    <string name="role_wallet_short_label" msgid="6521288403762457452">"App til digital pung"</string>
+    <string name="role_wallet_description" msgid="3726535836165949838">"Apps til digitale punge kan gemme dine kredit- og loyalitetskort, bilnøgler m.m. for at hjælpe med forskellige former for transaktioner."</string>
+    <string name="role_wallet_request_title" msgid="4770217108262737093">"Vil du angive <xliff:g id="APP_NAME">%1$s</xliff:g> som din standardapp til digital pung?"</string>
+    <string name="role_wallet_request_description" msgid="6305487425777483053">"Der kræves ingen tilladelser"</string>
     <string name="request_role_current_default" msgid="738722892438247184">"Nuværende standardapp"</string>
     <string name="request_role_dont_ask_again" msgid="3556017886029520306">"Spørg ikke igen"</string>
     <string name="request_role_set_as_default" msgid="4253949643984172880">"Angiv som standard"</string>
