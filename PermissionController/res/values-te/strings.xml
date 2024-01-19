@@ -403,16 +403,11 @@
     <string name="role_notes_short_label" msgid="8796604147546125285">"నోట్స్ యాప్"</string>
     <string name="role_notes_description" msgid="8496852798616883551">"మీ పరికరంలో నోట్స్ తీసుకోవడానికి మిమ్మల్ని అనుమతించే యాప్‌లు"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"నోట్స్"</string>
-    <!-- no translation found for role_wallet_label (3719419175656204207) -->
-    <skip />
-    <!-- no translation found for role_wallet_short_label (6521288403762457452) -->
-    <skip />
-    <!-- no translation found for role_wallet_description (3726535836165949838) -->
-    <skip />
-    <!-- no translation found for role_wallet_request_title (4770217108262737093) -->
-    <skip />
-    <!-- no translation found for role_wallet_request_description (6305487425777483053) -->
-    <skip />
+    <string name="role_wallet_label" msgid="3719419175656204207">"డిఫాల్ట్ వాలెట్ యాప్"</string>
+    <string name="role_wallet_short_label" msgid="6521288403762457452">"వాలెట్ యాప్"</string>
+    <string name="role_wallet_description" msgid="3726535836165949838">"వాలెట్ యాప్‌లు మీ క్రెడిట్‌ను, లాయల్టీ కార్డ్‌లను, కార్ కీలను, ఇంకా వివిధ రకాల లావాదేవీలకు సహాయపడటానికి ఇతర వస్తువులను స్టోర్ చేయగలవు."</string>
+    <string name="role_wallet_request_title" msgid="4770217108262737093">"<xliff:g id="APP_NAME">%1$s</xliff:g>‌ను డిఫాల్ట్ వాలెట్ యాప్‌గా సెట్ చేయాలా?"</string>
+    <string name="role_wallet_request_description" msgid="6305487425777483053">"అనుమతులు ఏవీ అవసరం లేదు"</string>
     <string name="request_role_current_default" msgid="738722892438247184">"ప్రస్తుతం ఆటోమేటిక్‌గా ఉంది"</string>
     <string name="request_role_dont_ask_again" msgid="3556017886029520306">"మళ్లీ అడగవద్దు"</string>
     <string name="request_role_set_as_default" msgid="4253949643984172880">"ఆటోమేటిక్ చేయండి"</string>

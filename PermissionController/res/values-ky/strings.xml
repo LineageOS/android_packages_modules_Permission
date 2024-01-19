@@ -403,16 +403,11 @@
     <string name="role_notes_short_label" msgid="8796604147546125285">"Кыска жазуулар колдонмосу"</string>
     <string name="role_notes_description" msgid="8496852798616883551">"Түзмөгүңүздө кыска жазууларды терүү мүмкүнчүлүгүн берген колдонмолор"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"кыска жазуулар"</string>
-    <!-- no translation found for role_wallet_label (3719419175656204207) -->
-    <skip />
-    <!-- no translation found for role_wallet_short_label (6521288403762457452) -->
-    <skip />
-    <!-- no translation found for role_wallet_description (3726535836165949838) -->
-    <skip />
-    <!-- no translation found for role_wallet_request_title (4770217108262737093) -->
-    <skip />
-    <!-- no translation found for role_wallet_request_description (6305487425777483053) -->
-    <skip />
+    <string name="role_wallet_label" msgid="3719419175656204207">"Демейки капчык колдонмосу"</string>
+    <string name="role_wallet_short_label" msgid="6521288403762457452">"Капчык колдонмосу"</string>
+    <string name="role_wallet_description" msgid="3726535836165949838">"Капчык колдонмолору ар кандай транзакция формаларында жардам берүү үчүн насыя жана туруктуу кардардын карталарын, унаа ачкычтарын жана башка нерселерди сактай алат."</string>
+    <string name="role_wallet_request_title" msgid="4770217108262737093">"<xliff:g id="APP_NAME">%1$s</xliff:g> демейки капчык колдонмоңуз катары тууралансынбы?"</string>
+    <string name="role_wallet_request_description" msgid="6305487425777483053">"Уруксаттардын кереги жок"</string>
     <string name="request_role_current_default" msgid="738722892438247184">"Учурдагы демейки колдонмо"</string>
     <string name="request_role_dont_ask_again" msgid="3556017886029520306">"Экинчи суралбасын"</string>
     <string name="request_role_set_as_default" msgid="4253949643984172880">"Демейки катары коюу"</string>
