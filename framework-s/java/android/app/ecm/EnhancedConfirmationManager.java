@@ -358,8 +358,9 @@ public final class EnhancedConfirmationManager {
         // ECM doesn't consider a transitive chain of trust for install sources.
         // If this package hasn't been explicitly handled by this point
         // then it is exempt from ECM if the immediate parent is a trusted installer
-        return installSource.getInstallingPackageName() != null && isAppTrustedInstaller(
-                installSource.getInstallingPackageName());
+        boolean installedFromTrustedInstaller = installSource.getInstallingPackageName() != null
+                && isAppTrustedInstaller(installSource.getInstallingPackageName());
+        return !installedFromTrustedInstaller;
     }
 
     /**
