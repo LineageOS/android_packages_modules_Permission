@@ -403,16 +403,11 @@
     <string name="role_notes_short_label" msgid="8796604147546125285">"Праграма для нататак"</string>
     <string name="role_notes_description" msgid="8496852798616883551">"Праграмы, якія дазваляюць рабіць нататкі на прыладзе"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"нататкі"</string>
-    <!-- no translation found for role_wallet_label (3719419175656204207) -->
-    <skip />
-    <!-- no translation found for role_wallet_short_label (6521288403762457452) -->
-    <skip />
-    <!-- no translation found for role_wallet_description (3726535836165949838) -->
-    <skip />
-    <!-- no translation found for role_wallet_request_title (4770217108262737093) -->
-    <skip />
-    <!-- no translation found for role_wallet_request_description (6305487425777483053) -->
-    <skip />
+    <string name="role_wallet_label" msgid="3719419175656204207">"Стандартная праграма-кашалёк"</string>
+    <string name="role_wallet_short_label" msgid="6521288403762457452">"Праграма-кашалёк"</string>
+    <string name="role_wallet_description" msgid="3726535836165949838">"У праграмах-кашальках можна захоўваць крэдытныя карткі, карткі лаяльнасці, ключы ад аўтамабіля і іншыя лічбавыя аб\'екты, што дае магчымасць ажыццяўляць розныя формы трансакцый."</string>
+    <string name="role_wallet_request_title" msgid="4770217108262737093">"Задаць у якасці стандартнай праграмы-кашалька праграму \"<xliff:g id="APP_NAME">%1$s</xliff:g>\"?"</string>
+    <string name="role_wallet_request_description" msgid="6305487425777483053">"Дазволы не патрэбныя"</string>
     <string name="request_role_current_default" msgid="738722892438247184">"Цяперашняя стандартная"</string>
     <string name="request_role_dont_ask_again" msgid="3556017886029520306">"Больш не пытацца"</string>
     <string name="request_role_set_as_default" msgid="4253949643984172880">"Зрабіць стандартнай"</string>

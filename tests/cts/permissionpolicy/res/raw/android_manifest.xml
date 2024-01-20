@@ -1020,6 +1020,13 @@
     <permission android:name="android.permission.BIND_SATELLITE_GATEWAY_SERVICE"
                 android:protectionLevel="signature" />
 
+    <!-- @SystemApi @hide Required for an application in order to access the last known cell id.
+         @FlaggedApi("com.android.server.telecom.flags.telecom_resolve_hidden_dependencies") -->
+    <permission android:name="android.permission.ACCESS_LAST_KNOWN_CELL_ID"
+                android:protectionLevel="signature"
+                android:label="@string/permlab_accessLastKnownCellId"
+                android:description="@string/permdesc_accessLastKnownCellId"/>
+
     <!-- ====================================================================== -->
     <!-- Permissions for accessing external storage                             -->
     <!-- ====================================================================== -->
@@ -2867,6 +2874,16 @@
     <!-- Allows internal management of the sensor framework
          @hide -->
     <permission android:name="android.permission.MANAGE_SENSORS"
+        android:protectionLevel="signature" />
+
+    <!-- Must be required by a DomainSelectionService to ensure that only the
+         system can bind to it.
+         <p>Protection level: signature
+         @SystemApi
+         @hide
+         @FlaggedApi("com.android.internal.telephony.flags.ap_domain_selection_enabled")
+    -->
+    <permission android:name="android.permission.BIND_DOMAIN_SELECTION_SERVICE"
         android:protectionLevel="signature" />
 
     <!-- Must be required by an ImsService to ensure that only the
@@ -4783,7 +4800,7 @@
          <p>Protection level: signature
     -->
     <permission android:name="android.permission.BIND_NFC_SERVICE"
-        android:protectionLevel="signature" />
+        android:protectionLevel="signature|module" />
 
     <!-- Must be required by a {@link android.service.quickaccesswallet.QuickAccessWalletService}
          to ensure that only the system can bind to it.
@@ -6449,6 +6466,13 @@
     <permission android:name="android.permission.USE_BIOMETRIC_INTERNAL"
         android:protectionLevel="signature" />
 
+    <!-- Allows privileged apps to access the background face authentication.
+        @SystemApi
+        @FlaggedApi("android.hardware.biometrics.face_background_authentication")
+        @hide -->
+    <permission android:name="android.permission.USE_BACKGROUND_FACE_AUTHENTICATION"
+        android:protectionLevel="signature|privileged" />
+
     <!-- Allows the system to control the BiometricDialog (SystemUI). Reserved for the system. @hide -->
     <permission android:name="android.permission.MANAGE_BIOMETRIC_DIALOG"
         android:protectionLevel="signature" />
@@ -7542,7 +7566,7 @@
      -->
     <permission android:name="android.permission.CREDENTIAL_MANAGER_SET_ORIGIN"
       android:protectionLevel="normal"/>
-      
+
     <!-- Allows specifying candidate credential providers to be queried in Credential Manager
     get flows, or to be preferred as a default in the Credential Manager create flows.
      <p>Protection level: normal -->

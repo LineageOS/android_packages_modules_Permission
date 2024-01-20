@@ -403,16 +403,11 @@
     <string name="role_notes_short_label" msgid="8796604147546125285">"குறிப்பு எடுப்பதற்கான ஆப்ஸ்"</string>
     <string name="role_notes_description" msgid="8496852798616883551">"உங்கள் சாதனத்தில் குறிப்புகள் எடுக்க அனுமதிக்கும் ஆப்ஸ்"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"குறிப்புகள்"</string>
-    <!-- no translation found for role_wallet_label (3719419175656204207) -->
-    <skip />
-    <!-- no translation found for role_wallet_short_label (6521288403762457452) -->
-    <skip />
-    <!-- no translation found for role_wallet_description (3726535836165949838) -->
-    <skip />
-    <!-- no translation found for role_wallet_request_title (4770217108262737093) -->
-    <skip />
-    <!-- no translation found for role_wallet_request_description (6305487425777483053) -->
-    <skip />
+    <string name="role_wallet_label" msgid="3719419175656204207">"இயல்புநிலை வாலட் ஆப்ஸ்"</string>
+    <string name="role_wallet_short_label" msgid="6521288403762457452">"வாலட் ஆப்ஸ்"</string>
+    <string name="role_wallet_description" msgid="3726535836165949838">"பல்வேறு வகையான பரிமாற்றங்கள் தொடர்பாக உங்களுக்கு உதவ கிரெடிட் கார்டுகள், லாயல்டி கார்டுகள், கார் சாவிகள் மற்றும் பிறவற்றை வாலட் ஆப்ஸில் சேமிக்கலாம்."</string>
+    <string name="role_wallet_request_title" msgid="4770217108262737093">"<xliff:g id="APP_NAME">%1$s</xliff:g> ஆப்ஸை உங்கள் இயல்புநிலை வாலட் ஆப்ஸாக அமைக்கவா?"</string>
+    <string name="role_wallet_request_description" msgid="6305487425777483053">"அனுமதிகள் தேவையில்லை"</string>
     <string name="request_role_current_default" msgid="738722892438247184">"தற்போதைய இயல்பான ஆப்ஸ்"</string>
     <string name="request_role_dont_ask_again" msgid="3556017886029520306">"மீண்டும் கேட்காதே"</string>
     <string name="request_role_set_as_default" msgid="4253949643984172880">"இயல்பு ஆப்ஸாக அமை"</string>
