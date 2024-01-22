@@ -16,12 +16,11 @@
 
 package com.android.role.controller.behavior;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.nfc.NfcAdapter;
-import android.nfc.cardemulation.ApduServiceInfo;
 import android.nfc.cardemulation.CardEmulation;
 import android.nfc.cardemulation.HostApduService;
 import android.nfc.cardemulation.OffHostApduService;
@@ -30,7 +29,6 @@ import android.os.UserHandle;
 import android.permission.flags.Flags;
 import android.service.quickaccesswallet.QuickAccessWalletService;
 import android.util.ArraySet;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -65,21 +63,13 @@ public class WalletRoleBehavior implements RoleBehavior {
     @Override
     public List<String> getDefaultHoldersAsUser(@NonNull Role role, @NonNull UserHandle user,
             @NonNull Context context) {
-        CardEmulation cardEmulation;
         Context userContext = UserUtils.getUserContext(context, user);
-        try {
-            cardEmulation =
-                    CardEmulation.getInstance(NfcAdapter.getDefaultAdapter(userContext));
-        } catch (UnsupportedOperationException e) {
-            Log.e(LOG_TAG, "Unsupported Card Emulation Operation.", e);
-            return null;
-        }
-        ApduServiceInfo preferredPaymentService = cardEmulation
-                .getPreferredPaymentService();
+        ComponentName preferredPaymentService =
+                CardEmulation.getPreferredPaymentService(userContext);
         if (preferredPaymentService != null) {
-            return Collections.singletonList(preferredPaymentService.getComponent()
-                    .getPackageName());
+            return Collections.singletonList(preferredPaymentService.getPackageName());
         }
+
         return null;
     }
 
