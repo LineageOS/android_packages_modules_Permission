@@ -171,7 +171,7 @@ class GrantPermissionsViewModel(
 
     private var appPermGroupLiveDatas = mutableMapOf<String, LightAppPermGroupLiveData>()
 
-    internal data class ResultCallback(val consumer: Consumer<Intent>, val requestCode: Int)
+    internal data class ResultCallback(val consumer: Consumer<Intent?>, val requestCode: Int)
 
     private var activityResultCallback: ResultCallback? = null
 
