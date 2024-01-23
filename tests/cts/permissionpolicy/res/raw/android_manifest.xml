@@ -3889,6 +3889,14 @@
                 android:description="@string/permdesc_useDataInBackground"
                 android:protectionLevel="normal" />
 
+    <!-- Allows an application to subscribe to notifications about the nearby devices' presence
+         status change base on the UUIDs.
+         <p>Not for use by third-party applications.</p>
+         @FlaggedApi("android.companion.flags.device_uuid_presence")
+    -->
+    <permission android:name="android.permission.REQUEST_OBSERVE_DEVICE_UUID_PRESENCE"
+                android:protectionLevel="signature|privileged" />
+
     <!-- Allows app to request to be associated with a device via
          {@link android.companion.CompanionDeviceManager}
          as a "watch"
