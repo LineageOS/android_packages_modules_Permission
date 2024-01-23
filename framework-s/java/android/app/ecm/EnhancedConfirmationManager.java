@@ -18,6 +18,7 @@ package android.app.ecm;
 
 import android.annotation.FlaggedApi;
 import android.annotation.IntDef;
+import android.annotation.RequiresPermission;
 import android.annotation.SystemApi;
 import android.annotation.SystemService;
 import android.annotation.TargetApi;
@@ -245,6 +246,7 @@ public final class EnhancedConfirmationManager {
      * @return {@code true} if the setting is restricted from the app
      * @throws NameNotFoundException if the provided package was not found
      */
+    @RequiresPermission(android.Manifest.permission.MANAGE_ENHANCED_CONFIRMATION_STATES)
     public boolean isRestricted(@NonNull String packageName, @NonNull String settingIdentifier)
             throws NameNotFoundException {
         return isSettingEcmProtected(settingIdentifier) && isPackageEcmGuarded(packageName);
@@ -260,6 +262,7 @@ public final class EnhancedConfirmationManager {
      * @param packageName package name of the application to remove protection from
      * @throws NameNotFoundException if the provided package was not found
      */
+    @RequiresPermission(android.Manifest.permission.MANAGE_ENHANCED_CONFIRMATION_STATES)
     public void clearRestriction(@NonNull String packageName) throws NameNotFoundException {
         if (!isClearRestrictionAllowed(packageName)) {
             throw new IllegalStateException("Clear restriction attempted but not allowed");
@@ -279,6 +282,7 @@ public final class EnhancedConfirmationManager {
      * restrictions from the provided app
      * @throws NameNotFoundException if the provided package was not found
      */
+    @RequiresPermission(android.Manifest.permission.MANAGE_ENHANCED_CONFIRMATION_STATES)
     public boolean isClearRestrictionAllowed(@NonNull String packageName)
             throws NameNotFoundException {
         int state = getAppEcmState(packageName);
@@ -296,6 +300,7 @@ public final class EnhancedConfirmationManager {
      *
      * @hide
      */
+    @RequiresPermission(android.Manifest.permission.MANAGE_ENHANCED_CONFIRMATION_STATES)
     public void setClearRestrictionAllowed(@NonNull String packageName)
             throws NameNotFoundException {
         if (isPackageEcmGuarded(packageName)) {
