@@ -79,6 +79,7 @@ java_sdk_library {
         "framework-permission-s-shared",
         "modules-utils-build",
         "android.permission.flags-aconfig-java",
+        "permissions-aconfig-flags-lib",
     ],
     apex_available: [
         "com.android.permission",
