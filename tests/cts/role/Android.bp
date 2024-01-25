@@ -28,6 +28,7 @@ android_test {
     ],
 
     static_libs: [
+        "android.permission.flags-aconfig-java",
         "androidx.test.rules",
         "compatibility-device-util-axt",
         "ctstestrunner-axt",

@@ -17,6 +17,7 @@
 package com.android.permissioncontroller.role.ui.handheld;
 
 import android.content.Context;
+import android.os.UserHandle;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -28,8 +29,8 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
 
 import com.android.permissioncontroller.R;
+import com.android.permissioncontroller.role.ui.RestrictionAwarePreferenceMixin;
 import com.android.permissioncontroller.role.ui.RolePreference;
-import com.android.permissioncontroller.role.ui.UserRestrictionAwarePreferenceMixin;
 import com.android.settingslib.widget.TwoTargetPreference;
 
 /**
@@ -40,8 +41,8 @@ import com.android.settingslib.widget.TwoTargetPreference;
 // Made public for com.android.permissioncontroller.role.ui.specialappaccess.handheld
 public class HandheldRolePreference extends TwoTargetPreference implements RolePreference {
 
-    private final UserRestrictionAwarePreferenceMixin mUserRestrictionAwarePreferenceMixin =
-            new UserRestrictionAwarePreferenceMixin(this);
+    private final RestrictionAwarePreferenceMixin mRestrictionAwarePreferenceMixin =
+            new RestrictionAwarePreferenceMixin(this);
 
     @Nullable
     private OnSecondTargetClickListener mOnSecondTargetClickListener;
@@ -93,8 +94,15 @@ public class HandheldRolePreference extends TwoTargetPreference implements RoleP
     }
 
     @Override
-    public void setUserRestriction(@Nullable String userRestriction) {
-        mUserRestrictionAwarePreferenceMixin.setUserRestriction(userRestriction);
+    public void setUserRestriction(@Nullable String userRestriction, @NonNull UserHandle user) {
+        mRestrictionAwarePreferenceMixin.setUserRestriction(userRestriction, user);
+    }
+
+    @Override
+    public void setEnhancedConfirmationRestriction(@Nullable String packageName,
+            @Nullable String settingIdentifier, @NonNull UserHandle user) {
+        mRestrictionAwarePreferenceMixin.setEnhancedConfirmationRestriction(packageName,
+                settingIdentifier, user);
     }
 
     @Override
@@ -113,7 +121,7 @@ public class HandheldRolePreference extends TwoTargetPreference implements RoleP
         // Make the settings button enabled even if the preference itself is disabled.
         settingsButton.setEnabled(true);
 
-        mUserRestrictionAwarePreferenceMixin.onAfterBindViewHolder(holder);
+        mRestrictionAwarePreferenceMixin.onAfterBindViewHolder(holder);
     }
 
     @Override

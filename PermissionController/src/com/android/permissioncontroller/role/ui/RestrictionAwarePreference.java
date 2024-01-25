@@ -16,15 +16,24 @@
 
 package com.android.permissioncontroller.role.ui;
 
+import android.os.UserHandle;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
- * Preference that is aware of user restrictions that can block them.
+ * Preference that is aware of restrictions that can block them.
  */
-public interface UserRestrictionAwarePreference {
+public interface RestrictionAwarePreference {
 
     /**
      * Specifies user restriction that blocks this preference.
      */
-    void setUserRestriction(@Nullable String userRestriction);
+    void setUserRestriction(@Nullable String userRestriction, @NonNull UserHandle user);
+
+    /**
+     * Specifies enhanced confirmation restrictions that block this preference.
+     */
+    void setEnhancedConfirmationRestriction(@Nullable String packageName,
+            @Nullable String settingIdentifier, @NonNull UserHandle user);
 }

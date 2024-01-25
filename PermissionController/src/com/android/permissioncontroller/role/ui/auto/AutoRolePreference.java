@@ -17,6 +17,7 @@
 package com.android.permissioncontroller.role.ui.auto;
 
 import android.content.Context;
+import android.os.UserHandle;
 import android.util.AttributeSet;
 
 import androidx.annotation.NonNull;
@@ -24,9 +25,9 @@ import androidx.annotation.Nullable;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
 
+import com.android.permissioncontroller.role.ui.RestrictionAwarePreferenceMixin;
 import com.android.permissioncontroller.role.ui.RolePreference;
 import com.android.permissioncontroller.role.ui.TwoTargetPreference;
-import com.android.permissioncontroller.role.ui.UserRestrictionAwarePreferenceMixin;
 
 /**
  * Preference for use in auto lists. Extends {@link TwoTargetPreference} in order to make sure of
@@ -34,8 +35,8 @@ import com.android.permissioncontroller.role.ui.UserRestrictionAwarePreferenceMi
  */
 public class AutoRolePreference extends Preference implements RolePreference {
 
-    private UserRestrictionAwarePreferenceMixin mUserRestrictionAwarePreferenceMixin =
-            new UserRestrictionAwarePreferenceMixin(this);
+    private RestrictionAwarePreferenceMixin mRestrictionAwarePreferenceMixin =
+            new RestrictionAwarePreferenceMixin(this);
 
     public AutoRolePreference(@NonNull Context context,
             @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
@@ -60,15 +61,22 @@ public class AutoRolePreference extends Preference implements RolePreference {
     }
 
     @Override
-    public void setUserRestriction(@Nullable String userRestriction) {
-        mUserRestrictionAwarePreferenceMixin.setUserRestriction(userRestriction);
+    public void setUserRestriction(@Nullable String userRestriction, @NonNull UserHandle user) {
+        mRestrictionAwarePreferenceMixin.setUserRestriction(userRestriction, user);
+    }
+
+    @Override
+    public void setEnhancedConfirmationRestriction(@Nullable String packageName,
+            @Nullable String settingIdentifier, @NonNull UserHandle user) {
+        mRestrictionAwarePreferenceMixin.setEnhancedConfirmationRestriction(packageName,
+                settingIdentifier, user);
     }
 
     @Override
     public void onBindViewHolder(PreferenceViewHolder holder) {
         super.onBindViewHolder(holder);
 
-        mUserRestrictionAwarePreferenceMixin.onAfterBindViewHolder(holder);
+        mRestrictionAwarePreferenceMixin.onAfterBindViewHolder(holder);
     }
 
     @Override
