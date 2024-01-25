@@ -97,12 +97,3 @@ java_sdk_library {
         "android.safetylabel",
     ],
 }
-
-java_api_contribution {
-    name: "framework-permission-s-public-stubs",
-    api_surface: "public",
-    api_file: "api/current.txt",
-    visibility: [
-        "//build/orchestrator/apis",
-    ],
-}
