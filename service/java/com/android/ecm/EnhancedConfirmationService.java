@@ -179,22 +179,8 @@ public class EnhancedConfirmationService extends SystemService {
 
         private void enforcePermissions(@NonNull String methodName, @UserIdInt int userId) {
             UserUtils.enforceCrossUserPermission(userId, false, methodName, mContext);
-            // TODO(b/320512579): Enforce MANAGE_ENHANCED_CONFIRMATION_STATES instead
-            //
-            // Regarding permission enforcement:
-            //
-            // - Before implementing EnhancedConfirmationService, EnhancedConfirmationManager
-            //   enforced MANAGE_APPOPS, UPDATE_APP_OPS_STATS, and MANAGE_APP_OPS_MODES.
-            // - We could enforce all three, but MANAGE_APPOPS should be enough: it
-            //   is hidden API and is only granted to Shell and Settings, so the other two
-            //   permissions are redundant.
-            // - We need to reference MANAGE_APPOPS by string here, because the current class
-            //   is in a mainline module, and so does not have access to hidden API, and thus
-            //   can't reference android.Manifest.permission.MANAGE_APPOPS.
-            // - In a follow-up CL, we plan to enforce a new permission anyway. But, doing
-            //   that impacts calling apps, and also involves updating API code (RequiresPermission
-            //   annotations), so that will go smoother if we do it in a separate CL.
-            mContext.enforceCallingPermission("android.permission.MANAGE_APPOPS", methodName);
+            mContext.enforceCallingPermission(
+                    android.Manifest.permission.MANAGE_ENHANCED_CONFIRMATION_STATES, methodName);
         }
 
         private boolean isPackageEcmGuarded(@NonNull String packageName, @UserIdInt int userId)
