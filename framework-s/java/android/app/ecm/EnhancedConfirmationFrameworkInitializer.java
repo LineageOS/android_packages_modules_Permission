@@ -45,6 +45,7 @@ public class EnhancedConfirmationFrameworkInitializer {
     public static void registerServiceWrappers() {
         SystemServiceRegistry.registerContextAwareService(Context.ECM_ENHANCED_CONFIRMATION_SERVICE,
                 EnhancedConfirmationManager.class,
-                (context) -> new EnhancedConfirmationManager(context));
+                (context, serviceBinder) -> new EnhancedConfirmationManager(context,
+                        IEnhancedConfirmationManager.Stub.asInterface(serviceBinder)));
     }
 }
