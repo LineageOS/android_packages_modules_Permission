@@ -3080,6 +3080,14 @@
     <permission android:name="android.permission.INTERACT_ACROSS_PROFILES"
         android:protectionLevel="signature|appop" />
 
+    <!-- Allows applications to access profiles with PROFILE_API_VISIBILITY_HIDDEN user property
+     <p>Protection level: normal
+     @FlaggedApi("android.multiuser.enable_permission_to_access_hidden_profiles") -->
+    <permission android:name="android.permission.ACCESS_HIDDEN_PROFILES"
+        android:label="@string/permlab_accessHiddenProfile"
+        android:description="@string/permdesc_accessHiddenProfile"
+        android:protectionLevel="normal" />
+
     <!-- @SystemApi Allows configuring apps to have the INTERACT_ACROSS_PROFILES permission so that
          they can interact across profiles in the same profile group.
          @hide -->
