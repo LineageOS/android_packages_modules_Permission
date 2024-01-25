@@ -32,4 +32,17 @@
     <string name="mic_toggle_description">For apps and services. If this setting is off, microphone data may still be shared when you call an emergency number</string>
     <!-- Subtitle for the link to location settings [CHAR LIMIT=NONE] -->
     <string name="location_settings_subtitle">For apps and services</string>
+
+    <!-- START ENHANCED CONFIRMATION DIALOG -->
+
+    <!--Title for dialog displayed to tell user that settings are blocked by setting restrictions [CHAR LIMIT=50] -->
+    <string name="enhanced_confirmation_dialog_title">Restricted setting</string>
+    <!--Content for dialog displayed to tell user that settings are blocked by setting restrictions [CHAR LIMIT=100] -->
+    <string name="enhanced_confirmation_dialog_desc">For your security, this setting is currently unavailable.</string>
+    <!-- Button label to allow the user to view additional information [CHAR LIMIT=NONE BACKUP_MESSAGE_ID=2416766240581561009] -->
+    <string name="enhanced_confirmation_dialog_learn_more">Learn more</string>
+    <!-- Help URI, action disabled by restricted settings [DO NOT TRANSLATE] -->
+    <string name="help_url_action_disabled_by_restricted_settings" translatable="false"></string>
+
+    <!-- END ENHANCED CONFIRMATION DIALOG -->
 </resources>

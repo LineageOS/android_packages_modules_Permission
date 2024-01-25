@@ -283,6 +283,19 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="com.android.permissioncontroller.ecm.EnhancedConfirmationDialog"
+            android:theme="@style/GrantPermissions.FilterTouches"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:permission="android.permission.MANAGE_ENHANCED_CONFIRMATION_STATES"
+            android:enabled="@bool/is_at_least_v">
+            <intent-filter android:priority="1">
+                <action android:name="android.app.ecm.action.SHOW_ECM_RESTRICTED_SETTING_DIALOG" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity android:name="com.android.permissioncontroller.permission.ui.v34.PermissionRationaleActivity"
                   android:configChanges="keyboardHidden|screenSize"
                   android:windowSoftInputMode="stateAlwaysHidden|adjustNothing"
