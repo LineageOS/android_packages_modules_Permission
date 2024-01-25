@@ -15,8 +15,9 @@ flag {
 }
 
 flag {
-    name: "archiving"
+    name: "archiving_read_only"
     namespace: "permissions"
     description: "Feature flag to enable the archiving feature."
     bug: "278553670"
+    is_fixed_read_only: true
 }
