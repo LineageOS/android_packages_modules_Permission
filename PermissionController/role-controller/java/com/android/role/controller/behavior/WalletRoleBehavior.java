@@ -108,7 +108,8 @@ public class WalletRoleBehavior implements RoleBehavior {
         Intent intent = new Intent(action).setPackage(packageName);
         PackageManager packageManager = context.getPackageManager();
         List<ResolveInfo> resolveInfos = packageManager
-                .queryIntentServicesAsUser(intent, 0, user);
+                .queryIntentServicesAsUser(intent, PackageManager.MATCH_DIRECT_BOOT_AWARE
+                        | PackageManager.MATCH_DIRECT_BOOT_UNAWARE, user);
         Set<String> packageNames = new ArraySet<>();
         int resolveInfosSize = resolveInfos.size();
         for (int i = 0; i < resolveInfosSize; i++) {
