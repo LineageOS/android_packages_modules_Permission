@@ -975,6 +975,28 @@ public final class RoleManager {
     }
 
     /**
+     * Allows getting the role holder for {@link #ROLE_EMERGENCY} without requiring
+     * {@link Manifest.permission#OBSERVE_ROLE_HOLDERS}.
+     *
+     * @param userId the user ID to get the default emergency package for
+     * @return the package name of the default emergency app, or {@code null} if none
+     *
+     * @hide
+     */
+    @FlaggedApi(Flags.FLAG_GET_EMERGENCY_ROLE_HOLDER_API_ENABLED)
+    @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
+    @RequiresPermission(Manifest.permission.READ_PRIVILEGED_PHONE_STATE)
+    @Nullable
+    @SystemApi(client = SystemApi.Client.MODULE_LIBRARIES)
+    public String getEmergencyRoleHolder(@UserIdInt int userId) {
+        try {
+            return mService.getEmergencyRoleHolder(userId);
+        } catch (RemoteException e) {
+            throw e.rethrowFromSystemServer();
+        }
+    }
+
+    /**
      * Check whether a role should be visible to user.
      *
      * @param roleName name of the role to check for
