@@ -307,7 +307,6 @@ public final class EnhancedConfirmationManager {
      *
      * @param packageName package name of the application which should be considered acknowledged
      * @throws NameNotFoundException if the provided package was not found
-     * @hide
      */
     @RequiresPermission(android.Manifest.permission.MANAGE_ENHANCED_CONFIRMATION_STATES)
     public void setClearRestrictionAllowed(@NonNull String packageName)
