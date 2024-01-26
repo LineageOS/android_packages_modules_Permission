@@ -22,6 +22,7 @@ import android.annotation.UserIdInt;
 import android.app.AppOpsManager;
 import android.app.ecm.EnhancedConfirmationManager;
 import android.app.ecm.IEnhancedConfirmationManager;
+import android.app.role.RoleManager;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.InstallSourceInfo;
@@ -86,6 +87,15 @@ public class EnhancedConfirmationService extends SystemService {
 
         static {
             PROTECTED_SETTINGS.add(AppOpsManager.OPSTR_BIND_ACCESSIBILITY_SERVICE);
+            // Default application roles.
+            PROTECTED_SETTINGS.add(RoleManager.ROLE_ASSISTANT);
+            PROTECTED_SETTINGS.add(RoleManager.ROLE_BROWSER);
+            PROTECTED_SETTINGS.add(RoleManager.ROLE_CALL_REDIRECTION);
+            PROTECTED_SETTINGS.add(RoleManager.ROLE_CALL_SCREENING);
+            PROTECTED_SETTINGS.add(RoleManager.ROLE_DIALER);
+            PROTECTED_SETTINGS.add(RoleManager.ROLE_HOME);
+            PROTECTED_SETTINGS.add(RoleManager.ROLE_SMS);
+            PROTECTED_SETTINGS.add(RoleManager.ROLE_WALLET);
             // TODO(b/310654015): Add other explicitly protected settings
         }
 
