@@ -146,7 +146,7 @@ android_library {
         "lottie",
         "safety-label",
         "role-controller",
-        "permissions-flags-lib",
+        "permissions-aconfig-flags-lib",
         "android.permission.flags-aconfig-java",
         "androidx.compose.foundation_foundation",
         "androidx.compose.runtime_runtime",
