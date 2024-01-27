@@ -141,6 +141,8 @@
                 minSdkVersion="33" />
             <permission name="android.permission.EXECUTE_APP_ACTION"
                 minSdkVersion="34" />
+            <permission name="android.permission.EMBED_ANY_APP_IN_UNTRUSTED_MODE"
+                minSdkVersion="35" />
         </permissions>
         <app-op-permissions>
             <app-op-permission name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -676,6 +678,8 @@
             <permission name="android.permission.SET_TIME_ZONE" minSdkVersion="34" />
             <permission name="android.permission.SATELLITE_COMMUNICATION" minSdkVersion="34" />
             <permission name="android.permission.ALWAYS_UPDATE_WALLPAPER" minSdkVersion="35" />
+            <permission name="android.permission.EMBED_ANY_APP_IN_UNTRUSTED_MODE"
+                minSdkVersion="35" />
         </permissions>
     </role>
 
