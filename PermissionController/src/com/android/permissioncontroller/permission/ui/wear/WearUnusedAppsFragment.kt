@@ -148,17 +148,18 @@ class WearUnusedAppsFragment : Fragment() {
     private fun updatePackages(categorizedPackages: Map<UnusedPeriod, List<UnusedPackageInfo>>) {
         // Remove stale unused app chips
         for (period in allPeriods) {
-            val it: MutableIterator<Map.Entry<String, UnusedAppChip>> =
-                unusedAppsMap[period]!!.entries.iterator()
-            while (it.hasNext()) {
-                val contains =
-                    categorizedPackages[period]?.any { (pkgName, user, _) ->
-                        val key = createKey(pkgName, user)
-                        it.next().key == key
-                    }
-                if (contains != true) {
-                    it.remove()
-                }
+            val unUsedAppsInAPeriod = unusedAppsMap[period] ?: continue
+            val categorizedPackagesOfAPeriod = categorizedPackages[period]
+            if (categorizedPackagesOfAPeriod == null) {
+                unUsedAppsInAPeriod.clear()
+                continue
+            }
+            val categorizedPackageKeys =
+                categorizedPackagesOfAPeriod.map { createKey(it.packageName, it.user) }
+            // Do not remove apps that are still in the unused category
+            val keysToRemove = unUsedAppsInAPeriod.keys.filterNot { it in categorizedPackageKeys }
+            for (key in keysToRemove) {
+                unUsedAppsInAPeriod.remove(key)
             }
         }
 
