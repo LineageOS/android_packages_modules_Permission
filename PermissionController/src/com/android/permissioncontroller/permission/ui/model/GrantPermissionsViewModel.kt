@@ -199,7 +199,7 @@ class GrantPermissionsViewModel(
         val groupName = groupInfo.name
     }
 
-    var activityResultCallback: Consumer<Intent>? = null
+    var activityResultCallback: Consumer<Intent?>? = null
 
     /**
      * A LiveData which holds a list of the currently pending RequestInfos
