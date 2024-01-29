@@ -1353,6 +1353,7 @@
             <permission name="android.permission.MANAGE_DEVICE_POLICY_USB_FILE_TRANSFER" minSdkVersion="34" />
             <permission name="android.permission.MANAGE_DEVICE_POLICY_ACROSS_USERS_SECURITY_CRITICAL" minSdkVersion="34" />
             <permission name="android.permission.MANAGE_DEVICE_POLICY_ACROSS_USERS" minSdkVersion="34" />
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_CONTENT_PROTECTION" minSdkVersion="35" />
         </permissions>
     </role>
 
