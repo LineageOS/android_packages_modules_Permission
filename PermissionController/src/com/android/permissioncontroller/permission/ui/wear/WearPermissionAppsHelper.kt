@@ -160,7 +160,9 @@ class WearPermissionAppsHelper(
             )
         }
         val summary =
-            if (Flags.wearPrivacyDashboardEnabled()) {
+            if (
+                Flags.wearPrivacyDashboardEnabled() || Flags.wearPrivacyDashboardEnabledReadOnly()
+            ) {
                 lastAccessTime?.let { WearUtils.getPreferenceSummary(application, lastAccessTime) }
             } else {
                 null
