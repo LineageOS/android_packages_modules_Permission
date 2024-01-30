@@ -1397,7 +1397,7 @@ class GrantPermissionsViewModel(
  * @param app The current application
  * @param packageName The name of the package this ViewModel represents
  */
-class NewGrantPermissionsViewModelFactory(
+class GrantPermissionsViewModelFactory(
     private val app: Application,
     private val packageName: String,
     private val deviceId: Int,
