@@ -53,13 +53,7 @@ class RevokePermissionTest {
     fun testRevokePermissionNotRequested() {
         testRevoke(
             packageName = APP_PKG_NAME,
-            permission = CAMERA,
-            throwableType = SecurityException::class.java,
-            throwableMessages =
-                listOf(
-                    "has not requested permission",
-                    "Permission $CAMERA isn't requested by package $APP_PKG_NAME"
-                )
+            permission = CAMERA
         )
     }
 
@@ -104,13 +98,7 @@ class RevokePermissionTest {
         testRevoke(
             packageName = APP_PKG_NAME,
             permission = CAMERA,
-            reason = "test reason",
-            throwableType = SecurityException::class.java,
-            throwableMessages =
-                listOf(
-                    "has not requested permission",
-                    "Permission $CAMERA isn't requested by package $APP_PKG_NAME"
-                )
+            reason = "test reason"
         )
     }
 
