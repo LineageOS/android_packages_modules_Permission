@@ -1363,6 +1363,7 @@
         <permissions>
             <permission-set name="notifications" />
             <permission name="android.permission.GET_HISTORICAL_APP_OPS_STATS" />
+            <permission name="android.permission.GET_BACKGROUND_INSTALLED_PACKAGES" minSdkVersion="35" />
         </permissions>
     </role>
 
