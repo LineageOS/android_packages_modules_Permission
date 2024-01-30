@@ -29,6 +29,7 @@ import kotlinx.coroutines.withTimeoutOrNull
 
 /** A class that facilitates interacting with coroutines. */
 object Coroutines {
+
     /**
      * The timeout of a test case, typically varies depending on whether the test is running
      * locally, on pre-submit or post-submit.
