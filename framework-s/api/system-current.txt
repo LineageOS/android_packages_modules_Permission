@@ -6,6 +6,7 @@ package android.app.ecm {
     method @NonNull public android.app.PendingIntent getRestrictedSettingDialogIntent(@NonNull String) throws android.content.pm.PackageManager.NameNotFoundException;
     method @RequiresPermission(android.Manifest.permission.MANAGE_ENHANCED_CONFIRMATION_STATES) public boolean isClearRestrictionAllowed(@NonNull String) throws android.content.pm.PackageManager.NameNotFoundException;
     method @RequiresPermission(android.Manifest.permission.MANAGE_ENHANCED_CONFIRMATION_STATES) public boolean isRestricted(@NonNull String, @NonNull String) throws android.content.pm.PackageManager.NameNotFoundException;
+    method @RequiresPermission(android.Manifest.permission.MANAGE_ENHANCED_CONFIRMATION_STATES) public void setClearRestrictionAllowed(@NonNull String) throws android.content.pm.PackageManager.NameNotFoundException;
   }
 
 }
