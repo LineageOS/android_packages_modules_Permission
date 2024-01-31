@@ -13,6 +13,7 @@
 // limitations under the License.
 
 package {
+    default_team: "trendy_team_android_permissions",
     default_applicable_licenses: ["Android-Apache-2.0"],
     default_visibility: [":__subpackages__"],
 }
@@ -67,8 +68,8 @@ sdk {
 bootclasspath_fragment {
     name: "com.android.permission-bootclasspath-fragment",
     contents: [
-      "framework-permission",
-      "framework-permission-s",
+        "framework-permission",
+        "framework-permission-s",
     ],
     apex_available: ["com.android.permission"],
 
