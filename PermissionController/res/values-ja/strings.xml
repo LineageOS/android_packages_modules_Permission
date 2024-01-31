@@ -55,8 +55,8 @@
     <string name="grant_dialog_button_keey_approximate_location" msgid="438025182769080011">"おおよその位置情報を保持"</string>
     <string name="grant_dialog_button_allow_one_time" msgid="2618088516449706391">"今回のみ"</string>
     <string name="grant_dialog_button_allow_background" msgid="8236044729434367833">"常に許可"</string>
-    <string name="grant_dialog_button_allow_all_files" msgid="4955436994954829894">"すべてのファイルの管理を許可"</string>
-    <string name="grant_dialog_button_allow_media_only" msgid="4832877658422573832">"メディア ファイルへのアクセスを許可"</string>
+    <string name="grant_dialog_button_allow_all_files" msgid="4955436994954829894">"すべての管理を許可"</string>
+    <string name="grant_dialog_button_allow_media_only" msgid="4832877658422573832">"アクセスのみ許可"</string>
     <string name="app_permissions_breadcrumb" msgid="5136969550489411650">"アプリ"</string>
     <string name="app_permissions" msgid="3369917736607944781">"アプリの権限"</string>
     <string name="unused_apps" msgid="2058057455175955094">"使用されていないアプリ"</string>
@@ -84,7 +84,7 @@
     <string name="app_permissions_group_summary" msgid="8788419008958284002">"<xliff:g id="COUNT_0">%1$d</xliff:g>/<xliff:g id="COUNT_1">%2$d</xliff:g> 個のアプリを許可"</string>
     <string name="app_permissions_group_summary2" msgid="4329922444840521150">"<xliff:g id="COUNT_0">%1$d</xliff:g>/<xliff:g id="COUNT_1">%2$d</xliff:g> 件のアプリを許可"</string>
     <string name="menu_show_system" msgid="4254021607027872504">"システムアプリを表示"</string>
-    <string name="menu_hide_system" msgid="3855390843744028465">"システムアプリを表示しない"</string>
+    <string name="menu_hide_system" msgid="3855390843744028465">"システムアプリを非表示"</string>
     <string name="menu_show_7_days_data" msgid="8979611198508523706">"過去 7 日間を表示"</string>
     <string name="menu_show_24_hours_data" msgid="8228054833323380780">"過去 24 時間を表示"</string>
     <string name="manage_permission" msgid="2895385393037061964">"権限の管理"</string>
