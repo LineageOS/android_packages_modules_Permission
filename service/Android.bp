@@ -13,6 +13,7 @@
 // limitations under the License.
 
 package {
+    default_team: "trendy_team_android_permissions",
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
@@ -149,8 +150,8 @@ genrule {
     name: "statslog-service-permission-java-gen",
     tools: ["stats-log-api-gen"],
     cmd: "$(location stats-log-api-gen) --java $(out) --module permissioncontroller" +
-         " --javaPackage com.android.permission" +
-         " --javaClass PermissionStatsLog --minApiLevel 29",
+        " --javaPackage com.android.permission" +
+        " --javaClass PermissionStatsLog --minApiLevel 29",
     out: ["com/android/permission/PermissionStatsLog.java"],
 }
 
