@@ -16,6 +16,7 @@
 
 // APK to hold all the Safety Center overlayable resources.
 package {
+    default_team: "trendy_team_android_permissions",
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
@@ -51,5 +52,5 @@ android_app {
 
 android_app_certificate {
     name: "com.android.safetycenter.resources.certificate",
-    certificate: "com.android.safetycenter.resources"
+    certificate: "com.android.safetycenter.resources",
 }
