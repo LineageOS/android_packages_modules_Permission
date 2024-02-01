@@ -74,7 +74,7 @@ class SafetyCenterInteractionLoggingHelperTests {
         safetyCenterTestHelper.setData(SINGLE_SOURCE_ID, safetySourceTestData.informationWithIssue)
 
         context.launchSafetyCenterQsActivity {
-            openPageAndExit("Settings") { waitAllTextDisplayed("OK") }
+            openPageAndExit("Settings") { waitAllTextDisplayed(safetySourceTestData.informationIssue.title) }
         }
     }
 
