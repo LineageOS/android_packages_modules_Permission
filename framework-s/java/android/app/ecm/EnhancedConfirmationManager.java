@@ -16,9 +16,12 @@
 
 package android.app.ecm;
 
+import static android.annotation.SdkConstant.SdkConstantType.BROADCAST_INTENT_ACTION;
+
 import android.annotation.FlaggedApi;
 import android.annotation.IntDef;
 import android.annotation.RequiresPermission;
+import android.annotation.SdkConstant;
 import android.annotation.SystemApi;
 import android.annotation.SystemService;
 import android.annotation.TargetApi;
@@ -191,6 +194,13 @@ public final class EnhancedConfirmationManager {
      * API. Either upgrade these to SystemApi or enforce a different permission, then add the
      * appropriate RequiresPermission annotation.
      */
+
+    /**
+     * Shows the "Restricted setting" dialog. Opened when a setting is blocked.
+     */
+    @SdkConstant(BROADCAST_INTENT_ACTION)
+    public static final String ACTION_SHOW_ECM_RESTRICTED_SETTING_DIALOG =
+            "android.app.ecm.action.SHOW_ECM_RESTRICTED_SETTING_DIALOG";
 
     /** A map of ECM states to their corresponding app op states */
     @Retention(java.lang.annotation.RetentionPolicy.SOURCE)
