@@ -94,7 +94,7 @@ class DeviceAwarePermissionGrantTest {
             Display.DEFAULT_DISPLAY,
             mFakeVirtualDeviceRule.virtualDevice.deviceId,
             true,
-            DEFAULT_REMOTE_DEVICE_NAME,
+            mFakeVirtualDeviceRule.deviceDisplayName,
             expectPermissionGrantedOnDefaultDevice = false,
             expectPermissionGrantedOnRemoteDevice = true
         )
@@ -120,7 +120,7 @@ class DeviceAwarePermissionGrantTest {
             mFakeVirtualDeviceRule.virtualDisplayId,
             mFakeVirtualDeviceRule.virtualDevice.deviceId,
             true,
-            DEFAULT_REMOTE_DEVICE_NAME,
+            mFakeVirtualDeviceRule.deviceDisplayName,
             expectPermissionGrantedOnDefaultDevice = false,
             expectPermissionGrantedOnRemoteDevice = true
         )
@@ -199,7 +199,6 @@ class DeviceAwarePermissionGrantTest {
         const val APP_APK_PATH_STREAMING = "${APK_DIRECTORY}/CtsAccessRemoteDeviceCamera.apk"
         const val APP_PACKAGE_NAME = "android.permissionmultidevice.cts.accessremotedevicecamera"
         const val PERMISSION_MESSAGE_ID = "com.android.permissioncontroller:id/permission_message"
-        const val DEFAULT_REMOTE_DEVICE_NAME = "remote device"
         const val ALLOW_BUTTON =
             "com.android.permissioncontroller:id/permission_allow_foreground_only_button"
         const val DEVICE_ID_DEFAULT = 0
