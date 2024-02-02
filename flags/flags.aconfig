@@ -7,11 +7,20 @@ flag {
     bug: "292252664"
 }
 
+# TODO: Remove when wear_privacy_dashboard_enabled_read_only reaches to the next stage.
 flag {
     name: "wear_privacy_dashboard_enabled"
     namespace: "wear_security"
     description: "This flag is used to support Privacy dashboard for Wear"
     bug: "309721061"
+}
+
+flag {
+    name: "wear_privacy_dashboard_enabled_read_only"
+    namespace: "wear_security"
+    description: "This flag is used to support Privacy dashboard for Wear"
+    bug: "309721061"
+    is_fixed_read_only: true
 }
 
 flag {

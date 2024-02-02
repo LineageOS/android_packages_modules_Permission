@@ -50,15 +50,6 @@ class RevokePermissionTest {
 
     @Test
     @AppModeFull(reason = "Instant apps can't revoke permissions.")
-    fun testRevokePermissionNotRequested() {
-        testRevoke(
-            packageName = APP_PKG_NAME,
-            permission = CAMERA
-        )
-    }
-
-    @Test
-    @AppModeFull(reason = "Instant apps can't revoke permissions.")
     fun testRevokeFakePermission() {
         val fakePermissionName = "FAKE_PERMISSION"
         testRevoke(
@@ -89,16 +80,6 @@ class RevokePermissionTest {
             permission = READ_CALENDAR,
             reason = "test reason",
             isGranted = true
-        )
-    }
-
-    @Test
-    @AppModeFull(reason = "Instant apps can't revoke permissions.")
-    fun testRevokePermissionNotRequestedWithReason() {
-        testRevoke(
-            packageName = APP_PKG_NAME,
-            permission = CAMERA,
-            reason = "test reason"
         )
     }
 

@@ -330,11 +330,12 @@ public final class EnhancedConfirmationManager {
      * @param packageName package name of the application to open the dialog for
      * @throws NameNotFoundException if the provided package was not found
      */
-    public @NonNull PendingIntent getRestrictedSettingDialogIntent(@NonNull String packageName)
-            throws NameNotFoundException {
+    public @NonNull PendingIntent getRestrictedSettingDialogIntent(@NonNull String packageName,
+            @NonNull String settingIdentifier) throws NameNotFoundException {
         Intent intent = new Intent(Settings.ACTION_SHOW_RESTRICTED_SETTING_DIALOG);
         intent.putExtra(Intent.EXTRA_PACKAGE_NAME, packageName);
         intent.putExtra(Intent.EXTRA_UID, getPackageUid(packageName));
+        // TODO(b/323225971): Pass settingIdentifier to dialog
         return PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_IMMUTABLE);
     }
 
