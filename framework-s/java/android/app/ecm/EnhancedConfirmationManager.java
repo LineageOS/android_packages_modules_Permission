@@ -16,9 +16,12 @@
 
 package android.app.ecm;
 
+import static android.annotation.SdkConstant.SdkConstantType.BROADCAST_INTENT_ACTION;
+
 import android.annotation.FlaggedApi;
 import android.annotation.IntDef;
 import android.annotation.RequiresPermission;
+import android.annotation.SdkConstant;
 import android.annotation.SystemApi;
 import android.annotation.SystemService;
 import android.annotation.TargetApi;
@@ -37,6 +40,7 @@ import android.util.ArraySet;
 import androidx.annotation.NonNull;
 
 import java.lang.annotation.Retention;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * This class provides the core API for ECM (Enhanced Confirmation Mode). ECM is a feature that
@@ -192,6 +196,13 @@ public final class EnhancedConfirmationManager {
      * appropriate RequiresPermission annotation.
      */
 
+    /**
+     * Shows the "Restricted setting" dialog. Opened when a setting is blocked.
+     */
+    @SdkConstant(BROADCAST_INTENT_ACTION)
+    public static final String ACTION_SHOW_ECM_RESTRICTED_SETTING_DIALOG =
+            "android.app.ecm.action.SHOW_ECM_RESTRICTED_SETTING_DIALOG";
+
     /** A map of ECM states to their corresponding app op states */
     @Retention(java.lang.annotation.RetentionPolicy.SOURCE)
     @IntDef(prefix = {"ECM_STATE_"}, value = {EcmState.ECM_STATE_NOT_GUARDED,
@@ -218,6 +229,8 @@ public final class EnhancedConfirmationManager {
 
     private final @NonNull IEnhancedConfirmationManager mService;
 
+    private final @NonNull AtomicInteger mNextRequestCode;
+
     /**
      * @hide
      */
@@ -226,6 +239,7 @@ public final class EnhancedConfirmationManager {
         mContext = context;
         mPackageManager = context.getPackageManager();
         mService = service;
+        mNextRequestCode = new AtomicInteger(1);
     }
 
     /**
@@ -335,8 +349,8 @@ public final class EnhancedConfirmationManager {
         Intent intent = new Intent(Settings.ACTION_SHOW_RESTRICTED_SETTING_DIALOG);
         intent.putExtra(Intent.EXTRA_PACKAGE_NAME, packageName);
         intent.putExtra(Intent.EXTRA_UID, getPackageUid(packageName));
-        // TODO(b/323225971): Pass settingIdentifier to dialog
-        return PendingIntent.getActivity(mContext, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+        return PendingIntent.getActivity(mContext, mNextRequestCode.getAndIncrement(),
+                intent, PendingIntent.FLAG_IMMUTABLE);
     }
 
     private int getPackageUid(String packageName) throws NameNotFoundException {
