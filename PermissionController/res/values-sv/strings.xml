@@ -204,7 +204,7 @@
     <string name="auto_revoke_label" msgid="5068393642936571656">"Ta bort behörigheter om en app inte används"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"Ta bort behörigheter och frigör utrymme"</string>
     <string name="unused_apps_label_v2" msgid="7058776770056517980">"Pausa appaktivitet om appen inte används"</string>
-    <string name="unused_apps_label_v3" msgid="693340578642156657">"Hantera appen om den är oanvänd"</string>
+    <string name="unused_apps_label_v3" msgid="693340578642156657">"Hantera appen om den inte används"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Ta bort behörigheter, radera tillfälliga filer och hindra aviseringar"</string>
     <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Ta bort behörigheter, radera tillfälliga filer, hindra aviseringar och arkivera appen"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"Behörigheter tas bort av säkerhetsskäl från den här appen om den inte används på några månader."</string>
