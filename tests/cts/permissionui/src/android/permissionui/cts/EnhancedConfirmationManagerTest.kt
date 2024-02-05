@@ -32,6 +32,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.android.compatibility.common.util.SystemUtil.eventually
 import com.android.compatibility.common.util.SystemUtil.runWithShellPermissionIdentity
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertTrue
 import org.junit.Rule
 import org.junit.Test
@@ -117,6 +118,19 @@ class EnhancedConfirmationManagerTest : BaseUsePermissionTest() {
             ecm.clearRestriction(APP_PACKAGE_NAME)
             eventually { assertFalse(ecm.isRestricted(APP_PACKAGE_NAME, PROTECTED_SETTING)) }
         }
+    }
+
+    @RequiresFlagsEnabled(Flags.FLAG_ENHANCED_CONFIRMATION_MODE_APIS_ENABLED)
+    @Test
+    fun getRestrictedSettingDialogIntentReturnsUniqueObjects() {
+        installPackageWithInstallSourceAndMetadataFromDownloadedFile(apkName)
+
+        val pendingIntent1 =
+            ecm.getRestrictedSettingDialogIntent(APP_PACKAGE_NAME, PROTECTED_SETTING)
+        val pendingIntent2 =
+            ecm.getRestrictedSettingDialogIntent(APP_PACKAGE_NAME, PROTECTED_SETTING)
+
+        assertNotEquals(pendingIntent1, pendingIntent2)
     }
 
     companion object {
