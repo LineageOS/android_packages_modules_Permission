@@ -206,7 +206,7 @@
     <string name="unused_apps_label_v2" msgid="7058776770056517980">"Activitat a l\'app en pausa si no s\'usa"</string>
     <string name="unused_apps_label_v3" msgid="693340578642156657">"Gestiona l\'aplicació si no s\'utilitza"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Suprimeix els permisos i els fitxers temporals, i atura les notificacions"</string>
-    <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Suprimeix els permisos i els fitxers temporals, atura les notificacions i arxiva l\'aplicació"</string>
+    <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Suprimeix els permisos, elimina els fitxers temporals, atura les notificacions i arxiva l\'aplicació"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"Per protegir les teves dades, els permisos d\'aquesta aplicació se suprimiran si no la utilitzes durant uns mesos."</string>
     <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"Si l\'aplicació no s\'utilitza durant uns mesos, se suprimiran els permisos següents per protegir les teves dades: <xliff:g id="PERMS">%1$s</xliff:g>"</string>
     <string name="auto_revoked_apps_page_summary" msgid="6594753657893756536">"Per protegir les teves dades, s\'han suprimit els permisos de les aplicacions que no has utilitzat durant els darrers mesos."</string>
