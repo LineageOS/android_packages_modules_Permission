@@ -409,9 +409,9 @@
     <string name="phone_call_uses_microphone" msgid="233569591461187177">"‏در &lt;b&gt;تماس تلفنی&lt;/b&gt; از میکروفون استفاده می‌شود"</string>
     <string name="phone_call_uses_microphone_and_camera" msgid="6291898755681748189">"‏در &lt;b&gt;تماس تصویری&lt;/b&gt; از دوربین و میکروفون استفاده می‌شود"</string>
     <string name="phone_call_uses_camera" msgid="2048417022147857418">"‏در &lt;b&gt;تماس تصویری&lt;/b&gt; از دوربین استفاده می‌شود"</string>
-    <string name="system_uses_microphone" msgid="576672130318877143">"سرویس سیستم به میکروفون دسترسی دارد"</string>
-    <string name="system_uses_microphone_and_camera" msgid="5124478304275138804">"سرویس سیستم به دوربین و میکروفون دسترسی دارد"</string>
-    <string name="system_uses_camera" msgid="1911223105234441470">"سرویس سیستم به دوربین دسترسی دارد"</string>
+    <string name="system_uses_microphone" msgid="576672130318877143">"خدمات سیستم به میکروفون دسترسی دارد"</string>
+    <string name="system_uses_microphone_and_camera" msgid="5124478304275138804">"خدمات سیستم به دوربین و میکروفون دسترسی دارد"</string>
+    <string name="system_uses_camera" msgid="1911223105234441470">"خدمات سیستم به دوربین دسترسی دارد"</string>
     <string name="other_use" msgid="6564855051022776692">"استفاده‌های دیگر:"</string>
     <string name="ongoing_usage_dialog_ok" msgid="103556809118460072">"متوجه شدم"</string>
     <string name="ongoing_usage_dialog_title" msgid="683836493556628569">"استفاده اخیر از <xliff:g id="TYPES_LIST">%s</xliff:g>"</string>
