@@ -19,4 +19,4 @@ package android.permission;
 /**
  * @hide
  */
-public class PermissionState {}
+public class PermissionStateUnused {}
