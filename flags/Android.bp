@@ -21,6 +21,7 @@ package {
 aconfig_declarations {
     name: "permissions-aconfig-flags",
     package: "com.android.permission.flags",
+    container: "com.android.permission",
     srcs: ["flags.aconfig"],
 }
 
