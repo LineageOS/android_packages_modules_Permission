@@ -23,6 +23,7 @@ import android.safetycenter.SafetyCenterManager.EXTRA_SAFETY_SOURCE_ID
 import android.safetycenter.SafetyCenterManager.EXTRA_SAFETY_SOURCE_ISSUE_ID
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.android.compatibility.common.util.UiAutomatorUtils2
 import com.android.safetycenter.testing.SafetyCenterActivityLauncher.launchSafetyCenterActivity
 import com.android.safetycenter.testing.SafetyCenterActivityLauncher.launchSafetyCenterQsActivity
 import com.android.safetycenter.testing.SafetyCenterActivityLauncher.openPageAndExit
@@ -34,6 +35,7 @@ import com.android.safetycenter.testing.SafetyCenterTestRule
 import com.android.safetycenter.testing.SafetySourceTestData
 import com.android.safetycenter.testing.SafetySourceTestData.Companion.INFORMATION_ISSUE_ID
 import com.android.safetycenter.testing.UiTestHelper.waitAllTextDisplayed
+import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -61,6 +63,14 @@ class SafetyCenterInteractionLoggingHelperTests {
     @Before
     fun setUp() {
         SafetyCenterFlags.showSubpages = true
+    }
+
+    @After
+    fun tearDown() {
+        // When an assertion fails, it will end up leaving the previous view open, which screws
+        // with the logging assertions made by this test (polluting with view events from whatever
+        // view was left open). Here we preemptively clear whatever's open to get back to home
+        UiAutomatorUtils2.getUiDevice().pressHome()
     }
 
     @Test
