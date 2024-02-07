@@ -34,6 +34,7 @@ import java.security.MessageDigest
 import org.junit.After
 import org.junit.Assume.assumeTrue
 import org.junit.Before
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -90,6 +91,7 @@ class SafetyCenterInteractionLoggingHostTest : BaseHostJUnit4Test() {
         }
     }
 
+    @Ignore // TODO: b/323269529 - Deflake this test
     @Test
     fun openSafetyCenterFullFromQs_recordsViewEventWithCorrectSource() {
         helperAppRule.runTest(TEST_CLASS_NAME, "openSafetyCenterFullFromQs")

@@ -229,7 +229,7 @@ public final class EnhancedConfirmationManager {
 
     private final @NonNull IEnhancedConfirmationManager mService;
 
-    private final @NonNull AtomicInteger mNextRequestCode;
+    private static final AtomicInteger sNextRequestCode = new AtomicInteger(1);
 
     /**
      * @hide
@@ -239,7 +239,6 @@ public final class EnhancedConfirmationManager {
         mContext = context;
         mPackageManager = context.getPackageManager();
         mService = service;
-        mNextRequestCode = new AtomicInteger(1);
     }
 
     /**
@@ -349,7 +348,7 @@ public final class EnhancedConfirmationManager {
         Intent intent = new Intent(Settings.ACTION_SHOW_RESTRICTED_SETTING_DIALOG);
         intent.putExtra(Intent.EXTRA_PACKAGE_NAME, packageName);
         intent.putExtra(Intent.EXTRA_UID, getPackageUid(packageName));
-        return PendingIntent.getActivity(mContext, mNextRequestCode.getAndIncrement(),
+        return PendingIntent.getActivity(mContext, sNextRequestCode.getAndIncrement(),
                 intent, PendingIntent.FLAG_IMMUTABLE);
     }
 

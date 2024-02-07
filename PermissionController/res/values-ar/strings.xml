@@ -337,7 +337,7 @@
     <string name="app_perms_7d_access_all_files" msgid="8246193786397635824">"تم الوصول آخر مرة بتاريخ <xliff:g id="TIME_DATE_0">%1$s</xliff:g> في <xliff:g id="TIME_DATE_1">%2$s</xliff:g> • جميع الملفات"</string>
     <string name="app_perms_content_provider_24h_all_files" msgid="573104317727770850">"تم الوصول في آخر 24 ساعة • كل الملفات"</string>
     <string name="app_perms_content_provider_7d_all_files" msgid="7962416229708835558">"تم الوصول في آخر 7 أيام • جميع الملفات"</string>
-    <string name="no_permissions_allowed" msgid="6081976856354669209">"لم يتم منح أي أذونات."</string>
+    <string name="no_permissions_allowed" msgid="6081976856354669209">"لم يتم منح أي أذونات"</string>
     <string name="no_permissions_denied" msgid="8159923922804043282">"لم يتم رفض أي أذونات."</string>
     <string name="no_apps_allowed" msgid="7718822655254468631">"لم يتم السماح لأي تطبيقات."</string>
     <string name="no_apps_allowed_full" msgid="8011716991498934104">"ما من تطبيقات تم منحها إذن الوصول إلى جميع الملفات."</string>

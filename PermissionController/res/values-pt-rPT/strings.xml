@@ -206,7 +206,7 @@
     <string name="unused_apps_label_v2" msgid="7058776770056517980">"Pausar atividade de apps, se não usadas"</string>
     <string name="unused_apps_label_v3" msgid="693340578642156657">"Gerir app, se não for usada"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Remova autorizações, elimine ficheiros temporários e pare notificações"</string>
-    <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Remova autorizações, elimine ficheiros temporários, pare notificações e arquive a app"</string>
+    <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Remove autorizações, elimina ficheiros temporários, pára notificações e arquiva a app"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"Para proteger os seus dados, as autorizações desta app serão removidas se a mesma não for utilizada durante alguns meses."</string>
     <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"Para proteger os seus dados, se a app não for utilizada há alguns meses, serão removidas as seguintes autorizações: <xliff:g id="PERMS">%1$s</xliff:g>"</string>
     <string name="auto_revoked_apps_page_summary" msgid="6594753657893756536">"Para proteger os seus dados, foram removidas as autorizações para as apps que não utiliza há alguns meses."</string>
