@@ -55,7 +55,6 @@ import android.text.Spanned;
 import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.util.Pair;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnAttachStateChangeListener;
 import android.view.Window;
@@ -553,26 +552,6 @@ public class GrantPermissionsActivity extends SettingsActivity
             mRootView.setVisibility(View.VISIBLE);
         }
     }
-
-    // LINT.IfChange(dispatchTouchEvent)
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        View rootView = getWindow().getDecorView();
-        if (rootView.getTop() != 0) {
-            // We are animating the top view, need to compensate for that in motion events.
-            ev.setLocation(ev.getX(), ev.getY() - rootView.getTop());
-        }
-        final int x = (int) ev.getX();
-        final int y = (int) ev.getY();
-        if ((x < 0) || (y < 0) || (x > (rootView.getWidth())) || (y > (rootView.getHeight()))) {
-            if (MotionEvent.ACTION_DOWN == ev.getAction()) {
-                mViewHandler.onCancelled();
-            }
-            finishAfterTransition();
-        }
-        return super.dispatchTouchEvent(ev);
-    }
-    // LINT.ThenChange(PermissionRationaleActivity.java:dispatchTouchEvent)
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
