@@ -200,7 +200,7 @@
     <string name="app_permission_footer_app_permissions_link" msgid="4926890342636587393">"ყველა ნებართვის ნახვა: <xliff:g id="APP">%1$s</xliff:g>"</string>
     <string name="app_permission_footer_permission_apps_link" msgid="3941988129992794327">"ამ ნებართვის მქონე ყველა აპის ნახვა"</string>
     <string name="assistant_mic_label" msgid="1011432357152323896">"ასისტენტის მიკროფონის გამოყენების ჩვენება"</string>
-    <string name="unused_apps_category_title" msgid="2988455616845243901">"აპის გამოუყენებელი პარამეტრები"</string>
+    <string name="unused_apps_category_title" msgid="2988455616845243901">"გამოუყენებელი აპის პარამეტრები"</string>
     <string name="auto_revoke_label" msgid="5068393642936571656">"ნებართვების ამოშლა აპის გამოუყენებლობის შემთხვევაში."</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"ნებართვების ამოშლა და მეხსიერების გათავისუფლება"</string>
     <string name="unused_apps_label_v2" msgid="7058776770056517980">"დაპაუზდეს აპში აქტივობა, თუ არ იყენებენ"</string>
