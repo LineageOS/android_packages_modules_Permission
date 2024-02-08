@@ -31,6 +31,7 @@ import android.safetycenter.config.SafetySource.SAFETY_SOURCE_TYPE_STATIC
 import android.safetycenter.config.SafetySourcesGroup
 import androidx.annotation.RequiresApi
 import com.android.modules.utils.build.SdkLevel
+import com.android.permission.flags.Flags
 import com.android.safetycenter.testing.SettingsPackage.getSettingsPackageName
 import java.security.MessageDigest
 
@@ -686,6 +687,11 @@ class SafetyCenterTestConfigs(private val context: Context) {
                             .setSummaryResId(Resources.ID_NULL)
                             .setIntentAction(null)
                             .setInitialDisplayState(SafetySource.INITIAL_DISPLAY_STATE_HIDDEN)
+                            .apply {
+                                if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                                    setTitleForPrivateProfileResId(Resources.ID_NULL)
+                                }
+                            }
                             .build()
                     )
                     .build()
@@ -788,6 +794,11 @@ class SafetyCenterTestConfigs(private val context: Context) {
         dynamicSafetySourceBuilder(id)
             .setProfile(SafetySource.PROFILE_ALL)
             .setTitleForWorkResId(android.R.string.paste)
+            .apply {
+                if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                    setTitleForPrivateProfileResId(android.R.string.paste)
+                }
+            }
 
     private fun staticSafetySource(id: String) = staticSafetySourceBuilder(id).build()
 
@@ -803,6 +814,11 @@ class SafetyCenterTestConfigs(private val context: Context) {
         staticSafetySourceBuilder(id)
             .setProfile(SafetySource.PROFILE_ALL)
             .setTitleForWorkResId(android.R.string.paste)
+            .apply {
+                if (SdkLevel.isAtLeastV() && Flags.privateProfileTitleApi()) {
+                    setTitleForPrivateProfileResId(android.R.string.unknownName)
+                }
+            }
 
     @RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
     private fun issueOnlySafetySourceWithDuplicationInfo(id: String, deduplicationGroup: String) =

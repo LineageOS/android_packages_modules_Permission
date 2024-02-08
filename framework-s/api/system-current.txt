@@ -571,6 +571,7 @@ package android.safetycenter.config {
     method public int getProfile();
     method @StringRes public int getSearchTermsResId();
     method @StringRes public int getSummaryResId();
+    method @FlaggedApi("com.android.permission.flags.private_profile_title_api") @StringRes public int getTitleForPrivateProfileResId();
     method @StringRes public int getTitleForWorkResId();
     method @StringRes public int getTitleResId();
     method public int getType();
@@ -606,6 +607,7 @@ package android.safetycenter.config {
     method @NonNull public android.safetycenter.config.SafetySource.Builder setRefreshOnPageOpenAllowed(boolean);
     method @NonNull public android.safetycenter.config.SafetySource.Builder setSearchTermsResId(@StringRes int);
     method @NonNull public android.safetycenter.config.SafetySource.Builder setSummaryResId(@StringRes int);
+    method @FlaggedApi("com.android.permission.flags.private_profile_title_api") @NonNull public android.safetycenter.config.SafetySource.Builder setTitleForPrivateProfileResId(@StringRes int);
     method @NonNull public android.safetycenter.config.SafetySource.Builder setTitleForWorkResId(@StringRes int);
     method @NonNull public android.safetycenter.config.SafetySource.Builder setTitleResId(@StringRes int);
   }
