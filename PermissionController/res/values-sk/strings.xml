@@ -206,7 +206,7 @@
     <string name="unused_apps_label_v2" msgid="7058776770056517980">"Pozastaviť aktivitu v nepoužívaných apl."</string>
     <string name="unused_apps_label_v3" msgid="693340578642156657">"Spravovať aplikáciu, ak sa nepoužíva"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Odstrániť povolenia, vymazať dočasné súbory a zastaviť upozornenia"</string>
-    <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Odstráňte povolenia, vymažte dočasné súbory, zastavte upozornenia a archivujte aplikáciu"</string>
+    <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Odstrániť povolenia, vymazať dočasné súbory, zastaviť upozornenia a archivovať aplikáciu"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"Ak túto aplikáciu niekoľko mesiacov nepoužijete, v záujme ochrany vašich údajov budú odstránené jej povolenia."</string>
     <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"Ak túto aplikáciu niekoľko mesiacov nepoužijete, v záujme ochrany vašich údajov budú odstránené tieto povolenia: <xliff:g id="PERMS">%1$s</xliff:g>"</string>
     <string name="auto_revoked_apps_page_summary" msgid="6594753657893756536">"V záujme ochrany vašich údajov boli odobrané povolenia aplikáciám, ktoré ste niekoľko mesiacov nepoužívali."</string>
