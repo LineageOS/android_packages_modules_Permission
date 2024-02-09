@@ -204,7 +204,7 @@
     <string name="auto_revoke_label" msgid="5068393642936571656">"Remover permissões se o app não for usado"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"Remover permissões e liberar espaço"</string>
     <string name="unused_apps_label_v2" msgid="7058776770056517980">"Pausar atividade no app quando não usado"</string>
-    <string name="unused_apps_label_v3" msgid="693340578642156657">"Gerenciar o app quando não usado"</string>
+    <string name="unused_apps_label_v3" msgid="693340578642156657">"Gerenciar o app fora de uso"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Remove permissões, exclui arquivos temporários e para notificações"</string>
     <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Remover permissões, excluir arquivos temporários, parar notificações e arquivar o app"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"Para proteger seus dados, as permissões serão removidas se o app não for usado por alguns meses."</string>
