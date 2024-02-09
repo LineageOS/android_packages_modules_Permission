@@ -2683,6 +2683,11 @@
     <permission android:name="android.permission.OEM_UNLOCK_STATE"
         android:protectionLevel="signature" />
 
+    <!-- @SystemApi @hide Allows configuration of factory reset protection
+    <p>Not for use by third-party applications. -->
+    <permission android:name="android.permission.CONFIGURE_FACTORY_RESET_PROTECTION"
+        android:protectionLevel="signature|privileged" />
+
     <!-- @SystemApi @hide Allows querying state of PersistentDataBlock
    <p>Not for use by third-party applications. -->
     <permission android:name="android.permission.ACCESS_PDB_STATE"
@@ -6984,6 +6989,13 @@
          @hide  <p>Not for use by third-party applications.</p> -->
     <permission android:name="android.permission.MODIFY_THEME_OVERLAY"
                 android:protectionLevel="signature" />
+
+
+    <!-- Allows reporting the ThemeOverlayController readiness.
+         @hide  <p>Not for use by third-party applications.</p> -->
+    <permission android:name="android.permission.SET_THEME_OVERLAY_CONTROLLER_READY"
+        android:protectionLevel="signature|setup"/>
+
 
     <!-- Allows an instant app to create foreground services.
          <p>Protection level: signature|development|instant|appop -->

@@ -19,6 +19,7 @@ package com.android.permissioncontroller.role.ui.wear
 import android.app.admin.DevicePolicyManager
 import android.content.Context
 import android.content.Intent
+import android.os.UserHandle
 import android.provider.Settings
 import androidx.preference.TwoStatePreference
 import com.android.permissioncontroller.role.ui.RoleApplicationPreference
@@ -32,7 +33,8 @@ class WearRoleApplicationPreference(
     val label: String,
     val checked: Boolean,
     val onDefaultCheckChanged: (Boolean) -> Unit = {},
-    private var restriction: String? = null
+    private var restriction: String? = null,
+    private var user: UserHandle? = null
 ) : TwoStatePreference(context), RoleApplicationPreference {
     fun getOnCheckChanged(): (Boolean) -> Unit =
         restriction?.let {
@@ -45,9 +47,19 @@ class WearRoleApplicationPreference(
         }
             ?: onDefaultCheckChanged
 
-    override fun setUserRestriction(userRestriction: String?) {
+    override fun setUserRestriction(userRestriction: String?, userHandle: UserHandle) {
         restriction = userRestriction
+        user = userHandle
         setEnabled(restriction == null)
+    }
+
+    override fun setEnhancedConfirmationRestriction(
+        packageName: String?,
+        settingIdentifier: String?,
+        user: UserHandle
+    ) {
+        // no-op because Enhanced Confirmation Restriction is not applied to wear yet.
+        return
     }
 
     override fun asTwoStatePreference(): TwoStatePreference {

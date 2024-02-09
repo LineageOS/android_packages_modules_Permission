@@ -17,23 +17,25 @@
 package com.android.permissioncontroller.role.ui.auto;
 
 import android.content.Context;
+import android.os.UserHandle;
 import android.widget.RadioButton;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.TypedArrayUtils;
 import androidx.preference.PreferenceViewHolder;
 import androidx.preference.TwoStatePreference;
 
 import com.android.permissioncontroller.R;
+import com.android.permissioncontroller.role.ui.RestrictionAwarePreferenceMixin;
 import com.android.permissioncontroller.role.ui.RoleApplicationPreference;
-import com.android.permissioncontroller.role.ui.UserRestrictionAwarePreferenceMixin;
 
 /** Preference used to represent apps that can be picked as a default app. */
 public class AutoRadioPreference extends TwoStatePreference implements
         RoleApplicationPreference {
 
-    private final UserRestrictionAwarePreferenceMixin mUserRestrictionAwarePreferenceMixin =
-            new UserRestrictionAwarePreferenceMixin(this);
+    private final RestrictionAwarePreferenceMixin mRestrictionAwarePreferenceMixin =
+            new RestrictionAwarePreferenceMixin(this);
 
     public AutoRadioPreference(Context context) {
         super(context, null,
@@ -54,12 +56,19 @@ public class AutoRadioPreference extends TwoStatePreference implements
         RadioButton radioButton = (RadioButton) holder.findViewById(R.id.radio_button);
         radioButton.setChecked(isChecked());
 
-        mUserRestrictionAwarePreferenceMixin.onAfterBindViewHolder(holder);
+        mRestrictionAwarePreferenceMixin.onAfterBindViewHolder(holder);
     }
 
     @Override
-    public void setUserRestriction(@Nullable String userRestriction) {
-        mUserRestrictionAwarePreferenceMixin.setUserRestriction(userRestriction);
+    public void setUserRestriction(@Nullable String userRestriction, @NonNull UserHandle user) {
+        mRestrictionAwarePreferenceMixin.setUserRestriction(userRestriction, user);
+    }
+
+    @Override
+    public void setEnhancedConfirmationRestriction(@Nullable String packageName,
+            @Nullable String settingIdentifier, @NonNull UserHandle user) {
+        mRestrictionAwarePreferenceMixin.setEnhancedConfirmationRestriction(packageName,
+                settingIdentifier, user);
     }
 
     @Override
