@@ -29,10 +29,13 @@ import android.content.pm.InstallSourceInfo;
 import android.content.pm.PackageInstaller;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.SignedPackage;
 import android.os.Binder;
 import android.os.Build;
+import android.os.SystemConfigManager;
 import android.os.UserHandle;
 import android.permission.flags.Flags;
+import android.util.ArrayMap;
 import android.util.ArraySet;
 import android.util.Log;
 
@@ -45,6 +48,10 @@ import com.android.permission.util.UserUtils;
 import com.android.server.SystemService;
 
 import java.lang.annotation.Retention;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 
 /**
@@ -60,13 +67,34 @@ import java.lang.annotation.Retention;
 public class EnhancedConfirmationService extends SystemService {
     private static final String LOG_TAG = EnhancedConfirmationService.class.getSimpleName();
 
+    private Map<String, List<byte[]>> mTrustedPackageCertDigests;
+    private Map<String, List<byte[]>> mTrustedInstallerCertDigests;
+
     public EnhancedConfirmationService(@NonNull Context context) {
         super(context);
     }
 
     @Override
     public void onStart() {
+        Context context = getContext();
+        SystemConfigManager systemConfigManager = context.getSystemService(
+                SystemConfigManager.class);
+        mTrustedPackageCertDigests = toTrustedPackageMap(
+                systemConfigManager.getEnhancedConfirmationTrustedPackages());
+        mTrustedInstallerCertDigests = toTrustedPackageMap(
+                systemConfigManager.getEnhancedConfirmationTrustedInstallers());
+
         publishBinderService(Context.ECM_ENHANCED_CONFIRMATION_SERVICE, new Stub());
+    }
+
+    private Map<String, List<byte[]>> toTrustedPackageMap(Set<SignedPackage> signedPackages) {
+        ArrayMap<String, List<byte[]>> trustedPackageMap = new ArrayMap<>();
+        for (SignedPackage signedPackage : signedPackages) {
+            ArrayList<byte[]> certDigests = (ArrayList<byte[]>) trustedPackageMap.computeIfAbsent(
+                    signedPackage.getPkgName(), pkgName -> new ArrayList<>(1));
+            certDigests.add(signedPackage.getCertificateDigest());
+        }
+        return trustedPackageMap;
     }
 
     private class Stub extends IEnhancedConfirmationManager.Stub {
@@ -195,9 +223,9 @@ public class EnhancedConfirmationService extends SystemService {
 
         private boolean isPackageEcmGuarded(@NonNull String packageName, @UserIdInt int userId)
                 throws NameNotFoundException {
-            // If this is a trusted installer or a pre-installed app, it is not ECM guarded
-            if (isAppTrustedInstaller(packageName, userId) || isPackagePreinstalled(packageName,
-                    userId)) {
+            // Always trust allow-listed and pre-installed packages
+            if (isAllowlistedPackage(packageName) || isAllowlistedInstaller(packageName)
+                    || isPackagePreinstalled(packageName, userId)) {
                 return false;
             }
 
@@ -232,21 +260,30 @@ public class EnhancedConfirmationService extends SystemService {
             // ECM doesn't consider a transitive chain of trust for install sources.
             // If this package hasn't been explicitly handled by this point
             // then it is exempt from ECM if the immediate parent is a trusted installer
-            boolean installedFromTrustedInstaller =
-                    installSource.getInstallingPackageName() != null && isAppTrustedInstaller(
-                            installSource.getInstallingPackageName(), userId);
-            return !installedFromTrustedInstaller;
+            return isAllowlistedInstaller(installSource.getInstallingPackageName());
         }
 
-        /**
-         * A "trusted installer" is any app with the INSTALL_PACKAGES permission.
-         */
-        private boolean isAppTrustedInstaller(@NonNull String packageName, @UserIdInt int userId)
-                throws NameNotFoundException {
-            int uid = getPackageUid(packageName, userId);
-            // TODO(b/310654834): Support allow-list for OEM installer exemptions
-            return mContext.checkPermission(android.Manifest.permission.INSTALL_PACKAGES, 0, uid)
-                    == PackageManager.PERMISSION_GRANTED;
+        private boolean isAllowlistedPackage(String packageName) {
+            return isPackageSignedWithAnyOf(packageName,
+                    mTrustedPackageCertDigests.get(packageName));
+        }
+
+        private boolean isAllowlistedInstaller(String packageName) {
+            return isPackageSignedWithAnyOf(packageName,
+                    mTrustedInstallerCertDigests.get(packageName));
+        }
+
+        private boolean isPackageSignedWithAnyOf(String packageName, List<byte[]> certDigests) {
+            if (packageName != null && certDigests != null) {
+                for (int i = 0, count = certDigests.size(); i < count; i++) {
+                    byte[] trustedCertDigest = certDigests.get(i);
+                    if (mPackageManager.hasSigningCertificate(packageName, trustedCertDigest,
+                            PackageManager.CERT_INPUT_SHA256)) {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         private boolean isPackagePreinstalled(@NonNull String packageName, @UserIdInt int userId) {

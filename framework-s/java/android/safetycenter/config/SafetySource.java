@@ -808,18 +808,18 @@ public final class SafetySource implements Parcelable {
         }
 
         /**
-         * Sets the resource id of the title for work of this safety source.
+         * Sets the resource id of the title for private profile of this safety source.
          *
          * <p>The id must refer to a string resource that is either accessible from any resource
          * context or that is accessible from the same resource context that was used to load the
          * Safety Center configuration. The id defaults to {@link Resources#ID_NULL} when a title
-         * for work is not provided.
+         * for private profile is not provided.
          *
-         * <p>The title for work is required if the profile property of the source is set to {@link
-         * SafetySource#PROFILE_ALL} and either the source is of type static or the source is a
-         * source of type dynamic that is not hidden and that does not provide search terms. The
-         * title for work is prohibited for sources of type issue-only and if the profile property
-         * of the source is not set to {@link SafetySource#PROFILE_ALL}.
+         * <p>The title for private profile is required if the profile property of the source is set
+         * to {@link SafetySource#PROFILE_ALL} and either the source is of type static or the source
+         * is a source of type dynamic that is not hidden and that does not provide search terms.
+         * The title for private profile is prohibited for sources of type issue-only and if the
+         * profile property of the source is not set to {@link SafetySource#PROFILE_ALL}.
          */
         @FlaggedApi(Flags.FLAG_PRIVATE_PROFILE_TITLE_API)
         @RequiresApi(VANILLA_ICE_CREAM)
