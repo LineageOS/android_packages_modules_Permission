@@ -19,6 +19,7 @@ package android.safetycenter.cts.config
 import android.content.res.Resources
 import android.os.Build.VERSION_CODES.UPSIDE_DOWN_CAKE
 import android.os.Build.VERSION_CODES.VANILLA_ICE_CREAM
+import android.platform.test.annotations.RequiresFlagsEnabled
 import android.safetycenter.config.SafetySource
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.ext.truth.os.ParcelableSubject.assertThat
@@ -128,9 +129,13 @@ class SafetySourceTest {
         }
     }
 
-    @SdkSuppress(minSdkVersion = VANILLA_ICE_CREAM)
+    @RequiresFlagsEnabled(Flags.FLAG_PRIVATE_PROFILE_TITLE_API)
+    @SdkSuppress(minSdkVersion = VANILLA_ICE_CREAM, codeName = "VanillaIceCream")
     @Test
     fun getTitleForPrivateProfileResId_returnsTitleForPrivateProfileResIdOrThrows() {
+        if (!Flags.privateProfileTitleApi()) {
+            return
+        }
         assertThrows(UnsupportedOperationException::class.java) {
             DYNAMIC_BAREBONE.titleForPrivateProfileResId
         }
