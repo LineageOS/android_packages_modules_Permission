@@ -26,7 +26,6 @@ import android.annotation.SystemApi;
 import android.annotation.SystemService;
 import android.annotation.TargetApi;
 import android.app.AppOpsManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -40,7 +39,6 @@ import android.util.ArraySet;
 import androidx.annotation.NonNull;
 
 import java.lang.annotation.Retention;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * This class provides the core API for ECM (Enhanced Confirmation Mode). ECM is a feature that
@@ -53,7 +51,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * <ol>
  *   <li>Check whether a setting is restricted from an app ({@link #isRestricted})
  *   <li>Get an intent that will open the "Restricted setting" dialog ({@link
- *       #getRestrictedSettingDialogIntent}) (a dialog that informs the user that the operation
+ *       #createRestrictedSettingDialogIntent}) (a dialog that informs the user that the operation
  *       they've attempted to perform is restricted)
  *   <li>Check whether an app is eligible to have its restriction status cleared ({@link
  *       #isClearRestrictionAllowed})
@@ -117,7 +115,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *       on-screen is restricted from the accessibility service setting. It uses this to visually
  *       "gray out" restricted apps.**
  *   <li>The user tries to register the app as an accessibility service.
- *       <p>**This screen then calls {@link #getRestrictedSettingDialogIntent} and starts the
+ *       <p>**This screen then calls {@link #createRestrictedSettingDialogIntent} and starts the
  *       intent. This opens the "Restricted setting" dialog.**
  *   <li>The user is presented with a "Restricted setting" dialog explaining that the attempted
  *       action is restricted. (No "allow" button is shown, but a link is given to a screen with
@@ -229,8 +227,6 @@ public final class EnhancedConfirmationManager {
 
     private final @NonNull IEnhancedConfirmationManager mService;
 
-    private static final AtomicInteger sNextRequestCode = new AtomicInteger(1);
-
     /**
      * @hide
      */
@@ -316,7 +312,7 @@ public final class EnhancedConfirmationManager {
      * Mark the app as eligible to have its restriction status cleared.
      *
      * <p>This should be called from the "Restricted setting" dialog (which {@link
-     * #getRestrictedSettingDialogIntent} directs to) upon being presented to the user.
+     * #createRestrictedSettingDialogIntent} directs to) upon being presented to the user.
      *
      * @param packageName package name of the application which should be considered acknowledged
      * @throws NameNotFoundException if the provided package was not found
@@ -343,13 +339,12 @@ public final class EnhancedConfirmationManager {
      * @param packageName package name of the application to open the dialog for
      * @throws NameNotFoundException if the provided package was not found
      */
-    public @NonNull PendingIntent getRestrictedSettingDialogIntent(@NonNull String packageName,
+    public @NonNull Intent createRestrictedSettingDialogIntent(@NonNull String packageName,
             @NonNull String settingIdentifier) throws NameNotFoundException {
         Intent intent = new Intent(Settings.ACTION_SHOW_RESTRICTED_SETTING_DIALOG);
         intent.putExtra(Intent.EXTRA_PACKAGE_NAME, packageName);
         intent.putExtra(Intent.EXTRA_UID, getPackageUid(packageName));
-        return PendingIntent.getActivity(mContext, sNextRequestCode.getAndIncrement(),
-                intent, PendingIntent.FLAG_IMMUTABLE);
+        return intent;
     }
 
     private int getPackageUid(String packageName) throws NameNotFoundException {
