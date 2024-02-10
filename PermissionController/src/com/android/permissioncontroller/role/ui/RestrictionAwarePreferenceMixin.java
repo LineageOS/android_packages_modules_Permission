@@ -16,7 +16,6 @@
 
 package com.android.permissioncontroller.role.ui;
 
-import android.app.PendingIntent;
 import android.app.admin.DevicePolicyManager;
 import android.app.ecm.EnhancedConfirmationManager;
 import android.content.Context;
@@ -108,14 +107,13 @@ public class RestrictionAwarePreferenceMixin {
                 && mUser != null) {
             Context context = UserUtils.getUserContext(holder.itemView.getContext(), mUser);
             onClickListener = (view) -> {
+                EnhancedConfirmationManager enhancedConfirmationManager =
+                        context.getSystemService(EnhancedConfirmationManager.class);
                 try {
-                    context.getSystemService(EnhancedConfirmationManager.class)
-                            .getRestrictedSettingDialogIntent(
+                    context.startActivity(
+                            enhancedConfirmationManager.createRestrictedSettingDialogIntent(
                                     mEnhancedConfirmationRestrictedPackageName,
-                                    mEnhancedConfirmationRestrictedSettingIdentifier)
-                            .send();
-                } catch (PendingIntent.CanceledException e) {
-                    Log.e(LOG_TAG, "Pending intent fail to be sent.", e);
+                                    mEnhancedConfirmationRestrictedSettingIdentifier));
                 } catch (PackageManager.NameNotFoundException e) {
                     Log.e(LOG_TAG, "Package name is not found.", e);
                 }
