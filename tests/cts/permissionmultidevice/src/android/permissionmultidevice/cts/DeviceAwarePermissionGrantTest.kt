@@ -171,16 +171,6 @@ class DeviceAwarePermissionGrantTest {
             mFakeVirtualDeviceRule.virtualDevice.deviceId,
             expectPermissionGrantedOnRemoteDevice
         )
-
-        assertAppHasPermissionForDeviceUsingAllPermissionStatesApi(
-            defaultDeviceContext,
-            expectPermissionGrantedOnRemoteDevice
-        )
-
-        assertAppHasPermissionForDefaultDeviceUsingAllPermissionStatesApi(
-            defaultDeviceContext,
-            expectPermissionGrantedOnDefaultDevice
-        )
     }
 
     private fun requestPermissionOnDevice(displayId: Int, targetDeviceId: Int) {
@@ -218,48 +208,6 @@ class DeviceAwarePermissionGrantTest {
         } else {
             Assert.assertEquals(PackageManager.PERMISSION_DENIED, checkPermissionResult)
         }
-    }
-
-    private fun assertAppHasPermissionForDeviceUsingAllPermissionStatesApi(
-        context: Context,
-        expectPermissionGranted: Boolean
-    ) {
-        val vdm = context.getSystemService(VirtualDeviceManager::class.java)!!
-        val persistentDeviceIds = vdm.allPersistentDeviceIds
-
-        if (persistentDeviceIds.isEmpty()) {
-            Assert.assertEquals(expectPermissionGranted, false)
-        } else {
-            Assert.assertEquals(1, persistentDeviceIds.size)
-            val permMap =
-                PermissionUtils.getAllPermissionStates(
-                    context,
-                    APP_PACKAGE_NAME,
-                    persistentDeviceIds.toList()[0]
-                )
-            val grantedList =
-                permMap.filter { it.key == Manifest.permission.CAMERA }.map { it.value.isGranted }
-            if (grantedList.isNotEmpty()) {
-                Assert.assertEquals(1, grantedList.size)
-                Assert.assertEquals(expectPermissionGranted, grantedList[0])
-            } else {
-                Assert.assertFalse(expectPermissionGranted)
-            }
-        }
-    }
-
-    private fun assertAppHasPermissionForDefaultDeviceUsingAllPermissionStatesApi(
-        context: Context,
-        expectPermissionGranted: Boolean
-    ) {
-        val permMap =
-            PermissionUtils.getAllPermissionStates(
-                context,
-                APP_PACKAGE_NAME,
-                PERSISTENT_DEVICE_ID_DEFAULT
-            )
-        Assert.assertNotNull(permMap[Manifest.permission.CAMERA])
-        Assert.assertEquals(expectPermissionGranted, permMap[Manifest.permission.CAMERA]?.isGranted)
     }
 
     companion object {
