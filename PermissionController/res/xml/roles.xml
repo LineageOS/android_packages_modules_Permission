@@ -640,6 +640,8 @@
             <permission name="android.permission.MANAGE_DEVICE_POLICY_CALLS" minSdkVersion="34" />
             <permission name="android.permission.MANAGE_DEVICE_POLICY_CAMERA"
                 minSdkVersion="34" />
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_CONTENT_PROTECTION"
+                minSdkVersion="35" />
             <permission name="android.permission.MANAGE_DEVICE_POLICY_DEBUGGING_FEATURES"
                 minSdkVersion="34" />
             <permission name="android.permission.MANAGE_DEVICE_POLICY_FACTORY_RESET"

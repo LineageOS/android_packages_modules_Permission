@@ -3508,6 +3508,13 @@
     <permission android:name="android.permission.MANAGE_DEVICE_POLICY_THREAD_NETWORK"
                 android:protectionLevel="internal|role" />
 
+    <!-- Allows an application to set policy related to sending assist content to a
+        privilege app such as the Assistant app.
+        @FlaggedApi("android.app.admin.flags.assist_content_user_restriction_enabled")
+    -->
+    <permission android:name="android.permission.MANAGE_DEVICE_POLICY_ASSIST_CONTENT"
+        android:protectionLevel="internal|role" />
+
     <!-- Allows an application to set policy related to windows.
         <p>{@link Manifest.permission#MANAGE_DEVICE_POLICY_ACROSS_USERS_FULL} is
         required to call APIs protected by this permission on users different to the calling user.
@@ -3690,6 +3697,13 @@
     <permission android:name="android.permission.MANAGE_DEVICE_POLICY_CONTENT_PROTECTION"
                 android:protectionLevel="internal|role" />
 
+    <!-- Allows an application to set policy related to subscriptions downloaded by an admin.
+    <p>{@link Manifest.permission#MANAGE_DEVICE_POLICY_ACROSS_USERS_FULL} is required to call
+    APIs protected by this permission on users different to the calling user.
+        @FlaggedApi("android.app.admin.flags.esim_management_enabled")
+    -->
+    <permission android:name="android.permission.MANAGE_DEVICE_POLICY_MANAGED_SUBSCRIPTIONS"
+        android:protectionLevel="internal|role" />
     <!-- Allows an application to set device policies outside the current user
         that are critical for securing data within the current user.
         <p>Holding this permission allows the use of other held MANAGE_DEVICE_POLICY_*
@@ -7219,7 +7233,7 @@
     Allows an accessibility service to observe motion events without consuming them. -->
     <permission android:name="android.permission.ACCESSIBILITY_MOTION_EVENT_OBSERVING"
                 android:protectionLevel="signature" />
-                
+
     <!-- @SystemApi Allows an app to grant a profile owner access to device identifiers.
          <p>Not for use by third-party applications.
          @deprecated
@@ -7803,14 +7817,6 @@
     -->
     <permission android:name="android.permission.MANAGE_DISPLAYS"
         android:protectionLevel="signature" />
-
-   <!-- @SystemApi Allows apps to reset hotword training data egress count for testing.
-     <p>CTS tests will use UiAutomation.AdoptShellPermissionIdentity() to gain access.
-     <p>Protection level: signature
-     @FlaggedApi("android.service.voice.flags.allow_training_data_egress_from_hds")
-     @hide -->
-    <permission android:name="android.permission.RESET_HOTWORD_TRAINING_DATA_EGRESS_COUNT"
-                android:protectionLevel="signature" />
 
     <!-- @SystemApi Allows an app to track all preparations for a complete factory reset.
      <p>Protection level: signature|privileged
