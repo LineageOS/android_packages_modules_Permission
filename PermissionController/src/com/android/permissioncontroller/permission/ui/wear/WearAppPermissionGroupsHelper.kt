@@ -143,7 +143,7 @@ class WearAppPermissionGroupsHelper(
         val grantSummary =
             getGrantSummary(category, groupUiInfo)?.let { context.getString(it) } ?: ""
         val summary = StringBuilder(grantSummary)
-        if (Flags.wearPrivacyDashboardEnabled() || Flags.wearPrivacyDashboardEnabledReadOnly()) {
+        if (Flags.wearPrivacyDashboardEnabledReadOnly()) {
             WearUtils.getPreferenceSummary(context, lastAccessTime).let {
                 if (it.isNotEmpty()) {
                     summary.append(System.lineSeparator()).append(it)

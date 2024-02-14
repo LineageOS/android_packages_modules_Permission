@@ -101,13 +101,16 @@ class DevicePermissionsTest {
         virtualDevice.close()
     }
 
-    @RequiresFlagsEnabled(Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED)
+    @RequiresFlagsEnabled(
+        Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED,
+        Flags.FLAG_DEVICE_AWARE_PERMISSIONS_ENABLED
+    )
     @Test
     fun testDeviceAwareRuntimePermissionIsGranted() {
         grantPermissionAndAssertGranted(Manifest.permission.CAMERA, virtualDeviceContext)
     }
 
-    @RequiresFlagsDisabled(Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED)
+    @RequiresFlagsDisabled(Flags.FLAG_DEVICE_AWARE_PERMISSIONS_ENABLED)
     @Test
     fun testDeviceAwareRuntimePermissionGrantIsInherited() {
         grantPermissionAndAssertGranted(Manifest.permission.CAMERA, defaultDeviceContext)
@@ -126,7 +129,10 @@ class DevicePermissionsTest {
         )
     }
 
-    @RequiresFlagsEnabled(Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED)
+    @RequiresFlagsEnabled(
+        Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED,
+        Flags.FLAG_DEVICE_AWARE_PERMISSIONS_ENABLED
+    )
     @Test
     fun testDeviceAwareRuntimePermissionIsRevoked() {
         grantPermissionAndAssertGranted(Manifest.permission.RECORD_AUDIO, virtualDeviceContext)
@@ -184,6 +190,10 @@ class DevicePermissionsTest {
         }
     }
 
+    @RequiresFlagsEnabled(
+        Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED,
+        Flags.FLAG_DEVICE_AWARE_PERMISSIONS_ENABLED
+    )
     @Test
     fun testRevokeSelfPermissionOnKill() {
         grantPermissionAndAssertGranted(Manifest.permission.RECORD_AUDIO, virtualDeviceContext)
@@ -198,7 +208,10 @@ class DevicePermissionsTest {
         }
     }
 
-    @RequiresFlagsEnabled(Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED)
+    @RequiresFlagsEnabled(
+        Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED,
+        Flags.FLAG_DEVICE_AWARE_PERMISSIONS_ENABLED
+    )
     @Test
     fun testGrantAndRevokeDeviceAwarePermissionByPersistentDeviceId() {
         val deviceAwarePermission = Manifest.permission.RECORD_AUDIO
@@ -247,7 +260,10 @@ class DevicePermissionsTest {
             .isEqualTo(PERMISSION_DENIED)
     }
 
-    @RequiresFlagsEnabled(Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED)
+    @RequiresFlagsEnabled(
+        Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED,
+        Flags.FLAG_DEVICE_AWARE_PERMISSIONS_ENABLED
+    )
     @Test
     fun testUpdateAndGetPermissionFlagsByPersistentDeviceId() {
         val deviceAwarePermission = Manifest.permission.RECORD_AUDIO
