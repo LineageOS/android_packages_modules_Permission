@@ -1131,6 +1131,7 @@
             <permission name="android.permission.MANAGE_SENSOR_PRIVACY" />
             <permission name="android.permission.OBSERVE_SENSOR_PRIVACY" />
             <permission name="android.permission.ACCESS_AMBIENT_CONTEXT_EVENT" minSdkVersion="33"/>
+            <permission name="android.permission.MANAGE_MEDIA_PROJECTION" minSdkVersion="35"/>
             <!-- If this role holder has a NotificationListenerService, let that service receive
                  notifications with sensitive content unredacted-->
             <permission name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS" minSdkVersion="35"/>
