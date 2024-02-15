@@ -1357,6 +1357,7 @@
             <permission name="android.permission.MANAGE_DEVICE_POLICY_ACROSS_USERS_SECURITY_CRITICAL" minSdkVersion="34" />
             <permission name="android.permission.MANAGE_DEVICE_POLICY_ACROSS_USERS" minSdkVersion="34" />
             <permission name="android.permission.MANAGE_DEVICE_POLICY_CONTENT_PROTECTION" minSdkVersion="35" />
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_QUERY_SYSTEM_UPDATES" minSdkVersion="35" />
         </permissions>
     </role>
 
