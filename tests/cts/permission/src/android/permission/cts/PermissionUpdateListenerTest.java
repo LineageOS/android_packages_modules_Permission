@@ -122,7 +122,8 @@ public class PermissionUpdateListenerTest {
     }
 
     @Test
-    @RequiresFlagsEnabled(Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED)
+    @RequiresFlagsEnabled({Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED,
+            Flags.FLAG_DEVICE_AWARE_PERMISSIONS_ENABLED})
     public void testVirtualDeviceGrantPermissionNotifyListener() throws InterruptedException {
         VirtualDeviceManager.VirtualDevice virtualDevice =
                 mVirtualDeviceManager.createVirtualDevice(
@@ -165,7 +166,8 @@ public class PermissionUpdateListenerTest {
     }
 
     @Test
-    @RequiresFlagsEnabled(Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED)
+    @RequiresFlagsEnabled({Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED,
+            Flags.FLAG_DEVICE_AWARE_PERMISSIONS_ENABLED})
     public void testVirtualDeviceRevokePermissionNotifyListener() throws InterruptedException {
         VirtualDeviceManager.VirtualDevice virtualDevice =
                 mVirtualDeviceManager.createVirtualDevice(
@@ -204,7 +206,8 @@ public class PermissionUpdateListenerTest {
     }
 
     @Test
-    @RequiresFlagsEnabled(Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED)
+    @RequiresFlagsEnabled({Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED,
+            Flags.FLAG_DEVICE_AWARE_PERMISSIONS_ENABLED})
     public void testVirtualDeviceUpdatePermissionFlagsNotifyListener() throws InterruptedException {
         VirtualDeviceManager.VirtualDevice virtualDevice =
                 mVirtualDeviceManager.createVirtualDevice(
