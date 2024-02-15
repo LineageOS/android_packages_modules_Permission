@@ -21,6 +21,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.pm.ServiceInfo;
+import android.nfc.cardemulation.ApduServiceInfo;
 import android.nfc.cardemulation.CardEmulation;
 import android.nfc.cardemulation.HostApduService;
 import android.nfc.cardemulation.OffHostApduService;
@@ -29,6 +31,7 @@ import android.os.UserHandle;
 import android.permission.flags.Flags;
 import android.service.quickaccesswallet.QuickAccessWalletService;
 import android.util.ArraySet;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -39,6 +42,9 @@ import com.android.role.controller.model.Role;
 import com.android.role.controller.model.RoleBehavior;
 import com.android.role.controller.util.UserUtils;
 
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -90,15 +96,14 @@ public class WalletRoleBehavior implements RoleBehavior {
     @NonNull
     private static Set<String> getQualifyingPackageNamesInternal(@Nullable String packageName,
             @NonNull UserHandle user, @NonNull Context context) {
-        Set<String> packageNames =
-                resolvePackageNames(HostApduService.SERVICE_INTERFACE, packageName, user,
-                        context);
-        packageNames.addAll(
-                resolvePackageNames(OffHostApduService.SERVICE_INTERFACE, packageName, user,
-                        context));
-        packageNames.addAll(
-                resolvePackageNames(QuickAccessWalletService.SERVICE_INTERFACE, packageName, user,
-                        context));
+        Set<String> packageNames = resolvePackageNames(QuickAccessWalletService.SERVICE_INTERFACE,
+                packageName, user, context);
+        if (isNfcHostCardEmulationSupported(context)) {
+            packageNames.addAll(getQualifyingApduServicesAsUser(packageName, false, user,
+                    context));
+            packageNames.addAll(getQualifyingApduServicesAsUser(packageName, true, user,
+                    context));
+        }
         return packageNames;
     }
 
@@ -113,8 +118,50 @@ public class WalletRoleBehavior implements RoleBehavior {
         Set<String> packageNames = new ArraySet<>();
         int resolveInfosSize = resolveInfos.size();
         for (int i = 0; i < resolveInfosSize; i++) {
-            packageNames.add(resolveInfos.get(i).serviceInfo.packageName);
+            ServiceInfo serviceInfo = resolveInfos.get(i).serviceInfo;
+            if (!serviceInfo.exported) {
+                continue;
+            }
+            packageNames.add(serviceInfo.packageName);
         }
         return packageNames;
+    }
+
+    @NonNull
+    private static Set<String> getQualifyingApduServicesAsUser(@Nullable String packageName,
+            boolean onHost, @NonNull UserHandle user, @NonNull Context context) {
+        Context userContext = UserUtils.getUserContext(context, user);
+        PackageManager userPackageManager = userContext.getPackageManager();
+        Intent intent = new Intent(
+                onHost ? HostApduService.SERVICE_INTERFACE : OffHostApduService.SERVICE_INTERFACE)
+                .setPackage(packageName);
+        List<ResolveInfo> resolveInfos = userPackageManager.queryIntentServices(intent,
+                PackageManager.MATCH_DIRECT_BOOT_AWARE
+                        | PackageManager.MATCH_DIRECT_BOOT_UNAWARE | PackageManager.GET_META_DATA);
+        Set<String> packageNames = new ArraySet<>();
+        int resolveInfosSize = resolveInfos.size();
+        for (int i = 0; i < resolveInfosSize; i++) {
+            ResolveInfo resolveInfo = resolveInfos.get(i);
+            ServiceInfo serviceInfo = resolveInfo.serviceInfo;
+            if (!serviceInfo.exported) {
+                continue;
+            }
+            ApduServiceInfo apduServiceInfo;
+            try {
+                apduServiceInfo = new ApduServiceInfo(userPackageManager, resolveInfo, onHost);
+            } catch (IOException | XmlPullParserException e) {
+                Log.w(LOG_TAG, "Unable to create ApduServiceInfo for " + resolveInfo, e);
+                continue;
+            }
+            if (apduServiceInfo.hasCategory(CardEmulation.CATEGORY_PAYMENT)) {
+                packageNames.add(resolveInfo.serviceInfo.packageName);
+            }
+        }
+        return packageNames;
+    }
+
+    private static boolean isNfcHostCardEmulationSupported(@NonNull Context context) {
+        return context.getPackageManager().hasSystemFeature(
+                PackageManager.FEATURE_NFC_HOST_CARD_EMULATION);
     }
 }
