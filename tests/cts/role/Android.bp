@@ -32,8 +32,8 @@ android_test {
         "androidx.test.rules",
         "compatibility-device-util-axt",
         "ctstestrunner-axt",
-        "truth",
         "platform-test-annotations",
+        "truth",
     ],
 
     test_suites: [
