@@ -330,13 +330,15 @@ public final class EnhancedConfirmationManager {
     }
 
     /**
-     * Gets an intent that will open the "Restricted setting" dialog for the specified app.
+     * Gets an intent that will open the "Restricted setting" dialog for the specified package
+     * and setting.
      *
      * <p>The "Restricted setting" dialog is a dialog that informs the user that the operation
      * they've attempted to perform is restricted, and provides them with a link explaining how to
      * proceed.
      *
-     * @param packageName package name of the application to open the dialog for
+     * @param packageName package name of the restricted application
+     * @param settingIdentifier identifier of the restricted setting
      * @throws NameNotFoundException if the provided package was not found
      */
     public @NonNull Intent createRestrictedSettingDialogIntent(@NonNull String packageName,
@@ -344,6 +346,7 @@ public final class EnhancedConfirmationManager {
         Intent intent = new Intent(Settings.ACTION_SHOW_RESTRICTED_SETTING_DIALOG);
         intent.putExtra(Intent.EXTRA_PACKAGE_NAME, packageName);
         intent.putExtra(Intent.EXTRA_UID, getPackageUid(packageName));
+        intent.putExtra(Intent.EXTRA_SUBJECT, settingIdentifier);
         return intent;
     }
 
