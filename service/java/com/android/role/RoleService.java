@@ -930,6 +930,33 @@ public class RoleService extends SystemService implements RoleUserState.Callback
         }
 
         @Override
+        public String getEmergencyRoleHolder(int userId) {
+            final Context context = getContext();
+            UserUtils.enforceCrossUserPermission(userId, false, "getEmergencyRoleHolder", context);
+            if (!UserUtils.isUserExistent(userId, getContext())) {
+                Log.e(LOG_TAG, "user " + userId + " does not exist");
+                return null;
+            }
+
+            getContext().enforceCallingOrSelfPermission(
+                    Manifest.permission.READ_PRIVILEGED_PHONE_STATE, "getEmergencyRoleHolder");
+
+            final String packageName;
+            final long identity = Binder.clearCallingIdentity();
+            try {
+                packageName = CollectionUtils.firstOrNull(getRoleHoldersAsUser(
+                        RoleManager.ROLE_EMERGENCY, userId));
+            } finally {
+                Binder.restoreCallingIdentity(identity);
+            }
+            if (packageName != null && !PackageUtils.canCallingOrSelfPackageQuery(packageName,
+                    userId, context)) {
+                return null;
+            }
+            return packageName;
+        }
+
+        @Override
         public boolean isRoleVisibleAsUser(@NonNull String roleName, @UserIdInt int userId) {
             UserUtils.enforceCrossUserPermission(userId, false, "isRoleVisibleAsUser",
                     getContext());
