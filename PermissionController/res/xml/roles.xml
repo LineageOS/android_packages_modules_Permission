@@ -683,6 +683,8 @@
             <permission name="android.permission.ALWAYS_UPDATE_WALLPAPER" minSdkVersion="35" />
             <permission name="android.permission.EMBED_ANY_APP_IN_UNTRUSTED_MODE"
                 minSdkVersion="35" />
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_AUDIT_LOGGING"
+                minSdkVersion="35" />
         </permissions>
     </role>
 
@@ -1358,6 +1360,11 @@
             <permission name="android.permission.MANAGE_DEVICE_POLICY_ACROSS_USERS" minSdkVersion="34" />
             <permission name="android.permission.MANAGE_DEVICE_POLICY_CONTENT_PROTECTION" minSdkVersion="35" />
             <permission name="android.permission.MANAGE_DEVICE_POLICY_QUERY_SYSTEM_UPDATES" minSdkVersion="35" />
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_BLOCK_UNINSTALL" minSdkVersion="35" />
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_CAMERA_TOGGLE" minSdkVersion="35" />
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_MICROPHONE_TOGGLE" minSdkVersion="35" />
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_THEFT_DETECTION" minSdkVersion="35" />
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_AUDIT_LOGGING" minSdkVersion="35" />
         </permissions>
     </role>
 
