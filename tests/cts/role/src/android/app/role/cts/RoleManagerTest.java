@@ -49,6 +49,7 @@ import android.platform.test.flag.junit.CheckFlagsRule;
 import android.platform.test.flag.junit.DeviceFlagsValueProvider;
 import android.provider.Settings;
 import android.provider.Telephony;
+import android.telephony.TelephonyManager;
 import android.util.Pair;
 
 import androidx.annotation.NonNull;
@@ -1101,6 +1102,27 @@ public class RoleManagerTest {
         addRoleHolder(RoleManager.ROLE_SMS, APP_PACKAGE_NAME);
 
         assertThat(Telephony.Sms.getDefaultSmsPackage(sContext)).isEqualTo(APP_PACKAGE_NAME);
+    }
+
+    @SdkSuppress(minSdkVersion = Build.VERSION_CODES.VANILLA_ICE_CREAM,
+            codeName = "VanillaIceCream")
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_GET_EMERGENCY_ROLE_HOLDER_API_ENABLED)
+    public void telephonyManagerGetEmergencyAssistancePackageNameBackedByRole() throws Exception {
+        TelephonyManager telephonyManager = sContext.getSystemService(TelephonyManager.class);
+        List<String> emergencyRoleHolders = getRoleHolders(RoleManager.ROLE_EMERGENCY);
+
+        if (callWithShellPermissionIdentity(() ->
+                telephonyManager.isEmergencyAssistanceEnabled())) {
+            String emergencyAssistancePackageName = callWithShellPermissionIdentity(() ->
+                    telephonyManager.getEmergencyAssistancePackage());
+            assertThat(emergencyRoleHolders).hasSize(1);
+            assertThat(emergencyAssistancePackageName).isEqualTo(emergencyRoleHolders.get(0));
+        } else {
+            assertThrows(IllegalStateException.class, () ->
+                    callWithShellPermissionIdentity(() ->
+                            telephonyManager.getEmergencyAssistancePackage()));
+        }
     }
 
     @SdkSuppress(minSdkVersion = Build.VERSION_CODES.S, codeName = "S")
