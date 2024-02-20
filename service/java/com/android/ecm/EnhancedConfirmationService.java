@@ -91,7 +91,7 @@ public class EnhancedConfirmationService extends SystemService {
         ArrayMap<String, List<byte[]>> trustedPackageMap = new ArrayMap<>();
         for (SignedPackage signedPackage : signedPackages) {
             ArrayList<byte[]> certDigests = (ArrayList<byte[]>) trustedPackageMap.computeIfAbsent(
-                    signedPackage.getPkgName(), pkgName -> new ArrayList<>(1));
+                    signedPackage.getPackageName(), packageName -> new ArrayList<>(1));
             certDigests.add(signedPackage.getCertificateDigest());
         }
         return trustedPackageMap;
