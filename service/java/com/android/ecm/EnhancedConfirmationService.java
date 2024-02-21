@@ -115,6 +115,7 @@ public class EnhancedConfirmationService extends SystemService {
 
         static {
             PROTECTED_SETTINGS.add(AppOpsManager.OPSTR_BIND_ACCESSIBILITY_SERVICE);
+            PROTECTED_SETTINGS.add(AppOpsManager.OPSTR_ACCESS_NOTIFICATIONS);
             // Default application roles.
             PROTECTED_SETTINGS.add(RoleManager.ROLE_ASSISTANT);
             PROTECTED_SETTINGS.add(RoleManager.ROLE_BROWSER);
