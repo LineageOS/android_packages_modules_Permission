@@ -141,6 +141,8 @@
                 minSdkVersion="33" />
             <permission name="android.permission.EXECUTE_APP_ACTION"
                 minSdkVersion="34" />
+            <permission name="android.permission.MANAGE_CONTENT_SUGGESTIONS"
+                minSdkVersion="34" />
             <permission name="android.permission.EMBED_ANY_APP_IN_UNTRUSTED_MODE"
                 minSdkVersion="35" />
         </permissions>

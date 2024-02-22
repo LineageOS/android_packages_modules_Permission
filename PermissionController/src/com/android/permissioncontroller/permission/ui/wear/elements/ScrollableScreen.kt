@@ -21,9 +21,6 @@ import android.content.Context
 import android.content.ContextWrapper
 import android.graphics.drawable.Drawable
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.focusable
-import androidx.compose.foundation.gestures.animateScrollBy
-import androidx.compose.foundation.gestures.scrollBy
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
@@ -34,22 +31,17 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.focus.focusRequester
-import androidx.compose.ui.input.rotary.onRotaryScrollEvent
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.semantics.testTagsAsResourceId
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -71,8 +63,8 @@ import androidx.wear.compose.material.TimeText
 import androidx.wear.compose.material.Vignette
 import androidx.wear.compose.material.VignettePosition
 import androidx.wear.compose.material.scrollAway
+import com.android.permissioncontroller.permission.ui.wear.elements.rotaryinput.rotaryWithScroll
 import com.android.permissioncontroller.permission.ui.wear.theme.WearPermissionTheme
-import kotlinx.coroutines.launch
 
 /**
  * Screen that contains a list of items defined using the [content] parameter, adds the time text
@@ -152,21 +144,16 @@ internal fun Scaffold(
 
     val focusRequester = remember { FocusRequester() }
     val listState = remember { ScalingLazyListState(initialCenterItemIndex = initialCenterIndex) }
-    val coroutineScope = rememberCoroutineScope()
 
     WearPermissionTheme {
         Scaffold(
+            // TODO: Use a rotary modifier from Wear Compose once Wear Compose 1.4 is landed.
+            // (b/325560444)
             modifier =
-                Modifier.onRotaryScrollEvent {
-                        coroutineScope.launch {
-                            listState.scrollBy(it.verticalScrollPixels)
-                            listState.animateScrollBy(0f)
-                        }
-                        true
-                    }
-                    .focusRequester(focusRequester)
-                    .focusable()
-                    .semantics { testTagsAsResourceId = true },
+                Modifier.rotaryWithScroll(
+                    scrollableState = listState,
+                    focusRequester = focusRequester
+                ),
             timeText = {
                 if (showTimeText && !isLoading) {
                     TimeText(
