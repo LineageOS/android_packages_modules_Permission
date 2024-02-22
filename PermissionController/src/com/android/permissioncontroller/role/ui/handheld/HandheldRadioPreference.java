@@ -17,7 +17,7 @@
 package com.android.permissioncontroller.role.ui.handheld;
 
 import android.content.Context;
-import android.os.UserHandle;
+import android.content.Intent;
 import android.util.AttributeSet;
 
 import androidx.annotation.NonNull;
@@ -56,19 +56,12 @@ public class HandheldRadioPreference extends SelectorWithWidgetPreference implem
     }
 
     @Override
-    public void setUserRestriction(@Nullable String userRestriction, @NonNull UserHandle user) {
-        mRestrictionAwarePreferenceMixin.setUserRestriction(userRestriction, user);
+    public void setRestrictionIntent(@Nullable Intent restrictionIntent) {
+        mRestrictionAwarePreferenceMixin.setRestrictionIntent(restrictionIntent);
     }
 
     @Override
-    public void setEnhancedConfirmationRestriction(@Nullable String packageName,
-            @Nullable String settingIdentifier, @NonNull UserHandle user) {
-        mRestrictionAwarePreferenceMixin.setEnhancedConfirmationRestriction(packageName,
-                settingIdentifier, user);
-    }
-
-    @Override
-    public void onBindViewHolder(PreferenceViewHolder holder) {
+    public void onBindViewHolder(@NonNull PreferenceViewHolder holder) {
         super.onBindViewHolder(holder);
 
         mRestrictionAwarePreferenceMixin.onAfterBindViewHolder(holder);

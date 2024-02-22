@@ -182,6 +182,7 @@ public class DefaultAppListChildFragment<PF extends PreferenceFragmentCompat
                 preference = rolePreference.asPreference();
             }
 
+            rolePreference.setRestrictionIntent(role.getRestrictionIntentAsUser(user, context));
             List<ApplicationInfo> holderApplicationInfos = roleItem.getHolderApplicationInfos();
             if (holderApplicationInfos.isEmpty()) {
                 preference.setIcon(null);

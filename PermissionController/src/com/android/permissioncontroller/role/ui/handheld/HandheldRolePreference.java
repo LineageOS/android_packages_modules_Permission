@@ -17,7 +17,7 @@
 package com.android.permissioncontroller.role.ui.handheld;
 
 import android.content.Context;
-import android.os.UserHandle;
+import android.content.Intent;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -94,15 +94,8 @@ public class HandheldRolePreference extends TwoTargetPreference implements RoleP
     }
 
     @Override
-    public void setUserRestriction(@Nullable String userRestriction, @NonNull UserHandle user) {
-        mRestrictionAwarePreferenceMixin.setUserRestriction(userRestriction, user);
-    }
-
-    @Override
-    public void setEnhancedConfirmationRestriction(@Nullable String packageName,
-            @Nullable String settingIdentifier, @NonNull UserHandle user) {
-        mRestrictionAwarePreferenceMixin.setEnhancedConfirmationRestriction(packageName,
-                settingIdentifier, user);
+    public void setRestrictionIntent(@Nullable Intent restrictionIntent) {
+        mRestrictionAwarePreferenceMixin.setRestrictionIntent(restrictionIntent);
     }
 
     @Override
@@ -124,6 +117,7 @@ public class HandheldRolePreference extends TwoTargetPreference implements RoleP
         mRestrictionAwarePreferenceMixin.onAfterBindViewHolder(holder);
     }
 
+    @NonNull
     @Override
     public HandheldRolePreference asPreference() {
         return this;
