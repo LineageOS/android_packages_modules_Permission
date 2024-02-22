@@ -16,6 +16,7 @@
 
 package com.android.permissioncontroller.role.ui;
 
+import androidx.annotation.NonNull;
 import androidx.preference.Preference;
 
 /**
@@ -25,5 +26,6 @@ public interface RolePreference extends TwoTargetPreference, RestrictionAwarePre
     /**
      * Return this preference as {@link Preference}.
      */
+    @NonNull
     Preference asPreference();
 }

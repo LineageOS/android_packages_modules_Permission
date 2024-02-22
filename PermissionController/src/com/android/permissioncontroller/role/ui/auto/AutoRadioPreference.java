@@ -17,7 +17,7 @@
 package com.android.permissioncontroller.role.ui.auto;
 
 import android.content.Context;
-import android.os.UserHandle;
+import android.content.Intent;
 import android.widget.RadioButton;
 
 import androidx.annotation.NonNull;
@@ -37,7 +37,7 @@ public class AutoRadioPreference extends TwoStatePreference implements
     private final RestrictionAwarePreferenceMixin mRestrictionAwarePreferenceMixin =
             new RestrictionAwarePreferenceMixin(this);
 
-    public AutoRadioPreference(Context context) {
+    public AutoRadioPreference(@NonNull Context context) {
         super(context, null,
                 TypedArrayUtils.getAttr(context, androidx.preference.R.attr.preferenceStyle,
                         android.R.attr.preferenceStyle));
@@ -50,7 +50,7 @@ public class AutoRadioPreference extends TwoStatePreference implements
     }
 
     @Override
-    public void onBindViewHolder(PreferenceViewHolder holder) {
+    public void onBindViewHolder(@NonNull PreferenceViewHolder holder) {
         super.onBindViewHolder(holder);
 
         RadioButton radioButton = (RadioButton) holder.findViewById(R.id.radio_button);
@@ -60,17 +60,11 @@ public class AutoRadioPreference extends TwoStatePreference implements
     }
 
     @Override
-    public void setUserRestriction(@Nullable String userRestriction, @NonNull UserHandle user) {
-        mRestrictionAwarePreferenceMixin.setUserRestriction(userRestriction, user);
+    public void setRestrictionIntent(@Nullable Intent restrictionIntent) {
+        mRestrictionAwarePreferenceMixin.setRestrictionIntent(restrictionIntent);
     }
 
-    @Override
-    public void setEnhancedConfirmationRestriction(@Nullable String packageName,
-            @Nullable String settingIdentifier, @NonNull UserHandle user) {
-        mRestrictionAwarePreferenceMixin.setEnhancedConfirmationRestriction(packageName,
-                settingIdentifier, user);
-    }
-
+    @NonNull
     @Override
     public AutoRadioPreference asTwoStatePreference() {
         return this;
