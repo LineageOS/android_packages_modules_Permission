@@ -405,7 +405,7 @@
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"ಟಿಪ್ಪಣಿಗಳು"</string>
     <string name="role_wallet_label" msgid="3719419175656204207">"ಡೀಫಾಲ್ಟ್ ವಾಲೆಟ್ ಆ್ಯಪ್"</string>
     <string name="role_wallet_short_label" msgid="6521288403762457452">"Wallet ಆ್ಯಪ್"</string>
-    <string name="role_wallet_description" msgid="3726535836165949838">"Wallet ಆ್ಯಪ್‌ಗಳು ನಿಮ್ಮ ಕ್ರೆಡಿಟ್ ಮತ್ತು ಲಾಯಲ್ಟಿ ಕಾರ್ಡ್‌ಗಳು, ಕಾರ್ ಕೀಗಳು ಮತ್ತು ವಿವಿಧ ವಹಿವಾಟುಗಳಿಗೆ ಸಹಾಯ ಮಾಡುವ ಇತರ ವಿಷಯಗಳನ್ನು ಸಂಗ್ರಹಿಸಬಹುದು."</string>
+    <string name="role_wallet_description" msgid="3726535836165949838">"ವಾಲೆಟ್ ಆ್ಯಪ್‌ಗಳು ನಿಮ್ಮ ಕ್ರೆಡಿಟ್ ಮತ್ತು ಲಾಯಲ್ಟಿ ಕಾರ್ಡ್‌ಗಳು, ಕಾರ್ ಕೀಗಳು ಮತ್ತು ವಿವಿಧ ವಹಿವಾಟುಗಳಿಗೆ ಸಹಾಯ ಮಾಡುವ ಇತರ ವಿಷಯಗಳನ್ನು ಸಂಗ್ರಹಿಸಬಹುದು."</string>
     <string name="role_wallet_request_title" msgid="4770217108262737093">"<xliff:g id="APP_NAME">%1$s</xliff:g> ಆ್ಯಪ್ ಅನ್ನು ನಿಮ್ಮ ಡೀಫಾಲ್ಟ್ ವಾಲೆಟ್ ಆ್ಯಪ್ ಆಗಿ ಸೆಟ್ ಮಾಡಬೇಕೆ?"</string>
     <string name="role_wallet_request_description" msgid="6305487425777483053">"ಯಾವುದೇ ಅನುಮತಿಗಳ ಅಗತ್ಯವಿಲ್ಲ"</string>
     <string name="request_role_current_default" msgid="738722892438247184">"ಪ್ರಸ್ತುತ ಡೀಫಾಲ್ಟ್"</string>

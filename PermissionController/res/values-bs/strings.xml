@@ -405,7 +405,7 @@
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"bilješke"</string>
     <string name="role_wallet_label" msgid="3719419175656204207">"Zadana aplikacija za novčanik"</string>
     <string name="role_wallet_short_label" msgid="6521288403762457452">"Aplikacija za novčanik"</string>
-    <string name="role_wallet_description" msgid="3726535836165949838">"Aplikacije za novčanik mogu pohranjivati kreditne kartice, kartice lojalnosti, ključeve automobila i druge stvari da vam pomognu prilikom raznih oblika transakcija."</string>
+    <string name="role_wallet_description" msgid="3726535836165949838">"Aplikacije za novčanik mogu pohranjivati kreditne kartice, kartice lojalnosti, ključeve automobila i druge stvari da vam pomognu pri raznim vrstama transakcija."</string>
     <string name="role_wallet_request_title" msgid="4770217108262737093">"Postaviti aplikaciju <xliff:g id="APP_NAME">%1$s</xliff:g> kao zadanu aplikaciju za novčanik?"</string>
     <string name="role_wallet_request_description" msgid="6305487425777483053">"Nije potrebno odobrenje"</string>
     <string name="request_role_current_default" msgid="738722892438247184">"Trenutno zadano"</string>
