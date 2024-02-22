@@ -349,8 +349,8 @@
     <string name="accessibility_service_dialog_title_multiple" msgid="5527879210683548175">"အများသုံးစွဲနိုင်မှုဆိုင်ရာ အက်ပ် <xliff:g id="NUM_SERVICES">%s</xliff:g> ခုက သင့်စက်ပစ္စည်းကို အပြည့်အဝ အသုံးပြုခွင့်ရှိသည်"</string>
     <string name="accessibility_service_dialog_bottom_text_single" msgid="1128666197822205958">"<xliff:g id="SERVICE_NAME">%s</xliff:g> သည် သင်၏ မျက်နှာပြင်၊ လုပ်ဆောင်ချက်များ၊ ထည့်သွင်းမှုများကို ကြည့်နိုင်ပြီး လုပ်ဆောင်ချက်များကို ဆောင်ရွက်နိုင်သည့်အပြင် မျက်နှာပြင်သမှုကိုလည်း ထိန်းချုပ်နိုင်သည်။"</string>
     <string name="accessibility_service_dialog_bottom_text_multiple" msgid="7009848932395519852">"ဤအက်ပ်များက သင်၏ မျက်နှာပြင်၊ လုပ်ဆောင်ချက်များ၊ ထည့်သွင်းမှုများကို ကြည့်နိုင်ပြီး လုပ်ဆောင်ချက်များကို ဆောင်ရွက်နိုင်သည့်အပြင် မျက်နှာပြင်ပြသမှုကိုလည်း ထိန်းချုပ်နိုင်သည်။"</string>
-    <string name="role_assistant_label" msgid="4727586018198208128">"မူလဒစ်ဂျစ်တယ် Assistant အက်ပ်"</string>
-    <string name="role_assistant_short_label" msgid="3369003713187703399">"ဒစ်ဂျစ်တယ် Assistant အက်ပ်"</string>
+    <string name="role_assistant_label" msgid="4727586018198208128">"မူရင်း ဒစ်ဂျစ်တယ်အထောက်အကူ အက်ပ်"</string>
+    <string name="role_assistant_short_label" msgid="3369003713187703399">"ဒစ်ဂျစ်တယ်အထောက်အကူ အက်ပ်"</string>
     <string name="role_assistant_description" msgid="6622458130459922952">"အကူအညီအက်ပ်များသည် သင်ကြည့်နေသည့် မျက်နှာပြင်မှ အချက်အလက်ကို အခြေခံ၍ ပံ့ပိုးပေးနိုင်ပါသည်။ ဘက်စုံ အထောက်အကူပေးနိုင်ရန်အတွက် အချို့အက်ပ်များသည် စဖွင့်စနစ်နှင့် အသံဖြင့်ထည့်သွင်းဝန်ဆောင်မှု နှစ်ခုလုံးကို ပံ့ပိုးပါသည်။"</string>
     <string name="role_browser_label" msgid="2877796144554070207">"မူရင်း ဘရောင်ဇာအက်ပ်"</string>
     <string name="role_browser_short_label" msgid="6745009127123292296">"ဘရောင်ဇာ အက်ပ်"</string>
