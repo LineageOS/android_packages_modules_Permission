@@ -54,6 +54,7 @@ import com.android.permissioncontroller.permission.utils.PackageRemovalMonitor;
 import com.android.permissioncontroller.permission.utils.Utils;
 import com.android.permissioncontroller.role.model.UserDeniedManager;
 import com.android.permissioncontroller.role.utils.PackageUtils;
+import com.android.permissioncontroller.role.utils.UiUtils;
 import com.android.role.controller.model.Role;
 import com.android.role.controller.model.Roles;
 
@@ -709,7 +710,7 @@ public class RequestRoleFragment extends DialogFragment {
                         LAYOUT_TRANSITION_DURATION_MILLIS);
             }
 
-            view.setEnabled(isEnabled(position));
+            UiUtils.setViewTreeEnabled(view, isEnabled(position));
 
             Pair<ApplicationInfo, Boolean> qualifyingApplication = getItem(position);
             Drawable icon;
