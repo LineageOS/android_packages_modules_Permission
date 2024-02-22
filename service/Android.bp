@@ -163,6 +163,7 @@ java_library {
         ":statslog-service-permission-java-gen",
     ],
     libs: [
+        "androidx.annotation_annotation",
         "framework-statsd.stubs.module_lib",
     ],
     apex_available: [
