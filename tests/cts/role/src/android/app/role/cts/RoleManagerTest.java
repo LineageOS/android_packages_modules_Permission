@@ -1112,7 +1112,8 @@ public class RoleManagerTest {
         TelephonyManager telephonyManager = sContext.getSystemService(TelephonyManager.class);
         List<String> emergencyRoleHolders = getRoleHolders(RoleManager.ROLE_EMERGENCY);
 
-        if (callWithShellPermissionIdentity(() ->
+        if (telephonyManager.isVoiceCapable()
+                && callWithShellPermissionIdentity(() ->
                 telephonyManager.isEmergencyAssistanceEnabled())) {
             String emergencyAssistancePackageName = callWithShellPermissionIdentity(() ->
                     telephonyManager.getEmergencyAssistancePackage());

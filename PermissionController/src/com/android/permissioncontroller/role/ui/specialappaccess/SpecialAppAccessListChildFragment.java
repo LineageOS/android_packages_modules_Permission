@@ -115,10 +115,11 @@ public class SpecialAppAccessListChildFragment<PF extends PreferenceFragmentComp
             } else {
                 preference = rolePreference.asPreference();
             }
+
+            rolePreference.setRestrictionIntent(role.getRestrictionIntentAsUser(
+                    Process.myUserHandle(), context));
             RoleUiBehaviorUtils.preparePreferenceAsUser(role, roleItem.getHolderApplicationInfos(),
-                    rolePreference,
-                    Process.myUserHandle(),
-                    context);
+                    rolePreference, Process.myUserHandle(), context);
             preferenceScreen.addPreference(preference);
         }
 

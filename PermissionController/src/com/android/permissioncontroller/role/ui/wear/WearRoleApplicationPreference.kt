@@ -16,11 +16,8 @@
 
 package com.android.permissioncontroller.role.ui.wear
 
-import android.app.admin.DevicePolicyManager
 import android.content.Context
 import android.content.Intent
-import android.os.UserHandle
-import android.provider.Settings
 import androidx.preference.TwoStatePreference
 import com.android.permissioncontroller.role.ui.RoleApplicationPreference
 
@@ -33,36 +30,15 @@ class WearRoleApplicationPreference(
     val label: String,
     val checked: Boolean,
     val onDefaultCheckChanged: (Boolean) -> Unit = {},
-    private var restriction: String? = null,
-    private var user: UserHandle? = null
+    private var restrictionIntent: Intent? = null
 ) : TwoStatePreference(context), RoleApplicationPreference {
     fun getOnCheckChanged(): (Boolean) -> Unit =
-        restriction?.let {
-            return { _ ->
-                context.startActivity(
-                    Intent(Settings.ACTION_SHOW_ADMIN_SUPPORT_DETAILS)
-                        .putExtra(DevicePolicyManager.EXTRA_RESTRICTION, restriction)
-                )
-            }
-        }
-            ?: onDefaultCheckChanged
+        restrictionIntent?.let { { _ -> context.startActivity(it) } } ?: onDefaultCheckChanged
 
-    override fun setUserRestriction(userRestriction: String?, userHandle: UserHandle) {
-        restriction = userRestriction
-        user = userHandle
-        setEnabled(restriction == null)
+    override fun setRestrictionIntent(restrictionIntent: Intent?) {
+        this.restrictionIntent = restrictionIntent
+        setEnabled(restrictionIntent == null)
     }
 
-    override fun setEnhancedConfirmationRestriction(
-        packageName: String?,
-        settingIdentifier: String?,
-        user: UserHandle
-    ) {
-        // no-op because Enhanced Confirmation Restriction is not applied to wear yet.
-        return
-    }
-
-    override fun asTwoStatePreference(): TwoStatePreference {
-        return this
-    }
+    override fun asTwoStatePreference(): TwoStatePreference = this
 }

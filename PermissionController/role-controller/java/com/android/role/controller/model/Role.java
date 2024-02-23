@@ -17,9 +17,12 @@
 package com.android.role.controller.model;
 
 import android.app.ActivityManager;
+import android.app.admin.DevicePolicyManager;
+import android.app.ecm.EnhancedConfirmationManager;
 import android.app.role.RoleManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.SharedLibraryInfo;
@@ -27,6 +30,9 @@ import android.content.pm.Signature;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.UserHandle;
+import android.os.UserManager;
+import android.permission.flags.Flags;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.ArrayMap;
 import android.util.ArraySet;
@@ -970,7 +976,7 @@ public class Role {
      * Check whether this role should be visible to user.
      *
      * @param user the user to check for
-     * @param context the `Context` to retrieve system services
+     * @param context the {@code Context} to retrieve system services
      *
      * @return whether this role should be visible to user
      */
@@ -998,6 +1004,76 @@ public class Role {
             return true;
         }
         return behavior.isApplicationVisibleAsUser(this, applicationInfo, user, context);
+    }
+
+    /**
+     * Check whether this role is restricted and return the {@code Intent} for the restriction if it
+     * is.
+     * <p>
+     * If a role is restricted, it is implied that all applications are restricted for the role as
+     * well.
+     *
+     * @param user the user to check for
+     * @param context the {@code Context} to retrieve system services
+     *
+     * @return the {@code Intent} for the restriction if this role is restricted, or {@code null}
+     *         otherwise.
+     */
+    @Nullable
+    public Intent getRestrictionIntentAsUser(@NonNull UserHandle user, @NonNull Context context) {
+        if (SdkLevel.isAtLeastU() && mExclusive) {
+            UserManager userManager = context.getSystemService(UserManager.class);
+            if (userManager.hasUserRestrictionForUser(UserManager.DISALLOW_CONFIG_DEFAULT_APPS,
+                    user)) {
+                return new Intent(Settings.ACTION_SHOW_ADMIN_SUPPORT_DETAILS)
+                    .putExtra(DevicePolicyManager.EXTRA_RESTRICTION,
+                        UserManager.DISALLOW_CONFIG_DEFAULT_APPS);
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Check whether an application is restricted for this role and return the {@code Intent} for
+     * the restriction if it is.
+     * <p>
+     * If a role is restricted, it is implied that all applications are restricted for the role as
+     * well.
+     *
+     * @param applicationInfo the {@link ApplicationInfo} for the application
+     * @param user the user to check for
+     * @param context the {@code Context} to retrieve system services
+     *
+     * @return the {@code Intent} for the restriction if the application is restricted for this
+     *         role, or {@code null} otherwise.
+     */
+    @Nullable
+    public Intent getApplicationRestrictionIntentAsUser(@NonNull ApplicationInfo applicationInfo,
+            @NonNull UserHandle user, @NonNull Context context) {
+        if (SdkLevel.isAtLeastV() && Flags.enhancedConfirmationModeApisEnabled()) {
+            Context userContext = UserUtils.getUserContext(context, user);
+            EnhancedConfirmationManager userEnhancedConfirmationManager =
+                    userContext.getSystemService(EnhancedConfirmationManager.class);
+            String packageName = applicationInfo.packageName;
+            boolean isRestricted;
+            try {
+                isRestricted = userEnhancedConfirmationManager.isRestricted(packageName, mName);
+            } catch (PackageManager.NameNotFoundException e) {
+                Log.w(LOG_TAG, "Cannot check enhanced confirmation restriction for package: "
+                        + packageName, e);
+                isRestricted = false;
+            }
+            if (isRestricted) {
+                try {
+                    return userEnhancedConfirmationManager.createRestrictedSettingDialogIntent(
+                            packageName, mName);
+                } catch (PackageManager.NameNotFoundException e) {
+                    Log.w(LOG_TAG, "Cannot create enhanced confirmation restriction intent for"
+                            + " package: " + packageName, e);
+                }
+            }
+        }
+        return getRestrictionIntentAsUser(user, context);
     }
 
     @Override
