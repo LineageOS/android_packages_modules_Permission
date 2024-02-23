@@ -16,9 +16,8 @@
 
 package com.android.permissioncontroller.role.ui;
 
-import android.os.UserHandle;
+import android.content.Intent;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 /**
@@ -27,13 +26,7 @@ import androidx.annotation.Nullable;
 public interface RestrictionAwarePreference {
 
     /**
-     * Specifies user restriction that blocks this preference.
+     * Set the restriction intent that blocks this preference.
      */
-    void setUserRestriction(@Nullable String userRestriction, @NonNull UserHandle user);
-
-    /**
-     * Specifies enhanced confirmation restrictions that block this preference.
-     */
-    void setEnhancedConfirmationRestriction(@Nullable String packageName,
-            @Nullable String settingIdentifier, @NonNull UserHandle user);
+    void setRestrictionIntent(@Nullable Intent restrictionIntent);
 }
