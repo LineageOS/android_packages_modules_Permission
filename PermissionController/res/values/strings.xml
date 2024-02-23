@@ -1959,4 +1959,6 @@ Allow <xliff:g id="app_name" example="Gmail">%4$s</xliff:g> to upload a bug repo
     <!-- Summary for showing the last access text for 7 days for Wear [CHAR LIMIT=50] -->
     <string name="wear_app_perms_7d_access">Accessed <xliff:g id="time_date" example="Jan 3">%1$s</xliff:g> <xliff:g id="time_date" example="12:42 PM">%2$s</xliff:g></string>
 
+    <!-- A string representing a message (sms, email, etc.) telling the user about a one time password. Used for testing [CHAR LIMIT=NONE] -->
+    <string name="test_otp_msg">Your one time password is 132435</string>
 </resources>
