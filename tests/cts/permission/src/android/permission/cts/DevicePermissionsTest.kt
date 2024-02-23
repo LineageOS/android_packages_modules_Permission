@@ -211,21 +211,19 @@ class DevicePermissionsTest {
         )
 
         assertThat(
-                PermissionManager.checkPermission(
+                permissionManager.checkPermission(
                     deviceAwarePermission,
                     TEST_PACKAGE_NAME,
-                    persistentDeviceId,
-                    virtualDeviceContext.userId
+                    virtualDevice.persistentDeviceId!!
                 )
             )
             .isEqualTo(PERMISSION_GRANTED)
 
         assertThat(
-                PermissionManager.checkPermission(
+                permissionManager.checkPermission(
                     deviceAwarePermission,
                     TEST_PACKAGE_NAME,
-                    PERSISTENT_DEVICE_ID_DEFAULT,
-                    defaultDeviceContext.userId
+                    VirtualDeviceManager.PERSISTENT_DEVICE_ID_DEFAULT
                 )
             )
             .isEqualTo(PERMISSION_DENIED)
@@ -238,11 +236,10 @@ class DevicePermissionsTest {
         )
 
         assertThat(
-                PermissionManager.checkPermission(
+                permissionManager.checkPermission(
                     deviceAwarePermission,
                     TEST_PACKAGE_NAME,
-                    persistentDeviceId,
-                    virtualDeviceContext.userId
+                    virtualDevice.persistentDeviceId!!
                 )
             )
             .isEqualTo(PERMISSION_DENIED)
