@@ -586,7 +586,7 @@
     <string name="recent_app_usage_1_qs" msgid="261450184773310741">"<xliff:g id="APP_NAME">%1$s</xliff:g> (<xliff:g id="ATTRIBUTION_LABEL">%2$s</xliff:g>) द्वारे अलीकडे वापरले गेले"</string>
     <string name="active_app_usage_2_qs" msgid="6107866785243565283">"<xliff:g id="APP_NAME">%1$s</xliff:g> (<xliff:g id="ATTRIBUTION_LABEL">%2$s</xliff:g> • <xliff:g id="PROXY_LABEL">%3$s</xliff:g>) द्वारे वापरले जात आहे"</string>
     <string name="recent_app_usage_2_qs" msgid="3591205954235694403">"<xliff:g id="APP_NAME">%1$s</xliff:g> (<xliff:g id="ATTRIBUTION_LABEL">%2$s</xliff:g> • <xliff:g id="PROXY_LABEL">%3$s</xliff:g>) द्वारे अलीकडे वापरले गेले"</string>
-    <string name="media_confirm_dialog_positive_button" msgid="9020793594051526399">"कंफर्म करा"</string>
+    <string name="media_confirm_dialog_positive_button" msgid="9020793594051526399">"कन्फर्म करा"</string>
     <string name="media_confirm_dialog_negative_button" msgid="226987376924861785">"मागे जा"</string>
     <string name="media_confirm_dialog_title_a_to_p_aural_allow" msgid="8560601114044699903">"इतर फाइलच्या अ‍ॅक्सेसलादेखील अनुमती दिली जाईल"</string>
     <string name="media_confirm_dialog_title_a_to_p_aural_deny" msgid="7841428716317307685">"इतर फाइलच्या अ‍ॅक्सेसलादेखील अनुमती दिली जाणार नाही"</string>
