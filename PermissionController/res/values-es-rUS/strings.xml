@@ -403,7 +403,7 @@
     <string name="role_notes_short_label" msgid="8796604147546125285">"App de notas"</string>
     <string name="role_notes_description" msgid="8496852798616883551">"Apps que te permiten tomar notas en tu dispositivo"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"notas"</string>
-    <string name="role_wallet_label" msgid="3719419175656204207">"App de billetera predet."</string>
+    <string name="role_wallet_label" msgid="3719419175656204207">"Billetera predeterminada"</string>
     <string name="role_wallet_short_label" msgid="6521288403762457452">"App de billetera"</string>
     <string name="role_wallet_description" msgid="3726535836165949838">"Las apps de billetera pueden almacenar tus tarjetas de crédito y lealtad, las llaves de tu vehículo y otros elementos para ayudarte con los diferentes tipos de transacciones."</string>
     <string name="role_wallet_request_title" msgid="4770217108262737093">"¿Quieres configurar <xliff:g id="APP_NAME">%1$s</xliff:g> como tu app de billetera predeterminada?"</string>
@@ -508,7 +508,7 @@
     <string name="permgroupupgraderequestdetail_microphone" msgid="2870497719571464239">"Esta app quiere grabar audio todo el tiempo, incluso cuando no la uses. "<annotation id="link">"Permite el acceso en Configuración."</annotation></string>
     <string name="permgrouprequest_activityRecognition" msgid="5415121592794230330">"¿Quieres permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; acceda a tu actividad física?"</string>
     <string name="permgrouprequest_device_aware_activityRecognition" msgid="3408326850847755759">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; acceda a la actividad física en tu &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;?"</string>
-    <string name="permgrouprequest_camera" msgid="5123097035410002594">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; tome fotos y grabe videos?"</string>
+    <string name="permgrouprequest_camera" msgid="5123097035410002594">"¿Quieres permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; tome fotos y grabe videos?"</string>
     <string name="permgrouprequest_device_aware_camera" msgid="3525106924487608868">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; tome fotos y grabe videos en tu &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgrouprequestdetail_camera" msgid="9085323239764667883">"La app solo podrá tomar fotos y grabar videos cuando esté en uso"</string>
     <string name="permgroupbackgroundrequest_camera" msgid="1274286575704213875">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; tome fotos y grabe videos?"</string>
