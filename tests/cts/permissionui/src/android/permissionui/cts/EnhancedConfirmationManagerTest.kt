@@ -34,6 +34,8 @@ import com.android.compatibility.common.util.SystemUtil.runWithShellPermissionId
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue
+import org.junit.Assume
+import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
@@ -50,6 +52,15 @@ class EnhancedConfirmationManagerTest : BaseUsePermissionTest() {
     @Rule
     @JvmField
     val mCheckFlagsRule: CheckFlagsRule = DeviceFlagsValueProvider.createCheckFlagsRule()
+
+    @Before
+    fun assumeNotAutoTvOrWear() {
+        Assume.assumeFalse(context.packageManager.hasSystemFeature(PackageManager.FEATURE_LEANBACK))
+        Assume.assumeFalse(
+            context.packageManager.hasSystemFeature(PackageManager.FEATURE_AUTOMOTIVE)
+        )
+        Assume.assumeFalse(context.packageManager.hasSystemFeature(PackageManager.FEATURE_WATCH))
+    }
 
     @RequiresFlagsEnabled(Flags.FLAG_ENHANCED_CONFIRMATION_MODE_APIS_ENABLED)
     @Test
