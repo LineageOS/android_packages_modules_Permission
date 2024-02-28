@@ -260,7 +260,7 @@ public class EnhancedConfirmationService extends SystemService {
             // ECM doesn't consider a transitive chain of trust for install sources.
             // If this package hasn't been explicitly handled by this point
             // then it is exempt from ECM if the immediate parent is a trusted installer
-            return isAllowlistedInstaller(installSource.getInstallingPackageName());
+            return !isAllowlistedInstaller(installSource.getInstallingPackageName());
         }
 
         private boolean isAllowlistedPackage(String packageName) {
