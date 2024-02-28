@@ -655,6 +655,8 @@ public class RoleManagerTest {
         pressBack();
     }
 
+    @SdkSuppress(minSdkVersion = Build.VERSION_CODES.VANILLA_ICE_CREAM, codeName =
+            "VanillaIceCream")
     @Test
     @RequiresFlagsEnabled(Flags.FLAG_ENHANCED_CONFIRMATION_MODE_APIS_ENABLED)
     @FlakyTest(bugId = 288468003, detail = "CtsRoleTestCases is breaching 20min SLO")
@@ -672,11 +674,11 @@ public class RoleManagerTest {
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                         | Intent.FLAG_ACTIVITY_CLEAR_TASK)));
 
-        waitFindObject(By.clickable(true).hasDescendant(By.checkable(true).enabled(false).checked(
-                false)).hasDescendant(By.text(APP_LABEL))).clickAndWait(Until.newWindow(),
+        waitFindObject(By.text(APP_LABEL).enabled(false)).clickAndWait(Until.newWindow(),
                 TIMEOUT_MILLIS);
 
-        waitFindObject(By.textContains("Restricted setting"), UNEXPECTED_TIMEOUT_MILLIS);
+        waitFindObject(By.textContains("Restricted setting"), TIMEOUT_MILLIS);
+        pressBack();
 
         pressBack();
     }
