@@ -282,13 +282,12 @@ public class EnhancedConfirmationService extends SystemService {
                 return true;
             }
 
-            // If applicable, trust packages installed via non-allowlisted installers
-            if (trustPackagesInstalledViaNonAllowlistedInstallers()) return false;
-
             // ECM doesn't consider a transitive chain of trust for install sources.
             // If this package hasn't been explicitly handled by this point
             // then it is exempt from ECM if the immediate parent is a trusted installer
-            return !isAllowlistedInstaller(installSource.getInstallingPackageName());
+            return !(trustPackagesInstalledViaNonAllowlistedInstallers() || isPackagePreinstalled(
+                    installSource.getInstallingPackageName(), userId) || isAllowlistedInstaller(
+                    installSource.getInstallingPackageName()));
         }
 
         private boolean isAllowlistedPackage(String packageName) {
@@ -314,11 +313,19 @@ public class EnhancedConfirmationService extends SystemService {
             return false;
         }
 
+        /**
+         * @return {@code true} if zero {@code <enhanced-confirmation-trusted-installer>} entries
+         * are defined in {@code frameworks/base/data/etc/enhanced-confirmation.xml}; in this case,
+         * we treat all installers as trusted.
+         */
         private boolean trustPackagesInstalledViaNonAllowlistedInstallers() {
-            return true; // TODO(b/327469700): Make this configurable
+            return mTrustedInstallerCertDigests.isEmpty();
         }
 
-        private boolean isPackagePreinstalled(@NonNull String packageName, @UserIdInt int userId) {
+        private boolean isPackagePreinstalled(String packageName, @UserIdInt int userId) {
+            if (packageName == null) {
+                return false;
+            }
             ApplicationInfo applicationInfo;
             try {
                 applicationInfo = mPackageManager.getApplicationInfoAsUser(packageName, 0,
