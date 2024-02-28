@@ -218,10 +218,10 @@
         android:protectionLevel="signature|privileged"
         android:label="@string/car_permission_label_read_impact_sensors"
         android:description="@string/car_permission_desc_read_impact_sensors"/>
-    <permission android:name="android.car.permission.READ_HEAD_UP_DISPLAY"
+    <permission android:name="android.car.permission.READ_HEAD_UP_DISPLAY_STATUS"
         android:protectionLevel="signature|privileged"
-        android:label="@string/car_permission_label_read_head_up_display"
-        android:description="@string/car_permission_desc_read_head_up_display"/>
+        android:label="@string/car_permission_label_read_head_up_display_status"
+        android:description="@string/car_permission_desc_read_head_up_display_status"/>
     <permission android:name="android.car.permission.CONTROL_HEAD_UP_DISPLAY"
         android:protectionLevel="signature|privileged"
         android:label="@string/car_permission_label_control_head_up_display"
