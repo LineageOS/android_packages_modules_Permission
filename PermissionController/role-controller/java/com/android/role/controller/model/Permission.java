@@ -16,6 +16,9 @@
 
 package com.android.role.controller.model;
 
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.content.pm.PermissionInfo;
 import android.os.Build;
 
 import androidx.annotation.NonNull;
@@ -40,9 +43,15 @@ public class Permission {
      */
     private final int mMinSdkVersion;
 
-    public Permission(@NonNull String name, int minSdkVersion) {
+    /**
+     * The minimum SDK version for this permission to be optionally granted (when it is grantable).
+     */
+    private final int mOptionalMinSdkVersion;
+
+    public Permission(@NonNull String name, int minSdkVersion, int optionalMinSdkVersion) {
         mName = name;
         mMinSdkVersion = minSdkVersion;
+        mOptionalMinSdkVersion = optionalMinSdkVersion;
     }
 
     @NonNull
@@ -54,18 +63,52 @@ public class Permission {
         return mMinSdkVersion;
     }
 
+    public int getOptionalMinSdkVersion() {
+        return mOptionalMinSdkVersion;
+    }
+
     /**
      * Check whether this permission is available.
      *
      * @return whether this permission is available
      */
-    public boolean isAvailable() {
-        // Workaround to match the value 34+ for U+ in roles.xml before SDK finalization.
-        if (mMinSdkVersion >= 34) {
-            return SdkLevel.isAtLeastU();
-        } else {
-            return Build.VERSION.SDK_INT >= mMinSdkVersion;
+    public boolean isAvailable(@NonNull Context context) {
+        if (Build.VERSION.SDK_INT >= mMinSdkVersion
+                // Workaround to match the value 34 for U in roles.xml before SDK finalization.
+                || (mMinSdkVersion == 34 && SdkLevel.isAtLeastU())) {
+            return true;
         }
+        if (Build.VERSION.SDK_INT >= mOptionalMinSdkVersion) {
+            PackageManager packageManager = context.getPackageManager();
+            PermissionInfo permissionInfo;
+            try {
+                permissionInfo = packageManager.getPermissionInfo(mName, 0);
+            } catch (PackageManager.NameNotFoundException e) {
+                return false;
+            }
+            return permissionInfo.getProtection() == PermissionInfo.PROTECTION_DANGEROUS
+                    || (permissionInfo.getProtectionFlags() & PermissionInfo.PROTECTION_FLAG_ROLE)
+                            == PermissionInfo.PROTECTION_FLAG_ROLE
+                    || (permissionInfo.getProtectionFlags() & PermissionInfo.PROTECTION_FLAG_APPOP)
+                            == PermissionInfo.PROTECTION_FLAG_APPOP;
+        }
+        return false;
+    }
+
+    /**
+     * Return a new permission with the specified SDK versions, or this permission if it already has
+     * the same SDK versions.
+     *
+     * @param minSdkVersion the minimum SDK version
+     * @param optionalMinSdkVersion the optional minimum SDK version
+     * @return a permission with the specified SDK versions
+     */
+    @NonNull
+    public Permission withSdkVersions(int minSdkVersion, int optionalMinSdkVersion) {
+        if (mMinSdkVersion == minSdkVersion && mOptionalMinSdkVersion == optionalMinSdkVersion) {
+            return this;
+        }
+        return new Permission(mName, minSdkVersion, optionalMinSdkVersion);
     }
 
     @Override
@@ -73,6 +116,7 @@ public class Permission {
         return "Permission{"
                 + "mName='" + mName + '\''
                 + ", mMinSdkVersion=" + mMinSdkVersion
+                + ", mOptionalMinSdkVersion=" + mOptionalMinSdkVersion
                 + '}';
     }
 
@@ -86,11 +130,12 @@ public class Permission {
         }
         Permission that = (Permission) object;
         return mMinSdkVersion == that.mMinSdkVersion
+                && mOptionalMinSdkVersion == that.mOptionalMinSdkVersion
                 && mName.equals(that.mName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(mName, mMinSdkVersion);
+        return Objects.hash(mName, mMinSdkVersion, mOptionalMinSdkVersion);
     }
 }
