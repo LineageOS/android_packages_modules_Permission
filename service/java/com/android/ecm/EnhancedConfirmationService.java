@@ -115,6 +115,7 @@ public class EnhancedConfirmationService extends SystemService {
 
         static {
             PROTECTED_SETTINGS.add(AppOpsManager.OPSTR_BIND_ACCESSIBILITY_SERVICE);
+            PROTECTED_SETTINGS.add(AppOpsManager.OPSTR_ACCESS_NOTIFICATIONS);
             // Default application roles.
             PROTECTED_SETTINGS.add(RoleManager.ROLE_ASSISTANT);
             PROTECTED_SETTINGS.add(RoleManager.ROLE_BROWSER);
@@ -323,6 +324,12 @@ public class EnhancedConfirmationService extends SystemService {
         }
 
         private boolean isSettingEcmProtected(@NonNull String settingIdentifier) {
+            if (mPackageManager.hasSystemFeature(PackageManager.FEATURE_LEANBACK)
+                    || mPackageManager.hasSystemFeature(PackageManager.FEATURE_WATCH)
+                    || mPackageManager.hasSystemFeature(PackageManager.FEATURE_AUTOMOTIVE)) {
+                return false;
+            }
+
             if (PROTECTED_SETTINGS.contains(settingIdentifier)) {
                 return true;
             }
