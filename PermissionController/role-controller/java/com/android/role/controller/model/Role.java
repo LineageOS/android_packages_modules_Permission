@@ -392,13 +392,10 @@ public class Role {
      * @return whether this role is available based on SDK version
      */
     boolean isAvailableBySdkVersion() {
-        // Workaround to match the value 34+ for U+ in roles.xml before SDK finalization.
-        if (mMinSdkVersion >= 34) {
-            return SdkLevel.isAtLeastU();
-        } else {
-            return Build.VERSION.SDK_INT >= mMinSdkVersion
-                    && Build.VERSION.SDK_INT <= mMaxSdkVersion;
-        }
+        return (Build.VERSION.SDK_INT >= mMinSdkVersion
+                // Workaround to match the value 34 for U in roles.xml before SDK finalization.
+                || (mMinSdkVersion == 34 && SdkLevel.isAtLeastU()))
+                && Build.VERSION.SDK_INT <= mMaxSdkVersion;
     }
 
     /**
@@ -783,11 +780,12 @@ public class Role {
     public void grant(@NonNull String packageName, boolean dontKillApp,
             boolean overrideUser, @NonNull Context context) {
         boolean permissionOrAppOpChanged = Permissions.grant(packageName,
-                Permissions.filterBySdkVersion(mPermissions),
+                Permissions.filterBySdkVersion(mPermissions, context),
                 SdkLevel.isAtLeastS() ? !mSystemOnly : true, overrideUser, true, false, false,
                 context);
 
-        List<String> appOpPermissionsToGrant = Permissions.filterBySdkVersion(mAppOpPermissions);
+        List<String> appOpPermissionsToGrant =
+                Permissions.filterBySdkVersion(mAppOpPermissions, context);
         int appOpPermissionsSize = appOpPermissionsToGrant.size();
         for (int i = 0; i < appOpPermissionsSize; i++) {
             String appOpPermission = appOpPermissionsToGrant.get(i);
@@ -830,24 +828,26 @@ public class Role {
         List<String> otherRoleNames = roleManager.getHeldRolesFromController(packageName);
         otherRoleNames.remove(mName);
 
-        List<String> permissionsToRevoke = Permissions.filterBySdkVersion(mPermissions);
+        List<String> permissionsToRevoke = Permissions.filterBySdkVersion(mPermissions, context);
         ArrayMap<String, Role> roles = Roles.get(context);
         int otherRoleNamesSize = otherRoleNames.size();
         for (int i = 0; i < otherRoleNamesSize; i++) {
             String roleName = otherRoleNames.get(i);
             Role role = roles.get(roleName);
-            permissionsToRevoke.removeAll(Permissions.filterBySdkVersion(role.mPermissions));
+            permissionsToRevoke.removeAll(
+                    Permissions.filterBySdkVersion(role.mPermissions, context));
         }
 
         boolean permissionOrAppOpChanged = Permissions.revoke(packageName, permissionsToRevoke,
                 true, false, overrideSystemFixedPermissions, context);
 
-        List<String> appOpPermissionsToRevoke = Permissions.filterBySdkVersion(mAppOpPermissions);
+        List<String> appOpPermissionsToRevoke =
+                Permissions.filterBySdkVersion(mAppOpPermissions, context);
         for (int i = 0; i < otherRoleNamesSize; i++) {
             String roleName = otherRoleNames.get(i);
             Role role = roles.get(roleName);
             appOpPermissionsToRevoke.removeAll(
-                    Permissions.filterBySdkVersion(role.mAppOpPermissions));
+                    Permissions.filterBySdkVersion(role.mAppOpPermissions, context));
         }
         int appOpPermissionsSize = appOpPermissionsToRevoke.size();
         for (int i = 0; i < appOpPermissionsSize; i++) {

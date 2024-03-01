@@ -102,6 +102,7 @@ public class RoleParser {
     private static final String ATTRIBUTE_VISIBLE = "visible";
     private static final String ATTRIBUTE_FLAGS = "flags";
     private static final String ATTRIBUTE_MIN_TARGET_SDK_VERSION = "minTargetSdkVersion";
+    private static final String ATTRIBUTE_OPTIONAL_MIN_SDK_VERSION = "optionalMinSdkVersion";
     private static final String ATTRIBUTE_PERMISSION = "permission";
     private static final String ATTRIBUTE_PROHIBITED = "prohibited";
     private static final String ATTRIBUTE_VALUE = "value";
@@ -252,6 +253,11 @@ public class RoleParser {
             return null;
         }
 
+        int minSdkVersion = getAttributeIntValue(parser, ATTRIBUTE_MIN_SDK_VERSION,
+                Build.VERSION_CODES.BASE);
+        int optionalMinSdkVersion = getAttributeIntValue(parser, ATTRIBUTE_OPTIONAL_MIN_SDK_VERSION,
+                minSdkVersion);
+
         List<Permission> permissions = new ArrayList<>();
 
         int type;
@@ -269,6 +275,11 @@ public class RoleParser {
                 if (permission == null) {
                     continue;
                 }
+                int mergedMinSdkVersion = Math.max(permission.getMinSdkVersion(), minSdkVersion);
+                int mergedOptionalMinSdkVersion = Math.max(permission.getOptionalMinSdkVersion(),
+                        optionalMinSdkVersion);
+                permission = permission.withSdkVersions(mergedMinSdkVersion,
+                        mergedOptionalMinSdkVersion);
                 validateNoDuplicateElement(permission, permissions, "permission");
                 permissions.add(permission);
             } else {
@@ -290,7 +301,9 @@ public class RoleParser {
         }
         int minSdkVersion = getAttributeIntValue(parser, ATTRIBUTE_MIN_SDK_VERSION,
                 Build.VERSION_CODES.BASE);
-        return new Permission(name, minSdkVersion);
+        int optionalMinSdkVersion = getAttributeIntValue(parser, ATTRIBUTE_OPTIONAL_MIN_SDK_VERSION,
+                minSdkVersion);
+        return new Permission(name, minSdkVersion, optionalMinSdkVersion);
     }
 
     @Nullable
@@ -738,13 +751,29 @@ public class RoleParser {
                     if (permissionSetName == null) {
                         continue;
                     }
-                    if (!permissionSets.containsKey(permissionSetName)) {
+                    PermissionSet permissionSet = permissionSets.get(permissionSetName);
+                    if (permissionSet == null) {
                         throwOrLogMessage("Unknown permission set:" + permissionSetName);
                         continue;
                     }
-                    PermissionSet permissionSet = permissionSets.get(permissionSetName);
-                    // We do allow intersection between permission sets.
-                    permissions.addAll(permissionSet.getPermissions());
+                    int minSdkVersion = getAttributeIntValue(parser, ATTRIBUTE_MIN_SDK_VERSION,
+                            Build.VERSION_CODES.BASE);
+                    int optionalMinSdkVersion = getAttributeIntValue(parser,
+                            ATTRIBUTE_OPTIONAL_MIN_SDK_VERSION, minSdkVersion);
+                    List<Permission> permissionsInSet = permissionSet.getPermissions();
+                    int permissionsInSetSize = permissionsInSet.size();
+                    for (int permissionsInSetIndex = 0;
+                            permissionsInSetIndex < permissionsInSetSize; permissionsInSetIndex++) {
+                        Permission permission = permissionsInSet.get(permissionsInSetIndex);
+                        int mergedMinSdkVersion =
+                                Math.max(permission.getMinSdkVersion(), minSdkVersion);
+                        int mergedOptionalMinSdkVersion = Math.max(
+                                permission.getOptionalMinSdkVersion(), optionalMinSdkVersion);
+                        permission = permission.withSdkVersions(mergedMinSdkVersion,
+                                mergedOptionalMinSdkVersion);
+                        // We do allow intersection between permission sets.
+                        permissions.add(permission);
+                    }
                     break;
                 }
                 case TAG_PERMISSION: {
@@ -1110,7 +1139,7 @@ public class RoleParser {
     }
 
     private void validatePermission(@NonNull Permission permission) {
-        if (!permission.isAvailable()) {
+        if (!permission.isAvailable(mContext)) {
             return;
         }
         validatePermission(permission.getName(), true);
@@ -1146,7 +1175,7 @@ public class RoleParser {
     }
 
     private void validateAppOpPermission(@NonNull Permission appOpPermission) {
-        if (!appOpPermission.isAvailable()) {
+        if (!appOpPermission.isAvailable(mContext)) {
             return;
         }
         validateAppOpPermission(appOpPermission.getName());
