@@ -34,13 +34,10 @@ android_test {
     min_sdk_version: "30",
 
     resource_dirs: [
-        "main_res",
         "test_res",
     ],
 
     srcs: [
-        ":permissioncontroller-sources",
-
         "src/**/*.kt",
     ],
 
@@ -51,9 +48,14 @@ android_test {
     ],
 
     static_libs: [
+        "PermissionController-lib",
         "iconloader_sc_mainline_prod",
         "com.google.android.material_material",
         "androidx.transition_transition",
+        "androidx.compose.foundation_foundation",
+        "androidx.compose.runtime_runtime",
+        "androidx.compose.runtime_runtime-livedata",
+        "androidx.compose.ui_ui",
         "androidx-constraintlayout_constraintlayout",
         "androidx.core_core",
         "androidx.media_media",
@@ -68,6 +70,7 @@ android_test {
         "androidx.leanback_leanback-preference",
         "androidx.lifecycle_lifecycle-extensions",
         "androidx.lifecycle_lifecycle-common-java8",
+        "androidx.wear.compose_compose-material",
         "kotlin-stdlib",
         "kotlinx-coroutines-android",
         "androidx.navigation_navigation-common-ktx",
@@ -114,6 +117,8 @@ android_test {
         "safety-label",
         "role-controller",
         "lottie",
+        "permissions-flags-lib",
+        "android.permission.flags-aconfig-java",
 
         "androidx.test.rules",
         "androidx.test.ext.truth",
@@ -122,18 +127,11 @@ android_test {
         "mockito-target-extended-minus-junit4",
     ],
 
-    proto: {
-        type: "lite",
-        include_dirs: ["packages/modules/Permission/PermissionController/src/com/android/permissioncontroller"],
-    },
-
     jni_libs: [
         "libdexmakerjvmtiagent",
         "libstaticjvmtiagent",
     ],
     compile_multilib: "both",
-
-    aaptflags: ["--custom-package com.android.permissioncontroller"],
 
     test_suites: [
         "device-tests",

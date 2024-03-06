@@ -34,9 +34,10 @@
     <string name="grant_dialog_button_more_info" msgid="213350268561945193">"En savoir plus"</string>
     <string name="grant_dialog_button_allow_all" msgid="5939066403732409516">"Tout autoriser"</string>
     <string name="grant_dialog_button_always_allow_all" msgid="1719900027660252167">"Toujours tout autoriser"</string>
+    <string name="grant_dialog_button_allow_limited_access" msgid="5713551784422137594">"Autoriser un accès limité"</string>
     <string name="grant_dialog_button_allow_selected_photos" msgid="5497042471576153842">"Sélectionner des photos et des vidéos"</string>
     <string name="grant_dialog_button_allow_more_selected_photos" msgid="5145657877588697709">"Sélectionner d\'autres photos"</string>
-    <string name="grant_dialog_button_dont_select_more" msgid="6643552729129461268">"Ne pas sélectionner plus de données"</string>
+    <string name="grant_dialog_button_dont_select_more" msgid="6643552729129461268">"Ne pas en sélectionner d\'autres"</string>
     <string name="grant_dialog_button_deny_anyway" msgid="7225905870668915151">"Ne pas autoriser quand même"</string>
     <string name="grant_dialog_button_dismiss" msgid="1930399742250226393">"Fermer"</string>
     <string name="current_permission_template" msgid="7452035392573329375">"<xliff:g id="CURRENT_PERMISSION_INDEX">%1$s</xliff:g> sur <xliff:g id="PERMISSION_COUNT">%2$s</xliff:g>"</string>
@@ -60,6 +61,7 @@
     <string name="app_permissions_breadcrumb" msgid="5136969550489411650">"Applications"</string>
     <string name="app_permissions" msgid="3369917736607944781">"Autorisations des applications"</string>
     <string name="unused_apps" msgid="2058057455175955094">"Applications non utilisées"</string>
+    <string name="edit_photos_description" msgid="5540108003480078892">"Modifiez une sélection de photos pour cette application"</string>
     <string name="no_unused_apps" msgid="12809387670415295">"Aucune application inutilisée"</string>
     <string name="zero_unused_apps" msgid="9024448554157499748">"Aucune application inutilisée"</string>
     <string name="review_permission_decisions" msgid="309559429150613632">"Décisions d\'autorisation récentes"</string>
@@ -226,7 +228,7 @@
     <string name="last_opened_summary_short" msgid="1646067226191176825">"Dernière ouverture : <xliff:g id="DATE">%s</xliff:g>"</string>
     <string name="app_permission_footer_special_file_access" msgid="1884202176147657788">"Si vous autorisez la gestion de tous les fichiers, cette application pourra accéder à tous les fichiers enregistrés dans l\'espace de stockage partagé sur cet appareil ou sur des appareils de stockage connectés, les modifier et les supprimer. L\'application pourra accéder à des fichiers sans vous demander la permission."</string>
     <string name="special_file_access_dialog" msgid="583804114020740610">"Autoriser cette application à accéder aux fichiers qui se trouvent sur cet appareil ou sur des appareils de stockage connectés et à les modifier et les supprimer. Cette application pourra accéder à des fichiers sans vous demander la permission."</string>
-    <string name="permission_description_summary_generic" msgid="5401399408814903391">"Les applications qui possèdent l\'autorisation peuvent <xliff:g id="DESCRIPTION">%1$s</xliff:g>"</string>
+    <string name="permission_description_summary_generic" msgid="5401399408814903391">"Les applications ayant cette autorisation peuvent <xliff:g id="DESCRIPTION">%1$s</xliff:g>"</string>
     <string name="permission_description_summary_activity_recognition" msgid="2652850576497070146">"Les applications qui possèdent cette autorisation peuvent accéder aux données relatives à vos activités physiques, comme la marche, le vélo, la conduite, le nombre de pas effectués et plus encore"</string>
     <string name="permission_description_summary_calendar" msgid="103329982944411010">"Les applications qui possèdent cette autorisation peuvent accéder à votre agenda"</string>
     <string name="permission_description_summary_call_log" msgid="7321437186317577624">"Les applications qui possèdent cette autorisation peuvent lire et écrire des journaux d\'appels téléphoniques"</string>
@@ -455,53 +457,78 @@
     <string name="assistant_record_audio_user_sensitive_title" msgid="5532123360322362378">"Afficher la détection des déclencheurs de l\'assistant"</string>
     <string name="assistant_record_audio_user_sensitive_summary" msgid="6482937591816401619">"Afficher l\'icône dans la barre d\'état lorsque le microphone est utilisé pour activer l\'assistant vocal"</string>
     <string name="permgrouprequest_storage_isolated" msgid="4892154224026852295">"Autoriser <xliff:g id="APP_NAME">%1$s</xliff:g> à accéder aux photos et aux médias de votre appareil?"</string>
+    <string name="permgrouprequest_device_aware_storage_isolated" msgid="5934218468708513375">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder au contenu multimédia et aux photos sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à accéder à vos contacts?"</string>
+    <string name="permgrouprequest_device_aware_contacts" msgid="2270563860206654757">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder à vos contacts sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequest_location" msgid="6990232580121067883">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à accéder à la position de cet appareil?"</string>
+    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder à la position de votre « <xliff:g id="DEVICE_NAME">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"L\'application aura uniquement accès à la position lorsque vous l\'utilisez"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à accéder à la position de cet appareil?"</string>
+    <string name="permgroupbackgroundrequest_device_aware_location" msgid="7660465507029650527">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder à la position de votre « <xliff:g id="DEVICE_NAME">%2$s</xliff:g> »?"</string>
     <string name="permgroupbackgroundrequestdetail_location" msgid="8021219324989662957">"Cette appli pourrait demander à accéder à votre position en tout temps, même si vous ne l\'utilisez pas. Accordez cette autorisation dans les "<annotation id="link">"paramètres"</annotation>"."</string>
     <string name="permgroupupgraderequest_location" msgid="8328408946822691636">"Modifier l\'accès à la position pour « <xliff:g id="APP_NAME">%1$s</xliff:g> »?"</string>
+    <string name="permgroupupgraderequest_device_aware_location" msgid="4528266408056426513">"Modifier l\'accès à la position pour « <xliff:g id="APP_NAME">%1$s</xliff:g> » sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgroupupgraderequestdetail_location" msgid="1550899076845189165">"Cette application veut accéder à votre position en tout temps, même lorsque vous ne l\'utilisez pas. Accordez cette autorisation dans les "<annotation id="link">"paramètres"</annotation>"."</string>
     <string name="permgrouprequest_nearby_devices" msgid="2272829282660436700">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à trouver les appareils à proximité, à s\'y connecter et à déterminer leur position relative?"</string>
+    <string name="permgrouprequest_device_aware_nearby_devices" msgid="7919687165848885665">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à détecter les appareils à prox., à s\'y connecter et à déterminer leur position relative sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgroupupgraderequestdetail_nearby_devices" msgid="6877531270654738614">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à trouver les appareils à proximité, à s\'y connecter et à déterminer leur position relative? "<annotation id="link">"Accordez l\'autorisation dans les paramètres."</annotation></string>
     <string name="permgrouprequest_fineupgrade" msgid="2334242928821697672">"Modifier l\'accès à la position de l\'application <xliff:g id="APP_NAME">&lt;b&gt;%1$s&lt;/b&gt;</xliff:g> d\'approximative à exacte?"</string>
+    <string name="permgrouprequest_device_aware_fineupgrade" msgid="3947134846432067176">"Modifier l\'accès à la position de « <xliff:g id="APP_NAME">&lt;b&gt;%1$s&lt;/b&gt;</xliff:g> » sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> » d\'approximative à précise?"</string>
     <string name="permgrouprequest_coarselocation" msgid="7244605063736425232">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à accéder à la position approximative de cet appareil?"</string>
+    <string name="permgrouprequest_device_aware_coarselocation" msgid="9001956706241104626">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder à la position approximative de votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequest_finelocation_imagetext" msgid="1313062433398914334">"Exacte"</string>
     <string name="permgrouprequest_coarselocation_imagetext" msgid="8650605041483025297">"Approximative"</string>
     <string name="permgrouprequest_calendar" msgid="1493150855673603806">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à accéder à votre agenda?"</string>
+    <string name="permgrouprequest_device_aware_calendar" msgid="3103987548035171850">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder à votre agenda sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequest_sms" msgid="5672063688745420991">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;  à envoyer et à afficher des messages texte?"</string>
+    <string name="permgrouprequest_device_aware_sms" msgid="7212083972999874267">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à envoyer et à afficher des messages texte sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequest_storage" msgid="8717773092518621602">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à accéder aux photos, au contenu multimédia et aux fichiers de votre appareil?"</string>
+    <string name="permgrouprequest_device_aware_storage" msgid="872629037299467086">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder au contenu multimédia, aux photos et aux fichiers sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequest_storage_q_to_s" msgid="8213701872983685505">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à accéder &lt;b&gt;aux photos, aux vidéos, et aux fichiers musicaux et audio&lt;/b&gt; sur cet appareil?"</string>
     <string name="permgrouprequest_storage_pre_q" msgid="168130651144569428">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à accéder &lt;b&gt;aux photos, aux vidéos, et aux fichiers musicaux, audio et autres&lt;/b&gt; sur cet appareil?"</string>
     <string name="permgrouprequest_read_media_aural" msgid="2593365397347577812">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à accéder aux fichiers musicaux et audio sur cet appareil?"</string>
+    <string name="permgrouprequest_device_aware_read_media_aural" msgid="3331524384339036668">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder aux fichiers musicaux et audio sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à accéder aux photos et aux vidéos sur cet appareil?"</string>
+    <string name="permgrouprequest_device_aware_read_media_visual" msgid="5492319750632751551">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder aux photos et vidéos sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequest_more_photos" msgid="128933814654231321">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à accéder à plus de photos et de vidéos sur cet appareil?"</string>
+    <string name="permgrouprequest_device_aware_more_photos" msgid="8946782319103584021">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder à plus de photos et de vidéos sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequest_microphone" msgid="2825208549114811299">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à enregistrer l\'audio?"</string>
+    <string name="permgrouprequest_device_aware_microphone" msgid="1266843551173029370">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à enregistrer de l\'audio sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequestdetail_microphone" msgid="8510456971528228861">"L\'application pourra uniquement enregistrer de l\'audio lorsque vous l\'utilisez"</string>
     <string name="permgroupbackgroundrequest_microphone" msgid="8874462606796368183">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à enregistrer de l\'audio?"</string>
+    <string name="permgroupbackgroundrequest_device_aware_microphone" msgid="4990337225146130185">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à enregistrer de l\'audio sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgroupbackgroundrequestdetail_microphone" msgid="553702902263681838">"Cette application pourrait demander à enregistrer de l\'audio en tout temps, même lorsque vous ne l\'utilisez pas. "<annotation id="link">"Autorisez dans les paramètres."</annotation></string>
     <string name="permgroupupgraderequest_microphone" msgid="1362781696161233341">"Modifier l\'accès au microphone pour « <xliff:g id="APP_NAME">%1$s</xliff:g> »?"</string>
+    <string name="permgroupupgraderequest_device_aware_microphone" msgid="222471025997100107">"Modifier l\'accès au microphone pour « <xliff:g id="APP_NAME">%1$s</xliff:g> » sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgroupupgraderequestdetail_microphone" msgid="2870497719571464239">"Cette application veut enregistrer de l\'audio en tout temps, même si vous ne l\'utilisez pas. "<annotation id="link">"Autorisez dans les paramètres."</annotation></string>
     <string name="permgrouprequest_activityRecognition" msgid="5415121592794230330">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder à vos activités physiques?"</string>
+    <string name="permgrouprequest_device_aware_activityRecognition" msgid="3408326850847755759">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder à votre activité physique sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequest_camera" msgid="5123097035410002594">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à prendre des photos et à enregistrer des vidéos?"</string>
+    <string name="permgrouprequest_device_aware_camera" msgid="3525106924487608868">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à prendre des photos et à enregistrer des vidéos sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequestdetail_camera" msgid="9085323239764667883">"L\'application pourra uniquement prendre des photos et enregistrer des vidéos lorsque vous l\'utilisez"</string>
     <string name="permgroupbackgroundrequest_camera" msgid="1274286575704213875">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à prendre des photos et à enregistrer des vidéos?"</string>
+    <string name="permgroupbackgroundrequest_device_aware_camera" msgid="6718286540040964849">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à prendre des photos et à enregistrer des vidéos sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgroupbackgroundrequestdetail_camera" msgid="4458783509089859078">"Cette appli pourrait demander à prendre des photos et des vidéos en tout temps, même lorsque vous ne l\'utilisez pas. "<annotation id="link">"Autorisez dans les paramètres."</annotation></string>
     <string name="permgroupupgraderequest_camera" msgid="640758449200241582">"Modifier l\'accès à l\'appareil photo pour « <xliff:g id="APP_NAME">%1$s</xliff:g> »?"</string>
+    <string name="permgroupupgraderequest_device_aware_camera" msgid="4198765626608612156">"Modifier l\'accès à l\'appareil photo pour « <xliff:g id="APP_NAME">%1$s</xliff:g> » sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgroupupgraderequestdetail_camera" msgid="6642747548010962597">"Cette application veut prendre des photos et enregistrer des vidéos en tout temps, même lorsque vous ne l\'utilisez pas. "<annotation id="link">"Autorisez dans les paramètres."</annotation></string>
     <string name="permgrouprequest_calllog" msgid="2065327180175371397">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à accéder à vos journaux d\'appels?"</string>
+    <string name="permgrouprequest_device_aware_calllog" msgid="735079772627778095">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder à vos journaux d\'appels téléphoniques sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequest_phone" msgid="1829234136997316752">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à faire et à gérer des appels téléphoniques?"</string>
+    <string name="permgrouprequest_device_aware_phone" msgid="4389610977195521813">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à passer et à gérer des appels téléphoniques sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgrouprequest_sensors" msgid="4397358316850652235">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder aux données des capteurs pour vos signes vitaux?"</string>
+    <string name="permgrouprequest_device_aware_sensors" msgid="1900598688488188225">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder aux données des capteurs relatives à vos signes vitaux sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgroupupgraderequestdetail_sensors" msgid="6651914048792092835">"Cette application souhaite pouvoir accéder en tout temps aux données des capteurs relatives à vos signes vitaux, même lorsque vous ne l\'utilisez pas. Pour effectuer ce changement, "<annotation id="link">"accédez aux paramètres"</annotation>"."</string>
     <string name="permgroupbackgroundrequest_sensors" msgid="5661924322018503886">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder aux données des capteurs relatives à vos signes vitaux?"</string>
+    <string name="permgroupbackgroundrequest_device_aware_sensors" msgid="7691308331448239716">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder aux données des capteurs relatives à vos signes vitaux sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="permgroupbackgroundrequestdetail_sensors" msgid="7726767635834043501">"Pour permettre à cette application d\'accéder aux données des capteurs corporels en tout temps, même lorsque vous n\'utilisez pas l\'application, "<annotation id="link">"accédez aux paramètres"</annotation>"."</string>
     <string name="permgroupupgraderequest_sensors" msgid="7576527638411370468">"Voulez-vous continuer à autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à accéder aux données des capteurs corporels pendant l\'utilisation de l\'appli?"</string>
+    <string name="permgroupupgraderequest_device_aware_sensors" msgid="3310667992344623159">"Continuer à autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à accéder aux données des capteurs corporels sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> » pendant l\'utilisation de l\'appli?"</string>
     <string name="permgrouprequest_notifications" msgid="6396739062335106181">"Autoriser &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; à vous envoyer des notifications?"</string>
+    <string name="permgrouprequest_device_aware_notifications" msgid="7307588961166360244">"Autoriser « <xliff:g id="APP_NAME">%1$s</xliff:g> » à vous envoyer des notifications sur votre « <xliff:g id="DEVICE">%2$s</xliff:g> »?"</string>
     <string name="auto_granted_permissions" msgid="6009452264824455892">"Autorisations contrôlées"</string>
-    <!-- no translation found for auto_granted_location_permission_notification_title (7570818224669050377) -->
-    <skip />
-    <!-- no translation found for auto_granted_permission_notification_body (5040234389205471318) -->
-    <skip />
+    <string name="auto_granted_location_permission_notification_title" msgid="7570818224669050377">"<xliff:g id="APP_NAME">%1$s</xliff:g> dispose d\'un accès à la position"</string>
+    <string name="auto_granted_permission_notification_body" msgid="5040234389205471318">"Votre organisation permet à <xliff:g id="APP_NAME">%1$s</xliff:g> d\'accéder à votre position"</string>
     <string name="other_permissions_label" msgid="8986184335503271992">"Autres autorisations"</string>
     <string name="not_used_permissions_label" msgid="3939839426115141264">"Autorisations utilisées par le système"</string>
     <string name="not_used_permissions_description" msgid="7595514824169388718">"Autorisations utilisées par les applications système."</string>
@@ -537,7 +564,7 @@
     <string name="safety_privacy_qs_tile_subtitle" msgid="3621544532041936749">"Vérification de l\'état"</string>
     <string name="privacy_controls_qs" msgid="5780144882040591169">"Paramètres de confidentialité"</string>
     <string name="security_settings_button_label_qs" msgid="8280343822465962330">"Plus de paramètres"</string>
-    <string name="camera_toggle_label_qs" msgid="3880261453066157285">"Accès à l\'appareil photo"</string>
+    <string name="camera_toggle_label_qs" msgid="3880261453066157285">"Accès à la caméra"</string>
     <string name="microphone_toggle_label_qs" msgid="8132912469813396552">"Accès au microphone"</string>
     <string name="permissions_removed_qs" msgid="8957319130625294572">"L\'autorisation a été retirée"</string>
     <string name="camera_usage_qs" msgid="4394233566086665994">"Consulter les utilisations récentes de l\'appareil photo"</string>
@@ -579,18 +606,19 @@
     <string name="safety_center_background_location_access_revoked" msgid="6972274943343442213">"Accès modifié"</string>
     <string name="safety_center_view_recent_location_access" msgid="3524391299490678243">"Voir les utilisations récentes de la position"</string>
     <string name="privacy_controls_title" msgid="7605929972256835199">"Paramètres de confidentialité"</string>
-    <string name="camera_toggle_title" msgid="1251201397431837666">"Accès à l\'appareil photo"</string>
+    <string name="camera_toggle_title" msgid="1251201397431837666">"Accès à la caméra"</string>
     <string name="mic_toggle_title" msgid="2649991093496110162">"Accès au microphone"</string>
     <string name="perm_toggle_description" msgid="7801326363741451379">"Pour les applications et les services"</string>
     <string name="mic_toggle_description" msgid="9163104307990677157">"Pour les applications et les services. Si ce paramètre est désactivé, il est possible que les données du microphone soient partagées lorsque vous appelez un numéro d\'urgence."</string>
     <string name="location_settings_subtitle" msgid="2328360561197430695">"Voir les applications et les services qui ont accès à votre emplacement"</string>
     <string name="show_clip_access_notification_title" msgid="5168467637351109096">"Afficher l\'accès au presse-papiers"</string>
-    <string name="show_clip_access_notification_summary" msgid="3532020182782112687">"Afficher un message lorsque les applications accèdent à du texte, à des images ou à d\'autres contenus que vous avez copiés"</string>
+    <string name="show_clip_access_notification_summary" msgid="3532020182782112687">"Un message s\'affiche lorsque les applications accèdent à du texte, à des images ou à d\'autres contenus que vous avez copiés"</string>
     <string name="show_password_title" msgid="2877269286984684659">"Afficher les mots de passe"</string>
-    <string name="show_password_summary" msgid="1110166488865981610">"Afficher les caractères brièvement pendant la saisie"</string>
+    <string name="show_password_summary" msgid="1110166488865981610">"Les caractères s\'affichent brièvement pendant la saisie"</string>
     <string name="permission_rationale_message_location" msgid="2153841534298068414">"Cette application indique qu\'elle peut partager des données de localisation avec des tiers"</string>
     <string name="permission_rationale_location_title" msgid="2404797182678793506">"Partage des données et localisation"</string>
     <string name="permission_rationale_data_sharing_source_title" msgid="6874604543125814316">"Provenance des renseignements sur le partage des données"</string>
+    <string name="permission_rationale_data_sharing_device_manufacturer_message" msgid="7569261218145653185">"Le développeur a fourni des renseignements au fabricant de cet appareil sur la façon dont cette application partage les données. Le développeur peut mettre à jour ces renseignements au fil du temps."</string>
     <string name="permission_rationale_data_sharing_source_message" msgid="8330794595417986883">"Le développeur a fourni des renseignements à "<annotation id="link"><annotation id="install_source" example="App Store">"%1$s"</annotation></annotation>" sur la façon dont cette application partage les données. Le développeur peut mettre à jour ces renseignements au fil du temps."</string>
     <string name="permission_rationale_location_purpose_title" msgid="5115877143670012618">"L\'appli peut partager des données de loc. pour :"</string>
     <string name="permission_rationale_permission_data_sharing_varies_title" msgid="9103718980919908316">"Les pratiques de partage de données peuvent varier"</string>
@@ -608,8 +636,6 @@
     <string name="app_permission_rationale_message" msgid="8511466916077100713">"Sécurité des données"</string>
     <string name="app_location_permission_rationale_title" msgid="925420340572401350">"Les données de localisation peuvent être partagées"</string>
     <string name="app_location_permission_rationale_subtitle" msgid="6986985722752868692">"Cette application indique qu\'elle peut partager vos données de localisation avec des tiers"</string>
-    <string name="permission_rationale_data_sharing_link_error_title" msgid="4496607694785370249">"Impossible d\'ouvrir ce lien"</string>
-    <string name="permission_rationale_data_sharing_link_error_message" msgid="8118116480850030215"></string>
     <string name="data_sharing_updates_title" msgid="7996933386875213859">"Mises à jour des pratiques de partage des données pour la localisation"</string>
     <string name="data_sharing_updates_summary" msgid="764113985772233889">"Passez en revue les applications qui ont changé la façon dont elles peuvent partager vos données de localisation"</string>
     <string name="data_sharing_updates_subtitle" msgid="6311537708950632329">"Ces applications ont modifié la façon dont elles peuvent partager vos données de localisation. Elles peuvent ne pas les avoir partagées auparavant, ou peuvent maintenant les partager à des fins d\'annonces ou de marketing."</string>

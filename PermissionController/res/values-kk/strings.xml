@@ -34,6 +34,7 @@
     <string name="grant_dialog_button_more_info" msgid="213350268561945193">"Толығырақ"</string>
     <string name="grant_dialog_button_allow_all" msgid="5939066403732409516">"Бәріне рұқсат беру"</string>
     <string name="grant_dialog_button_always_allow_all" msgid="1719900027660252167">"Әрдайым бәріне рұқсат беру"</string>
+    <string name="grant_dialog_button_allow_limited_access" msgid="5713551784422137594">"Шектеулі рұқсат беру"</string>
     <string name="grant_dialog_button_allow_selected_photos" msgid="5497042471576153842">"Фотосуреттер мен бейнелерді таңдау"</string>
     <string name="grant_dialog_button_allow_more_selected_photos" msgid="5145657877588697709">"Тағы таңдау"</string>
     <string name="grant_dialog_button_dont_select_more" msgid="6643552729129461268">"Тағы басқасын таңдамау"</string>
@@ -41,7 +42,7 @@
     <string name="grant_dialog_button_dismiss" msgid="1930399742250226393">"Жабу"</string>
     <string name="current_permission_template" msgid="7452035392573329375">"<xliff:g id="CURRENT_PERMISSION_INDEX">%1$s</xliff:g>/<xliff:g id="PERMISSION_COUNT">%2$s</xliff:g>"</string>
     <string name="permission_warning_template" msgid="2247087781222679458">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына <xliff:g id="ACTION">%2$s</xliff:g> рұқсатын беру керек пе?"</string>
-    <string name="permission_add_background_warning_template" msgid="1812914855915092273">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасы үшін <xliff:g id="ACTION">%2$s</xliff:g> әрекетіне әрқашан рұқсат етілсін бе?"</string>
+    <string name="permission_add_background_warning_template" msgid="1812914855915092273">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына <xliff:g id="ACTION">%2$s</xliff:g> рұқсаты әрдайым берілсін бе?"</string>
     <string name="allow_permission_foreground_only" msgid="116465816039675404">"Қолданба пайдаланылғанда ғана"</string>
     <string name="allow_permission_always" msgid="5194342531206054051">"Әрқашан"</string>
     <string name="deny_permission_deny_and_dont_ask_again" msgid="6106035221490102341">"Рұқсат бермеу және қайта сұрамау"</string>
@@ -60,6 +61,7 @@
     <string name="app_permissions_breadcrumb" msgid="5136969550489411650">"Қолданбалар"</string>
     <string name="app_permissions" msgid="3369917736607944781">"Қолданба рұқсаттары"</string>
     <string name="unused_apps" msgid="2058057455175955094">"Пайдаланылмайтын қолданбалар"</string>
+    <string name="edit_photos_description" msgid="5540108003480078892">"Осы қолданба пайдалана алатын фотосуреттер тізімін өзгертеді."</string>
     <string name="no_unused_apps" msgid="12809387670415295">"Пайдаланылмайтын қолданбалар жоқ"</string>
     <string name="zero_unused_apps" msgid="9024448554157499748">"0 пайдаланылмайтын қолданба бар"</string>
     <string name="review_permission_decisions" msgid="309559429150613632">"Рұқсат беру әрекеттері"</string>
@@ -163,7 +165,7 @@
     <string name="permission_usage_bar_chart_title_last_minute" msgid="820450867183487607">"Рұқсаттың соңғы 1 минутта пайдаланылуы"</string>
     <string name="permission_usage_preference_summary_not_used_in_past_n_days" msgid="4771868094611359651">"{count,plural, =1{Соңғы # күнде пайдаланылмады.}other{Соңғы # күнде пайдаланылмады.}}"</string>
     <string name="permission_usage_preference_summary_not_used_in_past_n_hours" msgid="3828973177433435742">"{count,plural, =1{Соңғы # сағатта пайдаланылмады.}other{Соңғы # сағатта пайдаланылмады.}}"</string>
-    <string name="permission_usage_preference_label" msgid="8343167938128676378">"{count,plural, =1{1 қолданба пайдаланды}other{# қолданба пайдаланды}}"</string>
+    <string name="permission_usage_preference_label" msgid="8343167938128676378">"{count,plural, =1{1 қолданба пайдаланды.}other{# қолданба пайдаланды.}}"</string>
     <string name="permission_usage_view_details" msgid="6675335735468752787">"Барлығын бақылау тақтасынан көру"</string>
     <string name="app_permission_usage_filter_label" msgid="7182861154638631550">"Сүзгі шарты: <xliff:g id="PERM">%1$s</xliff:g>"</string>
     <string name="app_permission_usage_remove_filter" msgid="2926157607436428207">"Сүзгіні өшіру"</string>
@@ -258,12 +260,12 @@
     <string name="minutes" msgid="4868414855445375753">"{count,plural, =1{# минут}other{# минут}}"</string>
     <string name="seconds" msgid="5893958182059842734">"{count,plural, =1{# секунд}other{# секунд}}"</string>
     <string name="permission_reminders" msgid="6528257957664832636">"Рұқсат туралы еске салғыштар"</string>
-    <string name="auto_revoke_permission_reminder_notification_title_one" msgid="6690347469376854137">"1 пайдаланылмайтын қолданба"</string>
-    <string name="auto_revoke_permission_reminder_notification_title_many" msgid="6062217713645069960">"<xliff:g id="NUMBER_OF_APPS">%s</xliff:g> пайдаланылмайтын қолданба бар"</string>
+    <string name="auto_revoke_permission_reminder_notification_title_one" msgid="6690347469376854137">"1 қолданба пайдаланылмайды"</string>
+    <string name="auto_revoke_permission_reminder_notification_title_many" msgid="6062217713645069960">"<xliff:g id="NUMBER_OF_APPS">%s</xliff:g> қолданба пайдаланылмайды бар"</string>
     <string name="auto_revoke_permission_reminder_notification_content" msgid="4492228990462107487">"Құпиялықты қорғау үшін рұқсаттар өшірілді. Көру үшін түртіңіз."</string>
     <string name="auto_revoke_permission_notification_title" msgid="2629844160853454657">"Пайдаланылмайтын қолданбалар үшін рұқсаттар өшірілді"</string>
     <string name="auto_revoke_permission_notification_content" msgid="5125990886047799375">"Кейбір қолданбалар бірнеше ай бойы пайдаланылмаған. Көру үшін түртіңіз."</string>
-    <string name="unused_apps_notification_title" msgid="4314832015894238019">"{count,plural, =1{# пайдаланылмайтын қолданба}other{# пайдаланылмайтын қолданба}}"</string>
+    <string name="unused_apps_notification_title" msgid="4314832015894238019">"{count,plural, =1{# қолданба пайдаланылмайды}other{# қолданба пайдаланылмайды}}"</string>
     <string name="unused_apps_notification_content" msgid="9195026773244581246">"Рұқсаттар мен уақытша файлдар өшірілді және хабарландырулар тоқтатылды. Көру үшін түртіңіз."</string>
     <string name="unused_apps_safety_center_card_title" msgid="5638409355530099149">"Рұқсаттары өшірілген қолданбаларды қарап шығыңыз"</string>
     <string name="unused_apps_safety_center_card_content" msgid="1088557243627427820">"Біраз уақыттан бері пайдаланылмаған қолданбалар бойынша рұқсаттар мен уақытша файлдар өшірілді және хабарландырулар тоқтатылды."</string>
@@ -455,53 +457,78 @@
     <string name="assistant_record_audio_user_sensitive_title" msgid="5532123360322362378">"Көмекшінің іске қосылғанын анықтауды көрсету"</string>
     <string name="assistant_record_audio_user_sensitive_summary" msgid="6482937591816401619">"Микрофон арқылы дауыс көмекшісін іске қосқанда, күй жолағында белгішені көрсету"</string>
     <string name="permgrouprequest_storage_isolated" msgid="4892154224026852295">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына құрылғыдағы суреттерді, медиафайлдарды пайдалануға рұқсат берілсін бе?"</string>
-    <string name="permgrouprequest_contacts" msgid="8391550064551053695">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына контактілерге кіруге рұқсат берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_storage_isolated" msgid="5934218468708513375">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысындағы фотосуреттер мен медианы пайдалану рұқсаты берілсін бе?"</string>
+    <string name="permgrouprequest_contacts" msgid="8391550064551053695">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына контактілерді пайдалануға рұқсат берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_contacts" msgid="2270563860206654757">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында контактілерді пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgrouprequest_location" msgid="6990232580121067883">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына осы құрылғының локациясын пайдалануға рұқсат берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>’s&lt;/b&gt; құрылғысының локациясын пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"Қолданбаны пайдалану кезінде ғана оған геодеректеріңізді көруге рұқсат етіледі."</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына осы құрылғының локациясын пайдалануға рұқсат берілсін бе?"</string>
+    <string name="permgroupbackgroundrequest_device_aware_location" msgid="7660465507029650527">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g> құрылғысының локациясын пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgroupbackgroundrequestdetail_location" msgid="8021219324989662957">"Қолданбаны пайдаланбасаңыз да, ол үнемі геодеректеріңізді пайдаланғысы келуі мүмкін. "<annotation id="link">"Параметрлерден рұқсат беріңіз."</annotation></string>
     <string name="permgroupupgraderequest_location" msgid="8328408946822691636">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына геодеректі пайдалануға рұқсат етілсін бе?"</string>
+    <string name="permgroupupgraderequest_device_aware_location" msgid="4528266408056426513">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасы үшін &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында локацияны пайдалану рұқсатын өзгерту керек пе?"</string>
     <string name="permgroupupgraderequestdetail_location" msgid="1550899076845189165">"Қолданбаны пайдаланбасаңыз да, ол үнемі геодеректеріңізді пайдаланғысы келеді. "<annotation id="link">"Параметрлерден рұқсат беріңіз."</annotation></string>
     <string name="permgrouprequest_nearby_devices" msgid="2272829282660436700">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына маңайдағы құрылғыларды табуға, олармен байланысуға және олардың орналасуын анықтауға рұқсат берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_nearby_devices" msgid="7919687165848885665">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында маңайдағы құрылғыларды табу, олармен байланысу және қатысты локациясын анықтау рұқсаты берілсін бе?"</string>
     <string name="permgroupupgraderequestdetail_nearby_devices" msgid="6877531270654738614">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына маңайдағы құрылғыларды табуға, олармен байланысуға және олардың орналасуын анықтауға рұқсат берілсін бе? "<annotation id="link">"Параметрлерден рұқсат бере аласыз."</annotation></string>
     <string name="permgrouprequest_fineupgrade" msgid="2334242928821697672">"<xliff:g id="APP_NAME">&lt;b&gt;%1$s&lt;/b&gt;</xliff:g> қолданбасының болжалды емес, нақты локацияны пайдалануына рұқсат беру керек пе?"</string>
+    <string name="permgrouprequest_device_aware_fineupgrade" msgid="3947134846432067176">"<xliff:g id="APP_NAME">&lt;b&gt;%1$s&lt;/b&gt;</xliff:g> қолданбасының &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында локацияны пайдалану рұқсатын болжалдыдан нақты локацияға өзгертесіз бе?"</string>
     <string name="permgrouprequest_coarselocation" msgid="7244605063736425232">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына осы құрылғының болжалды орнын пайдалануға рұқсат берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_coarselocation" msgid="9001956706241104626">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысының болжалды локациясын пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgrouprequest_finelocation_imagetext" msgid="1313062433398914334">"Нақты"</string>
     <string name="permgrouprequest_coarselocation_imagetext" msgid="8650605041483025297">"Болжалды"</string>
     <string name="permgrouprequest_calendar" msgid="1493150855673603806">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына күнтізбеге кіруге рұқсат берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_calendar" msgid="3103987548035171850">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында күнтізбені пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgrouprequest_sms" msgid="5672063688745420991">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына SMS хабарларын жіберуге және көруге рұқсат берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_sms" msgid="7212083972999874267">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында SMS хабарларын жіберу және көру рұқсаты берілсін бе?"</string>
     <string name="permgrouprequest_storage" msgid="8717773092518621602">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына құрылғыдағы суреттерге, медиафайлдарға және басқа файлдарға кіруге рұқсат берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_storage" msgid="872629037299467086">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысындағы фотосуреттерді, медиа және файлдарды пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgrouprequest_storage_q_to_s" msgid="8213701872983685505">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына осы құрылғыдағы &lt;b&gt;фотосурет, бейне, музыка мен аудионы&lt;/b&gt; пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgrouprequest_storage_pre_q" msgid="168130651144569428">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына осы құрылғыдағы &lt;b&gt;фотосурет, бейне, музыка, аудио мен басқа файлдарды&lt;/b&gt; пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgrouprequest_read_media_aural" msgid="2593365397347577812">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына осы құрылғыдағы музыка мен аудионы пайдалану рұқсаты берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_read_media_aural" msgid="3331524384339036668">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысындағы музыка мен аудионы пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына осы құрылғыдағы фотосурет пен бейнені пайдалану рұқсаты берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_read_media_visual" msgid="5492319750632751551">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысындағы фотосуреттер мен бейнелерді пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgrouprequest_more_photos" msgid="128933814654231321">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасы осы құрылғыдағы басқа фотосуреттер мен бейнелерді пайдалансын ба?"</string>
+    <string name="permgrouprequest_device_aware_more_photos" msgid="8946782319103584021">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында басқа фотосуреттер мен бейнелерді пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgrouprequest_microphone" msgid="2825208549114811299">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына дыбыс жазуға рұқсат берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_microphone" msgid="1266843551173029370">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында аудио жазу рұқсаты берілсін бе?"</string>
     <string name="permgrouprequestdetail_microphone" msgid="8510456971528228861">"Қолданба тек жұмыс кезінде ғана аудиомазмұн жаза алады."</string>
     <string name="permgroupbackgroundrequest_microphone" msgid="8874462606796368183">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына аудиомазмұн жазуға рұқсат берілсін бе?"</string>
+    <string name="permgroupbackgroundrequest_device_aware_microphone" msgid="4990337225146130185">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында аудио жазу рұқсаты берілсін бе?"</string>
     <string name="permgroupbackgroundrequestdetail_microphone" msgid="553702902263681838">"Қолданбаны пайдаланбасаңыз да, ол кез келген уақытта бейнелерді жаза алады. "<annotation id="link">"Параметрлерден рұқсат беріңіз."</annotation></string>
     <string name="permgroupupgraderequest_microphone" msgid="1362781696161233341">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына микрофонды пайдалануға рұқсат етілсін бе?"</string>
+    <string name="permgroupupgraderequest_device_aware_microphone" msgid="222471025997100107">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасы үшін &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында микрофонды пайдалану рұқсатын өзгерту керек пе?"</string>
     <string name="permgroupupgraderequestdetail_microphone" msgid="2870497719571464239">"Қолданбаны пайдаланбасаңыз да, ол кез келген уақытта аудиомазмұн жазғысы келеді. "<annotation id="link">"Параметрлерден рұқсат беріңіз."</annotation></string>
     <string name="permgrouprequest_activityRecognition" msgid="5415121592794230330">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына қимыл-қозғалыс дерегін алуға рұқсат етілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_activityRecognition" msgid="3408326850847755759">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында қимыл-қозғалыс деректерін пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgrouprequest_camera" msgid="5123097035410002594">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына суретке түсіруге және бейне жазуға рұқсат берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_camera" msgid="3525106924487608868">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында суретке түсіру және бейне жазу рұқсаты берілсін бе?"</string>
     <string name="permgrouprequestdetail_camera" msgid="9085323239764667883">"Қолданба тек жұмыс кезінде ғана суретке түсіріп, бейне жаза алады."</string>
     <string name="permgroupbackgroundrequest_camera" msgid="1274286575704213875">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына суретке түсіруге және бейне жазуға рұқсат берілсін бе?"</string>
+    <string name="permgroupbackgroundrequest_device_aware_camera" msgid="6718286540040964849">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында суретке түсіру және бейне жазу рұқсаты берілсін бе?"</string>
     <string name="permgroupbackgroundrequestdetail_camera" msgid="4458783509089859078">"Қолданбаны пайдаланбасаңыз да, ол кез келген уақытта суретке түсіріп, бейнелер жаза алады. "<annotation id="link">"Параметрлерден рұқсат беріңіз."</annotation></string>
     <string name="permgroupupgraderequest_camera" msgid="640758449200241582">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына камераны пайдалануға рұқсат етілсін бе?"</string>
+    <string name="permgroupupgraderequest_device_aware_camera" msgid="4198765626608612156">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасы үшін &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысындағы камераны пайдалану рұқсатын өзгерту керек пе?"</string>
     <string name="permgroupupgraderequestdetail_camera" msgid="6642747548010962597">"Қолданбаны пайдаланбасаңыз да, ол кез келген уақытта суретке түсіріп, бейне жазғысы келеді. "<annotation id="link">"Параметрлерден рұқсат беріңіз."</annotation></string>
     <string name="permgrouprequest_calllog" msgid="2065327180175371397">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына телефонның қоңыраулар журналына кіруге рұқсат берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_calllog" msgid="735079772627778095">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында қоңырау журналдарын пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgrouprequest_phone" msgid="1829234136997316752">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына қоңырау шалуға және қоңырауларды басқаруға рұқсат берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_phone" msgid="4389610977195521813">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында қоңыраулар шалу және басқару рұқсаты берілсін бе?"</string>
     <string name="permgrouprequest_sensors" msgid="4397358316850652235">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына негізгі физиологиялық көрсеткіштерді көрсететін сенсорлық деректерді пайдалануға рұқсат берілсін бе?"</string>
+    <string name="permgrouprequest_device_aware_sensors" msgid="1900598688488188225">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында тіршілік көрсеткіштеріне қатысты датчик деректерін пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgroupupgraderequestdetail_sensors" msgid="6651914048792092835">"Қолданбаны пайдаланбасаңыз да, ол әрдайым тіршілік көрсеткіштері туралы датчик дерегін пайдалануға рұқсат сұрайды. Мұны өзгерту үшін "<annotation id="link">"параметрлерге өтіңіз."</annotation></string>
     <string name="permgroupbackgroundrequest_sensors" msgid="5661924322018503886">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына тіршілік көрсеткіштеріне қатысты датчик деректерін пайдалануға рұқсат берілсін бе?"</string>
+    <string name="permgroupbackgroundrequest_device_aware_sensors" msgid="7691308331448239716">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында тіршілік көрсеткіштеріңіз туралы датчик деректерін пайдалану рұқсаты берілсін бе?"</string>
     <string name="permgroupbackgroundrequestdetail_sensors" msgid="7726767635834043501">"Бұл қолданбаға кез келген уақытта (ол пайдаланылмаған кезде де) дене датчигінен алынған деректі пайдалануға рұқсат беру үшін "<annotation id="link">"параметрлерге өтіңіз."</annotation></string>
     <string name="permgroupupgraderequest_sensors" msgid="7576527638411370468">"Жұмыс кезінде &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасы дене датчигінен алынған деректі одан әрі пайдалана берсін бе?"</string>
+    <string name="permgroupupgraderequest_device_aware_sensors" msgid="3310667992344623159">"Жұмыс кезінде &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасы &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында дене датчигінен алынған деректі одан әрі пайдалана берсін бе?"</string>
     <string name="permgrouprequest_notifications" msgid="6396739062335106181">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасы хабарландыру жіберсін бе?"</string>
+    <string name="permgrouprequest_device_aware_notifications" msgid="7307588961166360244">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; қолданбасына &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; құрылғысында хабарландыру жіберу рұқсаты берілсін бе?"</string>
     <string name="auto_granted_permissions" msgid="6009452264824455892">"Басқарылатын рұқсаттар"</string>
-    <!-- no translation found for auto_granted_location_permission_notification_title (7570818224669050377) -->
-    <skip />
-    <!-- no translation found for auto_granted_permission_notification_body (5040234389205471318) -->
-    <skip />
+    <string name="auto_granted_location_permission_notification_title" msgid="7570818224669050377">"<xliff:g id="APP_NAME">%1$s</xliff:g> қолданбасы локацияны пайдаланады"</string>
+    <string name="auto_granted_permission_notification_body" msgid="5040234389205471318">"Ұйымыңыз <xliff:g id="APP_NAME">%1$s</xliff:g> қолданбасына локацияңызды пайдалануға рұқсат береді."</string>
     <string name="other_permissions_label" msgid="8986184335503271992">"Басқа рұқсаттар"</string>
     <string name="not_used_permissions_label" msgid="3939839426115141264">"Жүйе пайдаланатын рұқсаттар"</string>
     <string name="not_used_permissions_description" msgid="7595514824169388718">"Тек жүйе қолданбалары пайдаланатын рұқсаттар."</string>
@@ -516,8 +543,8 @@
     <string name="privdash_label_7d" msgid="5645301995348656931">"Соңғы\n7 күн"</string>
     <string name="exempt_mic_camera_info_label" msgid="6273581737010902815">"<xliff:g id="APP_NAME">%1$s</xliff:g> қолданбасын Android қорғайды. Деректеріңіз осы құрылғыда өңделетіндіктен, бұл қолданба рұқсатының пайдаланылуы күй жолағында немесе құпиялық тақтасында көрсетілмейді."</string>
     <string name="exempt_info_label" msgid="6286190981253476699">"<xliff:g id="APP_NAME">%1$s</xliff:g> қолданбасын Android қорғайды. Деректеріңіз осы құрылғыда өңделетіндіктен, бұл қолданба рұқсатының пайдаланылуы құпиялық тақтасында көрсетілмейді."</string>
-    <string name="blocked_camera_title" msgid="1128510551791284384">"Құрылғы камерасы бөгелген"</string>
-    <string name="blocked_microphone_title" msgid="1631517143648232585">"Құрылғы микрофоны бөгелген"</string>
+    <string name="blocked_camera_title" msgid="1128510551791284384">"Құрылғы камерасы блокталған"</string>
+    <string name="blocked_microphone_title" msgid="1631517143648232585">"Құрылғы микрофоны блокталған"</string>
     <string name="blocked_location_title" msgid="2005608279812892383">"Құрылғы геодерегі өшірулі"</string>
     <string name="blocked_sensor_summary" msgid="4443707628305027375">"Қолданбалар мен қызметтер үшін"</string>
     <string name="blocked_mic_summary" msgid="8960466941528458347">"Құтқару қызметінің нөміріне қоңырау шалу кезінде микрофон деректері әлі бөлісіліп жатуы мүмкін."</string>
@@ -548,11 +575,11 @@
     <string name="manage_permissions_qs" msgid="3780541819763475434">"Рұқсаттарды басқару"</string>
     <string name="active_call_usage_qs" msgid="8559974395932523391">"Телефон қоңырауы үшін пайдаланылуда."</string>
     <string name="recent_call_usage_qs" msgid="743044899599410935">"Соңғы рет телефон қоңырауы үшін пайдаланылды."</string>
-    <string name="active_app_usage_qs" msgid="4063912870936464727">"<xliff:g id="APP_NAME">%1$s</xliff:g> пайдалануда."</string>
+    <string name="active_app_usage_qs" msgid="4063912870936464727">"<xliff:g id="APP_NAME">%1$s</xliff:g> пайдаланып жатыр."</string>
     <string name="recent_app_usage_qs" msgid="6650259601306212327">"Соңғы рет <xliff:g id="APP_NAME">%1$s</xliff:g> пайдаланды."</string>
-    <string name="active_app_usage_1_qs" msgid="4325136375823357052">"<xliff:g id="APP_NAME">%1$s</xliff:g> (<xliff:g id="ATTRIBUTION_LABEL">%2$s</xliff:g>) пайдалануда."</string>
+    <string name="active_app_usage_1_qs" msgid="4325136375823357052">"<xliff:g id="APP_NAME">%1$s</xliff:g> (<xliff:g id="ATTRIBUTION_LABEL">%2$s</xliff:g>) пайдаланып жатыр."</string>
     <string name="recent_app_usage_1_qs" msgid="261450184773310741">"Соңғы рет <xliff:g id="APP_NAME">%1$s</xliff:g> (<xliff:g id="ATTRIBUTION_LABEL">%2$s</xliff:g>) пайдаланды."</string>
-    <string name="active_app_usage_2_qs" msgid="6107866785243565283">"<xliff:g id="APP_NAME">%1$s</xliff:g> (<xliff:g id="ATTRIBUTION_LABEL">%2$s</xliff:g> • <xliff:g id="PROXY_LABEL">%3$s</xliff:g>) пайдалануда."</string>
+    <string name="active_app_usage_2_qs" msgid="6107866785243565283">"<xliff:g id="APP_NAME">%1$s</xliff:g> (<xliff:g id="ATTRIBUTION_LABEL">%2$s</xliff:g> • <xliff:g id="PROXY_LABEL">%3$s</xliff:g>) пайдаланып жатыр."</string>
     <string name="recent_app_usage_2_qs" msgid="3591205954235694403">"Соңғы рет <xliff:g id="APP_NAME">%1$s</xliff:g> (<xliff:g id="ATTRIBUTION_LABEL">%2$s</xliff:g> • <xliff:g id="PROXY_LABEL">%3$s</xliff:g>) пайдаланды."</string>
     <string name="media_confirm_dialog_positive_button" msgid="9020793594051526399">"Растау"</string>
     <string name="media_confirm_dialog_negative_button" msgid="226987376924861785">"Артқа"</string>
@@ -581,7 +608,7 @@
     <string name="privacy_controls_title" msgid="7605929972256835199">"Құпиялық параметрлері"</string>
     <string name="camera_toggle_title" msgid="1251201397431837666">"Камераны пайдалану"</string>
     <string name="mic_toggle_title" msgid="2649991093496110162">"Микрофонды пайдалану"</string>
-    <string name="perm_toggle_description" msgid="7801326363741451379">"Қолданбалар мен қызметтер үшін"</string>
+    <string name="perm_toggle_description" msgid="7801326363741451379">"Қолданбалар мен қызметтерге арналған."</string>
     <string name="mic_toggle_description" msgid="9163104307990677157">"Қолданбалар мен қызметтерге арналған. Бұл параметр өшірілсе де, құтқару қызметінің нөміріне қоңырау шалғанда, микрофон деректері жіберілуі мүмкін."</string>
     <string name="location_settings_subtitle" msgid="2328360561197430695">"Локацияны пайдалана алатын қолданбалар мен қызметтерді көру"</string>
     <string name="show_clip_access_notification_title" msgid="5168467637351109096">"Буфер пайдаланылғанын көрсету"</string>
@@ -591,6 +618,7 @@
     <string name="permission_rationale_message_location" msgid="2153841534298068414">"Бұл қолданба геодеректі үшінші тараптармен бөлісуі мүмкін екенін мәлімдеді."</string>
     <string name="permission_rationale_location_title" msgid="2404797182678793506">"Деректерді бөлісу және локация"</string>
     <string name="permission_rationale_data_sharing_source_title" msgid="6874604543125814316">"Деректерді бөлісу туралы ақпарат қайдан алынады?"</string>
+    <string name="permission_rationale_data_sharing_device_manufacturer_message" msgid="7569261218145653185">"Әзірлеуші осы құрылғының өндірушісіне қолданбаның деректерді қалай бөлісетіні туралы ақпарат берді. Әзірлеуші бұл ақпаратты уақыт өте келе жаңарта алады."</string>
     <string name="permission_rationale_data_sharing_source_message" msgid="8330794595417986883">"Әзірлеуші "<annotation id="link"><annotation id="install_source" example="App Store">"%1$s"</annotation></annotation>" қызметінде бұл қолданбаның деректерді бөлісу жолы туралы ақпарат берді. Ол бұл ақпаратты уақыт өте келе жаңарта алады."</string>
     <string name="permission_rationale_location_purpose_title" msgid="5115877143670012618">"Қолданбаның локация деректерін бөлісу мақсаттары:"</string>
     <string name="permission_rationale_permission_data_sharing_varies_title" msgid="9103718980919908316">"Деректерді бөлісу әртүрлі болады"</string>
@@ -608,10 +636,8 @@
     <string name="app_permission_rationale_message" msgid="8511466916077100713">"Дерек қауіпсіздігі"</string>
     <string name="app_location_permission_rationale_title" msgid="925420340572401350">"Локация деректері жіберілуі мүмкін."</string>
     <string name="app_location_permission_rationale_subtitle" msgid="6986985722752868692">"Бұл қолданба локация деректеріңізді үшінші тараптармен бөлісе алатынын мәлімдеді."</string>
-    <string name="permission_rationale_data_sharing_link_error_title" msgid="4496607694785370249">"Бұл сілтемені ашу мүмкін емес"</string>
-    <string name="permission_rationale_data_sharing_link_error_message" msgid="8118116480850030215"></string>
     <string name="data_sharing_updates_title" msgid="7996933386875213859">"Локация деректерін бөлісу жаңартулары"</string>
-    <string name="data_sharing_updates_summary" msgid="764113985772233889">"Локация деректеріңізді бөлісу жолын өзгерткен қолданбаларды қарап шығыңыз."</string>
+    <string name="data_sharing_updates_summary" msgid="764113985772233889">"Локация деректеріңізді бөлісу жолын өзгерткен қолданбаларды тексеру"</string>
     <string name="data_sharing_updates_subtitle" msgid="6311537708950632329">"Осы қолданбалар локация деректерін бөлісу жолын өзгертті. Олар деректерді бұрын бөліспей, енді жарнамалау не маркетинг үшін бөлісуі мүмкін."</string>
     <string name="data_sharing_updates_footer_message" msgid="1582711655172892107">"Бұл қолданбалардың әзірлеушілері App Store дүкенінде өздерінің деректерді бөлісу тәртібі туралы ақпарат берді. Олар уақыт өте келе оны жаңарта алады.\n\nДеректерді бөлісу тәртібі қолданбаңыздың нұсқасына, пайдаланылуына, аймағыңыз бен жасыңызға байланысты әртүрлі болуы мүмкін."</string>
     <string name="learn_about_data_sharing" msgid="4200480587079488045">"Деректерді бөлісу туралы ақпарат"</string>
