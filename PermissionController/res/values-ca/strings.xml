@@ -292,7 +292,7 @@
     <string name="notification_listener_remove_access_success_label" msgid="2477611529875633107">"S\'ha suprimit l\'accés"</string>
     <string name="accessibility_access_reminder_notification_title" msgid="2971317234668807566">"Revisa l\'aplicació amb accés complet al dispositiu"</string>
     <string name="accessibility_access_reminder_notification_content" msgid="7389454158175306720">"<xliff:g id="APP_NAME">%s</xliff:g> pot veure la pantalla i dur a terme accions al dispositiu. Les aplicacions d\'accessibilitat necessiten aquest tipus d\'accés perquè funcionin de la manera prevista."</string>
-    <string name="accessibility_access_warning_card_content" msgid="4370327190293217358">"Aquesta aplicació pot veure la pantalla i dur a terme accions al dispositiu. Les aplicacions d\'accessibilitat necessiten aquest tipus d\'accés perquè funcionin de la manera prevista, però comprova l\'aplicació i assegura\'t que sigui de confiança."</string>
+    <string name="accessibility_access_warning_card_content" msgid="4370327190293217358">"Aquesta aplicació pot veure la pantalla i dur a terme accions al dispositiu. Les aplicacions d\'accessibilitat necessiten aquest tipus d\'accés perquè funcionin de la manera prevista, però comprova l\'aplicació i assegura\'t que hi confies."</string>
     <string name="accessibility_remove_access_button_label" msgid="44145801526711640">"Suprimeix l\'accés"</string>
     <string name="accessibility_show_all_apps_button_label" msgid="960067249326392280">"Veure les aplicacions amb accés complet"</string>
     <string name="accessibility_remove_access_success_label" msgid="4380995302917014670">"S\'ha suprimit l\'accés"</string>
