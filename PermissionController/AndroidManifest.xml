@@ -291,7 +291,7 @@
         </activity>
 
         <activity android:name="com.android.permissioncontroller.ecm.EnhancedConfirmationDialogActivity"
-            android:theme="@style/GrantPermissions.FilterTouches"
+            android:theme="@style/Theme.EnhancedConfirmationDialog.FilterTouches"
             android:excludeFromRecents="true"
             android:exported="true"
             android:launchMode="singleTop"
