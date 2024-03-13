@@ -124,6 +124,7 @@ public class EnhancedConfirmationService extends SystemService {
             PROTECTED_SETTINGS.add(Manifest.permission.USE_SIP);
             PROTECTED_SETTINGS.add(Manifest.permission.ANSWER_PHONE_CALLS);
             PROTECTED_SETTINGS.add(Manifest.permission.ACCEPT_HANDOVER);
+            PROTECTED_SETTINGS.add(Manifest.permission_group.PHONE);
 
             PROTECTED_SETTINGS.add(Manifest.permission.SEND_SMS);
             PROTECTED_SETTINGS.add(Manifest.permission.RECEIVE_SMS);
@@ -131,6 +132,7 @@ public class EnhancedConfirmationService extends SystemService {
             PROTECTED_SETTINGS.add(Manifest.permission.RECEIVE_MMS);
             PROTECTED_SETTINGS.add(Manifest.permission.RECEIVE_WAP_PUSH);
             PROTECTED_SETTINGS.add(Manifest.permission.READ_CELL_BROADCASTS);
+            PROTECTED_SETTINGS.add(Manifest.permission_group.SMS);
 
             PROTECTED_SETTINGS.add(Manifest.permission.BIND_DEVICE_ADMIN);
             // TODO(b/310654818): Add other explicitly protected runtime permissions
