@@ -619,7 +619,7 @@
     <string name="show_clip_access_notification_title" msgid="5168467637351109096">"Mostrar acceso a portapapeles"</string>
     <string name="show_clip_access_notification_summary" msgid="3532020182782112687">"Muestra un mensaje cuando las apps accedan a texto, imágenes y otro contenido que hayas copiado"</string>
     <string name="show_password_title" msgid="2877269286984684659">"Mostrar contraseñas"</string>
-    <string name="show_password_summary" msgid="1110166488865981610">"Mostrar caracteres brevemente mientras escribes"</string>
+    <string name="show_password_summary" msgid="1110166488865981610">"Muestra los caracteres brevemente mientras escribes"</string>
     <string name="permission_rationale_message_location" msgid="2153841534298068414">"Esta app indicó que podría compartir datos de ubicación con terceros"</string>
     <string name="permission_rationale_location_title" msgid="2404797182678793506">"Uso compartido de datos y ubicación"</string>
     <string name="permission_rationale_data_sharing_source_title" msgid="6874604543125814316">"De dónde proviene la información de uso compartido de datos"</string>
