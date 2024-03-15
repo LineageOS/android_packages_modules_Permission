@@ -238,7 +238,7 @@
     <string name="permission_description_summary_nearby_devices" msgid="8269183818275073741">"Apps med denne tilladelse kan finde, oprette forbindelse til og fastslå den relative placering af enheder i nærheden"</string>
     <string name="permission_description_summary_microphone" msgid="630834800308329907">"Apps med denne tilladelse kan optage lyd"</string>
     <string name="permission_description_summary_phone" msgid="4515277217435233619">"Apps med denne tilladelse kan foretage og administrere telefonopkald"</string>
-    <string name="permission_description_summary_sensors" msgid="1836045815643119949">"Apps med denne tilladelse kan få adgang til sensordata om dine livstegn"</string>
+    <string name="permission_description_summary_sensors" msgid="1836045815643119949">"Apps med denne tilladelse kan få adgang til sensordata om dine vitale værdier"</string>
     <string name="permission_description_summary_sms" msgid="725999468547768517">"Apps med denne tilladelse kan sende og se sms-beskeder"</string>
     <string name="permission_description_summary_storage" msgid="6575759089065303346">"Apps med denne tilladelse har adgang til billeder, medier og filer på din enhed"</string>
     <string name="permission_description_summary_read_media_aural" msgid="3354728149930482199">"Apps med denne tilladelse kan tilgå musik og andre lydfiler på denne enhed"</string>
