@@ -466,7 +466,7 @@
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;存取你的聯絡人嗎？"</string>
     <string name="permgrouprequest_device_aware_contacts" msgid="2270563860206654757">"允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取你&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;上的通訊錄嗎？"</string>
     <string name="permgrouprequest_location" msgid="6990232580121067883">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;存取此裝置的位置資訊嗎？"</string>
-    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取你的&lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;位置嗎？"</string>
+    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"允許「&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;」存取&lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;的位置嗎？"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"此應用程式目前只有你在使用時才能存取位置資訊"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;存取此裝置的位置資訊嗎？"</string>
     <string name="permgroupbackgroundrequest_device_aware_location" msgid="7660465507029650527">"允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取你的&lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;位置嗎？"</string>

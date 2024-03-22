@@ -466,7 +466,7 @@
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"Benarkan &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; mengakses kenalan anda?"</string>
     <string name="permgrouprequest_device_aware_contacts" msgid="2270563860206654757">"Benarkan &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; mengakses kenalan anda pada &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; anda?"</string>
     <string name="permgrouprequest_location" msgid="6990232580121067883">"Benarkan &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; mengakses lokasi peranti ini?"</string>
-    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"Benarkan &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; mengakses lokasi &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>s&lt;/b&gt; anda?"</string>
+    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"Benarkan &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; mengakses lokasi &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt; anda?"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"Apl ini hanya dapat mengakses lokasi semasa anda menggunakan apl tersebut"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"Benarkan &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; mengakses lokasi peranti ini?"</string>
     <string name="permgroupbackgroundrequest_device_aware_location" msgid="7660465507029650527">"Benarkan &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; mengakses lokasi &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g> anda?"</string>

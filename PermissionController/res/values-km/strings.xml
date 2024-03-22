@@ -466,7 +466,7 @@
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"អនុញ្ញាតឱ្យ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ចូលប្រើ​ទំនាក់ទំនង​របស់អ្នក?"</string>
     <string name="permgrouprequest_device_aware_contacts" msgid="2270563860206654757">"អនុញ្ញាតឱ្យ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ចូលប្រើទំនាក់ទំនងរបស់អ្នកនៅលើ &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; របស់អ្នកឬ?"</string>
     <string name="permgrouprequest_location" msgid="6990232580121067883">"អនុញ្ញាតឱ្យ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ចូលប្រើ​ទីតាំងរបស់​ឧបករណ៍នេះ​ដែរទេ?"</string>
-    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"អនុញ្ញាតឱ្យ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ចូលប្រើទីតាំងនៃ &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>’s&lt;/b&gt; របស់អ្នកឬ?"</string>
+    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"អនុញ្ញាតឱ្យ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ចូលប្រើទីតាំងនៃ &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt; របស់អ្នកឬ?"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"កម្មវិធីនេះ​នឹងមាន​សិទ្ធិ​ចូលប្រើ​ទីតាំង នៅពេល​អ្នកកំពុង​ប្រើ​កម្មវិធីនេះ​តែ​ប៉ុណ្ណោះ"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"អនុញ្ញាតឱ្យ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ចូលប្រើ​ទីតាំងរបស់​ឧបករណ៍នេះ​ដែរទេ?"</string>
     <string name="permgroupbackgroundrequest_device_aware_location" msgid="7660465507029650527">"អនុញ្ញាតឱ្យ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ចូលប្រើទីតាំង &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g> របស់អ្នកឬ?"</string>

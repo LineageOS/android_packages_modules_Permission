@@ -466,7 +466,7 @@
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"„<xliff:g id="APP_NAME">%1$s</xliff:g>“ erlauben, auf deine Kontakte zuzugreifen?"</string>
     <string name="permgrouprequest_device_aware_contacts" msgid="2270563860206654757">"Darf &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; auf deinem &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; auf die Kontakte zugreifen?"</string>
     <string name="permgrouprequest_location" msgid="6990232580121067883">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; erlauben, den Gerätestandort abzurufen?"</string>
-    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"Darf &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; auf deinem &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>s&lt;/b&gt; auf die Standortdaten zugreifen?"</string>
+    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"Darf &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; auf deinem &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt; auf die Standortdaten zugreifen?"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"Die App hat nur Zugriff auf den Gerätestandort, solange du sie verwendest"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; erlauben, den Gerätestandort abzurufen?"</string>
     <string name="permgroupbackgroundrequest_device_aware_location" msgid="7660465507029650527">"Darf &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; auf deinem &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;b&gt; auf die Standortdaten zugreifen?"</string>
