@@ -144,14 +144,8 @@ public class EnhancedConfirmationService extends SystemService {
             PROTECTED_SETTINGS.add(AppOpsManager.OPSTR_GET_USAGE_STATS);
             PROTECTED_SETTINGS.add(AppOpsManager.OPSTR_LOADER_USAGE_STATS);
             // Default application roles.
-            PROTECTED_SETTINGS.add(RoleManager.ROLE_ASSISTANT);
-            PROTECTED_SETTINGS.add(RoleManager.ROLE_BROWSER);
-            PROTECTED_SETTINGS.add(RoleManager.ROLE_CALL_REDIRECTION);
-            PROTECTED_SETTINGS.add(RoleManager.ROLE_CALL_SCREENING);
             PROTECTED_SETTINGS.add(RoleManager.ROLE_DIALER);
-            PROTECTED_SETTINGS.add(RoleManager.ROLE_HOME);
             PROTECTED_SETTINGS.add(RoleManager.ROLE_SMS);
-            PROTECTED_SETTINGS.add(RoleManager.ROLE_WALLET);
             // TODO(b/310654015): Add other explicitly protected settings
         }
 
