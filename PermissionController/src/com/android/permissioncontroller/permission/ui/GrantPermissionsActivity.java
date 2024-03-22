@@ -386,7 +386,7 @@ public class GrantPermissionsActivity extends SettingsActivity
                                 getPackageUid(getCallingPackage(), Process.myUserHandle()),
                                 /* settingIdentifier */ ignoredPermGroup,
                                 /* firstShowForApp */ false,
-                                EnhancedConfirmationStatsLogUtils.DialogResult.Unspecified);
+                                EnhancedConfirmationStatsLogUtils.DialogResult.Suppressed);
                     }
                     mRestrictedRequestedPermissionGroups = new ArrayList<>();
                 } else {

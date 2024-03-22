@@ -50,6 +50,7 @@ class EnhancedConfirmationDialogActivity : FragmentActivity() {
     }
 
     private var wasClearRestrictionAllowed: Boolean = false
+    private var dialogResult: DialogResult = DialogResult.Cancelled
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -153,18 +154,24 @@ class EnhancedConfirmationDialogActivity : FragmentActivity() {
     }
 
     private fun onDialogResult(dialogResult: DialogResult) {
-        EnhancedConfirmationStatsLogUtils.logDialogResultReported(
-            uid = intent.getIntExtra(Intent.EXTRA_UID, Process.INVALID_UID),
-            settingIdentifier = intent.getStringExtra(Intent.EXTRA_SUBJECT)!!,
-            firstShowForApp = !wasClearRestrictionAllowed,
-            dialogResult = dialogResult
-        )
-
+        this.dialogResult = dialogResult
         setResult(
             RESULT_OK,
             Intent().apply { putExtra(Intent.EXTRA_RETURN_RESULT, dialogResult.statsLogValue) }
         )
         finish()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (isFinishing) {
+            EnhancedConfirmationStatsLogUtils.logDialogResultReported(
+                uid = intent.getIntExtra(Intent.EXTRA_UID, Process.INVALID_UID),
+                settingIdentifier = intent.getStringExtra(Intent.EXTRA_SUBJECT)!!,
+                firstShowForApp = !wasClearRestrictionAllowed,
+                dialogResult = dialogResult
+            )
+        }
     }
 
     class EnhancedConfirmationDialogFragment() : DialogFragment() {
