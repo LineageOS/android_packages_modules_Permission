@@ -68,9 +68,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
+import androidx.annotation.ChecksSdkIntAtLeast;
 import androidx.annotation.GuardedBy;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.annotation.StringRes;
 import androidx.core.util.Preconditions;
 
@@ -222,6 +224,7 @@ public class GrantPermissionsActivity extends SettingsActivity
     /** Which device the permission will affect. Default is the primary device. */
     private int mTargetDeviceId = ContextCompat.DEVICE_ID_DEFAULT;
 
+    @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.VANILLA_ICE_CREAM, codename = "VanillaIceCream")
     @Override
     public void onCreate(Bundle icicle) {
         if (DeviceUtils.isAuto(this)) {
@@ -463,11 +466,13 @@ public class GrantPermissionsActivity extends SettingsActivity
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
     private EnhancedConfirmationManager getEnhancedConfirmationManager() {
         Context userContext = Utils.getUserContext(this, Process.myUserHandle());
         return Utils.getSystemServiceSafe(userContext, EnhancedConfirmationManager.class);
     }
 
+    @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
     private boolean isPermissionEcmRestricted(EnhancedConfirmationManager ecm,
             String requestedPermission, String packageName) {
         try {

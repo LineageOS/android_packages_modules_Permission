@@ -22,16 +22,19 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.permission.flags.Flags;
 import android.text.TextUtils;
 
 import androidx.annotation.Keep;
+import androidx.annotation.RequiresApi;
 
 import com.android.modules.utils.build.SdkLevel;
 
 @Keep
+@RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
 public class EnhancedConfirmationDialog extends Activity implements
         DialogInterface.OnDismissListener {
 
