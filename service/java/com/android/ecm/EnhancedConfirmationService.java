@@ -42,6 +42,7 @@ import android.util.Log;
 
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
 import com.android.internal.util.Preconditions;
@@ -252,9 +253,10 @@ public class EnhancedConfirmationService extends SystemService {
 
         private boolean isPackageEcmGuarded(@NonNull String packageName, @UserIdInt int userId)
                 throws NameNotFoundException {
+            ApplicationInfo applicationInfo = getApplicationInfoAsUser(packageName, userId);
             // Always trust allow-listed and pre-installed packages
             if (isAllowlistedPackage(packageName) || isAllowlistedInstaller(packageName)
-                    || isPackagePreinstalled(packageName, userId)) {
+                    || isPackagePreinstalled(applicationInfo)) {
                 return false;
             }
 
@@ -285,13 +287,24 @@ public class EnhancedConfirmationService extends SystemService {
                     || packageSource == PackageInstaller.PACKAGE_SOURCE_DOWNLOADED_FILE) {
                 return true;
             }
+            String installingPackageName = installSource.getInstallingPackageName();
+            ApplicationInfo installingApplicationInfo =
+                    getApplicationInfoAsUser(installingPackageName, userId);
+            // TODO(b/330927429): We might need a long-term solution to persist the installer's
+            //  targetSdkVersion if it is uninstalled.
+            if (packageSource == PackageInstaller.PACKAGE_SOURCE_UNSPECIFIED
+                    && installingApplicationInfo != null
+                    && installingApplicationInfo.targetSdkVersion
+                    >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+                        return true;
+            }
 
             // ECM doesn't consider a transitive chain of trust for install sources.
             // If this package hasn't been explicitly handled by this point
             // then it is exempt from ECM if the immediate parent is a trusted installer
-            return !(trustPackagesInstalledViaNonAllowlistedInstallers() || isPackagePreinstalled(
-                    installSource.getInstallingPackageName(), userId) || isAllowlistedInstaller(
-                    installSource.getInstallingPackageName()));
+            return !(trustPackagesInstalledViaNonAllowlistedInstallers()
+                    || isPackagePreinstalled(installingApplicationInfo)
+                    || isAllowlistedInstaller(installingPackageName));
         }
 
         private boolean isAllowlistedPackage(String packageName) {
@@ -326,16 +339,8 @@ public class EnhancedConfirmationService extends SystemService {
             return mTrustedInstallerCertDigests.isEmpty();
         }
 
-        private boolean isPackagePreinstalled(String packageName, @UserIdInt int userId) {
-            if (packageName == null) {
-                return false;
-            }
-            ApplicationInfo applicationInfo;
-            try {
-                applicationInfo = mPackageManager.getApplicationInfoAsUser(packageName, 0,
-                        UserHandle.of(userId));
-            } catch (NameNotFoundException e) {
-                Log.w(LOG_TAG, "Package not found: " + packageName);
+        private boolean isPackagePreinstalled(@Nullable ApplicationInfo applicationInfo) {
+            if (applicationInfo == null) {
                 return false;
             }
             return (applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0;
@@ -377,6 +382,22 @@ public class EnhancedConfirmationService extends SystemService {
             }
             // TODO(b/310218979): Add role selections as protected settings
             return false;
+        }
+
+        @Nullable
+        private ApplicationInfo getApplicationInfoAsUser(@Nullable String packageName,
+                @UserIdInt int userId) {
+            if (packageName == null) {
+                Log.w(LOG_TAG, "The packageName should not be null.");
+                return null;
+            }
+            try {
+                return mPackageManager.getApplicationInfoAsUser(packageName, /* flags */ 0,
+                        UserHandle.of(userId));
+            } catch (NameNotFoundException e) {
+                Log.w(LOG_TAG, "Package not found: " + packageName, e);
+                return null;
+            }
         }
 
         private int getPackageUid(@NonNull String packageName, @UserIdInt int userId)
