@@ -32,9 +32,9 @@
     <string name="grant_dialog_button_no_upgrade" msgid="8344732743633736625">"“एप प्रयोगमा भएको बेलामा” शीर्षक कायम राख्नुहोस्"</string>
     <string name="grant_dialog_button_no_upgrade_one_time" msgid="5125892775684968694">"“यस बेला मात्र” राख्नुहोस्"</string>
     <string name="grant_dialog_button_more_info" msgid="213350268561945193">"थप जानकारी"</string>
-    <string name="grant_dialog_button_allow_all" msgid="5939066403732409516">"सबै डेटा प्रयोग गर्ने अनुमति दिनुहोस्"</string>
+    <string name="grant_dialog_button_allow_all" msgid="5939066403732409516">"सबै अनुमति दिइयोस्"</string>
     <string name="grant_dialog_button_always_allow_all" msgid="1719900027660252167">"सधैँ सबै अनुमति दिइयोस्"</string>
-    <string name="grant_dialog_button_allow_limited_access" msgid="5713551784422137594">"सीमित एक्सेस दिनुहोस्"</string>
+    <string name="grant_dialog_button_allow_limited_access" msgid="5713551784422137594">"सीमित एक्सेस दिइयोस्"</string>
     <string name="grant_dialog_button_allow_selected_photos" msgid="5497042471576153842">"फोटो र भिडियोहरू चयन गर्नुहोस्"</string>
     <string name="grant_dialog_button_allow_more_selected_photos" msgid="5145657877588697709">"अझ धेरै फोटो चयन गर्नुहोस्"</string>
     <string name="grant_dialog_button_dont_select_more" msgid="6643552729129461268">"थप डेटा चयन नगर्नुहोस्"</string>
@@ -203,7 +203,7 @@
     <string name="unused_apps_category_title" msgid="2988455616845243901">"प्रयोग नगरिएको एपसम्बन्धी सेटिङ"</string>
     <string name="auto_revoke_label" msgid="5068393642936571656">"यो एप प्रयोग नहुँदा यसलाई दिइएका अनुमतिहरू रद्द गरियोस्"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"अनुमतिहरू हटाई ठाउँ खाली गरियोस्"</string>
-    <string name="unused_apps_label_v2" msgid="7058776770056517980">"एप प्रयोग नगरिएको अवस्थामा उक्त एपमा बिताएको समय रेकर्ड नगरियोस्"</string>
+    <string name="unused_apps_label_v2" msgid="7058776770056517980">"एप प्रयोग नगरिएको अवस्थामा उक्त एपमा गरिएको गतिविधि रेकर्ड नगरियोस्"</string>
     <string name="unused_apps_label_v3" msgid="693340578642156657">"एप प्रयोग गरिएको छैन भने व्यवस्थापन गरियोस्"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"अनुमतिहरू रद्द गरियोस्, अस्थायी फाइलहरू मेटाइयोस् र एपसम्बन्धी सूचना नपठाइयोस्"</string>
     <string name="unused_apps_summary_v2" msgid="5011313200815115802">"अनुमति रद्द गरियोस्, अस्थायी फाइलहरू मेटाइयोस्, सूचना नपठाइयोस् र एप अभिलेखमा राखियोस्"</string>
@@ -450,14 +450,14 @@
     <string name="incident_report_notification_text" msgid="3376480583513587923">"<xliff:g id="APP_NAME">%1$s</xliff:g> डिबग प्रक्रियासम्बन्धी जानकारी अपलोड गर्न चाहन्छ।"</string>
     <string name="incident_report_dialog_title" msgid="669104389325204095">"डिबग प्रक्रियासम्बन्धी डेटा सेयर गर्ने हो?"</string>
     <string name="incident_report_dialog_intro" msgid="5897733669850951832">"प्रणालीले कुनै समस्या फेला पारेको छ"</string>
-    <string name="incident_report_dialog_text" msgid="5675553296891757523">"<xliff:g id="APP_NAME_0">%1$s</xliff:g> ले <xliff:g id="DATE">%2$s</xliff:g> <xliff:g id="TIME">%3$s</xliff:g> मा यो यन्त्रबाट लिएको बगको रिपोर्ट अपलोड गर्ने अनुरोध गर्दै छ। बग रिपोर्टमा प्रयोगकर्ताका नाम, स्ठानसम्बन्धी डेटा, डिभाइसका पहिचानकर्ता र नेटवर्कसम्बन्धी जानकारी जस्ता तपाईंको डिभाइसको व्यक्तिगत जानकारी वा अनुप्रयोगले लग गरेको जानकारी समावेश छ। तपाईंलाई यो जानकारी दिँदा फरक पर्दैन जस्तो लाग्ने विश्वसनीय मान्छे वा एपसँग मात्र बग रिपोर्टहरू सेयर गर्नुहोस्। <xliff:g id="APP_NAME_1">%4$s</xliff:g> लाई बग रिपोर्ट अपलोड गर्न दिने हो?"</string>
+    <string name="incident_report_dialog_text" msgid="5675553296891757523">"<xliff:g id="APP_NAME_0">%1$s</xliff:g> ले <xliff:g id="DATE">%2$s</xliff:g> <xliff:g id="TIME">%3$s</xliff:g> मा यो यन्त्रबाट लिएको बगको रिपोर्ट अपलोड गर्ने अनुरोध गर्दै छ। बग रिपोर्टमा प्रयोगकर्ताका नाम, स्ठानसम्बन्धी डेटा, डिभाइसका पहिचानकर्ता र नेटवर्कसम्बन्धी जानकारी जस्ता तपाईंको डिभाइसको व्यक्तिगत जानकारी वा एपले लग गरेको जानकारी समावेश छ। तपाईंलाई यो जानकारी दिँदा फरक पर्दैन जस्तो लाग्ने विश्वसनीय मान्छे वा एपसँग मात्र बग रिपोर्टहरू सेयर गर्नुहोस्। <xliff:g id="APP_NAME_1">%4$s</xliff:g> लाई बग रिपोर्ट अपलोड गर्न दिने हो?"</string>
     <string name="incident_report_error_dialog_text" msgid="4189647113387092272">"<xliff:g id="APP_NAME">%1$s</xliff:g> को बगसम्बन्धी रिपोर्ट प्रक्रियामा लैजाने क्रममा त्रुटि भयो। त्यस कारण विस्तृत डिबग प्रक्रियासम्बन्धी डेटा आदान प्रदान गर्ने कार्य अस्वीकार गरिएको छ। व्यवधानका लागि क्षमा गर्नुहोला।"</string>
     <string name="incident_report_dialog_allow_label" msgid="2970242967721155239">"अनुमति दिनुहोस्"</string>
     <string name="incident_report_dialog_deny_label" msgid="3535314290677579383">"अनुमति नदिनुहोस्"</string>
     <string name="adjust_user_sensitive_title" msgid="4196724451314280527">"उन्नत सेटिङहरू"</string>
     <string name="menu_adjust_user_sensitive" msgid="6497923610654425780">"उन्नत सेटिङहरू"</string>
     <string name="adjust_user_sensitive_globally_title" msgid="8649190949066029174">"प्रणालीका एपको प्रयोगसम्बन्धी जानकारी देखाउनुहोस्"</string>
-    <string name="adjust_user_sensitive_globally_summary" msgid="129467818433773912">"प्रणालीका अनुप्रयोगले गर्ने अनुमतिको प्रयोगसम्बन्धी जानकारी स्टाटस बार, ड्यासबोर्ड र अन्यत्र देखाउनुहोस्"</string>
+    <string name="adjust_user_sensitive_globally_summary" msgid="129467818433773912">"प्रणालीका एपले गर्ने अनुमतिको प्रयोगसम्बन्धी जानकारी स्टाटस बार, ड्यासबोर्ड र अन्यत्र देखाउनुहोस्"</string>
     <string name="adjust_user_sensitive_per_app_header" msgid="4543506440989005648">"निम्न एपको प्रयोगसम्बन्धी जानकारी हाइलाइट गर्नुहोस्"</string>
     <string name="assistant_record_audio_user_sensitive_title" msgid="5532123360322362378">"सहायक ट्रिगर भएको पत्ता लागेमा देखाउनुहोस्"</string>
     <string name="assistant_record_audio_user_sensitive_summary" msgid="6482937591816401619">"आवाज सहायक सक्रिय गर्न माइक्रोफोनको प्रयोग गरिँदा स्टाटस बारमा आइकन देखाउनुहोस्"</string>
@@ -466,7 +466,7 @@
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; लाई कन्ट्याक्ट प्रयोग गर्न दिने हो?"</string>
     <string name="permgrouprequest_device_aware_contacts" msgid="2270563860206654757">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; लाई &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; मा भएका तपाईंका कन्ट्याक्टहरू एक्सेस गर्ने अनुमति दिने हो?"</string>
     <string name="permgrouprequest_location" msgid="6990232580121067883">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; लाई यो डिभाइसको लोकेसन प्रयोग दिने हो?"</string>
-    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; लाई तपाईंको &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>’s&lt;/b&gt; को लोकेसन एक्सेस गर्ने अनुमति दिने हो?"</string>
+    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; लाई तपाईंको &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt; को लोकेसन एक्सेस गर्ने अनुमति दिने हो?"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"तपाईंले एप प्रयोग गरिरहेका बेला मात्र उक्त एपले स्थानमाथि पहुँच राख्न सक्ने छ"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; लाई यो डिभाइसको लोकेसन प्रयोग दिने हो?"</string>
     <string name="permgroupbackgroundrequest_device_aware_location" msgid="7660465507029650527">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; लाई तपाईंको &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g> को लोकेसन एक्सेस गर्ने अनुमति दिने हो?"</string>
@@ -657,4 +657,10 @@
     <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"हिजो <xliff:g id="TIME_DATE">%1$s</xliff:g> मा एक्सेस गरिएको"</string>
     <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"<xliff:g id="TIME_DATE_0">%1$s</xliff:g> <xliff:g id="TIME_DATE_1">%2$s</xliff:g> मा एक्सेस गरिएको"</string>
     <string name="test_otp_msg" msgid="7559110574222727550">"तपाईंको एक पटके पासवर्ड 132435 हो"</string>
+    <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"प्रतिबन्ध लगाइएका सेटिङ"</string>
+    <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"तपाईंको खाताको सुरक्षार्थ यो सेटिङ हाल उपलब्ध छैन।"</string>
+    <string name="enhanced_confirmation_dialog_title_permission" msgid="8411239333012890492">"<xliff:g id="PERMISSION_NAME">%1$s</xliff:g> प्रयोग गर्ने अनुमति अस्वीकार गरिएको छ"</string>
+    <string name="enhanced_confirmation_dialog_desc_permission" msgid="9207115054288224451">"यो एपले <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> नामक अनुमति मागेको छ। तपाईंको सुरक्षा र गोपनीयता जोखिममा पार्न सक्ने भएकाले यो सेटिङ प्रयोग गर्न प्रतिबन्ध लगाइएको छ। यो अनुमतिमा प्रतिबन्ध लगाइयो भने यो एपले काम नगर्न सक्छ।"</string>
+    <string name="enhanced_confirmation_dialog_learn_more" msgid="5226619861379095709">"थप जान्नुहोस्"</string>
+    <string name="enhanced_confirmation_dialog_ok" msgid="1767075979746135617">"बुझेँ"</string>
 </resources>

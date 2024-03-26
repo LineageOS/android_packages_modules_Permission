@@ -51,7 +51,7 @@
     <string name="permission_revoked_none" msgid="9213345075484381180">"geen is gedeaktiveer nie"</string>
     <string name="grant_dialog_button_allow" msgid="5314677880021102550">"Laat toe"</string>
     <string name="grant_dialog_button_allow_always" msgid="4485552579273565981">"Laat altyd toe"</string>
-    <string name="grant_dialog_button_allow_foreground" msgid="501896824973636533">"Terwyl die program gebruik word"</string>
+    <string name="grant_dialog_button_allow_foreground" msgid="501896824973636533">"Terwyl die app gebruik word"</string>
     <string name="grant_dialog_button_change_to_precise_location" msgid="3273115879467236033">"Verander na presiese ligging"</string>
     <string name="grant_dialog_button_keey_approximate_location" msgid="438025182769080011">"Hou benaderde ligging"</string>
     <string name="grant_dialog_button_allow_one_time" msgid="2618088516449706391">"Net hierdie keer"</string>
@@ -234,7 +234,7 @@
     <string name="permission_description_summary_call_log" msgid="7321437186317577624">"Programme met hierdie toestemming kan foonoproeprekord lees en skryf"</string>
     <string name="permission_description_summary_camera" msgid="108004375101882069">"Programme met hierdie toestemming kan foto\'s neem en video\'s opneem"</string>
     <string name="permission_description_summary_contacts" msgid="2337798886460408996">"Programme met hierdie toestemming kan toegang tot jou kontakte kry"</string>
-    <string name="permission_description_summary_location" msgid="2817531799933480694">"Programme met hierdie toestemming kan toegang tot jou toestel se ligging kry"</string>
+    <string name="permission_description_summary_location" msgid="2817531799933480694">"Apps met hierdie toestemming kan toegang tot jou toestel se ligging kry"</string>
     <string name="permission_description_summary_nearby_devices" msgid="8269183818275073741">"Programme met hierdie toestemming kan toestelle in die omtrek soek, aan hulle koppel en hul relatiewe posisie bepaal"</string>
     <string name="permission_description_summary_microphone" msgid="630834800308329907">"Programme met hierdie toestemming kan oudio opneem"</string>
     <string name="permission_description_summary_phone" msgid="4515277217435233619">"Programme met hierdie toestemming kan foonoproepe maak en bestuur"</string>
@@ -551,7 +551,7 @@
     <string name="blocked_camera_title" msgid="1128510551791284384">"Toestelkamera is geblokkeer"</string>
     <string name="blocked_microphone_title" msgid="1631517143648232585">"Toestelmikrofoon is geblokkeer"</string>
     <string name="blocked_location_title" msgid="2005608279812892383">"Toestelligging is af"</string>
-    <string name="blocked_sensor_summary" msgid="4443707628305027375">"Vir programme en dienste"</string>
+    <string name="blocked_sensor_summary" msgid="4443707628305027375">"Vir apps en dienste"</string>
     <string name="blocked_mic_summary" msgid="8960466941528458347">"Mikrofoondata kan steeds gedeel word wanneer jy \'n noodnommer bel."</string>
     <string name="blocked_sensor_button_label" msgid="6742092634984289658">"Verander"</string>
     <string name="safety_center_dashboard_page_title" msgid="2810774008694315854">"Sekuriteit en privaatheid"</string>
@@ -657,4 +657,10 @@
     <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"Gister ingegaan <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
     <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"Ingegaan <xliff:g id="TIME_DATE_0">%1$s</xliff:g><xliff:g id="TIME_DATE_1">%2$s</xliff:g>"</string>
     <string name="test_otp_msg" msgid="7559110574222727550">"Jou eenmalige wagwoord is 132435"</string>
+    <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Beperkte instelling"</string>
+    <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Hierdie instelling is vir jou veiligheid tans onbeskikbaar."</string>
+    <string name="enhanced_confirmation_dialog_title_permission" msgid="8411239333012890492">"Toestemming om <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> te gebruik is geweier"</string>
+    <string name="enhanced_confirmation_dialog_desc_permission" msgid="9207115054288224451">"Hierdie app het die <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>-toestemming versoek, wat ’n beperkte instelling is omdat dit jou sekuriteit en privaatheid in gevaar kan stel. As jy hierdie toestemming beperk kan dit die app verhoed om te werk."</string>
+    <string name="enhanced_confirmation_dialog_learn_more" msgid="5226619861379095709">"Meer inligting"</string>
+    <string name="enhanced_confirmation_dialog_ok" msgid="1767075979746135617">"Het dit"</string>
 </resources>
