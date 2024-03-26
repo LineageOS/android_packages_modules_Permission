@@ -24,6 +24,7 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.os.Process
 import android.os.UserHandle
@@ -31,6 +32,7 @@ import android.permission.flags.Flags
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
+import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.annotation.Keep
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentActivity
@@ -52,6 +54,7 @@ class EnhancedConfirmationDialogActivity : FragmentActivity() {
     private var wasClearRestrictionAllowed: Boolean = false
     private var dialogResult: DialogResult = DialogResult.Cancelled
 
+    @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.VANILLA_ICE_CREAM, codename = "VanillaIceCream")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (!SdkLevel.isAtLeastV() || !Flags.enhancedConfirmationModeApisEnabled()) {
