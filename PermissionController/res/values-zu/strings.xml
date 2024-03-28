@@ -51,7 +51,7 @@
     <string name="permission_revoked_none" msgid="9213345075484381180">"Lutho olukhutshaziwe"</string>
     <string name="grant_dialog_button_allow" msgid="5314677880021102550">"Vumela"</string>
     <string name="grant_dialog_button_allow_always" msgid="4485552579273565981">"Vumela sonke isikhathi"</string>
-    <string name="grant_dialog_button_allow_foreground" msgid="501896824973636533">"Ngenkathi usebenzisa uhlelo lokusebenza"</string>
+    <string name="grant_dialog_button_allow_foreground" msgid="501896824973636533">"Ngenkathi i-app"</string>
     <string name="grant_dialog_button_change_to_precise_location" msgid="3273115879467236033">"Shintshela kwindawo ngqo"</string>
     <string name="grant_dialog_button_keey_approximate_location" msgid="438025182769080011">"Gcina indawo elinganiselwayo"</string>
     <string name="grant_dialog_button_allow_one_time" msgid="2618088516449706391">"Ngalesi sikhathi kuphela"</string>
@@ -496,7 +496,7 @@
     <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"Vumela i-<xliff:g id="APP_NAME">%1$s</xliff:g> ukuba ifinyelele izithombe namavidiyo kule divayisi?"</string>
     <string name="permgrouprequest_device_aware_read_media_visual" msgid="5492319750632751551">"Vumela &lt;b&gt;i-<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ukuze ufinyelele izithombe namavidiyo &lt;b&gt;ku-<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; yakho?"</string>
     <string name="permgrouprequest_more_photos" msgid="128933814654231321">"Vumela &lt;i-<xliff:g id="APP_NAME">%1$s</xliff:g>&gt; ukuba ifinyelele izithombe namavidiyo kule divayisi?"</string>
-    <string name="permgrouprequest_device_aware_more_photos" msgid="8946782319103584021">"Vumela &lt;b&gt;i-<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ukuze ufinyelele izithombe namavidiyo engeziwe &lt;b&gt;ku-<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; yakho?"</string>
+    <string name="permgrouprequest_device_aware_more_photos" msgid="8946782319103584021">"Vumela &lt;b&gt;i-<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ukuze ufinyelele ezithombeni namavidiyo engeziwe &lt;b&gt;ku-<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; yakho?"</string>
     <string name="permgrouprequest_microphone" msgid="2825208549114811299">"Vumela i-&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ukuthi irekhode umsindo?"</string>
     <string name="permgrouprequest_device_aware_microphone" msgid="1266843551173029370">"Vumela &lt;b&gt;i-<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ukuze urekhode umsindo &lt;b&gt;ku-<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; yakho?"</string>
     <string name="permgrouprequestdetail_microphone" msgid="8510456971528228861">"Uhlelo lokusebenza luzokwazi ukurekhoda imisindo kuphela kuyilapho usebenzisa uhlelo lokusebenza"</string>
@@ -508,7 +508,7 @@
     <string name="permgroupupgraderequestdetail_microphone" msgid="2870497719571464239">"Lolu hlelo lokusebenza lufuna ukurekhoda imisindo ngaso sonke isikhathi, ngisho nalapho ungasebenzisi uhlelo lokusebenza. "<annotation id="link">"Vumela kumasethingi."</annotation></string>
     <string name="permgrouprequest_activityRecognition" msgid="5415121592794230330">"Vumela i-&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ukuthi ifinyelele kumsebenzi wakho womzimba?"</string>
     <string name="permgrouprequest_device_aware_activityRecognition" msgid="3408326850847755759">"Vumela &lt;b&gt;i-<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ukuze ufinyelele umsebenzi wakho womzimba &lt;b&gt;ku-<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; yakho?"</string>
-    <string name="permgrouprequest_camera" msgid="5123097035410002594">"Vumela i-&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ukuthatha izithombe iphinde irekhode ividiyo?"</string>
+    <string name="permgrouprequest_camera" msgid="5123097035410002594">"Vumela i-&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ithathe izithombe futhi irekhode ividiyo?"</string>
     <string name="permgrouprequest_device_aware_camera" msgid="3525106924487608868">"Vumela &lt;b&gt;i-<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ukuthatha izithombe nokurekhoda ividiyo &lt;b&gt;ku-<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; yakho?"</string>
     <string name="permgrouprequestdetail_camera" msgid="9085323239764667883">"Lolu hlelo lokusebenza luzokwazi ukuthatha izithombe futhi lirekhode ividiyo kuphela kuyilapho usebenzisa uhlelo lokusebenza"</string>
     <string name="permgroupbackgroundrequest_camera" msgid="1274286575704213875">"Vumela i-&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ukuthatha izithombe iphinde irekhode ividiyo?"</string>

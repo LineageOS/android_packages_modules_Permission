@@ -493,7 +493,7 @@
     <string name="permgrouprequest_storage_pre_q" msgid="168130651144569428">"要允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取此裝置上的&lt;b&gt;相片、影片、音樂、音訊和其他檔案&lt;/b&gt;嗎？"</string>
     <string name="permgrouprequest_read_media_aural" msgid="2593365397347577812">"要允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取此裝置上的音樂和音訊嗎？"</string>
     <string name="permgrouprequest_device_aware_read_media_aural" msgid="3331524384339036668">"允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取你&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;上的音樂和音訊嗎？"</string>
-    <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"要允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取此裝置上的相片和影片嗎？"</string>
+    <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;存取此裝置上的相片和影片嗎？"</string>
     <string name="permgrouprequest_device_aware_read_media_visual" msgid="5492319750632751551">"允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取你&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;上的相片和影片嗎？"</string>
     <string name="permgrouprequest_more_photos" msgid="128933814654231321">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;存取此裝置上更多的相片和影片？"</string>
     <string name="permgrouprequest_device_aware_more_photos" msgid="8946782319103584021">"允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取你&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;上的相片和影片嗎？"</string>
@@ -529,7 +529,7 @@
     <string name="permgroupbackgroundrequestdetail_sensors" msgid="7726767635834043501">"如要讓此應用程式隨時存取人體感應器資料 (即使在你沒有使用此應用程式時)，請"<annotation id="link">"前往設定"</annotation>"。"</string>
     <string name="permgroupupgraderequest_sensors" msgid="7576527638411370468">"要讓「<xliff:g id="APP_NAME">%1$s</xliff:g>」應用程式&lt;b&gt;&lt;/b&gt;在使用時存取人體感應器資料嗎？"</string>
     <string name="permgroupupgraderequest_device_aware_sensors" msgid="3310667992344623159">"要繼續允許&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;在應用程式使用期間存取&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;的人體感應器資料嗎？"</string>
-    <string name="permgrouprequest_notifications" msgid="6396739062335106181">"要允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;傳送通知給你嗎？"</string>
+    <string name="permgrouprequest_notifications" msgid="6396739062335106181">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;傳送通知給你嗎？"</string>
     <string name="permgrouprequest_device_aware_notifications" msgid="7307588961166360244">"允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 在你的&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;上傳送通知給你嗎？"</string>
     <string name="auto_granted_permissions" msgid="6009452264824455892">"由管理員控制的權限"</string>
     <string name="auto_granted_location_permission_notification_title" msgid="7570818224669050377">"「<xliff:g id="APP_NAME">%1$s</xliff:g>」有位置存取權"</string>
