@@ -476,7 +476,7 @@
     <string name="permgrouprequest_storage_q_to_s" msgid="8213701872983685505">"要允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取此裝置上的&lt;b&gt;相片、影片、音樂和音訊&lt;/b&gt;嗎？"</string>
     <string name="permgrouprequest_storage_pre_q" msgid="168130651144569428">"要允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取此裝置上的&lt;b&gt;相片、影片、音樂、音訊和其他檔案&lt;/b&gt;嗎？"</string>
     <string name="permgrouprequest_read_media_aural" msgid="2593365397347577812">"要允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取此裝置上的音樂和音訊嗎？"</string>
-    <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"要允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取此裝置上的相片和影片嗎？"</string>
+    <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;存取此裝置上的相片和影片嗎？"</string>
     <string name="permgrouprequest_more_photos" msgid="128933814654231321">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;存取此裝置上更多的相片和影片？"</string>
     <string name="permgrouprequest_microphone" msgid="2825208549114811299">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;錄音嗎？"</string>
     <string name="permgrouprequestdetail_microphone" msgid="8510456971528228861">"此應用程式將只能在你使用期間錄音"</string>
@@ -498,7 +498,7 @@
     <string name="permgroupbackgroundrequest_sensors" msgid="5661924322018503886">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」存取與你生命體徵相關的感應器資料嗎？"</string>
     <string name="permgroupbackgroundrequestdetail_sensors" msgid="7726767635834043501">"如要讓此應用程式隨時存取人體感應器資料 (即使在你沒有使用此應用程式時)，請"<annotation id="link">"前往設定"</annotation>"。"</string>
     <string name="permgroupupgraderequest_sensors" msgid="7576527638411370468">"要讓「<xliff:g id="APP_NAME">%1$s</xliff:g>」應用程式&lt;b&gt;&lt;/b&gt;在使用時存取人體感應器資料嗎？"</string>
-    <string name="permgrouprequest_notifications" msgid="6396739062335106181">"要允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;傳送通知給你嗎？"</string>
+    <string name="permgrouprequest_notifications" msgid="6396739062335106181">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;傳送通知給你嗎？"</string>
     <string name="auto_granted_permissions" msgid="6009452264824455892">"由管理員控制的權限"</string>
     <string name="auto_granted_location_permission_notification_title" msgid="7570818224669050377">"「<xliff:g id="APP_NAME">%1$s</xliff:g>」有位置存取權"</string>
     <string name="auto_granted_permission_notification_body" msgid="5040234389205471318">"你的機構允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」存取位置資訊"</string>

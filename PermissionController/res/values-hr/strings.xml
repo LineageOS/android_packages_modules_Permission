@@ -476,7 +476,7 @@
     <string name="permgrouprequest_storage_q_to_s" msgid="8213701872983685505">"Dopustiti aplikaciji &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; pristup &lt;b&gt;foto/video/audiodatotekama i glazbi&lt;/b&gt; na ovom uređaju?"</string>
     <string name="permgrouprequest_storage_pre_q" msgid="168130651144569428">"Dopustiti apl. &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; pristup &lt;b&gt;foto/video/audio i drugim datotekama te glazbi&lt;/b&gt; na uređaju?"</string>
     <string name="permgrouprequest_read_media_aural" msgid="2593365397347577812">"Želite li dopustiti aplikaciji &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; pristup glazbi i audiodatotekama na ovom uređaju?"</string>
-    <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"Želite li aplikaciji &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; dopustiti pristup fotografijama i videozapisima na ovom uređaju?"</string>
+    <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"Želite li aplikaciji &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; dopustiti da pristupa fotografijama i videozapisima na ovom uređaju?"</string>
     <string name="permgrouprequest_more_photos" msgid="128933814654231321">"Želite li aplikaciji &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; dopustiti pristup većem broju fotografija i videozapisa na ovom uređaju?"</string>
     <string name="permgrouprequest_microphone" msgid="2825208549114811299">"Želite li aplikaciji &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; dopustiti da snima audiozapise?"</string>
     <string name="permgrouprequestdetail_microphone" msgid="8510456971528228861">"Aplikacija će moći snimati audiozapise samo dok je upotrebljavate"</string>
@@ -507,7 +507,7 @@
     <string name="not_used_permissions_description" msgid="7595514824169388718">"Dopuštenja koja upotrebljavaju samo aplikacije sustava."</string>
     <string name="additional_permissions_label" msgid="7693557637462569046">"Dodatna dopuštenja"</string>
     <string name="additional_permissions_description" msgid="2186611950890732112">"Dopuštenja koja definiraju aplikacije."</string>
-    <string name="privdash_label_camera" msgid="1426440033626198096">"Fotoaparat"</string>
+    <string name="privdash_label_camera" msgid="1426440033626198096">"Kamera"</string>
     <string name="privdash_label_microphone" msgid="8415035835803511693">"Mikrofon"</string>
     <string name="privdash_label_location" msgid="6882400763866489291">"Lokacija"</string>
     <string name="privdash_label_other" msgid="3710394147423236033">"Drugo"</string>
@@ -537,7 +537,7 @@
     <string name="safety_privacy_qs_tile_subtitle" msgid="3621544532041936749">"Provjera statusa"</string>
     <string name="privacy_controls_qs" msgid="5780144882040591169">"Vaše kontrole privatnosti"</string>
     <string name="security_settings_button_label_qs" msgid="8280343822465962330">"Više postavki"</string>
-    <string name="camera_toggle_label_qs" msgid="3880261453066157285">"Pristup fotoaparatu"</string>
+    <string name="camera_toggle_label_qs" msgid="3880261453066157285">"Pristup kameri"</string>
     <string name="microphone_toggle_label_qs" msgid="8132912469813396552">"Pristup mikrofonu"</string>
     <string name="permissions_removed_qs" msgid="8957319130625294572">"Dopuštenje uklonjeno"</string>
     <string name="camera_usage_qs" msgid="4394233566086665994">"Prikaži nedavnu upotrebu fotoaparata"</string>
@@ -579,7 +579,7 @@
     <string name="safety_center_background_location_access_revoked" msgid="6972274943343442213">"Promijenjen je pristup"</string>
     <string name="safety_center_view_recent_location_access" msgid="3524391299490678243">"Prikaži nedavnu upotrebu lokacije"</string>
     <string name="privacy_controls_title" msgid="7605929972256835199">"Kontrole privatnosti"</string>
-    <string name="camera_toggle_title" msgid="1251201397431837666">"Pristup fotoaparatu"</string>
+    <string name="camera_toggle_title" msgid="1251201397431837666">"Pristup kameri"</string>
     <string name="mic_toggle_title" msgid="2649991093496110162">"Pristup mikrofonu"</string>
     <string name="perm_toggle_description" msgid="7801326363741451379">"Za aplikacije i usluge"</string>
     <string name="mic_toggle_description" msgid="9163104307990677157">"Za aplikacije i usluge. Ako je ta postavka isključena, podaci mikrofona i dalje se mogu dijeliti kad nazovete broj hitne službe."</string>

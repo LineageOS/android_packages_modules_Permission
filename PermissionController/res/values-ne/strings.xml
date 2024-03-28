@@ -32,9 +32,9 @@
     <string name="grant_dialog_button_no_upgrade" msgid="8344732743633736625">"“एप प्रयोगमा भएको बेलामा” शीर्षक कायम राख्नुहोस्"</string>
     <string name="grant_dialog_button_no_upgrade_one_time" msgid="5125892775684968694">"“यस बेला मात्र” राख्नुहोस्"</string>
     <string name="grant_dialog_button_more_info" msgid="213350268561945193">"थप जानकारी"</string>
-    <string name="grant_dialog_button_allow_all" msgid="5939066403732409516">"सबै डेटा प्रयोग गर्ने अनुमति दिनुहोस्"</string>
+    <string name="grant_dialog_button_allow_all" msgid="5939066403732409516">"सबै अनुमति दिइयोस्"</string>
     <string name="grant_dialog_button_always_allow_all" msgid="1719900027660252167">"सधैँ सबै अनुमति दिइयोस्"</string>
-    <string name="grant_dialog_button_allow_limited_access" msgid="5713551784422137594">"सीमित एक्सेस दिनुहोस्"</string>
+    <string name="grant_dialog_button_allow_limited_access" msgid="5713551784422137594">"सीमित एक्सेस दिइयोस्"</string>
     <string name="grant_dialog_button_allow_selected_photos" msgid="5497042471576153842">"फोटो र भिडियोहरू चयन गर्नुहोस्"</string>
     <string name="grant_dialog_button_allow_more_selected_photos" msgid="5145657877588697709">"अझ धेरै फोटो चयन गर्नुहोस्"</string>
     <string name="grant_dialog_button_dont_select_more" msgid="6643552729129461268">"थप डेटा चयन नगर्नुहोस्"</string>
@@ -205,7 +205,7 @@
     <string name="unused_apps_category_title" msgid="2988455616845243901">"प्रयोग नगरिएको एपसम्बन्धी सेटिङ"</string>
     <string name="auto_revoke_label" msgid="5068393642936571656">"यो एप प्रयोग नहुँदा यसलाई दिइएका अनुमतिहरू रद्द गरियोस्"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"अनुमतिहरू हटाई ठाउँ खाली गरियोस्"</string>
-    <string name="unused_apps_label_v2" msgid="7058776770056517980">"एप प्रयोग नगरिएको अवस्थामा उक्त एपमा बिताएको समय रेकर्ड नगरियोस्"</string>
+    <string name="unused_apps_label_v2" msgid="7058776770056517980">"एप प्रयोग नगरिएको अवस्थामा उक्त एपमा गरिएको गतिविधि रेकर्ड नगरियोस्"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"अनुमतिहरू रद्द गरियोस्, अस्थायी फाइलहरू मेटाइयोस् र एपसम्बन्धी सूचना नपठाइयोस्"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"तपाईंका डेटाको सुरक्षार्थ यो एप केही महिनासम्म प्रयोग नगरिएका खण्डमा यसलाई दिइएका अनुमति रद्द गरिने छन्।"</string>
     <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"तपाईंका डेटाको सुरक्षार्थ यो एप केही महिनासम्म प्रयोग नगरिएका खण्डमा निम्न अनुमति रद्द गरिने छन्: <xliff:g id="PERMS">%1$s</xliff:g>"</string>

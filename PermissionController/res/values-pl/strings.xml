@@ -342,7 +342,7 @@
     <string name="no_apps_allowed" msgid="7718822655254468631">"Nie zezwolono żadnym aplikacjom"</string>
     <string name="no_apps_allowed_full" msgid="8011716991498934104">"Brak aplikacji z uprawnieniami dla wszystkich plików"</string>
     <string name="no_apps_allowed_scoped" msgid="4908850477787659501">"Brak aplikacji z uprawnieniami tylko dla multimediów"</string>
-    <string name="no_apps_denied" msgid="7663435886986784743">"Nie zabroniono żadnym aplikacjom"</string>
+    <string name="no_apps_denied" msgid="7663435886986784743">"Nie zabroniono dostępu żadnym aplikacjom"</string>
     <string name="car_permission_selected" msgid="180837028920791596">"Wybrana"</string>
     <string name="settings" msgid="5409109923158713323">"Ustawienia"</string>
     <string name="accessibility_service_dialog_title_single" msgid="7956432823014102366">"Usługa <xliff:g id="SERVICE_NAME">%s</xliff:g> ma pełny dostęp do urządzenia"</string>

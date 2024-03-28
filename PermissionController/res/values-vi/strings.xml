@@ -205,7 +205,7 @@
     <string name="unused_apps_category_title" msgid="2988455616845243901">"Chế độ cài đặt cho ứng dụng không dùng đến"</string>
     <string name="auto_revoke_label" msgid="5068393642936571656">"Thu hồi quyền nếu bạn không dùng ứng dụng"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"Thu hồi quyền và giải phóng dung lượng"</string>
-    <string name="unused_apps_label_v2" msgid="7058776770056517980">"Tạm dừng hoạt động trong ứng dụng nếu không dùng"</string>
+    <string name="unused_apps_label_v2" msgid="7058776770056517980">"Tạm dừng hoạt động của ứng dụng nếu không dùng"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Loại bỏ quyền, xoá tệp tạm thời và dừng thông báo"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"Để bảo vệ dữ liệu của bạn, các quyền cấp cho ứng dụng này sẽ bị thu hồi nếu bạn không dùng ứng dụng trong vài tháng."</string>
     <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"Để bảo vệ dữ liệu của bạn, nếu bạn không dùng ứng dụng này trong vài tháng thì các quyền sau đây sẽ bị thu hồi: <xliff:g id="PERMS">%1$s</xliff:g>"</string>
