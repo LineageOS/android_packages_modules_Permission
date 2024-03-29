@@ -26,8 +26,8 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.android.permissioncontroller.Constants
-import com.android.permissioncontroller.permission.ui.model.v31.PermissionUsageViewModel
-import com.android.permissioncontroller.permission.ui.model.v31.PermissionUsageViewModel.PermissionUsageViewModelFactory
+import com.android.permissioncontroller.permission.ui.legacy.PermissionUsageViewModel
+import com.android.permissioncontroller.permission.ui.legacy.PermissionUsageViewModel.PermissionUsageViewModelFactory
 
 /**
  * This is a condensed version of
