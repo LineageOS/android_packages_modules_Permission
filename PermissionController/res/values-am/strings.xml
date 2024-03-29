@@ -485,9 +485,9 @@
     <string name="permgroupupgraderequest_microphone" msgid="1362781696161233341">"ለ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; የማይክራፎን መዳረሻ ይለወጥ?"</string>
     <string name="permgroupupgraderequestdetail_microphone" msgid="2870497719571464239">"ይህ መተግበሪያ መተግበሪያውን በማይጠቀሙበት ጊዜም እንኳ ሁልጊዜ ኦዲዮ መቅዳት ይፈልጋል። "<annotation id="link">"በቅንብሮች ውስጥ ይፍቀዱ።"</annotation></string>
     <string name="permgrouprequest_activityRecognition" msgid="5415121592794230330">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; የእርስዎን አካላዊ እንቅስቃሴ እንዲደርስበት ይፈቀድለት?"</string>
-    <string name="permgrouprequest_camera" msgid="5123097035410002594">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ስዕሎችን እንዲያነሳ እና ቪዲዮን እንዲቀርጽ ይፈቀድለት?"</string>
+    <string name="permgrouprequest_camera" msgid="5123097035410002594">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ሥዕሎችን እንዲያነሳ እና ቪዲዮን እንዲቀርጽ ይፈቀድለት?"</string>
     <string name="permgrouprequestdetail_camera" msgid="9085323239764667883">"መተግበሪያው ስዕሎችን ማንሳት እና ቪዲዮውን መቅዳት የሚችለው መተግበሪያውን እርስዎ ሲጠቀሙበት ብቻ ነው"</string>
-    <string name="permgroupbackgroundrequest_camera" msgid="1274286575704213875">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ስዕሎችን እንዲያነሳ እና ቪዲዮን እንዲቀርጽ ይፈቀድለት?"</string>
+    <string name="permgroupbackgroundrequest_camera" msgid="1274286575704213875">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ሥዕሎችን እንዲያነሳ እና ቪዲዮን እንዲቀርጽ ይፈቀድለት?"</string>
     <string name="permgroupbackgroundrequestdetail_camera" msgid="4458783509089859078">"ይህ መተግበሪያ መተግበሪያውን በማይጠቀሙበት ጊዜም እንኳ ሁልጊዜ ሥዕሎችን ማንሳት እና ቪዲዮ መቅዳት ሊፈልግ ይችላል። "<annotation id="link">"በቅንብሮች ውስጥ ይፍቀዱ።"</annotation></string>
     <string name="permgroupupgraderequest_camera" msgid="640758449200241582">"ለ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; የካሜራ መዳረሻ ይለወጥ?"</string>
     <string name="permgroupupgraderequestdetail_camera" msgid="6642747548010962597">"ይህ መተግበሪያ መተግበሪያውን በማይጠቀሙበት ጊዜም እንኳ ሁልጊዜ ሥዕሎችን ማንሳት እና ቪዲዮ መቅዳት ይፈልጋል። "<annotation id="link">"በቅንብሮች ውስጥ ይፍቀዱ።"</annotation></string>

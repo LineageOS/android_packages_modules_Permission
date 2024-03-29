@@ -205,7 +205,7 @@
     <string name="unused_apps_category_title" msgid="2988455616845243901">"Kasutamata rakenduse seaded"</string>
     <string name="auto_revoke_label" msgid="5068393642936571656">"Eemalda load, kui rakendust ei kasutata"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"Eemalda load ja vabasta ruumi"</string>
-    <string name="unused_apps_label_v2" msgid="7058776770056517980">"Tegevusetuna rakenduse tegevuste peatamine"</string>
+    <string name="unused_apps_label_v2" msgid="7058776770056517980">"Kasutamata rakenduse tegevuste peatamine"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Eemaldatakse load, kustutatakse ajutised failid ja peatatakse märguanded"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"Teie andmete kaitsmiseks eemaldatakse selle rakenduse load, kui seda mõne kuu jooksul ei kasutata."</string>
     <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"Teie andmete kaitsmiseks eemaldatakse selle rakenduse järgmised load, kui rakendust mõne kuu jooksul ei kasutata: <xliff:g id="PERMS">%1$s</xliff:g>"</string>

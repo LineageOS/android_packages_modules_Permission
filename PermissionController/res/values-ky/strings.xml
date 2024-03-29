@@ -616,7 +616,7 @@
     <string name="learn_about_data_sharing" msgid="4200480587079488045">"Маалыматтарды бөлүшүү жөнүндө кеңири маалымат"</string>
     <string name="shares_location_with_third_parties" msgid="2278051743742057767">"Жүргөн жериңиз тууралуу маалымат үчүнчү тараптар менен бөлүшүлүп жатат"</string>
     <string name="shares_location_with_third_parties_for_advertising" msgid="1918588064014480513">"Жүргөн жериңизди үчүнчү тараптар жарнамалоо же маркетинг максатында билип турушат"</string>
-    <string name="updated_in_last_days" msgid="8371811947153042322">"{count,plural, =0{Кечээ жаңыртылды}=1{Кечээ жаңыртылды}other{# күн мурда жаңыртылды}}"</string>
+    <string name="updated_in_last_days" msgid="8371811947153042322">"{count,plural, =0{Кечээ жаңырды}=1{Кечээ жаңырды}other{# күн мурда жаңырды}}"</string>
     <string name="no_updates_at_this_time" msgid="9031085635689982935">"Азырынча жаңыртуулар жок"</string>
     <string name="safety_label_changes_notification_title" msgid="4479955083472203839">"Маалыматты бөлүшүү жаңыртуулары"</string>
     <string name="safety_label_changes_notification_desc" msgid="7808764283266234675">"Айрым колдонмолор турган жериңизди билдирүү ыкмасын өзгөрттү"</string>

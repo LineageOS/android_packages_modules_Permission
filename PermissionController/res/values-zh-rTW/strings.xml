@@ -469,7 +469,7 @@
     <string name="permgrouprequest_fineupgrade" msgid="2334242928821697672">"要將「<xliff:g id="APP_NAME">&lt;b&gt;%1$s&lt;/b&gt;</xliff:g>」可以存取的定位資訊從「大概位置」改為「精確位置」嗎？"</string>
     <string name="permgrouprequest_coarselocation" msgid="7244605063736425232">"要允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;存取這部裝置的大概位置資訊嗎？"</string>
     <string name="permgrouprequest_finelocation_imagetext" msgid="1313062433398914334">"精確"</string>
-    <string name="permgrouprequest_coarselocation_imagetext" msgid="8650605041483025297">"概略"</string>
+    <string name="permgrouprequest_coarselocation_imagetext" msgid="8650605041483025297">"大概"</string>
     <string name="permgrouprequest_calendar" msgid="1493150855673603806">"要允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」存取你的日曆嗎？"</string>
     <string name="permgrouprequest_sms" msgid="5672063688745420991">"要允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」傳送及查看簡訊嗎？"</string>
     <string name="permgrouprequest_storage" msgid="8717773092518621602">"要允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」存取裝置中的相片、媒體和檔案嗎？"</string>
@@ -519,7 +519,7 @@
     <string name="blocked_camera_title" msgid="1128510551791284384">"裝置相機已封鎖"</string>
     <string name="blocked_microphone_title" msgid="1631517143648232585">"裝置麥克風已封鎖"</string>
     <string name="blocked_location_title" msgid="2005608279812892383">"裝置位置資訊已關閉"</string>
-    <string name="blocked_sensor_summary" msgid="4443707628305027375">"應用程式和服務"</string>
+    <string name="blocked_sensor_summary" msgid="4443707628305027375">"適用於應用程式和服務"</string>
     <string name="blocked_mic_summary" msgid="8960466941528458347">"當你撥打緊急電話號碼時，系統仍會提供麥克風的資料。"</string>
     <string name="blocked_sensor_button_label" msgid="6742092634984289658">"變更"</string>
     <string name="safety_center_dashboard_page_title" msgid="2810774008694315854">"安全性與隱私權"</string>
@@ -581,9 +581,9 @@
     <string name="privacy_controls_title" msgid="7605929972256835199">"隱私權控制項"</string>
     <string name="camera_toggle_title" msgid="1251201397431837666">"相機存取權"</string>
     <string name="mic_toggle_title" msgid="2649991093496110162">"麥克風存取權"</string>
-    <string name="perm_toggle_description" msgid="7801326363741451379">"應用程式和服務"</string>
+    <string name="perm_toggle_description" msgid="7801326363741451379">"適用於應用程式和服務"</string>
     <string name="mic_toggle_description" msgid="9163104307990677157">"適用於應用程式和服務。即使關閉這項設定，系統仍可能會在你撥打緊急電話號碼時，分享麥克風資料。"</string>
-    <string name="location_settings_subtitle" msgid="2328360561197430695">"查看對位置擁有存取權的應用程式與服務"</string>
+    <string name="location_settings_subtitle" msgid="2328360561197430695">"查看可存取位置資訊的應用程式與服務"</string>
     <string name="show_clip_access_notification_title" msgid="5168467637351109096">"顯示剪貼簿存取通知"</string>
     <string name="show_clip_access_notification_summary" msgid="3532020182782112687">"系統會在應用程式存取你複製的文字、圖片或其他內容時顯示通知訊息"</string>
     <string name="show_password_title" msgid="2877269286984684659">"顯示密碼"</string>
@@ -609,8 +609,8 @@
     <string name="app_permission_rationale_message" msgid="8511466916077100713">"資料安全"</string>
     <string name="app_location_permission_rationale_title" msgid="925420340572401350">"可能會分享位置資料"</string>
     <string name="app_location_permission_rationale_subtitle" msgid="6986985722752868692">"這個應用程式表示可能會將位置資料分享給第三方"</string>
-    <string name="data_sharing_updates_title" msgid="7996933386875213859">"位置資料分享更新"</string>
-    <string name="data_sharing_updates_summary" msgid="764113985772233889">"查看哪些應用程式變更了分享位置資料的做法"</string>
+    <string name="data_sharing_updates_title" msgid="7996933386875213859">"位置資料共用方式更新"</string>
+    <string name="data_sharing_updates_summary" msgid="764113985772233889">"查看變更資料共用方式的應用程式"</string>
     <string name="data_sharing_updates_subtitle" msgid="6311537708950632329">"以下應用程式變更了分享位置資料的做法。這些應用程式先前可能未曾分享位置資料，也可能是現在為了廣告或行銷目的而分享這些資料。"</string>
     <string name="data_sharing_updates_footer_message" msgid="1582711655172892107">"這些應用程式的開發人員已將資料分享做法相關資訊提供給應用程式商店，並可能會隨著時間更新這些資訊。\n\n資料分享做法可能會因你的應用程式版本、使用方式、所在地區和年齡而異。"</string>
     <string name="learn_about_data_sharing" msgid="4200480587079488045">"瞭解資料分享"</string>

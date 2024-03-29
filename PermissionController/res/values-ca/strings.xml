@@ -399,7 +399,7 @@
     <string name="role_watch_description" msgid="267003778693177779">"<xliff:g id="APP_NAME">%1$s</xliff:g> tindrà permís per interaccionar amb les teves notificacions i accedir al telèfon, SMS, contactes i calendari."</string>
     <string name="role_app_streaming_description" msgid="7341638576226183992">"<xliff:g id="APP_NAME">%1$s</xliff:g> tindrà permís per interaccionar amb les teves notificacions i reproduir en continu les teves aplicacions al dispositiu connectat."</string>
     <string name="role_companion_device_computer_description" msgid="416099879217066377">"Aquest servei comparteix les fotos, el contingut multimèdia i les notificacions del telèfon amb altres dispositius."</string>
-    <string name="role_notes_label" msgid="7451627001058089536">"App de notes predeterminada"</string>
+    <string name="role_notes_label" msgid="7451627001058089536">"Aplicació de notes predeterminada"</string>
     <string name="role_notes_short_label" msgid="8796604147546125285">"Aplicació de notes"</string>
     <string name="role_notes_description" msgid="8496852798616883551">"Aplicacions que et permeten prendre notes al dispositiu"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"notes"</string>
@@ -458,7 +458,7 @@
     <string name="assistant_record_audio_user_sensitive_summary" msgid="6482937591816401619">"Mostra una icona a la barra d\'estat quan s\'utilitzi el micròfon per activar l\'assistent de veu"</string>
     <string name="permgrouprequest_storage_isolated" msgid="4892154224026852295">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi a les fotos i al contingut multimèdia del dispositiu?"</string>
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi als contactes?"</string>
-    <string name="permgrouprequest_location" msgid="6990232580121067883">"Permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi a la ubicació del dispositiu?"</string>
+    <string name="permgrouprequest_location" msgid="6990232580121067883">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi a la ubicació del dispositiu?"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"L\'aplicació només tindrà accés a la ubicació quan l\'estiguis utilitzant"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi a la ubicació del dispositiu?"</string>
     <string name="permgroupbackgroundrequestdetail_location" msgid="8021219324989662957">"Aquesta aplicació vol tenir accés a la teva ubicació sempre, fins i tot quan no l\'estiguis utilitzant. "<annotation id="link">"Pots permetre-ho a Configuració"</annotation>"."</string>
