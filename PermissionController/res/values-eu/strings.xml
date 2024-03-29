@@ -354,7 +354,7 @@
     <string name="role_assistant_description" msgid="6622458130459922952">"Ikusten ari zaren pantailako informazioaren araberako laguntza eskain diezazukete laguntza-aplikazioek. Zenbait aplikaziok abiarazlea eta ahots bidezko zerbitzuak onartzen dituzte laguntza integratua eskaintzeko."</string>
     <string name="role_browser_label" msgid="2877796144554070207">"Arakatzaile lehenetsia"</string>
     <string name="role_browser_short_label" msgid="6745009127123292296">"Arakatzaile-aplikazioa"</string>
-    <string name="role_browser_description" msgid="3465253637499842671">"Interneterako sarbidea ematen dizuten eta sakatzen dituzun estekak bistaratzen dituzten aplikazioak"</string>
+    <string name="role_browser_description" msgid="3465253637499842671">"Interneteko sarbidea ematen dizuten eta sakatzen dituzun estekak bistaratzen dituzten aplikazioak"</string>
     <string name="role_browser_request_title" msgid="2895200507835937192">"<xliff:g id="APP_NAME">%1$s</xliff:g> ezarri nahi duzu arakatzaile-aplikazio lehenetsi gisa?"</string>
     <string name="role_browser_request_description" msgid="5888803407905985941">"Ez du behar baimenik"</string>
     <string name="role_dialer_label" msgid="1100224146343237968">"Telefono lehenetsia"</string>
@@ -657,4 +657,10 @@
     <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"Atzo atzitu zen (<xliff:g id="TIME_DATE">%1$s</xliff:g>)"</string>
     <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"Atzitze-data: <xliff:g id="TIME_DATE_0">%1$s</xliff:g> (<xliff:g id="TIME_DATE_1">%2$s</xliff:g>)"</string>
     <string name="test_otp_msg" msgid="7559110574222727550">"Zure erabilera bakarreko pasahitza 132435 da"</string>
+    <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Murriztapenak ditu ezarpenak"</string>
+    <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Zure segurtasuna bermatzeko, ezarpena ez dago erabilgarri une honetan."</string>
+    <string name="enhanced_confirmation_dialog_title_permission" msgid="8411239333012890492">"Ukatu egin da <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> erabiltzeko baimena"</string>
+    <string name="enhanced_confirmation_dialog_desc_permission" msgid="9207115054288224451">"Aplikazio honek <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> erabiltzeko baimena eskatu du. Ezarpen murriztu bat da hori, agian segurtasuna eta pribatutasuna arriskuan jarriko dituelako. Baimen hori murrizten bada, baliteke aplikazioak ez funtzionatzea."</string>
+    <string name="enhanced_confirmation_dialog_learn_more" msgid="5226619861379095709">"Lortu informazio gehiago"</string>
+    <string name="enhanced_confirmation_dialog_ok" msgid="1767075979746135617">"Ados"</string>
 </resources>

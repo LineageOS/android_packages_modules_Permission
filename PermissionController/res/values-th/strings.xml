@@ -466,10 +466,10 @@
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"อนุญาตให้ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; เข้าถึงรายชื่อติดต่อไหม"</string>
     <string name="permgrouprequest_device_aware_contacts" msgid="2270563860206654757">"อนุญาตให้ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; เข้าถึงรายชื่อติดต่อบน&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;ไหม"</string>
     <string name="permgrouprequest_location" msgid="6990232580121067883">"อนุญาตให้ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; เข้าถึงตำแหน่งของอุปกรณ์นี้ไหม"</string>
-    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"อนุญาตให้ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; เข้าถึงตำแหน่งของ&lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;ไหม"</string>
+    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"อนุญาตให้ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; เข้าถึงตำแหน่งของ &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt; ไหม"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"แอปจะมีสิทธิ์เข้าถึงตำแหน่งในขณะที่คุณใช้แอปเท่านั้น"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"อนุญาตให้ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; เข้าถึงตำแหน่งของอุปกรณ์นี้ไหม"</string>
-    <string name="permgroupbackgroundrequest_device_aware_location" msgid="7660465507029650527">"อนุญาตให้ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; เข้าถึงตำแหน่งของ&lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>ไหม"</string>
+    <string name="permgroupbackgroundrequest_device_aware_location" msgid="7660465507029650527">"อนุญาตให้ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; เข้าถึงตำแหน่งของ &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g> ไหม"</string>
     <string name="permgroupbackgroundrequestdetail_location" msgid="8021219324989662957">"แอปนี้อาจต้องการเข้าถึงตำแหน่งของคุณตลอดเวลา แม้ในขณะที่คุณไม่ได้ใช้แอป โปรด"<annotation id="link">"อนุญาตในการตั้งค่า"</annotation></string>
     <string name="permgroupupgraderequest_location" msgid="8328408946822691636">"เปลี่ยนการเข้าถึงตำแหน่งสำหรับ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ไหม"</string>
     <string name="permgroupupgraderequest_device_aware_location" msgid="4528266408056426513">"เปลี่ยนแปลงสิทธิ์เข้าถึงตำแหน่งของ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; บน&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;ไหม"</string>
@@ -657,4 +657,10 @@
     <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"เข้าถึงเมื่อวานตอน <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
     <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"เข้าถึงเมื่อวันที่ <xliff:g id="TIME_DATE_0">%1$s</xliff:g> ตอน <xliff:g id="TIME_DATE_1">%2$s</xliff:g>"</string>
     <string name="test_otp_msg" msgid="7559110574222727550">"รหัสผ่านที่สามารถใช้งานได้เพียงครั้งเดียวของคุณคือ 132435"</string>
+    <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"การตั้งค่าที่จำกัด"</string>
+    <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"การตั้งค่านี้ใช้ไม่ได้ในตอนนี้เพื่อความปลอดภัยของคุณ"</string>
+    <string name="enhanced_confirmation_dialog_title_permission" msgid="8411239333012890492">"ปฏิเสธสิทธิ์ในการใช้ <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> แล้ว"</string>
+    <string name="enhanced_confirmation_dialog_desc_permission" msgid="9207115054288224451">"แอปนี้ได้ขอสิทธิ์ <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> ซึ่งเป็นการตั้งค่าที่ถูกจำกัด เนื่องจากอาจทำให้ความปลอดภัยและความเป็นส่วนตัวของคุณตกอยู่ในความเสี่ยง การจำกัดสิทธิ์นี้อาจทำให้แอปนี้ไม่ทำงาน"</string>
+    <string name="enhanced_confirmation_dialog_learn_more" msgid="5226619861379095709">"ดูข้อมูลเพิ่มเติม"</string>
+    <string name="enhanced_confirmation_dialog_ok" msgid="1767075979746135617">"รับทราบ"</string>
 </resources>
