@@ -371,7 +371,7 @@
     <string name="role_sms_search_keywords" msgid="8022048144395047352">"tekst bericht, tekstbericht, sms, sms\'en, berichten, verzenden, sturen"</string>
     <string name="role_emergency_label" msgid="7028825857206842366">"Standaardapp voor noodgevallen"</string>
     <string name="role_emergency_short_label" msgid="2388431453335350348">"Nood-app"</string>
-    <string name="role_emergency_description" msgid="5051840234887686630">"Apps waarmee je je medische gegevens kunt vastleggen en toegankelijk kunt maken voor hulpverleners; apps waarmee je waarschuwingen ontvangt voor gevaarlijk weer of rampen; apps waarmee je mensen kunt laten weten dat je hulp nodig hebt"</string>
+    <string name="role_emergency_description" msgid="5051840234887686630">"Apps waarmee je je medische info kunt vastleggen en toegankelijk kunt maken voor hulpverleners; apps waarmee je waarschuwingen krijgt voor gevaarlijk weer of rampen; apps waarmee je mensen kunt laten weten dat je hulp nodig hebt"</string>
     <string name="role_emergency_request_title" msgid="8469579020654348567">"Wil je <xliff:g id="APP_NAME">%1$s</xliff:g> instellen als je standaard-app voor noodgevallen?"</string>
     <string name="role_emergency_request_description" msgid="131645948770262850">"Geen rechten nodig"</string>
     <string name="role_emergency_search_keywords" msgid="1920007722599213358">"bij noodgevallen"</string>
