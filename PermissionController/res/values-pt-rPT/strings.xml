@@ -585,9 +585,9 @@
     <string name="mic_toggle_description" msgid="9163104307990677157">"Para apps e serviços. Se esta definição estiver desativada, os dados do microfone ainda podem ser partilhados quando ligar para um número de emergência."</string>
     <string name="location_settings_subtitle" msgid="2328360561197430695">"Veja as apps e os serviços que têm acesso à localização"</string>
     <string name="show_clip_access_notification_title" msgid="5168467637351109096">"Mostrar acesso à área de transferência"</string>
-    <string name="show_clip_access_notification_summary" msgid="3532020182782112687">"Apresente uma mensagem quando as apps acedem a texto, imagens ou outro conteúdo que copiou"</string>
+    <string name="show_clip_access_notification_summary" msgid="3532020182782112687">"Mostra uma mensagem quando as apps acedem a texto, imagens ou outro conteúdo que copiou"</string>
     <string name="show_password_title" msgid="2877269286984684659">"Mostrar palavras-passe"</string>
-    <string name="show_password_summary" msgid="1110166488865981610">"Apresente rapidamente os carateres ao escrever"</string>
+    <string name="show_password_summary" msgid="1110166488865981610">"Mostra brevemente os carateres ao escrever"</string>
     <string name="permission_rationale_message_location" msgid="2153841534298068414">"Esta app declarou que pode partilhar dados de localização com terceiros"</string>
     <string name="permission_rationale_location_title" msgid="2404797182678793506">"Localização e partilha de dados"</string>
     <string name="permission_rationale_data_sharing_source_title" msgid="6874604543125814316">"Qual é a origem das informações da partilha de dados"</string>
