@@ -583,7 +583,7 @@
     <string name="mic_toggle_title" msgid="2649991093496110162">"Микрофонду колдонуу"</string>
     <string name="perm_toggle_description" msgid="7801326363741451379">"Колдонмолор жана кызматтар үчүн"</string>
     <string name="mic_toggle_description" msgid="9163104307990677157">"Кырсыктаганда жардамга келчү кызматка чалганда, микрофондогу нерселер бөлүшүлүшү мүмкүн."</string>
-    <string name="location_settings_subtitle" msgid="2328360561197430695">"Кайда жүргөнүңүздү көрүүгө уруксаты бар колдонмолорду жана кызматтарды көрүү"</string>
+    <string name="location_settings_subtitle" msgid="2328360561197430695">"Кайда жүргөнүңүздү көрө алган колдонмолор менен кызматтардын тизмеси"</string>
     <string name="show_clip_access_notification_title" msgid="5168467637351109096">"Алмашуу буферин пайдалануу мүмкүнчүлүгүн көрсөтүү"</string>
     <string name="show_clip_access_notification_summary" msgid="3532020182782112687">"Колдонмолор көчүрүлгөн текстти, сүрөттөрдү же башка нерселерди пайдаланганда билдирүүлөр көрүнөт"</string>
     <string name="show_password_title" msgid="2877269286984684659">"Сырсөз көрүнсүн"</string>
