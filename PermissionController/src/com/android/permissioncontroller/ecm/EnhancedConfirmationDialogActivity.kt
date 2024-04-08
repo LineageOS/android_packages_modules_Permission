@@ -36,6 +36,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.annotation.Keep
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentActivity
 import com.android.modules.utils.build.SdkLevel
@@ -90,6 +91,7 @@ class EnhancedConfirmationDialogActivity : FragmentActivity() {
         outState.putBoolean(KEY_WAS_CLEAR_RESTRICTION_ALLOWED, wasClearRestrictionAllowed)
     }
 
+    @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
     private fun setClearRestrictionAllowed(packageName: String, user: UserHandle): Boolean {
         val userContext = createContextAsUser(user, 0)
         val ecm = Utils.getSystemServiceSafe(userContext, EnhancedConfirmationManager::class.java)
