@@ -365,7 +365,7 @@
     <string name="role_dialer_search_keywords" msgid="3324448983559188087">"telefon"</string>
     <string name="role_sms_label" msgid="8456999857547686640">"Standard-SMS-App"</string>
     <string name="role_sms_short_label" msgid="4371444488034692243">"SMS-App"</string>
-    <string name="role_sms_description" msgid="3424020199148153513">"Apps, mit denen du über deine Telefonnummer SMS, Fotos, Videos und mehr senden und empfangen kannst"</string>
+    <string name="role_sms_description" msgid="3424020199148153513">"Apps, mit denen du über deine Telefonnummer unter anderem SMS, Fotos oder Videos senden und empfangen kannst"</string>
     <string name="role_sms_request_title" msgid="7953552109601185602">"<xliff:g id="APP_NAME">%1$s</xliff:g>als Standard-SMS-App festlegen?"</string>
     <string name="role_sms_request_description" msgid="2691004766132144886">"Diese App erhält Zugriff auf Folgendes: Kamera, Kontakte, Mikrofon, Dateien und Medien, Telefon und SMS"</string>
     <string name="role_sms_search_keywords" msgid="8022048144395047352">"textnachricht, sms, sms schicken, sms senden, nachrichten, mms"</string>
@@ -614,7 +614,7 @@
     <string name="camera_toggle_title" msgid="1251201397431837666">"Kamerazugriff"</string>
     <string name="mic_toggle_title" msgid="2649991093496110162">"Mikrofonzugriff"</string>
     <string name="perm_toggle_description" msgid="7801326363741451379">"Für Apps und Dienste"</string>
-    <string name="mic_toggle_description" msgid="9163104307990677157">"Für Apps und Dienste. Wenn diese Einstellung deaktiviert ist, können Mikrofondaten dennoch freigegeben werden, wenn du den Notruf wählst."</string>
+    <string name="mic_toggle_description" msgid="9163104307990677157">"Für Apps und Dienste. Wenn du eine Notrufnummer wählst, können Mikrofondaten weitergegeben werden, auch wenn diese Berechtigung deaktiviert ist."</string>
     <string name="location_settings_subtitle" msgid="2328360561197430695">"Apps und Dienste sehen, die Zugriff auf diesen Standort haben"</string>
     <string name="show_clip_access_notification_title" msgid="5168467637351109096">"Zugriff auf Zwischenablage anzeigen"</string>
     <string name="show_clip_access_notification_summary" msgid="3532020182782112687">"Eine Meldung wird angezeigt, wenn Apps auf Text, Bilder oder andere Inhalte zugreifen, die du kopiert hast"</string>

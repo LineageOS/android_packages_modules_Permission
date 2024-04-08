@@ -351,7 +351,7 @@
     <string name="accessibility_service_dialog_bottom_text_multiple" msgid="7009848932395519852">"ਇਹ ਐਪਾਂ ਤੁਹਾਡੀ ਸਕ੍ਰੀਨ, ਕਾਰਵਾਈਆਂ ਅਤੇ ਇਨਪੁੱਟਾਂ ਨੂੰ ਦੇਖ ਸਕਦੀਆਂ ਹਨ, ਕਾਰਵਾਈਆਂ ਕਰ ਸਕਦੀਆਂ ਹਨ ਅਤੇ ਡਿਸਪਲੇ ਕੰਟਰੋਲ ਕਰ ਸਕਦੀਆਂ ਹਨ।"</string>
     <string name="role_assistant_label" msgid="4727586018198208128">"ਪੂਰਵ-ਨਿਰਧਾਰਿਤ ਡਿਜੀਟਲ ਸਹਾਇਕ ਐਪ"</string>
     <string name="role_assistant_short_label" msgid="3369003713187703399">"ਡਿਜੀਟਲ ਸਹਾਇਕ ਐਪ"</string>
-    <string name="role_assistant_description" msgid="6622458130459922952">"ਸਹਾਇਕ ਐਪਾਂ ਤੁਹਾਡੇ ਵੱਲੋਂ ਦੇਖੀ ਜਾਂਦੀ ਸਕ੍ਰੀਨ ਤੋਂ ਪ੍ਰਾਪਤ ਜਾਣਕਾਰੀ ਦੇ ਆਧਾਰ \'ਤੇ ਤੁਹਾਡੀ ਮਦਦ ਕਰ ਸਕਦੀਆਂ ਹਨ। ਕੁਝ ਐਪਾਂ ਤੁਹਾਨੂੰ ਏਕੀਕ੍ਰਿਤ ਸਹਾਇਤਾ ਦੇਣ ਲਈ ਲਾਂਚਰ ਅਤੇ ਵੌਇਸ ਇਨਪੁੱਟ ਸੇਵਾਵਾਂ ਦੋਵਾਂ ਦਾ ਸਮਰਥਨ ਕਰਦੇ ਹਨ।"</string>
+    <string name="role_assistant_description" msgid="6622458130459922952">"ਸਹਾਇਕ ਐਪਾਂ ਤੁਹਾਡੇ ਵੱਲੋਂ ਦੇਖੀ ਜਾਂਦੀ ਸਕ੍ਰੀਨ ਤੋਂ ਪ੍ਰਾਪਤ ਜਾਣਕਾਰੀ ਦੇ ਆਧਾਰ \'ਤੇ ਤੁਹਾਡੀ ਮਦਦ ਕਰ ਸਕਦੀਆਂ ਹਨ। ਕੁਝ ਐਪਾਂ ਤੁਹਾਨੂੰ ਏਕੀਕ੍ਰਿਤ ਸਹਾਇਤਾ ਦੇਣ ਲਈ ਲਾਂਚਰ ਅਤੇ ਵੌਇਸ ਇਨਪੁੱਟ ਸੇਵਾਵਾਂ ਦੋਵਾਂ ਦਾ ਸਮਰਥਨ ਕਰਦੀਆਂ ਹਨ।"</string>
     <string name="role_browser_label" msgid="2877796144554070207">"ਪੂਰਵ-ਨਿਰਧਾਰਿਤ ਬ੍ਰਾਊਜ਼ਰ ਐਪ"</string>
     <string name="role_browser_short_label" msgid="6745009127123292296">"ਬ੍ਰਾਊਜ਼ਰ ਐਪ"</string>
     <string name="role_browser_description" msgid="3465253637499842671">"ਐਪਾਂ ਜੋ ਤੁਹਾਨੂੰ ਇੰਟਰਨੈੱਟ ਤੱਕ ਪਹੁੰਚ ਕਰਨ ਦਿੰਦੀਆਂ ਹਨ ਅਤੇ ਤੁਹਾਡੇ ਵੱਲੋਂ ਟੈਪ ਕੀਤੇ ਲਿੰਕ ਦਿਖਾਉਂਦੀਆਂ ਹਨ"</string>
@@ -400,8 +400,8 @@
     <string name="role_app_streaming_description" msgid="7341638576226183992">"<xliff:g id="APP_NAME">%1$s</xliff:g> ਨੂੰ ਤੁਹਾਡੀਆਂ ਸੂਚਨਾਵਾਂ ਨਾਲ ਅੰਤਰਕਿਰਿਆ ਕਰਨ ਅਤੇ ਤੁਹਾਡੀਆਂ ਐਪਾਂ ਨੂੰ ਕਨੈਕਟ ਕੀਤੇ ਡੀਵਾਈਸ \'ਤੇ ਸਟ੍ਰੀਮ ਕਰਨ ਦੀ ਆਗਿਆ ਹੋਵੇਗੀ।"</string>
     <string name="role_companion_device_computer_description" msgid="416099879217066377">"ਇਹ ਸੇਵਾ ਤੁਹਾਡੀਆਂ ਫ਼ੋਟੋਆਂ, ਮੀਡੀਆ ਅਤੇ ਸੂਚਨਾਵਾਂ ਨੂੰ ਤੁਹਾਡੇ ਫ਼ੋਨ ਤੋਂ ਹੋਰ ਡੀਵਾਈਸਾਂ ਨਾਲ ਸਾਂਝਾ ਕਰਦੀ ਹੈ।"</string>
     <string name="role_notes_label" msgid="7451627001058089536">"ਨੋਟ-ਕਥਨਾਂ ਲਈ ਪੂਰਵ-ਨਿਰਧਾਰਿਤ ਐਪ"</string>
-    <string name="role_notes_short_label" msgid="8796604147546125285">"ਨੋਟ-ਕਥਨਾਂ ਲਈ ਐਪ"</string>
-    <string name="role_notes_description" msgid="8496852798616883551">"ਐਪਾਂ ਜੋ ਤੁਹਾਨੂੰ ਆਪਣੇ ਡੀਵਾਈਸ \'ਤੇ ਨੋਟ-ਕਥਨ ਲੈਣ ਦੀ ਆਗਿਆ ਦਿੰਦੀਆਂ ਹਨ"</string>
+    <string name="role_notes_short_label" msgid="8796604147546125285">"ਨੋਟ ਲਈ ਐਪ"</string>
+    <string name="role_notes_description" msgid="8496852798616883551">"ਐਪਾਂ ਜੋ ਤੁਹਾਨੂੰ ਆਪਣੇ ਡੀਵਾਈਸ \'ਤੇ ਨੋਟ ਲਿਖਣ ਦੀ ਸੁਵਿਧਾ ਦਿੰਦੀਆਂ ਹਨ"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"ਨੋਟ-ਕਥਨ"</string>
     <string name="role_wallet_label" msgid="3719419175656204207">"ਪੂਰਵ-ਨਿਰਧਾਰਿਤ ਵਾਲੇਟ ਐਪ"</string>
     <string name="role_wallet_short_label" msgid="6521288403762457452">"Wallet ਐਪ"</string>
