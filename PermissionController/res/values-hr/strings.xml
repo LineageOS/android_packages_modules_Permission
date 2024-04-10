@@ -349,9 +349,9 @@
     <string name="accessibility_service_dialog_title_multiple" msgid="5527879210683548175">"Aplikacije pristupačnosti (njih <xliff:g id="NUM_SERVICES">%s</xliff:g>) s potpunim pristupom vašem uređaju"</string>
     <string name="accessibility_service_dialog_bottom_text_single" msgid="1128666197822205958">"<xliff:g id="SERVICE_NAME">%s</xliff:g> može vidjeti vaš zaslon, radnje i unose, izvršavati radnje i upravljati zaslonom."</string>
     <string name="accessibility_service_dialog_bottom_text_multiple" msgid="7009848932395519852">"Te aplikacije mogu vidjeti vaš zaslon, radnje i unose, izvršavati radnje i upravljati zaslonom."</string>
-    <string name="role_assistant_label" msgid="4727586018198208128">"Zadana apl. digital. asistenta"</string>
+    <string name="role_assistant_label" msgid="4727586018198208128">"Zadani digitalni asistent"</string>
     <string name="role_assistant_short_label" msgid="3369003713187703399">"Apl. digitalnog asistenta"</string>
-    <string name="role_assistant_description" msgid="6622458130459922952">"Aplikacije pomoćnika mogu vam pomoći na temelju podataka s prikazanog zaslona. Neke aplikacije podržavaju pokretač i usluge glasovnog unosa kako bi vam pružile integriranu pomoć."</string>
+    <string name="role_assistant_description" msgid="6622458130459922952">"Aplikacije za pomoć služe se podacima koji se prikazuju na zaslonu. Neke aplikacije podržavaju pokretač i usluge glasovnog unosa kako bi vam pružile integriranu pomoć."</string>
     <string name="role_browser_label" msgid="2877796144554070207">"Zadana aplikacija preglednika"</string>
     <string name="role_browser_short_label" msgid="6745009127123292296">"Aplikacija preglednika"</string>
     <string name="role_browser_description" msgid="3465253637499842671">"Aplikacije koje vam omogućuju pristup internetu i prikazuju veze koje dodirnete"</string>

@@ -349,9 +349,9 @@
     <string name="accessibility_service_dialog_title_multiple" msgid="5527879210683548175">"<xliff:g id="NUM_SERVICES">%s</xliff:g> aplicações de acessibilidade têm acesso total ao seu dispositivo"</string>
     <string name="accessibility_service_dialog_bottom_text_single" msgid="1128666197822205958">"O serviço <xliff:g id="SERVICE_NAME">%s</xliff:g> pode ver o seu ecrã, as ações e as entradas, efetuar ações e controlar o ecrã."</string>
     <string name="accessibility_service_dialog_bottom_text_multiple" msgid="7009848932395519852">"Estas aplicações podem ver o ecrã, as ações e as entradas, efetuar ações e controlar o ecrã."</string>
-    <string name="role_assistant_label" msgid="4727586018198208128">"App assistente digital predef."</string>
+    <string name="role_assistant_label" msgid="4727586018198208128">"App assistente digital predefinida"</string>
     <string name="role_assistant_short_label" msgid="3369003713187703399">"App assistente digital"</string>
-    <string name="role_assistant_description" msgid="6622458130459922952">"As apps de assistência podem ajudá-lo com base em informações do ecrã que está a ver. Algumas apps são compatíveis com serviços de iniciação e de entrada de texto por voz para oferecer assistência integrada."</string>
+    <string name="role_assistant_description" msgid="6622458130459922952">"As apps de assistência podem ser-lhe úteis com base em informações do ecrã que está a ver. Algumas apps são compatíveis com serviços de iniciação e de entrada de texto por voz para oferecer assistência integrada."</string>
     <string name="role_browser_label" msgid="2877796144554070207">"App navegador predefinida"</string>
     <string name="role_browser_short_label" msgid="6745009127123292296">"App de navegador"</string>
     <string name="role_browser_description" msgid="3465253637499842671">"Apps que lhe dão acesso à Internet e apresentam links em que pode tocar."</string>
@@ -359,13 +359,13 @@
     <string name="role_browser_request_description" msgid="5888803407905985941">"Não são necessárias autorizações."</string>
     <string name="role_dialer_label" msgid="1100224146343237968">"App de telefone predefinida"</string>
     <string name="role_dialer_short_label" msgid="7186888549465352489">"App Telefone"</string>
-    <string name="role_dialer_description" msgid="8768708633696539612">"Apps que permitem efetuar e receber chamadas no seu dispositivo."</string>
+    <string name="role_dialer_description" msgid="8768708633696539612">"Apps que permitem fazer e receber chamadas no seu dispositivo"</string>
     <string name="role_dialer_request_title" msgid="5959618560705912058">"Quer definir o <xliff:g id="APP_NAME">%1$s</xliff:g> como a app de telefone predefinida?"</string>
     <string name="role_dialer_request_description" msgid="6288839625724909320">"Esta app fica com acesso à sua Câmara, Contactos, Microfone, Telefone e SMS"</string>
     <string name="role_dialer_search_keywords" msgid="3324448983559188087">"telefone"</string>
     <string name="role_sms_label" msgid="8456999857547686640">"App de SMS predefinida"</string>
     <string name="role_sms_short_label" msgid="4371444488034692243">"App de SMS"</string>
-    <string name="role_sms_description" msgid="3424020199148153513">"Apps que permitem utilizar o seu número de telefone para enviar e receber mensagens de texto, fotos, vídeos e muito mais."</string>
+    <string name="role_sms_description" msgid="3424020199148153513">"Apps que permitem usar o seu número de telefone para enviar e receber mensagens de texto, fotos, vídeos e muito mais."</string>
     <string name="role_sms_request_title" msgid="7953552109601185602">"Quer definir o <xliff:g id="APP_NAME">%1$s</xliff:g> como app SMS predefinida?"</string>
     <string name="role_sms_request_description" msgid="2691004766132144886">"Esta app fica com acesso à sua Câmara, Contactos, Ficheiros e multimédia, Microfone, Telefone e SMS"</string>
     <string name="role_sms_search_keywords" msgid="8022048144395047352">"mensagem de texto, enviar mensagens de texto, mensagens"</string>
@@ -377,7 +377,7 @@
     <string name="role_emergency_search_keywords" msgid="1920007722599213358">"em caso de emergência"</string>
     <string name="role_home_label" msgid="3871847846649769412">"App página inicial predefinida"</string>
     <string name="role_home_short_label" msgid="8544733747952272337">"App Página inicial"</string>
-    <string name="role_home_description" msgid="7997371519626556675">"Apps, frequentemente denominadas iniciadores, que substituem os ecrãs principais no dispositivo Android e dão acesso aos conteúdos e às funcionalidades do seu dispositivo."</string>
+    <string name="role_home_description" msgid="7997371519626556675">"Também conhecidas por \"launcher\" são apps que substituem os ecrãs principais no Android e dão acesso aos conteúdos e às funcionalidades do seu dispositivo"</string>
     <string name="role_home_request_title" msgid="738136983453341081">"Quer definir o <xliff:g id="APP_NAME">%1$s</xliff:g> como a app Página inicial predefinida?"</string>
     <string name="role_home_request_description" msgid="2658833966716057673">"Não são necessárias autorizações."</string>
     <string name="role_home_search_keywords" msgid="3830755001192666285">"iniciador"</string>
@@ -434,7 +434,7 @@
     <string name="car_default_app_selected" msgid="5416420830430644174">"Selecionada"</string>
     <string name="car_default_app_selected_with_info" msgid="1932204186080593500">"Selecionada – <xliff:g id="ADDITIONAL_INFO">%1$s</xliff:g>"</string>
     <string name="special_app_access_search_keyword" msgid="8032347212290774210">"acesso especial a apps"</string>
-    <string name="special_app_access" msgid="5019319067120213797">"Acesso especial a apps"</string>
+    <string name="special_app_access" msgid="5019319067120213797">"Acesso especial para apps"</string>
     <string name="no_special_app_access" msgid="6950277571805106247">"Sem acesso especial a app"</string>
     <string name="special_app_access_no_apps" msgid="4102911722787886970">"Sem apps"</string>
     <string name="home_missing_work_profile_support" msgid="1756855847669387977">"Não suporta o perfil de trabalho."</string>
@@ -610,7 +610,7 @@
     <string name="app_location_permission_rationale_title" msgid="925420340572401350">"Os dados de localização podem ser partilhados"</string>
     <string name="app_location_permission_rationale_subtitle" msgid="6986985722752868692">"Esta app declarou que pode partilhar os seus dados de localização com terceiros"</string>
     <string name="data_sharing_updates_title" msgid="7996933386875213859">"Atualizações da partilha de dados para a localização"</string>
-    <string name="data_sharing_updates_summary" msgid="764113985772233889">"Reveja apps que mudaram a forma como podem partilhar os seus dados de localização"</string>
+    <string name="data_sharing_updates_summary" msgid="764113985772233889">"Reveja apps que mudaram a forma de partilhar os seus dados de localização"</string>
     <string name="data_sharing_updates_subtitle" msgid="6311537708950632329">"Estas apps mudaram a forma como podem partilhar os seus dados de localização. Podem não os ter partilhado antes ou podem partilhá-los agora para fins de publicidade ou marketing."</string>
     <string name="data_sharing_updates_footer_message" msgid="1582711655172892107">"Os programadores destas apps deram informações sobre as respetivas práticas de partilha de dados a uma loja de apps. Podem atualizá-las ao longo do tempo.\n\nAs práticas de partilha de dados podem variar consoante a versão da app, a utilização, a região e a idade."</string>
     <string name="learn_about_data_sharing" msgid="4200480587079488045">"Saiba mais sobre a partilha de dados"</string>
