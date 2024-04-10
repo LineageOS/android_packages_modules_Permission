@@ -357,7 +357,7 @@
     <string name="role_browser_description" msgid="3465253637499842671">"Aplicacions que et donen accés a Internet i que mostren els enllaços que toques"</string>
     <string name="role_browser_request_title" msgid="2895200507835937192">"Vols establir <xliff:g id="APP_NAME">%1$s</xliff:g> com a aplicació de navegador predeterminada?"</string>
     <string name="role_browser_request_description" msgid="5888803407905985941">"No calen permisos"</string>
-    <string name="role_dialer_label" msgid="1100224146343237968">"Aplicació Telèfon predeterminada"</string>
+    <string name="role_dialer_label" msgid="1100224146343237968">"Aplicació de telèfon predeterminada"</string>
     <string name="role_dialer_short_label" msgid="7186888549465352489">"Aplicació de telèfon"</string>
     <string name="role_dialer_description" msgid="8768708633696539612">"Aplicacions que et permeten fer i rebre trucades al dispositiu"</string>
     <string name="role_dialer_request_title" msgid="5959618560705912058">"Vols establir <xliff:g id="APP_NAME">%1$s</xliff:g> com a aplicació de telèfon predeterminada?"</string>
@@ -365,7 +365,7 @@
     <string name="role_dialer_search_keywords" msgid="3324448983559188087">"marcador"</string>
     <string name="role_sms_label" msgid="8456999857547686640">"Aplicació d\'SMS predeterminada"</string>
     <string name="role_sms_short_label" msgid="4371444488034692243">"Aplicació d\'SMS"</string>
-    <string name="role_sms_description" msgid="3424020199148153513">"Aplicacions que et permeten utilitzar el número de telèfon per enviar i rebre missatges curts de text, fotos, vídeos i més"</string>
+    <string name="role_sms_description" msgid="3424020199148153513">"Aplicacions que et permeten utilitzar el número de telèfon per enviar i rebre missatges de text, fotos, vídeos i més"</string>
     <string name="role_sms_request_title" msgid="7953552109601185602">"Vols establir <xliff:g id="APP_NAME">%1$s</xliff:g> com a aplicació d\'SMS predeterminada?"</string>
     <string name="role_sms_request_description" msgid="2691004766132144886">"Aquesta aplicació tindrà accés a la càmera, als contactes, als fitxers i contingut multimèdia, al micròfon, al telèfon i als SMS"</string>
     <string name="role_sms_search_keywords" msgid="8022048144395047352">"missatge de text, enviar missatges, missatges, missatgeria"</string>
@@ -465,7 +465,7 @@
     <string name="permgrouprequest_device_aware_storage_isolated" msgid="5934218468708513375">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi a les fotos i al contingut multimèdia del dispositiu &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi als contactes?"</string>
     <string name="permgrouprequest_device_aware_contacts" msgid="2270563860206654757">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi als contactes del dispositiu &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;?"</string>
-    <string name="permgrouprequest_location" msgid="6990232580121067883">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi a la ubicació del dispositiu?"</string>
+    <string name="permgrouprequest_location" msgid="6990232580121067883">"Vols permetre que la &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi a la ubicació del dispositiu?"</string>
     <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi a la ubicació del dispositiu &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"L\'aplicació només tindrà accés a la ubicació quan l\'estiguis utilitzant"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi a la ubicació del dispositiu?"</string>

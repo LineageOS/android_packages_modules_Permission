@@ -194,9 +194,9 @@
     <string name="precise_image_description" msgid="6349638632303619872">"सटीक जगह"</string>
     <string name="approximate_image_description" msgid="938803699637069884">"अनुमानित जगह"</string>
     <string name="app_permission_location_accuracy" msgid="7166912915040018669">"जगह की सटीक जानकारी का इस्तेमाल करें"</string>
-    <string name="app_permission_location_accuracy_subtitle" msgid="2654077606404987210">"जगह की सटीक जानकारी देने वाली सुविधा बंद होने पर, ऐप्लिकेशन आपकी अनुमानित जगह की जानकारी को ऐक्सेस कर सकते हैं"</string>
+    <string name="app_permission_location_accuracy_subtitle" msgid="2654077606404987210">"जगह की सटीक जानकारी देने वाली सुविधा बंद होने पर, ऐप्लिकेशन आपकी जगह की अनुमानित जानकारी को ऐक्सेस कर सकते हैं"</string>
     <string name="app_permission_title" msgid="2090897901051370711">"<xliff:g id="PERM">%1$s</xliff:g> की अनुमति"</string>
-    <string name="app_permission_header" msgid="2951363137032603806">"इस ऐप्लिकेशन के लिए, <xliff:g id="PERM">%1$s</xliff:g> ऐक्सेस करने की अनुमति चाहिए"</string>
+    <string name="app_permission_header" msgid="2951363137032603806">"इस ऐप्लिकेशन के लिए अनुमति: <xliff:g id="PERM">%1$s</xliff:g>"</string>
     <string name="app_permission_footer_app_permissions_link" msgid="4926890342636587393">"<xliff:g id="APP">%1$s</xliff:g> को मिली सभी अनुमतियां देखें"</string>
     <string name="app_permission_footer_permission_apps_link" msgid="3941988129992794327">"इस अनुमति वाले सभी ऐप्लिकेशन देखें"</string>
     <string name="assistant_mic_label" msgid="1011432357152323896">"असिस्टेंट माइक्रोफ़ोन के इस्तेमाल से जुड़ा डेटा दिखाएं"</string>
@@ -221,7 +221,7 @@
     <string name="auto_revoked_app_summary_two" msgid="1910545340763709389">"<xliff:g id="PERMISSION_NAME_0">%1$s</xliff:g> और <xliff:g id="PERMISSION_NAME_1">%2$s</xliff:g> की अनुमतियां हटाई गईं"</string>
     <string name="auto_revoked_app_summary_many" msgid="5930976230827378798">"<xliff:g id="PERMISSION_NAME">%1$s</xliff:g> और <xliff:g id="NUMBER">%2$s</xliff:g> अन्य अनुमतियां हटाई गईं"</string>
     <string name="unused_apps_page_title" msgid="6986983535677572559">"इस्तेमाल नहीं किए गए ऐप्लिकेशन"</string>
-    <string name="unused_apps_page_summary" msgid="1867593913217272155">"अगर कुछ महीनों तक किसी ऐप्लिकेशन का इस्तेमाल नहीं किया जाता, तो:\n\n• आपके डेटा की सुरक्षा के लिए, उस ऐप्लिकेशन को दी गई अनुमतियां हटा दी जाती हैं\n• बैटरी बचाने के लिए, सूचनाएं बंद कर दी जाती हैं\n• स्टोरेज खाली करने के लिए, डिवाइस पर कुछ समय तक रहने वाली फ़ाइलें हटा दी जाती हैं\n\nदोबारा अनुमतियां देने और सूचनाएं फिर से पाने के लिए, ऐप्लिकेशन खोलें."</string>
+    <string name="unused_apps_page_summary" msgid="1867593913217272155">"अगर किसी ऐप्लिकेशन को कुछ महीनों तक इस्तेमाल नहीं किया जाता, तो:\n\n• आपके डेटा की सुरक्षा के लिए, उस ऐप्लिकेशन को दी गई अनुमतियां हटा दी जाती हैं\n• बैटरी बचाने के लिए, सूचनाएं बंद कर दी जाती हैं\n• स्टोरेज खाली करने के लिए, डिवाइस पर कुछ समय तक रहने वाली फ़ाइलें हटा दी जाती हैं\n\nदोबारा अनुमतियां देने और सूचनाएं फिर से पाने के लिए, ऐप्लिकेशन खोलें."</string>
     <string name="unused_apps_page_tv_summary" msgid="2624911608663778308">"अगर एक महीने से किसी ऐप्लिकेशन को इस्तेमाल न किया गया हो, तो:\n\n• आपके डेटा को सुरक्षित रखने के लिए, उस ऐप्लिकेशन को दी गई अनुमतियां हटा दी जाती हैं\n• मेमोरी खाली करने के लिए, डिवाइस पर कुछ समय के लिए सेव की गई फ़ाइलें हटा दी जाती हैं\n\nअनुमतियां फिर से देने के लिए, ऐप्लिकेशन खोलें."</string>
     <string name="last_opened_category_title" msgid="8796557894614236128">"{count,plural, =1{पिछली बार इसे # महीने से भी पहले खोला गया था}one{पिछली बार इसे # महीने से भी पहले खोला गया था}other{पिछली बार इसे # महीने से भी पहले खोला गया था}}"</string>
     <string name="last_opened_summary" msgid="5248984030024968808">"ऐप्लिकेशन पिछली बार <xliff:g id="DATE">%s</xliff:g> को खोला गया था"</string>
@@ -359,13 +359,13 @@
     <string name="role_browser_request_description" msgid="5888803407905985941">"अनुमति की ज़रूरत नहीं है"</string>
     <string name="role_dialer_label" msgid="1100224146343237968">"डिफ़ॉल्ट फ़ोन ऐप्लिकेशन"</string>
     <string name="role_dialer_short_label" msgid="7186888549465352489">"फ़ोन ऐप्लिकेशन"</string>
-    <string name="role_dialer_description" msgid="8768708633696539612">"ऐसे ऐप्लिकेशन जिनकी मदद से, अपने डिवाइस से टेलीफ़ोन कॉल किए जा सकते हैं और इनकमिंग कॉल का जवाब दिया जा सकता है"</string>
+    <string name="role_dialer_description" msgid="8768708633696539612">"ऐसे ऐप्लिकेशन जिनके ज़रिए, अपने डिवाइस से फ़ोन कॉल किए जा सकते हैं और इनकमिंग कॉल का जवाब दिया जा सकता है"</string>
     <string name="role_dialer_request_title" msgid="5959618560705912058">"<xliff:g id="APP_NAME">%1$s</xliff:g> को आपके डिफ़ॉल्ट फ़ोन ऐप्लिकेशन के तौर पर सेट करें?"</string>
     <string name="role_dialer_request_description" msgid="6288839625724909320">"इस ऐप्लिकेशन को आपके कैमरे, संपर्कों, माइक्रोफ़ोन, फ़ोन, और मैसेज (एसएमएस) का ऐक्सेस मिलेगा"</string>
     <string name="role_dialer_search_keywords" msgid="3324448983559188087">"डायलर"</string>
     <string name="role_sms_label" msgid="8456999857547686640">"मैसेज का डिफ़ॉल्ट ऐप्लिकेशन"</string>
     <string name="role_sms_short_label" msgid="4371444488034692243">"एसएमएस ऐप्लिकेशन"</string>
-    <string name="role_sms_description" msgid="3424020199148153513">"ऐसे ऐप्लिकेशन जिनकी मदद से अपने फ़ोन नंबर का इस्तेमाल मैसेज, फ़ोटो, वीडियो के साथ ही दूसरी चीज़ें भेजने और पाने के लिए किया जा सकता है"</string>
+    <string name="role_sms_description" msgid="3424020199148153513">"ऐसे ऐप्लिकेशन जिनकी मदद से अपने फ़ोन नंबर का इस्तेमाल मैसेज, फ़ोटो, वीडियो वगैरह भेजने और पाने के लिए किया जा सकता है"</string>
     <string name="role_sms_request_title" msgid="7953552109601185602">"<xliff:g id="APP_NAME">%1$s</xliff:g> को अपने डिफ़ॉल्ट मैसेज ऐप्लिकेशन के तौर पर सेट करें?"</string>
     <string name="role_sms_request_description" msgid="2691004766132144886">"इस ऐप्लिकेशन को आपके कैमरे, संपर्कों, फ़ाइलों और मीडिया, माइक्रोफ़ोन, फ़ोन, और मैसेज (एसएमएस) का ऐक्सेस मिलेगा"</string>
     <string name="role_sms_search_keywords" msgid="8022048144395047352">"मैसेज, मैसेज भेजना, मैसेज करना, मैसेज भेजना या पाना."</string>
@@ -377,7 +377,7 @@
     <string name="role_emergency_search_keywords" msgid="1920007722599213358">"आपात स्थिति में"</string>
     <string name="role_home_label" msgid="3871847846649769412">"डिफ़ॉल्ट होम ऐप्लिकेशन"</string>
     <string name="role_home_short_label" msgid="8544733747952272337">"होम ऐप्लिकेशन"</string>
-    <string name="role_home_description" msgid="7997371519626556675">"ऐप्लिकेशन जिन्हें अक्सर लॉन्चर कहा जाता है, वे आपके Android डिवाइस पर होम स्क्रीन की जगह ले लेते हैं और आपको डिवाइस के कॉन्टेंट और सुविधाओं का ऐक्सेस देते हैं"</string>
+    <string name="role_home_description" msgid="7997371519626556675">"ऐसे ऐप्लिकेशन जो आपके Android डिवाइस पर होम स्क्रीन की जगह ले लेते हैं और आपको डिवाइस के कॉन्टेंट और सुविधाओं का ऐक्सेस देते हैं. इन्हें अक्सर लॉन्चर कहा जाता है."</string>
     <string name="role_home_request_title" msgid="738136983453341081">"<xliff:g id="APP_NAME">%1$s</xliff:g> को अपने डिफ़ॉल्ट होम ऐप्लिकेशन के तौर पर सेट करना चाहते हैं?"</string>
     <string name="role_home_request_description" msgid="2658833966716057673">"अनुमति की ज़रूरत नहीं है"</string>
     <string name="role_home_search_keywords" msgid="3830755001192666285">"लॉन्चर"</string>
@@ -642,7 +642,7 @@
     <string name="app_location_permission_rationale_title" msgid="925420340572401350">"जगह की जानकारी का डेटा शेयर किया जा सकता है"</string>
     <string name="app_location_permission_rationale_subtitle" msgid="6986985722752868692">"इस ऐप्लिकेशन में बताया गया है कि यह तीसरे पक्ष के साथ जगह की जानकारी का डेटा शेयर कर सकता है"</string>
     <string name="data_sharing_updates_title" msgid="7996933386875213859">"जगह की जानकारी का डेटा शेयर करने के तरीके के बारे में अपडेट"</string>
-    <string name="data_sharing_updates_summary" msgid="764113985772233889">"ऐसे ऐप्लिकेशन देखें जिन्होंने शायद आपकी जगह की जानकारी के डेटा को शेयर करने का तरीका बदल दिया है"</string>
+    <string name="data_sharing_updates_summary" msgid="764113985772233889">"उन ऐप्लिकेशन को देखें जिन्होंने आपकी जगह की जानकारी का डेटा शेयर करने का तरीका बदल दिया है"</string>
     <string name="data_sharing_updates_subtitle" msgid="6311537708950632329">"इन ऐप्लिकेशन ने आपकी जगह की जानकारी के डेटा को शेयर करने का तरीका बदल दिया है. ऐसा हो सकता है कि ये ऐप्लिकेशन पहले जगह की जानकारी का डेटा शेयर न करते हों या फिर अब विज्ञापन या मार्केटिंग के लिए यह डेटा शेयर किया हो."</string>
     <string name="data_sharing_updates_footer_message" msgid="1582711655172892107">"इन ऐप्लिकेशन के डेवलपर ने किसी ऐप स्टोर पर डेटा शेयर करने के उनके तरीकों की जानकारी बताई है. वे समय-समय पर इस जानकारी को अपडेट कर सकते हैं.\n\nडेटा शेयर करने के तरीके अलग-अलग हो सकते हैं. ये आपकी जगह, उम्र, ऐप्लिकेशन के वर्शन, और उसके इस्तेमाल के हिसाब से तय किए जाते हैं."</string>
     <string name="learn_about_data_sharing" msgid="4200480587079488045">"डेटा शेयर करने की नीतियों के बारे में जानें"</string>

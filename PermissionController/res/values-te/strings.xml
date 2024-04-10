@@ -354,7 +354,7 @@
     <string name="role_assistant_description" msgid="6622458130459922952">"సహాయక యాప్‌లు మీరు వీక్షిస్తున్న స్క్రీన్‌పై ఉన్న సమాచారం ఆధారంగా మీకు సహాయపడగలవు. కొన్ని యాప్‌లు మీకు సమగ్రమైన సహాయాన్ని అందించడానికి లాంచర్‌కు, వాయిస్ ఇన్‌పుట్ సర్వీసులకు రెండింటికీ సపోర్ట్‌ చేస్తాయి."</string>
     <string name="role_browser_label" msgid="2877796144554070207">"ఆటోమేటిక్ బ్రౌజర్ యాప్"</string>
     <string name="role_browser_short_label" msgid="6745009127123292296">"బ్రౌజర్ యాప్"</string>
-    <string name="role_browser_description" msgid="3465253637499842671">"మీకు ఇంటర్నెట్ యాక్సెస్‌ను అందించే, అలాగే మీరు నొక్కే లింక్‌లను చూపించే యాప్‌లు"</string>
+    <string name="role_browser_description" msgid="3465253637499842671">"మీకు ఇంటర్నెట్‌కు యాక్సెస్‌ ఇచ్చి, ట్యాప్ చేయడానికి లింక్‌ల‌ను డిస్‌ప్లే చేసే యాప్‌లు"</string>
     <string name="role_browser_request_title" msgid="2895200507835937192">"<xliff:g id="APP_NAME">%1$s</xliff:g>ను మీ ఆటోమేటిక్ బ్రౌజర్ యాప్‌గా సెట్ చేయాలా?"</string>
     <string name="role_browser_request_description" msgid="5888803407905985941">"అనుమతులు ఇవ్వనవసరం లేదు"</string>
     <string name="role_dialer_label" msgid="1100224146343237968">"ఆటోమేటిక్ ఫోన్ యాప్"</string>
@@ -403,7 +403,7 @@
     <string name="role_notes_short_label" msgid="8796604147546125285">"నోట్స్ యాప్"</string>
     <string name="role_notes_description" msgid="8496852798616883551">"మీ పరికరంలో నోట్స్ తీసుకోవడానికి మిమ్మల్ని అనుమతించే యాప్‌లు"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"నోట్స్"</string>
-    <string name="role_wallet_label" msgid="3719419175656204207">"డిఫాల్ట్ వాలెట్ యాప్"</string>
+    <string name="role_wallet_label" msgid="3719419175656204207">"ఆటోమేటిక్ వాలెట్ యాప్"</string>
     <string name="role_wallet_short_label" msgid="6521288403762457452">"వాలెట్ యాప్"</string>
     <string name="role_wallet_description" msgid="3726535836165949838">"వాలెట్ యాప్‌లు మీ క్రెడిట్‌ను, లాయల్టీ కార్డ్‌లను, కార్ కీలను, ఇంకా వివిధ రకాల లావాదేవీలకు సహాయపడటానికి ఇతర వస్తువులను స్టోర్ చేయగలవు."</string>
     <string name="role_wallet_request_title" msgid="4770217108262737093">"<xliff:g id="APP_NAME">%1$s</xliff:g>‌ను డిఫాల్ట్ వాలెట్ యాప్‌గా సెట్ చేయాలా?"</string>
