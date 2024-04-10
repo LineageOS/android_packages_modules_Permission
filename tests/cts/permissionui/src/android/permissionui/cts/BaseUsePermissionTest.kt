@@ -632,7 +632,7 @@ abstract class BaseUsePermissionTest : BasePermissionTest() {
     protected inline fun requestAppPermissions(
         vararg permissions: String?,
         askTwice: Boolean = false,
-        waitForWindowTransition: Boolean = true,
+        waitForWindowTransition: Boolean = !isWatch,
         crossinline block: () -> Unit
     ): Instrumentation.ActivityResult {
         // Request the permissions
