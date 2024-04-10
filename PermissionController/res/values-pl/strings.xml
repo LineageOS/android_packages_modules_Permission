@@ -405,7 +405,7 @@
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"notatki"</string>
     <string name="role_wallet_label" msgid="3719419175656204207">"Domyślna aplikacja portfela"</string>
     <string name="role_wallet_short_label" msgid="6521288403762457452">"Aplikacja portfela cyfrowego"</string>
-    <string name="role_wallet_description" msgid="3726535836165949838">"Aby ułatwić sobie wykonywanie różny form transakcji, w aplikacjach portfeli cyfrowych można przechowywać karty kredytowe i lojalnościowe, kluczyki do samochodu i inne rzeczy."</string>
+    <string name="role_wallet_description" msgid="3726535836165949838">"Aby ułatwić sobie wykonywanie różny form transakcji, w aplikacjach portfeli cyfrowych można przechowywać karty kredytowe i lojalnościowe, kluczyki do samochodu i inne rzeczy."</string>
     <string name="role_wallet_request_title" msgid="4770217108262737093">"Ustawić aplikację <xliff:g id="APP_NAME">%1$s</xliff:g> jako domyślną aplikację portfela cyfrowego?"</string>
     <string name="role_wallet_request_description" msgid="6305487425777483053">"Nie potrzebuje uprawnień"</string>
     <string name="request_role_current_default" msgid="738722892438247184">"Bieżąca aplikacja domyślna"</string>

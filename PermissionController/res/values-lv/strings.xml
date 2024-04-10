@@ -619,7 +619,7 @@
     <string name="show_clip_access_notification_title" msgid="5168467637351109096">"Rādīt paziņojumus par piekļuvi starpliktuvei"</string>
     <string name="show_clip_access_notification_summary" msgid="3532020182782112687">"Rādīt ziņojumu, kad lietotnes piekļūst jūsu nokopētajam tekstam, attēliem vai citam saturam"</string>
     <string name="show_password_title" msgid="2877269286984684659">"Rādīt paroles"</string>
-    <string name="show_password_summary" msgid="1110166488865981610">"Rakstot tiek īslaicīgi rādītas rakstzīmes"</string>
+    <string name="show_password_summary" msgid="1110166488865981610">"Rakstot īslaicīgi rādīt rakstzīmes"</string>
     <string name="permission_rationale_message_location" msgid="2153841534298068414">"Lietotne norādīja, ka tā var kopīgot atrašanās vietas datus ar trešajām pusēm."</string>
     <string name="permission_rationale_location_title" msgid="2404797182678793506">"Datu kopīgošana un atrašanās vieta"</string>
     <string name="permission_rationale_data_sharing_source_title" msgid="6874604543125814316">"Datu kopīgošanas informācijas avots"</string>

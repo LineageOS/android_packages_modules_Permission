@@ -351,7 +351,7 @@
     <string name="accessibility_service_dialog_bottom_text_multiple" msgid="7009848932395519852">"Aceste aplicații pot vedea ecranul, acțiunile și textul introdus, să facă acțiuni și să controleze afișajul."</string>
     <string name="role_assistant_label" msgid="4727586018198208128">"Aplicația asistent digital prestabilită"</string>
     <string name="role_assistant_short_label" msgid="3369003713187703399">"Aplicația asistent digital"</string>
-    <string name="role_assistant_description" msgid="6622458130459922952">"Aplicațiile asistent te  pot ajuta pe baza informațiilor din ecranul afișat. Pentru a-ți oferi o asistență integrată, unele aplicații acceptă atât serviciile cu lansatoare, cât și pe cele de intrare vocală."</string>
+    <string name="role_assistant_description" msgid="6622458130459922952">"Aplicațiile asistent te pot ajuta pe baza informațiilor din ecranul afișat. Pentru a-ți oferi o asistență integrată, unele aplicații acceptă atât serviciile cu lansatoare, cât și pe cele de intrare vocală."</string>
     <string name="role_browser_label" msgid="2877796144554070207">"Aplicația browser prestabilită"</string>
     <string name="role_browser_short_label" msgid="6745009127123292296">"Aplicația browser"</string>
     <string name="role_browser_description" msgid="3465253637499842671">"Aplicații care îți oferă acces la internet și afișează linkurile pe care le atingi"</string>

@@ -529,8 +529,8 @@
     <string name="permgroupbackgroundrequestdetail_sensors" msgid="7726767635834043501">"Bu ilovaga tanadagi sensor maʼlumotlaridan foydalanishga (hatto ilova yopiqligida ham) doimiy ruxsat berish uchun "<annotation id="link">"sozlamalarni oching."</annotation></string>
     <string name="permgroupupgraderequest_sensors" msgid="7576527638411370468">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ilovasining tanadagi sensor maʼlumotlaridan foydalanishiga ruxsat berilsinmi?"</string>
     <string name="permgroupupgraderequest_device_aware_sensors" msgid="3310667992344623159">"&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;da &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ilovasi tanadagi sensor maʼlumotlaridan foydalanishiga ruxsat berilaversinmi?"</string>
-    <string name="permgrouprequest_notifications" msgid="6396739062335106181">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ilovasiga sizga bildirishnomalar yuborishi uchun ruxsat berilsinmi?"</string>
-    <string name="permgrouprequest_device_aware_notifications" msgid="7307588961166360244">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ilovasiga &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;da sizga bildirishnomalar yuborishi uchun ruxsat berilsinmi?"</string>
+    <string name="permgrouprequest_notifications" msgid="6396739062335106181">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; sizga bildirishnomalar yuborishi uchun ruxsat berilsinmi?"</string>
+    <string name="permgrouprequest_device_aware_notifications" msgid="7307588961166360244">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; qurilmasida sizga bildirishnomalar yuborishi uchun ruxsat berilsinmi?"</string>
     <string name="auto_granted_permissions" msgid="6009452264824455892">"Boshqariluvchi ruxsatlar"</string>
     <string name="auto_granted_location_permission_notification_title" msgid="7570818224669050377">"<xliff:g id="APP_NAME">%1$s</xliff:g> joylashuvga kira oladi"</string>
     <string name="auto_granted_permission_notification_body" msgid="5040234389205471318">"Tashkilotingiz <xliff:g id="APP_NAME">%1$s</xliff:g> ilovasiga joylashuvingizga kirishga ruxsat bergan"</string>
@@ -550,7 +550,7 @@
     <string name="exempt_info_label" msgid="6286190981253476699">"<xliff:g id="APP_NAME">%1$s</xliff:g> Android tomonidan himoyalangan. Maʼlumotlaringiz qurilmada qayta ishlanishi sababli ilovaning ruxsatlardan foydalanish statistikasi maxfiylik boshqaruv panelida chiqmaydi."</string>
     <string name="blocked_camera_title" msgid="1128510551791284384">"Qurilma kamerasi bloklandi"</string>
     <string name="blocked_microphone_title" msgid="1631517143648232585">"Qurilma mikrofoni bloklandi"</string>
-    <string name="blocked_location_title" msgid="2005608279812892383">"Qurilmada joylashuv axboroti yoqilmagan"</string>
+    <string name="blocked_location_title" msgid="2005608279812892383">"Qurilmada joylashuvni aniqlash oʻchiq"</string>
     <string name="blocked_sensor_summary" msgid="4443707628305027375">"Ilovalar va xizmatlar uchun"</string>
     <string name="blocked_mic_summary" msgid="8960466941528458347">"Favqulodda xizmat raqamiga telefon qilganingizda mikrofon maʼlumotlari hamon ulashilishi mumkin."</string>
     <string name="blocked_sensor_button_label" msgid="6742092634984289658">"Oʻzgartirish"</string>

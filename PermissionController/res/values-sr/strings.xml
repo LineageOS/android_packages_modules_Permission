@@ -375,7 +375,7 @@
     <string name="role_emergency_request_title" msgid="8469579020654348567">"Желите ли да подесите <xliff:g id="APP_NAME">%1$s</xliff:g> као подразумевану апликацију за хитне случајеве?"</string>
     <string name="role_emergency_request_description" msgid="131645948770262850">"Није потребна ниједна дозвола"</string>
     <string name="role_emergency_search_keywords" msgid="1920007722599213358">"у хитном случају"</string>
-    <string name="role_home_label" msgid="3871847846649769412">"Подраз. апл. почетне странице"</string>
+    <string name="role_home_label" msgid="3871847846649769412">"Подразумевана апл. почетне странице"</string>
     <string name="role_home_short_label" msgid="8544733747952272337">"Апликација почетне странице"</string>
     <string name="role_home_description" msgid="7997371519626556675">"Апликације које се често зову покретачи и замењују почетне екране на Android уређају и пружају приступ садржају и функцијама на уређају"</string>
     <string name="role_home_request_title" msgid="738136983453341081">"Желите ли да подесите <xliff:g id="APP_NAME">%1$s</xliff:g> као подразумевану апликацију почетне странице?"</string>
@@ -387,7 +387,7 @@
     <string name="role_call_redirection_request_title" msgid="2816244455003562925">"Желите ли да подесите <xliff:g id="APP_NAME">%1$s</xliff:g> као подразумевану апликацију за преусмеравање позива?"</string>
     <string name="role_call_redirection_request_description" msgid="3118895714178527164">"Није потребна ниједна дозвола"</string>
     <string name="role_call_screening_label" msgid="883935222060878724">"Апликација за ИД позиваоца и непожељне поруке"</string>
-    <string name="role_call_screening_short_label" msgid="2048465565063130834">"Апл. за ИД поз. и непож. поз."</string>
+    <string name="role_call_screening_short_label" msgid="2048465565063130834">"ИД позиваоца и непожељни позиви"</string>
     <string name="role_call_screening_description" msgid="2349431420497468981">"Апликације које вам омогућавају да идентификујете позиве, блокирате непожељне и аутоматизоване позиве и нежељене бројеве"</string>
     <string name="role_call_screening_request_title" msgid="7358309224566977290">"Желите ли да подесите <xliff:g id="APP_NAME">%1$s</xliff:g> као подразумевану апликацију за ИД позиваоца и непожељне поруке?"</string>
     <string name="role_call_screening_request_description" msgid="7338511921032446006">"Није потребна ниједна дозвола"</string>
@@ -443,7 +443,7 @@
     <string name="no_special_app_access" msgid="6950277571805106247">"Нема посебног приступа апл."</string>
     <string name="special_app_access_no_apps" msgid="4102911722787886970">"Нема апликација"</string>
     <string name="home_missing_work_profile_support" msgid="1756855847669387977">"Не подржава пословни профил"</string>
-    <string name="encryption_unaware_confirmation_message" msgid="8274491794636402484">"Напомена: Ако рестартујете уређај и подесили сте закључавање екрана, ова апликација не може да се покрене док не откључате уређај."</string>
+    <string name="encryption_unaware_confirmation_message" msgid="8274491794636402484">"Напомена: Ако рестартујете уређај и подесили сте откључавање екрана, ова апликација не може да се покрене док не откључате уређај."</string>
     <string name="assistant_confirmation_message" msgid="7476540402884416212">"Помоћник ће моћи да чита информације о апликацијама које се користе у систему, укључујући информације видљиве на екрану или којима може да се приступа у оквиру апликација."</string>
     <string name="incident_report_channel_name" msgid="3144954065936288440">"Дељење података о отклањању грешака"</string>
     <string name="incident_report_notification_title" msgid="4635984625656519773">"Делите детаљне податке за отклањање грешака?"</string>
