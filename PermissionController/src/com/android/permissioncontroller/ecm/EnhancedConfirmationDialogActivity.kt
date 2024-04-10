@@ -34,7 +34,6 @@ import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
-import androidx.annotation.ChecksSdkIntAtLeast
 import androidx.annotation.Keep
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.DialogFragment
@@ -49,6 +48,7 @@ import com.android.permissioncontroller.permission.utils.Utils
 import com.android.role.controller.model.Roles
 
 @Keep
+@RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
 class EnhancedConfirmationDialogActivity : FragmentActivity() {
     companion object {
         private const val KEY_WAS_CLEAR_RESTRICTION_ALLOWED = "KEY_WAS_CLEAR_RESTRICTION_ALLOWED"
@@ -57,7 +57,6 @@ class EnhancedConfirmationDialogActivity : FragmentActivity() {
     private var wasClearRestrictionAllowed: Boolean = false
     private var dialogResult: DialogResult = DialogResult.Cancelled
 
-    @ChecksSdkIntAtLeast(api = Build.VERSION_CODES.VANILLA_ICE_CREAM, codename = "VanillaIceCream")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (!SdkLevel.isAtLeastV() || !Flags.enhancedConfirmationModeApisEnabled()) {
