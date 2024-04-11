@@ -354,10 +354,10 @@
     <string name="role_assistant_description" msgid="6622458130459922952">"ଆପଣ ଦେଖୁଥିବା ସ୍କ୍ରିନ୍‌ ସୂଚନାକୁ ଆଧାର କରି ସହାୟକ ଆପ୍‌ ଆପଣଙ୍କୁ ସାହାଯ୍ୟ କରିପାରିବ। କେତେକ ଆପ୍‌, ଆପଣଙ୍କୁ ଉତ୍ତମ ସହାୟତା ଦେବା ପାଇଁ, ଉଭୟ ଲଞ୍ଚର୍ ଓ ଭଏସ୍‍ ଇନପୁଟ୍‍ ସେବାକୁ ସମର୍ଥନ କରେ।"</string>
     <string name="role_browser_label" msgid="2877796144554070207">"ଡିଫଲ୍ଟ ବ୍ରାଉଜର୍‌ ଆପ୍‌"</string>
     <string name="role_browser_short_label" msgid="6745009127123292296">"ବ୍ରାଉଜର୍‌ ଆପ୍‌"</string>
-    <string name="role_browser_description" msgid="3465253637499842671">"ଆପ୍ସ ଯାହା ଆପଣଙ୍କୁ ଇଣ୍ଟର୍ନେଟ୍ ପାଇଁ ଆକ୍ସେସ୍ ଦିଏ ଏବଂ ଆପଣ ଟାପ୍ କରିଥିବା ଲିଙ୍କ୍‌ଗୁଡ଼ିକ ପ୍ରଦର୍ଶନ କରେ"</string>
+    <string name="role_browser_description" msgid="3465253637499842671">"ଆପ୍ସ ଯାହା ଆପଣଙ୍କୁ ଇଣ୍ଟର୍ନେଟ ପାଇଁ ଆକ୍ସେସ ଦିଏ ଏବଂ ଆପଣ ଟାପ କରୁଥିବା ଲିଙ୍କଗୁଡ଼ିକୁ ଡିସପ୍ଲେ କରେ"</string>
     <string name="role_browser_request_title" msgid="2895200507835937192">"<xliff:g id="APP_NAME">%1$s</xliff:g>କୁ ଆପଣଙ୍କ ଡିଫଲ୍ଟ ବ୍ରାଉଜର୍ ଭାବେ ସେଟ୍ କରିବେ କି?"</string>
     <string name="role_browser_request_description" msgid="5888803407905985941">"କୌଣସି ଅନୁମତି ଆବଶ୍ୟକ ନାହିଁ"</string>
-    <string name="role_dialer_label" msgid="1100224146343237968">"ଡିଫଲ୍ଟ ଫୋନ୍‌ ଆପ୍‌"</string>
+    <string name="role_dialer_label" msgid="1100224146343237968">"ଡିଫଲ୍ଟ ଫୋନ ଆପ"</string>
     <string name="role_dialer_short_label" msgid="7186888549465352489">"ଫୋନ୍ ଆପ୍"</string>
     <string name="role_dialer_description" msgid="8768708633696539612">"ଆପ୍ସ, ଯାହା ଆପଣଙ୍କୁ ଆପଣଙ୍କର ଡିଭାଇସ୍‌ରେ ଟେଲିଫୋନ୍ କଲ୍ କରିବାକୁ ଏବଂ ଗ୍ରହଣ କରିବାକୁ ଅନୁମତି ଦିଏ"</string>
     <string name="role_dialer_request_title" msgid="5959618560705912058">"<xliff:g id="APP_NAME">%1$s</xliff:g>କୁ ଆପଣଙ୍କ ଡିଫଲ୍ଟ ଫୋନ୍ ଆପ୍ ଭାବରେ ସେଟ୍ କରିବେ କି?"</string>
@@ -386,7 +386,7 @@
     <string name="role_call_redirection_description" msgid="6091669882014664420">"ସେହି ଆପ୍ସ ଯାହା ଆଉଟ୍‌ଗୋଇଂ କଲ୍‍ଗୁଡ଼ିକୁ ଅନ୍ୟ ଏକ ଫୋନ୍ ନମ୍ବରକୁ ଫର୍‍ୱାର୍ଡ କରିବାକୁ ଆପଣଙ୍କୁ ଅନୁମତି ଦିଏ"</string>
     <string name="role_call_redirection_request_title" msgid="2816244455003562925">"<xliff:g id="APP_NAME">%1$s</xliff:g>କୁ ଆପଣଙ୍କ ଡିଫଲ୍ଟ କଲ୍ ପୁନଃନିର୍ଦ୍ଦେଶନା ଆପ୍ ଭାବରେ ସେଟ୍ କରିବେ କି?"</string>
     <string name="role_call_redirection_request_description" msgid="3118895714178527164">"କୌଣସି ଅନୁମତି ଆବଶ୍ୟକ ନାହିଁ"</string>
-    <string name="role_call_screening_label" msgid="883935222060878724">"ଡିଫଲ୍ଟ କଲର୍ ID &amp; ସ୍ପାମ୍ ଆପ୍"</string>
+    <string name="role_call_screening_label" msgid="883935222060878724">"ଡିଫଲ୍ଟ କଲର ID ଏବଂ ସ୍ପାମ ଆପ"</string>
     <string name="role_call_screening_short_label" msgid="2048465565063130834">"କଲର୍ ID &amp; ସ୍ପାମ୍ ଆପ୍"</string>
     <string name="role_call_screening_description" msgid="2349431420497468981">"ସେହି ଆପ୍ସ ଯାହା କଲଗୁଡ଼ିକୁ ଚିହ୍ନଟ କରିବା, ସ୍ପାମ୍ ଓ ରୋବୋକଲ୍ ବା ଅଦରକାରୀ ନମ୍ବରଗୁଡ଼ିକୁ ବ୍ଲକ୍ କରିବାକୁ ଅନୁମତି ଦିଏ"</string>
     <string name="role_call_screening_request_title" msgid="7358309224566977290">"<xliff:g id="APP_NAME">%1$s</xliff:g>କୁ ଆପଣଙ୍କର ଡିଫଲ୍ଟ କଲର୍ ଆଇଡି &amp; ସ୍ପାମ୍ ଆପ୍ ଭାବ୍ ସେଟ୍ କରିବେ କି?"</string>

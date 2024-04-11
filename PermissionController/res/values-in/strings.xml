@@ -72,7 +72,7 @@
     <string name="denied_permission_decision" msgid="5308961501779563781">"Anda menolak akses <xliff:g id="APP_NAME">%1$s</xliff:g> ke <xliff:g id="PERMISSION_NAME">%2$s</xliff:g>"</string>
     <string name="days_ago" msgid="6650359081551335629">"{count,plural, =0{Hari ini}=1{1 hari lalu}other{# hari lalu}}"</string>
     <string name="app_disable_dlg_positive" msgid="7418444149981904940">"Nonaktifkan aplikasi"</string>
-    <string name="app_disable_dlg_text" msgid="3126943217146120240">"Jika Anda menonaktifkan aplikasi ini, Android dan aplikasi lain mungkin tidak berfungsi lagi sesuai harapan. Perlu diingat, Anda tidak dapat menghapus aplikasi yang disertakan oleh pabrikan di perangkat Anda. Namun, Anda dapat menonaktifkannya, yang berarti mematikan dan menyembunyikan aplikasi tersebut di perangkat Anda."</string>
+    <string name="app_disable_dlg_text" msgid="3126943217146120240">"Jika aplikasi ini dinonaktifkan, Android dan aplikasi lain mungkin tidak berfungsi normal. Perlu diingat, Anda tidak dapat menghapus aplikasi ini karena merupakan bawaan perangkat. Namun, Anda dapat menonaktifkannya, yang berarti mematikan dan menyembunyikannya di perangkat."</string>
     <string name="app_permission_manager" msgid="3903811137630909550">"Pengelola izin"</string>
     <string name="never_ask_again" msgid="4728762438198560329">"Jangan tanya lagi"</string>
     <string name="no_permissions" msgid="3881676756371148563">"Tidak ada izin"</string>
@@ -129,7 +129,7 @@
     <string name="permission_usage_title" msgid="1568233336351734538">"Dasbor privasi"</string>
     <string name="auto_permission_usage_summary" msgid="7335667266743337075">"Lihat aplikasi yang baru saja menggunakan izin"</string>
     <string name="permission_group_usage_title" msgid="2595013198075285173">"Penggunaan <xliff:g id="PERMGROUP">%1$s</xliff:g>"</string>
-    <string name="perm_usage_adv_info_title" msgid="3357831829538873708">"Lihat izin lainnya"</string>
+    <string name="perm_usage_adv_info_title" msgid="3357831829538873708">"Lihat izin lain"</string>
     <string name="perm_usage_adv_info_summary_2_items" msgid="3702175198750127822">"<xliff:g id="PERMGROUP_0">%1$s</xliff:g>, <xliff:g id="PERMGROUP_1">%2$s</xliff:g>"</string>
     <string name="perm_usage_adv_info_summary_more_items" msgid="949055326299562218">"<xliff:g id="PERMGROUP_0">%1$s</xliff:g>, <xliff:g id="PERMGROUP_1">%2$s</xliff:g>, dan <xliff:g id="NUM">%3$s</xliff:g> lainnya"</string>
     <string name="permission_group_usage_subtitle_24h" msgid="5120155996322114181">"Linimasa penggunaan <xliff:g id="PERMGROUP">%1$s</xliff:g> Anda oleh aplikasi dalam 24 jam terakhir"</string>
@@ -359,7 +359,7 @@
     <string name="role_browser_request_description" msgid="5888803407905985941">"Tidak ada izin yang diperlukan"</string>
     <string name="role_dialer_label" msgid="1100224146343237968">"Aplikasi telepon default"</string>
     <string name="role_dialer_short_label" msgid="7186888549465352489">"Aplikasi telepon"</string>
-    <string name="role_dialer_description" msgid="8768708633696539612">"Aplikasi yang memungkinkan Anda melakukan dan menerima panggilan telepon di perangkat"</string>
+    <string name="role_dialer_description" msgid="8768708633696539612">"Aplikasi yang memungkinkan Anda memulai dan menerima panggilan telepon di perangkat"</string>
     <string name="role_dialer_request_title" msgid="5959618560705912058">"Tetapkan <xliff:g id="APP_NAME">%1$s</xliff:g> sebagai aplikasi telepon default Anda?"</string>
     <string name="role_dialer_request_description" msgid="6288839625724909320">"Aplikasi ini akan diberi akses ke Kamera, Kontak, Mikrofon, Telepon, dan SMS Anda"</string>
     <string name="role_dialer_search_keywords" msgid="3324448983559188087">"telepon"</string>
