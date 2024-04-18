@@ -143,6 +143,7 @@ android_library {
         "safety-center-pending-intents",
         "SettingsLibUtils",
         "modules-utils-build_system",
+        "modules-utils-expresslog",
         "safety-center-resources-lib",
         "lottie",
         "safety-label",
