@@ -19,7 +19,6 @@ package com.android.permissioncontroller.permission.ui
 import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
-import com.android.modules.expresslog.Counter
 import com.android.permissioncontroller.R
 
 /**
@@ -30,8 +29,6 @@ class PermissionDialogStreamingBlockedActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        Counter.logIncrement("virtual_devices.value_permission_request_blocked")
 
         AlertDialog.Builder(this)
             .setTitle(R.string.permission_grant_dialog_streaming_blocked_title)
