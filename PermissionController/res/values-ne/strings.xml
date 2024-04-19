@@ -191,7 +191,7 @@
     <string name="app_permission_button_allow_always" msgid="4573292371734011171">"सधैँ अनुमति दिनुहोस्"</string>
     <string name="app_permission_button_allow_foreground" msgid="1991570451498943207">"यो एप प्रयोग गरिरहेका बेला मात्र अनुमति दिनुहोस्"</string>
     <string name="app_permission_button_always_allow_all" msgid="4905699259378428855">"सधैँ सबै अनुमति दिनुहोस्"</string>
-    <string name="app_permission_button_ask" msgid="3342950658789427">"प्रत्येक पटक सोधियोस्"</string>
+    <string name="app_permission_button_ask" msgid="3342950658789427">"प्रत्येक पटक सोध्नुहोस्"</string>
     <string name="app_permission_button_deny" msgid="6016454069832050300">"अनुमति नदिइयोस्"</string>
     <string name="precise_image_description" msgid="6349638632303619872">"सटीक स्थान"</string>
     <string name="approximate_image_description" msgid="938803699637069884">"अनुमानित स्थान"</string>
@@ -252,7 +252,7 @@
     <string name="allowed_foreground_header" msgid="6845655788447833353">"प्रयोग भइरहेका बेला मात्र अनुमति दिइने"</string>
     <string name="allowed_storage_scoped" msgid="5383645873719086975">"मिडिया मात्र प्रयोग गर्ने अनुमति दिइएको"</string>
     <string name="allowed_storage_full" msgid="5356699280625693530">"सबै फाइल व्यवस्थापन गर्ने अनुमति दिइएको"</string>
-    <string name="ask_header" msgid="2633816846459944376">"प्रत्येक पटक सोधियोस्"</string>
+    <string name="ask_header" msgid="2633816846459944376">"प्रत्येक पटक सोध्नुहोस्"</string>
     <string name="denied_header" msgid="903209608358177654">"अनुमति नदिइएका"</string>
     <string name="storage_footer_hyperlink_text" msgid="8873343987957834810">"सबै फाइल हेर्ने र प्रयोग गर्ने अनुमति भएका थप एपहरू हेर्नुहोस्"</string>
     <string name="days" msgid="609563020985571393">"{count,plural, =1{१ दिन}other{# दिन}}"</string>

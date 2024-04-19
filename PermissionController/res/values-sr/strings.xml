@@ -393,7 +393,7 @@
     <string name="role_call_screening_request_description" msgid="7338511921032446006">"Није потребна ниједна дозвола"</string>
     <string name="role_automotive_navigation_label" msgid="2701890757955474751">"Подразумевана апликација за навигацију"</string>
     <string name="role_automotive_navigation_short_label" msgid="5165823092506922457">"Апликација за навигацију"</string>
-    <string name="role_automotive_navigation_description" msgid="7834601873792870134">"Апликације које могу да пружају претрагу занимљивих места и детаљну помоћ при навигацији"</string>
+    <string name="role_automotive_navigation_description" msgid="7834601873792870134">"Апликације које могу да пружају претрагу тачака од интереса и детаљну помоћ при навигацији"</string>
     <string name="role_automotive_navigation_request_title" msgid="7525693151489384300">"Желите да подесите апликацију <xliff:g id="APP_NAME">%1$s</xliff:g> као подразумевану апликацију за навигацију?"</string>
     <string name="role_automotive_navigation_request_description" msgid="7073023813249245540">"Није потребна ниједна дозвола"</string>
     <string name="role_watch_description" msgid="267003778693177779">"<xliff:g id="APP_NAME">%1$s</xliff:g> ће добити дозволу за интеракцију са обавештењима и приступ дозволама за телефон, SMS поруке, контакте и календар."</string>
