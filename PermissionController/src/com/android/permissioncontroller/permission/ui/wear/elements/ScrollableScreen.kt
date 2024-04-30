@@ -148,7 +148,9 @@ internal fun Scaffold(
 
     val focusRequester = remember { FocusRequester() }
     val listState = remember { ScalingLazyListState(initialCenterItemIndex = initialCenterIndex) }
-
+    LaunchedEffect(title) {
+        listState.animateScrollToItem(index = 0) // Scroll to the top when triggerValue changes
+    }
     WearPermissionTheme {
         Scaffold(
             // TODO: Use a rotary modifier from Wear Compose once Wear Compose 1.4 is landed.
