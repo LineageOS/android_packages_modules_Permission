@@ -113,6 +113,7 @@ android_test {
         "safety-label",
         "role-controller",
         "lottie",
+        "platform-test-annotations",
 
         "androidx.test.rules",
         "androidx.test.ext.truth",
