@@ -1,4 +1,5 @@
 package: "com.android.permission.flags"
+container: "com.android.permission"
 
 flag {
     name: "voice_activation_op_enabled"
