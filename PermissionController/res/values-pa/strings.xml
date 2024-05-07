@@ -405,7 +405,7 @@
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"ਨੋਟ-ਕਥਨ"</string>
     <string name="role_wallet_label" msgid="3719419175656204207">"ਪੂਰਵ-ਨਿਰਧਾਰਿਤ ਵਾਲੇਟ ਐਪ"</string>
     <string name="role_wallet_short_label" msgid="6521288403762457452">"Wallet ਐਪ"</string>
-    <string name="role_wallet_description" msgid="3726535836165949838">"ਲੈਣ-ਦੇਣ ਦੀਆਂ ਵੱਖ-ਵੱਖ ਕਿਸਮਾਂ ਸੰਬੰਧੀ ਮਦਦ ਕਰਨ ਲਈ, ਵਾਲੇਟ ਐਪਾਂ ਤੁਹਾਡੇ ਕ੍ਰੈਡਿਟ ਅਤੇ ਵਫ਼ਾਦਾਰੀ ਕਾਰਡਾਂ, ਕਾਰ ਦੀਆਂ ਕੁੰਜੀਆਂ ਅਤੇ ਹੋਰ ਚੀਜ਼ਾਂ ਨੂੰ ਸਟੋਰ ਕਰ ਸਕਦੀਆਂ ਹਨ।"</string>
+    <string name="role_wallet_description" msgid="3726535836165949838">"ਲੈਣ-ਦੇਣ ਦੀਆਂ ਵੱਖ-ਵੱਖ ਕਿਸਮਾਂ ਸੰਬੰਧੀ ਮਦਦ ਕਰਨ ਲਈ, ਵਾਲੇਟ ਐਪਾਂ ਤੁਹਾਡੇ ਕ੍ਰੈਡਿਟ ਅਤੇ ਵਫ਼ਾਦਾਰੀ ਕਾਰਡਾਂ, ਕਾਰ ਦੀਆਂ ਕੁੰਜੀਆਂ ਅਤੇ ਹੋਰ ਚੀਜ਼ਾਂ ਸੰਬੰਧੀ ਜਾਣਕਾਰੀ ਨੂੰ ਸਟੋਰ ਕਰ ਸਕਦੀਆਂ ਹਨ।"</string>
     <string name="role_wallet_request_title" msgid="4770217108262737093">"ਕੀ <xliff:g id="APP_NAME">%1$s</xliff:g> ਨੂੰ ਤੁਹਾਡੀ ਪੂਰਵ-ਨਿਰਧਾਰਿਤ ਵਾਲੇਟ ਐਪ ਵਜੋਂ ਸੈੱਟ ਕਰਨਾ ਹੈ?"</string>
     <string name="role_wallet_request_description" msgid="6305487425777483053">"ਕਿਸੇ ਇਜਾਜ਼ਤ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ"</string>
     <string name="request_role_current_default" msgid="738722892438247184">"ਮੌਜੂਦਾ ਪੂਰਵ-ਨਿਰਧਾਰਤ"</string>

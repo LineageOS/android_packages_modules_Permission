@@ -198,7 +198,7 @@
     <string name="app_permission_title" msgid="2090897901051370711">"Autorisation : <xliff:g id="PERM">%1$s</xliff:g>"</string>
     <string name="app_permission_header" msgid="2951363137032603806">"Accès pour cette application : <xliff:g id="PERM">%1$s</xliff:g>"</string>
     <string name="app_permission_footer_app_permissions_link" msgid="4926890342636587393">"Afficher toutes les autorisations pour <xliff:g id="APP">%1$s</xliff:g>"</string>
-    <string name="app_permission_footer_permission_apps_link" msgid="3941988129992794327">"Afficher toutes les applications qui possèdent cette autorisation"</string>
+    <string name="app_permission_footer_permission_apps_link" msgid="3941988129992794327">"Afficher toutes les applis qui possèdent cette autorisation"</string>
     <string name="assistant_mic_label" msgid="1011432357152323896">"Afficher l\'usage du microphone de l\'assistant"</string>
     <string name="unused_apps_category_title" msgid="2988455616845243901">"Paramètres des applications inutilisées"</string>
     <string name="auto_revoke_label" msgid="5068393642936571656">"Retirer les autorisations si l\'application est inutilisée"</string>
@@ -405,7 +405,7 @@
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"remarques"</string>
     <string name="role_wallet_label" msgid="3719419175656204207">"Appli portefeuille par défaut"</string>
     <string name="role_wallet_short_label" msgid="6521288403762457452">"Application de portefeuille"</string>
-    <string name="role_wallet_description" msgid="3726535836165949838">"Les applications de portefeuille peuvent stocker vos cartes de crédit et de fidélité, vos clés de voiture et d\'autres données pour faciliter différentes modalités de transaction."</string>
+    <string name="role_wallet_description" msgid="3726535836165949838">"Les applis de portefeuille peuvent stocker vos cartes de crédit et de fidélité, vos clés de voiture et d\'autres données pour faciliter différentes modalités de transaction."</string>
     <string name="role_wallet_request_title" msgid="4770217108262737093">"Définir <xliff:g id="APP_NAME">%1$s</xliff:g> comme application de portefeuille par défaut?"</string>
     <string name="role_wallet_request_description" msgid="6305487425777483053">"Aucune autorisation nécessaire"</string>
     <string name="request_role_current_default" msgid="738722892438247184">"Application par défaut actuelle"</string>
