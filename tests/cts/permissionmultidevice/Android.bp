@@ -43,6 +43,7 @@ android_test {
         ":CtsAccessRemoteDeviceCamera",
     ],
     test_suites: [
+        "cts",
         "general-tests",
         "mts-permission",
         "mcts-permission",
