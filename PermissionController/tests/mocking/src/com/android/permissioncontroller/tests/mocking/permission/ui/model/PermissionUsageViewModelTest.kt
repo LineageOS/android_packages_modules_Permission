@@ -23,6 +23,7 @@ import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.android.dx.mockito.inline.extended.ExtendedMockito
+import com.android.modules.utils.build.SdkLevel
 import com.android.permissioncontroller.PermissionControllerApplication
 import com.android.permissioncontroller.appops.data.model.v31.PackageAppOpUsageModel
 import com.android.permissioncontroller.appops.data.model.v31.PackageAppOpUsageModel.AppOpUsageModel
@@ -117,7 +118,12 @@ class PermissionUsageViewModelTest {
                 collectLastValue(permissionUsageViewModel.getPermissionUsagesUiDataFlow()).invoke()
             )
                 as PermissionUsagesUiState.Success
-        assertThat(uiData.permissionGroupUsageCount.size).isEqualTo(15)
+
+        val expectedPermissions = PermissionMapping.getPlatformPermissionGroups().toMutableSet()
+        if (SdkLevel.isAtLeastT()) {
+            expectedPermissions.remove(android.Manifest.permission_group.NOTIFICATIONS)
+        }
+        assertThat(uiData.permissionGroupUsageCount.keys).isEqualTo(expectedPermissions)
     }
 
     @Test
