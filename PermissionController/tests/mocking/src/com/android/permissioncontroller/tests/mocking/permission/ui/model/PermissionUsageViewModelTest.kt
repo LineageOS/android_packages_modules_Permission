@@ -120,7 +120,12 @@ class PermissionUsageViewModelTest {
                 collectLastValue(permissionUsageViewModel.getPermissionUsagesUiDataFlow()).invoke()
             )
                 as PermissionUsagesUiState.Success
-        assertThat(uiData.permissionGroupUsageCount.size).isEqualTo(15)
+
+        val expectedPermissions = PermissionMapping.getPlatformPermissionGroups().toMutableSet()
+        if (SdkLevel.isAtLeastT()) {
+            expectedPermissions.remove(android.Manifest.permission_group.NOTIFICATIONS)
+        }
+        assertThat(uiData.permissionGroupUsageCount.keys).isEqualTo(expectedPermissions)
     }
 
     @Test
