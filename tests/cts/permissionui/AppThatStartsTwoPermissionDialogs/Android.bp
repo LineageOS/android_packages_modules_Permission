@@ -21,7 +21,7 @@ package {
 android_test_helper_app {
     name: "CtsAppThatMakesTwoPermRequests",
     defaults: ["mts-target-sdk-version-current"],
-    min_sdk_version: "23",
+    min_sdk_version: "29",
 
     static_libs: [
         "kotlin-stdlib",
