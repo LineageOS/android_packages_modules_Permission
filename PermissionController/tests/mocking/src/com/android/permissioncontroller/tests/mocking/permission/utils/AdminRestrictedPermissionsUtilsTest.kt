@@ -18,8 +18,11 @@ package com.android.permissioncontroller.tests.mocking.permission.utils
 
 import android.app.admin.DevicePolicyManager
 import android.platform.test.annotations.AsbSecurityTest
+import com.android.modules.utils.build.SdkLevel
 import com.android.permissioncontroller.permission.utils.v31.AdminRestrictedPermissionsUtils
 import org.junit.Assert.assertEquals
+import org.junit.Assume
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -32,8 +35,26 @@ class AdminRestrictedPermissionsUtilsTest(
     private val canAdminGrantSensorsPermissions: Boolean,
     private val expected: Boolean
 ) {
-
     private val dpm: DevicePolicyManager = mock(DevicePolicyManager::class.java)
+
+    @Before
+    fun setup() {
+        Assume.assumeTrue(SdkLevel.isAtLeastS())
+    }
+
+    @AsbSecurityTest(cveBugId = [308138085])
+    @Test
+    fun mayAdminGrantPermissionTest() {
+        val canGrant =
+            AdminRestrictedPermissionsUtils.mayAdminGrantPermission(
+                permission,
+                group,
+                canAdminGrantSensorsPermissions,
+                false,
+                dpm
+            )
+        assertEquals(expected, canGrant)
+    }
 
     companion object {
         /**
@@ -66,19 +87,5 @@ class AdminRestrictedPermissionsUtilsTest(
                 ),
             )
         }
-    }
-
-    @AsbSecurityTest(cveBugId = [308138085])
-    @Test
-    fun mayAdminGrantPermissionTest() {
-        val canGrant =
-            AdminRestrictedPermissionsUtils.mayAdminGrantPermission(
-                permission,
-                group,
-                canAdminGrantSensorsPermissions,
-                false,
-                dpm
-            )
-        assertEquals(expected, canGrant)
     }
 }
