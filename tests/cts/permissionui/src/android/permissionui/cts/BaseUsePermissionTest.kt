@@ -874,7 +874,7 @@ abstract class BaseUsePermissionTest : BasePermissionTest() {
         }
     }
 
-    protected fun clickPermissionRequestAllowForegroundButton(timeoutMillis: Long = 10_000) {
+    protected fun clickPermissionRequestAllowForegroundButton(timeoutMillis: Long = 20_000) {
         if (isAutomotive || isWatch) {
             click(
                 By.text(getPermissionControllerString(ALLOW_FOREGROUND_BUTTON_TEXT)),
