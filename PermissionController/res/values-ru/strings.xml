@@ -466,7 +466,7 @@
     <string name="permgroupupgraderequestdetail_location" msgid="1550899076845189165">"Этому приложению требуется доступ к вашему местоположению, даже когда вы им не пользуетесь. Предоставьте разрешение в "<annotation id="link">"настройках"</annotation>"."</string>
     <string name="permgrouprequest_nearby_devices" msgid="2272829282660436700">"Разрешить приложению &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; находить устройства поблизости, подключаться к ним и определять их относительное положение?"</string>
     <string name="permgroupupgraderequestdetail_nearby_devices" msgid="6877531270654738614">"Разрешить приложению &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; находить устройства поблизости, подключаться к ним и определять их относительное положение? "<annotation id="link">"Открыть настройки"</annotation></string>
-    <string name="permgrouprequest_fineupgrade" msgid="2334242928821697672">"Изменить местоположение в приложении \"<xliff:g id="APP_NAME">&lt;b&gt;%1$s&lt;/b&gt;</xliff:g>\" с приблизительного на точное?"</string>
+    <string name="permgrouprequest_fineupgrade" msgid="2334242928821697672">"Разрешить приложению \"<xliff:g id="APP_NAME">&lt;b&gt;%1$s&lt;/b&gt;</xliff:g>\" доступ к данным о точном местоположении вместо приблизительного?"</string>
     <string name="permgrouprequest_coarselocation" msgid="7244605063736425232">"Разрешить приложению &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; доступ к данным о приблизительном местоположении устройства?"</string>
     <string name="permgrouprequest_finelocation_imagetext" msgid="1313062433398914334">"Точно"</string>
     <string name="permgrouprequest_coarselocation_imagetext" msgid="8650605041483025297">"Приблизительно"</string>
@@ -494,11 +494,11 @@
     <string name="permgrouprequest_calllog" msgid="2065327180175371397">"Разрешить приложению &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; доступ к списку вызовов?"</string>
     <string name="permgrouprequest_phone" msgid="1829234136997316752">"Разрешить приложению &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; совершать звонки и управлять ими?"</string>
     <string name="permgrouprequest_sensors" msgid="4397358316850652235">"Разрешить приложению &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; доступ к данным датчиков о состоянии организма?"</string>
-    <string name="permgroupupgraderequestdetail_sensors" msgid="6651914048792092835">"Этому приложению требуется доступ к данным нательных датчиков, даже когда вы им не пользуетесь. Предоставить разрешение можно в "<annotation id="link">"настройках"</annotation>"."</string>
+    <string name="permgroupupgraderequestdetail_sensors" msgid="6651914048792092835">"Это приложение запрашивает постоянный доступ к данным нательных датчиков, даже в то время, когда вы им не пользуетесь. Изменить его разрешения можно в "<annotation id="link">"настройках"</annotation>"."</string>
     <string name="permgroupbackgroundrequest_sensors" msgid="5661924322018503886">"Разрешить приложению \"<xliff:g id="APP_NAME">%1$s</xliff:g>\" доступ к данным датчиков на теле?"</string>
     <string name="permgroupbackgroundrequestdetail_sensors" msgid="7726767635834043501">"Чтобы предоставить приложению доступ к данным нательных датчиков, даже когда вы им не пользуетесь, "<annotation id="link">"измените настройки"</annotation>"."</string>
-    <string name="permgroupupgraderequest_sensors" msgid="7576527638411370468">"Предоставлять приложению &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; доступ к данным нательных датчиков, только когда оно используется?"</string>
-    <string name="permgrouprequest_notifications" msgid="6396739062335106181">"Разрешить <xliff:g id="APP_NAME">%1$s</xliff:g> отправлять уведомления?"</string>
+    <string name="permgroupupgraderequest_sensors" msgid="7576527638411370468">"Оставить для приложения &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; доступ к данным нательных датчиков, только когда оно используется?"</string>
+    <string name="permgrouprequest_notifications" msgid="6396739062335106181">"Разрешить приложению  &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; отправлять уведомления?"</string>
     <string name="auto_granted_permissions" msgid="6009452264824455892">"Контролируемые разрешения"</string>
     <string name="auto_granted_location_permission_notification_title" msgid="7570818224669050377">"У приложения \"<xliff:g id="APP_NAME">%1$s</xliff:g>\" есть доступ к геоданным"</string>
     <string name="auto_granted_permission_notification_body" msgid="5040234389205471318">"В вашей организации приложению \"<xliff:g id="APP_NAME">%1$s</xliff:g>\" разрешен доступ к геоданным."</string>

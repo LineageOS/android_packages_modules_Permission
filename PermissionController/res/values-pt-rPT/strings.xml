@@ -29,7 +29,7 @@
     <string name="app_not_found_dlg_title" msgid="6029482906093859756">"Aplicação não encontrada"</string>
     <string name="grant_dialog_button_deny" msgid="88262611492697192">"Não permitir"</string>
     <string name="grant_dialog_button_deny_and_dont_ask_again" msgid="1748925431574312595">"Não permitir e não perguntar novamente"</string>
-    <string name="grant_dialog_button_no_upgrade" msgid="8344732743633736625">"Manter \"Enquanto a app está a ser utilizada”"</string>
+    <string name="grant_dialog_button_no_upgrade" msgid="8344732743633736625">"Manter \"Enquanto a app está a ser usada”"</string>
     <string name="grant_dialog_button_no_upgrade_one_time" msgid="5125892775684968694">"Manter “Apenas desta vez”"</string>
     <string name="grant_dialog_button_more_info" msgid="213350268561945193">"Mais informação"</string>
     <string name="grant_dialog_button_allow_all" msgid="5939066403732409516">"Permitir todos"</string>

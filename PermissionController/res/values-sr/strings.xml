@@ -476,7 +476,7 @@
     <string name="permgrouprequest_storage_q_to_s" msgid="8213701872983685505">"Приступ &lt;b&gt;сликама, видеу, музици и звуку&lt;/b&gt; на уређају за &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgrouprequest_storage_pre_q" msgid="168130651144569428">"Приступ сликама, видеу, музици, звуку и другом на уређају за &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgrouprequest_read_media_aural" msgid="2593365397347577812">"Дозвољавате ли приступ музици и звуку на овом уређају за &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;?"</string>
-    <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"Дозвољавате ли приступ сликама и видеу на овом уређају за &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;?"</string>
+    <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"Дозвољавате да &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; приступа сликама и видеу на овом уређају?"</string>
     <string name="permgrouprequest_more_photos" msgid="128933814654231321">"Дозвољавате ли да &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; приступа и другим сликама и видеима на овом уређају?"</string>
     <string name="permgrouprequest_microphone" msgid="2825208549114811299">"Желите да дозволите да &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; снима звук?"</string>
     <string name="permgrouprequestdetail_microphone" msgid="8510456971528228861">"Апликација ће моћи да снима звук само док користите апликацију"</string>
@@ -494,7 +494,7 @@
     <string name="permgrouprequest_calllog" msgid="2065327180175371397">"Желите да дозволите да &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; приступа евиденцијама позива на телефону?"</string>
     <string name="permgrouprequest_phone" msgid="1829234136997316752">"Желите да дозволите да &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; упућује позиве и управља њима?"</string>
     <string name="permgrouprequest_sensors" msgid="4397358316850652235">"Желите да дозволите да &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; приступа подацима сензора о виталним функцијама?"</string>
-    <string name="permgroupupgraderequestdetail_sensors" msgid="6651914048792092835">"Ова апликација жели да све време приступа подацима сензора о виталним функцијама, чак и када не користите апликацију. Да бисте обавили ову измену, "<annotation id="link">"идите у подешавања."</annotation></string>
+    <string name="permgroupupgraderequestdetail_sensors" msgid="6651914048792092835">"Ова апликација жели да све време приступа подацима сензора о виталним функцијама, чак и када не користите апликацију. Да бисте то променили, "<annotation id="link">"идите у подешавања."</annotation></string>
     <string name="permgroupbackgroundrequest_sensors" msgid="5661924322018503886">"Желите да омогућите да &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; приступа подацима сензора о виталним функцијама?"</string>
     <string name="permgroupbackgroundrequestdetail_sensors" msgid="7726767635834043501">"Да бисте дозволили овој апликацији да све време приступа подацима сензора за тело, чак и када не користите апликацију, "<annotation id="link">"идите у подешавања."</annotation></string>
     <string name="permgroupupgraderequest_sensors" msgid="7576527638411370468">"Желите да &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; и даље приступа подацима сензора за тело док се апликација користи?"</string>
