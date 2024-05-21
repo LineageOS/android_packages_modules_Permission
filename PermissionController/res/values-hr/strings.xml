@@ -29,7 +29,7 @@
     <string name="app_not_found_dlg_title" msgid="6029482906093859756">"Aplikacija nije pronađena"</string>
     <string name="grant_dialog_button_deny" msgid="88262611492697192">"Nemoj dopustiti"</string>
     <string name="grant_dialog_button_deny_and_dont_ask_again" msgid="1748925431574312595">"Nemoj dopustiti i više ne pitaj"</string>
-    <string name="grant_dialog_button_no_upgrade" msgid="8344732743633736625">"Zadržite \"Dok se aplikacija koristi\""</string>
+    <string name="grant_dialog_button_no_upgrade" msgid="8344732743633736625">"Zadržite \"Dok se aplikacija upotrebljava\""</string>
     <string name="grant_dialog_button_no_upgrade_one_time" msgid="5125892775684968694">"Zadrži \"Samo ovaj put\""</string>
     <string name="grant_dialog_button_more_info" msgid="213350268561945193">"Više podataka"</string>
     <string name="grant_dialog_button_allow_all" msgid="5939066403732409516">"Dopusti sve"</string>
