@@ -458,7 +458,7 @@
     <string name="assistant_record_audio_user_sensitive_summary" msgid="6482937591816401619">"જ્યારે માઇક્રોફોનનો ઉપયોગ કરીને વૉઇસ આસિસ્ટંટ સક્રિય કરવામાં આવે, ત્યારે માઇક્રોફોનનું આઇકન સ્ટેટસ બારમાં બતાવો"</string>
     <string name="permgrouprequest_storage_isolated" msgid="4892154224026852295">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;ને તમારા ડિવાઇસ પર ફોટા અને મીડિયાને ઍક્સેસ કરવાની મંજૂરી આપીએ?"</string>
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;ને તમારા સંપર્કોને ઍક્સેસ કરવાની મંજૂરી આપીએ?"</string>
-    <string name="permgrouprequest_location" msgid="6990232580121067883">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;ને આ ડિવાઇસના સ્થાનને ઍક્સેસ કરવાની મંજૂરી આપીએ?"</string>
+    <string name="permgrouprequest_location" msgid="6990232580121067883">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;ને આ ડિવાઇસના લોકેશનને ઍક્સેસ કરવાની મંજૂરી આપીએ?"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"જ્યારે તમે ઍપનો ઉપયોગ કરી રહ્યા હશો માત્ર ત્યારે જ ઍપ સ્થાનને ઍક્સેસ કરી શકશે"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;ને આ ડિવાઇસના સ્થાનને ઍક્સેસ કરવાની મંજૂરી આપીએ?"</string>
     <string name="permgroupbackgroundrequestdetail_location" msgid="8021219324989662957">"તમે આ ઍપનો ઉપયોગ કરી રહ્યાં ન હો, તો પણ તે હંમેશાં તમારા સ્થાનને ઍક્સેસ કરી શકે છે. "<annotation id="link">"સેટિંગમાંથી મંજૂરી આપો."</annotation></string>
@@ -466,8 +466,8 @@
     <string name="permgroupupgraderequestdetail_location" msgid="1550899076845189165">"તમે આ ઍપનો ઉપયોગ કરી રહ્યાં ન હો, તો પણ તે હંમેશાં તમારા સ્થાનને ઍક્સેસ કરવા માગે છે. "<annotation id="link">"સેટિંગમાંથી મંજૂરી આપો."</annotation></string>
     <string name="permgrouprequest_nearby_devices" msgid="2272829282660436700">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;ને નજીકના ડિવાઇસને શોધવાની, તેને કનેક્ટ કરવાની તેમજ સંબંધિત અંતર નક્કી કરવાની મંજૂરી આપીએ?"</string>
     <string name="permgroupupgraderequestdetail_nearby_devices" msgid="6877531270654738614">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;ને નજીકના ડિવાઇસને શોધવાની, તેને કનેક્ટ કરવાની તેમજ સંબંધિત અંતર નક્કી કરવાની મંજૂરી આપીએ? "<annotation id="link">"સેટિંગમાં મંજૂરી આપો."</annotation></string>
-    <string name="permgrouprequest_fineupgrade" msgid="2334242928821697672">"<xliff:g id="APP_NAME">&lt;b&gt;%1$s&lt;/b&gt;</xliff:g>નો સ્થાનનો ઍક્સેસ અંદાજિતમાંથી બદલીને ચોક્કસ કરીએ?"</string>
-    <string name="permgrouprequest_coarselocation" msgid="7244605063736425232">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;ને આ ડિવાઇસના અંદાજીત સ્થાનને ઍક્સેસ કરવાની મંજૂરી આપીએ?"</string>
+    <string name="permgrouprequest_fineupgrade" msgid="2334242928821697672">"<xliff:g id="APP_NAME">&lt;b&gt;%1$s&lt;/b&gt;</xliff:g>નો લોકેશનનો ઍક્સેસ અંદાજિતમાંથી બદલીને ચોક્કસ કરીએ?"</string>
+    <string name="permgrouprequest_coarselocation" msgid="7244605063736425232">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;ને આ ડિવાઇસના અંદાજિત લોકેશનને ઍક્સેસ કરવાની મંજૂરી આપીએ?"</string>
     <string name="permgrouprequest_finelocation_imagetext" msgid="1313062433398914334">"ચોક્કસ"</string>
     <string name="permgrouprequest_coarselocation_imagetext" msgid="8650605041483025297">"અંદાજિત"</string>
     <string name="permgrouprequest_calendar" msgid="1493150855673603806">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;ને તમારા કૅલેન્ડરને ઍક્સેસ કરવાની મંજૂરી આપીએ?"</string>
@@ -484,7 +484,7 @@
     <string name="permgroupbackgroundrequestdetail_microphone" msgid="553702902263681838">"તમે આ ઍપનો ઉપયોગ કરી રહ્યાં ન હો, તો પણ ઍપ હંમેશાં ઑડિયો રેકોર્ડ કરવાનું ઇચ્છી શકે છે. "<annotation id="link">"સેટિંગમાંથી મંજૂરી આપો."</annotation></string>
     <string name="permgroupupgraderequest_microphone" msgid="1362781696161233341">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; માટે માઇક્રોફોનનો ઍક્સેસ બદલીએ?"</string>
     <string name="permgroupupgraderequestdetail_microphone" msgid="2870497719571464239">"તમે આ ઍપનો ઉપયોગ કરી રહ્યાં ન હો, તો પણ ઍપ હંમેશાં ઑડિયો રેકોર્ડ કરવા માગે છે. "<annotation id="link">"સેટિંગમાંથી મંજૂરી આપો."</annotation></string>
-    <string name="permgrouprequest_activityRecognition" msgid="5415121592794230330">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;ને તમારી શારીરિક પ્રવૃત્તિને ઍક્સેસ કરવાની મંજૂરી આપવી છે?"</string>
+    <string name="permgrouprequest_activityRecognition" msgid="5415121592794230330">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;ને તમારી શારીરિક ઍક્ટિવિટીને ઍક્સેસ કરવાની મંજૂરી આપવી છે?"</string>
     <string name="permgrouprequest_camera" msgid="5123097035410002594">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;ને ફોટા પાડવાની અને વીડિયો રેકોર્ડ કરવાની મંજૂરી આપીએ?"</string>
     <string name="permgrouprequestdetail_camera" msgid="9085323239764667883">"જ્યારે તમે ઍપનો ઉપયોગ કરી રહ્યા હશો, માત્ર ત્યારે જ ઍપ ફોટા લઈ શકશે અને વીડિયો રેકોર્ડ કરી શકશે"</string>
     <string name="permgroupbackgroundrequest_camera" msgid="1274286575704213875">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;ને ફોટા લેવાની અને વીડિયો રેકોર્ડ કરવાની મંજૂરી આપીએ?"</string>
