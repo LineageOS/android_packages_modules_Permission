@@ -52,8 +52,8 @@
     <string name="grant_dialog_button_allow" msgid="5314677880021102550">"יש אישור"</string>
     <string name="grant_dialog_button_allow_always" msgid="4485552579273565981">"כן, כל הזמן"</string>
     <string name="grant_dialog_button_allow_foreground" msgid="501896824973636533">"בזמן השימוש באפליקציה"</string>
-    <string name="grant_dialog_button_change_to_precise_location" msgid="3273115879467236033">"שינוי למיקום המדויק"</string>
-    <string name="grant_dialog_button_keey_approximate_location" msgid="438025182769080011">"שימוש במיקום המשוער"</string>
+    <string name="grant_dialog_button_change_to_precise_location" msgid="3273115879467236033">"לשנות למיקום מדויק"</string>
+    <string name="grant_dialog_button_keey_approximate_location" msgid="438025182769080011">"להמשיך עם מיקום משוער"</string>
     <string name="grant_dialog_button_allow_one_time" msgid="2618088516449706391">"רק הפעם"</string>
     <string name="grant_dialog_button_allow_background" msgid="8236044729434367833">"להתיר כל הזמן"</string>
     <string name="grant_dialog_button_allow_all_files" msgid="4955436994954829894">"אישור לניהול כל הקבצים"</string>
@@ -196,7 +196,7 @@
     <string name="app_permission_location_accuracy" msgid="7166912915040018669">"שימוש במיקום מדויק"</string>
     <string name="app_permission_location_accuracy_subtitle" msgid="2654077606404987210">"כשהמיקום המדויק מושבת, אפליקציות יכולות לגשת למיקום המשוער של המכשיר"</string>
     <string name="app_permission_title" msgid="2090897901051370711">"הרשאה: <xliff:g id="PERM">%1$s</xliff:g>"</string>
-    <string name="app_permission_header" msgid="2951363137032603806">"לאפליקציה תהיה גישה אל: <xliff:g id="PERM">%1$s</xliff:g>"</string>
+    <string name="app_permission_header" msgid="2951363137032603806">"לאפליקציה תהיה גישה ל<xliff:g id="PERM">%1$s</xliff:g>"</string>
     <string name="app_permission_footer_app_permissions_link" msgid="4926890342636587393">"הצגת כל ההרשאות של \'<xliff:g id="APP">%1$s</xliff:g>\'"</string>
     <string name="app_permission_footer_permission_apps_link" msgid="3941988129992794327">"הצגת כל האפליקציות עם ההרשאה הזו"</string>
     <string name="assistant_mic_label" msgid="1011432357152323896">"‏השימוש במיקרופון של Assistant"</string>

@@ -29,7 +29,7 @@
     <string name="app_not_found_dlg_title" msgid="6029482906093859756">"Uygulama bulunamadı"</string>
     <string name="grant_dialog_button_deny" msgid="88262611492697192">"İzin verme"</string>
     <string name="grant_dialog_button_deny_and_dont_ask_again" msgid="1748925431574312595">"İzin verme ve bir daha sorma"</string>
-    <string name="grant_dialog_button_no_upgrade" msgid="8344732743633736625">"“Uygulama kullanılırken” tut"</string>
+    <string name="grant_dialog_button_no_upgrade" msgid="8344732743633736625">"“Uygulama kullanılırken” olarak kalsın"</string>
     <string name="grant_dialog_button_no_upgrade_one_time" msgid="5125892775684968694">"\"Yalnızca bu defa\" sakla"</string>
     <string name="grant_dialog_button_more_info" msgid="213350268561945193">"Daha fazla bilgi"</string>
     <string name="grant_dialog_button_allow_all" msgid="5939066403732409516">"Tümüne izin ver"</string>
@@ -527,7 +527,7 @@
     <string name="permgroupbackgroundrequest_sensors" msgid="5661924322018503886">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; uygulamasının hayati belirtilerinizle ilgili sensör verilerine erişmesine izin verilsin mi?"</string>
     <string name="permgroupbackgroundrequest_device_aware_sensors" msgid="7691308331448239716">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; uygulamasının, &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; cihazınızdaki hayati bulgularla ilgili sensör verilerine erişmesine izin verilsin mi?"</string>
     <string name="permgroupbackgroundrequestdetail_sensors" msgid="7726767635834043501">"Bu uygulamanın, kullanmadığınız sırada bile vücut sensörü verilerine sürekli olarak erişmesine izin vermek için "<annotation id="link">"ayarlara gidin."</annotation></string>
-    <string name="permgroupupgraderequest_sensors" msgid="7576527638411370468">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; uygulamasının kullanımdayken vücut sensörü verilerine erişme izni sürdürülsün mü?"</string>
+    <string name="permgroupupgraderequest_sensors" msgid="7576527638411370468">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;, uygulama kullanılırken vücut sensörü verilerine erişmeye devam etsin mi?"</string>
     <string name="permgroupupgraderequest_device_aware_sensors" msgid="3310667992344623159">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; uygulamasının kullanımdayken &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; cihazındaki vücut sensörü verilerine erişme izni sürdürülsün mü?"</string>
     <string name="permgrouprequest_notifications" msgid="6396739062335106181">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; uygulamasının size bildirim göndermesine izin verilsin mi?"</string>
     <string name="permgrouprequest_device_aware_notifications" msgid="7307588961166360244">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; uygulamasının, &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; cihazınızda size bildirim göndermesine izin verilsin mi?"</string>
