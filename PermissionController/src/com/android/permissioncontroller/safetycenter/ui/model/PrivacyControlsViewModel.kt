@@ -16,9 +16,7 @@
 
 package com.android.permissioncontroller.safetycenter.ui.model
 
-import android.annotation.SuppressLint
 import android.app.Application
-import android.content.ClipboardManager
 import android.content.Intent
 import android.hardware.SensorPrivacyManager
 import android.hardware.SensorPrivacyManager.Sensors
@@ -34,8 +32,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.android.modules.utils.build.SdkLevel
-import com.android.permission.flags.Flags
 import com.android.permissioncontroller.R
 import com.android.permissioncontroller.permission.data.SmartUpdateMediatorLiveData
 import com.android.settingslib.RestrictedLockUtils
@@ -43,15 +39,10 @@ import com.android.settingslib.RestrictedLockUtils.EnforcedAdmin
 
 /** Viewmodel for the privacy controls page. */
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
-// Suppress warnings related to the camera/mic privacy and clipboard privacy APIs. The PC has the
-// permissions.
-@SuppressLint("MissingPermission")
 class PrivacyControlsViewModel(private val app: Application) : AndroidViewModel(app) {
 
     private val sensorPrivacyManager: SensorPrivacyManager =
         app.getSystemService(SensorPrivacyManager::class.java)!!
-    private val clipboardManager: ClipboardManager =
-        app.getSystemService(ClipboardManager::class.java)!!
     private val userManager: UserManager = app.getSystemService(UserManager::class.java)!!
 
     private val CONFIG_CLIPBOARD_SHOW_ACCESS_NOTIFICATIONS =
@@ -170,10 +161,6 @@ class PrivacyControlsViewModel(private val app: Application) : AndroidViewModel(
     }
 
     private fun isClipboardEnabled(): Boolean {
-        if (SdkLevel.isAtLeastU() && Flags.useApiForClipboardPrivacyToggle()) {
-            return clipboardManager.areClipboardAccessNotificationsEnabled()
-        }
-
         val clipboardDefaultEnabled =
             DeviceConfig.getBoolean(
                 DeviceConfig.NAMESPACE_CLIPBOARD,
@@ -189,11 +176,6 @@ class PrivacyControlsViewModel(private val app: Application) : AndroidViewModel(
     }
 
     private fun toggleClipboard() {
-        if (SdkLevel.isAtLeastU() && Flags.useApiForClipboardPrivacyToggle()) {
-            clipboardManager.setClipboardAccessNotificationsEnabled(!isClipboardEnabled())
-            return
-        }
-
         val newState = if (isClipboardEnabled()) 0 else 1
         Settings.Secure.putInt(
             app.contentResolver,
