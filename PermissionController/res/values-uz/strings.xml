@@ -483,8 +483,8 @@
     <string name="permgrouprequest_device_aware_coarselocation" msgid="9001956706241104626">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; uchun &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g> taxminiy joylashuviga kirishga ruxsat berilsinmi?"</string>
     <string name="permgrouprequest_finelocation_imagetext" msgid="1313062433398914334">"Aniq"</string>
     <string name="permgrouprequest_coarselocation_imagetext" msgid="8650605041483025297">"Taxminiy"</string>
-    <string name="permgrouprequest_calendar" msgid="1493150855673603806">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; uchun taqvimingizga ruxsat berilsinmi?"</string>
-    <string name="permgrouprequest_device_aware_calendar" msgid="3103987548035171850">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; uchun &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;da taqvimingizga ruxsat berilsinmi?"</string>
+    <string name="permgrouprequest_calendar" msgid="1493150855673603806">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; uchun taqvimingizga kirish ruxsati berilsinmi?"</string>
+    <string name="permgrouprequest_device_aware_calendar" msgid="3103987548035171850">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; uchun &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; qurilmasida taqvimingizga kirish ruxsati berilsinmi?"</string>
     <string name="permgrouprequest_sms" msgid="5672063688745420991">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; uchun SMS xabarlarni yuborish va ko‘rishga ruxsat berilsinmi?"</string>
     <string name="permgrouprequest_device_aware_sms" msgid="7212083972999874267">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; uchun &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;da SMS xabarlarni yuborish va ko‘rishga ruxsat berilsinmi?"</string>
     <string name="permgrouprequest_storage" msgid="8717773092518621602">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; uchun qurilmangizdagi suratlar, multimedia va fayllarga kirish ruxsati berilsinmi?"</string>
