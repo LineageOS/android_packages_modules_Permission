@@ -36,6 +36,7 @@ android_test {
         "Harrier",
         "Nene",
         "TestApp",
+        "permissions-aconfig-flags-lib",
     ],
     test_suites: [
         "general-tests",

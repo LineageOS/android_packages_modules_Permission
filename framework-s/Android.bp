@@ -81,6 +81,7 @@ java_sdk_library {
         "framework-permission-s-shared",
         "modules-utils-build",
         "android.permission.flags-aconfig-java",
+        "permissions-aconfig-flags-lib",
     ],
     apex_available: [
         "com.android.permission",
@@ -94,14 +95,11 @@ java_sdk_library {
     ],
     installable: true,
     jarjar_rules: "jarjar-rules.txt",
-    lint: {
-        strict_updatability_linting: true,
-        baseline_filename: "lint-baseline.xml",
-    },
     min_sdk_version: "31",
     permitted_packages: [
         "android.permission",
         "android.app.role",
+        "android.app.ecm",
         "android.safetycenter",
         "android.safetylabel",
     ],

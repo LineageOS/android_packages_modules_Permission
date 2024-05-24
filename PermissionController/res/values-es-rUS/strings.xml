@@ -116,8 +116,6 @@
     <string name="all_permissions" msgid="6911125611996872522">"Todos los permisos"</string>
     <string name="other_permissions" msgid="2901186127193849594">"Otras funciones de la app"</string>
     <string name="permission_request_title" msgid="8790310151025020126">"Solicitud de permiso"</string>
-    <string name="wear_not_allowed_dlg_title" msgid="1429467891296932713">"Android Wear"</string>
-    <string name="wear_not_allowed_dlg_text" msgid="512340555334769098">"Wear no admite las acciones de instalación y desinstalación"</string>
     <string name="permission_review_title_template_install" msgid="1284337937156289081">"Selecciona los permisos de acceso para &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;"</string>
     <string name="permission_review_title_template_update" msgid="3232333580548588657">"Se actualizó &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;. Selecciona los permisos de acceso para esta app."</string>
     <string name="review_button_cancel" msgid="2191147944056548886">"Cancelar"</string>
@@ -206,7 +204,9 @@
     <string name="auto_revoke_label" msgid="5068393642936571656">"Quitar los permisos si la app no se usa"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"Quitar permisos y liberar espacio"</string>
     <string name="unused_apps_label_v2" msgid="7058776770056517980">"Pausar actividad en la app si no se usa"</string>
+    <string name="unused_apps_label_v3" msgid="693340578642156657">"Administrar la app si no se usa"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Quitar permisos, borrar archivos temporales y detener notificaciones"</string>
+    <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Quita permisos, borra archivos temporales, detiene notificaciones y archiva la app"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"Para proteger tus datos, se quitarán los permisos de esta app si no la usas durante varios meses."</string>
     <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"Para proteger tus datos, si no usas la app durante varios meses, se quitarán los siguientes permisos: <xliff:g id="PERMS">%1$s</xliff:g>"</string>
     <string name="auto_revoked_apps_page_summary" msgid="6594753657893756536">"Para proteger tus datos, se quitaron los permisos de las apps que están en desuso hace varios meses."</string>
@@ -403,6 +403,11 @@
     <string name="role_notes_short_label" msgid="8796604147546125285">"App de notas"</string>
     <string name="role_notes_description" msgid="8496852798616883551">"Apps que te permiten tomar notas en tu dispositivo"</string>
     <string name="role_notes_search_keywords" msgid="7710756695666744631">"notas"</string>
+    <string name="role_wallet_label" msgid="3719419175656204207">"Billetera predeterminada"</string>
+    <string name="role_wallet_short_label" msgid="6521288403762457452">"App de billetera"</string>
+    <string name="role_wallet_description" msgid="3726535836165949838">"Las apps de billetera pueden almacenar tus tarjetas de crédito y lealtad, las llaves de tu vehículo y otros elementos para ayudarte con los diferentes tipos de transacciones."</string>
+    <string name="role_wallet_request_title" msgid="4770217108262737093">"¿Quieres configurar <xliff:g id="APP_NAME">%1$s</xliff:g> como tu app de billetera predeterminada?"</string>
+    <string name="role_wallet_request_description" msgid="6305487425777483053">"No se requieren permisos"</string>
     <string name="request_role_current_default" msgid="738722892438247184">"App predeterminada actualmente"</string>
     <string name="request_role_dont_ask_again" msgid="3556017886029520306">"No volver a preguntar"</string>
     <string name="request_role_set_as_default" msgid="4253949643984172880">"Hacer predeterminada"</string>
@@ -448,7 +453,7 @@
     <string name="incident_report_dialog_text" msgid="5675553296891757523">"<xliff:g id="APP_NAME_0">%1$s</xliff:g> solicita subir un informe de errores de este dispositivo generado el <xliff:g id="DATE">%2$s</xliff:g> a las <xliff:g id="TIME">%3$s</xliff:g>. Los informes de errores pueden incluir información personal sobre tu dispositivo o registrada por apps, como nombres de usuario, datos de ubicación, identificadores del dispositivo y datos de red. Solo debes compartir los informes de errores con personas y apps de confianza. ¿Permitir que <xliff:g id="APP_NAME_1">%4$s</xliff:g> suba un informe de errores?"</string>
     <string name="incident_report_error_dialog_text" msgid="4189647113387092272">"Se produjo un error al procesar el informe de errores para <xliff:g id="APP_NAME">%1$s</xliff:g>. Por lo tanto, no es posible compartir los datos detallados de depuración. Lamentamos la interrupción."</string>
     <string name="incident_report_dialog_allow_label" msgid="2970242967721155239">"Permitir"</string>
-    <string name="incident_report_dialog_deny_label" msgid="3535314290677579383">"Denegar"</string>
+    <string name="incident_report_dialog_deny_label" msgid="3535314290677579383">"Rechazar"</string>
     <string name="adjust_user_sensitive_title" msgid="4196724451314280527">"Configuración avanzada"</string>
     <string name="menu_adjust_user_sensitive" msgid="6497923610654425780">"Configuración avanzada"</string>
     <string name="adjust_user_sensitive_globally_title" msgid="8649190949066029174">"Mostrar uso de las apps del sistema"</string>
@@ -503,7 +508,7 @@
     <string name="permgroupupgraderequestdetail_microphone" msgid="2870497719571464239">"Esta app quiere grabar audio todo el tiempo, incluso cuando no la uses. "<annotation id="link">"Permite el acceso en Configuración."</annotation></string>
     <string name="permgrouprequest_activityRecognition" msgid="5415121592794230330">"¿Quieres permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; acceda a tu actividad física?"</string>
     <string name="permgrouprequest_device_aware_activityRecognition" msgid="3408326850847755759">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; acceda a la actividad física en tu &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;?"</string>
-    <string name="permgrouprequest_camera" msgid="5123097035410002594">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; tome fotos y grabe videos?"</string>
+    <string name="permgrouprequest_camera" msgid="5123097035410002594">"¿Quieres permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; tome fotos y grabe videos?"</string>
     <string name="permgrouprequest_device_aware_camera" msgid="3525106924487608868">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; tome fotos y grabe videos en tu &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgrouprequestdetail_camera" msgid="9085323239764667883">"La app solo podrá tomar fotos y grabar videos cuando esté en uso"</string>
     <string name="permgroupbackgroundrequest_camera" msgid="1274286575704213875">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; tome fotos y grabe videos?"</string>
@@ -644,8 +649,12 @@
     <string name="shares_location_with_third_parties" msgid="2278051743742057767">"Tus datos de ubicación ahora se comparten con terceros"</string>
     <string name="shares_location_with_third_parties_for_advertising" msgid="1918588064014480513">"Tus datos de ubicación ahora se comparten con terceros para publicidad o marketing"</string>
     <string name="updated_in_last_days" msgid="8371811947153042322">"{count,plural, =0{Se actualizó en el último día}=1{Se actualizó en el último día}many{Se actualizó en los últimos # de días}other{Se actualizó en los últimos # días}}"</string>
-    <string name="no_updates_at_this_time" msgid="9031085635689982935">"No hay novedades por el momento"</string>
+    <string name="no_updates_at_this_time" msgid="9031085635689982935">"No hay actualizaciones por el momento"</string>
     <string name="safety_label_changes_notification_title" msgid="4479955083472203839">"Actualizaciones del uso compartido de datos"</string>
     <string name="safety_label_changes_notification_desc" msgid="7808764283266234675">"Algunas apps cambiaron la forma en que podrían compartir tus datos de ubicación"</string>
     <string name="safety_label_changes_gear_description" msgid="2655887555599138509">"Configuración"</string>
+    <string name="wear_app_perms_24h_access" msgid="8668121661337328895">"Último acceso: <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
+    <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"Último acceso: ayer a la(s) <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
+    <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"Último acceso: <xliff:g id="TIME_DATE_0">%1$s</xliff:g> a la(s) <xliff:g id="TIME_DATE_1">%2$s</xliff:g>"</string>
+    <string name="test_otp_msg" msgid="7559110574222727550">"Tu contraseña de un solo uso es 132435"</string>
 </resources>

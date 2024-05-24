@@ -45,9 +45,6 @@ java_library {
         "com.android.permission",
         "test_com.android.permission",
     ],
-    lint: {
-        baseline_filename: "lint-baseline.xml",
-    },
 }
 
 java_library {
@@ -66,9 +63,6 @@ java_library {
     installable: false,
     min_sdk_version: "30",
     sdk_version: "system_server_current",
-    lint: {
-        baseline_filename: "lint-baseline.xml",
-    },
 }
 
 java_sdk_library {
@@ -117,6 +111,7 @@ java_sdk_library {
         "service-permission-statsd",
         "service-permission-proto-stream",
         "android.permission.flags-aconfig-java",
+        "permissions-aconfig-flags-lib",
     ],
     errorprone: {
         javacflags: ["-Xep:GuardedBy:ERROR"],
@@ -131,7 +126,6 @@ java_sdk_library {
         "-Xno-receiver-assertions",
     ],
     lint: {
-        strict_updatability_linting: true,
         baseline_filename: "lint-baseline.xml",
     },
     min_sdk_version: "30",
@@ -143,6 +137,7 @@ java_sdk_library {
     installable: true,
     permitted_packages: [
         "com.android.access",
+        "com.android.ecm",
         "com.android.permission",
         "com.android.role",
         "com.android.safetycenter",
@@ -176,7 +171,4 @@ java_library {
     ],
     min_sdk_version: "30",
     sdk_version: "system_server_current",
-    lint: {
-        baseline_filename: "lint-baseline.xml",
-    },
 }

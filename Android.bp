@@ -23,7 +23,7 @@ apex {
     defaults: ["com.android.permission-defaults"],
     manifest: "apex_manifest.json",
     compat_configs: [
-        "framework-permission-s-compat-config"
+        "framework-permission-s-compat-config",
     ],
     visibility: ["//packages/modules/common/build"],
 }
@@ -109,6 +109,7 @@ bootclasspath_fragment {
         // result in a build failure due to inconsistent flags.
         package_prefixes: [
             "android.app.role",
+            "android.app.ecm",
             "android.permission.jarjar",
             "android.safetycenter",
             "android.safetylabel",

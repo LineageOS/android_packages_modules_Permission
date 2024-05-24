@@ -42,9 +42,10 @@ android_app {
     min_sdk_version: "30",
     apex_available: ["com.android.permission"],
     certificate: ":com.android.safetycenter.resources.certificate",
-    lint: {
-        extra_check_modules: ["ConfigLintChecker"],
-    },
+    // TODO(b/322944911): Reconsider enabling linter checker
+    //lint: {
+    //    extra_check_modules: ["ConfigLintChecker"],
+    //},
     static_libs: [
         "SafetyCenterResourcesShared",
     ],

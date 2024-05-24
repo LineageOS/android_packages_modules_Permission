@@ -53,9 +53,6 @@ java_library {
     srcs: [
         ":statslog-permissioncontroller-java-gen",
     ],
-    lint: {
-        baseline_filename: "lint-baseline.xml",
-    },
 }
 
 java_library {
@@ -150,7 +147,7 @@ android_library {
         "lottie",
         "safety-label",
         "role-controller",
-        "permissions-flags-lib",
+        "permissions-aconfig-flags-lib",
         "android.permission.flags-aconfig-java",
         "androidx.compose.foundation_foundation",
         "androidx.compose.runtime_runtime",
@@ -160,8 +157,8 @@ android_library {
     ],
 
     lint: {
-        strict_updatability_linting: true,
         error_checks: ["Recycle"],
+        baseline_filename: "lint-baseline.xml",
     },
 
     apex_available: [
@@ -190,9 +187,7 @@ android_app {
     static_libs: ["PermissionController-lib"],
 
     lint: {
-        strict_updatability_linting: true,
         error_checks: ["Recycle"],
-        baseline_filename: "lint-baseline.xml",
     },
 
     optimize: {
