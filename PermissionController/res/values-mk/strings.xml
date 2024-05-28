@@ -475,7 +475,7 @@
     <string name="permgrouprequest_storage" msgid="8717773092518621602">"Да се дозволи &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да пристапува до фотографиите, аудиовизуелните содржини и датотеките на уредот?"</string>
     <string name="permgrouprequest_storage_q_to_s" msgid="8213701872983685505">"Да се дозволи &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да пристапува до &lt;b&gt;фотографии, видеа, музика и аудио&lt;/b&gt; на уредов?"</string>
     <string name="permgrouprequest_storage_pre_q" msgid="168130651144569428">"Да се дозволи &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да пристапува до &lt;b&gt;фотографии, видеа, музика, аудио и други датотеки&lt;/b&gt; на уредов?"</string>
-    <string name="permgrouprequest_read_media_aural" msgid="2593365397347577812">"Да се дозволи &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да пристапува до музика и аудиодатотеки на уредов?"</string>
+    <string name="permgrouprequest_read_media_aural" msgid="2593365397347577812">"Да се дозволи &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да пристапува до музика и аудио на уредов?"</string>
     <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"Да се дозволи &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да пристапува до фотографии и видеа на уредов?"</string>
     <string name="permgrouprequest_more_photos" msgid="128933814654231321">"Да се дозволи &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да пристапува до повеќе фотографии и видеа на уредов?"</string>
     <string name="permgrouprequest_microphone" msgid="2825208549114811299">"Да се дозволи &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да снима аудио?"</string>

@@ -467,7 +467,7 @@
     <string name="permgrouprequest_nearby_devices" msgid="2272829282660436700">"‏به &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; اجازه می‌دهید دستگاه‌های اطراف را پیدا کند، به آن‌ها متصل شود، و موقعیت نسبی آن‌ها را مشخص کند؟"</string>
     <string name="permgroupupgraderequestdetail_nearby_devices" msgid="6877531270654738614">"‏به &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; اجازه داده شود دستگاه‌های اطراف را پیدا کند، به آن‌ها متصل شود، و موقعیت نسبی آن‌ها را مشخص کند؟ "<annotation id="link">"در تنظیمات اجازه دهید."</annotation></string>
     <string name="permgrouprequest_fineupgrade" msgid="2334242928821697672">"دسترسی مکان <xliff:g id="APP_NAME">&lt;b&gt;%1$s&lt;/b&gt;</xliff:g> را از حالت تقریبی به دقیق تغییر می‌دهید؟"</string>
-    <string name="permgrouprequest_coarselocation" msgid="7244605063736425232">"‏به &lt;b&amp;gt؛<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&amp;gt؛ اجازه دسترسی به مکان تقریبی این دستگاه می‌دهید؟"</string>
+    <string name="permgrouprequest_coarselocation" msgid="7244605063736425232">"‏به &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;؛ اجازه دسترسی به مکان تقریبی این دستگاه را می‌دهید؟"</string>
     <string name="permgrouprequest_finelocation_imagetext" msgid="1313062433398914334">"دقیق"</string>
     <string name="permgrouprequest_coarselocation_imagetext" msgid="8650605041483025297">"تقریبی"</string>
     <string name="permgrouprequest_calendar" msgid="1493150855673603806">"‏به &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; اجازه دسترسی به تقویمتان می‌دهید؟"</string>

@@ -363,7 +363,7 @@
     <string name="role_dialer_request_title" msgid="5959618560705912058">"Kas soovite määrata rakenduse <xliff:g id="APP_NAME">%1$s</xliff:g> telefoni vaikerakenduseks?"</string>
     <string name="role_dialer_request_description" msgid="6288839625724909320">"Sellele rakendusele antakse juurdepääs teie kaamerale, kontaktidele, mikrofonile, telefonile ja SMS-idele"</string>
     <string name="role_dialer_search_keywords" msgid="3324448983559188087">"helistamine"</string>
-    <string name="role_sms_label" msgid="8456999857547686640">"SMS-vaikerakendus"</string>
+    <string name="role_sms_label" msgid="8456999857547686640">"SMS-i vaikerakendus"</string>
     <string name="role_sms_short_label" msgid="4371444488034692243">"SMS-rakendus"</string>
     <string name="role_sms_description" msgid="3424020199148153513">"Rakendused, millel on luba kasutada teie telefoninumbrit lühisõnumite, fotode, videote jms saatmiseks ja vastuvõtmiseks"</string>
     <string name="role_sms_request_title" msgid="7953552109601185602">"Kas soovite määrata rakenduse <xliff:g id="APP_NAME">%1$s</xliff:g> SMS-i vaikerakenduseks?"</string>
