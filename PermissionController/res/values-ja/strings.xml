@@ -493,7 +493,7 @@
     <string name="permgroupupgraderequestdetail_camera" msgid="6642747548010962597">"このアプリは、いつでも（ユーザーがアプリを使用していない場合でも）写真や動画を撮影できる権限を求めています。"<annotation id="link">"[設定] で許可してください。"</annotation></string>
     <string name="permgrouprequest_calllog" msgid="2065327180175371397">"通話履歴へのアクセスを &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; に許可しますか？"</string>
     <string name="permgrouprequest_phone" msgid="1829234136997316752">"電話の発信と管理を &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; に許可しますか？"</string>
-    <string name="permgrouprequest_sensors" msgid="4397358316850652235">"バイタルサインに関するセンサーデータへのアクセスを「&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;」に許可しますか？"</string>
+    <string name="permgrouprequest_sensors" msgid="4397358316850652235">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; にバイタルサインに関するセンサーデータへのアクセスを許可しますか？"</string>
     <string name="permgroupupgraderequestdetail_sensors" msgid="6651914048792092835">"このアプリは、非使用時も含め、常にバイタルサインに関するセンサーデータへのアクセスを試みます。これを変更するには、"<annotation id="link">"設定に移動"</annotation>"してください。"</string>
     <string name="permgroupbackgroundrequest_sensors" msgid="5661924322018503886">"バイタルサインに関するセンサーデータへのアクセスを &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; に許可しますか？"</string>
     <string name="permgroupbackgroundrequestdetail_sensors" msgid="7726767635834043501">"アプリの非使用時も、常にボディセンサー データにアクセスすることをこのアプリに許可するには、"<annotation id="link">"設定に移動"</annotation>"してください。"</string>
