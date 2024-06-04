@@ -522,7 +522,7 @@
     <string name="blocked_sensor_summary" msgid="4443707628305027375">"Kwa ajili ya programu na huduma"</string>
     <string name="blocked_mic_summary" msgid="8960466941528458347">"Huenda bado data ya maikrofoni ikashirikiwa unapopigia namba ya dharura."</string>
     <string name="blocked_sensor_button_label" msgid="6742092634984289658">"Badilisha"</string>
-    <string name="safety_center_dashboard_page_title" msgid="2810774008694315854">"Usalama na faragha"</string>
+    <string name="safety_center_dashboard_page_title" msgid="2810774008694315854">"Ulinzi na faragha"</string>
     <string name="safety_center_rescan_button" msgid="4517514567809409596">"Kagua kifaa"</string>
     <string name="safety_center_issue_card_dismiss_button" msgid="5113965506144222402">"Ondoa"</string>
     <string name="safety_center_issue_card_dismiss_confirmation_title" msgid="2734809473425036382">"Ungependa kuondoa arifa hii?"</string>
@@ -533,7 +533,7 @@
     <string name="safety_status_preference_title_and_summary_content_description" msgid="3511373256505058464">"Hali ya usalama na faragha. <xliff:g id="OVERALL_SAFETY_STATUS">%1$s</xliff:g>. <xliff:g id="SUMMARY_OF_DEVICE_STATUS">%2$s</xliff:g>"</string>
     <string name="security_settings" msgid="3808106921175271317">"Mipangilio ya Usalama"</string>
     <string name="sensor_permissions_qs" msgid="1022267900031317472">"Ruhusa"</string>
-    <string name="safety_privacy_qs_tile_title" msgid="727301867710374052">"Usalama na faragha"</string>
+    <string name="safety_privacy_qs_tile_title" msgid="727301867710374052">"Ulinzi na faragha"</string>
     <string name="safety_privacy_qs_tile_subtitle" msgid="3621544532041936749">"Kagua hali"</string>
     <string name="privacy_controls_qs" msgid="5780144882040591169">"Vidhibiti vyako vya faragha"</string>
     <string name="security_settings_button_label_qs" msgid="8280343822465962330">"Mipangilio zaidi"</string>
