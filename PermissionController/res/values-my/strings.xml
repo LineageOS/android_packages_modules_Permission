@@ -521,7 +521,7 @@
     <string name="permgrouprequest_device_aware_calllog" msgid="735079772627778095">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; အား သင်၏ &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; တွင် သင့်ဖုန်းခေါ်ဆိုမှတ်တမ်း သုံးခွင့်ပြုမလား။"</string>
     <string name="permgrouprequest_phone" msgid="1829234136997316752">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; ကို ဖုန်းခေါ်ဆိုမှုများ ပြုလုပ်ခွင့်နှင့် စီမံခွင့်ပေးလိုပါသလား။"</string>
     <string name="permgrouprequest_device_aware_phone" msgid="4389610977195521813">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; အား သင်၏ &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; တွင် ဖုန်းခေါ်ဆိုခွင့်နှင့် စီမံခွင့်ပေးမလား။"</string>
-    <string name="permgrouprequest_sensors" msgid="4397358316850652235">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; အား သင်၏ အရေးကြီးသော ကျန်းမာရေးလက္ခဏာဆိုင်ရာ အာရုံခံကိရိယာဒေတာ သုံးခွင့်ပေးလိုပါသလား။"</string>
+    <string name="permgrouprequest_sensors" msgid="4397358316850652235">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; အား သင့်အဓိကကိုယ်တွင်းအင်္ဂါအခြေအနေ လက္ခဏာများနှင့်ပတ်သက်သည့် အာရုံခံစနစ် ဒေတာကို သုံးခွင့်ပြုမလား။"</string>
     <string name="permgrouprequest_device_aware_sensors" msgid="1900598688488188225">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; အား &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt; တွင် သင့်အဓိကကိုယ်တွင်းအင်္ဂါအခြေအနေ လက္ခဏာများနှင့်ပတ်သက်သည့် အာရုံခံစနစ်ဒေတာ သုံးခွင့်ပြုမလား။"</string>
     <string name="permgroupupgraderequestdetail_sensors" msgid="6651914048792092835">"အက်ပ်သုံးမနေသော်လည်း ဤအက်ပ်က သင်၏အရေးကြီးသည့် ကျန်းမာရေးလက္ခဏာဆိုင်ရာ အာရုံခံစနစ်ဒေတာကို အမြဲသုံးခွင့် ရယူလိုသည်။ ဤအပြောင်းအလဲကို ပြုလုပ်ရန် "<annotation id="link">"ဆက်တင်များသို့ သွားပါ။"</annotation></string>
     <string name="permgroupbackgroundrequest_sensors" msgid="5661924322018503886">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; အား သင်၏ အရေးကြီးသော ကျန်းမာရေးလက္ခဏာဆိုင်ရာ အာရုံခံစနစ်ဒေတာကို သုံးခွင့်ပေးလိုပါသလား။"</string>
@@ -554,7 +554,7 @@
     <string name="blocked_sensor_summary" msgid="4443707628305027375">"အက်ပ်နှင့် ဝန်ဆောင်မှုများအတွက်"</string>
     <string name="blocked_mic_summary" msgid="8960466941528458347">"အရေးပေါ် နံပါတ်ကို သင်ခေါ်ဆိုချိန်တွင် မိုက်ခရိုဖုန်းဒေတာကို မျှဝေနိုင်သေးသည်။"</string>
     <string name="blocked_sensor_button_label" msgid="6742092634984289658">"ပြောင်းရန်"</string>
-    <string name="safety_center_dashboard_page_title" msgid="2810774008694315854">"လုံခြုံရေးနှင့် ကိုယ်ရေးဒေတာ"</string>
+    <string name="safety_center_dashboard_page_title" msgid="2810774008694315854">"စက်နှင့်အချက်အလက်လုံခြုံရေး"</string>
     <string name="safety_center_rescan_button" msgid="4517514567809409596">"စက်ကိုစစ်ဆေးရန်"</string>
     <string name="safety_center_issue_card_dismiss_button" msgid="5113965506144222402">"ပယ်ရန်"</string>
     <string name="safety_center_issue_card_dismiss_confirmation_title" msgid="2734809473425036382">"ဤသတိပေးချက်ကို ပယ်မလား။"</string>
@@ -565,7 +565,7 @@
     <string name="safety_status_preference_title_and_summary_content_description" msgid="3511373256505058464">"လုံခြုံရေးနှင့် ကိုယ်ရေးအချက်အလက်လုံခြုံမှု အခြေအနေ။ <xliff:g id="OVERALL_SAFETY_STATUS">%1$s</xliff:g>။ <xliff:g id="SUMMARY_OF_DEVICE_STATUS">%2$s</xliff:g>"</string>
     <string name="security_settings" msgid="3808106921175271317">"လုံခြုံရေး ဆက်တင်များ"</string>
     <string name="sensor_permissions_qs" msgid="1022267900031317472">"ခွင့်ပြုချက်များ"</string>
-    <string name="safety_privacy_qs_tile_title" msgid="727301867710374052">"လုံခြုံရေးနှင့် ကိုယ်ရေးဒေတာ"</string>
+    <string name="safety_privacy_qs_tile_title" msgid="727301867710374052">"စက်နှင့်အချက်အလက်လုံခြုံရေး"</string>
     <string name="safety_privacy_qs_tile_subtitle" msgid="3621544532041936749">"အခြေအနေ စစ်ဆေးပါ"</string>
     <string name="privacy_controls_qs" msgid="5780144882040591169">"အချက်အလက်လုံခြုံမှု ဆက်တင်များ"</string>
     <string name="security_settings_button_label_qs" msgid="8280343822465962330">"နောက်ထပ်ဆက်တင်များ"</string>
@@ -660,7 +660,7 @@
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"ကန့်သတ်ဆက်တင်"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"သင့်လုံခြုံရေးအတွက် ဤဆက်တင်ကို လောလောဆယ် မရနိုင်ပါ။"</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="8411239333012890492">"<xliff:g id="PERMISSION_NAME">%1$s</xliff:g> သုံးရန် ခွင့်ပြုချက်ကို ငြင်းပယ်ထားသည်"</string>
-    <string name="enhanced_confirmation_dialog_desc_permission" msgid="9207115054288224451">"သင့်လုံခြုံရေးနှင့် ကိုယ်ရေးအချက်အလက်လုံခြုံမှုကို ထိခိုက်စေနိုင်သည့် ကန့်သတ်ဆက်တင်ဖြစ်သော <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> ခွင့်ပြုချက်ကို ဤအက်ပ်က တောင်းဆိုထားသည်။ ဤခွင့်ပြုချက်ကို ကန့်သတ်ခြင်းသည် ဤအက်ပ်ကို ရပ်သွားစေနိုင်သည်။"</string>
+    <string name="enhanced_confirmation_dialog_desc_permission" msgid="9207115054288224451">"သင့်စက်နှင့်အချက်အလက်လုံခြုံရေးကို ထိခိုက်စေနိုင်သည့် ကန့်သတ်ဆက်တင်ဖြစ်သော <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> ခွင့်ပြုချက်ကို ဤအက်ပ်က တောင်းဆိုထားသည်။ ဤခွင့်ပြုချက်ကို ကန့်သတ်ခြင်းသည် ဤအက်ပ်ကို ရပ်သွားစေနိုင်သည်။"</string>
     <string name="enhanced_confirmation_dialog_learn_more" msgid="5226619861379095709">"ပိုမိုလေ့လာရန်"</string>
     <string name="enhanced_confirmation_dialog_ok" msgid="1767075979746135617">"နားလည်ပြီ"</string>
 </resources>
