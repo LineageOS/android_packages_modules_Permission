@@ -466,7 +466,7 @@
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"Թույլատրե՞լ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; հավելվածին օգտագործել ձեր կոնտակտները"</string>
     <string name="permgrouprequest_device_aware_contacts" msgid="2270563860206654757">"Թույլատրե՞լ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;-ին օգտագործել ձեր կոնտակտները &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>ում&lt;/b&gt;։"</string>
     <string name="permgrouprequest_location" msgid="6990232580121067883">"Թույլ տա՞լ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; հավելվածին օգտագործել այս սարքի տեղադրության տվյալները"</string>
-    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"Թույլատրե՞լ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;-ին օգտագործել ձեր &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>ի&lt;/b&gt; տեղադրության տվյալները։"</string>
+    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"Թույլատրե՞լ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;-ին օգտագործել ձեր &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>-ի&lt;/b&gt; տեղադրության տվյալները"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"Տեղադրության տվյալները հասանելի կլինեն հավելվածին, միայն երբ այն օգտագործելիս լինեք"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"Թույլ տա՞լ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; հավելվածին օգտագործել այս սարքի տեղադրության տվյալները"</string>
     <string name="permgroupbackgroundrequest_device_aware_location" msgid="7660465507029650527">"Թույլատրե՞լ &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;-ին օգտագործել ձեր &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>ի&lt;/b&gt; տեղադրության մասին տվյալները։"</string>
@@ -657,4 +657,10 @@
     <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"Բացվել է երեկ, <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
     <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"Բացվել է <xliff:g id="TIME_DATE_0">%1$s</xliff:g>, <xliff:g id="TIME_DATE_1">%2$s</xliff:g>"</string>
     <string name="test_otp_msg" msgid="7559110574222727550">"Մեկանգամյա օգտագործման ձեր գաղտնաբառը՝ 132435"</string>
+    <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Սահմանափակումներով կարգավորում"</string>
+    <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Անվտանգության նկատառումներից ելնելով՝ այս կարգավորումը ներկայումս անհասանելի է։"</string>
+    <string name="enhanced_confirmation_dialog_title_permission" msgid="8411239333012890492">"Թույլտվությունը («<xliff:g id="PERMISSION_NAME">%1$s</xliff:g>») մերժվել է"</string>
+    <string name="enhanced_confirmation_dialog_desc_permission" msgid="9207115054288224451">"Այս հավելվածը հայցել է «<xliff:g id="PERMISSION_NAME">%1$s</xliff:g>» թույլտվությունը, որը սահմանափակումներով կարգավորում է, քանի որ կարող է վտանգել ձեր անվտանգությունն ու գաղտնիությունը։ Այս թույլտվության սահմանափակումը կարող է հանգեցնել այս հավելվածի աշխատանքի խափանման։"</string>
+    <string name="enhanced_confirmation_dialog_learn_more" msgid="5226619861379095709">"Իմանալ ավելին"</string>
+    <string name="enhanced_confirmation_dialog_ok" msgid="1767075979746135617">"Պարզ է"</string>
 </resources>

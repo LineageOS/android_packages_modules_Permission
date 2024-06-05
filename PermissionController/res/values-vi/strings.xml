@@ -203,7 +203,7 @@
     <string name="unused_apps_category_title" msgid="2988455616845243901">"Chế độ cài đặt cho ứng dụng không dùng đến"</string>
     <string name="auto_revoke_label" msgid="5068393642936571656">"Thu hồi quyền nếu bạn không dùng ứng dụng"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"Thu hồi quyền và giải phóng dung lượng"</string>
-    <string name="unused_apps_label_v2" msgid="7058776770056517980">"Tạm dừng hoạt động trong ứng dụng nếu không dùng"</string>
+    <string name="unused_apps_label_v2" msgid="7058776770056517980">"Tạm dừng hoạt động của ứng dụng nếu không dùng"</string>
     <string name="unused_apps_label_v3" msgid="693340578642156657">"Quản lý ứng dụng nếu không dùng"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Loại bỏ quyền, xoá tệp tạm thời và dừng thông báo"</string>
     <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Loại bỏ quyền, xoá tệp tạm thời, dừng thông báo và lưu trữ ứng dụng"</string>
@@ -657,4 +657,10 @@
     <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"Truy cập hôm qua lúc <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
     <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"Truy cập lúc <xliff:g id="TIME_DATE_1">%2$s</xliff:g> ngày <xliff:g id="TIME_DATE_0">%1$s</xliff:g>"</string>
     <string name="test_otp_msg" msgid="7559110574222727550">"Mật khẩu một lần của bạn là 132435"</string>
+    <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Chế độ cài đặt bị hạn chế"</string>
+    <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Để đảm bảo an toàn cho bạn, chế độ cài đặt này hiện không dùng được."</string>
+    <string name="enhanced_confirmation_dialog_title_permission" msgid="8411239333012890492">"Quyền sử dụng <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> đã bị từ chối"</string>
+    <string name="enhanced_confirmation_dialog_desc_permission" msgid="9207115054288224451">"Ứng dụng này đã yêu cầu quyền <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> – đây là một chế độ cài đặt bị hạn chế vì có thể gây ra rủi ro đối với tính bảo mật và quyền riêng tư của bạn. Việc hạn chế quyền này có thể khiến ứng dụng này không hoạt động được."</string>
+    <string name="enhanced_confirmation_dialog_learn_more" msgid="5226619861379095709">"Tìm hiểu thêm"</string>
+    <string name="enhanced_confirmation_dialog_ok" msgid="1767075979746135617">"Tôi hiểu"</string>
 </resources>

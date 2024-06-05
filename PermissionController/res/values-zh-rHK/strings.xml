@@ -466,7 +466,7 @@
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;存取你的聯絡人嗎？"</string>
     <string name="permgrouprequest_device_aware_contacts" msgid="2270563860206654757">"允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取你&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;上的通訊錄嗎？"</string>
     <string name="permgrouprequest_location" msgid="6990232580121067883">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;存取此裝置的位置資訊嗎？"</string>
-    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取你的&lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;位置嗎？"</string>
+    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"允許「&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;」存取&lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;的位置嗎？"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"此應用程式目前只有你在使用時才能存取位置資訊"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;存取此裝置的位置資訊嗎？"</string>
     <string name="permgroupbackgroundrequest_device_aware_location" msgid="7660465507029650527">"允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取你的&lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;位置嗎？"</string>
@@ -493,7 +493,7 @@
     <string name="permgrouprequest_storage_pre_q" msgid="168130651144569428">"要允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取此裝置上的&lt;b&gt;相片、影片、音樂、音訊和其他檔案&lt;/b&gt;嗎？"</string>
     <string name="permgrouprequest_read_media_aural" msgid="2593365397347577812">"要允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取此裝置上的音樂和音訊嗎？"</string>
     <string name="permgrouprequest_device_aware_read_media_aural" msgid="3331524384339036668">"允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取你&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;上的音樂和音訊嗎？"</string>
-    <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"要允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取此裝置上的相片和影片嗎？"</string>
+    <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;存取此裝置上的相片和影片嗎？"</string>
     <string name="permgrouprequest_device_aware_read_media_visual" msgid="5492319750632751551">"允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取你&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;上的相片和影片嗎？"</string>
     <string name="permgrouprequest_more_photos" msgid="128933814654231321">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;存取此裝置上更多的相片和影片？"</string>
     <string name="permgrouprequest_device_aware_more_photos" msgid="8946782319103584021">"允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 存取你&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;上的相片和影片嗎？"</string>
@@ -529,7 +529,7 @@
     <string name="permgroupbackgroundrequestdetail_sensors" msgid="7726767635834043501">"如要讓此應用程式隨時存取人體感應器資料 (即使在你沒有使用此應用程式時)，請"<annotation id="link">"前往設定"</annotation>"。"</string>
     <string name="permgroupupgraderequest_sensors" msgid="7576527638411370468">"要讓「<xliff:g id="APP_NAME">%1$s</xliff:g>」應用程式&lt;b&gt;&lt;/b&gt;在使用時存取人體感應器資料嗎？"</string>
     <string name="permgroupupgraderequest_device_aware_sensors" msgid="3310667992344623159">"要繼續允許&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt;在應用程式使用期間存取&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;的人體感應器資料嗎？"</string>
-    <string name="permgrouprequest_notifications" msgid="6396739062335106181">"要允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;傳送通知給你嗎？"</string>
+    <string name="permgrouprequest_notifications" msgid="6396739062335106181">"允許「<xliff:g id="APP_NAME">%1$s</xliff:g>」&lt;b&gt;&lt;/b&gt;傳送通知給你嗎？"</string>
     <string name="permgrouprequest_device_aware_notifications" msgid="7307588961166360244">"允許 &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; 在你的&lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;上傳送通知給你嗎？"</string>
     <string name="auto_granted_permissions" msgid="6009452264824455892">"由管理員控制的權限"</string>
     <string name="auto_granted_location_permission_notification_title" msgid="7570818224669050377">"「<xliff:g id="APP_NAME">%1$s</xliff:g>」有位置存取權"</string>
@@ -554,7 +554,7 @@
     <string name="blocked_sensor_summary" msgid="4443707628305027375">"應用程式和服務"</string>
     <string name="blocked_mic_summary" msgid="8960466941528458347">"撥打緊急電話號碼時，系統仍可能會分享麥克風資料。"</string>
     <string name="blocked_sensor_button_label" msgid="6742092634984289658">"變更"</string>
-    <string name="safety_center_dashboard_page_title" msgid="2810774008694315854">"保安和私隱"</string>
+    <string name="safety_center_dashboard_page_title" msgid="2810774008694315854">"安全性和私隱"</string>
     <string name="safety_center_rescan_button" msgid="4517514567809409596">"掃瞄裝置"</string>
     <string name="safety_center_issue_card_dismiss_button" msgid="5113965506144222402">"關閉"</string>
     <string name="safety_center_issue_card_dismiss_confirmation_title" msgid="2734809473425036382">"要關閉此警示嗎？"</string>
@@ -565,7 +565,7 @@
     <string name="safety_status_preference_title_and_summary_content_description" msgid="3511373256505058464">"安全性和私隱狀態。<xliff:g id="OVERALL_SAFETY_STATUS">%1$s</xliff:g>。<xliff:g id="SUMMARY_OF_DEVICE_STATUS">%2$s</xliff:g>"</string>
     <string name="security_settings" msgid="3808106921175271317">"安全性設定"</string>
     <string name="sensor_permissions_qs" msgid="1022267900031317472">"權限"</string>
-    <string name="safety_privacy_qs_tile_title" msgid="727301867710374052">"保安和私隱"</string>
+    <string name="safety_privacy_qs_tile_title" msgid="727301867710374052">"安全性和私隱"</string>
     <string name="safety_privacy_qs_tile_subtitle" msgid="3621544532041936749">"檢查狀態"</string>
     <string name="privacy_controls_qs" msgid="5780144882040591169">"你的私隱權設定"</string>
     <string name="security_settings_button_label_qs" msgid="8280343822465962330">"更多設定"</string>
@@ -657,4 +657,10 @@
     <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"上次存取時間：昨天<xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
     <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"上次存取時間：<xliff:g id="TIME_DATE_0">%1$s</xliff:g><xliff:g id="TIME_DATE_1">%2$s</xliff:g>"</string>
     <string name="test_otp_msg" msgid="7559110574222727550">"你的一次性密碼是 132435"</string>
+    <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"受限設定"</string>
+    <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"為安全起見，系統目前不提供此設定。"</string>
+    <string name="enhanced_confirmation_dialog_title_permission" msgid="8411239333012890492">"<xliff:g id="PERMISSION_NAME">%1$s</xliff:g>使用權限已被拒。"</string>
+    <string name="enhanced_confirmation_dialog_desc_permission" msgid="9207115054288224451">"此應用程式已要求「<xliff:g id="PERMISSION_NAME">%1$s</xliff:g>」權限，開放該權限可能導致使用者的安全性和私隱權面臨風險，因此屬受限設定。限制此權限可能導致應用程式無法運作。"</string>
+    <string name="enhanced_confirmation_dialog_learn_more" msgid="5226619861379095709">"瞭解詳情"</string>
+    <string name="enhanced_confirmation_dialog_ok" msgid="1767075979746135617">"知道了"</string>
 </resources>

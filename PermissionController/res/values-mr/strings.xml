@@ -221,7 +221,7 @@
     <string name="auto_revoked_app_summary_two" msgid="1910545340763709389">"<xliff:g id="PERMISSION_NAME_0">%1$s</xliff:g> आणि <xliff:g id="PERMISSION_NAME_1">%2$s</xliff:g> परवानग्या काढल्या गेल्या"</string>
     <string name="auto_revoked_app_summary_many" msgid="5930976230827378798">"<xliff:g id="PERMISSION_NAME">%1$s</xliff:g> आणि इतर <xliff:g id="NUMBER">%2$s</xliff:g> परवानग्या काढल्या गेल्या"</string>
     <string name="unused_apps_page_title" msgid="6986983535677572559">"न वापरलेली अ‍ॅप्स"</string>
-    <string name="unused_apps_page_summary" msgid="1867593913217272155">"ॲप काही महिन्यांमध्ये वापरले गेले नसल्यास:\n\n• तुमच्या डेटाचे संरक्षण करण्यासाठी परवानग्या काढून टाकल्या जातात\n• बॅटरीची बचत करण्यासाठी सूचना थांबवल्या जातात\n• जागा मोकळी करण्यासाठी तात्पुरत्या फाइल काढून टाकल्या जातात\n\nपरवानग्या आणि सूचना यांना पुन्हा अनुमती देण्यासाठी ॲप उघडा."</string>
+    <string name="unused_apps_page_summary" msgid="1867593913217272155">"ॲप काही महिन्यांमध्ये वापरले गेले नसल्यास:\n\n• तुमच्या डेटाचे संरक्षण करण्यासाठी परवानग्या काढून टाकल्या जातात\n• बॅटरीची बचत करण्यासाठी नोटिफिकेशन थांबवल्या जातात\n• जागा मोकळी करण्यासाठी तात्पुरत्या फाइल काढून टाकल्या जातात\n\nपरवानग्या आणि नोटिफिकेशन यांना पुन्हा अनुमती देण्यासाठी ॲप उघडा."</string>
     <string name="unused_apps_page_tv_summary" msgid="2624911608663778308">"एखादे ॲप एका महिन्यांसाठी वापरले गेले नसल्यास:\n\n• तुमच्या डेटाचे संरक्षण करण्यासाठी परवानग्या काढून टाकल्या जातात\n• जागा मोकळी करण्याकरिता तात्पुरत्या फाइल काढून टाकल्या जातात\n\nपुन्हा परवानग्या देण्यासाठी, ॲप उघडा."</string>
     <string name="last_opened_category_title" msgid="8796557894614236128">"{count,plural, =1{शेवटचे # महिन्यापूर्वीपेक्षा आधी उघडले}other{शेवटचे # महिन्यांपूर्वीपेक्षा आधी उघडले}}"</string>
     <string name="last_opened_summary" msgid="5248984030024968808">"<xliff:g id="DATE">%s</xliff:g> रोजी ॲप शेवटचे उघडलेले"</string>
@@ -657,4 +657,10 @@
     <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"काल <xliff:g id="TIME_DATE">%1$s</xliff:g> वाजता ॲक्सेस केले"</string>
     <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"<xliff:g id="TIME_DATE_0">%1$s</xliff:g> ला <xliff:g id="TIME_DATE_1">%2$s</xliff:g> वाजता ॲक्सेस केले"</string>
     <string name="test_otp_msg" msgid="7559110574222727550">"तुमचा वन टाइम पासवर्ड १३२४३५ हा आहे"</string>
+    <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"प्रतिबंधित सेटिंग"</string>
+    <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"तुमच्या सुरक्षेसाठी, हे सेटिंग सध्या उपलब्ध नाही."</string>
+    <string name="enhanced_confirmation_dialog_title_permission" msgid="8411239333012890492">"<xliff:g id="PERMISSION_NAME">%1$s</xliff:g> वापरण्याची अनुमती नाकारली गेली आहे"</string>
+    <string name="enhanced_confirmation_dialog_desc_permission" msgid="9207115054288224451">"या ॲपने <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> परवानगीची विनंती केली आहे, जे प्रतिबंधित सेटिंग आहे, कारण त्यामुळे तुमची सुरक्षा आणि गोपनीयता धोक्यात येऊ शकते. या परवानगीवरील मर्यादा या अ‍ॅपला काम करण्यापासून रोखू शकते."</string>
+    <string name="enhanced_confirmation_dialog_learn_more" msgid="5226619861379095709">"अधिक जाणून घ्या"</string>
+    <string name="enhanced_confirmation_dialog_ok" msgid="1767075979746135617">"समजले"</string>
 </resources>

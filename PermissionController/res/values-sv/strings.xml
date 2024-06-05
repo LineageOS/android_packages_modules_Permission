@@ -357,7 +357,7 @@
     <string name="role_browser_description" msgid="3465253637499842671">"Appar som visar länkar du trycker på och du använder för att ansluta till internet"</string>
     <string name="role_browser_request_title" msgid="2895200507835937192">"Vill du ställa in <xliff:g id="APP_NAME">%1$s</xliff:g> som din standardwebbläsarapp?"</string>
     <string name="role_browser_request_description" msgid="5888803407905985941">"Inga behörigheter krävs"</string>
-    <string name="role_dialer_label" msgid="1100224146343237968">"Standard telefonapp"</string>
+    <string name="role_dialer_label" msgid="1100224146343237968">"Standardtelefonapp"</string>
     <string name="role_dialer_short_label" msgid="7186888549465352489">"Telefonapp"</string>
     <string name="role_dialer_description" msgid="8768708633696539612">"Appar som möjliggör att ringa och ta emot telefonsamtal på enheten"</string>
     <string name="role_dialer_request_title" msgid="5959618560705912058">"Vill du ställa in <xliff:g id="APP_NAME">%1$s</xliff:g> som din standardtelefonapp?"</string>
@@ -377,7 +377,7 @@
     <string name="role_emergency_search_keywords" msgid="1920007722599213358">"ice"</string>
     <string name="role_home_label" msgid="3871847846649769412">"Standard startskärmsapp"</string>
     <string name="role_home_short_label" msgid="8544733747952272337">"Startskärmsapp"</string>
-    <string name="role_home_description" msgid="7997371519626556675">"Appar som kallas Översikter ersätter startskärmarna på Android-enheten. Du får åtkomst till innehåll och funktioner på enheten via översikten."</string>
+    <string name="role_home_description" msgid="7997371519626556675">"Appar som kallas appstartare ersätter startskärmarna på Android-enheten. Du får åtkomst till innehåll och funktioner på enheten via appstartaren."</string>
     <string name="role_home_request_title" msgid="738136983453341081">"Vill du ställa in <xliff:g id="APP_NAME">%1$s</xliff:g> som din standardapp för startskärm?"</string>
     <string name="role_home_request_description" msgid="2658833966716057673">"Inga behörigheter krävs"</string>
     <string name="role_home_search_keywords" msgid="3830755001192666285">"översikt"</string>
@@ -466,7 +466,7 @@
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"Vill du ge &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; åtkomst till dina kontakter?"</string>
     <string name="permgrouprequest_device_aware_contacts" msgid="2270563860206654757">"Vill du ge &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; åtkomst till kontakter på &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgrouprequest_location" msgid="6990232580121067883">"Vill du ge &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; åtkomst till enhetens plats?"</string>
-    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"Vill du ge &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; åtkomst till platsen för &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>’s&lt;/b&gt;?"</string>
+    <string name="permgrouprequest_device_aware_location" msgid="6641436550953715107">"Vill du ge &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; åtkomst till platsen för din &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"Appen får endast åtkomst till din plats när du använder den"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"Vill du ge &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; åtkomst till enhetens plats?"</string>
     <string name="permgroupbackgroundrequest_device_aware_location" msgid="7660465507029650527">"Vill du ge &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; åtkomst till platsen för &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>?"</string>
@@ -657,4 +657,10 @@
     <string name="wear_app_perms_24h_access_yest" msgid="7069312481704735679">"Öppnades i går <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
     <string name="wear_app_perms_7d_access" msgid="4608069019194676432">"Öppnades <xliff:g id="TIME_DATE_0">%1$s</xliff:g> <xliff:g id="TIME_DATE_1">%2$s</xliff:g>"</string>
     <string name="test_otp_msg" msgid="7559110574222727550">"Ditt engångslösenord är 132435"</string>
+    <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Begränsad inställning"</string>
+    <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Av säkerhetsskäl är den här inställningen inte tillgänglig för närvarande."</string>
+    <string name="enhanced_confirmation_dialog_title_permission" msgid="8411239333012890492">"Behörighet att använda <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> har nekats"</string>
+    <string name="enhanced_confirmation_dialog_desc_permission" msgid="9207115054288224451">"Den här appen har begärt behörigheten <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>, vilken är en begränsad inställning eftersom den kan äventyra din säkerhet och integritet. Om behörigheten är begränsad kan det hindra appen från att fungera."</string>
+    <string name="enhanced_confirmation_dialog_learn_more" msgid="5226619861379095709">"Läs mer"</string>
+    <string name="enhanced_confirmation_dialog_ok" msgid="1767075979746135617">"OK"</string>
 </resources>
