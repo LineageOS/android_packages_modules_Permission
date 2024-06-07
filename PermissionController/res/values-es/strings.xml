@@ -29,7 +29,7 @@
     <string name="app_not_found_dlg_title" msgid="6029482906093859756">"Aplicación no encontrada"</string>
     <string name="grant_dialog_button_deny" msgid="88262611492697192">"No permitir"</string>
     <string name="grant_dialog_button_deny_and_dont_ask_again" msgid="1748925431574312595">"No permitir y no volver a preguntar"</string>
-    <string name="grant_dialog_button_no_upgrade" msgid="8344732743633736625">"Mantener \"Mientras la aplicación se esté usando\""</string>
+    <string name="grant_dialog_button_no_upgrade" msgid="8344732743633736625">"Mantener \"Cuando la aplicación esté en uso\""</string>
     <string name="grant_dialog_button_no_upgrade_one_time" msgid="5125892775684968694">"Mantener \"Solo esta vez\""</string>
     <string name="grant_dialog_button_more_info" msgid="213350268561945193">"Más información"</string>
     <string name="grant_dialog_button_allow_all" msgid="5939066403732409516">"Permitir acceso a todos"</string>
@@ -523,7 +523,7 @@
     <string name="permgrouprequest_device_aware_phone" msgid="4389610977195521813">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; haga y gestione llamadas en tu &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgrouprequest_sensors" msgid="4397358316850652235">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; acceda a tus datos de constantes vitales del sensor?"</string>
     <string name="permgrouprequest_device_aware_sensors" msgid="1900598688488188225">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; acceda a los datos de sensores sobre constantes vitales de tu &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;?"</string>
-    <string name="permgroupupgraderequestdetail_sensors" msgid="6651914048792092835">"Esta aplicación quiere acceder a los datos de sensores de tus constantes vitales todo el tiempo, incluso cuando no la uses. Para hacer este cambio, "<annotation id="link">"ve a los ajustes"</annotation>"."</string>
+    <string name="permgroupupgraderequestdetail_sensors" msgid="6651914048792092835">"Esta aplicación quiere acceder a los datos de sensores de tus constantes vitales siempre, incluso cuando no la uses. Para hacer este cambio, "<annotation id="link">"ve a los ajustes"</annotation>"."</string>
     <string name="permgroupbackgroundrequest_sensors" msgid="5661924322018503886">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; acceda a los datos de sensores de tus constantes vitales?"</string>
     <string name="permgroupbackgroundrequest_device_aware_sensors" msgid="7691308331448239716">"¿Permitir que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; acceda a los datos de sensores sobre constantes vitales de tu &lt;b&gt;<xliff:g id="DEVICE">%2$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgroupbackgroundrequestdetail_sensors" msgid="7726767635834043501">"Para permitir que esta aplicación acceda a datos de sensores corporales todo el tiempo, incluso cuando no la uses, "<annotation id="link">"ve a los ajustes"</annotation>"."</string>
