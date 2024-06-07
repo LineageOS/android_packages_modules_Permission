@@ -29,4 +29,5 @@ android_test_helper_app {
         "mts-permission",
         "sts",
     ],
+    sdk_version: "test_current",
 }
