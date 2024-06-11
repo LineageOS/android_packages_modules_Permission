@@ -458,7 +458,7 @@
     <string name="assistant_record_audio_user_sensitive_summary" msgid="6482937591816401619">"Icoon op statusbalk tonen als microfoon wordt gebruikt om de Spraakassistent te activeren"</string>
     <string name="permgrouprequest_storage_isolated" msgid="4892154224026852295">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; toegang geven tot foto\'s en media op je apparaat?"</string>
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"Toestaan dat &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; toegang heeft tot je contacten?"</string>
-    <string name="permgrouprequest_location" msgid="6990232580121067883">"Toestaan dat &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; toegang heeft tot de locatie van dit apparaat?"</string>
+    <string name="permgrouprequest_location" msgid="6990232580121067883">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; toegang geven tot de locatie van dit apparaat?"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"De app heeft alleen toegang tot de locatie wanneer je de app gebruikt"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"Toestaan dat &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; toegang heeft tot de locatie van dit apparaat?"</string>
     <string name="permgroupbackgroundrequestdetail_location" msgid="8021219324989662957">"Deze app wil mogelijk altijd toegang tot je locatie, ook als je de app niet gebruikt. "<annotation id="link">"Je kunt dit toestaan via de instellingen."</annotation></string>
@@ -473,7 +473,7 @@
     <string name="permgrouprequest_calendar" msgid="1493150855673603806">"Toestaan dat &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; toegang heeft tot je agenda?"</string>
     <string name="permgrouprequest_sms" msgid="5672063688745420991">"Toestaan dat &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; sms-berichten stuurt en bekijkt?"</string>
     <string name="permgrouprequest_storage" msgid="8717773092518621602">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; toegang geven tot foto\'s, media en bestanden op je apparaat?"</string>
-    <string name="permgrouprequest_storage_q_to_s" msgid="8213701872983685505">"Toestaan dat &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; toegang heeft tot &lt;b&gt;foto\'s, video\'s, muziek en audio&lt;/b&gt; op dit apparaat?"</string>
+    <string name="permgrouprequest_storage_q_to_s" msgid="8213701872983685505">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; toegang geven tot &lt;b&gt;foto\'s, video\'s, muziek en audio&lt;/b&gt; op dit apparaat?"</string>
     <string name="permgrouprequest_storage_pre_q" msgid="168130651144569428">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; toegang geven tot &lt;b&gt;foto\'s, video\'s, muziek, audio en andere bestanden&lt;/b&gt; op dit apparaat?"</string>
     <string name="permgrouprequest_read_media_aural" msgid="2593365397347577812">"&lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; toegang geven tot muziek en audio op dit apparaat?"</string>
     <string name="permgrouprequest_read_media_visual" msgid="5548780620779729975">"Toestaan dat &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; toegang heeft tot foto\'s en video\'s op dit apparaat?"</string>
