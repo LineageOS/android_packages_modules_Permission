@@ -52,6 +52,7 @@ private const val LOG_TAG = "PermissionTest30WithBluetooth"
 class PermissionTest30WithBluetooth : BaseUsePermissionTest() {
     companion object {
         @get:ClassRule @JvmStatic val enableBluetooth = EnableBluetoothRule(true)
+        @ClassRule @Rule @JvmField val sDeviceState = DeviceState()
     }
 
     private val TEST_APP_AUTHORITY =
