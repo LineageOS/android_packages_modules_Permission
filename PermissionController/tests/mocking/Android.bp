@@ -97,6 +97,7 @@ android_test {
         "androidx.test.ext.truth",
         "androidx.test.ext.junit",
         "mockito-target-extended-minus-junit4",
+        "platform-test-annotations",
     ],
 
     jni_libs: [
