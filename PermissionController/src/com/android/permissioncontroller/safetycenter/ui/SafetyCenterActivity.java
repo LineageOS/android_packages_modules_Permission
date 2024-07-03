@@ -133,6 +133,7 @@ public final class SafetyCenterActivity extends CollapsingToolbarBaseActivity {
                                 if (listView == null) {
                                     return;
                                 }
+                                int paddingBottom = listView.getPaddingBottom();
                                 ViewCompat.setOnApplyWindowInsetsListener(
                                         listView,
                                         (v, windowInsets) -> {
@@ -143,7 +144,7 @@ public final class SafetyCenterActivity extends CollapsingToolbarBaseActivity {
                                                     v.getPaddingLeft(),
                                                     v.getPaddingTop(),
                                                     v.getPaddingRight(),
-                                                    v.getPaddingBottom() + insets.bottom);
+                                                    paddingBottom + insets.bottom);
                                             return WindowInsetsCompat.CONSUMED;
                                         });
                             }
