@@ -75,11 +75,13 @@ class EnhancedConfirmationManagerTest : BaseUsePermissionTest() {
     @Test
     fun installedAppStartsWithModeDefault() {
         installPackageWithInstallSourceAndMetadataFromStore(APP_APK_NAME_LATEST)
-        runWithShellPermissionIdentity {
-            assertEquals(
-                getAppEcmState(context, appOpsManager, APP_PACKAGE_NAME),
-                AppOpsManager.MODE_DEFAULT
-            )
+        eventually {
+            runWithShellPermissionIdentity {
+                assertEquals(
+                    getAppEcmState(context, appOpsManager, APP_PACKAGE_NAME),
+                    AppOpsManager.MODE_DEFAULT
+                )
+            }
         }
     }
 
