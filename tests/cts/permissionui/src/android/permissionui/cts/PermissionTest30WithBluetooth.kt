@@ -41,6 +41,7 @@ import junit.framework.Assert.assertTrue
 import junit.framework.AssertionFailedError
 import org.junit.After
 import org.junit.Assert.assertNotEquals
+import org.junit.Assume.assumeFalse
 import org.junit.Assume.assumeTrue
 import org.junit.Before
 import org.junit.ClassRule
@@ -113,6 +114,9 @@ class PermissionTest30WithBluetooth : BaseUsePermissionTest() {
     @Test
     @RequireNotAutomotive(reason = "Permission scroll is not working on auto portrait")
     fun testGivenBluetoothIsDeniedWhenScanIsAttemptedThenThenGetEmptyScanResult() {
+        // TODO:(b/317442167) Fix permission scroll on auto portrait
+        assumeFalse(isAutomotive)
+
         assumeTrue(supportsBluetoothLe())
 
         assertTrue(
@@ -164,6 +168,9 @@ class PermissionTest30WithBluetooth : BaseUsePermissionTest() {
     @Test
     @RequireNotAutomotive(reason = "Permission scroll is not working on auto portrait")
     fun testRevokedCompatPersistsOnReinstall() {
+        // TODO:(b/317442167) Fix permission scroll on auto portrait
+        assumeFalse(isAutomotive)
+
         assertBluetoothRevokedCompatState(revoked = false)
         revokeAppPermissionsByUi(BLUETOOTH_SCAN, isLegacyApp = true)
         assertBluetoothRevokedCompatState(revoked = true)
