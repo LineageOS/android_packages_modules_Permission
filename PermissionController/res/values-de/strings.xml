@@ -418,7 +418,7 @@
     <string name="phone_call_uses_microphone_and_camera" msgid="6291898755681748189">"Kamera und Mikrofon werden für &lt;b&gt;Videoanruf&lt;/b&gt; verwendet"</string>
     <string name="phone_call_uses_camera" msgid="2048417022147857418">"Kamera wird für &lt;b&gt;Videoanruf&lt;/b&gt; verwendet"</string>
     <string name="system_uses_microphone" msgid="576672130318877143">"Der Zugriff auf das Mikrofon erfolgt über den Systemdienst"</string>
-    <string name="system_uses_microphone_and_camera" msgid="5124478304275138804">"Der Zugriff auf die Kamera und das Mikrofon erfolt über den Systemdienst"</string>
+    <string name="system_uses_microphone_and_camera" msgid="5124478304275138804">"Der Zugriff auf die Kamera und das Mikrofon erfolgt über den Systemdienst"</string>
     <string name="system_uses_camera" msgid="1911223105234441470">"Der Zugriff auf die Kamera erfolgt über den Systemdienst"</string>
     <string name="other_use" msgid="6564855051022776692">"Andere Funktionen:"</string>
     <string name="ongoing_usage_dialog_ok" msgid="103556809118460072">"Ok"</string>
@@ -550,9 +550,7 @@
     <string name="privdash_label_none" msgid="5991866260360484858">"Keine"</string>
     <string name="privdash_label_24h" msgid="1512532123865375319">"Letzte\n24 Stunden"</string>
     <string name="privdash_label_7d" msgid="5645301995348656931">"Letzte\n7 Tage"</string>
-    <!-- String.format failed for translation -->
-    <!-- no translation found for privdash_usage_percent (6893824766124414127) -->
-    <skip />
+    <string name="privdash_usage_percent" msgid="6893824766124414127">"<xliff:g id="PERMISSION_NAME">%1$s</xliff:g> <xliff:g id="PERCENT">%2$d</xliff:g> %%"</string>
     <string name="exempt_mic_camera_info_label" msgid="6273581737010902815">"<xliff:g id="APP_NAME">%1$s</xliff:g> ist durch Android geschützt. Weil deine Daten direkt auf diesem Gerät verarbeitet werden, wird weder in der Statusleiste noch auf deinem Privatsphäredashboard die Nutzung der Berechtigungen durch diese App angezeigt."</string>
     <string name="exempt_info_label" msgid="6286190981253476699">"<xliff:g id="APP_NAME">%1$s</xliff:g> ist durch Android geschützt. Weil deine Daten direkt auf diesem Gerät verarbeitet werden, wird auf deinem Privatsphäredashboard die Nutzung der Berechtigungen durch diese App nicht angezeigt."</string>
     <string name="blocked_camera_title" msgid="1128510551791284384">"Gerätekamera ist blockiert"</string>
