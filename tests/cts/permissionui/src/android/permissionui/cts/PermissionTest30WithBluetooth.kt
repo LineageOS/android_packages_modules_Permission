@@ -33,8 +33,6 @@ import android.util.Log
 import androidx.test.InstrumentationRegistry
 import androidx.test.filters.FlakyTest
 import androidx.test.filters.SdkSuppress
-import com.android.bedstead.harrier.DeviceState
-import com.android.bedstead.harrier.annotations.RequireNotAutomotive
 import com.android.compatibility.common.util.SystemUtil.runWithShellPermissionIdentity
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertTrue
@@ -45,7 +43,6 @@ import org.junit.Assume.assumeFalse
 import org.junit.Assume.assumeTrue
 import org.junit.Before
 import org.junit.ClassRule
-import org.junit.Rule
 import org.junit.Test
 
 private const val LOG_TAG = "PermissionTest30WithBluetooth"
@@ -54,12 +51,8 @@ private const val LOG_TAG = "PermissionTest30WithBluetooth"
 @SdkSuppress(minSdkVersion = Build.VERSION_CODES.S, codeName = "S")
 @FlakyTest
 class PermissionTest30WithBluetooth : BaseUsePermissionTest() {
-    @ClassRule
-    @Rule
-    val sDeviceState: DeviceState = DeviceState()
     companion object {
         @get:ClassRule @JvmStatic val enableBluetooth = EnableBluetoothRule(true)
-        @ClassRule @Rule @JvmField val sDeviceState = DeviceState()
     }
 
     private val TEST_APP_AUTHORITY =
@@ -110,9 +103,7 @@ class PermissionTest30WithBluetooth : BaseUsePermissionTest() {
     }
 
     // TODO:(b/220030722) Remove verbose logging (after test is stabilized)
-    // TODO:(b/317442167) Fix permission scroll on auto portrait
     @Test
-    @RequireNotAutomotive(reason = "Permission scroll is not working on auto portrait")
     fun testGivenBluetoothIsDeniedWhenScanIsAttemptedThenThenGetEmptyScanResult() {
         // TODO:(b/317442167) Fix permission scroll on auto portrait
         assumeFalse(isAutomotive)
@@ -164,9 +155,7 @@ class PermissionTest30WithBluetooth : BaseUsePermissionTest() {
         }
     }
 
-    // TODO:(b/317442167) Fix permission scroll on auto portrait
     @Test
-    @RequireNotAutomotive(reason = "Permission scroll is not working on auto portrait")
     fun testRevokedCompatPersistsOnReinstall() {
         // TODO:(b/317442167) Fix permission scroll on auto portrait
         assumeFalse(isAutomotive)
