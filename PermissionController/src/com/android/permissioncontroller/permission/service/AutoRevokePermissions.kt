@@ -93,7 +93,7 @@ suspend fun revokeAppPermissions(
 
                 val fixed = group.isBackgroundFixed || group.isForegroundFixed
                 val granted = group.permissions.any { (_, perm) ->
-                    perm.isGrantedIncludingAppOp && perm.name !in EXEMPT_PERMISSIONS
+                    perm.isGranted && perm.name !in EXEMPT_PERMISSIONS
                 }
                 if (!fixed &&
                     granted &&

@@ -66,7 +66,7 @@ class LightPermInfoLiveData private constructor(
         }
 
         val newValue = try {
-            LightPermInfo(app.packageManager.getPermissionInfo(permissionName, 0))
+            LightPermInfo(app.packageManager.getPermissionInfo(permissionName, 0), null)
         } catch (e: PackageManager.NameNotFoundException) {
             Log.w(LOG_TAG, "Permission \"$permissionName\" not found")
             invalidateSingle(permissionName)
