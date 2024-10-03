@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "162f7b5c_6364f3e4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2024-10-03T19:03:56Z",
+      "side": 1,
+      "message": "I can tell you right now that platform people are going to say \"don\u0027t change default\".\n\ne.g new pixels should need 0 changes to have this enabled, so instead make it \"opt out of fs verity via the prop\" pls",
+      "revId": "ea87ce08a335309c1c22598167c3d090a29be825",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
