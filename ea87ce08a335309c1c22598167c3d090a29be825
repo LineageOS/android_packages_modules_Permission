@@ -69,6 +69,24 @@
       "message": "a",
       "revId": "ea87ce08a335309c1c22598167c3d090a29be825",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84195adc_3d03637c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27741
+      },
+      "writtenOn": "2024-10-03T19:12:32Z",
+      "side": 1,
+      "message": "for eventual platform people reviewers:\nhttps://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/services/core/java/com/android/server/pm/PackageManagerServiceUtils.java;l\u003d523?q\u003disApkVerityEnabled\u0026ss\u003dandroid%2Fplatform%2Fsuperproject%2Fmain\n\nif you are not setting this prop you are only half enabling fs-verity and likely breaking stuff in the opposite way.",
+      "parentUuid": "28869347_29affc18",
+      "revId": "ea87ce08a335309c1c22598167c3d090a29be825",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
