@@ -16,6 +16,24 @@
       "message": "I can tell you right now that platform people are going to say \"don\u0027t change default\".\n\ne.g new pixels should need 0 changes to have this enabled, so instead make it \"opt out of fs verity via the prop\" pls",
       "revId": "ea87ce08a335309c1c22598167c3d090a29be825",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "326cc4a6_f67de643",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 27741
+      },
+      "writtenOn": "2024-10-03T19:08:12Z",
+      "side": 1,
+      "message": "This is not a new addition. The prop is required for fs-verity to work properly. They forgot/didn\u0027t care enough to add checks. See how the other change utilizes an already existing method and define. fs-verity is off by default without prop on all devices but was being force enabled in a couple contexts.",
+      "parentUuid": "162f7b5c_6364f3e4",
+      "revId": "ea87ce08a335309c1c22598167c3d090a29be825",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
