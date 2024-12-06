@@ -440,7 +440,7 @@ object KotlinUtils {
                     group.userHandle, *flags)
             }
             newPerms[permName] = LightPermission(group.packageInfo, perm.permInfo,
-                perm.isGrantedIncludingAppOp, perm.flags or flagsToSet, perm.foregroundPerms)
+                perm.isGranted, perm.flags or flagsToSet, perm.foregroundPerms)
         }
         return LightAppPermGroup(group.packageInfo, group.permGroupInfo, newPerms,
             group.hasInstallToRuntimeSplit, group.specialLocationGrant)
@@ -518,7 +518,7 @@ object KotlinUtils {
         val newGroup = LightAppPermGroup(group.packageInfo, group.permGroupInfo, newPerms,
             group.hasInstallToRuntimeSplit, group.specialLocationGrant)
         // If any permission in the group is one time granted, start one time permission session.
-        if (newGroup.permissions.any { it.value.isOneTime && it.value.isGrantedIncludingAppOp }) {
+        if (newGroup.permissions.any { it.value.isOneTime && it.value.isGranted }) {
             app.getSystemService(PermissionManager::class.java)!!.startOneTimePermissionSession(
                 group.packageName, Utils.getOneTimePermissionsTimeout(),
                 ONE_TIME_PACKAGE_IMPORTANCE_LEVEL_TO_RESET_TIMER,
@@ -555,11 +555,11 @@ object KotlinUtils {
         }
 
         var newFlags = perm.flags
-        var isGranted = perm.isGrantedIncludingAppOp
+        var isGranted = perm.isGranted
         var shouldKill = false
 
         // Grant the permission if needed.
-        if (!perm.isGrantedIncludingAppOp) {
+        if (!perm.isGranted) {
             val affectsAppOp = permissionToOp(perm.name) != null || perm.isBackgroundPermission
 
             // TODO 195016052: investigate adding split permission handling
@@ -602,14 +602,14 @@ object KotlinUtils {
 
         // If we newly grant background access to the fine location, double-guess the user some
         // time later if this was really the right choice.
-        if (!perm.isGrantedIncludingAppOp && isGranted) {
+        if (!perm.isGranted && isGranted) {
             var triggerLocationAccessCheck = false
             if (perm.name == ACCESS_FINE_LOCATION) {
                 val bgPerm = group.permissions[perm.backgroundPermission]
-                triggerLocationAccessCheck = bgPerm?.isGrantedIncludingAppOp == true
+                triggerLocationAccessCheck = bgPerm?.isGranted == true
             } else if (perm.name == ACCESS_BACKGROUND_LOCATION) {
                 val fgPerm = group.permissions[ACCESS_FINE_LOCATION]
-                triggerLocationAccessCheck = fgPerm?.isGrantedIncludingAppOp == true
+                triggerLocationAccessCheck = fgPerm?.isGranted == true
             }
             if (triggerLocationAccessCheck) {
                 // trigger location access check
@@ -774,13 +774,13 @@ object KotlinUtils {
 
         val user = UserHandle.getUserHandleForUid(group.packageInfo.uid)
         var newFlags = perm.flags
-        var isGranted = perm.isGrantedIncludingAppOp
+        var isGranted = perm.isGranted
         val supportsRuntime = group.packageInfo.targetSdkVersion >= Build.VERSION_CODES.M
         var shouldKill = false
 
         val affectsAppOp = permissionToOp(perm.name) != null || perm.isBackgroundPermission
 
-        if (perm.isGrantedIncludingAppOp) {
+        if (perm.isGranted) {
             if (supportsRuntime && !isPermissionSplitFromNonRuntime(app, perm.name,
                             group.packageInfo.targetSdkVersion)) {
                 // Revoke the permission if needed.
@@ -874,7 +874,7 @@ object KotlinUtils {
                 val fgPerm = group.permissions[foregroundPermName]
                 val appOpName = permissionToOp(foregroundPermName) ?: continue
 
-                if (fgPerm != null && fgPerm.isGrantedIncludingAppOp) {
+                if (fgPerm != null && fgPerm.isGranted) {
                     wasChanged = wasChanged || setOpMode(appOpName, uid, packageName, MODE_ALLOWED,
                         appOpsManager)
                 }
@@ -884,7 +884,7 @@ object KotlinUtils {
             if (perm.backgroundPermission != null) {
                 wasChanged = if (group.permissions.containsKey(perm.backgroundPermission)) {
                     val bgPerm = group.permissions[perm.backgroundPermission]
-                    val mode = if (bgPerm != null && bgPerm.isGrantedIncludingAppOp) MODE_ALLOWED
+                    val mode = if (bgPerm != null && bgPerm.isGranted) MODE_ALLOWED
                     else MODE_FOREGROUND
 
                     setOpMode(appOpName, uid, packageName, mode, appOpsManager)
@@ -935,7 +935,7 @@ object KotlinUtils {
         if (perm.isBackgroundPermission && perm.foregroundPerms != null) {
             for (foregroundPermName in perm.foregroundPerms) {
                 val fgPerm = group.permissions[foregroundPermName]
-                if (fgPerm != null && fgPerm.isGrantedIncludingAppOp) {
+                if (fgPerm != null && fgPerm.isGranted) {
                     val appOpName = permissionToOp(foregroundPermName) ?: return false
                     wasChanged = wasChanged || setOpMode(appOpName, uid, packageName,
                         MODE_FOREGROUND, appOpsManager)

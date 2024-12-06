@@ -698,7 +698,7 @@ class AppPermissionViewModel(
 
     private fun getIndividualPermissionDetailResId(group: LightAppPermGroup): Pair<Int, Int> {
         return when (val numRevoked =
-            group.permissions.filter { !it.value.isGrantedIncludingAppOp }.size) {
+            group.permissions.filter { !it.value.isGranted }.size) {
             0 -> R.string.permission_revoked_none to numRevoked
             group.permissions.size -> R.string.permission_revoked_all to numRevoked
             else -> R.string.permission_revoked_count to numRevoked
@@ -767,7 +767,7 @@ class AppPermissionViewModel(
         for ((permName, permission) in oldGroup.permissions) {
             val newPermission = newGroup.permissions[permName] ?: continue
 
-            if (permission.isGrantedIncludingAppOp != newPermission.isGrantedIncludingAppOp ||
+            if (permission.isGranted != newPermission.isGranted ||
                 permission.flags != newPermission.flags) {
                 logAppPermissionFragmentActionReported(changeId, newPermission, buttonPressed)
             }
@@ -782,10 +782,10 @@ class AppPermissionViewModel(
         val uid = KotlinUtils.getPackageUid(app, packageName, user) ?: return
         PermissionControllerStatsLog.write(APP_PERMISSION_FRAGMENT_ACTION_REPORTED, sessionId,
             changeId, uid, packageName, permission.permInfo.name,
-            permission.isGrantedIncludingAppOp, permission.flags, buttonPressed)
+            permission.isGranted, permission.flags, buttonPressed)
         Log.v(LOG_TAG, "Permission changed via UI with sessionId=$sessionId changeId=" +
             "$changeId uid=$uid packageName=$packageName permission=" + permission.permInfo.name +
-            " isGranted=" + permission.isGrantedIncludingAppOp + " permissionFlags=" +
+            " isGranted=" + permission.isGranted + " permissionFlags=" +
             permission.flags + " buttonPressed=$buttonPressed")
     }
 

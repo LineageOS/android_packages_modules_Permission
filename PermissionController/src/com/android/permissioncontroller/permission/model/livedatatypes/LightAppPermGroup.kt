@@ -20,6 +20,7 @@ import android.Manifest
 import android.Manifest.permission.ACCESS_COARSE_LOCATION
 import android.os.Build
 import android.os.UserHandle
+import com.android.permissioncontroller.permission.utils.Utils
 
 /**
  * A lightweight version of the AppPermissionGroup data structure. Represents information about a
@@ -79,11 +80,13 @@ data class LightAppPermGroup(
         if (name !in backgroundPermNames) name else null
     }
 
+    val isPlatformPermissionGroup = permGroupInfo.packageName == Utils.OS_PKG
+
     val foreground = AppPermSubGroup(permissions.filter { it.key in foregroundPermNames },
-        packageInfo, specialLocationGrant)
+        packageInfo, isPlatformPermissionGroup, specialLocationGrant)
 
     val background = AppPermSubGroup(permissions.filter { it.key in backgroundPermNames },
-        packageInfo, specialLocationGrant)
+        packageInfo, isPlatformPermissionGroup, specialLocationGrant)
 
     /**
      * Whether or not this App Permission Group has a permission which has a background mode
@@ -152,24 +155,34 @@ data class LightAppPermGroup(
      *
      * @param permissions The permissions contained within this subgroup, a subset of those contained
      * in the full group
+     * @param isPlatformPermissionGroup Whether this is a platform permission group
      * @param specialLocationGrant Whether this is a special location package
      */
     data class AppPermSubGroup internal constructor(
         private val permissions: Map<String, LightPermission>,
         private val packageInfo: LightPackageInfo,
+        private val isPlatformPermissionGroup: Boolean,
         private val specialLocationGrant: Boolean?
     ) {
-        /**
-         * Whether any of this App Permission SubGroup's permissions are granted
-         */
-        val isGranted = specialLocationGrant ?: permissions.any { it.value.isGrantedIncludingAppOp }
+        /** Whether any of this App Permission SubGroup's permissions are granted */
+        val isGranted =
+            specialLocationGrant
+                ?: permissions.any {
+                    val mayGrantByPlatformOrSystem =
+                        !isPlatformPermissionGroup || it.value.isPlatformOrSystem
+                    it.value.isGranted && mayGrantByPlatformOrSystem
+                }
 
         /**
          * Whether any of this App Permission SubGroup's permissions are granted excluding
          * auto granted permissions during install time with flag RevokeWhenRequested
          */
-        val isGrantedExcludeRevokeWhenRequestedPermissions = specialLocationGrant ?: permissions
-            .any { it.value.isGrantedIncludingAppOp && !it.value.isRevokeWhenRequested }
+        val allowFullGroupGrant = specialLocationGrant ?: permissions
+            .any {
+                val mayGrantByPlatformOrSystem =
+                        !isPlatformPermissionGroup || it.value.isPlatformOrSystem
+                it.value.allowFullGroupGrant && mayGrantByPlatformOrSystem
+            }
 
         /**
          * Whether any of this App Permission SubGroup's permissions are granted by default

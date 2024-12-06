@@ -237,7 +237,7 @@ class GrantPermissionsViewModel(
                     // some requests might have been granted, check for that
                     for ((key, state) in states) {
                         val allAffectedGranted = state.affectedPermissions.all { perm ->
-                            appPermGroup.permissions[perm]?.isGrantedIncludingAppOp == true &&
+                            appPermGroup.permissions[perm]?.isGranted == true &&
                                 appPermGroup.permissions[perm]?.isRevokeWhenRequested == false
                         }
                         if (allAffectedGranted) {
@@ -275,7 +275,7 @@ class GrantPermissionsViewModel(
                 if (fgState?.group != null) {
                     val fgGroup = fgState.group
                     for (perm in fgState.affectedPermissions) {
-                        if (fgGroup.permissions[perm]?.isGrantedIncludingAppOp == false) {
+                        if (fgGroup.permissions[perm]?.isGranted == false) {
                             // If any of the requested permissions is not granted,
                             // needFgPermissions = true
                             needFgPermissions = true
@@ -426,7 +426,7 @@ class GrantPermissionsViewModel(
                                 fgState.affectedPermissions.contains(ACCESS_FINE_LOCATION)) {
                             val coarseLocationPerm =
                                 groupState.group.allPermissions[ACCESS_COARSE_LOCATION]
-                            if (coarseLocationPerm?.isGrantedIncludingAppOp == true) {
+                            if (coarseLocationPerm?.isGranted == true) {
                                 // Upgrade flow
                                 locationVisibilities[DIALOG_WITH_FINE_LOCATION_ONLY] = true
                                 message = RequestMessage.FG_FINE_LOCATION_MESSAGE
@@ -655,7 +655,7 @@ class GrantPermissionsViewModel(
 
         // Do not attempt to grant background access if foreground access is not either already
         // granted or requested
-        if (isBackground && !group.foreground.isGrantedExcludeRevokeWhenRequestedPermissions &&
+        if (isBackground && !group.foreground.allowFullGroupGrant &&
             !hasForegroundRequest) {
             Log.w(LOG_TAG, "Cannot grant $perm as the matching foreground permission is not " +
                 "already granted.")
@@ -667,21 +667,22 @@ class GrantPermissionsViewModel(
             return STATE_SKIPPED
         }
 
-        if (isBackground && group.background.isGrantedExcludeRevokeWhenRequestedPermissions ||
-            !isBackground && group.foreground.isGrantedExcludeRevokeWhenRequestedPermissions) {
+        if (isBackground && group.background.allowFullGroupGrant ||
+            !isBackground && group.foreground.allowFullGroupGrant) {
             // If FINE location is not granted, do not grant it automatically when COARSE
             // location is already granted.
             if (group.permGroupName == LOCATION &&
-                    group.allPermissions[ACCESS_FINE_LOCATION]?.isGrantedIncludingAppOp
+                    group.allPermissions[ACCESS_FINE_LOCATION]?.isGranted
                     == false) {
                 return STATE_UNKNOWN
             }
 
-            if (group.permissions[perm]?.isGrantedIncludingAppOp == false) {
+            if (group.permissions[perm]?.isGranted == false) {
                 if (isBackground) {
                     KotlinUtils.grantBackgroundRuntimePermissions(app, group, listOf(perm))
                 } else {
-                    KotlinUtils.grantForegroundRuntimePermissions(app, group, listOf(perm), group.isOneTime)
+                    KotlinUtils.grantForegroundRuntimePermissions(app, group, listOf(perm),
+                            group.isOneTime)
                 }
                 KotlinUtils.setGroupFlags(app, group, FLAG_PERMISSION_USER_SET to false,
                     FLAG_PERMISSION_USER_FIXED to false, filterPermissions = listOf(perm))
@@ -852,28 +853,40 @@ class GrantPermissionsViewModel(
             } else {
                 PERMISSION_GRANT_REQUEST_RESULT_REPORTED__RESULT__USER_GRANTED
             }
+            var affectedPermissions: List<String> = groupState.affectedPermissions
             if (groupState.isBackground) {
                 KotlinUtils.grantBackgroundRuntimePermissions(app, groupState.group,
-                    groupState.affectedPermissions)
+                    affectedPermissions)
             } else {
                 if (affectedForegroundPermissions == null) {
                     KotlinUtils.grantForegroundRuntimePermissions(app, groupState.group,
-                        groupState.affectedPermissions, isOneTime)
+                        affectedPermissions, isOneTime)
                     // This prevents weird flag state when app targetSDK switches from S+ to R-
                     if (groupState.affectedPermissions.contains(ACCESS_FINE_LOCATION)) {
                         KotlinUtils.setFlagsWhenLocationAccuracyChanged(
                                 app, groupState.group, true)
                     }
                 } else {
+                    affectedPermissions = affectedForegroundPermissions
                     val newGroup = KotlinUtils.grantForegroundRuntimePermissions(app,
-                            groupState.group, affectedForegroundPermissions, isOneTime)
+                            groupState.group, affectedPermissions, isOneTime)
                     if (!isOneTime || newGroup.isOneTime) {
                         KotlinUtils.setFlagsWhenLocationAccuracyChanged(app, newGroup,
                                 affectedForegroundPermissions.contains(ACCESS_FINE_LOCATION))
                     }
                 }
             }
-            groupState.state = STATE_ALLOWED
+            val shouldDenyFullGroupGrant =
+                groupState.group.isPlatformPermissionGroup &&
+                        affectedPermissions.none {
+                            groupState.group.permissions[it]?.isPlatformOrSystem == true
+                        }
+            groupState.state =
+                if (shouldDenyFullGroupGrant) {
+                    STATE_UNKNOWN
+                } else {
+                    STATE_ALLOWED
+                }
         } else {
             if (groupState.isBackground) {
                 KotlinUtils.revokeBackgroundRuntimePermissions(app, groupState.group,
