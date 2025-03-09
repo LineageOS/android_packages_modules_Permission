@@ -251,7 +251,7 @@
     <string name="app_permission_never_accessed_summary" msgid="401346181461975090">"Ешқашан пайдаланбады"</string>
     <string name="app_permission_never_accessed_denied_summary" msgid="6596000497490905146">"Тыйым салынған/Ешқашан пайдаланбаған"</string>
     <string name="allowed_header" msgid="7769277978004790414">"Рұқсат берілгендер"</string>
-    <string name="allowed_always_header" msgid="6455903312589013545">"Біржола рұқсат берілгендер"</string>
+    <string name="allowed_always_header" msgid="6455903312589013545">"Біржола рұқсат берілген"</string>
     <string name="allowed_foreground_header" msgid="6845655788447833353">"Пайдаланғанда ғана рұқсат берілгендер"</string>
     <string name="allowed_storage_scoped" msgid="5383645873719086975">"Тек мультимедианы пайдалана алатын қолданбалар"</string>
     <string name="allowed_storage_full" msgid="5356699280625693530">"Барлық файлдарды басқара алатын қолданбалар"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Шектелген параметрлерге рұқсат беру"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Шектелген параметр"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Қауіпсіздік мақсатында бұл параметрді қазір пайдалану мүмкін емес."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Телефон қоңырауы кезінде бұл әрекет мүмкін емес"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Телефон қоңырауы кезінде қолданбаларға басқа қолданбаларды орнатуға тыйым салынады.\n\n Алаяқтар телефонмен сөйлесу кезінде көбіне осындай әрекеттерді жасауды сұрайды, сондықтан сізді қорғау үшін бұл әрекет блокталған. Таныс емес адам осылай әрекет етуге нұсқау берсе, бұл алаяқтық болуы мүмкін."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"Қолданбаға <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> рұқсаты берілмеді"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"Қолданба жеке және қаржылық ақпаратыңызға қауіп төндіруі мүмкін құпия ақпарат рұқсатын сұрады.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Қолданба бұл шектеулі рұқсатсыз дұрыс жұмыс істемеуі мүмкін. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Рұқсат беру туралы ақпарат&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"Қолданбаға әдепкі <xliff:g id="ROLE_NAME">%1$s</xliff:g> болу рұқсаты берілмеді"</string>

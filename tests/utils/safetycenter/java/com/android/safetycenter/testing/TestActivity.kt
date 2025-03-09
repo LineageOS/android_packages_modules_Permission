@@ -52,10 +52,12 @@ class TestActivity : Activity() {
         fun enableHighPriorityAlias() {
             setAliasEnabledState(COMPONENT_ENABLED_STATE_ENABLED)
         }
+
         /** @see [enableHighPriorityAlias] */
         fun disableHighPriorityAlias() {
             setAliasEnabledState(COMPONENT_ENABLED_STATE_DISABLED)
         }
+
         private fun setAliasEnabledState(state: Int) {
             val name =
                 ComponentName(getApplicationContext(), TestActivity::class.java.name + "Priority")

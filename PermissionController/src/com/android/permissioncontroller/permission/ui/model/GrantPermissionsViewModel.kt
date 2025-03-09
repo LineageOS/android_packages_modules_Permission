@@ -29,6 +29,7 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
 import android.app.admin.DevicePolicyManager
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.pm.PackageManager.FLAG_PERMISSION_POLICY_FIXED
@@ -41,6 +42,8 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Process
 import android.permission.PermissionManager
+import android.permission.flags.Flags
+import android.util.ArrayMap
 import android.util.Log
 import androidx.core.util.Consumer
 import androidx.lifecycle.ViewModel
@@ -116,6 +119,7 @@ import com.android.permissioncontroller.permission.utils.SafetyNetLogger
 import com.android.permissioncontroller.permission.utils.Utils
 import com.android.permissioncontroller.permission.utils.v31.AdminRestrictedPermissionsUtils
 import com.android.permissioncontroller.permission.utils.v34.SafetyLabelUtils
+import com.android.permissioncontroller.permission.utils.v35.MultiDeviceUtils.isPermissionDeviceAware
 
 /**
  * ViewModel for the GrantPermissionsActivity. Tracks all permission groups that are affected by the
@@ -152,6 +156,21 @@ class GrantPermissionsViewModel(
             SafetyLabelInfoLiveData[packageName, user]
         } else {
             null
+        }
+    private val permissionGroupToDeviceIdMap: Map<String, Int> =
+        if (SdkLevel.isAtLeastV() && Flags.allowHostPermissionDialogsOnVirtualDevices()) {
+            requestedPermissions
+                .filter({ PermissionMapping.getGroupOfPlatformPermission(it) != null })
+                .associateBy({ PermissionMapping.getGroupOfPlatformPermission(it)!! }, {
+                    if (isPermissionDeviceAware(
+                            app.applicationContext,
+                            deviceId,
+                            it
+                        )
+                    ) deviceId else Context.DEVICE_ID_DEFAULT
+                })
+        } else {
+            ArrayMap()
         }
     private val dpm = app.getSystemService(DevicePolicyManager::class.java)!!
     private val permissionPolicy = dpm.getPermissionPolicy(null)
@@ -314,7 +333,8 @@ class GrantPermissionsViewModel(
                 }
 
                 val getLiveDataFun = { groupName: String ->
-                    LightAppPermGroupLiveData[packageName, groupName, user, deviceId]
+                    LightAppPermGroupLiveData[packageName, groupName, user,
+                        permissionGroupToDeviceIdMap.get(groupName) ?: deviceId]
                 }
                 setSourcesToDifference(requestedGroups.keys, appPermGroupLiveDatas, getLiveDataFun)
             }
@@ -398,7 +418,8 @@ class GrantPermissionsViewModel(
                                 safetyLabel,
                                 groupState.group.permGroupName
                             ),
-                            deviceId
+                            permissionGroupToDeviceIdMap.get(groupState.group.permGroupName)
+                                ?: deviceId
                         )
                     )
                 }

@@ -25,6 +25,7 @@ import androidx.preference.PreferenceGroup
 import androidx.preference.PreferenceGroupAdapter
 import androidx.preference.PreferenceViewHolder
 import com.android.permissioncontroller.R
+import com.android.permissioncontroller.permission.ui.handheld.v36.AppPermissionFooterLinkPreference
 import com.android.settingslib.widget.FooterPreference
 
 /**
@@ -106,7 +107,10 @@ class SectionPreferenceGroupAdapter(preferenceGroup: PreferenceGroup) :
     }
 
     private val Preference.isSectionDivider: Boolean
-        get() = this is PreferenceCategory || this is FooterPreference
+        get() =
+            this is PreferenceCategory ||
+                this is FooterPreference ||
+                this is AppPermissionFooterLinkPreference
 
     override fun onBindViewHolder(holder: PreferenceViewHolder, position: Int) {
         super.onBindViewHolder(holder, position)

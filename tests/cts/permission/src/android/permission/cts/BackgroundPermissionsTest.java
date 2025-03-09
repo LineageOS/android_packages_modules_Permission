@@ -24,6 +24,7 @@ import static android.app.AppOpsManager.MODE_FOREGROUND;
 import static android.app.AppOpsManager.MODE_IGNORED;
 import static android.content.pm.PermissionInfo.PROTECTION_DANGEROUS;
 import static android.content.pm.PermissionInfo.PROTECTION_INTERNAL;
+import static android.health.connect.HealthPermissions.HEALTH_PERMISSION_GROUP;
 import static android.permission.cts.PermissionUtils.getAppOp;
 import static android.permission.cts.PermissionUtils.grantPermission;
 import static android.permission.cts.PermissionUtils.install;
@@ -31,6 +32,7 @@ import static android.permission.cts.PermissionUtils.uninstallApp;
 
 import static com.android.compatibility.common.util.SystemUtil.eventually;
 
+import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth.assertWithMessage;
 
 import static org.junit.Assert.assertNotEquals;
@@ -43,14 +45,21 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PermissionInfo;
+import android.os.Build;
+import android.permission.flags.Flags;
 import android.platform.test.annotations.AppModeFull;
+import android.platform.test.annotations.RequiresFlagsEnabled;
+import android.platform.test.flag.junit.CheckFlagsRule;
+import android.platform.test.flag.junit.DeviceFlagsValueProvider;
 import android.util.ArrayMap;
 import android.util.Log;
 
+import androidx.test.filters.SdkSuppress;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.runner.AndroidJUnit4;
 
 import org.junit.After;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -72,6 +81,9 @@ public class BackgroundPermissionsTest {
     private static final UiAutomation sUiAutomation =
             InstrumentationRegistry.getInstrumentation().getUiAutomation();
 
+    @Rule
+    public final CheckFlagsRule mCheckFlagsRule = DeviceFlagsValueProvider.createCheckFlagsRule();
+
     @After
     public void uninstallTestApp() {
         uninstallApp(APP_PKG);
@@ -79,9 +91,24 @@ public class BackgroundPermissionsTest {
 
     @Test
     @AppModeFull(reason = "Instant apps cannot read properties of other packages")
-    public void verifybackgroundPermissionsProperties() throws Exception {
+    public void verifyBackgroundPropertiesForPlatformPermissions() throws Exception {
+        verifyBackgroundPermissionsProperties("android");
+    }
+
+    @SdkSuppress(minSdkVersion = Build.VERSION_CODES.BAKLAVA, codeName = "Baklava")
+    @RequiresFlagsEnabled({Flags.FLAG_REPLACE_BODY_SENSOR_PERMISSION_ENABLED})
+    @Test
+    @AppModeFull(reason = "Instant apps cannot read properties of other packages")
+    public void verifyBackgroundPropertiesForHealthPermissions() throws Exception {
+        String healthPackageName = sContext.getPackageManager().getPermissionGroupInfo(
+            HEALTH_PERMISSION_GROUP, /* flags= */ 0).packageName;
+        verifyBackgroundPermissionsProperties(healthPackageName);
+    }
+
+    private void verifyBackgroundPermissionsProperties(String packageName)
+        throws Exception {
         PackageInfo pkg = sContext.getPackageManager().getPackageInfo(
-                "android", PackageManager.GET_PERMISSIONS);
+                packageName, PackageManager.GET_PERMISSIONS);
         ArrayMap<String, String> potentialBackgroundPermissionsToGroup = new ArrayMap<>();
 
         int numPermissions = pkg.permissions.length;
@@ -97,11 +124,13 @@ public class BackgroundPermissionsTest {
             }
         }
 
+        int backgroundPermissionCount = 0;
         for (int i = 0; i < numPermissions; i++) {
             PermissionInfo permission = pkg.permissions[i];
             String backgroundPermissionName = permission.backgroundPermission;
 
             if (backgroundPermissionName != null) {
+                backgroundPermissionCount += 1;
                 Log.i(LOG_TAG, permission.name + "->" + backgroundPermissionName);
 
                 // foreground permissions must be dangerous
@@ -115,6 +144,8 @@ public class BackgroundPermissionsTest {
                         .containsKey(backgroundPermissionName));
             }
         }
+        // Tested packages must have at least one permission linked with a background permission.
+        assertThat(backgroundPermissionCount).isGreaterThan(0);
     }
 
     /**

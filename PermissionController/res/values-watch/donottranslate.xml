@@ -28,4 +28,55 @@
     <string name="wear_material_compose_caption_1_font_family">font-family-text-medium-device-default</string>
     <string name="wear_material_compose_caption_2_font_family">font-family-text-medium-device-default</string>
     <string name="wear_material_compose_caption_3_font_family">font-family-text-medium-device-default</string>
+
+    <string name="wear_compose_material3_arc_small_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_arc_medium_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_arc_large_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_body_extra_small_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_body_small_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_body_medium_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_body_large_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_display_small_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_display_medium_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_display_large_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_label_small_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_label_medium_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_label_large_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_numeral_extra_small_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_numeral_small_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_numeral_medium_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_numeral_large_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_numeral_extra_large_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_title_small_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_title_medium_font_family">font-family-flex-device-default</string>
+    <string name="wear_compose_material3_title_large_font_family">font-family-flex-device-default</string>
+
+    <dimen name="wear_compose_material3_arc_small_font_size">14sp</dimen>
+    <dimen name="wear_compose_material3_arc_medium_font_size">15sp</dimen>
+    <dimen name="wear_compose_material3_arc_large_font_size">20sp</dimen>
+    <dimen name="wear_compose_material3_body_extra_small_font_size">10sp</dimen>
+    <dimen name="wear_compose_material3_body_small_font_size">12sp</dimen>
+    <dimen name="wear_compose_material3_body_medium_font_size">14sp</dimen>
+    <dimen name="wear_compose_material3_body_large_font_size">16sp</dimen>
+    <dimen name="wear_compose_material3_display_small_font_size">24sp</dimen>
+    <dimen name="wear_compose_material3_display_medium_font_size">30sp</dimen>
+    <dimen name="wear_compose_material3_display_large_font_size">40sp</dimen>
+    <dimen name="wear_compose_material3_label_small_font_size">13sp</dimen>
+    <dimen name="wear_compose_material3_label_medium_font_size">15sp</dimen>
+    <dimen name="wear_compose_material3_label_large_font_size">20sp</dimen>
+    <dimen name="wear_compose_material3_numeral_extra_small_font_size">24sp</dimen>
+    <dimen name="wear_compose_material3_numeral_small_font_size">30sp</dimen>
+    <dimen name="wear_compose_material3_numeral_medium_font_size">40sp</dimen>
+    <dimen name="wear_compose_material3_numeral_large_font_size">50sp</dimen>
+    <dimen name="wear_compose_material3_numeral_extra_large_font_size">60sp</dimen>
+    <dimen name="wear_compose_material3_title_small_font_size">14sp</dimen>
+    <dimen name="wear_compose_material3_title_medium_font_size">16sp</dimen>
+    <dimen name="wear_compose_material3_title_large_font_size">20sp</dimen>
+
+    <dimen name="wear_compose_material3_shape_corner_extra_small_size">4dp</dimen>
+    <dimen name="wear_compose_material3_shape_corner_small_size">8dp</dimen>
+    <dimen name="wear_compose_material3_shape_corner_medium_size">18dp</dimen>
+    <dimen name="wear_compose_material3_shape_corner_large_size">26dp</dimen>
+    <dimen name="wear_compose_material3_shape_corner_extra_large_size">36dp</dimen>
+
 </resources>

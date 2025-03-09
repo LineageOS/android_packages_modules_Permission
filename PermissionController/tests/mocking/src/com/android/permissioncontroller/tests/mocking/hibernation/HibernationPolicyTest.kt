@@ -16,19 +16,27 @@
 
 package com.android.permissioncontroller.tests.mocking.hibernation
 
+import android.Manifest
 import android.app.job.JobScheduler
+import android.content.ComponentName
 import android.content.ContentResolver
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
+import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.database.ContentObserver
 import android.net.Uri
+import android.os.Binder
 import android.os.Build
 import android.os.SystemClock
+import android.os.UserHandle
 import android.os.UserManager
 import android.preference.PreferenceManager
 import android.provider.DeviceConfig
 import android.provider.Settings
+import android.telecom.PhoneAccountHandle
+import android.telecom.TelecomManager
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SdkSuppress
@@ -37,14 +45,19 @@ import com.android.permissioncontroller.Constants
 import com.android.permissioncontroller.PermissionControllerApplication
 import com.android.permissioncontroller.hibernation.HibernationBroadcastReceiver
 import com.android.permissioncontroller.hibernation.ONE_DAY_MS
-import com.android.permissioncontroller.hibernation.PREF_KEY_SYSTEM_TIME_SNAPSHOT
 import com.android.permissioncontroller.hibernation.PREF_KEY_ELAPSED_REALTIME_SNAPSHOT
 import com.android.permissioncontroller.hibernation.PREF_KEY_START_TIME_OF_UNUSED_APP_TRACKING
+import com.android.permissioncontroller.hibernation.PREF_KEY_SYSTEM_TIME_SNAPSHOT
 import com.android.permissioncontroller.hibernation.SNAPSHOT_UNINITIALIZED
 import com.android.permissioncontroller.hibernation.getStartTimeOfUnusedAppTracking
+import com.android.permissioncontroller.hibernation.isPackageHibernationExemptBySystem
+import com.android.permissioncontroller.permission.model.livedatatypes.LightPackageInfo
+import com.android.permissioncontroller.permission.utils.ContextCompat
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Before
+import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.ArgumentCaptor
@@ -71,11 +84,14 @@ class HibernationPolicyTest {
         private val application = Mockito.mock(PermissionControllerApplication::class.java)
         private const val USER_SETUP_INCOMPLETE = 0
         private const val USER_SETUP_COMPLETE = 1
+        private const val TEST_PKG_NAME = "test.package"
     }
 
     @Mock lateinit var jobScheduler: JobScheduler
     @Mock lateinit var context: Context
     @Mock lateinit var userManager: UserManager
+    @Mock lateinit var packageManager: PackageManager
+    @Mock lateinit var telecomManager: TelecomManager
     @Mock lateinit var contentResolver: ContentResolver
 
     private lateinit var realContext: Context
@@ -83,6 +99,7 @@ class HibernationPolicyTest {
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var mockitoSession: MockitoSession
     private lateinit var filesDir: File
+    private lateinit var userHandle: UserHandle
 
     @Before
     fun setup() {
@@ -100,11 +117,15 @@ class HibernationPolicyTest {
         `when`(Settings.Secure.getUriFor(any())).thenReturn(Mockito.mock(Uri::class.java))
 
         realContext = ApplicationProvider.getApplicationContext()
+        userHandle = UserHandle.getUserHandleForUid(Binder.getCallingUid())
         sharedPreferences =
             PreferenceManager.getDefaultSharedPreferences(realContext.applicationContext)
 
         `when`(context.getSharedPreferences(anyString(), anyInt())).thenReturn(sharedPreferences)
         `when`(context.getSystemService(UserManager::class.java)).thenReturn(userManager)
+        `when`(application.getSystemService(TelecomManager::class.java)).thenReturn(telecomManager)
+        `when`(application.packageManager).thenReturn(packageManager)
+        `when`(application.applicationContext).thenReturn(context)
 
         filesDir = realContext.cacheDir
         `when`(application.filesDir).thenReturn(filesDir)
@@ -207,6 +228,30 @@ class HibernationPolicyTest {
             .isNotEqualTo(systemTimeSnapshot)
     }
 
+    @Test
+    @Ignore("b/371061181")
+    // This method under test initializes several SmartAsyncMediatorLiveData classes which run code
+    // on GlobalScope which the unit test has no control over. This can lead to the code running
+    // during other tests which may not have the right static mocks.
+    // Until this is fixed, this test should be ignored to prevent flaky test faliures.
+    fun isPackageExemptBySystem_isCallingApp_returnsTrue() = runBlocking<Unit> {
+        val pkgInfo = makePackageInfo(TEST_PKG_NAME)
+
+        `when`(context.checkPermission(
+                eq(Manifest.permission.MANAGE_OWN_CALLS), anyInt(), eq(pkgInfo.uid)))
+                .thenReturn(PERMISSION_GRANTED)
+        `when`(context.checkPermission(
+                eq(Manifest.permission.RECORD_AUDIO), anyInt(), eq(pkgInfo.uid)))
+                .thenReturn(PERMISSION_GRANTED)
+        `when`(context.checkPermission(
+                eq(Manifest.permission.WRITE_CALL_LOG), anyInt(), eq(pkgInfo.uid)))
+                .thenReturn(PERMISSION_GRANTED)
+        `when`(telecomManager.selfManagedPhoneAccounts).thenReturn(
+                listOf(PhoneAccountHandle(ComponentName(TEST_PKG_NAME, "Service"), "id")))
+
+        assertThat(isPackageHibernationExemptBySystem(pkgInfo, userHandle)).isTrue()
+    }
+
     private fun assertAdjustedTime(systemTimeSnapshot: Long, realtimeSnapshot: Long) {
         val newStartTimeOfUnusedAppTracking =
             sharedPreferences.getLong(
@@ -222,5 +267,24 @@ class HibernationPolicyTest {
         assertThat(newSystemTimeSnapshot).isGreaterThan(systemTimeSnapshot)
         assertThat(newRealtimeSnapshot).isNotEqualTo(SNAPSHOT_UNINITIALIZED)
         assertThat(newRealtimeSnapshot).isAtLeast(realtimeSnapshot)
+    }
+
+    private fun makePackageInfo(packageName: String): LightPackageInfo {
+        return LightPackageInfo(
+                packageName,
+                emptyList(),
+                emptyList(),
+                emptyList(),
+                0 /* uid */,
+                Build.VERSION_CODES.CUR_DEVELOPMENT,
+                false /* isInstantApp */,
+                true /* enabled */,
+                0 /* appFlags */,
+                0 /* firstInstallTime */,
+                0 /* lastUpdateTime */,
+                false /* areAttributionsUserVisible */,
+                emptyMap() /* attributionTagsToLabels */,
+                ContextCompat.DEVICE_ID_DEFAULT
+        )
     }
 }

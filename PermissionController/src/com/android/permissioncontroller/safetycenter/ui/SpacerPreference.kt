@@ -55,6 +55,7 @@ internal class SpacerPreference(context: Context, attrs: AttributeSet) :
     }
 
     private var maxKnownToolbarHeight = 0
+
     override fun onBindViewHolder(holder: PreferenceViewHolder) {
         super.onBindViewHolder(holder)
         val spacer = holder.itemView
@@ -74,7 +75,7 @@ internal class SpacerPreference(context: Context, attrs: AttributeSet) :
                             oldLeft: Int,
                             oldTop: Int,
                             oldRight: Int,
-                            oldBottom: Int
+                            oldBottom: Int,
                         ) {
                             adjustHeight(spacer)
                         }

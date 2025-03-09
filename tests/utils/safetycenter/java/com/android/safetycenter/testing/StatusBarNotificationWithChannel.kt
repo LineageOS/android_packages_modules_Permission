@@ -22,5 +22,5 @@ import android.service.notification.StatusBarNotification
 /** Tuple of [StatusBarNotification] and the [NotificationChannel] it was posted to. */
 data class StatusBarNotificationWithChannel(
     val statusBarNotification: StatusBarNotification,
-    val channel: NotificationChannel
+    val channel: NotificationChannel,
 )

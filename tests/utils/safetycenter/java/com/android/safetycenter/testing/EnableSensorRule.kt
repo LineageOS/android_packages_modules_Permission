@@ -42,7 +42,7 @@ class EnableSensorRule(context: Context, val sensor: Int) : TestRule {
             override fun evaluate() {
                 assumeTrue(
                     "Test device does not support toggling sensor $sensor",
-                    supportsSensorToggle()
+                    supportsSensorToggle(),
                 )
                 val oldSensorPrivacy = isSensorPrivacyEnabled()
                 setSensorPrivacy(false)

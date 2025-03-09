@@ -444,8 +444,8 @@
     <string name="default_payment_app_other_nfc_services" msgid="5957633798695758917">"Ostatní služby NFC"</string>
     <string name="car_default_app_selected" msgid="5416420830430644174">"Vybráno"</string>
     <string name="car_default_app_selected_with_info" msgid="1932204186080593500">"Vybráno – <xliff:g id="ADDITIONAL_INFO">%1$s</xliff:g>"</string>
-    <string name="special_app_access_search_keyword" msgid="8032347212290774210">"zvláštní přístup aplikací"</string>
-    <string name="special_app_access" msgid="5019319067120213797">"Přístupy pro aplikace"</string>
+    <string name="special_app_access_search_keyword" msgid="8032347212290774210">"speciální přístup aplikací"</string>
+    <string name="special_app_access" msgid="5019319067120213797">"Speciální přístup aplikací"</string>
     <string name="no_special_app_access" msgid="6950277571805106247">"Žádný přístup ke spec. aplik."</string>
     <string name="special_app_access_no_apps" msgid="4102911722787886970">"Žádné aplikace"</string>
     <string name="home_missing_work_profile_support" msgid="1756855847669387977">"Nepodporuje pracovní profil"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Povolit omezená nastavení"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Blokované nastavení"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Z důvodu vaší bezpečnosti toto nastavení momentálně není dostupné."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Akce není během telefonního hovoru k dispozici"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Během telefonního hovoru nelze aplikacím povolit instalovat další aplikace.\n\n O tento typ akce během hovorů často žádají podvodníci. Kvůli vaší ochraně je proto blokována. Pokud vás k této akci navádí někdo, koho neznáte, může se jednat o podvod."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"Aplikaci byl odepřen přístup k oprávnění <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"Aplikace požádala o přístup k citlivému oprávnění, které může ohrozit vaše osobní a finanční údaje.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Je možné, že aplikace bez tohoto oprávnění nebude fungovat správně. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Jak povolit přístup&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"Aplikaci byla odepřena role výchozí <xliff:g id="ROLE_NAME">%1$s</xliff:g>"</string>

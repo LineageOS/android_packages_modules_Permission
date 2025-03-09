@@ -17,7 +17,7 @@ package {
 }
 
 android_test_helper_app {
-    name: "CtsRoleTestAppForProfile",
+    name: "CtsRoleTestAppClone",
     defaults: ["mts-target-sdk-version-current"],
     min_sdk_version: "30",
 }

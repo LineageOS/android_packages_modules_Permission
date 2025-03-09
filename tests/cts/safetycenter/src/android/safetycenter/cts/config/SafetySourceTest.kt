@@ -368,7 +368,7 @@ class SafetySourceTest {
                         { SafetySource.Builder(it).build() }
                     } else {
                         null
-                    }
+                    },
             )
             .addEqualityGroup(DYNAMIC_BAREBONE)
             .addEqualityGroup(
@@ -396,7 +396,7 @@ class SafetySourceTest {
                             setTitleForPrivateProfileResId(REFERENCE_RES_ID)
                         }
                     }
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(DYNAMIC_HIDDEN)
             .addEqualityGroup(DYNAMIC_HIDDEN_WITH_SEARCH)

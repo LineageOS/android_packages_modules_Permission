@@ -120,7 +120,7 @@ class SafetyCenterActivityTest {
                 context.getString(safetyCenterTestConfigs.staticSource1.summaryResId),
                 context.getString(safetyCenterTestConfigs.staticSourceGroup2.titleResId),
                 context.getString(safetyCenterTestConfigs.staticSource2.titleResId),
-                context.getString(safetyCenterTestConfigs.staticSource2.summaryResId)
+                context.getString(safetyCenterTestConfigs.staticSource2.summaryResId),
             )
         }
     }
@@ -144,8 +144,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_1_TITLE,
                     entrySummary = SAFETY_SOURCE_1_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_2,
@@ -153,8 +153,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_2_TITLE,
                     entrySummary = SAFETY_SOURCE_2_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_3,
@@ -162,8 +162,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_3_TITLE,
                     entrySummary = SAFETY_SOURCE_3_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_4,
@@ -171,8 +171,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_4_TITLE,
                     entrySummary = SAFETY_SOURCE_4_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_5,
@@ -180,8 +180,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_5_TITLE,
                     entrySummary = SAFETY_SOURCE_5_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
         }
 
@@ -190,7 +190,7 @@ class SafetyCenterActivityTest {
                 context.getString(safetyCenterTestConfigs.dynamicSourceGroup1.titleResId),
                 context.getString(safetyCenterTestConfigs.dynamicSourceGroup1.summaryResId),
                 context.getString(safetyCenterTestConfigs.dynamicSourceGroup3.titleResId),
-                context.getString(safetyCenterTestConfigs.dynamicSourceGroup3.summaryResId)
+                context.getString(safetyCenterTestConfigs.dynamicSourceGroup3.summaryResId),
             )
             waitAllTextNotDisplayed(
                 SAFETY_SOURCE_1_TITLE,
@@ -200,7 +200,7 @@ class SafetyCenterActivityTest {
                 SAFETY_SOURCE_4_TITLE,
                 SAFETY_SOURCE_4_SUMMARY,
                 SAFETY_SOURCE_5_TITLE,
-                SAFETY_SOURCE_5_SUMMARY
+                SAFETY_SOURCE_5_SUMMARY,
             )
         }
     }
@@ -215,8 +215,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_1_TITLE,
                     entrySummary = SAFETY_SOURCE_1_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_2,
@@ -224,8 +224,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_RECOMMENDATION,
                     entryTitle = SAFETY_SOURCE_2_TITLE,
                     entrySummary = SAFETY_SOURCE_2_SUMMARY,
-                    withIssue = true
-                )
+                    withIssue = true,
+                ),
             )
             setData(
                 SOURCE_ID_3,
@@ -233,8 +233,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_3_TITLE,
                     entrySummary = SAFETY_SOURCE_3_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_4,
@@ -242,8 +242,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_RECOMMENDATION,
                     entryTitle = SAFETY_SOURCE_4_TITLE,
                     entrySummary = SAFETY_SOURCE_4_SUMMARY,
-                    withIssue = true
-                )
+                    withIssue = true,
+                ),
             )
             setData(
                 SOURCE_ID_5,
@@ -251,8 +251,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_CRITICAL_WARNING,
                     entryTitle = SAFETY_SOURCE_5_TITLE,
                     entrySummary = SAFETY_SOURCE_5_SUMMARY,
-                    withIssue = true
-                )
+                    withIssue = true,
+                ),
             )
         }
 
@@ -261,7 +261,7 @@ class SafetyCenterActivityTest {
                 context.getString(safetyCenterTestConfigs.dynamicSourceGroup1.titleResId),
                 SAFETY_SOURCE_2_SUMMARY,
                 context.getString(safetyCenterTestConfigs.dynamicSourceGroup3.titleResId),
-                SAFETY_SOURCE_5_SUMMARY
+                SAFETY_SOURCE_5_SUMMARY,
             )
             waitAllTextNotDisplayed(
                 SAFETY_SOURCE_1_TITLE,
@@ -269,7 +269,7 @@ class SafetyCenterActivityTest {
                 SAFETY_SOURCE_1_SUMMARY,
                 SAFETY_SOURCE_4_TITLE,
                 SAFETY_SOURCE_5_TITLE,
-                SAFETY_SOURCE_4_SUMMARY
+                SAFETY_SOURCE_4_SUMMARY,
             )
         }
     }
@@ -358,7 +358,7 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.multipleSourcesConfig)
         safetyCenterTestHelper.setData(
             SOURCE_ID_1,
-            safetySourceTestData.recommendationWithGeneralIssue
+            safetySourceTestData.recommendationWithGeneralIssue,
         )
         safetyCenterTestHelper.setData(SOURCE_ID_2, safetySourceTestData.information)
         safetyCenterTestHelper.setData(SOURCE_ID_3, safetySourceTestData.information)
@@ -412,7 +412,7 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.multipleSourcesConfig)
         safetyCenterTestHelper.setData(
             SOURCE_ID_1,
-            safetySourceTestData.unspecifiedDisabledWithTestActivityRedirect
+            safetySourceTestData.unspecifiedDisabledWithTestActivityRedirect,
         )
 
         context.launchSafetyCenterActivity {
@@ -427,7 +427,7 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.multipleSourcesConfig)
         safetyCenterTestHelper.setData(
             SOURCE_ID_1,
-            safetySourceTestData.unspecifiedDisabledWithTestActivityRedirect
+            safetySourceTestData.unspecifiedDisabledWithTestActivityRedirect,
         )
 
         context.launchSafetyCenterActivity {
@@ -489,7 +489,7 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.singleSourceConfig)
         safetyCenterTestHelper.setData(
             SINGLE_SOURCE_ID,
-            safetySourceTestData.informationWithIconAction
+            safetySourceTestData.informationWithIconAction,
         )
 
         context.launchSafetyCenterActivity {
@@ -523,7 +523,7 @@ class SafetyCenterActivityTest {
         val issue = safetySourceTestData.recommendationGeneralIssue
         safetyCenterTestHelper.setData(
             ISSUE_ONLY_ALL_OPTIONAL_ID,
-            SafetySourceTestData.issuesOnly(issue)
+            SafetySourceTestData.issuesOnly(issue),
         )
 
         context.launchSafetyCenterActivity { waitDisplayed(By.desc("Alert. ${issue.title}")) }
@@ -563,7 +563,7 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.singleSourceConfig)
         safetyCenterTestHelper.setData(
             SINGLE_SOURCE_ID,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
 
         context.launchSafetyCenterActivity {
@@ -581,21 +581,21 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.singleSourceConfig)
         safetyCenterTestHelper.setData(
             SINGLE_SOURCE_ID,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
 
         context.launchSafetyCenterActivity {
             clickDismissIssueCard()
             waitAllTextDisplayed(
                 "Dismiss this alert?",
-                "Review your security and privacy settings any time to add more protection"
+                "Review your security and privacy settings any time to add more protection",
             )
 
             getUiDevice().rotate()
 
             waitAllTextDisplayed(
                 "Dismiss this alert?",
-                "Review your security and privacy settings any time to add more protection"
+                "Review your security and privacy settings any time to add more protection",
             )
             clickConfirmDismissal()
 
@@ -609,7 +609,7 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.singleSourceConfig)
         safetyCenterTestHelper.setData(
             SINGLE_SOURCE_ID,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
 
         context.launchSafetyCenterActivity {
@@ -626,7 +626,7 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.singleSourceConfig)
         safetyCenterTestHelper.setData(
             SINGLE_SOURCE_ID,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
 
         context.launchSafetyCenterActivity {
@@ -650,13 +650,13 @@ class SafetyCenterActivityTest {
         // Set the initial data for the source
         safetyCenterTestHelper.setData(
             SINGLE_SOURCE_ID,
-            safetySourceTestData.criticalWithResolvingIssueWithSuccessMessage
+            safetySourceTestData.criticalWithResolvingIssueWithSuccessMessage,
         )
 
         // Clear the data when action is triggered to simulate resolution.
         SafetySourceReceiver.setResponse(
             Request.ResolveAction(SINGLE_SOURCE_ID),
-            Response.ClearData
+            Response.ClearData,
         )
 
         context.launchSafetyCenterActivity(withReceiverPermission = true) {
@@ -680,13 +680,13 @@ class SafetyCenterActivityTest {
         // Set the initial data for the source
         safetyCenterTestHelper.setData(
             SINGLE_SOURCE_ID,
-            safetySourceTestData.criticalWithResolvingIssueWithSuccessMessage
+            safetySourceTestData.criticalWithResolvingIssueWithSuccessMessage,
         )
 
         // Clear the data when action is triggered to simulate resolution.
         SafetySourceReceiver.setResponse(
             Request.ResolveAction(SINGLE_SOURCE_ID),
-            Response.ClearData
+            Response.ClearData,
         )
 
         context.launchSafetyCenterActivity(withReceiverPermission = true) {
@@ -708,13 +708,13 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.singleSourceConfig)
         safetyCenterTestHelper.setData(
             SINGLE_SOURCE_ID,
-            safetySourceTestData.criticalWithResolvingGeneralIssueWithConfirmation
+            safetySourceTestData.criticalWithResolvingGeneralIssueWithConfirmation,
         )
 
         // Clear the data when action is triggered to simulate resolution.
         SafetySourceReceiver.setResponse(
             Request.ResolveAction(SINGLE_SOURCE_ID),
-            Response.ClearData
+            Response.ClearData,
         )
 
         context.launchSafetyCenterActivity(withReceiverPermission = true) {
@@ -734,13 +734,13 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.singleSourceConfig)
         safetyCenterTestHelper.setData(
             SINGLE_SOURCE_ID,
-            safetySourceTestData.criticalWithResolvingGeneralIssueWithConfirmation
+            safetySourceTestData.criticalWithResolvingGeneralIssueWithConfirmation,
         )
 
         // Clear the data when action is triggered to simulate resolution.
         SafetySourceReceiver.setResponse(
             Request.ResolveAction(SINGLE_SOURCE_ID),
-            Response.ClearData
+            Response.ClearData,
         )
 
         context.launchSafetyCenterActivity(withReceiverPermission = true) {
@@ -764,7 +764,7 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.singleSourceConfig)
         safetyCenterTestHelper.setData(
             SINGLE_SOURCE_ID,
-            safetySourceTestData.criticalWithResolvingGeneralIssueWithConfirmation
+            safetySourceTestData.criticalWithResolvingGeneralIssueWithConfirmation,
         )
 
         context.launchSafetyCenterActivity(withReceiverPermission = true) {
@@ -786,13 +786,13 @@ class SafetyCenterActivityTest {
         // Set the initial data for the source
         safetyCenterTestHelper.setData(
             SINGLE_SOURCE_ID,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
 
         // Clear the data when action is triggered to simulate resolution.
         SafetySourceReceiver.setResponse(
             Request.ResolveAction(SINGLE_SOURCE_ID),
-            Response.ClearData
+            Response.ClearData,
         )
 
         context.launchSafetyCenterActivity(withReceiverPermission = true) {
@@ -909,11 +909,11 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.multipleSourcesConfig)
         safetyCenterTestHelper.setData(
             SOURCE_ID_1,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
         safetyCenterTestHelper.setData(
             SOURCE_ID_2,
-            safetySourceTestData.recommendationWithGeneralIssue
+            safetySourceTestData.recommendationWithGeneralIssue,
         )
         safetyCenterTestHelper.setData(SOURCE_ID_3, safetySourceTestData.informationWithIssue)
 
@@ -923,7 +923,7 @@ class SafetyCenterActivityTest {
             waitExpandedIssuesDisplayed(
                 safetySourceTestData.criticalResolvingGeneralIssue,
                 safetySourceTestData.recommendationGeneralIssue,
-                safetySourceTestData.informationIssue
+                safetySourceTestData.informationIssue,
             )
         }
     }
@@ -933,11 +933,11 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.multipleSourcesConfig)
         safetyCenterTestHelper.setData(
             SOURCE_ID_1,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
         safetyCenterTestHelper.setData(
             SOURCE_ID_2,
-            safetySourceTestData.recommendationWithGeneralIssue
+            safetySourceTestData.recommendationWithGeneralIssue,
         )
         safetyCenterTestHelper.setData(SOURCE_ID_3, safetySourceTestData.informationWithIssue)
 
@@ -948,7 +948,7 @@ class SafetyCenterActivityTest {
             waitCollapsedIssuesDisplayed(
                 safetySourceTestData.criticalResolvingGeneralIssue,
                 safetySourceTestData.recommendationGeneralIssue,
-                safetySourceTestData.informationIssue
+                safetySourceTestData.informationIssue,
             )
         }
     }
@@ -958,11 +958,11 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.multipleSourcesConfig)
         safetyCenterTestHelper.setData(
             SOURCE_ID_1,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
         safetyCenterTestHelper.setData(
             SOURCE_ID_2,
-            safetySourceTestData.criticalWithRedirectingIssue
+            safetySourceTestData.criticalWithRedirectingIssue,
         )
         safetyCenterTestHelper.setData(SOURCE_ID_3, safetySourceTestData.informationWithIssue)
 
@@ -973,7 +973,7 @@ class SafetyCenterActivityTest {
             waitCollapsedIssuesDisplayed(
                 safetySourceTestData.criticalRedirectingIssue,
                 safetySourceTestData.criticalResolvingGeneralIssue,
-                safetySourceTestData.informationIssue
+                safetySourceTestData.informationIssue,
             )
         }
     }
@@ -983,11 +983,11 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.multipleSourcesConfig)
         safetyCenterTestHelper.setData(
             SOURCE_ID_1,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
         safetyCenterTestHelper.setData(
             SOURCE_ID_2,
-            safetySourceTestData.recommendationWithGeneralIssue
+            safetySourceTestData.recommendationWithGeneralIssue,
         )
         safetyCenterTestHelper.setData(SOURCE_ID_3, safetySourceTestData.informationWithIssue)
 
@@ -1007,11 +1007,11 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.multipleSourcesConfig)
         safetyCenterTestHelper.setData(
             SOURCE_ID_1,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
         safetyCenterTestHelper.setData(
             SOURCE_ID_2,
-            safetySourceTestData.recommendationWithGeneralIssue
+            safetySourceTestData.recommendationWithGeneralIssue,
         )
         safetyCenterTestHelper.setData(SOURCE_ID_3, safetySourceTestData.informationWithIssue)
 
@@ -1022,7 +1022,7 @@ class SafetyCenterActivityTest {
             waitCollapsedIssuesDisplayed(
                 safetySourceTestData.criticalResolvingGeneralIssue,
                 safetySourceTestData.recommendationGeneralIssue,
-                safetySourceTestData.informationIssue
+                safetySourceTestData.informationIssue,
             )
         }
     }
@@ -1032,7 +1032,7 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.singleSourceConfig)
         safetyCenterTestHelper.setData(
             SINGLE_SOURCE_ID,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
 
         context.launchSafetyCenterActivity {
@@ -1046,11 +1046,11 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.multipleSourcesConfig)
         safetyCenterTestHelper.setData(
             SOURCE_ID_1,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
         safetyCenterTestHelper.setData(
             SOURCE_ID_2,
-            safetySourceTestData.recommendationWithGeneralIssue
+            safetySourceTestData.recommendationWithGeneralIssue,
         )
         safetyCenterTestHelper.setData(SOURCE_ID_3, safetySourceTestData.informationWithIssue)
 
@@ -1058,7 +1058,7 @@ class SafetyCenterActivityTest {
             waitCollapsedIssuesDisplayed(
                 safetySourceTestData.criticalResolvingGeneralIssue,
                 safetySourceTestData.recommendationGeneralIssue,
-                safetySourceTestData.informationIssue
+                safetySourceTestData.informationIssue,
             )
         }
     }
@@ -1068,11 +1068,11 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.multipleSourcesConfig)
         safetyCenterTestHelper.setData(
             SOURCE_ID_1,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
         safetyCenterTestHelper.setData(
             SOURCE_ID_2,
-            safetySourceTestData.recommendationWithGeneralIssue
+            safetySourceTestData.recommendationWithGeneralIssue,
         )
         safetyCenterTestHelper.setData(SOURCE_ID_3, safetySourceTestData.informationWithIssue)
 
@@ -1084,7 +1084,7 @@ class SafetyCenterActivityTest {
             waitExpandedIssuesDisplayed(
                 safetySourceTestData.criticalResolvingGeneralIssue,
                 safetySourceTestData.recommendationGeneralIssue,
-                safetySourceTestData.informationIssue
+                safetySourceTestData.informationIssue,
             )
         }
     }
@@ -1094,11 +1094,11 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.multipleSourcesConfig)
         safetyCenterTestHelper.setData(
             SOURCE_ID_1,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
         safetyCenterTestHelper.setData(
             SOURCE_ID_2,
-            safetySourceTestData.recommendationWithGeneralIssue
+            safetySourceTestData.recommendationWithGeneralIssue,
         )
         safetyCenterTestHelper.setData(SOURCE_ID_3, safetySourceTestData.informationWithIssue)
 
@@ -1118,7 +1118,7 @@ class SafetyCenterActivityTest {
             waitExpandedIssuesDisplayed(
                 safetySourceTestData.criticalResolvingGeneralIssue,
                 safetySourceTestData.recommendationGeneralIssue,
-                safetySourceTestData.informationIssue
+                safetySourceTestData.informationIssue,
             )
         }
     }
@@ -1128,11 +1128,11 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.multipleSourcesConfig)
         safetyCenterTestHelper.setData(
             SOURCE_ID_1,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
         safetyCenterTestHelper.setData(
             SOURCE_ID_2,
-            safetySourceTestData.recommendationWithGeneralIssue
+            safetySourceTestData.recommendationWithGeneralIssue,
         )
         safetyCenterTestHelper.setData(SOURCE_ID_3, safetySourceTestData.informationWithIssue)
 
@@ -1152,11 +1152,11 @@ class SafetyCenterActivityTest {
         safetyCenterTestHelper.setConfig(safetyCenterTestConfigs.multipleSourcesConfig)
         safetyCenterTestHelper.setData(
             SOURCE_ID_1,
-            safetySourceTestData.criticalWithResolvingGeneralIssue
+            safetySourceTestData.criticalWithResolvingGeneralIssue,
         )
         safetyCenterTestHelper.setData(
             SOURCE_ID_2,
-            safetySourceTestData.recommendationWithGeneralIssue
+            safetySourceTestData.recommendationWithGeneralIssue,
         )
         safetyCenterTestHelper.setData(SOURCE_ID_3, safetySourceTestData.informationWithIssue)
 
@@ -1183,8 +1183,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_1_TITLE,
                     entrySummary = SAFETY_SOURCE_1_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_2,
@@ -1192,8 +1192,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_2_TITLE,
                     entrySummary = SAFETY_SOURCE_2_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_3,
@@ -1201,8 +1201,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_3_TITLE,
                     entrySummary = SAFETY_SOURCE_3_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_4,
@@ -1210,8 +1210,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_4_TITLE,
                     entrySummary = SAFETY_SOURCE_4_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_5,
@@ -1219,8 +1219,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_5_TITLE,
                     entrySummary = SAFETY_SOURCE_5_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
         }
 
@@ -1238,7 +1238,7 @@ class SafetyCenterActivityTest {
                 SAFETY_SOURCE_1_TITLE,
                 SAFETY_SOURCE_1_SUMMARY,
                 SAFETY_SOURCE_2_TITLE,
-                SAFETY_SOURCE_2_SUMMARY
+                SAFETY_SOURCE_2_SUMMARY,
             )
         }
     }
@@ -1253,8 +1253,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_1_TITLE,
                     entrySummary = SAFETY_SOURCE_1_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_2,
@@ -1262,8 +1262,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_2_TITLE,
                     entrySummary = SAFETY_SOURCE_2_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_3,
@@ -1271,8 +1271,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_3_TITLE,
                     entrySummary = SAFETY_SOURCE_3_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_4,
@@ -1280,8 +1280,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_4_TITLE,
                     entrySummary = SAFETY_SOURCE_4_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_5,
@@ -1289,8 +1289,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_5_TITLE,
                     entrySummary = SAFETY_SOURCE_5_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
         }
 
@@ -1332,7 +1332,7 @@ class SafetyCenterActivityTest {
             )
             waitAllTextDisplayed(
                 context.getString(safetyCenterTestConfigs.dynamicSource1.titleResId),
-                context.getString(safetyCenterTestConfigs.dynamicSource2.titleResId)
+                context.getString(safetyCenterTestConfigs.dynamicSource2.titleResId),
             )
         }
     }
@@ -1348,8 +1348,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_1_TITLE,
                     entrySummary = SAFETY_SOURCE_1_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_2,
@@ -1357,8 +1357,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_2_TITLE,
                     entrySummary = SAFETY_SOURCE_2_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_3,
@@ -1366,8 +1366,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_3_TITLE,
                     entrySummary = SAFETY_SOURCE_3_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_4,
@@ -1375,8 +1375,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_4_TITLE,
                     entrySummary = SAFETY_SOURCE_4_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
             setData(
                 SOURCE_ID_5,
@@ -1384,8 +1384,8 @@ class SafetyCenterActivityTest {
                     severityLevel = SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_5_TITLE,
                     entrySummary = SAFETY_SOURCE_5_SUMMARY,
-                    withIssue = false
-                )
+                    withIssue = false,
+                ),
             )
         }
 
@@ -1425,7 +1425,7 @@ class SafetyCenterActivityTest {
         context.launchSafetyCenterActivity {
             waitAllTextDisplayed(
                 context.getString(lastGroup.titleResId),
-                context.getString(lastGroup.summaryResId)
+                context.getString(lastGroup.summaryResId),
             )
 
             waitDisplayed(By.text(context.getString(firstGroup.titleResId))) { it.click() }

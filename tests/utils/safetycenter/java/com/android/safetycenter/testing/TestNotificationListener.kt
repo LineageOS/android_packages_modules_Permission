@@ -115,7 +115,7 @@ class TestNotificationListener : NotificationListenerService() {
          */
         fun waitForSingleNotificationMatching(
             characteristics: NotificationCharacteristics,
-            timeout: Duration = TIMEOUT_LONG
+            timeout: Duration = TIMEOUT_LONG,
         ): StatusBarNotificationWithChannel {
             return waitForNotificationsMatching(characteristics, timeout = timeout).first()
         }
@@ -128,12 +128,12 @@ class TestNotificationListener : NotificationListenerService() {
          */
         fun waitForNotificationsMatching(
             vararg characteristics: NotificationCharacteristics,
-            timeout: Duration = TIMEOUT_LONG
+            timeout: Duration = TIMEOUT_LONG,
         ): List<StatusBarNotificationWithChannel> {
             val charsList = characteristics.toList()
             return waitForNotificationsToSatisfy(
                 timeout = timeout,
-                description = "notification(s) matching characteristics $charsList"
+                description = "notification(s) matching characteristics $charsList",
             ) {
                 NotificationCharacteristics.areMatching(it, charsList)
             }
@@ -147,7 +147,7 @@ class TestNotificationListener : NotificationListenerService() {
          */
         fun waitForSuccessNotification(
             successMessage: String,
-            onNotification: (StatusBarNotification) -> Unit = {}
+            onNotification: (StatusBarNotification) -> Unit = {},
         ) {
             // Only wait for the notification event and don't wait for all notifications to "settle"
             // as this notification is auto-cancelled after 10s; which can cause flakyness.
@@ -185,7 +185,7 @@ class TestNotificationListener : NotificationListenerService() {
             timeout: Duration = TIMEOUT_LONG,
             forAtLeast: Duration = TIMEOUT_SHORT,
             description: String,
-            predicate: (List<StatusBarNotificationWithChannel>) -> Boolean
+            predicate: (List<StatusBarNotificationWithChannel>) -> Boolean,
         ): List<StatusBarNotificationWithChannel> {
             // First we wait at most timeout for the active notifications to satisfy the given
             // predicate or otherwise we throw:
@@ -198,7 +198,7 @@ class TestNotificationListener : NotificationListenerService() {
                     throw AssertionError(
                         "Expected: $description, but notifications were " +
                             "${getSafetyCenterNotifications()} after waiting for $timeout",
-                        e
+                        e,
                     )
                 }
 
@@ -298,7 +298,7 @@ class TestNotificationListener : NotificationListenerService() {
             getInstanceOrThrow().cancelNotification(key)
             waitForNotificationsToSatisfy(
                 timeout = TIMEOUT_LONG,
-                description = "no notification with the key $key"
+                description = "no notification with the key $key",
             ) { notifications ->
                 notifications.none { it.statusBarNotification.key == key }
             }
@@ -327,7 +327,7 @@ class TestNotificationListener : NotificationListenerService() {
                 throw IllegalStateException(
                     "Notification dismissal was not recorded in the issue cache: " +
                         dumpIssueDismissalsRepositoryState(),
-                    e
+                    e,
                 )
             }
         }
@@ -362,7 +362,7 @@ class TestNotificationListener : NotificationListenerService() {
         fun reset(context: Context) {
             waitForNotificationsToSatisfy(
                 forAtLeast = Duration.ZERO,
-                description = "all Safety Center notifications removed in tear down"
+                description = "all Safety Center notifications removed in tear down",
             ) {
                 it.isEmpty()
             }

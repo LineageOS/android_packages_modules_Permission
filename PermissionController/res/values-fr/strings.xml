@@ -60,7 +60,7 @@
     <string name="grant_dialog_button_allow_all_files" msgid="4955436994954829894">"Autoriser la gestion de tous les fichiers"</string>
     <string name="grant_dialog_button_allow_media_only" msgid="4832877658422573832">"Autoriser l\'accès aux fichiers multimédias"</string>
     <string name="app_permissions_breadcrumb" msgid="5136969550489411650">"Applications"</string>
-    <string name="app_permissions" msgid="3369917736607944781">"Autorisations des applications"</string>
+    <string name="app_permissions" msgid="3369917736607944781">"Autorisations de l\'application"</string>
     <string name="unused_apps" msgid="2058057455175955094">"Applications inutilisées"</string>
     <string name="edit_photos_description" msgid="5540108003480078892">"Modifier les photos sélectionnées pour cette application"</string>
     <string name="no_unused_apps" msgid="12809387670415295">"Aucune appli inutilisée"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Autoriser les paramètres restreints"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Paramètre restreint"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Pour votre sécurité, ce paramètre est actuellement indisponible."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Action non disponible lors d\'un appel téléphonique"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Vous ne pouvez pas autoriser des applis à installer d\'autres applis pendant un appel téléphonique.\n\n Les escrocs demandent souvent d\'effectuer ce type d\'action lors d\'appels téléphoniques. Cette action est donc bloquée pour vous protéger. Si quelqu\'un que vous ne connaissez pas vous demande d\'effectuer cette action, il s\'agit peut-être d\'une escroquerie."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"L\'appli s\'est vu refuser l\'accès à <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"Cette appli a demandé l\'accès à une autorisation sensible susceptible d\'exposer vos informations financières et personnelles à un risque.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Si elle ne dispose pas d\'un accès à cette autorisation restreinte, l\'appli peut ne pas fonctionner correctement. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Découvrez comment autoriser l\'accès&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"L\'appli s\'est vu refuser l\'accès au statut de <xliff:g id="ROLE_NAME">%1$s</xliff:g> par défaut"</string>

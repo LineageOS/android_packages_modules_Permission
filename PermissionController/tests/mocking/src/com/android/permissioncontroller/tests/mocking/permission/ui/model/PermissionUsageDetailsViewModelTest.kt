@@ -32,6 +32,7 @@ import com.android.permissioncontroller.appops.data.model.v31.DiscretePackageOps
 import com.android.permissioncontroller.permission.domain.usecase.v31.GetPermissionGroupUsageDetailsUseCase
 import com.android.permissioncontroller.permission.ui.model.v31.PermissionUsageDetailsViewModel.PermissionUsageDetailsUiState
 import com.android.permissioncontroller.permission.ui.model.v31.PermissionUsageDetailsViewModelV2
+import com.android.permissioncontroller.permission.utils.LocationUtils
 import com.android.permissioncontroller.permission.utils.StringUtils
 import com.android.permissioncontroller.permission.utils.Utils
 import com.android.permissioncontroller.pm.data.model.v31.PackageInfoModel
@@ -93,6 +94,7 @@ class PermissionUsageDetailsViewModelTest {
                 .mockStatic(DeviceUtils::class.java)
                 .mockStatic(StringUtils::class.java)
                 .mockStatic(Flags::class.java)
+                .mockStatic(LocationUtils::class.java)
                 .strictness(Strictness.LENIENT)
                 .startMocking()
 
@@ -109,6 +111,7 @@ class PermissionUsageDetailsViewModelTest {
                 )
             )
             .thenReturn("Duration Summary")
+        whenever(LocationUtils.isLocationProvider(any(), any())).thenReturn(false)
 
         packageInfos =
             mapOf(
@@ -500,7 +503,8 @@ class PermissionUsageDetailsViewModelTest {
             permissionRepository,
             appOpUsageRepository,
             roleRepository,
-            userRepository
+            userRepository,
+            false,
         )
     }
 

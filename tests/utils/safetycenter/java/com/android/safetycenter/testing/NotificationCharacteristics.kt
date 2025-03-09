@@ -38,7 +38,7 @@ data class NotificationCharacteristics(
 
         private fun importanceMatches(
             statusBarNotificationWithChannel: StatusBarNotificationWithChannel,
-            characteristicImportance: Int
+            characteristicImportance: Int,
         ): Boolean {
             return characteristicImportance == IMPORTANCE_ANY ||
                 statusBarNotificationWithChannel.channel.importance == characteristicImportance
@@ -46,7 +46,7 @@ data class NotificationCharacteristics(
 
         private fun blockableMatches(
             statusBarNotificationWithChannel: StatusBarNotificationWithChannel,
-            characteristicBlockable: Boolean?
+            characteristicBlockable: Boolean?,
         ): Boolean {
             return characteristicBlockable == null ||
                 statusBarNotificationWithChannel.channel.isBlockable == characteristicBlockable
@@ -54,7 +54,7 @@ data class NotificationCharacteristics(
 
         fun safetySourceIdMatches(
             statusBarNotification: StatusBarNotification,
-            safetySourceId: String?
+            safetySourceId: String?,
         ): Boolean {
             return safetySourceId == null ||
                 SafetyCenterIds.issueKeyFromString(statusBarNotification.tag).safetySourceId ==
@@ -63,7 +63,7 @@ data class NotificationCharacteristics(
 
         private fun isMatch(
             statusBarNotificationWithChannel: StatusBarNotificationWithChannel,
-            characteristic: NotificationCharacteristics
+            characteristic: NotificationCharacteristics,
         ): Boolean {
             val notif = statusBarNotificationWithChannel.statusBarNotification.notification
             val extras = notif.extras
@@ -75,13 +75,13 @@ data class NotificationCharacteristics(
                 blockableMatches(statusBarNotificationWithChannel, characteristic.blockable) &&
                 safetySourceIdMatches(
                     statusBarNotificationWithChannel.statusBarNotification,
-                    characteristic.safetySourceId
+                    characteristic.safetySourceId,
                 )
         }
 
         fun areMatching(
             statusBarNotifications: List<StatusBarNotificationWithChannel>,
-            characteristics: List<NotificationCharacteristics>
+            characteristics: List<NotificationCharacteristics>,
         ): Boolean {
             if (statusBarNotifications.size != characteristics.size) {
                 return false

@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"پابندی والی ترتیبات کی اجازت دیں"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"محدود ترتیب"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"آپ کی سیکیورٹی کیلئے، یہ ترتیب فی الحال دستیاب نہیں ہے۔"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"فون کال کے دوران کارروائی دستیاب نہیں ہے"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"فون کال کے دوران ایپس کو دوسری ایپس انسٹال کرنے کی اجازت دینا ممنوع ہے۔\n\n دھوکے باز اکثر فون کال گفتگوؤں کے دوران اس قسم کی کارروائی کی درخواست کرتے ہیں، اس لیے اسے آپ کی حفاظت کے لیے مسدود کر دیا جاتا ہے۔ اگر آپ کو کسی ایسے شخص کے ذریعے سے یہ کارروائی کرنے کے لیے رہنمائی کی جا رہی ہے جس کو آپ نہیں جانتے ہیں تو یہ ایک فریب کاری ہو سکتی ہے۔"</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"<xliff:g id="PERMISSION_NAME">%1$s</xliff:g> تک ایپ کی رسائی کو مسترد کر دیا گیا"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"‏ایپ نے ایک حساس اجازت تک رسائی کی درخواست کی ہے جو آپ کی ذاتی اور مالی معلومات کو خطرے میں ڈال سکتی ہے۔<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>یہ ممکن ہے کہ اس محدود اجازت کے بغیر ایپ ٹھیک سے کام نہ کرے۔ &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;رسائی کی اجازت دینے کا طریقہ جانیں&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"ڈیفالٹ <xliff:g id="ROLE_NAME">%1$s</xliff:g> ہونے کے لیے ایپ کی رسائی کو مسترد کر دیا گیا"</string>

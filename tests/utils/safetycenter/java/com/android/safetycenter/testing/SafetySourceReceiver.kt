@@ -86,7 +86,7 @@ class SafetySourceReceiver : BroadcastReceiver() {
                 NotificationChannel(
                     NOTIFICATION_CHANNEL_ID,
                     NOTIFICATION_CHANNEL_ID,
-                    IMPORTANCE_DEFAULT
+                    IMPORTANCE_DEFAULT,
                 )
             )
             startForeground(
@@ -98,7 +98,7 @@ class SafetySourceReceiver : BroadcastReceiver() {
                             "ForegroundService"
                     )
                     .setSmallIcon(android.R.drawable.ic_info)
-                    .build()
+                    .build(),
             )
             serviceScope.launch {
                 try {
@@ -150,7 +150,7 @@ class SafetySourceReceiver : BroadcastReceiver() {
                     componentName,
                     if (enabled) COMPONENT_ENABLED_STATE_ENABLED
                     else COMPONENT_ENABLED_STATE_DISABLED,
-                    PackageManager.DONT_KILL_APP
+                    PackageManager.DONT_KILL_APP,
                 )
         }
 
@@ -165,7 +165,7 @@ class SafetySourceReceiver : BroadcastReceiver() {
         fun SafetyCenterManager.refreshSafetySourcesWithReceiverPermissionAndWait(
             refreshReason: Int,
             safetySourceIds: List<String>? = null,
-            timeout: Duration = TIMEOUT_LONG
+            timeout: Duration = TIMEOUT_LONG,
         ): String =
             callWithShellPermissionIdentity(SEND_SAFETY_CENTER_UPDATE) {
                 refreshSafetySourcesWithPermission(refreshReason, safetySourceIds)
@@ -174,7 +174,7 @@ class SafetySourceReceiver : BroadcastReceiver() {
 
         fun SafetyCenterManager.refreshSafetySourcesWithoutReceiverPermissionAndWait(
             refreshReason: Int,
-            safetySourceIds: List<String>? = null
+            safetySourceIds: List<String>? = null,
         ) {
             refreshSafetySourcesWithPermission(refreshReason, safetySourceIds)
             WaitForBroadcasts.waitForBroadcasts()
@@ -183,16 +183,14 @@ class SafetySourceReceiver : BroadcastReceiver() {
 
         fun setSafetyCenterEnabledWithReceiverPermissionAndWait(
             value: Boolean,
-            timeout: Duration = TIMEOUT_LONG
+            timeout: Duration = TIMEOUT_LONG,
         ): Boolean =
             callWithShellPermissionIdentity(SEND_SAFETY_CENTER_UPDATE) {
                 SafetyCenterFlags.isEnabled = value
                 receiveSafetyCenterEnabledChanged(timeout)
             }
 
-        fun setSafetyCenterEnabledWithoutReceiverPermissionAndWait(
-            value: Boolean,
-        ) {
+        fun setSafetyCenterEnabledWithoutReceiverPermissionAndWait(value: Boolean) {
             SafetyCenterFlags.isEnabled = value
             WaitForBroadcasts.waitForBroadcasts()
             receiveSafetyCenterEnabledChanged(TIMEOUT_SHORT)
@@ -201,7 +199,7 @@ class SafetySourceReceiver : BroadcastReceiver() {
         fun SafetyCenterManager.executeSafetyCenterIssueActionWithPermissionAndWait(
             issueId: String,
             issueActionId: String,
-            timeout: Duration = TIMEOUT_LONG
+            timeout: Duration = TIMEOUT_LONG,
         ) {
             callWithShellPermissionIdentity(SEND_SAFETY_CENTER_UPDATE) {
                 executeSafetyCenterIssueActionWithPermission(issueId, issueActionId)
@@ -211,7 +209,7 @@ class SafetySourceReceiver : BroadcastReceiver() {
 
         fun SafetyCenterManager.dismissSafetyCenterIssueWithPermissionAndWait(
             issueId: String,
-            timeout: Duration = TIMEOUT_LONG
+            timeout: Duration = TIMEOUT_LONG,
         ) {
             callWithShellPermissionIdentity(SEND_SAFETY_CENTER_UPDATE) {
                 dismissSafetyCenterIssueWithPermission(issueId)

@@ -51,11 +51,13 @@ public class Permissions {
 
     private static final boolean DEBUG = false;
 
+    private static final Object sPermissionInfoLock = new Object();
+    private static final ArrayMap<String, Boolean> sIsRuntimePermission = new ArrayMap<>();
+    private static final ArrayMap<String, Boolean> sIsRestrictedPermission = new ArrayMap<>();
+
+    private static final Object sForegroundBackgroundPermissionMappingsLock = new Object();
     private static ArrayMap<String, String> sForegroundToBackgroundPermission;
     private static ArrayMap<String, List<String>> sBackgroundToForegroundPermissions;
-    private static final Object sForegroundBackgroundPermissionMappingsLock = new Object();
-
-    private static final ArrayMap<String, Boolean> sRestrictedPermissions = new ArrayMap<>();
 
     /**
      * Filter a list of permissions based on their SDK versions.
@@ -86,8 +88,9 @@ public class Permissions {
      *
      * @param packageName the package name of the application to be granted permissions to
      * @param permissions the list of permissions to be granted
-     * @param overrideDisabledSystemPackage whether to ignore the permissions of a disabled system
-     *                                      package (if this package is an updated system package)
+     * @param ignoreDisabledSystemPackage whether to ignore the requested permissions of a disabled
+     *                                    system package (if this package is an updated system
+     *                                    package) when granting runtime permissions
      * @param overrideUserSetAndFixed whether to override user set and fixed flags on the permission
      * @param setGrantedByRole whether the permissions will be granted as granted-by-role
      * @param setGrantedByDefault whether the permissions will be granted as granted-by-default
@@ -101,7 +104,7 @@ public class Permissions {
      *      PackageInfo, java.util.Set, boolean, boolean, int)
      */
     public static boolean grantAsUser(@NonNull String packageName,
-            @NonNull List<String> permissions, boolean overrideDisabledSystemPackage,
+            @NonNull List<String> permissions, boolean ignoreDisabledSystemPackage,
             boolean overrideUserSetAndFixed, boolean setGrantedByRole, boolean setGrantedByDefault,
             boolean setSystemFixed, @NonNull UserHandle user, @NonNull Context context) {
         if (setGrantedByRole == setGrantedByDefault) {
@@ -145,15 +148,17 @@ public class Permissions {
         // choice to grant this app the permissions needed to function. For all other
         // apps, (default grants on first boot and user creation) we don't grant default
         // permissions if the version on the system image does not declare them.
-        if (!overrideDisabledSystemPackage && isUpdatedSystemApp(packageInfo)) {
+        if (!ignoreDisabledSystemPackage && isUpdatedSystemApp(packageInfo)) {
             PackageInfo disabledSystemPackageInfo = getFactoryPackageInfoAsUser(packageName, user,
                     context);
             if (disabledSystemPackageInfo != null) {
-                if (ArrayUtils.isEmpty(disabledSystemPackageInfo.requestedPermissions)) {
-                    return false;
+                for (int i = permissionsToGrant.size() - 1; i >= 0; i--) {
+                    String permission = permissionsToGrant.valueAt(i);
+                    if (isRuntimePermission(permission, context) && !ArrayUtils.contains(
+                            disabledSystemPackageInfo.requestedPermissions, permission)) {
+                        permissionsToGrant.removeAt(i);
+                    }
                 }
-                CollectionUtils.retainAll(permissionsToGrant,
-                        disabledSystemPackageInfo.requestedPermissions);
                 if (permissionsToGrant.isEmpty()) {
                     return false;
                 }
@@ -258,7 +263,8 @@ public class Permissions {
         if (!wasPermissionOrAppOpGranted) {
             // If we've granted a permission which wasn't granted, it's no longer user set or fixed.
             newMask |= PackageManager.FLAG_PERMISSION_USER_FIXED
-                    | PackageManager.FLAG_PERMISSION_USER_SET;
+                    | PackageManager.FLAG_PERMISSION_USER_SET
+                    | PackageManager.FLAG_PERMISSION_ONE_TIME;
         }
         // If a component gets a permission for being the default handler A and also default handler
         // B, we grant the weaker grant form. This only applies to default permission grant.
@@ -629,7 +635,8 @@ public class Permissions {
         }
         if (!overrideUserSetAndFixed) {
             fixedFlags |= PackageManager.FLAG_PERMISSION_USER_FIXED
-                    | PackageManager.FLAG_PERMISSION_USER_SET;
+                    | PackageManager.FLAG_PERMISSION_USER_SET
+                    | PackageManager.FLAG_PERMISSION_ONE_TIME;
         }
         return (flags & fixedFlags) != 0;
     }
@@ -701,6 +708,50 @@ public class Permissions {
         return true;
     }
 
+    private static boolean isRuntimePermission(@NonNull String permission,
+            @NonNull Context context) {
+        synchronized (sPermissionInfoLock) {
+            Boolean isRuntimePermission = sIsRuntimePermission.get(permission);
+            if (isRuntimePermission != null) {
+                return isRuntimePermission;
+            }
+            fetchPermissionInfoLocked(permission, context);
+            return sIsRuntimePermission.get(permission);
+        }
+    }
+
+    private static boolean isRestrictedPermission(@NonNull String permission,
+            @NonNull Context context) {
+        synchronized (sPermissionInfoLock) {
+            Boolean isRestrictedPermission = sIsRestrictedPermission.get(permission);
+            if (isRestrictedPermission != null) {
+                return isRestrictedPermission;
+            }
+            fetchPermissionInfoLocked(permission, context);
+            return sIsRestrictedPermission.get(permission);
+        }
+    }
+
+    private static void fetchPermissionInfoLocked(@NonNull String permission,
+            @NonNull Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        PermissionInfo permissionInfo = null;
+        try {
+            permissionInfo = packageManager.getPermissionInfo(permission, 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e(LOG_TAG, "Cannot get PermissionInfo for permission: " + permission);
+        }
+
+        // Don't expect that to be a transient error, so we can still cache the failed information.
+        boolean isRuntimePermission = permissionInfo != null
+                && permissionInfo.getProtection() == PermissionInfo.PROTECTION_DANGEROUS;
+        boolean isRestrictedPermission = permissionInfo != null
+                && (permissionInfo.flags & (PermissionInfo.FLAG_SOFT_RESTRICTED
+                | PermissionInfo.FLAG_HARD_RESTRICTED)) != 0;
+        sIsRuntimePermission.put(permission, isRuntimePermission);
+        sIsRestrictedPermission.put(permission, isRestrictedPermission);
+    }
+
     private static boolean isForegroundPermission(@NonNull String permission,
             @NonNull Context context) {
         ensureForegroundBackgroundPermissionMappings(context);
@@ -731,40 +782,13 @@ public class Permissions {
         synchronized (sForegroundBackgroundPermissionMappingsLock) {
             if (sForegroundToBackgroundPermission == null
                     && sBackgroundToForegroundPermissions == null) {
-                createForegroundBackgroundPermissionMappings(context);
+                createForegroundBackgroundPermissionMappingsLocked(context);
             }
         }
     }
 
-    private static boolean isRestrictedPermission(@NonNull String permission,
+    private static void createForegroundBackgroundPermissionMappingsLocked(
             @NonNull Context context) {
-        synchronized (sRestrictedPermissions) {
-            if (sRestrictedPermissions.containsKey(permission)) {
-                return sRestrictedPermissions.get(permission);
-            }
-        }
-
-        PackageManager packageManager = context.getPackageManager();
-        PermissionInfo permissionInfo = null;
-        try {
-            permissionInfo = packageManager.getPermissionInfo(permission, 0);
-        } catch (PackageManager.NameNotFoundException e) {
-            Log.e(LOG_TAG, "Cannot get PermissionInfo for permission: " + permission);
-        }
-
-        // Don't expect that to be a transient error, so we can still cache the failed information.
-        boolean isRestrictedPermission = permissionInfo != null
-                && (permissionInfo.flags & (PermissionInfo.FLAG_SOFT_RESTRICTED
-                | PermissionInfo.FLAG_HARD_RESTRICTED)) != 0;
-
-        synchronized (sRestrictedPermissions) {
-            sRestrictedPermissions.put(permission, isRestrictedPermission);
-        }
-
-        return isRestrictedPermission;
-    }
-
-    private static void createForegroundBackgroundPermissionMappings(@NonNull Context context) {
         List<String> permissions = new ArrayList<>();
         sBackgroundToForegroundPermissions = new ArrayMap<>();
 

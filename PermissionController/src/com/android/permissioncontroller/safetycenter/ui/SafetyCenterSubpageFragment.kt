@@ -28,6 +28,7 @@ import com.android.permissioncontroller.safetycenter.ui.SafetyBrandChipPreferenc
 import com.android.permissioncontroller.safetycenter.ui.model.SafetyCenterUiData
 import com.android.safetycenter.resources.SafetyCenterResourcesApk
 import com.android.settingslib.widget.FooterPreference
+import com.android.settingslib.widget.SettingsThemeHelper
 
 /** A fragment that represents a generic subpage in Safety Center. */
 @RequiresApi(UPSIDE_DOWN_CAKE)
@@ -45,15 +46,16 @@ class SafetyCenterSubpageFragment : SafetyCenterFragment() {
         setPreferencesFromResource(R.xml.safety_center_subpage, rootKey)
         sourceGroupId = requireArguments().getString(SOURCE_GROUP_ID_KEY)!!
 
-        subpageBrandChip = getPreferenceScreen().findPreference(BRAND_CHIP_KEY)!!
-        subpageIllustration = getPreferenceScreen().findPreference(ILLUSTRATION_KEY)!!
-        subpageIssueGroup = getPreferenceScreen().findPreference(ISSUE_GROUP_KEY)!!
-        subpageEntryGroup = getPreferenceScreen().findPreference(ENTRY_GROUP_KEY)!!
-        subpageFooter = getPreferenceScreen().findPreference(FOOTER_KEY)!!
+        subpageBrandChip = preferenceScreen.findPreference(BRAND_CHIP_KEY)!!
+        subpageIllustration = preferenceScreen.findPreference(ILLUSTRATION_KEY)!!
+        subpageIssueGroup = preferenceScreen.findPreference(ISSUE_GROUP_KEY)!!
+        subpageEntryGroup = preferenceScreen.findPreference(ENTRY_GROUP_KEY)!!
+        subpageFooter = preferenceScreen.findPreference(FOOTER_KEY)!!
 
         subpageBrandChip.setupListener(requireActivity(), safetyCenterSessionId)
         setupIllustration()
         setupFooter()
+        maybeRemoveSpacer()
 
         prerenderCurrentSafetyCenterData()
     }
@@ -80,7 +82,7 @@ class SafetyCenterSubpageFragment : SafetyCenterFragment() {
             return
         }
 
-        requireActivity().setTitle(entryGroup.title)
+        requireActivity().title = entryGroup.title
         updateSafetyCenterIssues(uiData)
         updateSafetyCenterEntries(entryGroup)
     }
@@ -91,7 +93,7 @@ class SafetyCenterSubpageFragment : SafetyCenterFragment() {
         val drawable = SafetyCenterResourcesApk(context).getDrawableByName(resName, context.theme)
         if (drawable == null) {
             Log.w(TAG, "$sourceGroupId doesn't have any matching illustration")
-            subpageIllustration.setVisible(false)
+            subpageIllustration.isVisible = false
         }
 
         subpageIllustration.illustrationDrawable = drawable
@@ -102,12 +104,19 @@ class SafetyCenterSubpageFragment : SafetyCenterFragment() {
         val footerText = SafetyCenterResourcesApk(requireContext()).getStringByName(resName)
         if (footerText.isEmpty()) {
             Log.w(TAG, "$sourceGroupId doesn't have any matching footer")
-            subpageFooter.setVisible(false)
+            subpageFooter.isVisible = false
         }
         // footer is ordered last by default
         // in order to keep a spacer after the footer, footer needs to be the second from last
-        subpageFooter.setOrder(Int.MAX_VALUE - 2)
-        subpageFooter.setSummary(footerText)
+        subpageFooter.order = Int.MAX_VALUE - 2
+        subpageFooter.summary = footerText
+    }
+
+    private fun maybeRemoveSpacer() {
+        if (SettingsThemeHelper.isExpressiveTheme(requireContext())) {
+            val spacerPreference = preferenceScreen.findPreference<SpacerPreference>(SPACER_KEY)!!
+            preferenceScreen.removePreference(spacerPreference)
+        }
     }
 
     private fun updateSafetyCenterIssues(uiData: SafetyCenterUiData?) {
@@ -131,7 +140,7 @@ class SafetyCenterSubpageFragment : SafetyCenterFragment() {
             subpageIssues,
             subpageDismissedIssues,
             uiData.resolvedIssues,
-            requireActivity().getTaskId()
+            requireActivity().taskId,
         )
     }
 
@@ -145,23 +154,24 @@ class SafetyCenterSubpageFragment : SafetyCenterFragment() {
                     PendingIntentSender.getTaskIdForEntry(
                         entry.id,
                         sameTaskSourceIds,
-                        requireActivity()
+                        requireActivity(),
                     ),
                     entry,
-                    safetyCenterViewModel
+                    safetyCenterViewModel,
                 )
             )
         }
     }
 
     companion object {
-        private val TAG: String = SafetyCenterSubpageFragment::class.java.simpleName
-        private const val BRAND_CHIP_KEY: String = "subpage_brand_chip"
-        private const val ILLUSTRATION_KEY: String = "subpage_illustration"
-        private const val ISSUE_GROUP_KEY: String = "subpage_issue_group"
-        private const val ENTRY_GROUP_KEY: String = "subpage_entry_group"
-        private const val FOOTER_KEY: String = "subpage_footer"
-        private const val SOURCE_GROUP_ID_KEY: String = "source_group_id"
+        private val TAG = SafetyCenterSubpageFragment::class.java.simpleName
+        private const val BRAND_CHIP_KEY = "subpage_brand_chip"
+        private const val ILLUSTRATION_KEY = "subpage_illustration"
+        private const val ISSUE_GROUP_KEY = "subpage_issue_group"
+        private const val ENTRY_GROUP_KEY = "subpage_entry_group"
+        private const val FOOTER_KEY = "subpage_footer"
+        private const val SPACER_KEY = "subpage_spacer"
+        private const val SOURCE_GROUP_ID_KEY = "source_group_id"
 
         /** Creates an instance of SafetyCenterSubpageFragment with the arguments set */
         @JvmStatic

@@ -48,13 +48,13 @@ object SafetyCenterActivityLauncher {
         intentAction: String = ACTION_SAFETY_CENTER,
         withReceiverPermission: Boolean = false,
         preventTrampolineToSettings: Boolean = true,
-        block: () -> Unit
+        block: () -> Unit,
     ) {
         val launchSafetyCenterIntent =
             createIntent(
                 intentAction,
                 intentExtras,
-                preventTrampolineToSettings = preventTrampolineToSettings
+                preventTrampolineToSettings = preventTrampolineToSettings,
             )
         if (withReceiverPermission) {
             callWithShellPermissionIdentity(SEND_SAFETY_CENTER_UPDATE) {
@@ -83,7 +83,7 @@ object SafetyCenterActivityLauncher {
     private fun createIntent(
         intentAction: String,
         intentExtras: Bundle?,
-        preventTrampolineToSettings: Boolean = false
+        preventTrampolineToSettings: Boolean = false,
     ): Intent {
         val launchIntent =
             Intent(intentAction).addFlags(FLAG_ACTIVITY_NEW_TASK).addFlags(FLAG_ACTIVITY_CLEAR_TASK)

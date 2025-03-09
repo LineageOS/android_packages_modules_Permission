@@ -36,6 +36,7 @@ android_test {
         "Harrier",
         "Nene",
         "TestApp",
+        "bedstead-enterprise",
         "com.android.permission.flags-aconfig-java-export",
     ],
     test_suites: [

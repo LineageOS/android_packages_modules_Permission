@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Allow restricted settings"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Restricted setting"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"For your security, this setting is currently unavailable."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Action not available while on a phone call"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Allowing apps to install other apps is not allowed during a phone call.\n\n Scammers often request this type of action during phone call conversations, so it\'s blocked to protect you. If you are being guided to take this action by someone whom you don\'t know, it might be a scam."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"App was denied access to <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"The app requested access to a sensitive permission which can put your personal and financial info at risk.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>It\'s possible that the app won\'t work properly without this restricted permission. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Learn how to allow access&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"App was denied access to be default <xliff:g id="ROLE_NAME">%1$s</xliff:g>"</string>

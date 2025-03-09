@@ -207,7 +207,7 @@
     <string name="auto_revoke_label" msgid="5068393642936571656">"Eemalda load, kui rakendust ei kasutata"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"Eemalda load ja vabasta ruumi"</string>
     <string name="unused_apps_label_v2" msgid="7058776770056517980">"Kasutamata rakenduse tegevuste peatamine"</string>
-    <string name="unused_apps_label_v3" msgid="693340578642156657">"Halda kasutamata rakendusi"</string>
+    <string name="unused_apps_label_v3" msgid="693340578642156657">"Kasutamata rakenduste haldamine"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Eemaldatakse load, kustutatakse ajutised failid ja peatatakse märguanded"</string>
     <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Eemalda load, kustuta ajutised failid, peata märguanded ja arhiivi rakendus"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"Teie andmete kaitsmiseks eemaldatakse selle rakenduse load, kui seda mõne kuu jooksul ei kasutata."</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Piiratud seadete lubamine"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Piiratud seade"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Teie turvalisuse huvides pole see seade praegu saadaval."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Toiming pole telefonikõne ajal saadaval"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Telefonikõne ajal pole lubatud anda rakendustele luba installida teisi rakendusi.\n\n Petised taotlevad telefonivestluse ajal sageli seda tüüpi toimingut, mistõttu on see teie kaitsmiseks blokeeritud. Kui keegi, keda te ei tea, suunab teid seda toimingut tegema, võib tegu olla pettusega."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"Rakendusele ei antud luba <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"Rakendus taotles tundlikku luba, mis võib teie isikuandmed ja finantsteabe ohtu seada.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Võimalik, et rakendus ei tööta ilma selle piiratud loata korralikult. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt; Teave juurdepääsu andmise kohta&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"Rakendusele ei antud luba olla vaikimisi <xliff:g id="ROLE_NAME">%1$s</xliff:g>"</string>

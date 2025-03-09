@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.permission.compat;
+package android.permission.internal.compat;
 
 import android.annotation.UserIdInt;
 import android.os.UserHandle;
@@ -27,6 +27,13 @@ public final class UserHandleCompat {
      * A user ID to indicate all users on the device.
      */
     public static final int USER_ALL = UserHandle.ALL.getIdentifier();
+
+    /**
+     * A user ID to indicate an undefined user of the device.
+     *
+     * @see UserHandle#USER_NULL
+     */
+    public static final @UserIdInt int USER_NULL = -10000;
 
     /**
      * A user ID to indicate the "system" user of the device.

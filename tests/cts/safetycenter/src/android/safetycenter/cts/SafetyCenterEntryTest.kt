@@ -41,18 +41,18 @@ class SafetyCenterEntryTest {
             context,
             0,
             Intent("Fake Different Data"),
-            PendingIntent.FLAG_IMMUTABLE
+            PendingIntent.FLAG_IMMUTABLE,
         )
 
     private val iconAction1 =
         SafetyCenterEntry.IconAction(
             SafetyCenterEntry.IconAction.ICON_ACTION_TYPE_GEAR,
-            pendingIntent1
+            pendingIntent1,
         )
     private val iconAction2 =
         SafetyCenterEntry.IconAction(
             SafetyCenterEntry.IconAction.ICON_ACTION_TYPE_INFO,
-            pendingIntent2
+            pendingIntent2,
         )
 
     private val entry1 =
@@ -213,7 +213,7 @@ class SafetyCenterEntryTest {
     fun equalsHashCodeToString_usingEqualsHashCodeToStringTester() {
         EqualsHashCodeToStringTester.ofParcelable(
                 parcelableCreator = SafetyCenterEntry.CREATOR,
-                createCopy = { SafetyCenterEntry.Builder(it).build() }
+                createCopy = { SafetyCenterEntry.Builder(it).build() },
             )
             .addEqualityGroup(entry1)
             .addEqualityGroup(
@@ -226,7 +226,7 @@ class SafetyCenterEntryTest {
                     .setPendingIntent(pendingIntent1)
                     .setIconAction(
                         SafetyCenterEntry.IconAction.ICON_ACTION_TYPE_INFO,
-                        pendingIntent2
+                        pendingIntent2,
                     )
                     .build(),
                 SafetyCenterEntry.Builder("id", "a title")
@@ -238,9 +238,9 @@ class SafetyCenterEntryTest {
                     .setPendingIntent(pendingIntent1)
                     .setIconAction(
                         SafetyCenterEntry.IconAction.ICON_ACTION_TYPE_INFO,
-                        pendingIntent2
+                        pendingIntent2,
                     )
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(SafetyCenterEntry.Builder(entry1).setId("a different id").build())
             .addEqualityGroup(
@@ -274,7 +274,7 @@ class SafetyCenterEntryTest {
         assertThat(
                 SafetyCenterEntry.IconAction(
                         SafetyCenterEntry.IconAction.ICON_ACTION_TYPE_GEAR,
-                        pendingIntent1
+                        pendingIntent1,
                     )
                     .type
             )
@@ -282,7 +282,7 @@ class SafetyCenterEntryTest {
         assertThat(
                 SafetyCenterEntry.IconAction(
                         SafetyCenterEntry.IconAction.ICON_ACTION_TYPE_INFO,
-                        pendingIntent1
+                        pendingIntent1,
                     )
                     .type
             )
@@ -294,7 +294,7 @@ class SafetyCenterEntryTest {
         assertThat(
                 SafetyCenterEntry.IconAction(
                         SafetyCenterEntry.IconAction.ICON_ACTION_TYPE_GEAR,
-                        pendingIntent1
+                        pendingIntent1,
                     )
                     .pendingIntent
             )
@@ -302,7 +302,7 @@ class SafetyCenterEntryTest {
         assertThat(
                 SafetyCenterEntry.IconAction(
                         SafetyCenterEntry.IconAction.ICON_ACTION_TYPE_GEAR,
-                        pendingIntent2
+                        pendingIntent2,
                     )
                     .pendingIntent
             )
@@ -340,26 +340,26 @@ class SafetyCenterEntryTest {
                 iconAction1,
                 SafetyCenterEntry.IconAction(
                     SafetyCenterEntry.IconAction.ICON_ACTION_TYPE_GEAR,
-                    pendingIntent1
-                )
+                    pendingIntent1,
+                ),
             )
             .addEqualityGroup(
                 iconAction2,
                 SafetyCenterEntry.IconAction(
                     SafetyCenterEntry.IconAction.ICON_ACTION_TYPE_INFO,
-                    pendingIntent2
-                )
+                    pendingIntent2,
+                ),
             )
             .addEqualityGroup(
                 SafetyCenterEntry.IconAction(
                     SafetyCenterEntry.IconAction.ICON_ACTION_TYPE_INFO,
-                    pendingIntent1
+                    pendingIntent1,
                 )
             )
             .addEqualityGroup(
                 SafetyCenterEntry.IconAction(
                     SafetyCenterEntry.IconAction.ICON_ACTION_TYPE_GEAR,
-                    pendingIntent2
+                    pendingIntent2,
                 )
             )
             .test()

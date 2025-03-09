@@ -156,7 +156,7 @@ class SafetyCenterStatusTest {
     fun equalsHashCodeToString_usingEqualsHashCodeToStringTester() {
         EqualsHashCodeToStringTester.ofParcelable(
                 parcelableCreator = SafetyCenterStatus.CREATOR,
-                createCopy = { SafetyCenterStatus.Builder(it).build() }
+                createCopy = { SafetyCenterStatus.Builder(it).build() },
             )
             .addEqualityGroup(
                 baseStatus,
@@ -164,7 +164,7 @@ class SafetyCenterStatusTest {
                     .setSeverityLevel(SafetyCenterStatus.OVERALL_SEVERITY_LEVEL_RECOMMENDATION)
                     .setRefreshStatus(SafetyCenterStatus.REFRESH_STATUS_DATA_FETCH_IN_PROGRESS)
                     .build(),
-                SafetyCenterStatus.Builder(baseStatus).build()
+                SafetyCenterStatus.Builder(baseStatus).build(),
             )
             .addEqualityGroup(
                 SafetyCenterStatus.Builder("same title", "same summary")
@@ -172,7 +172,7 @@ class SafetyCenterStatusTest {
                     .build(),
                 SafetyCenterStatus.Builder("same title", "same summary")
                     .setSeverityLevel(SafetyCenterStatus.OVERALL_SEVERITY_LEVEL_OK)
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 SafetyCenterStatus.Builder(baseStatus).setTitle("that's not it").build()

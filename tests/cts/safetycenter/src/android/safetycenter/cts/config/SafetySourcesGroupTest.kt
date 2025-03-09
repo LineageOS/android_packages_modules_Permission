@@ -155,7 +155,7 @@ class SafetySourcesGroupTest {
             .containsExactly(
                 SafetySourceTest.DYNAMIC_BAREBONE,
                 SafetySourceTest.STATIC_BAREBONE,
-                SafetySourceTest.ISSUE_ONLY_BAREBONE
+                SafetySourceTest.ISSUE_ONLY_BAREBONE,
             )
             .inOrder()
         assertThat(STATELESS_INFERRED.safetySources)
@@ -169,7 +169,7 @@ class SafetySourcesGroupTest {
                 .containsExactly(
                     SafetySourceTest.DYNAMIC_BAREBONE,
                     SafetySourceTest.STATIC_BAREBONE,
-                    SafetySourceTest.ISSUE_ONLY_BAREBONE
+                    SafetySourceTest.ISSUE_ONLY_BAREBONE,
                 )
             assertThat(STATELESS_BAREBONE.safetySources)
                 .containsExactly(SafetySourceTest.STATIC_BAREBONE)
@@ -177,7 +177,7 @@ class SafetySourcesGroupTest {
                 .containsExactly(
                     SafetySourceTest.DYNAMIC_BAREBONE,
                     SafetySourceTest.STATIC_BAREBONE,
-                    SafetySourceTest.ISSUE_ONLY_BAREBONE
+                    SafetySourceTest.ISSUE_ONLY_BAREBONE,
                 )
             assertThat(HIDDEN_BAREBONE.safetySources)
                 .containsExactly(SafetySourceTest.ISSUE_ONLY_BAREBONE)
@@ -325,7 +325,7 @@ class SafetySourcesGroupTest {
                         { SafetySourcesGroup.Builder(it).build() }
                     } else {
                         null
-                    }
+                    },
             )
             .addEqualityGroup(STATEFUL_INFERRED_WITH_SUMMARY)
             .addEqualityGroup(STATEFUL_INFERRED_WITH_ICON)
@@ -340,7 +340,7 @@ class SafetySourcesGroupTest {
                             .addSafetySource(SafetySourceTest.DYNAMIC_BAREBONE)
                             .addSafetySource(SafetySourceTest.STATIC_BAREBONE)
                             .addSafetySource(SafetySourceTest.ISSUE_ONLY_BAREBONE)
-                            .build()
+                            .build(),
                     )
                     .apply { if (SdkLevel.isAtLeastU()) add(STATEFUL_ALL_OPTIONAL) }
                     .toTypedArray()

@@ -22,6 +22,7 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.permission.flags.Flags;
 import android.provider.Settings;
 import android.util.ArrayMap;
 
@@ -36,6 +37,7 @@ import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
 
+import com.android.modules.utils.build.SdkLevel;
 import com.android.permissioncontroller.R;
 import com.android.permissioncontroller.permission.utils.Utils;
 import com.android.permissioncontroller.role.utils.PackageUtils;
@@ -145,15 +147,25 @@ public class DefaultAppListChildFragment<PF extends PreferenceFragmentCompat
         addMoreDefaultAppsPreference(preferenceScreen, oldPreferences, context);
         addManageDomainUrlsPreference(preferenceScreen, oldPreferences, context);
         if (hasWorkProfile && !workRoleItems.isEmpty()) {
+            String defaultWorkTitle;
+            if (SdkLevel.isAtLeastV() && Flags.useProfileLabelsForDefaultAppSectionTitles()) {
+                defaultWorkTitle = Utils.getProfileLabel(mViewModel.getWorkProfile(), context);
+            } else {
+                defaultWorkTitle = context.getString(R.string.default_apps_for_work);
+            }
             String workTitle = Utils.getEnterpriseString(context,
-                    DefaultAppSettings.WORK_PROFILE_DEFAULT_APPS_TITLE,
-                    R.string.default_apps_for_work);
+                    DefaultAppSettings.WORK_PROFILE_DEFAULT_APPS_TITLE, defaultWorkTitle);
             addPreferenceCategory(oldWorkPreferenceCategory, PREFERENCE_KEY_WORK_CATEGORY,
                     workTitle, preferenceScreen, workRoleItems, oldWorkPreferences, this,
                     mViewModel.getWorkProfile(), context);
         }
         if (hasPrivateProfile && !privateRoleItems.isEmpty()) {
-            String privateTitle = context.getString(R.string.default_apps_for_private_profile);
+            String privateTitle;
+            if (SdkLevel.isAtLeastV() && Flags.useProfileLabelsForDefaultAppSectionTitles()) {
+                privateTitle = Utils.getProfileLabel(mViewModel.getPrivateProfile(), context);
+            } else {
+                privateTitle = context.getString(R.string.default_apps_for_private_profile);
+            }
             addPreferenceCategory(oldPrivatePreferenceCategory, PREFERENCE_KEY_PRIVATE_CATEGORY,
                     privateTitle, preferenceScreen, privateRoleItems, oldPrivatePreferences, this,
                     mViewModel.getPrivateProfile(), context);

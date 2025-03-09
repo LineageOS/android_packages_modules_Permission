@@ -88,7 +88,7 @@ class XmlConfigTest {
     private fun parseXmlConfig() =
         SafetyCenterConfigParser.parseXmlResource(
             safetyCenterResourcesApk.safetyCenterConfig!!,
-            safetyCenterResourcesApk.resources
+            safetyCenterResourcesApk.resources,
         )
 
     companion object {

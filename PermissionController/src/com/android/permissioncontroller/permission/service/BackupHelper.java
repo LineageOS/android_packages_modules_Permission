@@ -96,6 +96,7 @@ public class BackupHelper {
     private static final String ATTR_USER_SET = "set";
     private static final String ATTR_USER_FIXED = "fixed";
     private static final String ATTR_WAS_REVIEWED = "was-reviewed";
+    private static final String ATTR_ONE_TIME = "one-time";
 
     /** Flags of permissions to <u>not</u> back up */
     private static final int SYSTEM_RUNTIME_GRANT_MASK = FLAG_PERMISSION_POLICY_FIXED
@@ -452,19 +453,21 @@ public class BackupHelper {
         private final boolean mIsUserSet;
         private final boolean mIsUserFixed;
         private final boolean mWasReviewed;
+        private final boolean mIsOneTime;
 
         // Not persisted, used during parsing so explicitly defined state takes precedence
         private final boolean mIsAddedFromSplit;
 
         private BackupPermissionState(@NonNull String permissionName, boolean isGranted,
                 boolean isUserSet, boolean isUserFixed, boolean wasReviewed,
-                boolean isAddedFromSplit) {
+                boolean isOneTime, boolean isAddedFromSplit) {
             mPermissionName = permissionName;
             mIsGranted = isGranted;
             mIsUserSet = isUserSet;
             mIsUserFixed = isUserFixed;
             mWasReviewed = wasReviewed;
             mIsAddedFromSplit = isAddedFromSplit;
+            mIsOneTime = isOneTime;
         }
 
         /**
@@ -512,6 +515,7 @@ public class BackupHelper {
                         "true".equals(parser.getAttributeValue(null, ATTR_USER_SET)),
                         "true".equals(parser.getAttributeValue(null, ATTR_USER_FIXED)),
                         "true".equals(parser.getAttributeValue(null, ATTR_WAS_REVIEWED)),
+                        "true".equals(parser.getAttributeValue(null, ATTR_ONE_TIME)),
                         /* isAddedFromSplit */ i > 0));
             }
 
@@ -519,7 +523,8 @@ public class BackupHelper {
         }
 
         /**
-         * Is the permission granted, also considering the app-op.
+         * Is the permission granted, also considering the app-op. Don't consider one time grant
+         * as a permission grant for backup/restore.
          *
          * <p>This does not consider the review-required state of the permission.
          *
@@ -528,7 +533,8 @@ public class BackupHelper {
          * @return {@code true} iff the permission and app-op is granted
          */
         private static boolean isPermGrantedIncludingAppOp(@NonNull Permission perm) {
-            return perm.isGranted() && (!perm.affectsAppOp() || perm.isAppOpAllowed());
+            return perm.isGranted() && (!perm.affectsAppOp() || perm.isAppOpAllowed())
+                    && !perm.isOneTime();
         }
 
         /**
@@ -549,7 +555,7 @@ public class BackupHelper {
                 return null;
             }
 
-            if (!perm.isUserSet() && perm.isGrantedByDefault()) {
+            if (!perm.isUserSet() && !perm.isOneTime() && perm.isGrantedByDefault()) {
                 return null;
             }
 
@@ -564,10 +570,10 @@ public class BackupHelper {
             }
 
             if (isNotInDefaultGrantState || perm.isUserSet() || perm.isUserFixed()
-                    || permissionWasReviewed) {
+                    || perm.isOneTime() || permissionWasReviewed) {
                 return new BackupPermissionState(perm.getName(), isPermGrantedIncludingAppOp(perm),
                         perm.isUserSet(), perm.isUserFixed(), permissionWasReviewed,
-                        /* isAddedFromSplit */ false);
+                        perm.isOneTime(), /* isAddedFromSplit */ false);
             } else {
                 return null;
             }
@@ -628,6 +634,10 @@ public class BackupHelper {
                 serializer.attribute(null, ATTR_WAS_REVIEWED, "true");
             }
 
+            if (mIsOneTime) {
+                serializer.attribute(null, ATTR_ONE_TIME, "true");
+            }
+
             serializer.endTag(null, TAG_PERMISSION);
         }
 
@@ -670,6 +680,10 @@ public class BackupHelper {
                 }
 
                 perm.setUserSet(mIsUserSet);
+            }
+
+            if (!perm.isOneTime()) {
+                perm.setOneTime(mIsOneTime);
             }
         }
     }

@@ -34,6 +34,7 @@ import com.android.permissioncontroller.permission.domain.model.v31.PermissionTi
 import com.android.permissioncontroller.permission.domain.model.v31.PermissionTimelineUsageModelWrapper
 import com.android.permissioncontroller.permission.domain.usecase.v31.GetPermissionGroupUsageDetailsUseCase
 import com.android.permissioncontroller.permission.domain.usecase.v31.TELECOM_PACKAGE
+import com.android.permissioncontroller.permission.utils.LocationUtils
 import com.android.permissioncontroller.pm.data.model.v31.PackageAttributionModel
 import com.android.permissioncontroller.pm.data.model.v31.PackageInfoModel
 import com.android.permissioncontroller.pm.data.repository.v31.PackageRepository
@@ -56,9 +57,11 @@ import kotlinx.coroutines.test.runTest
 import org.junit.After
 import org.junit.Assume
 import org.junit.Before
+import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
+import org.mockito.Mockito
 import org.mockito.Mockito.`when` as whenever
 import org.mockito.MockitoAnnotations
 import org.mockito.MockitoSession
@@ -88,11 +91,13 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
         mockitoSession =
             ExtendedMockito.mockitoSession()
                 .mockStatic(PermissionControllerApplication::class.java)
+                .mockStatic(LocationUtils::class.java)
                 .strictness(Strictness.LENIENT)
                 .startMocking()
 
         whenever(PermissionControllerApplication.get()).thenReturn(application)
         whenever(application.applicationContext).thenReturn(context)
+        whenever(LocationUtils.isLocationProvider(Mockito.any(), Mockito.any())).thenReturn(false)
 
         packageInfos =
             mapOf(
@@ -102,7 +107,7 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
                     systemPackageName to
                         getPackageInfoModel(
                             systemPackageName,
-                            applicationFlags = ApplicationInfo.FLAG_SYSTEM
+                            applicationFlags = ApplicationInfo.FLAG_SYSTEM,
                         ),
                 )
                 .toMutableMap()
@@ -124,7 +129,7 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
             emit(
                 listOf(
                     DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
-                    DiscretePackageOpsModel(guestUserPkgName, guestUser.identifier, appOpEvents)
+                    DiscretePackageOpsModel(guestUserPkgName, guestUser.identifier, appOpEvents),
                 )
             )
         }
@@ -150,11 +155,7 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
             emit(
                 listOf(
                     DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
-                    DiscretePackageOpsModel(
-                        testPackageName,
-                        privateProfile.identifier,
-                        appOpEvents
-                    ),
+                    DiscretePackageOpsModel(testPackageName, privateProfile.identifier, appOpEvents),
                 )
             )
         }
@@ -168,8 +169,8 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
                         currentUserProfiles =
                             listOf(currentUser.identifier, privateProfile.identifier),
                         quietUserProfiles = listOf(privateProfile.identifier),
-                        showInQuiteModeProfiles = listOf(privateProfile.identifier)
-                    )
+                        showInQuiteModeProfiles = listOf(privateProfile.identifier),
+                    ),
             )
         val permissionTimelineUsages = getResult(underTest, this)
 
@@ -190,11 +191,7 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
             emit(
                 listOf(
                     DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
-                    DiscretePackageOpsModel(
-                        testPackageName,
-                        privateProfile.identifier,
-                        appOpEvents
-                    ),
+                    DiscretePackageOpsModel(testPackageName, privateProfile.identifier, appOpEvents),
                 )
             )
         }
@@ -208,7 +205,7 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
                         currentUserProfiles =
                             listOf(currentUser.identifier, privateProfile.identifier),
                         quietUserProfiles = listOf(privateProfile.identifier),
-                    )
+                    ),
             )
         val permissionTimelineUsages = getResult(underTest, this)
 
@@ -254,7 +251,7 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -280,7 +277,7 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -303,23 +300,23 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_CAMERA,
                     MINUTES.toMillis(1),
-                    MINUTES.toMillis(1)
+                    MINUTES.toMillis(1),
                 ),
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_CAMERA,
                     MINUTES.toMillis(2),
-                    MINUTES.toMillis(1)
+                    MINUTES.toMillis(1),
                 ),
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_CAMERA,
                     MINUTES.toMillis(3),
-                    MINUTES.toMillis(2)
+                    MINUTES.toMillis(2),
                 ),
             )
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -344,23 +341,19 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_FINE_LOCATION,
                     hours3 + MINUTES.toMillis(59),
-                    -1
+                    -1,
                 ),
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_FINE_LOCATION,
                     hours4 + MINUTES.toMillis(0),
-                    -1
+                    -1,
                 ),
-                DiscreteOpModel(
-                    AppOpsManager.OPSTR_FINE_LOCATION,
-                    hours4 + MINUTES.toMillis(1),
-                    -1
-                ),
+                DiscreteOpModel(AppOpsManager.OPSTR_FINE_LOCATION, hours4 + MINUTES.toMillis(1), -1),
             )
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -383,18 +376,18 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_CAMERA,
                     MINUTES.toMillis(1),
-                    MINUTES.toMillis(3)
+                    MINUTES.toMillis(3),
                 ),
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_CAMERA,
                     MINUTES.toMillis(3),
-                    MINUTES.toMillis(2)
+                    MINUTES.toMillis(2),
                 ),
             )
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -420,7 +413,7 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -448,18 +441,18 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_CAMERA,
                     MINUTES.toMillis(1),
-                    MINUTES.toMillis(3)
+                    MINUTES.toMillis(3),
                 ),
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_CAMERA,
                     MINUTES.toMillis(5),
-                    MINUTES.toMillis(5)
+                    MINUTES.toMillis(5),
                 ),
             )
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -483,13 +476,11 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
     @Test
     fun singleDiscreteAccess() = runTest {
         val appOpEvents =
-            listOf(
-                DiscreteOpModel(AppOpsManager.OPSTR_FINE_LOCATION, MINUTES.toMillis(1), -1),
-            )
+            listOf(DiscreteOpModel(AppOpsManager.OPSTR_FINE_LOCATION, MINUTES.toMillis(1), -1))
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -512,13 +503,13 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_CAMERA,
                     MINUTES.toMillis(1),
-                    MINUTES.toMillis(3)
-                ),
+                    MINUTES.toMillis(3),
+                )
             )
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -541,29 +532,29 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_CAMERA,
                     MINUTES.toMillis(1),
-                    MINUTES.toMillis(2)
+                    MINUTES.toMillis(2),
                 ),
                 // This entry says the camera was accessed for 15 minutes starting at minute 3
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_CAMERA,
                     MINUTES.toMillis(3),
-                    MINUTES.toMillis(15)
+                    MINUTES.toMillis(15),
                 ),
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_CAMERA,
                     MINUTES.toMillis(4),
-                    MINUTES.toMillis(1)
+                    MINUTES.toMillis(1),
                 ),
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_CAMERA,
                     MINUTES.toMillis(6),
-                    MINUTES.toMillis(1)
+                    MINUTES.toMillis(1),
                 ),
             )
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -582,9 +573,7 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
     @Test
     fun verifyUserSensitiveFlags() = runTest {
         val appOpEvents =
-            listOf(
-                DiscreteOpModel(AppOpsManager.OPSTR_COARSE_LOCATION, MINUTES.toMillis(1), -1),
-            )
+            listOf(DiscreteOpModel(AppOpsManager.OPSTR_COARSE_LOCATION, MINUTES.toMillis(1), -1))
         val discretePackageOps = flow {
             emit(
                 listOf(
@@ -620,13 +609,11 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
     @Test
     fun verifyNotUserSensitiveFlagsForSystemPackage() = runTest {
         val appOpEvents =
-            listOf(
-                DiscreteOpModel(AppOpsManager.OPSTR_COARSE_LOCATION, MINUTES.toMillis(1), -1),
-            )
+            listOf(DiscreteOpModel(AppOpsManager.OPSTR_COARSE_LOCATION, MINUTES.toMillis(1), -1))
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(systemPackageName, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(systemPackageName, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -651,14 +638,12 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
     @Test
     fun verifyCameraUserSensitiveFlagsForTelecomPackage() = runTest {
         val appOpEvents =
-            listOf(
-                DiscreteOpModel(AppOpsManager.OPSTR_CAMERA, MINUTES.toMillis(1), -1),
-            )
+            listOf(DiscreteOpModel(AppOpsManager.OPSTR_CAMERA, MINUTES.toMillis(1), -1))
         packageInfos[TELECOM_PACKAGE] = getPackageInfoModel(TELECOM_PACKAGE)
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(TELECOM_PACKAGE, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(TELECOM_PACKAGE, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -683,14 +668,12 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
     @Test
     fun verifyLocationUserSensitiveFlagsForTelecomPackage() = runTest {
         val appOpEvents =
-            listOf(
-                DiscreteOpModel(AppOpsManager.OPSTR_COARSE_LOCATION, MINUTES.toMillis(1), -1),
-            )
+            listOf(DiscreteOpModel(AppOpsManager.OPSTR_COARSE_LOCATION, MINUTES.toMillis(1), -1))
         packageInfos[TELECOM_PACKAGE] = getPackageInfoModel(TELECOM_PACKAGE)
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(TELECOM_PACKAGE, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(TELECOM_PACKAGE, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -714,46 +697,45 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
     }
 
     @Test
-    fun verifyAttributionTagsAreGroupedAndClustered() = runTest {
+    @RequiresFlagsEnabled(
+        com.android.permission.flags.Flags.FLAG_PERMISSION_TIMELINE_ATTRIBUTION_LABEL_FIX
+    )
+    @Ignore("b/365004787")
+    fun verifyAccessIsNotGroupedByAttributionLabelAndClustered() = runTest {
+        // The package is not a location provider.
         val appOpEvents =
             listOf(
-                // These 3 entries should be grouped and clustered.
+                // These entries should be clustered even though they have
+                // different attribution labels.
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_COARSE_LOCATION,
                     MINUTES.toMillis(1),
                     -1,
-                    "tag1"
+                    "tag1",
                 ),
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_COARSE_LOCATION,
                     MINUTES.toMillis(2),
                     -1,
-                    "tag1"
+                    "tag1",
                 ),
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_COARSE_LOCATION,
                     MINUTES.toMillis(3),
                     -1,
-                    "tag3"
+                    "tag3",
                 ),
-                // The access at minute 4 should not be grouped or clustered.
                 DiscreteOpModel(
                     AppOpsManager.OPSTR_COARSE_LOCATION,
                     MINUTES.toMillis(4),
                     -1,
-                    "tag2"
-                ),
-                DiscreteOpModel(
-                    AppOpsManager.OPSTR_COARSE_LOCATION,
-                    MINUTES.toMillis(8),
-                    -1,
-                    "tag2"
+                    "tag2",
                 ),
             )
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -766,14 +748,83 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
                 testPackageName,
                 true,
                 attributionTagToLabelRes,
-                attributionsMap
+                attributionsMap,
             )
 
         val underTest =
             getPermissionGroupUsageDetailsUseCase(
                 LOCATION_PERMISSION_GROUP,
                 discretePackageOps,
-                packageRepository = FakePackageRepository(packageInfos, packageAttributions)
+                packageRepository = FakePackageRepository(packageInfos, packageAttributions),
+                attributionLabelFix = true,
+            )
+        val permissionTimelineUsages = getResult(underTest, this)
+
+        Truth.assertThat(permissionTimelineUsages.size).isEqualTo(1)
+    }
+
+    @Test
+    fun verifyAccessIsGroupedByAttributionLabelAndClustered() = runTest {
+        whenever(LocationUtils.isLocationProvider(Mockito.any(), Mockito.any())).thenReturn(true)
+        val appOpEvents =
+            listOf(
+                // These 3 entries should be grouped and clustered.
+                DiscreteOpModel(
+                    AppOpsManager.OPSTR_COARSE_LOCATION,
+                    MINUTES.toMillis(1),
+                    -1,
+                    "tag1",
+                ),
+                DiscreteOpModel(
+                    AppOpsManager.OPSTR_COARSE_LOCATION,
+                    MINUTES.toMillis(2),
+                    -1,
+                    "tag1",
+                ),
+                DiscreteOpModel(
+                    AppOpsManager.OPSTR_COARSE_LOCATION,
+                    MINUTES.toMillis(3),
+                    -1,
+                    "tag3",
+                ),
+                // The access at minute 4 should not be grouped or clustered.
+                DiscreteOpModel(
+                    AppOpsManager.OPSTR_COARSE_LOCATION,
+                    MINUTES.toMillis(4),
+                    -1,
+                    "tag2",
+                ),
+                DiscreteOpModel(
+                    AppOpsManager.OPSTR_COARSE_LOCATION,
+                    MINUTES.toMillis(8),
+                    -1,
+                    "tag2",
+                ),
+            )
+        val discretePackageOps = flow {
+            emit(
+                listOf(
+                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents)
+                )
+            )
+        }
+        val packageAttributions = mutableMapOf<String, PackageAttributionModel>()
+        // tag1 and tag3 refers to same attribution label.
+        val attributionTagToLabelRes = mapOf("tag1" to 100, "tag2" to 200, "tag3" to 100)
+        val attributionsMap = mapOf(100 to "Tag1 Label", 200 to "Tag2 Label")
+        packageAttributions[testPackageName] =
+            PackageAttributionModel(
+                testPackageName,
+                true,
+                attributionTagToLabelRes,
+                attributionsMap,
+            )
+
+        val underTest =
+            getPermissionGroupUsageDetailsUseCase(
+                LOCATION_PERMISSION_GROUP,
+                discretePackageOps,
+                packageRepository = FakePackageRepository(packageInfos, packageAttributions),
             )
         val permissionTimelineUsages = getResult(underTest, this)
 
@@ -794,6 +845,7 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
     }
 
     @Test
+    @Ignore("b/365004787")
     @RequiresFlagsEnabled(Flags.FLAG_LOCATION_BYPASS_PRIVACY_DASHBOARD_ENABLED)
     fun emergencyAccessesAreNotClusteredWithRegularAccesses() = runTest {
         Assume.assumeTrue(SdkLevel.isAtLeastV())
@@ -805,7 +857,7 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -829,7 +881,7 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
         val discretePackageOps = flow {
             emit(
                 listOf(
-                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents),
+                    DiscretePackageOpsModel(testPackageName, currentUser.identifier, appOpEvents)
                 )
             )
         }
@@ -843,7 +895,7 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
 
     private fun TestScope.getResult(
         useCase: GetPermissionGroupUsageDetailsUseCase,
-        coroutineScope: CoroutineScope
+        coroutineScope: CoroutineScope,
     ): List<PermissionTimelineUsageModel> {
         val usages by collectLastValue(useCase(coroutineScope))
         return (usages as PermissionTimelineUsageModelWrapper.Success).timelineUsageModels
@@ -854,7 +906,8 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
         discreteUsageFlow: Flow<List<DiscretePackageOpsModel>>,
         permissionFlags: Map<String, Int> = emptyMap(),
         userRepository: UserRepository = FakeUserRepository(listOf(currentUser.identifier)),
-        packageRepository: PackageRepository = FakePackageRepository(packageInfos)
+        packageRepository: PackageRepository = FakePackageRepository(packageInfos),
+        attributionLabelFix: Boolean = false,
     ): GetPermissionGroupUsageDetailsUseCase {
         val permissionRepository = FakePermissionRepository(permissionFlags)
         val appOpUsageRepository = FakeAppOpRepository(emptyFlow(), discreteUsageFlow)
@@ -865,7 +918,8 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
             permissionRepository,
             appOpUsageRepository,
             roleRepository,
-            userRepository
+            userRepository,
+            attributionLabelFix,
         )
     }
 
@@ -877,7 +931,7 @@ class GetPermissionGroupUsageDetailsUseCaseTest {
             listOf(
                 PackageInfo.REQUESTED_PERMISSION_GRANTED,
                 PackageInfo.REQUESTED_PERMISSION_GRANTED,
-                PackageInfo.REQUESTED_PERMISSION_GRANTED
+                PackageInfo.REQUESTED_PERMISSION_GRANTED,
             ),
         applicationFlags: Int = 0,
     ) = PackageInfoModel(packageName, requestedPermissions, permissionsFlags, applicationFlags)

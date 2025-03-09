@@ -23,6 +23,8 @@ import android.permission.cts.PermissionUtils.grantPermission
 import android.permission.cts.PermissionUtils.install
 import android.permission.cts.PermissionUtils.revokePermission
 import android.permission.cts.PermissionUtils.uninstallApp
+import android.platform.test.annotations.RequiresFlagsEnabled
+import android.platform.test.flag.junit.DeviceFlagsValueProvider
 import android.util.Log
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.uiautomator.By
@@ -30,17 +32,23 @@ import com.android.compatibility.common.util.SystemUtil.eventually
 import com.android.compatibility.common.util.SystemUtil.getEventually
 import com.android.compatibility.common.util.SystemUtil.runWithShellPermissionIdentity
 import com.android.compatibility.common.util.UiAutomatorUtils2.waitFindObjectOrNull
+import com.android.permission.flags.Flags
 import com.android.permissioncontroller.permissionui.getUsageCountsFromUi
 import com.android.permissioncontroller.permissionui.wakeUpScreen
 import com.google.common.truth.Truth.assertThat
 import org.junit.After
+import org.junit.Assert.assertNull
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
 /** Simple tests for {@link ManageStandardPermissionsFragment} */
 @RunWith(AndroidJUnit4::class)
 class ManageStandardPermissionsFragmentTest : BaseHandheldPermissionUiTest() {
+
+    @JvmField @Rule val checkFlagsRule = DeviceFlagsValueProvider.createCheckFlagsRule()
+
     @Before
     fun setup() {
         wakeUpScreen()
@@ -117,7 +125,7 @@ class ManageStandardPermissionsFragmentTest : BaseHandheldPermissionUiTest() {
                 assertThat(afterInstall.granted).isEqualTo(original.granted)
                 assertThat(afterInstall.total).isEqualTo(original.total + 1)
             },
-            TIMEOUT
+            TIMEOUT,
         )
     }
 
@@ -127,13 +135,13 @@ class ManageStandardPermissionsFragmentTest : BaseHandheldPermissionUiTest() {
         install(LOCATION_USER_APK)
         eventually(
             { assertThat(getUsageCountsFromUi(LOCATION_GROUP_LABEL)).isNotEqualTo(original) },
-            TIMEOUT
+            TIMEOUT,
         )
 
         uninstallApp(LOCATION_USER_PKG)
         eventually(
             { assertThat(getUsageCountsFromUi(LOCATION_GROUP_LABEL)).isEqualTo(original) },
-            TIMEOUT
+            TIMEOUT,
         )
     }
 
@@ -147,7 +155,7 @@ class ManageStandardPermissionsFragmentTest : BaseHandheldPermissionUiTest() {
                 assertThat(getUsageCountsFromUi(LOCATION_GROUP_LABEL).total)
                     .isEqualTo(original.total + 1)
             },
-            TIMEOUT
+            TIMEOUT,
         )
 
         grantPermission(LOCATION_USER_PKG, ACCESS_COARSE_LOCATION)
@@ -170,7 +178,7 @@ class ManageStandardPermissionsFragmentTest : BaseHandheldPermissionUiTest() {
                 assertThat(getUsageCountsFromUi(LOCATION_GROUP_LABEL).granted)
                     .isNotEqualTo(original.granted)
             },
-            TIMEOUT
+            TIMEOUT,
         )
 
         revokePermission(LOCATION_USER_PKG, ACCESS_COARSE_LOCATION)
@@ -190,7 +198,7 @@ class ManageStandardPermissionsFragmentTest : BaseHandheldPermissionUiTest() {
             {
                 assertThat(getAdditionalPermissionCount()).isEqualTo(additionalPermissionBefore + 1)
             },
-            TIMEOUT
+            TIMEOUT,
         )
     }
 
@@ -202,13 +210,13 @@ class ManageStandardPermissionsFragmentTest : BaseHandheldPermissionUiTest() {
         install(ADDITIONAL_USER_APK)
         eventually(
             { assertThat(getAdditionalPermissionCount()).isNotEqualTo(additionalPermissionBefore) },
-            TIMEOUT
+            TIMEOUT,
         )
 
         uninstallApp(ADDITIONAL_USER_PKG)
         eventually(
             { assertThat(getAdditionalPermissionCount()).isEqualTo(additionalPermissionBefore) },
-            TIMEOUT
+            TIMEOUT,
         )
     }
 
@@ -220,14 +228,21 @@ class ManageStandardPermissionsFragmentTest : BaseHandheldPermissionUiTest() {
         install(ADDITIONAL_USER_APK)
         eventually(
             { assertThat(getAdditionalPermissionCount()).isNotEqualTo(additionalPermissionBefore) },
-            TIMEOUT
+            TIMEOUT,
         )
 
         uninstallApp(ADDITIONAL_DEFINER_PKG)
         eventually(
             { assertThat(getAdditionalPermissionCount()).isEqualTo(additionalPermissionBefore) },
-            TIMEOUT
+            TIMEOUT,
         )
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_DECLUTTERED_PERMISSION_MANAGER_ENABLED)
+    fun noUnusedPermissionGroupDisplayedInTheMainPage() {
+        eventually { assertNull(waitFindObjectOrNull(By.hasChild(By.textStartsWith("0 of 0")))) }
+        eventually { assertNull(waitFindObjectOrNull(By.hasChild(By.textStartsWith("0/0")))) }
     }
 
     companion object {

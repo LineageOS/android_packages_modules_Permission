@@ -13,11 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@file:Suppress("DEPRECATION")
-
 package com.android.permissioncontroller.permission.ui.auto.dashboard
 
-import android.app.role.RoleManager
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -36,16 +33,12 @@ import com.android.permissioncontroller.PermissionControllerStatsLog.PERMISSION_
 import com.android.permissioncontroller.PermissionControllerStatsLog.PERMISSION_USAGE_FRAGMENT_INTERACTION__ACTION__SHOW_SYSTEM_CLICKED
 import com.android.permissioncontroller.R
 import com.android.permissioncontroller.auto.AutoSettingsFrameFragment
-import com.android.permissioncontroller.permission.model.legacy.PermissionApps.AppDataLoader
-import com.android.permissioncontroller.permission.model.v31.AppPermissionUsage
-import com.android.permissioncontroller.permission.model.v31.PermissionUsages
-import com.android.permissioncontroller.permission.model.v31.PermissionUsages.PermissionsUsagesChangeCallback
 import com.android.permissioncontroller.permission.ui.ManagePermissionsActivity
 import com.android.permissioncontroller.permission.ui.auto.AutoDividerPreference
-import com.android.permissioncontroller.permission.ui.legacy.PermissionUsageDetailsViewModelFactoryLegacy
-import com.android.permissioncontroller.permission.ui.legacy.PermissionUsageDetailsViewModelLegacy
+import com.android.permissioncontroller.permission.ui.model.v31.BasePermissionUsageDetailsViewModel
+import com.android.permissioncontroller.permission.ui.model.v31.PermissionUsageDetailsViewModel
+import com.android.permissioncontroller.permission.ui.model.v31.PermissionUsageDetailsViewModel.AppPermissionAccessUiInfo
 import com.android.permissioncontroller.permission.utils.KotlinUtils.getPermGroupLabel
-import com.android.permissioncontroller.permission.utils.Utils
 import java.time.Clock
 import java.time.Instant
 import java.time.ZoneId
@@ -54,9 +47,7 @@ import java.time.temporal.ChronoUnit
 import java.util.concurrent.atomic.AtomicReference
 
 @RequiresApi(Build.VERSION_CODES.S)
-class AutoPermissionUsageDetailsFragment :
-    AutoSettingsFrameFragment(), PermissionsUsagesChangeCallback {
-
+class AutoPermissionUsageDetailsFragment : AutoSettingsFrameFragment() {
     companion object {
         private const val LOG_TAG = "AutoPermissionUsageDetailsFragment"
         private const val KEY_SESSION_ID = "_session_id"
@@ -70,14 +61,11 @@ class AutoPermissionUsageDetailsFragment :
                 .truncatedTo(ChronoUnit.DAYS)
                 .toEpochSecond() * 1000L
 
-        // Only show the last 24 hours on Auto right now
-        private const val SHOW_7_DAYS = false
-
         /** Creates a new instance of [AutoPermissionUsageDetailsFragment]. */
         fun newInstance(
             groupName: String?,
             showSystem: Boolean,
-            sessionId: Long
+            sessionId: Long,
         ): AutoPermissionUsageDetailsFragment {
             return AutoPermissionUsageDetailsFragment().apply {
                 arguments =
@@ -92,14 +80,10 @@ class AutoPermissionUsageDetailsFragment :
 
     private val SESSION_ID_KEY = (AutoPermissionUsageFragment::class.java.name + KEY_SESSION_ID)
 
-    private lateinit var permissionUsages: PermissionUsages
-    private lateinit var usageViewModel: PermissionUsageDetailsViewModelLegacy
+    private lateinit var usageViewModel: BasePermissionUsageDetailsViewModel
     private lateinit var filterGroup: String
-    private lateinit var roleManager: RoleManager
 
-    private var appPermissionUsages: List<AppPermissionUsage> = listOf()
     private var showSystem = false
-    private var finishedInitialLoad = false
     private var hasSystemApps = false
 
     /** Unique Id of a request */
@@ -116,7 +100,7 @@ class AutoPermissionUsageDetailsFragment :
             !requireArguments().containsKey(Intent.EXTRA_PERMISSION_GROUP_NAME) or
                 (requireArguments().getString(Intent.EXTRA_PERMISSION_GROUP_NAME) == null)
         ) {
-            DumpableLog.e(LOG_TAG, "Missing argument ${Intent.EXTRA_USER}")
+            DumpableLog.e(LOG_TAG, "Missing argument ${Intent.EXTRA_PERMISSION_GROUP_NAME}")
             activity?.finish()
             return
         }
@@ -130,28 +114,21 @@ class AutoPermissionUsageDetailsFragment :
         headerLabel =
             resources.getString(
                 R.string.permission_group_usage_title,
-                getPermGroupLabel(requireContext(), filterGroup)
+                getPermGroupLabel(requireContext(), filterGroup),
             )
-
-        val context = preferenceManager.getContext()
-        permissionUsages = PermissionUsages(context)
-        roleManager = Utils.getSystemServiceSafe(context, RoleManager::class.java)
-        val usageViewModelFactory =
-            PermissionUsageDetailsViewModelFactoryLegacy(
+        val factory =
+            PermissionUsageDetailsViewModel.PermissionUsageDetailsViewModelFactory(
                 PermissionControllerApplication.get(),
-                roleManager,
+                this,
                 filterGroup,
-                sessionId
             )
         usageViewModel =
-            ViewModelProvider(this, usageViewModelFactory)[
-                PermissionUsageDetailsViewModelLegacy::class.java]
-
-        reloadData()
+            ViewModelProvider(this, factory)[BasePermissionUsageDetailsViewModel::class.java]
+        usageViewModel.getPermissionUsagesDetailsInfoUiLiveData().observe(this, this::updateUI)
     }
 
     override fun onCreatePreferences(bundlle: Bundle?, s: String?) {
-        preferenceScreen = preferenceManager.createPreferenceScreen(context!!)
+        preferenceScreen = preferenceManager.createPreferenceScreen(requireContext())
     }
 
     private fun setupHeaderPreferences() {
@@ -161,38 +138,16 @@ class AutoPermissionUsageDetailsFragment :
         preferenceScreen.addPreference(AutoDividerPreference(context))
     }
 
-    /** Reloads the data to show. */
-    private fun reloadData() {
-        usageViewModel.loadPermissionUsages(
-            requireActivity().getLoaderManager(),
-            permissionUsages,
-            this,
-            FILTER_24_HOURS
-        )
-        if (finishedInitialLoad) {
-            setLoading(true)
-        }
-    }
-
-    override fun onPermissionUsagesChanged() {
-        if (permissionUsages.usages.isEmpty()) {
-            return
-        }
-        appPermissionUsages = ArrayList(permissionUsages.usages)
-        updateUI()
-    }
-
     private fun updateSystemToggle() {
         if (!showSystem) {
             PermissionControllerStatsLog.write(
                 PERMISSION_USAGE_FRAGMENT_INTERACTION,
                 sessionId,
-                PERMISSION_USAGE_FRAGMENT_INTERACTION__ACTION__SHOW_SYSTEM_CLICKED
+                PERMISSION_USAGE_FRAGMENT_INTERACTION__ACTION__SHOW_SYSTEM_CLICKED,
             )
         }
         showSystem = !showSystem
         updateAction()
-        updateUI()
     }
 
     private fun updateAction() {
@@ -206,47 +161,36 @@ class AutoPermissionUsageDetailsFragment :
             } else {
                 getString(R.string.menu_show_system)
             }
-        setAction(label) { updateSystemToggle() }
+        setAction(label) {
+            usageViewModel.updateShowSystemAppsToggle(!showSystem)
+            updateSystemToggle()
+        }
     }
 
-    private fun updateUI() {
-        if (appPermissionUsages.isEmpty()) {
+    private fun updateUI(uiInfo: PermissionUsageDetailsViewModel.PermissionUsageDetailsUiState) {
+        if (
+            activity == null ||
+                uiInfo is PermissionUsageDetailsViewModel.PermissionUsageDetailsUiState.Loading
+        ) {
             return
         }
         preferenceScreen.removeAll()
         setupHeaderPreferences()
-
-        val uiData =
-            usageViewModel.buildPermissionUsageDetailsUiData(
-                appPermissionUsages,
-                showSystem,
-                SHOW_7_DAYS
-            )
-
-        if (hasSystemApps != uiData.shouldDisplayShowSystemToggle) {
-            hasSystemApps = uiData.shouldDisplayShowSystemToggle
+        val uiData = uiInfo as PermissionUsageDetailsViewModel.PermissionUsageDetailsUiState.Success
+        if (hasSystemApps != uiData.containsSystemAppUsage) {
+            hasSystemApps = uiData.containsSystemAppUsage
             updateAction()
         }
-
         val category = AtomicReference(PreferenceCategory(requireContext()))
         preferenceScreen.addPreference(category.get())
 
-        AppDataLoader(context) {
-                renderHistoryPreferences(
-                    uiData.getHistoryPreferenceDataList(),
-                    category,
-                    preferenceScreen
-                )
+        renderHistoryPreferences(uiData.appPermissionAccessUiInfoList, category, preferenceScreen)
 
-                setLoading(false)
-                finishedInitialLoad = true
-                permissionUsages.stopLoader(requireActivity().getLoaderManager())
-            }
-            .execute(*uiData.permissionApps.toTypedArray())
+        setLoading(false)
     }
 
     fun createPermissionHistoryPreference(
-        historyPreferenceData: PermissionUsageDetailsViewModelLegacy.HistoryPreferenceData
+        historyPreferenceData: AppPermissionAccessUiInfo
     ): Preference {
         return AutoPermissionHistoryPreference(requireContext(), historyPreferenceData)
     }
@@ -257,7 +201,7 @@ class AutoPermissionUsageDetailsFragment :
                 summary =
                     getString(
                         R.string.permission_group_usage_subtitle_24h,
-                        getPermGroupLabel(requireContext(), filterGroup)
+                        getPermGroupLabel(requireContext(), filterGroup),
                     )
                 isSelectable = false
             }
@@ -271,7 +215,7 @@ class AutoPermissionUsageDetailsFragment :
                 summary =
                     getString(
                         R.string.manage_permission_summary,
-                        getPermGroupLabel(requireContext(), filterGroup)
+                        getPermGroupLabel(requireContext(), filterGroup),
                     )
                 onPreferenceClickListener =
                     Preference.OnPreferenceClickListener {
@@ -287,9 +231,8 @@ class AutoPermissionUsageDetailsFragment :
     }
 
     /** Render the provided [historyPreferenceDataList] into the [preferenceScreen] UI. */
-    fun renderHistoryPreferences(
-        historyPreferenceDataList:
-            List<PermissionUsageDetailsViewModelLegacy.HistoryPreferenceData>,
+    private fun renderHistoryPreferences(
+        historyPreferenceDataList: List<AppPermissionAccessUiInfo>,
         category: AtomicReference<PreferenceCategory>,
         preferenceScreen: PreferenceScreen,
     ) {
@@ -299,7 +242,7 @@ class AutoPermissionUsageDetailsFragment :
             val currentDateMs =
                 ZonedDateTime.ofInstant(
                         Instant.ofEpochMilli(usageTimestamp),
-                        Clock.system(ZoneId.systemDefault()).zone
+                        Clock.system(ZoneId.systemDefault()).zone,
                     )
                     .truncatedTo(ChronoUnit.DAYS)
                     .toEpochSecond() * 1000L

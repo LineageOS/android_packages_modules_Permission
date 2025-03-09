@@ -42,10 +42,12 @@ import android.provider.DeviceConfig
 import android.provider.Settings
 import android.text.Html
 import android.util.Log
+import android.view.KeyEvent
 import androidx.test.core.app.ActivityScenario
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.uiautomator.By
 import androidx.test.uiautomator.BySelector
+import androidx.test.uiautomator.Direction
 import androidx.test.uiautomator.StaleObjectException
 import androidx.test.uiautomator.UiDevice
 import androidx.test.uiautomator.UiObject2
@@ -58,6 +60,7 @@ import com.android.compatibility.common.util.SystemUtil.runShellCommand
 import com.android.compatibility.common.util.SystemUtil.runShellCommandOrThrow
 import com.android.compatibility.common.util.SystemUtil.runWithShellPermissionIdentity
 import com.android.compatibility.common.util.UiAutomatorUtils2
+import com.android.compatibility.common.util.UserHelper
 import com.android.modules.utils.build.SdkLevel
 import com.google.common.truth.Truth.assertThat
 import java.io.File
@@ -117,6 +120,13 @@ abstract class BasePermissionTest {
             packageManager.hasSystemFeature(
                     /* PackageManager.FEATURE_CAR_SPLITSCREEN_MULTITASKING */
                     "android.software.car.splitscreen_multitasking")
+        @JvmStatic
+        private val isAutomotiveVisibleBackgroundUser = isAutomotive &&
+            UserHelper(context).isVisibleBackgroundUser()
+
+        // TODO(b/382327037):find a way to avoid specifying the display ID for each UiSelector.
+        @JvmStatic
+        protected val displayId = UserHelper().mainDisplayId
     }
 
     @get:Rule val screenRecordRule = ScreenRecordRule(false, false)
@@ -160,7 +170,7 @@ abstract class BasePermissionTest {
         uiDevice.wakeUp()
         runShellCommand(instrumentation, "wm dismiss-keyguard")
 
-        uiDevice.findObject(By.text("Close"))?.click()
+        uiDevice.findObject(By.text("Close").displayId(displayId))?.click()
     }
 
     @Before
@@ -256,6 +266,7 @@ abstract class BasePermissionTest {
             regex = regex.dropLast(1)
         }
         return By.text(Pattern.compile(regex, Pattern.CASE_INSENSITIVE or Pattern.UNICODE_CASE))
+                .displayId(displayId)
     }
 
     protected open fun installPackage(
@@ -400,32 +411,35 @@ abstract class BasePermissionTest {
     }
 
     private fun scrollToText(text: String, maxSearchSwipes: Int = MAX_SWIPES): UiObject2 {
-        val scrollable =
-            UiScrollable(UiSelector().scrollable(true)).apply {
-                this.maxSearchSwipes = maxSearchSwipes
-            }
-
-        scrollable.scrollTextIntoView(text)
-
-        val foundObject =
-            uiDevice.findObject(
-                By.text(text).pkg(context.packageManager.permissionControllerPackageName)
+        var foundObject: UiObject2?
+        if (isAutomotiveVisibleBackgroundUser) {
+            val scrollableObject = uiDevice.findObject(By.scrollable(true).displayId(displayId))
+            foundObject =
+                    scrollableObject.scrollUntil(Direction.DOWN, Until.findObject(By.text(text)))
+        } else {
+            val scrollable =
+                UiScrollable(UiSelector().scrollable(true)).apply {
+                    this.maxSearchSwipes = maxSearchSwipes
+                }
+            scrollable.scrollTextIntoView(text)
+            foundObject = uiDevice.findObject(
+                    By.text(text).pkg(context.packageManager.permissionControllerPackageName)
             )
+        }
         Assert.assertNotNull("View not found after scrolling", foundObject)
-
         return foundObject
     }
 
     protected fun pressBack() {
-        uiDevice.pressBack()
+        runShellCommandOrThrow("input -d $displayId keyevent ${KeyEvent.KEYCODE_BACK}")
     }
 
     protected fun pressHome() {
-        uiDevice.pressHome()
+        runShellCommandOrThrow("input -d $displayId keyevent ${KeyEvent.KEYCODE_HOME}")
     }
 
     protected fun pressDPadDown() {
-        uiDevice.pressDPadDown()
+        runShellCommandOrThrow("input -d $displayId keyevent ${KeyEvent.KEYCODE_DPAD_DOWN}")
         waitForIdle()
     }
 

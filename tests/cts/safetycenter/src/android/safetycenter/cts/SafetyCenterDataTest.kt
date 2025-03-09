@@ -492,8 +492,8 @@ class SafetyCenterDataTest {
                         status1,
                         listOf(issue1),
                         listOf(entryOrGroup1),
-                        listOf(staticEntryGroup1)
-                    )
+                        listOf(staticEntryGroup1),
+                    ),
                 )
                 .addEqualityGroup(
                     data2,
@@ -501,19 +501,19 @@ class SafetyCenterDataTest {
                         status2,
                         listOf(issue2),
                         listOf(entryOrGroup2),
-                        listOf(staticEntryGroup2)
-                    )
+                        listOf(staticEntryGroup2),
+                    ),
                 )
                 .addEqualityGroup(
                     SafetyCenterData(status1, listOf(), listOf(), listOf()),
-                    SafetyCenterData(status1, listOf(), listOf(), listOf())
+                    SafetyCenterData(status1, listOf(), listOf(), listOf()),
                 )
                 .addEqualityGroup(
                     SafetyCenterData(
                         status2,
                         listOf(issue1),
                         listOf(entryOrGroup1),
-                        listOf(staticEntryGroup1)
+                        listOf(staticEntryGroup1),
                     )
                 )
                 .addEqualityGroup(
@@ -521,7 +521,7 @@ class SafetyCenterDataTest {
                         status1,
                         listOf(issue2),
                         listOf(entryOrGroup1),
-                        listOf(staticEntryGroup1)
+                        listOf(staticEntryGroup1),
                     )
                 )
                 .addEqualityGroup(
@@ -529,7 +529,7 @@ class SafetyCenterDataTest {
                         status1,
                         listOf(issue1),
                         listOf(entryOrGroup2),
-                        listOf(staticEntryGroup1)
+                        listOf(staticEntryGroup1),
                     )
                 )
                 .addEqualityGroup(
@@ -537,7 +537,7 @@ class SafetyCenterDataTest {
                         status1,
                         listOf(issue1),
                         listOf(entryOrGroup1),
-                        listOf(staticEntryGroup2)
+                        listOf(staticEntryGroup2),
                     )
                 )
 
@@ -550,7 +550,7 @@ class SafetyCenterDataTest {
         EqualsHashCodeToStringTester.ofParcelable(
                 parcelableCreator = SafetyCenterData.CREATOR,
                 ignoreToString = true,
-                createCopy = { SafetyCenterData.Builder(it).build() }
+                createCopy = { SafetyCenterData.Builder(it).build() },
             )
             .addEqualityGroup(
                 data1,
@@ -558,7 +558,7 @@ class SafetyCenterDataTest {
                     status1,
                     listOf(issue1),
                     listOf(entryOrGroup1),
-                    listOf(staticEntryGroup1)
+                    listOf(staticEntryGroup1),
                 ),
                 SafetyCenterData.Builder(status1)
                     .addIssue(issue1)
@@ -570,7 +570,7 @@ class SafetyCenterDataTest {
                     .addEntryOrGroup(entryOrGroup1)
                     .addStaticEntryGroup(staticEntryGroup1)
                     .setExtras(unknownExtras)
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 SafetyCenterData.Builder(status1)
@@ -640,7 +640,7 @@ class SafetyCenterDataTest {
                     .addStaticEntryGroup(staticEntryGroup1)
                     .addIssue(issue1)
                     .setExtras(filledExtrasIssuesToGroups1)
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 SafetyCenterData.Builder(status1)

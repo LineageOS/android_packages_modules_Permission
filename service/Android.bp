@@ -101,6 +101,7 @@ java_sdk_library {
         "modules-utils-backgroundthread",
         "modules-utils-build",
         "modules-utils-os",
+        // framework-permission-s already includes com.android.permission.flags-aconfig-java
         "role-controller",
         "safety-center-config",
         "safety-center-internal-data",

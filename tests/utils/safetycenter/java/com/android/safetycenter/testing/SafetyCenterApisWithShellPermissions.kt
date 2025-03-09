@@ -52,7 +52,7 @@ object SafetyCenterApisWithShellPermissions {
     fun SafetyCenterManager.setSafetySourceDataWithPermission(
         safetySourceId: String,
         safetySourceData: SafetySourceData?,
-        safetyEvent: SafetyEvent
+        safetyEvent: SafetyEvent,
     ) {
         callWithShellPermissionIdentity(SEND_SAFETY_CENTER_UPDATE) {
             setSafetySourceData(safetySourceId, safetySourceData, safetyEvent)
@@ -72,7 +72,7 @@ object SafetyCenterApisWithShellPermissions {
      */
     fun SafetyCenterManager.reportSafetySourceErrorWithPermission(
         safetySourceId: String,
-        safetySourceErrorDetails: SafetySourceErrorDetails
+        safetySourceErrorDetails: SafetySourceErrorDetails,
     ) {
         callWithShellPermissionIdentity(SEND_SAFETY_CENTER_UPDATE) {
             reportSafetySourceError(safetySourceId, safetySourceErrorDetails)
@@ -85,7 +85,7 @@ object SafetyCenterApisWithShellPermissions {
      */
     fun SafetyCenterManager.refreshSafetySourcesWithPermission(
         refreshReason: Int,
-        safetySourceIds: List<String>? = null
+        safetySourceIds: List<String>? = null,
     ) {
         callWithShellPermissionIdentity(MANAGE_SAFETY_CENTER) {
             if (safetySourceIds != null) {
@@ -116,7 +116,7 @@ object SafetyCenterApisWithShellPermissions {
      */
     fun SafetyCenterManager.addOnSafetyCenterDataChangedListenerWithPermission(
         executor: Executor,
-        listener: OnSafetyCenterDataChangedListener
+        listener: OnSafetyCenterDataChangedListener,
     ) {
         callWithShellPermissionIdentity(MANAGE_SAFETY_CENTER) {
             addOnSafetyCenterDataChangedListener(executor, listener)
@@ -151,7 +151,7 @@ object SafetyCenterApisWithShellPermissions {
      */
     fun SafetyCenterManager.executeSafetyCenterIssueActionWithPermission(
         safetyCenterIssueId: String,
-        safetyCenterIssueActionId: String
+        safetyCenterIssueActionId: String,
     ) {
         callWithShellPermissionIdentity(MANAGE_SAFETY_CENTER) {
             executeSafetyCenterIssueAction(safetyCenterIssueId, safetyCenterIssueActionId)

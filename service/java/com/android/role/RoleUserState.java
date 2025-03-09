@@ -24,6 +24,7 @@ import android.annotation.WorkerThread;
 import android.os.Build;
 import android.os.Handler;
 import android.os.UserHandle;
+import android.permission.internal.compat.UserHandleCompat;
 import android.util.ArrayMap;
 import android.util.ArraySet;
 import android.util.Log;
@@ -39,6 +40,7 @@ import com.android.role.persistence.RolesState;
 import com.android.server.role.RoleServicePlatformHelper;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -94,6 +96,10 @@ class RoleUserState {
     @GuardedBy("mLock")
     @NonNull
     private ArraySet<String> mFallbackEnabledRoles = new ArraySet<>();
+
+    @GuardedBy("mLock")
+    @NonNull
+    private ArrayMap<String, Integer> mActiveUserIds = new ArrayMap<>();
 
     @GuardedBy("mLock")
     private boolean mWriteScheduled;
@@ -423,6 +429,42 @@ class RoleUserState {
     }
 
     /**
+     * Return the active user for the role
+     *
+     * @param roleName the name of the role to get the active user for
+     */
+    public int getActiveUserForRole(@NonNull String roleName) {
+        synchronized (mLock) {
+            return mActiveUserIds.getOrDefault(roleName, UserHandleCompat.USER_NULL);
+        }
+    }
+
+    /**
+     * Set the active user for the role
+     *
+     * @param roleName the name of the role to set the active user for
+     * @param userId User id to set as active for this role
+     * @return whether any changes were made
+     */
+    public boolean setActiveUserForRole(@NonNull String roleName, @UserIdInt int userId) {
+        if (!com.android.permission.flags.Flags.crossUserRoleEnabled()) {
+            return false;
+        }
+        synchronized (mLock) {
+            Integer currentActiveUserId = mActiveUserIds.get(roleName);
+            // If we have pre-existing roles that weren't profile group exclusive and don't have an
+            // active user, ensure we set and write value, and return modified, otherwise other
+            // users might not have role holder revoked.
+            if (currentActiveUserId != null && currentActiveUserId == userId) {
+                return false;
+            }
+            mActiveUserIds.put(roleName, userId);
+            scheduleWriteFileLocked();
+            return true;
+        }
+    }
+
+    /**
      * Schedule writing the state to file.
      */
     @GuardedBy("mLock")
@@ -449,9 +491,15 @@ class RoleUserState {
 
             // Force a reconciliation on next boot if we are bypassing role qualification now.
             String packagesHash = mBypassingRoleQualification ? null : mPackagesHash;
-            roles = new RolesState(mVersion, packagesHash,
-                    (Map<String, Set<String>>) (Map<String, ?>) snapshotRolesLocked(),
-                    snapshotFallbackEnabledRoles());
+            if (com.android.permission.flags.Flags.crossUserRoleEnabled()) {
+                roles = new RolesState(mVersion, packagesHash,
+                        (Map<String, Set<String>>) (Map<String, ?>) snapshotRolesLocked(),
+                        snapshotFallbackEnabledRoles(), snapshotActiveUserIds());
+            } else {
+                roles = new RolesState(mVersion, packagesHash,
+                        (Map<String, Set<String>>) (Map<String, ?>) snapshotRolesLocked(),
+                        snapshotFallbackEnabledRoles());
+            }
         }
 
         mPersistence.writeForUser(roles, UserHandle.of(mUserId));
@@ -463,14 +511,17 @@ class RoleUserState {
 
             Map<String, Set<String>> roles;
             Set<String> fallbackEnabledRoles;
+            Map<String, Integer> activeUserIds;
             if (roleState != null) {
                 mVersion = roleState.getVersion();
                 mPackagesHash = roleState.getPackagesHash();
                 roles = roleState.getRoles();
                 fallbackEnabledRoles = roleState.getFallbackEnabledRoles();
+                activeUserIds = roleState.getActiveUserIds();
             } else {
                 roles = mPlatformHelper.getLegacyRoleState(mUserId);
                 fallbackEnabledRoles = roles.keySet();
+                activeUserIds = Collections.emptyMap();
             }
             mRoles.clear();
             for (Map.Entry<String, Set<String>> entry : roles.entrySet()) {
@@ -480,6 +531,10 @@ class RoleUserState {
             }
             mFallbackEnabledRoles.clear();
             mFallbackEnabledRoles.addAll(fallbackEnabledRoles);
+            mActiveUserIds.clear();
+            if (com.android.permission.flags.Flags.crossUserRoleEnabled()) {
+                mActiveUserIds.putAll(activeUserIds);
+            }
             if (roleState == null) {
                 scheduleWriteFileLocked();
             }
@@ -496,12 +551,14 @@ class RoleUserState {
         int version;
         String packagesHash;
         ArrayMap<String, ArraySet<String>> roles;
+        ArrayMap<String, Integer> activeUserIds;
         ArraySet<String> fallbackEnabledRoles;
         synchronized (mLock) {
             version = mVersion;
             packagesHash = mPackagesHash;
             roles = snapshotRolesLocked();
             fallbackEnabledRoles = snapshotFallbackEnabledRoles();
+            activeUserIds = snapshotActiveUserIds();
         }
 
         long fieldToken = dumpOutputStream.start(fieldName, fieldId);
@@ -514,10 +571,14 @@ class RoleUserState {
             String roleName = roles.keyAt(rolesIndex);
             ArraySet<String> roleHolders = roles.valueAt(rolesIndex);
             boolean fallbackEnabled = fallbackEnabledRoles.contains(roleName);
+            Integer activeUserId = activeUserIds.get(roleName);
 
             long rolesToken = dumpOutputStream.start("roles", RoleUserStateProto.ROLES);
             dumpOutputStream.write("name", RoleProto.NAME, roleName);
             dumpOutputStream.write("fallback_enabled", RoleProto.FALLBACK_ENABLED, fallbackEnabled);
+            if (activeUserId != null) {
+                dumpOutputStream.write("active_user_id", RoleProto.ACTIVE_USER_ID, activeUserId);
+            }
             int roleHoldersSize = roleHolders.size();
             for (int roleHoldersIndex = 0; roleHoldersIndex < roleHoldersSize; roleHoldersIndex++) {
                 String roleHolder = roleHolders.valueAt(roleHoldersIndex);
@@ -561,6 +622,12 @@ class RoleUserState {
     @NonNull
     private ArraySet<String> snapshotFallbackEnabledRoles() {
         return new ArraySet<>(mFallbackEnabledRoles);
+    }
+
+    @GuardedBy("mLock")
+    @NonNull
+    private ArrayMap<String, Integer> snapshotActiveUserIds() {
+        return new ArrayMap<>(mActiveUserIds);
     }
 
     /**

@@ -17,6 +17,7 @@
 package com.android.safetycenter.testing
 
 import android.Manifest.permission.READ_DEVICE_CONFIG
+import android.Manifest.permission.WRITE_ALLOWLISTED_DEVICE_CONFIG
 import android.Manifest.permission.WRITE_DEVICE_CONFIG
 import android.annotation.TargetApi
 import android.app.job.JobInfo
@@ -61,7 +62,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_notifications_min_delay",
             defaultValue = Duration.ofHours(2),
-            DurationParser()
+            DurationParser(),
         )
 
     /**
@@ -72,7 +73,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_notifications_allowed_sources",
             defaultValue = emptySet(),
-            SetParser(StringParser())
+            SetParser(StringParser()),
         )
 
     /**
@@ -83,7 +84,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_notifications_immediate_behavior_issues",
             defaultValue = emptySet(),
-            SetParser(StringParser())
+            SetParser(StringParser()),
         )
 
     /**
@@ -98,7 +99,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_notification_resurface_interval",
             defaultValue = Duration.ofDays(-1),
-            DurationParser()
+            DurationParser(),
         )
 
     /** Flag that determines whether we should replace the IconAction of the lock screen source. */
@@ -119,7 +120,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_refresh_sources_timeouts_millis",
             defaultValue = getAllRefreshTimeoutsMap(TEST_TIMEOUT),
-            MapParser(IntParser(), DurationParser())
+            MapParser(IntParser(), DurationParser()),
         )
 
     /**
@@ -130,7 +131,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_resolve_action_timeout_millis",
             defaultValue = TIMEOUT_LONG,
-            DurationParser()
+            DurationParser(),
         )
 
     /** Flag that determines a duration after which a temporarily hidden issue will resurface. */
@@ -138,7 +139,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_temp_hidden_issue_resurface_delay_millis",
             defaultValue = Duration.ofDays(2),
-            DurationParser()
+            DurationParser(),
         )
 
     /**
@@ -149,7 +150,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_hide_resolved_ui_transition_delay_millis",
             defaultValue = Duration.ofMillis(400),
-            DurationParser()
+            DurationParser(),
         )
 
     /**
@@ -161,7 +162,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_untracked_sources",
             defaultValue = emptySet(),
-            SetParser(StringParser())
+            SetParser(StringParser()),
         )
 
     /**
@@ -173,7 +174,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_resurface_issue_max_counts",
             defaultValue = emptyMap(),
-            MapParser(IntParser(), LongParser())
+            MapParser(IntParser(), LongParser()),
         )
 
     /**
@@ -187,7 +188,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_resurface_issue_delays_millis",
             defaultValue = emptyMap(),
-            MapParser(IntParser(), DurationParser())
+            MapParser(IntParser(), DurationParser()),
         )
 
     /**
@@ -199,7 +200,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_issue_category_allowlists",
             defaultValue = emptyMap(),
-            MapParser(IntParser(), SetParser(StringParser(), delimiter = "|"))
+            MapParser(IntParser(), SetParser(StringParser(), delimiter = "|")),
         )
 
     /**
@@ -211,7 +212,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_actions_to_override_with_default_intent",
             defaultValue = emptyMap(),
-            MapParser(StringParser(), SetParser(StringParser(), delimiter = "|"))
+            MapParser(StringParser(), SetParser(StringParser(), delimiter = "|")),
         )
 
     /**
@@ -223,7 +224,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_background_refresh_denied_sources",
             defaultValue = emptySet(),
-            SetParser(StringParser())
+            SetParser(StringParser()),
         )
 
     /**
@@ -245,7 +246,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_qs_tile_component_setting_flags",
             defaultValue = PackageManager.DONT_KILL_APP,
-            IntParser()
+            IntParser(),
         )
 
     /**
@@ -259,7 +260,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_override_refresh_on_page_open_sources",
             defaultValue = setOf(),
-            SetParser(StringParser())
+            SetParser(StringParser()),
         )
 
     /**
@@ -272,7 +273,7 @@ object SafetyCenterFlags {
             // do not set defaultValue to true, do not want background refreshes running
             // during other tests
             defaultValue = false,
-            BooleanParser()
+            BooleanParser(),
         )
 
     /**
@@ -286,7 +287,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_periodic_background_interval_millis",
             defaultValue = Duration.ofDays(1),
-            DurationParser()
+            DurationParser(),
         )
 
     /** Flag for allowlisting additional certificates for a given package. */
@@ -294,7 +295,7 @@ object SafetyCenterFlags {
         Flag(
             "safety_center_additional_allow_package_certs",
             defaultValue = emptyMap(),
-            MapParser(StringParser(), SetParser(StringParser(), delimiter = "|"))
+            MapParser(StringParser(), SetParser(StringParser(), delimiter = "|")),
         )
 
     /** Every Safety Center flag. */
@@ -323,7 +324,7 @@ object SafetyCenterFlags {
             showSubpagesFlag,
             overrideRefreshOnPageOpenSourcesFlag,
             backgroundRefreshIsEnabledFlag,
-            periodicBackgroundRefreshIntervalFlag
+            periodicBackgroundRefreshIntervalFlag,
         )
 
     /** A property that allows getting and setting the [isEnabledFlag]. */
@@ -453,7 +454,7 @@ object SafetyCenterFlags {
             REFRESH_REASON_DEVICE_LOCALE_CHANGE to refreshTimeout,
             REFRESH_REASON_SAFETY_CENTER_ENABLED to refreshTimeout,
             REFRESH_REASON_OTHER to refreshTimeout,
-            REFRESH_REASON_PERIODIC to refreshTimeout
+            REFRESH_REASON_PERIODIC to refreshTimeout,
         )
 
     private interface Parser<T> {
@@ -486,7 +487,7 @@ object SafetyCenterFlags {
 
     private class SetParser<T>(
         private val elementParser: Parser<T>,
-        private val delimiter: String = ","
+        private val delimiter: String = ",",
     ) : Parser<Set<T>> {
         override fun parseFromString(stringValue: String) =
             stringValue.split(delimiter).map(elementParser::parseFromString).toSet()
@@ -499,7 +500,7 @@ object SafetyCenterFlags {
         private val keyParser: Parser<K>,
         private val valueParser: Parser<V>,
         private val entriesDelimiter: String = ",",
-        private val pairDelimiter: String = ":"
+        private val pairDelimiter: String = ":",
     ) : Parser<Map<K, V>> {
         override fun parseFromString(stringValue: String) =
             stringValue.split(entriesDelimiter).associate { pair ->
@@ -532,13 +533,13 @@ object SafetyCenterFlags {
         }
 
     private fun writeDeviceConfigProperty(name: String, stringValue: String?) {
-        callWithShellPermissionIdentity(WRITE_DEVICE_CONFIG) {
+        callWithShellPermissionIdentity(WRITE_DEVICE_CONFIG, WRITE_ALLOWLISTED_DEVICE_CONFIG) {
             val valueWasSet =
                 DeviceConfig.setProperty(
                     NAMESPACE_PRIVACY,
                     name,
                     stringValue, /* makeDefault */
-                    false
+                    false,
                 )
             require(valueWasSet) { "Could not set $name to: $stringValue" }
         }

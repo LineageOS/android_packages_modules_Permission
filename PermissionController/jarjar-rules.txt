@@ -2,6 +2,10 @@
 # RoleParser.applyJarjarTransform(), by adding NO_IFTTT=reason to your commit
 # message.
 # LINT.IfChange
+rule android.app.admin.flags.*FeatureFlags* com.android.permissioncontroller.jarjar.@0
+rule android.app.admin.flags.FeatureFlags* com.android.permissioncontroller.jarjar.@0
+rule android.app.admin.flags.FeatureFlags com.android.permissioncontroller.jarjar.@0
+rule android.app.admin.flags.Flags com.android.permissioncontroller.jarjar.@0
 rule android.app.appfunctions.flags.*FeatureFlags* com.android.permissioncontroller.jarjar.@0
 rule android.app.appfunctions.flags.FeatureFlags* com.android.permissioncontroller.jarjar.@0
 rule android.app.appfunctions.flags.FeatureFlags com.android.permissioncontroller.jarjar.@0
@@ -22,4 +26,8 @@ rule android.os.*FeatureFlags* com.android.permissioncontroller.jarjar.@0
 rule android.os.FeatureFlags* com.android.permissioncontroller.jarjar.@0
 rule android.os.FeatureFlags com.android.permissioncontroller.jarjar.@0
 rule android.os.Flags com.android.permissioncontroller.jarjar.@0
+rule com.android.permission.flags.*FeatureFlags* com.android.permissioncontroller.jarjar.@0
+rule com.android.permission.flags.FeatureFlags* com.android.permissioncontroller.jarjar.@0
+rule com.android.permission.flags.FeatureFlags com.android.permissioncontroller.jarjar.@0
+rule com.android.permission.flags.Flags com.android.permissioncontroller.jarjar.@0
 # LINT.ThenChange(PermissionController/role-controller/java/com/android/role/controller/model/RoleParser.java:applyJarjarTransform)

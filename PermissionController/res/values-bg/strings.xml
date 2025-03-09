@@ -60,7 +60,7 @@
     <string name="grant_dialog_button_allow_all_files" msgid="4955436994954829894">"Разрешаване на управлението на всички файлове"</string>
     <string name="grant_dialog_button_allow_media_only" msgid="4832877658422573832">"Разрешаване на достъп до мултимедийните файлове"</string>
     <string name="app_permissions_breadcrumb" msgid="5136969550489411650">"Приложения"</string>
-    <string name="app_permissions" msgid="3369917736607944781">"Разрешения за приложенията"</string>
+    <string name="app_permissions" msgid="3369917736607944781">"Разрешения за приложението"</string>
     <string name="unused_apps" msgid="2058057455175955094">"Неизползвани приложения"</string>
     <string name="edit_photos_description" msgid="5540108003480078892">"Редактиране на избраните снимки за това приложение"</string>
     <string name="no_unused_apps" msgid="12809387670415295">"Няма неизползвани приложения"</string>
@@ -195,7 +195,7 @@
     <string name="app_permission_button_allow_limited_access" msgid="8824410215149764113">"Разрешаване на ограничения достъп"</string>
     <string name="precise_image_description" msgid="6349638632303619872">"Точно местоположение"</string>
     <string name="approximate_image_description" msgid="938803699637069884">"Приблизително местоположение"</string>
-    <string name="app_permission_location_accuracy" msgid="7166912915040018669">"Използване на точното местоположение"</string>
+    <string name="app_permission_location_accuracy" msgid="7166912915040018669">"Използване на точното местоположе­ние"</string>
     <string name="app_permission_location_accuracy_subtitle" msgid="2654077606404987210">"Когато точното местоположение е изключено, приложенията могат да осъществяват достъп до приблизителното ви местоположение"</string>
     <string name="app_permission_title" msgid="2090897901051370711">"Разрешение за: <xliff:g id="PERM">%1$s</xliff:g>"</string>
     <string name="app_permission_header" msgid="2951363137032603806">"Достъп до „<xliff:g id="PERM">%1$s</xliff:g>“ за това приложение"</string>
@@ -471,7 +471,7 @@
     <string name="permgrouprequest_device_aware_storage_isolated" msgid="6463062962458809752">"Да се разреши ли на &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да осъществява достъп до снимките и мултимедията на &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"Да се разреши ли на &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да осъществява достъп до контактите ви?"</string>
     <string name="permgrouprequest_device_aware_contacts" msgid="731025863972535928">"Да се разреши ли на &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да осъществява достъп до контактите ви на &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;?"</string>
-    <string name="permgrouprequest_location" msgid="6990232580121067883">"Да се разреши ли на &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да осъществява достъп до местоположението на това устройство?"</string>
+    <string name="permgrouprequest_location" msgid="6990232580121067883">"Да се разреши ли на &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да получи достъп до местоположението на това устройство?"</string>
     <string name="permgrouprequest_device_aware_location" msgid="6075412127429878638">"Да се разреши ли на &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да осъществява достъп до местоположението на &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"Само когато използвате приложението, то ще има достъп до местоположението"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"Да се разреши ли на &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; да осъществява достъп до местоположението на това устройство?"</string>
@@ -674,9 +674,11 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Разрешаване на ограничените настройки"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Ограничена настройка"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"От съображения за сигурност понастоящем тази настройка не е налице."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Действието не е налице по време на тел. обаждане"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"По време на телефонно обаждане не можете да разрешавате на приложенията да инсталират други приложения.\n\nТова действие е блокирано от съображения за сигурност, защото често се използва от измамници по време на телефонни разговори. Ако човек, когото не познавате, ви напътства, за да предприемете това действие, възможно е да става дума за измама."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"На приложението бе отказан достъп до <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"Приложението поиска разрешение за достъп до поверителни данни, което може да изложи на риск личната или финансовата ви информация.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Възможно е приложението да не работи правилно без това ограничено разрешение. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Научете как да разрешите достъпа&lt;/a&gt;"</string>
-    <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"На приложението бе забранено да изпълнява функциите на основно <xliff:g id="ROLE_NAME">%1$s</xliff:g>"</string>
+    <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"Приложението не получи разрешение да бъде по подразбиране: <xliff:g id="ROLE_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_role" msgid="6369601947905234551">"Приложението поиска разрешения за достъп до поверителни данни, които може да изложат на риск личната или финансовата ви информация.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Възможно е приложението да не работи правилно без тези ограничени разрешения. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Научете как да разрешите достъпа&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_settings_default" msgid="1858092969721041576">"На приложението бе отказан достъп"</string>
     <string name="enhanced_confirmation_dialog_desc_settings_default" msgid="6911632348359332981">"Достъпът до това разрешение може да изложи на риск личната и финансовата ви информация.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Възможно е приложението да не работи правилно без това ограничено разрешение. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Научете как да разрешите достъпа&lt;/a&gt;"</string>

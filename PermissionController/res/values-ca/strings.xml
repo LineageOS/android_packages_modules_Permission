@@ -346,7 +346,7 @@
     <string name="no_apps_allowed" msgid="7718822655254468631">"Cap aplicació amb permís"</string>
     <string name="no_apps_allowed_full" msgid="8011716991498934104">"Cap aplicació té permís per accedir a tots els fitxers"</string>
     <string name="no_apps_allowed_scoped" msgid="4908850477787659501">"Cap aplicació té permís per accedir només a fitxers multimèdia"</string>
-    <string name="no_apps_denied" msgid="7663435886986784743">"Cap aplicació amb permís denegat"</string>
+    <string name="no_apps_denied" msgid="7663435886986784743">"Cap aplicació denegada"</string>
     <string name="car_permission_selected" msgid="180837028920791596">"Seleccionat"</string>
     <string name="settings" msgid="5409109923158713323">"Configuració"</string>
     <string name="accessibility_service_dialog_title_single" msgid="7956432823014102366">"<xliff:g id="SERVICE_NAME">%s</xliff:g> té accés complet al dispositiu"</string>
@@ -457,7 +457,7 @@
     <string name="incident_report_dialog_title" msgid="669104389325204095">"Vols compartir les dades de depuració?"</string>
     <string name="incident_report_dialog_intro" msgid="5897733669850951832">"El sistema ha detectat un problema."</string>
     <string name="incident_report_dialog_text" msgid="5675553296891757523">"<xliff:g id="APP_NAME_0">%1$s</xliff:g> sol·licita penjar un informe d\'errors des d\'aquest dispositiu generat el dia <xliff:g id="DATE">%2$s</xliff:g> (<xliff:g id="TIME">%3$s</xliff:g>). Els informes d\'errors inclouen informació personal sobre el dispositiu o informació registrada per les aplicacions, com ara noms d\'usuaris, dades de la ubicació, identificadors del dispositiu i informació de la xarxa. Comparteix informes d\'errors només amb persones i aplicacions de confiança. Vols permetre que <xliff:g id="APP_NAME_1">%4$s</xliff:g> pengi un informe d\'errors?"</string>
-    <string name="incident_report_error_dialog_text" msgid="4189647113387092272">"S\'ha produït un error en processar l\'informe d\'errors de l\'aplicació <xliff:g id="APP_NAME">%1$s</xliff:g> i, per tant, s\'han denegat les dades de depuració detallades. Sentim la interrupció."</string>
+    <string name="incident_report_error_dialog_text" msgid="4189647113387092272">"Hi ha hagut un error en processar l\'informe d\'errors de l\'aplicació <xliff:g id="APP_NAME">%1$s</xliff:g> i, per tant, s\'han denegat les dades de depuració detallades. Sentim la interrupció."</string>
     <string name="incident_report_dialog_allow_label" msgid="2970242967721155239">"Permet"</string>
     <string name="incident_report_dialog_deny_label" msgid="3535314290677579383">"Denega"</string>
     <string name="adjust_user_sensitive_title" msgid="4196724451314280527">"Configuració avançada"</string>
@@ -471,7 +471,7 @@
     <string name="permgrouprequest_device_aware_storage_isolated" msgid="6463062962458809752">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi a les fotos i al contingut multimèdia del dispositiu &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi als contactes?"</string>
     <string name="permgrouprequest_device_aware_contacts" msgid="731025863972535928">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi als contactes del dispositiu &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;?"</string>
-    <string name="permgrouprequest_location" msgid="6990232580121067883">"Vols permetre que la &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi a la ubicació del dispositiu?"</string>
+    <string name="permgrouprequest_location" msgid="6990232580121067883">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi a la ubicació del dispositiu?"</string>
     <string name="permgrouprequest_device_aware_location" msgid="6075412127429878638">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi a la ubicació del dispositiu &lt;b&gt;<xliff:g id="DEVICE_NAME">%2$s</xliff:g>&lt;/b&gt;?"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"L\'aplicació només tindrà accés a la ubicació quan l\'estiguis utilitzant"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"Vols permetre que &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; accedeixi a la ubicació del dispositiu?"</string>
@@ -674,12 +674,14 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Permet la configuració restringida"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Opció de configuració restringida"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Per a la teva seguretat, aquesta opció de configuració no està disponible en aquests moments."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Acció no disponible durant les trucades"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"No es permet que les aplicacions instal·lin altres aplicacions durant una trucada.\n\n Els estafadors solen demanar aquest tipus d\'acció durant les trucades, de manera que s\'ha bloquejat per protegir-te. Si algú que no coneixes t\'indica que facis aquesta acció, pot ser que es tracti d\'una estafa."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"A l\'aplicació se li ha denegat l\'accés a <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"L\'aplicació ha demanat accés a un permís sensible, el qual pot posar en risc la teva informació personal o financera.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>És possible que l\'aplicació no funcioni correctament sense aquest permís restringit. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Més informació sobre com pots permetre l\'accés&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"A l\'aplicació se li ha denegat l\'accés per ser <xliff:g id="ROLE_NAME">%1$s</xliff:g> de manera predeterminada"</string>
     <string name="enhanced_confirmation_dialog_desc_role" msgid="6369601947905234551">"L\'aplicació ha demanat accés a permisos sensibles, els quals poden posar en risc la teva informació personal o financera.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>És possible que l\'aplicació no funcioni correctament sense aquests permisos restringits. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Més informació sobre com pots permetre l\'accés&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_settings_default" msgid="1858092969721041576">"A l\'aplicació se li ha denegat l\'accés"</string>
-    <string name="enhanced_confirmation_dialog_desc_settings_default" msgid="6911632348359332981">"L\'accés a aquest permís pot posar en risc la teva informació personal i financera.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>És possible que l\'aplicació no funcioni correctament sense aquest permís. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Més informació sobre com pots permetre l\'accés&lt;/a&gt;"</string>
+    <string name="enhanced_confirmation_dialog_desc_settings_default" msgid="6911632348359332981">"L\'accés a aquest permís pot posar en risc la teva informació personal i financera.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>És possible que l\'aplicació no funcioni correctament sense aquest permís restringit. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Més informació sobre com pots permetre l\'accés&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_learn_more" msgid="5226619861379095709">"Més informació"</string>
     <string name="enhanced_confirmation_dialog_ok" msgid="8560373821598619924">"D\'acord"</string>
     <string name="permission_grant_dialog_streaming_blocked_title" msgid="8905241017017043649">"S\'ha suprimit la sol·licitud de permís"</string>

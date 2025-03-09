@@ -48,7 +48,7 @@ class SafetyCenterTestConfigs(private val context: Context) {
                 context.packageManager
                     .getPackageInfo(
                         context.packageName,
-                        PackageInfoFlags.of(GET_SIGNING_CERTIFICATES.toLong())
+                        PackageInfoFlags.of(GET_SIGNING_CERTIFICATES.toLong()),
                     )
                     .signingInfo!!
                     .apkContentsSigners[0]
@@ -220,25 +220,25 @@ class SafetyCenterTestConfigs(private val context: Context) {
                         .addSafetySource(
                             issueOnlySafetySourceWithDuplicationInfo(
                                 SOURCE_ID_1,
-                                DEDUPLICATION_GROUP_1
+                                DEDUPLICATION_GROUP_1,
                             )
                         )
                         .addSafetySource(
                             issueOnlySafetySourceWithDuplicationInfo(
                                 SOURCE_ID_2,
-                                DEDUPLICATION_GROUP_1
+                                DEDUPLICATION_GROUP_1,
                             )
                         )
                         .addSafetySource(
                             issueOnlySafetySourceWithDuplicationInfo(
                                 SOURCE_ID_3,
-                                DEDUPLICATION_GROUP_2
+                                DEDUPLICATION_GROUP_2,
                             )
                         )
                         .addSafetySource(
                             issueOnlySafetySourceWithDuplicationInfo(
                                 SOURCE_ID_4,
-                                DEDUPLICATION_GROUP_3
+                                DEDUPLICATION_GROUP_3,
                             )
                         )
                         .build()
@@ -248,13 +248,13 @@ class SafetyCenterTestConfigs(private val context: Context) {
                         .addSafetySource(
                             issueOnlySafetySourceWithDuplicationInfo(
                                 SOURCE_ID_5,
-                                DEDUPLICATION_GROUP_1
+                                DEDUPLICATION_GROUP_1,
                             )
                         )
                         .addSafetySource(
                             issueOnlySafetySourceWithDuplicationInfo(
                                 SOURCE_ID_6,
-                                DEDUPLICATION_GROUP_3
+                                DEDUPLICATION_GROUP_3,
                             )
                         )
                         .build()
@@ -264,7 +264,7 @@ class SafetyCenterTestConfigs(private val context: Context) {
                         .addSafetySource(
                             issueOnlySafetySourceWithDuplicationInfo(
                                 SOURCE_ID_7,
-                                DEDUPLICATION_GROUP_3
+                                DEDUPLICATION_GROUP_3,
                             )
                         )
                         .build()

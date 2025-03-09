@@ -21,7 +21,7 @@
     <string name="preference_show_system_apps" msgid="1055740303992024300">"Prikaz sistemskih aplikacij"</string>
     <string name="permission_summary_enforced_by_policy" msgid="2352478756952948019">"Ni mogoče sprem."</string>
     <string name="generic_yes" msgid="2489207724988649846">"Da"</string>
-    <string name="generic_cancel" msgid="2631708607129269698">"Prekliči"</string>
+    <string name="generic_cancel" msgid="2631708607129269698">"Preklic"</string>
     <string name="permission_access_always" msgid="2107115233573823032">"Ves čas"</string>
     <string name="permission_access_only_foreground" msgid="4412115020089923986">"Med uporabo aplikacije"</string>
     <string name="app_permission_button_allow_always" msgid="4920899432212307102">"Ves čas"</string>

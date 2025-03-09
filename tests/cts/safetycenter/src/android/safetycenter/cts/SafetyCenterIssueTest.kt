@@ -47,7 +47,7 @@ class SafetyCenterIssueTest {
             context,
             0,
             Intent("Fake Different Data"),
-            PendingIntent.FLAG_IMMUTABLE
+            PendingIntent.FLAG_IMMUTABLE,
         )
 
     private val action1 =
@@ -451,7 +451,7 @@ class SafetyCenterIssueTest {
                     .setIsInFlight(true)
                     .setSuccessMessage("a success message")
                     .setConfirmationDialogDetails(confirmationDialogDetails)
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 SafetyCenterIssue.Action.Builder("an_id", "a label", pendingIntent1)
@@ -534,7 +534,7 @@ class SafetyCenterIssueTest {
                     .build(),
                 SafetyCenterIssue.Builder(issueWithTiramisuFields)
                     .setAttributionTitle("Attribution title")
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 SafetyCenterIssue.Builder(issueWithTiramisuFields)
@@ -549,7 +549,7 @@ class SafetyCenterIssueTest {
             )
             .addEqualityGroup(
                 SafetyCenterIssue.Builder(issueWithTiramisuFields).setGroupId("group_id").build(),
-                SafetyCenterIssue.Builder(issueWithTiramisuFields).setGroupId("group_id").build()
+                SafetyCenterIssue.Builder(issueWithTiramisuFields).setGroupId("group_id").build(),
             )
             .addEqualityGroup(
                 SafetyCenterIssue.Builder(issueWithTiramisuFields)
@@ -625,7 +625,7 @@ class SafetyCenterIssueTest {
             )
             .addEqualityGroup(
                 ConfirmationDialogDetails("Title", "Text", "Accept", "Deny"),
-                ConfirmationDialogDetails("Title", "Text", "Accept", "Deny")
+                ConfirmationDialogDetails("Title", "Text", "Accept", "Deny"),
             )
             .addEqualityGroup(ConfirmationDialogDetails("Other title", "Text", "Accept", "Deny"))
             .addEqualityGroup(ConfirmationDialogDetails("Title", "Other text", "Accept", "Deny"))
@@ -643,7 +643,7 @@ class SafetyCenterIssueTest {
     ) =
         EqualsHashCodeToStringTester.ofParcelable(
                 parcelableCreator = SafetyCenterIssue.CREATOR,
-                createCopy = createCopyFromBuilder
+                createCopy = createCopyFromBuilder,
             )
             .addEqualityGroup(issue1, SafetyCenterIssue.Builder(issue1).build())
             .addEqualityGroup(issueWithRequiredFieldsOnly)
@@ -657,7 +657,7 @@ class SafetyCenterIssueTest {
                     .setSubtitle("In the neighborhood")
                     .setSeverityLevel(SafetyCenterIssue.ISSUE_SEVERITY_LEVEL_OK)
                     .setActions(listOf(action1))
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(SafetyCenterIssue.Builder(issue1).setId("a different id").build())
             .addEqualityGroup(
@@ -685,7 +685,7 @@ class SafetyCenterIssueTest {
     ) =
         EqualsHashCodeToStringTester.ofParcelable(
                 parcelableCreator = SafetyCenterIssue.Action.CREATOR,
-                createCopy = createCopyFromBuilder
+                createCopy = createCopyFromBuilder,
             )
             .addEqualityGroup(action1)
             .addEqualityGroup(action2)
@@ -699,7 +699,7 @@ class SafetyCenterIssueTest {
                     .setWillResolve(true)
                     .setIsInFlight(true)
                     .setSuccessMessage("a success message")
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 SafetyCenterIssue.Action.Builder("an_id", "a label", pendingIntent1)

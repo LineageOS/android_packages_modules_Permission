@@ -70,16 +70,6 @@ class HealthConnectAppPermissionFragmentTest : BasePermissionUiTest() {
         waitUntilObjectGone(By.text(HEALTH_CONNECT_LABEL), TIMEOUT_SHORT)
     }
 
-    @Test
-    fun invalidGrantedUsedHealthConnectPermissionsAreListed() {
-        installInvalidTestAppThatUsesHealthConnectPermission()
-        grantTestAppPermission(HEALTH_CONNECT_PERMISSION_READ_FLOORS_CLIMBED)
-
-        startManageAppPermissionsActivity()
-
-        eventually { waitFindObject(By.text(HEALTH_CONNECT_LABEL)) }
-    }
-
     private fun startManageAppPermissionsActivity() {
         runWithShellPermissionIdentity {
             instrumentationContext.startActivity(

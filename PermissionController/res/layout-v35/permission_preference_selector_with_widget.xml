@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2024 The Android Open Source Project
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  -->
+
+<!-- A direct copy of the following layout, but with overlayable styles:
+  ~ SettingsLib/SelectorWithWidgetPreference/res/layout-v33/preference_selector_with_widget.xml
+  -->
+<com.android.permissioncontroller.permission.ui.handheld.v35.DrawableStateLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/PermissionSelectorWithWidgetPreferenceRootLayoutStyle">
+
+    <LinearLayout
+        android:id="@android:id/widget_frame"
+        style="@style/PermissionSelectorWithWidgetPreferenceWidgetFrameStyle" />
+
+    <LinearLayout
+        android:id="@+id/icon_frame"
+        style="@style/PermissionSelectorWithWidgetPreferenceIconFrameStyle">
+
+        <androidx.preference.internal.PreferenceImageView
+            android:id="@android:id/icon"
+            style="@style/PermissionSelectorWithWidgetPreferenceIconStyle" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/PermissionSelectorWithWidgetPreferenceTextContainerStyle">
+
+        <TextView
+            android:id="@android:id/title"
+            style="@style/PermissionSelectorWithWidgetPreferenceTitleStyle" />
+
+        <LinearLayout
+            android:id="@+id/summary_container"
+            style="@style/PermissionSelectorWithWidgetPreferenceSummaryContainerStyle">
+
+            <TextView
+                android:id="@android:id/summary"
+                style="@style/PermissionSelectorWithWidgetPreferenceSummaryStyle" />
+
+            <TextView
+                android:id="@+id/appendix"
+                style="@style/PermissionSelectorWithWidgetPreferenceAppendixStyle" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/selector_extra_widget_container"
+        style="@style/PermissionSelectorWithWidgetPreferenceExtraWidgetContainerStyle">
+
+        <View style="@style/PermissionSelectorWithWidgetPreferenceExtraWidgetDividerStyle" />
+
+        <ImageView
+            android:id="@+id/selector_extra_widget"
+            android:contentDescription="@string/settings_label"
+            style="@style/PermissionSelectorWithWidgetPreferenceExtraWidgetImageStyle" />
+    </LinearLayout>
+</com.android.permissioncontroller.permission.ui.handheld.v35.DrawableStateLinearLayout>

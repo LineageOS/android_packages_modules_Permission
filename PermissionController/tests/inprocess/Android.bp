@@ -50,6 +50,9 @@ android_test {
         "compatibility-device-util-axt",
         "kotlin-test",
         "permission-test-util-lib",
+        // This may result in two flag libs being included. This should only be used for Flag
+        //string referencing for test annotations.
+        "com.android.permission.flags-aconfig-java-export",
     ],
 
     data: [

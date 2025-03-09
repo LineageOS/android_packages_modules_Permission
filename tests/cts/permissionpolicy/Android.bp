@@ -37,6 +37,8 @@ android_test {
         "permission-test-util-lib",
         "androidx.test.rules",
         "flag-junit",
+        "android.app.flags-aconfig",
+        "android.permission.flags-aconfig-java-export",
     ],
     srcs: [
         "src/**/*.java",

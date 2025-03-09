@@ -1,0 +1,12 @@
+{
+    "postsubmit": [
+        {
+            "name": "CtsRoleMultiUserTestCases"
+        }
+    ],
+    "mainline-postsubmit": [
+        {
+            "name": "CtsRoleMultiUserTestCases[com.google.android.permission.apex]"
+        }
+    ]
+}

@@ -353,8 +353,8 @@
     <string name="accessibility_service_dialog_title_multiple" msgid="5527879210683548175">"पहुँचसम्बन्धी <xliff:g id="NUM_SERVICES">%s</xliff:g> एपहरूले तपाईंको यन्त्रमाथि पूर्ण रूपमा पहुँच राख्न सक्छन्"</string>
     <string name="accessibility_service_dialog_bottom_text_single" msgid="1128666197822205958">"<xliff:g id="SERVICE_NAME">%s</xliff:g> ले तपाईंको स्क्रिन, कारबाही र इनपुट हेर्न, कारबाहीहरू गर्न र डिस्प्ले नियन्त्रण गर्न सक्छ।"</string>
     <string name="accessibility_service_dialog_bottom_text_multiple" msgid="7009848932395519852">"यी एपहरूले तपाईंको स्क्रिन, कारबाही र इनपुट हेर्न, कारबाहीहरू सम्पादन गर्न र प्रदर्शन नियन्त्रण गर्न सक्छन्।"</string>
-    <string name="role_assistant_label" msgid="4727586018198208128">"डिफल्ट डिजिटल सहायक एप"</string>
-    <string name="role_assistant_short_label" msgid="3369003713187703399">"डिजिटल सहायक एप"</string>
+    <string name="role_assistant_label" msgid="4727586018198208128">"डिफल्ट डिजिटल एसिस्टेन्ट एप"</string>
+    <string name="role_assistant_short_label" msgid="3369003713187703399">"डिजिटल एसिस्टेन्ट एप"</string>
     <string name="role_assistant_description" msgid="6622458130459922952">"सहायक एपहरूले तपाईंले हेर्दै गर्नुभएको स्क्रिनबाट प्राप्त जानकारीमा आधारित भई तपाईंलाई मद्दत गर्न सक्छन्। केही एपहरूले तपाईंलाई एकीकृत सहायता दिन दुवै लन्चर र आवाज संलग्न इनपुट सेवाहरूलाई समर्थन गर्छन्।"</string>
     <string name="role_browser_label" msgid="2877796144554070207">"डिफल्ट ब्राउजर एप"</string>
     <string name="role_browser_short_label" msgid="6745009127123292296">"ब्राउजर"</string>
@@ -456,7 +456,7 @@
     <string name="incident_report_notification_text" msgid="3376480583513587923">"<xliff:g id="APP_NAME">%1$s</xliff:g> डिबग प्रक्रियासम्बन्धी जानकारी अपलोड गर्न चाहन्छ।"</string>
     <string name="incident_report_dialog_title" msgid="669104389325204095">"डिबग प्रक्रियासम्बन्धी डेटा सेयर गर्ने हो?"</string>
     <string name="incident_report_dialog_intro" msgid="5897733669850951832">"प्रणालीले कुनै समस्या फेला पारेको छ"</string>
-    <string name="incident_report_dialog_text" msgid="5675553296891757523">"<xliff:g id="APP_NAME_0">%1$s</xliff:g> ले <xliff:g id="DATE">%2$s</xliff:g> <xliff:g id="TIME">%3$s</xliff:g> मा यो यन्त्रबाट लिएको बगको रिपोर्ट अपलोड गर्ने अनुरोध गर्दै छ। बग रिपोर्टमा प्रयोगकर्ताका नाम, स्ठानसम्बन्धी डेटा, डिभाइसका पहिचानकर्ता र नेटवर्कसम्बन्धी जानकारी जस्ता तपाईंको डिभाइसको व्यक्तिगत जानकारी वा एपले लग गरेको जानकारी समावेश छ। तपाईंलाई यो जानकारी दिँदा फरक पर्दैन जस्तो लाग्ने विश्वसनीय मान्छे वा एपसँग मात्र बग रिपोर्टहरू सेयर गर्नुहोस्। <xliff:g id="APP_NAME_1">%4$s</xliff:g> लाई बग रिपोर्ट अपलोड गर्न दिने हो?"</string>
+    <string name="incident_report_dialog_text" msgid="5675553296891757523">"<xliff:g id="APP_NAME_0">%1$s</xliff:g> ले <xliff:g id="DATE">%2$s</xliff:g> <xliff:g id="TIME">%3$s</xliff:g> मा यो डिभाइसबाट लिएको बगको रिपोर्ट अपलोड गर्ने अनुरोध गर्दै छ। बग रिपोर्टमा प्रयोगकर्ताका नाम, लोकेसन डेटा, डिभाइसका पहिचानकर्ता र नेटवर्कसम्बन्धी जानकारी जस्ता तपाईंको डिभाइसको व्यक्तिगत जानकारी वा एपले लग गरेको जानकारी समावेश छ। तपाईंलाई यो जानकारी दिँदा फरक पर्दैन जस्तो लाग्ने विश्वसनीय मान्छे वा एपसँग मात्र बग रिपोर्टहरू सेयर गर्नुहोस्। <xliff:g id="APP_NAME_1">%4$s</xliff:g> लाई बग रिपोर्ट अपलोड गर्न दिने हो?"</string>
     <string name="incident_report_error_dialog_text" msgid="4189647113387092272">"<xliff:g id="APP_NAME">%1$s</xliff:g> को बगसम्बन्धी रिपोर्ट प्रक्रियामा लैजाने क्रममा त्रुटि भयो। त्यस कारण विस्तृत डिबग प्रक्रियासम्बन्धी डेटा आदान प्रदान गर्ने कार्य अस्वीकार गरिएको छ। व्यवधानका लागि क्षमा गर्नुहोला।"</string>
     <string name="incident_report_dialog_allow_label" msgid="2970242967721155239">"अनुमति दिनुहोस्"</string>
     <string name="incident_report_dialog_deny_label" msgid="3535314290677579383">"अनुमति नदिनुहोस्"</string>
@@ -644,7 +644,7 @@
     <string name="permission_rationale_data_sharing_varies_message" msgid="4224469559084489222">"एपको संस्करण, प्रयोगसम्बन्धी जानकारी, तपाईं बसोबास गर्ने क्षेत्र र तपाईंको उमेरका आधारमा जानकारीको व्यवस्थापनसम्बन्धी अभ्यासहरू फरक हुन सक्छन्। "<annotation id="link">"जानकारी सेयर गर्नेसम्बन्धी अभ्यासका बारेमा थप जानकारी"</annotation></string>
     <string name="permission_rationale_data_sharing_varies_message_without_link" msgid="4912763761399025094">"एपको संस्करण, प्रयोगसम्बन्धी जानकारी, तपाईं बसोबास गर्ने क्षेत्र र तपाईंको उमेरका आधारमा जानकारीको व्यवस्थापनसम्बन्धी अभ्यासहरू फरक हुन सक्छन्।"</string>
     <string name="permission_rationale_location_settings_title" msgid="7204145004850190953">"तपाईंको लोकेसन डेटा"</string>
-    <string name="permission_rationale_permission_settings_message" msgid="631286040979660267"><annotation id="link">"गोपनीयतासम्बन्धी सेटिङ"</annotation>"मा गई यो एपलाई दिइएको अनुमति परिवर्तन गर्नुहोस्"</string>
+    <string name="permission_rationale_permission_settings_message" msgid="631286040979660267"><annotation id="link">"गोपनीयतासम्बन्धी सेटिङ"</annotation>"मा गई यो एपलाई दिइएको एक्सेस परिवर्तन गर्नुहोस्"</string>
     <string name="permission_rationale_purpose_app_functionality" msgid="8397736681065841405">"एपका सुविधा उपलब्ध गराउने"</string>
     <string name="permission_rationale_purpose_analytics" msgid="2070800501189620712">"Analytics"</string>
     <string name="permission_rationale_purpose_developer_communications" msgid="6453047018892062374">"विकासकर्ताबाट जानकारी प्राप्त गर्ने"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"प्रतिबन्ध लगाइएका सेटिङ अनलक गर्नुहोस्"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"प्रतिबन्ध लगाइएका सेटिङ"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"तपाईंको खाताको सुरक्षार्थ यो सेटिङ हाल उपलब्ध छैन।"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"फोन कल चलिरहेका बेला यो कारबाही गर्न मिल्दैन"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"फोन कल चलिरहेका बेला एपहरूलाई अन्य एप इन्स्टल गर्ने अनुमति दिन मिल्दैन।\n\n स्क्याम गर्ने व्यक्तिले फोन कलका क्रममा प्रायः यस प्रकारको कारबाही गर्न अनुरोध गर्ने भएकाले तपाईंको सुरक्षार्थ यो कारबाही गर्न रोक लगाइएको हो। तपाईंलाई कुनै अपरिचित व्यक्तिले यो कारबाही गर्ने मार्गदर्शन गर्दै छ भने त्यो जालसाजी हुन सक्छ।"</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"एपले <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> प्रयोग गर्न मागेको अनुमति अस्वीकार गरिएको छ"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"यो एपले तपाईंको व्यक्तिगत तथा वित्तीय जानकारी जोखिममा पार्न सक्ने खालको संवेदनशील अनुमति मागेको छ।<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>तपाईले उक्त प्रतिबन्धित अनुमति नदिएका खण्डमा यो एपले राम्रोसँग काम नगर्न सक्छ। &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;अनुमति दिने तरिका सिक्नुहोस्&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"यो एपले डिफल्ट <xliff:g id="ROLE_NAME">%1$s</xliff:g> का रूपमा काम गर्न मागेको अनुमति अस्वीकार गरिएको छ"</string>

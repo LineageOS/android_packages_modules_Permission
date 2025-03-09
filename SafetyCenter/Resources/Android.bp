@@ -49,6 +49,7 @@ android_app {
     static_libs: [
         "SafetyCenterResourcesShared",
     ],
+    updatable: true,
 }
 
 android_app_certificate {

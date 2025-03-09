@@ -73,6 +73,7 @@ import android.service.dreams.DreamService
 import android.service.notification.NotificationListenerService
 import android.service.voice.VoiceInteractionService
 import android.service.wallpaper.WallpaperService
+import android.telecom.TelecomManager
 import android.telephony.TelephonyManager.CARRIER_PRIVILEGE_STATUS_HAS_ACCESS
 import android.telephony.TelephonyManager.CARRIER_PRIVILEGE_STATUS_NO_ACCESS
 import android.util.Log
@@ -656,6 +657,36 @@ suspend fun isPackageHibernationExemptBySystem(
             DumpableLog.i(LOG_TAG, "Exempted ${pkg.packageName} - emergency app")
         }
         return true
+    }
+
+    // Note that it's fine to check permissions instead of app ops as all these permissions were
+    // introduced before auto-revoke / hibernation in R.
+    val hasCallRelatedPermissions =
+        context.checkPermission(Manifest.permission.MANAGE_OWN_CALLS, -1 /* pid */, pkg.uid) ==
+            PERMISSION_GRANTED
+        && context.checkPermission(Manifest.permission.RECORD_AUDIO, -1 /* pid */, pkg.uid) ==
+            PERMISSION_GRANTED
+        && context.checkPermission(Manifest.permission.WRITE_CALL_LOG, -1 /* pid */, pkg.uid) ==
+            PERMISSION_GRANTED
+    if (hasCallRelatedPermissions) {
+        val phoneAccounts = context.getSystemService(TelecomManager::class.java)!!
+                .selfManagedPhoneAccounts
+        var hasRegisteredPhoneAccount = false
+        for (phoneAccount in phoneAccounts) {
+            if (pkg.packageName == phoneAccount.componentName.packageName) {
+                hasRegisteredPhoneAccount = true
+                break
+            }
+        }
+        if (hasRegisteredPhoneAccount) {
+            if (DEBUG_HIBERNATION_POLICY) {
+                DumpableLog.i(
+                        LOG_TAG,
+                        "Exempted ${pkg.packageName} - caller app"
+                )
+            }
+            return true
+        }
     }
 
     if (SdkLevel.isAtLeastS()) {

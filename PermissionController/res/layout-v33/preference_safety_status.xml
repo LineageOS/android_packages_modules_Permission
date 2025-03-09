@@ -14,7 +14,12 @@
   ~ limitations under the License.
   -->
 
-<com.android.permissioncontroller.safetycenter.ui.view.StatusCardView
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:clickable="false"
-    style="@style/SafetyCenterCard.Status" />
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <com.android.permissioncontroller.safetycenter.ui.view.StatusCardView
+        android:id="@+id/status_card"
+        android:clickable="false"
+        style="@style/SafetyCenterCard.Status" />
+</FrameLayout>

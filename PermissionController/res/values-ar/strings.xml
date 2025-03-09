@@ -580,7 +580,7 @@
     <string name="security_settings" msgid="3808106921175271317">"إعدادات الأمان"</string>
     <string name="sensor_permissions_qs" msgid="1022267900031317472">"الأذونات"</string>
     <string name="safety_privacy_qs_tile_title" msgid="727301867710374052">"الأمان والخصوصية"</string>
-    <string name="safety_privacy_qs_tile_subtitle" msgid="3621544532041936749">"فحص الحالة"</string>
+    <string name="safety_privacy_qs_tile_subtitle" msgid="3621544532041936749">"التحقّق من الحالة"</string>
     <string name="privacy_controls_qs" msgid="5780144882040591169">"عناصر التحكّم في خصوصيتك"</string>
     <string name="security_settings_button_label_qs" msgid="8280343822465962330">"إعدادات إضافية"</string>
     <string name="camera_toggle_label_qs" msgid="3880261453066157285">"الوصول إلى الكاميرا"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"السماح بالإعدادات المحظورة"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"الإعداد محظور"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"للحفاظ على أمانك، هذا الإعداد غير متوفِّر حاليًا."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"لا يتوفّر هذا الإجراء أثناء إجراء مكالمة هاتفية"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"لا يُسمح للتطبيقات بتثبيت تطبيقات أخرى أثناء إجراء مكالمة هاتفية.\n\n يطلب المخادِعون غالبًا هذا النوع من الإجراءات أثناء المكالمات الهاتفية، لذا تم حظره لحماية بياناتك. إذا طلبَ منك شخص غير معروف اتّخاذ هذا الإجراء، قد يكون ذلك عملية خداع."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"تم منع التطبيق من الوصول إلى <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"‏طلب التطبيق أحد أذونات الوصول إلى المعلومات الحساسة، ما قد يعرّض معلوماتك الشخصية والمالية للخطر.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>من المحتمل ألا يعمل التطبيق بشكل صحيح إذا لم يحصل على هذا الإذن المقيَّد. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;مزيد من المعلومات حول كيفية منح الأذونات&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"لم يُسمَح للتطبيق بأن يكون <xliff:g id="ROLE_NAME">%1$s</xliff:g> التلقائي"</string>

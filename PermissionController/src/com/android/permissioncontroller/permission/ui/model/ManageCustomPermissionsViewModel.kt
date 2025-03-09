@@ -16,17 +16,23 @@
 
 package com.android.permissioncontroller.permission.ui.model
 
+import android.Manifest
 import android.app.Application
+import android.content.Intent
+import android.health.connect.HealthPermissions.HEALTH_PERMISSION_GROUP
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.android.permission.flags.Flags
 import com.android.permissioncontroller.R
 import com.android.permissioncontroller.permission.data.PermGroupsPackagesLiveData
 import com.android.permissioncontroller.permission.data.PermGroupsPackagesUiInfoLiveData
 import com.android.permissioncontroller.permission.data.SmartUpdateMediatorLiveData
+import com.android.permissioncontroller.permission.utils.Utils
 import com.android.permissioncontroller.permission.utils.navigateSafe
 
 /**
@@ -38,6 +44,12 @@ import com.android.permissioncontroller.permission.utils.navigateSafe
 class ManageCustomPermissionsViewModel(private val app: Application) : AndroidViewModel(app) {
 
     val uiDataLiveData = PermGroupsPackagesUiInfoLiveData(app, UsedCustomPermGroupNamesLiveData())
+    val additionaPermGroupsUiInfo =
+        PermGroupsPackagesUiInfoLiveData(
+            app,
+            if (Flags.declutteredPermissionManagerEnabled()) AdditionalPermGroupNamesLiveData(app)
+            else MutableLiveData<List<String>>(),
+        )
 
     /**
      * Navigate to a Permission Apps fragment
@@ -46,6 +58,15 @@ class ManageCustomPermissionsViewModel(private val app: Application) : AndroidVi
      * @param args The args to pass to the new fragment
      */
     fun showPermissionApps(fragment: Fragment, args: Bundle) {
+        val groupName = args.getString(Intent.EXTRA_PERMISSION_GROUP_NAME)
+        if (groupName == Manifest.permission_group.NOTIFICATIONS) {
+            Utils.navigateToNotificationSettings(fragment.context!!)
+            return
+        }
+        if (Utils.isHealthPermissionUiEnabled() && groupName == HEALTH_PERMISSION_GROUP) {
+            Utils.navigateToHealthConnectSettings(fragment.context!!)
+            return
+        }
         fragment.findNavController().navigateSafe(R.id.manage_to_perm_apps, args)
     }
 }
@@ -58,7 +79,8 @@ class ManageCustomPermissionsViewModel(private val app: Application) : AndroidVi
 class ManageCustomPermissionsViewModelFactory(private val app: Application) :
     ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        @Suppress("UNCHECKED_CAST") return ManageCustomPermissionsViewModel(app) as T
+        @Suppress("UNCHECKED_CAST")
+        return ManageCustomPermissionsViewModel(app) as T
     }
 }
 
@@ -75,5 +97,34 @@ class UsedCustomPermGroupNamesLiveData : SmartUpdateMediatorLiveData<List<String
 
     override fun onUpdate() {
         /* No op override */
+    }
+}
+
+/**
+ * A LiveData that is the union of LiveData UsedCustomPermGroupNamesLiveData and
+ * UnusedStandardPermGroupNamesLiveData.
+ *
+ * @param app The current application of the fragment
+ */
+class AdditionalPermGroupNamesLiveData(private val app: Application) :
+    SmartUpdateMediatorLiveData<List<String>>() {
+
+    val usedCustomGroupNames = UsedCustomPermGroupNamesLiveData()
+    val unusedStandardGroupNames = UnusedStandardPermGroupNamesLiveData(app)
+
+    init {
+        addSource(usedCustomGroupNames) { update() }
+        addSource(unusedStandardGroupNames) { update() }
+    }
+
+    private fun combineGroupNames(
+        groupNames1: List<String>?,
+        groupNames2: List<String>?,
+    ): List<String> {
+        return (groupNames1 ?: emptyList()) + (groupNames2 ?: emptyList())
+    }
+
+    override fun onUpdate() {
+        value = combineGroupNames(usedCustomGroupNames.value, unusedStandardGroupNames.value)
     }
 }

@@ -176,14 +176,15 @@ class PermissionTest29 : BaseUsePermissionTest() {
         eventually {
             pressBack()
             if (isAutomotive) {
-                waitFindObject(By.textContains("Allow in settings."), 100)
+                waitFindObject(By.textContains("Allow in settings.").displayId(displayId), 100)
             } else if (isWatch) {
                 waitForIdleLong()
                 findAccessibilityNodeInfosByTextForSurfaceView(
                         uiAutomation.rootInActiveWindow,
                         "Allow in settings")
             } else {
-                waitFindObject(By.res("com.android.permissioncontroller:id/grant_dialog"), 100)
+                waitFindObject(By.res("com.android.permissioncontroller:id/grant_dialog")
+                        .displayId(displayId), 100)
             }
         }
     }
@@ -226,11 +227,13 @@ class PermissionTest29 : BaseUsePermissionTest() {
         }
         waitFindObject(
             By.textContains("contacts").pkg(packageManager.permissionControllerPackageName)
+                    .displayId(displayId)
         )
         var didNotFindPhone = false
         try {
             waitFindObject(
-                By.textContains("phone calls").pkg(packageManager.permissionControllerPackageName),
+                By.textContains("phone calls").pkg(packageManager.permissionControllerPackageName)
+                        .displayId(displayId),
                 3000L
             )
         } catch (expected: Exception) {

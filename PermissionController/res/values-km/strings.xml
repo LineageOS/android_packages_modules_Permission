@@ -80,7 +80,7 @@
     <string name="additional_permissions" msgid="5801285469338873430">"ការអនុញ្ញាតបន្ថែម"</string>
     <string name="app_permissions_info_button_label" msgid="7633312050729974623">"បើក​ព័ត៌មាន​កម្មវិធី"</string>
     <string name="additional_permissions_more" msgid="5681220714755304407">"{count,plural, =1{# ទៀត}other{# ទៀត}}"</string>
-    <string name="old_sdk_deny_warning" msgid="2382236998845153919">"កម្មវិធីនេះ​ត្រូវបាន​រចនាឡើង​សម្រាប់​កំណែចាស់ជាងនេះ​របស់ Android ។ ការបដិសេធ​ការអនុញ្ញាត​អាចបណ្តាលឱ្យ​វាបំពេញ​មុខងារ​មិនដូចការគ្រោងទុក​តទៅទៀតទេ។"</string>
+    <string name="old_sdk_deny_warning" msgid="2382236998845153919">"កម្មវិធីនេះ​ត្រូវបាន​រចនាឡើង​សម្រាប់​កំណែចាស់ជាងនេះ​របស់ Android ។ ការបដិសេធ​ការអនុញ្ញាត​អាចបណ្តាលឱ្យ​វាលែងអាចបំពេញ​មុខងារ​ដូចការគ្រោងទុក។"</string>
     <string name="storage_supergroup_warning_allow" msgid="103093462784523190">"កម្មវិធីនេះ​ត្រូវបាន​រចនាឡើង​សម្រាប់​កំណែចាស់​ជាងនេះ​របស់ Android។ ប្រសិនបើ​អ្នកផ្ដល់ការអនុញ្ញាតនេះ នោះសិទ្ធិចូលប្រើ​ទំហំផ្ទុក​ទាំងអស់ (រូមទាំង​រូបថត វីដេអូ តន្ត្រី សំឡេង និងឯកសារ​ផ្សេងទៀត) នឹងត្រូវបាន​អនុញ្ញាត។"</string>
     <string name="storage_supergroup_warning_deny" msgid="6420765672683284347">"កម្មវិធីនេះ​ត្រូវបាន​រចនាឡើង​សម្រាប់​កំណែចាស់​ជាងនេះ​របស់ Android។ ប្រសិនបើអ្នក​បដិសេធ​ការអនុញ្ញាតនេះ នោះសិទ្ធិចូលប្រើ​ទំហំផ្ទុក​ទាំងអស់ (រូមទាំង​រូបថត វីដេអូ តន្ត្រី សំឡេង និងឯកសារ​ផ្សេងទៀត) នឹងត្រូវបាន​បដិសេធ។"</string>
     <string name="default_permission_description" msgid="4624464917726285203">"ប្រតិបត្តិការសកម្មភាពមិនស្គាល់"</string>
@@ -381,7 +381,7 @@
     <string name="role_emergency_search_keywords" msgid="1920007722599213358">"ក្នុងករណី​មានអាសន្ន"</string>
     <string name="role_home_label" msgid="3871847846649769412">"កម្មវិធីទំព័រដើមលំនាំដើម"</string>
     <string name="role_home_short_label" msgid="8544733747952272337">"កម្មវិធីទំព័រដើម"</string>
-    <string name="role_home_description" msgid="7997371519626556675">"កម្មវិធី​ដែលជាទូទៅហៅថា​កម្មវិធី​ចាប់ផ្ដើម​ ដែលជំនួសអេក្រង់​ដើមនៅលើឧបករណ៍​ Android របស់អ្នក និងផ្ដល់លទ្ធភាពឱ្យអ្នក​ចូលប្រើ​ខ្លឹមសារ និងមុខងារ​របស់ឧបករណ៍​អ្នក"</string>
+    <string name="role_home_description" msgid="7997371519626556675">"កម្មវិធី​ដែលគេច្រើនតែហៅថា​កម្មវិធី​ចាប់ផ្ដើម​ វាជំនួសអេក្រង់​ដើមនៅលើឧបករណ៍​ Android របស់អ្នក និងផ្ដល់លទ្ធភាពឱ្យអ្នក​ចូលប្រើ​ខ្លឹមសារ និងមុខងារ​របស់ឧបករណ៍​អ្នក"</string>
     <string name="role_home_request_title" msgid="738136983453341081">"កំណត់ <xliff:g id="APP_NAME">%1$s</xliff:g> ជាកម្មវិធី​ទំព័រដើមលំនាំដើម​របស់អ្នក?"</string>
     <string name="role_home_request_description" msgid="2658833966716057673">"មិន​ត្រូវការការអនុញ្ញាត​ទេ"</string>
     <string name="role_home_search_keywords" msgid="3830755001192666285">"កម្មវិធី​ចាប់ផ្ដើម"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"អនុញ្ញាតការកំណត់​ដែលបានដាក់កំហិត"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"ការកំណត់​ដែលបានដាក់កំហិត"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"ដើម្បីសុវត្ថិភាព​របស់អ្នក បច្ចុប្បន្នមិនអាចប្រើការកំណត់នេះបានទេ។"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"មិនអាចធ្វើសកម្មភាពបានទេ ពេលកំពុងហៅទូរសព្ទ"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"ការអនុញ្ញាតឱ្យកម្មវិធីដំឡើងកម្មវិធីផ្សេងទៀតមិនត្រូវបានអនុញ្ញាតអំឡុងពេលហៅទូរសព្ទទេ។\n\n ជារឿយៗ ជនឆបោកស្នើសុំសកម្មភាពប្រភេទនេះអំឡុងពេលសន្ទនាតាមទូរសព្ទ ដូច្នេះសកម្មភាពនេះត្រូវបានទប់ស្កាត់ដើម្បីការពារអ្នក។ ប្រសិនបើអ្នកត្រូវបានណែនាំឱ្យធ្វើសកម្មភាពនេះដោយនរណាម្នាក់ដែលអ្នកមិនស្គាល់ វាអាចជាការឆបោក។"</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"កម្មវិធីត្រូវបានបដិសេធមិនឱ្យចូលប្រើ<xliff:g id="PERMISSION_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"កម្មវិធីបានស្នើសុំសិទ្ធិចូលប្រើការអនុញ្ញាត​ដែលមានលក្ខណៈរសើប ដែលអាចធ្វើឱ្យព័ត៌មានហិរញ្ញវត្ថុ និងព័ត៌មានផ្ទាល់ខ្លួនរបស់អ្នកប្រឈមនឹងហានិភ័យ។<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>កម្មវិធីអាចនឹងមិនដំណើរការបានត្រឹមត្រូវទេ ប្រសិនបើគ្មានការអនុញ្ញាតដែលមានការរឹតបន្តឹងនេះ។ &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;ស្វែងយល់អំពីរបៀបផ្ដល់សិទ្ធិចូលប្រើ&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"កម្មវិធីត្រូវបានបដិសេធមិនឱ្យចូលប្រើជា<xliff:g id="ROLE_NAME">%1$s</xliff:g>លំនាំដើម"</string>

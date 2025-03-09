@@ -84,7 +84,7 @@
     <string name="storage_supergroup_warning_allow" msgid="103093462784523190">"이 앱은 Android 이전 버전에 맞게 설계되었습니다. 저장소 액세스 권한을 부여하면 앱에서 모든 저장소(사진, 동영상, 음악, 오디오 및 기타 파일 포함)에 액세스할 수 있습니다."</string>
     <string name="storage_supergroup_warning_deny" msgid="6420765672683284347">"이 앱은 Android 이전 버전에 맞게 설계되었습니다. 저장소 액세스 권한을 부여하지 않으면 앱에서 모든 저장소(사진, 동영상, 음악, 오디오 및 기타 파일)에 액세스할 수 없습니다."</string>
     <string name="default_permission_description" msgid="4624464917726285203">"알 수 없는 작업 실행"</string>
-    <string name="app_permissions_group_summary" msgid="8788419008958284002">"<xliff:g id="COUNT_0">%1$d</xliff:g>/<xliff:g id="COUNT_1">%2$d</xliff:g>개 앱 허용됨"</string>
+    <string name="app_permissions_group_summary" msgid="8788419008958284002">"앱 <xliff:g id="COUNT_1">%2$d</xliff:g>개 중 <xliff:g id="COUNT_0">%1$d</xliff:g>개 허용됨"</string>
     <string name="app_permissions_group_summary2" msgid="4329922444840521150">"앱 <xliff:g id="COUNT_0">%1$d</xliff:g>/<xliff:g id="COUNT_1">%2$d</xliff:g>개에 권한 부여됨"</string>
     <string name="menu_show_system" msgid="4254021607027872504">"시스템 표시"</string>
     <string name="menu_hide_system" msgid="3855390843744028465">"시스템 숨기기"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"제한된 설정 허용"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"제한된 설정"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"보안을 위해 이 설정은 현재 사용할 수 없습니다."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"통화 중에 수행할 수 없는 작업입니다"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"통화 중에는 앱이 다른 앱을 설치하도록 허용할 수 없습니다.\n\n 사기범은 전화 통화 중에 종종 이러한 유형의 작업을 요청하므로, 사용자를 보호하기 위해 이러한 작업은 차단됩니다. 모르는 사람이 이 작업을 수행하도록 안내하는 경우 사기일 수도 있습니다."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"<xliff:g id="PERMISSION_NAME">%1$s</xliff:g>에 대한 앱의 액세스가 거부됨"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"앱에서 개인 정보 및 금융 정보가 위험에 노출될 수 있는 민감한 권한에 대한 액세스를 요청했습니다.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>이 제한된 권한 없이는 앱이 제대로 작동하지 않을 수 있습니다. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;액세스 허용 방법 알아보기&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"앱을 기본 <xliff:g id="ROLE_NAME">%1$s</xliff:g>으로 사용하기 위한 액세스가 거부됨"</string>

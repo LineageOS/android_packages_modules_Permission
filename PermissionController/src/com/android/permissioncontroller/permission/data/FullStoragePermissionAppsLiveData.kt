@@ -28,6 +28,7 @@ import android.app.Application
 import android.os.Build
 import android.os.UserHandle
 import com.android.permissioncontroller.PermissionControllerApplication
+import com.android.permissioncontroller.permission.compat.AppOpsManagerCompat
 import com.android.permissioncontroller.permission.model.livedatatypes.LightPackageInfo
 import kotlinx.coroutines.Job
 
@@ -46,7 +47,7 @@ object FullStoragePermissionAppsLiveData :
         val packageName: String,
         val user: UserHandle,
         val isLegacy: Boolean,
-        val isGranted: Boolean
+        val isGranted: Boolean,
     )
 
     init {
@@ -88,7 +89,7 @@ object FullStoragePermissionAppsLiveData :
     fun getFullStorageStateForPackage(
         appOpsManager: AppOpsManager,
         packageInfo: LightPackageInfo,
-        userHandle: UserHandle? = null
+        userHandle: UserHandle? = null,
     ): FullStoragePackageState? {
         val sdk = packageInfo.targetSdkVersion
         val user = userHandle ?: UserHandle.getUserHandleForUid(packageInfo.uid)
@@ -97,29 +98,31 @@ object FullStoragePermissionAppsLiveData :
                 packageInfo.packageName,
                 user,
                 isLegacy = true,
-                isGranted = true
+                isGranted = true,
             )
         } else if (
             sdk <= Build.VERSION_CODES.Q &&
-                appOpsManager.unsafeCheckOpNoThrow(
+                AppOpsManagerCompat.checkOpRawNoThrow(
+                    appOpsManager,
                     OPSTR_LEGACY_STORAGE,
                     packageInfo.uid,
-                    packageInfo.packageName
+                    packageInfo.packageName,
                 ) == MODE_ALLOWED
         ) {
             return FullStoragePackageState(
                 packageInfo.packageName,
                 user,
                 isLegacy = true,
-                isGranted = true
+                isGranted = true,
             )
         }
         if (MANAGE_EXTERNAL_STORAGE in packageInfo.requestedPermissions) {
             val mode =
-                appOpsManager.unsafeCheckOpNoThrow(
+                AppOpsManagerCompat.checkOpRawNoThrow(
+                    appOpsManager,
                     OPSTR_MANAGE_EXTERNAL_STORAGE,
                     packageInfo.uid,
-                    packageInfo.packageName
+                    packageInfo.packageName,
                 )
             val granted =
                 mode == MODE_ALLOWED ||
@@ -130,7 +133,7 @@ object FullStoragePermissionAppsLiveData :
                 packageInfo.packageName,
                 user,
                 isLegacy = false,
-                isGranted = granted
+                isGranted = granted,
             )
         }
         return null

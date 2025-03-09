@@ -25,11 +25,12 @@ import androidx.annotation.RequiresApi
 import androidx.preference.Preference
 import androidx.preference.PreferenceViewHolder
 import com.android.permissioncontroller.R
+import com.android.settingslib.widget.GroupSectionDividerMixin
 
 /** A preference that displays the illustration on a Safety Center subpage. */
 @RequiresApi(UPSIDE_DOWN_CAKE)
 internal class SafetyIllustrationPreference(context: Context, attrs: AttributeSet) :
-    Preference(context, attrs) {
+    Preference(context, attrs), GroupSectionDividerMixin {
 
     init {
         layoutResource = R.layout.preference_illustration

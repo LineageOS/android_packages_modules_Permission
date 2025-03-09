@@ -51,7 +51,7 @@ class SafetySourceErrorDetailsTest {
                 SafetySourceErrorDetails(SAFETY_EVENT),
                 SafetySourceErrorDetails(
                     SafetyEvent.Builder(SafetyEvent.SAFETY_EVENT_TYPE_SOURCE_STATE_CHANGED).build()
-                )
+                ),
             )
             .addEqualityGroup(
                 SafetySourceErrorDetails(

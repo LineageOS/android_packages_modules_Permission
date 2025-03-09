@@ -108,7 +108,7 @@ class SafetyCenterTestHelper(val context: Context) {
         }
         assumeTrue(
             "Cannot toggle SafetyCenter using DeviceConfig",
-            safetyCenterCanBeToggledUsingDeviceConfig()
+            safetyCenterCanBeToggledUsingDeviceConfig(),
         )
         setEnabledWaitingForSafetyCenterBroadcastIdle(value, safetyCenterConfig)
     }
@@ -132,7 +132,7 @@ class SafetyCenterTestHelper(val context: Context) {
         val listener = SafetyCenterTestListener()
         safetyCenterManager.addOnSafetyCenterDataChangedListenerWithPermission(
             directExecutor(),
-            listener
+            listener,
         )
         if (skipInitialData) {
             listener.receiveSafetyCenterData()
@@ -145,14 +145,14 @@ class SafetyCenterTestHelper(val context: Context) {
     fun setData(
         safetySourceId: String,
         safetySourceData: SafetySourceData?,
-        safetyEvent: SafetyEvent = EVENT_SOURCE_STATE_CHANGED
+        safetyEvent: SafetyEvent = EVENT_SOURCE_STATE_CHANGED,
     ) {
         Log.d(TAG, "setData for $safetySourceId")
         require(isEnabled())
         safetyCenterManager.setSafetySourceDataWithPermission(
             safetySourceId,
             safetySourceData,
-            safetyEvent
+            safetyEvent,
         )
     }
 
@@ -173,7 +173,7 @@ class SafetyCenterTestHelper(val context: Context) {
 
     private fun setEnabledWaitingForSafetyCenterBroadcastIdle(
         value: Boolean,
-        safetyCenterConfig: SafetyCenterConfig
+        safetyCenterConfig: SafetyCenterConfig,
     ) =
         callWithShellPermissionIdentity(SEND_SAFETY_CENTER_UPDATE, READ_SAFETY_CENTER_STATUS) {
             val enabledChangedReceiver = SafetyCenterEnabledChangedReceiver(context)

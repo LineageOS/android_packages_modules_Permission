@@ -80,7 +80,7 @@
     <string name="additional_permissions" msgid="5801285469338873430">"Izin tambahan"</string>
     <string name="app_permissions_info_button_label" msgid="7633312050729974623">"Buka info aplikasi"</string>
     <string name="additional_permissions_more" msgid="5681220714755304407">"{count,plural, =1{# lainnya}other{# lainnya}}"</string>
-    <string name="old_sdk_deny_warning" msgid="2382236998845153919">"Aplikasi ini dirancang untuk versi lama Android. Menolak izin dapat menyebabkan aplikasi tidak berfungsi lagi sesuai harapan."</string>
+    <string name="old_sdk_deny_warning" msgid="2382236998845153919">"Aplikasi ini dirancang untuk versi lama Android. Menolak izin dapat membuat aplikasi tidak lagi berfungsi sebagaimana mestinya."</string>
     <string name="storage_supergroup_warning_allow" msgid="103093462784523190">"Aplikasi ini dirancang untuk versi lama Android. Jika Anda memberikan izin ini, akses ke semua penyimpanan (termasuk foto, video, musik, audio, dan file lainnya) akan diizinkan."</string>
     <string name="storage_supergroup_warning_deny" msgid="6420765672683284347">"Aplikasi ini dirancang untuk versi lama Android. Jika Anda menolak izin ini, akses ke semua penyimpanan (termasuk foto, video, musik, audio, dan file lainnya) akan ditolak."</string>
     <string name="default_permission_description" msgid="4624464917726285203">"melakukan tindakan yang tidak dikenal"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Izinkan setelan terbatas"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Setelan terbatas"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Demi keamanan Anda, setelan ini tidak tersedia untuk saat ini."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Tindakan tidak tersedia selama panggilan telepon"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Mengizinkan aplikasi menginstal aplikasi lain tidak diizinkan selama panggilan telepon berlangsung.\n\n Scammer sering meminta jenis tindakan ini selama percakapan panggilan telepon, jadi tindakan ini diblokir untuk melindungi Anda. Jika Anda diarahkan untuk melakukan tindakan ini oleh seseorang yang tidak Anda kenal, hal tersebut mungkin merupakan scam."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"Aplikasi ditolak aksesnya ke <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"Aplikasi meminta akses ke izin sensitif yang dapat membahayakan info pribadi dan keuangan Anda.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Aplikasi mungkin tidak dapat berfungsi dengan baik tanpa izin terbatas ini. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&amp;gtPelajari cara mengizinkan akses&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"Aplikasi ditolak aksesnya untuk menjadi <xliff:g id="ROLE_NAME">%1$s</xliff:g> default"</string>

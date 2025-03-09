@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Salli rajoitetut asetukset"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Rajoitettu asetus"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Asetus ei ole tällä hetkellä käytettävissä turvallisuussyistä."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Toiminto ei ole käytettävissä puhelun aikana"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Sovellusten ei sallita asentaa muita sovelluksia puhelun aikana.\n\n Huijarit pyytävät usein tätä puhelun aikana, joten se on estetty suojataksesi sinua. Jos joku, jota et tunne, kehottaa sinua toimimaan näin, kyseessä voi olla huijaus."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"Sovellukselta on evätty pääsy: <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"Sovellus on pyytänyt pääsyä arkaluontoiseen lupaan, joka voi vaarantaa henkilökohtaisia tietojasi ja taloustietojasi.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Sovellus ei välttämättä toimi oikein ilman tätä rajoitettua lupaa. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Lue, miten voit sallia pääsyn&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"Sovellus ei saa olla oletuksena <xliff:g id="ROLE_NAME">%1$s</xliff:g>"</string>

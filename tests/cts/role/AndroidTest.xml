@@ -24,6 +24,7 @@
     <option name="config-descriptor:metadata" key="parameter" value="not_instant_app" />
     <option name="config-descriptor:metadata" key="parameter" value="not_multi_abi" />
     <option name="config-descriptor:metadata" key="parameter" value="secondary_user" />
+    <option name="config-descriptor:metadata" key="parameter" value="secondary_user_on_secondary_display" />
     <option name="config-descriptor:metadata" key="parameter" value="run_on_sdk_sandbox" />
     <option name="config-descriptor:metadata" key="mainline-param" value="com.google.android.permission.apex" />
     <object type="module_controller" class="com.android.tradefed.testtype.suite.module.Sdk30ModuleController" />
@@ -42,7 +43,7 @@
         <option name="push" value="CtsRoleTestApp.apk->/data/local/tmp/cts-role/CtsRoleTestApp.apk" />
         <option name="push" value="CtsRoleTestApp28.apk->/data/local/tmp/cts-role/CtsRoleTestApp28.apk" />
         <option name="push" value="CtsRoleTestApp33WithoutInCallService.apk->/data/local/tmp/cts-role/CtsRoleTestApp33WithoutInCallService.apk" />
-        <option name="push" value="CtsRoleTestAppForProfile.apk->/data/local/tmp/cts-role/CtsRoleTestAppForProfile.apk" />
+        <option name="push" value="CtsRoleTestAppClone.apk->/data/local/tmp/cts-role/CtsRoleTestAppClone.apk" />
     </target_preparer>
 
     <test class="com.android.tradefed.testtype.AndroidJUnitTest" >

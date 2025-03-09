@@ -451,10 +451,10 @@
     <string name="home_missing_work_profile_support" msgid="1756855847669387977">"Ondersteunt geen werkprofielen"</string>
     <string name="encryption_unaware_confirmation_message" msgid="8274491794636402484">"Opmerking: Als je het apparaat opnieuw opstart en een schermvergrendeling hebt ingesteld, kan deze app pas worden gestart nadat je het apparaat hebt ontgrendeld."</string>
     <string name="assistant_confirmation_message" msgid="7476540402884416212">"De assistentie-app kan informatie over de gebruikte apps in je systeem lezen, waaronder informatie die zichtbaar is op je scherm of toegankelijk is in de apps."</string>
-    <string name="incident_report_channel_name" msgid="3144954065936288440">"Foutopsporingsinformatie delen"</string>
+    <string name="incident_report_channel_name" msgid="3144954065936288440">"Foutopsporings­informatie delen"</string>
     <string name="incident_report_notification_title" msgid="4635984625656519773">"Gedetailleerde foutopsporingsinformatie delen?"</string>
     <string name="incident_report_notification_text" msgid="3376480583513587923">"<xliff:g id="APP_NAME">%1$s</xliff:g> wil foutopsporingsinformatie uploaden."</string>
-    <string name="incident_report_dialog_title" msgid="669104389325204095">"Foutopsporingsinformatie delen?"</string>
+    <string name="incident_report_dialog_title" msgid="669104389325204095">"Foutopsporings­informatie delen?"</string>
     <string name="incident_report_dialog_intro" msgid="5897733669850951832">"Het systeem heeft een probleem gedetecteerd."</string>
     <string name="incident_report_dialog_text" msgid="5675553296891757523">"<xliff:g id="APP_NAME_0">%1$s</xliff:g> wil een bugrapport van dit apparaat uploaden dat is gemaakt op <xliff:g id="DATE">%2$s</xliff:g> om <xliff:g id="TIME">%3$s</xliff:g>. Bugrapporten omvatten persoonlijke informatie over je apparaat of gegevens die zijn geregistreerd door apps, zoals gebruikersnamen, locatiegegevens, apparaat-ID\'s en netwerkgegevens. Deel alleen bugrapporten met mensen en apps die je met deze informatie vertrouwt. Wil je <xliff:g id="APP_NAME_1">%4$s</xliff:g> toestaan een bugrapport te uploaden?"</string>
     <string name="incident_report_error_dialog_text" msgid="4189647113387092272">"Er is een fout opgetreden bij het verwerken van het bugrapport voor <xliff:g id="APP_NAME">%1$s</xliff:g>. Het delen van de gedetailleerde foutopsporingsinformatie is daarom geweigerd. Onze excuses voor de onderbreking."</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Beperkte instellingen toestaan"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Beperkte instelling"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Ter beveiliging is deze instelling op dit moment niet beschikbaar."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Actie niet beschikbaar tijdens een telefoongesprek"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Apps toestaan om andere apps te installeren is niet toegestaan tijdens een telefoongesprek.\n\n Scammers vragen vaak om dit soort acties tijdens telefoongesprekken. Daarom is deze actie geblokkeerd om je te beschermen. Als iemand die je niet kent je aanspoort om deze actie uit te voeren, kan dit een scam zijn."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"App heeft geen toegang gekregen tot <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"De app heeft toegang gevraagd tot een gevoelig recht, waardoor je persoonlijke en financiële informatie risico kunnen lopen.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Het is mogelijk dat de app niet goed werkt zonder dit beperkte recht. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Meer informatie over hoe je toegang geeft&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"App heeft geen toegang gekregen om de standaard <xliff:g id="ROLE_NAME">%1$s</xliff:g> te worden"</string>

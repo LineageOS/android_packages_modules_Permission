@@ -370,7 +370,7 @@
     <string name="role_sms_label" msgid="8456999857547686640">"Standard-SMS-App"</string>
     <string name="role_sms_short_label" msgid="4371444488034692243">"SMS-App"</string>
     <string name="role_sms_description" msgid="3424020199148153513">"Apps, mit denen du über deine Telefonnummer unter anderem SMS, Fotos oder Videos senden und empfangen kannst"</string>
-    <string name="role_sms_request_title" msgid="7953552109601185602">"<xliff:g id="APP_NAME">%1$s</xliff:g>als Standard-SMS-App festlegen?"</string>
+    <string name="role_sms_request_title" msgid="7953552109601185602">"<xliff:g id="APP_NAME">%1$s</xliff:g> als Standard-SMS-App festlegen?"</string>
     <string name="role_sms_request_description" msgid="2691004766132144886">"Diese App erhält Zugriff auf Folgendes: Kamera, Kontakte, Mikrofon, Dateien und Medien, Telefon und SMS"</string>
     <string name="role_sms_search_keywords" msgid="8022048144395047352">"textnachricht, sms, sms schicken, sms senden, nachrichten, mms"</string>
     <string name="role_emergency_label" msgid="7028825857206842366">"Standardmäßige Notfall-App"</string>
@@ -456,7 +456,7 @@
     <string name="incident_report_notification_text" msgid="3376480583513587923">"<xliff:g id="APP_NAME">%1$s</xliff:g> möchte Informationen zur Fehlerbehebung hochladen."</string>
     <string name="incident_report_dialog_title" msgid="669104389325204095">"Daten zur Fehlerbehebung teilen?"</string>
     <string name="incident_report_dialog_intro" msgid="5897733669850951832">"Das System hat ein Problem erkannt."</string>
-    <string name="incident_report_dialog_text" msgid="5675553296891757523">"<xliff:g id="APP_NAME_0">%1$s</xliff:g> möchte einen Fehlerbericht von diesem Gerät hochladen, der am <xliff:g id="DATE">%2$s</xliff:g> um <xliff:g id="TIME">%3$s</xliff:g> erstellt wurde. Fehlerberichte enthalten Informationen zu deinem Gerät, die du persönlich eingegeben hast oder die von Apps aufgezeichnet werden, z. B. Nutzernamen, Standortdaten, Geräte-IDs und Netzwerkinformationen. Teile Fehlerberichte nur mit Personen und Apps, denen du vertraust. Darf <xliff:g id="APP_NAME_1">%4$s</xliff:g> einen Fehlerbericht hochladen?"</string>
+    <string name="incident_report_dialog_text" msgid="5675553296891757523">"<xliff:g id="APP_NAME_0">%1$s</xliff:g> möchte einen Fehlerbericht von diesem Gerät hochladen, der am <xliff:g id="DATE">%2$s</xliff:g> um <xliff:g id="TIME">%3$s</xliff:g> erstellt wurde. Fehlerberichte enthalten Informationen zu deinem Gerät, die du persönlich eingegeben hast oder die von Apps aufgezeichnet werden, z. B. Nutzernamen, Standortdaten, Geräte-IDs und Netzwerk­informationen. Teile Fehlerberichte nur mit Personen und Apps, denen du vertraust. Darf <xliff:g id="APP_NAME_1">%4$s</xliff:g> einen Fehlerbericht hochladen?"</string>
     <string name="incident_report_error_dialog_text" msgid="4189647113387092272">"Bei der Verarbeitung des Fehlerberichts für <xliff:g id="APP_NAME">%1$s</xliff:g> ist ein Fehler aufgetreten. Die detaillierten Daten zur Fehlerbehebung wurden daher nicht geteilt. Wir entschuldigen uns für die Störung."</string>
     <string name="incident_report_dialog_allow_label" msgid="2970242967721155239">"Zulassen"</string>
     <string name="incident_report_dialog_deny_label" msgid="3535314290677579383">"Ablehnen"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Eingeschränkte Einstellungen zulassen"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Eingeschränkte Einstellung"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Aus Sicherheitsgründen ist diese Einstellung derzeit nicht verfügbar."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Aktion während Anrufen nicht verfügbar"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Während eines Anrufs kannst du Apps nicht erlauben, andere Apps zu installieren.\n\n Betrüger versuchen oft, dich am Telefon genau dazu zu bringen, daher haben wir diese Art von Aktion zu deinem Schutz blockiert. Drängt dich jemand Unbekanntes zu einer solchen Installation, könnte es sich um Betrug handeln."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"App wurde Zugriff auf „<xliff:g id="PERMISSION_NAME">%1$s</xliff:g>“ verweigert"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"Die App hat Zugriff auf eine vertrauliche Berechtigung angefordert. Wenn du diesen zulässt, sind deine privaten Daten und Finanzdaten eventuell gefährdet.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Die App funktioniert ohne diese eingeschränkte Berechtigung aber möglicherweise nicht richtig. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Informationen dazu, wie du den Zugriff erlaubst&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"App wurde der Zugriff verweigert, die standardmäßige <xliff:g id="ROLE_NAME">%1$s</xliff:g> zu sein"</string>

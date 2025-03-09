@@ -68,6 +68,7 @@ public class RolesPersistenceImpl implements RolesPersistence {
     private static final String ATTRIBUTE_VERSION = "version";
     private static final String ATTRIBUTE_NAME = "name";
     private static final String ATTRIBUTE_FALLBACK_ENABLED = "fallbackEnabled";
+    private static final String ATTRIBUTE_ACTIVE_USER_ID = "activeUserId";
     private static final String ATTRIBUTE_PACKAGES_HASH = "packagesHash";
 
     @VisibleForTesting
@@ -145,6 +146,7 @@ public class RolesPersistenceImpl implements RolesPersistence {
 
         Map<String, Set<String>> roles = new ArrayMap<>();
         Set<String> fallbackEnabledRoles = new ArraySet<>();
+        Map<String, Integer> activeUserIds = new ArrayMap<>();
         int type;
         int depth;
         int innerDepth = parser.getDepth() + 1;
@@ -160,12 +162,23 @@ public class RolesPersistenceImpl implements RolesPersistence {
                 if (Boolean.parseBoolean(fallbackEnabled)) {
                     fallbackEnabledRoles.add(roleName);
                 }
+                if (com.android.permission.flags.Flags.crossUserRoleEnabled()) {
+                    String activeUserId = parser.getAttributeValue(null, ATTRIBUTE_ACTIVE_USER_ID);
+                    if (activeUserId != null) {
+                        activeUserIds.put(roleName, Integer.parseInt(activeUserId));
+                    }
+                }
                 Set<String> roleHolders = parseRoleHolders(parser);
                 roles.put(roleName, roleHolders);
             }
         }
 
-        return new RolesState(version, packagesHash, roles, fallbackEnabledRoles);
+        if (com.android.permission.flags.Flags.crossUserRoleEnabled()) {
+            return new RolesState(version, packagesHash, roles, fallbackEnabledRoles,
+                    activeUserIds);
+        } else {
+            return new RolesState(version, packagesHash, roles, fallbackEnabledRoles);
+        }
     }
 
     @NonNull
@@ -247,15 +260,22 @@ public class RolesPersistenceImpl implements RolesPersistence {
         }
 
         Set<String> fallbackEnabledRoles = roles.getFallbackEnabledRoles();
+        Map<String, Integer> activeUserIds = roles.getActiveUserIds();
         for (Map.Entry<String, Set<String>> entry : roles.getRoles().entrySet()) {
             String roleName = entry.getKey();
             Set<String> roleHolders = entry.getValue();
             boolean isFallbackEnabled = fallbackEnabledRoles.contains(roleName);
+            Integer activeUserId = com.android.permission.flags.Flags.crossUserRoleEnabled()
+                    ? activeUserIds.get(roleName) : null;
 
             serializer.startTag(null, TAG_ROLE);
             serializer.attribute(null, ATTRIBUTE_NAME, roleName);
             serializer.attribute(null, ATTRIBUTE_FALLBACK_ENABLED,
                     Boolean.toString(isFallbackEnabled));
+            if (activeUserId != null) {
+                serializer.attribute(
+                        null, ATTRIBUTE_ACTIVE_USER_ID, Integer.toString(activeUserId));
+            }
             serializeRoleHolders(serializer, roleHolders);
             serializer.endTag(null, TAG_ROLE);
         }

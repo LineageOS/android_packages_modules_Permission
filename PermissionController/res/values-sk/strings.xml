@@ -206,7 +206,7 @@
     <string name="unused_apps_category_title" msgid="2988455616845243901">"Nastavenia nepoužívaných aplikácií"</string>
     <string name="auto_revoke_label" msgid="5068393642936571656">"Odstrániť povolenia, ak sa aplikácia nepoužíva"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"Odstraňovať povol. a uvoľňovať priestor"</string>
-    <string name="unused_apps_label_v2" msgid="7058776770056517980">"Pozastaviť aktivitu v nepoužívaných apl."</string>
+    <string name="unused_apps_label_v2" msgid="7058776770056517980">"Pozastaviť aktivitu pri nepoužívaní"</string>
     <string name="unused_apps_label_v3" msgid="693340578642156657">"Spravovať aplikáciu, ak sa nepoužíva"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Odstrániť povolenia, vymazať dočasné súbory a zastaviť upozornenia"</string>
     <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Odstrániť povolenia, vymazať dočasné súbory, zastaviť upozornenia a archivovať aplikáciu"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Povoliť obmedzené nastavenia"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Obmedzené nastavenie"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Z bezpečnostných dôvodov nie je toto nastavenie momentálne k dispozícii."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Akcia nie je počas telefonovania k dispozícii"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Počas telefonického hovoru nie je povolená inštalácia aplikácií inými aplikáciami.\n\n Podvodníci často žiadajú o tento typ akcie počas telefonických hovorov, preto je daná akcia zablokovaná z dôvodu vašej ochrany. Ak vás o túto akciu žiada niekto, koho nepoznáte, môže ísť o podvod."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"Aplikácii bol prístup k povoleniu <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> zamietnutý"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"Táto aplikácia vyžaduje prístup k citlivému povoleniu, čo môže ohroziť vaše osobné údaje a finančné informácie.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Je možné, že bez tohto obmedzeného povolenia nebude aplikácia správne fungovať. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Ako povoliť prístup&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"Aplikácii bol zamietnutý prístup a predvolene nemôže byť <xliff:g id="ROLE_NAME">%1$s</xliff:g>"</string>

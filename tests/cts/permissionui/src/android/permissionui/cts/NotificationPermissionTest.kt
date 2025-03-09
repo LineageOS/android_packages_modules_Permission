@@ -141,7 +141,7 @@ class NotificationPermissionTest : BaseUsePermissionTest() {
         launchApp()
         killTestApp()
         launchApp()
-        waitFindObject(By.textContains(ALLOW))
+        waitFindObject(By.textContains(ALLOW).displayId(displayId))
         clickPermissionRequestAllowButton()
     }
 
@@ -201,9 +201,10 @@ class NotificationPermissionTest : BaseUsePermissionTest() {
         installPackage(APP_APK_PATH_CREATE_NOTIFICATION_CHANNELS_31, expectSuccess = true)
         launchApp(startSecondActivity = true)
         if (isAutomotive || isWatch) {
-            waitFindObject(By.text(getPermissionControllerString(ALLOW_BUTTON_TEXT)))
+            waitFindObject(
+                    By.text(getPermissionControllerString(ALLOW_BUTTON_TEXT)).displayId(displayId))
         } else {
-            waitFindObject(By.res(ALLOW_BUTTON))
+            waitFindObject(By.res(ALLOW_BUTTON).displayId(displayId))
         }
         pressBack()
         clickPermissionRequestAllowButton()
@@ -239,7 +240,7 @@ class NotificationPermissionTest : BaseUsePermissionTest() {
         try {
             // Watch does not have app bar
             if (!isWatch) {
-                waitFindObject(By.textContains(SECOND_ACTIVITY_LABEL))
+                waitFindObject(By.textContains(SECOND_ACTIVITY_LABEL).displayId(displayId))
             }
             assertDialogNotShowing()
         } finally {
@@ -400,7 +401,7 @@ class NotificationPermissionTest : BaseUsePermissionTest() {
 
         // Watch does not have app bar
         if (!isWatch) {
-            waitFindObject(By.textContains(ACTIVITY_LABEL))
+            waitFindObject(By.textContains(ACTIVITY_LABEL).displayId(displayId))
         }
     }
 

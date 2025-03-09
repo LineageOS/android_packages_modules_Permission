@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Məhdudlaşdırılmış ayarlara icazə verin"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Məhdudlaşdırılmış ayar"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Güvənlik üçün bu ayar əlçatan deyil."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Telefon zəngi zamanı əməliyyat mümkün deyil"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Telefon zəngi zamanı tətbiqlərin digər tətbiqləri quraşdırmağına icazə verilmir.\n\n Fırıldaqçılar, adətən, telefon danışıqları zamanı bu cür əməliyyatları həyata keçirməyinizi tələb edirlər, ona görə də sizi qorumaq bloklanıb. Tanımadığınız şəxs tərəfindən bu əməliyyatları həyata keçirməyiniz istənilsə, bu, fırıldaqçılıq ola bilər."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"Tətbiqə <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> icazəsinə giriş verilmədi"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"Tətbiq şəxsi və maliyyə məlumatlarınızı riskə ata biləcək həssas məlumat icazəsinə giriş istədi.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Bu məhdud icazə olmadan tətbiq düzgün işləməyə bilər. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Girişə icazə vermək haqqında ətraflı&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"Tətbiqə defolt <xliff:g id="ROLE_NAME">%1$s</xliff:g> roluna giriş verilmədi"</string>

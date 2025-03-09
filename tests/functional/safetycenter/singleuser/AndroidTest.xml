@@ -47,6 +47,10 @@
         <!-- Disable syncing to prevent overwriting flags during testing. -->
         <option name="run-command" value="device_config set_sync_disabled_for_tests persistent" />
         <option name="teardown-command" value="device_config set_sync_disabled_for_tests none" />
+        <!-- TODO(b/379928062): Ensure device not on lockscreen. Reassess when keyguard bug is
+             closed -->
+        <option name="run-command" value="input keyevent KEYCODE_WAKEUP" />
+        <option name="run-command" value="wm dismiss-keyguard" />
         <!-- Dismiss any system dialogs (e.g. crashes, ANR). -->
         <option name="run-command" value="am broadcast -a android.intent.action.CLOSE_SYSTEM_DIALOGS --receiver-foreground"  />
     </target_preparer>

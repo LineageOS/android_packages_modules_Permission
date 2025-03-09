@@ -17,7 +17,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name" msgid="6098036489833144040">"App di controllo autorizzazioni"</string>
-    <string name="ok" msgid="1936281769725676272">"OK"</string>
+    <string name="ok" msgid="1936281769725676272">"Ok"</string>
     <string name="permission_search_keyword" msgid="1214451577494730543">"autorizzazioni"</string>
     <string name="cancel" msgid="8943320028373963831">"Annulla"</string>
     <string name="back" msgid="6249950659061523680">"Indietro"</string>
@@ -92,7 +92,7 @@
     <string name="menu_show_24_hours_data" msgid="8228054833323380780">"Mostra ultime 24 ore"</string>
     <string name="manage_permission" msgid="2895385393037061964">"Gestisci autorizzazione"</string>
     <string name="no_apps" msgid="2412612731628386816">"Nessuna app"</string>
-    <string name="location_settings" msgid="3624412509133422562">"Geolocalizzazione"</string>
+    <string name="location_settings" msgid="3624412509133422562">"Impostazioni di localizzazione"</string>
     <string name="location_warning" msgid="2381649060929040962">"L\'app <xliff:g id="APP_NAME">%1$s</xliff:g> è un fornitore di servizi di geolocalizzazione per questo dispositivo. È possibile modificare l\'accesso alla posizione dalle impostazioni per la geolocalizzazione."</string>
     <string name="system_warning" msgid="1173400963234358816">"Se rifiuti questa autorizzazione, le funzionalità di base del dispositivo potrebbero non funzionare più come previsto."</string>
     <string name="deny_read_media_visual_warning" msgid="3982586279917232827">"Questa app è stata progettata per una versione precedente di Android. Se non consenti a questa app di accedere a foto e video, verrà negato anche l\'accesso a musica e altro audio."</string>
@@ -422,7 +422,7 @@
     <string name="system_uses_microphone_and_camera" msgid="5124478304275138804">"La videocamera e il microfono sono in uso per un servizio di sistema"</string>
     <string name="system_uses_camera" msgid="1911223105234441470">"La videocamera è in uso per un servizio di sistema"</string>
     <string name="other_use" msgid="6564855051022776692">"Altro uso:"</string>
-    <string name="ongoing_usage_dialog_ok" msgid="103556809118460072">"OK"</string>
+    <string name="ongoing_usage_dialog_ok" msgid="103556809118460072">"Ok"</string>
     <string name="ongoing_usage_dialog_title" msgid="683836493556628569">"Uso recente di <xliff:g id="TYPES_LIST">%s</xliff:g>"</string>
     <string name="ongoing_usage_dialog_title_mic" msgid="5966714811125593992">"Utilizzo recente di Microfono"</string>
     <string name="ongoing_usage_dialog_title_camera" msgid="7819329688650711470">"Utilizzo recente di Fotocamera"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Consenti impostazioni con limitazioni"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Impostazione con limitazioni"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Per la tua sicurezza, questa impostazione non è al momento disponibile."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Azione non disponibile durante una telefonata"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"È vietato consentire alle app di installare altre app durante una telefonata.\n\n I truffatori richiedono spesso questo tipo di azione durante le conversazioni telefoniche, quindi è bloccata per proteggerti. Se qualcuno che non conosci ti guida a compiere questa azione, potrebbe trattarsi di una truffa."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"All\'app è stato negato l\'accesso a <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"L\'app ha richiesto l\'accesso a un\'autorizzazione sensibile che può mettere a rischio le tue informazioni finanziarie e personali.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>È possibile che l\'app non funzioni correttamente senza questa autorizzazione limitata. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Scopri di più su come consentire l\'accesso&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"All\'app è stato negato l\'accesso al ruolo <xliff:g id="ROLE_NAME">%1$s</xliff:g> predefinita"</string>

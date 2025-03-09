@@ -19,6 +19,7 @@ package com.android.permissioncontroller.permission.data
 import android.app.AppOpsManager
 import android.app.Application
 import com.android.permissioncontroller.PermissionControllerApplication
+import com.android.permissioncontroller.permission.compat.AppOpsManagerCompat
 
 /**
  * A LiveData which represents the appop state
@@ -36,13 +37,13 @@ private constructor(
     private val app: Application,
     private val packageName: String,
     private val op: String,
-    private val uid: Int
+    private val uid: Int,
 ) : SmartUpdateMediatorLiveData<Int>() {
 
     private val appOpsManager = app.getSystemService(AppOpsManager::class.java)!!
 
     override fun onUpdate() {
-        value = appOpsManager.unsafeCheckOpNoThrow(op, uid, packageName)
+        value = AppOpsManagerCompat.checkOpRawNoThrow(appOpsManager, op, uid, packageName)
     }
 
     override fun onActive() {
@@ -62,7 +63,7 @@ private constructor(
                 PermissionControllerApplication.get(),
                 key.first,
                 key.second,
-                key.third
+                key.third,
             )
         }
     }

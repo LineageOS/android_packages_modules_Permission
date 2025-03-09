@@ -45,9 +45,15 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assume.assumeTrue;
 
 import android.content.Context;
+import android.health.connect.HealthPermissions;
 import android.os.Build;
 import android.permission.PermissionManager;
 import android.permission.PermissionManager.SplitPermissionInfo;
+import android.permission.flags.Flags;
+import android.platform.test.annotations.RequiresFlagsDisabled;
+import android.platform.test.annotations.RequiresFlagsEnabled;
+import android.platform.test.flag.junit.CheckFlagsRule;
+import android.platform.test.flag.junit.DeviceFlagsValueProvider;
 
 import androidx.test.InstrumentationRegistry;
 import androidx.test.filters.SdkSuppress;
@@ -56,6 +62,7 @@ import androidx.test.runner.AndroidJUnit4;
 import com.android.compatibility.common.util.ApiLevelUtil;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -70,6 +77,9 @@ public class SplitPermissionsSystemTest {
     private static final int NO_TARGET = Build.VERSION_CODES.CUR_DEVELOPMENT + 1;
 
     private List<SplitPermissionInfo> mSplitPermissions;
+
+    @Rule
+    public final CheckFlagsRule mCheckFlagsRule = DeviceFlagsValueProvider.createCheckFlagsRule();
 
     @Before
     public void before() {
@@ -87,9 +97,14 @@ public class SplitPermissionsSystemTest {
 
         for (SplitPermissionInfo split : mSplitPermissions) {
             String splitPermission = split.getSplitPermission();
-            boolean isAndroid = splitPermission.startsWith("android");
 
-            if (!isAndroid) {
+            // Due to limitation with accessing flag values in tests, BODY_SENSORS relevant splits
+            // are handled in its dedicated tests.
+            boolean shouldSkip =
+                    !splitPermission.startsWith("android")
+                            || splitPermission.equals(BODY_SENSORS)
+                            || splitPermission.equals(BODY_SENSORS_BACKGROUND);
+            if (shouldSkip) {
                 continue;
             }
 
@@ -149,9 +164,6 @@ public class SplitPermissionsSystemTest {
                 case BLUETOOTH_SCAN:
                     assertSplit(split, Build.VERSION_CODES.S, BLUETOOTH, BLUETOOTH_ADMIN);
                     break;
-                case BODY_SENSORS:
-                    assertSplit(split, Build.VERSION_CODES.TIRAMISU, BODY_SENSORS_BACKGROUND);
-                    break;
                 case ACCESS_MEDIA_LOCATION:
                 case READ_MEDIA_IMAGES:
                 case READ_MEDIA_VIDEO:
@@ -160,7 +172,56 @@ public class SplitPermissionsSystemTest {
             }
         }
 
-        assertEquals(24, seenSplits.size());
+        assertEquals(23, seenSplits.size());
+    }
+
+    @RequiresFlagsDisabled({Flags.FLAG_REPLACE_BODY_SENSOR_PERMISSION_ENABLED})
+    @Test
+    public void
+            validateBodySensors_beforeGranularHealthPermissions_isSplitToBodySensorsBackground() {
+        assumeTrue(ApiLevelUtil.isAtLeast(Build.VERSION_CODES.Q));
+
+        mSplitPermissions.stream()
+                .filter(split -> split.getSplitPermission().equals(BODY_SENSORS))
+                .findFirst()
+                .ifPresent(
+                        split ->
+                                assertSplit(
+                                        split,
+                                        Build.VERSION_CODES.TIRAMISU,
+                                        BODY_SENSORS_BACKGROUND));
+    }
+
+    @RequiresFlagsEnabled({Flags.FLAG_REPLACE_BODY_SENSOR_PERMISSION_ENABLED})
+    @Test
+    public void validateBodySensors_afterGranularHealthPermissions_isSplitToReadHeartRate() {
+        // TODO: Change this to Baklava when available.
+        assumeTrue(ApiLevelUtil.isAtLeast(36));
+
+        SplitPermissionInfo legacyBodySensorPermissionInfo = null;
+        SplitPermissionInfo readHeartRatePermissionInfo = null;
+        SplitPermissionInfo bodySensorBackgroundPermissionInfo = null;
+        for (SplitPermissionInfo split : mSplitPermissions) {
+            if (split.getSplitPermission().equals(BODY_SENSORS)
+                    && split.getNewPermissions().contains(BODY_SENSORS_BACKGROUND)) {
+                legacyBodySensorPermissionInfo = split;
+            } else if (split.getSplitPermission().equals(BODY_SENSORS)
+                    && split.getNewPermissions().contains(HealthPermissions.READ_HEART_RATE)) {
+                readHeartRatePermissionInfo = split;
+            } else if (split.getSplitPermission().equals(BODY_SENSORS_BACKGROUND)) {
+                bodySensorBackgroundPermissionInfo = split;
+            }
+        }
+        // Assert BODY_SENSORS is split to BODY_SENSORS_BACKGROUND and READ_HEART_RATE.
+        assertSplit(
+                legacyBodySensorPermissionInfo,
+                Build.VERSION_CODES.TIRAMISU,
+                BODY_SENSORS_BACKGROUND);
+        assertSplit(readHeartRatePermissionInfo, HealthPermissions.READ_HEART_RATE);
+        // Assert BODY_SENSORS_BACKGROUND is split to READ_HEALTH_DATA_IN_BACKGROUND.
+        assertSplit(
+                bodySensorBackgroundPermissionInfo,
+                HealthPermissions.READ_HEALTH_DATA_IN_BACKGROUND);
     }
 
     private void assertSplit(SplitPermissionInfo split, int targetSdk, String... permission) {

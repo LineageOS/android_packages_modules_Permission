@@ -20,6 +20,7 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.content.pm.PermissionInfo
+import android.util.Log
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.android.compatibility.common.util.CddTest
@@ -52,13 +53,16 @@ class SignaturePermissionAllowlistConfigTest {
                 }
             }
         }
-        assertTrue(
-            "Some platform-signed non-system packages don't have their requested platform" +
-                " signature permissions allowlisted. Suggested signature permission allowlist" +
-                " additions:\n\n" +
-                buildSiganturePermissionAllowlist(unallowlistedPackageAndPermissions),
-            unallowlistedPackageAndPermissions.isEmpty()
-        )
+        // TODO(b/365777291): CDD 9.1/C-0-16 is still STRONGLY RECOMMENDED instead of MUST.
+        if (unallowlistedPackageAndPermissions.isNotEmpty()) {
+            Log.w(
+                LOG_TAG,
+                "Some platform-signed non-system packages don't have their requested platform" +
+                    " signature permissions allowlisted. Suggested signature permission allowlist" +
+                    " additions:\n\n" +
+                    buildSiganturePermissionAllowlist(unallowlistedPackageAndPermissions),
+            )
+        }
     }
 
     private fun getSignaturePermissionAllowlist(): Map<String, Set<String>> {
@@ -107,12 +111,16 @@ class SignaturePermissionAllowlistConfigTest {
                 }
             }
         }
-        assertTrue(
-            "Some platform-signed non-system packages don't have their requested platform" +
-                " signature permissions granted. Suggested signature permission allowlist" +
-                " additions:\n\n${buildSiganturePermissionAllowlist(deniedPackageAndPermissions)}",
-            deniedPackageAndPermissions.isEmpty()
-        )
+        // TODO(b/365777291): CDD 9.1/C-0-16 is still STRONGLY RECOMMENDED instead of MUST.
+        if (deniedPackageAndPermissions.isNotEmpty()) {
+            Log.w(
+                LOG_TAG,
+                "Some platform-signed non-system packages don't have their requested platform" +
+                    " signature permissions granted. Suggested signature permission allowlist" +
+                    " additions:\n\n" +
+                    buildSiganturePermissionAllowlist(deniedPackageAndPermissions),
+            )
+        }
     }
 
     private fun getPlatformSignaturePermissionNames(): List<String> =
@@ -141,5 +149,9 @@ class SignaturePermissionAllowlistConfigTest {
             }
             append("    </signature-permissions>\n")
         }
+    }
+
+    companion object {
+        private val LOG_TAG = SignaturePermissionAllowlistConfigTest::class.java.simpleName
     }
 }

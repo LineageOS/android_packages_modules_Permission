@@ -317,8 +317,8 @@
         <item name="android:paddingEnd">@dimen/sc_spacing_xxxlarge</item>
         <item name="android:paddingTop">@dimen/sc_spacing_xxxlarge</item>
         <item name="android:paddingBottom">@dimen/sc_card_margin_bottom</item>
-        <item name="android:layout_marginStart">@dimen/sc_spacing_large</item>
-        <item name="android:layout_marginEnd">@dimen/sc_spacing_large</item>
+        <item name="android:layout_marginStart">?attr/scCardSideMargin</item>
+        <item name="android:layout_marginEnd">?attr/scCardSideMargin</item>
         <item name="android:background">@drawable/safety_center_card_background</item>
     </style>
 

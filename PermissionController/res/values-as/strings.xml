@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"প্ৰতিবন্ধিত ছেটিঙৰ অনুমতি দিয়ক"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"প্ৰতিবন্ধিত ছেটিং"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"আপোনাৰ সুৰক্ষাৰ বাবে, এই ছেটিংটো বৰ্তমান উপলব্ধ নহয়।"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"ফ’ন কল চলি থকাৰ সময়ত এই কাৰ্যটো কৰিব নোৱাৰি"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"ফ’ন কল চলি থকাৰ সময়ত এপক অন্য এপ্‌ ইনষ্টল কৰিবলৈ দিয়াৰ অনুমতি নাই।\n\n ফ’ন কল চলি থকাৰ সময়ত প্ৰৱঞ্চকে প্ৰায়েই এই ধৰণৰ কাৰ্য কৰিবলৈ অনুৰোধ কৰে, গতিকে আপোনাক সুৰক্ষিত কৰিবলৈ এয়া অৱৰোধ কৰা হয়। যদি আপোনাক আপুনি চিনি নোপোৱা কোনো লোকে এই কাৰ্যটো কৰিবলৈ নিৰ্দেশনা দিয়ে, সেয়া প্ৰৱঞ্চনা হ’ব পাৰে।"</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"এপ্‌টোক <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>ৰ এক্সেছ প্ৰত্যাখ্যান কৰা হৈছে"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"এপ্‌টোৱে সংবেদনশীল অনুমতি এক্সেছ কৰিবলৈ অনুৰোধ কৰিছে, যিটোৱে আপোনাৰ ব্যক্তিগত আৰু বিত্তীয় তথ্য বিপদাপন্ন কৰিব পাৰে।<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>এপ্‌টোৱে এই প্ৰতিবন্ধিত অনুমতিটোৰ অবিহনে সঠিককৈ কাম নকৰাটো সম্ভৱ হ’ব পাৰে। &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;কেনেকৈ এক্সেছৰ অনুমতি দিব লাগে জানক&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"এপ্‌টোক ডিফ’ল্ট <xliff:g id="ROLE_NAME">%1$s</xliff:g>ৰ এক্সেছ প্ৰত্যাখ্যান কৰা হৈছে"</string>

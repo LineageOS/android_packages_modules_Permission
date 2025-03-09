@@ -160,7 +160,7 @@ class SafetyCenterSubpagesTest {
                 context.getString(firstGroup.titleResId),
                 context.getString(firstGroup.summaryResId),
                 context.getString(lastGroup.titleResId),
-                context.getString(lastGroup.summaryResId)
+                context.getString(lastGroup.summaryResId),
             )
 
             openPageAndExit(context.getString(lastGroup.titleResId)) {
@@ -191,7 +191,7 @@ class SafetyCenterSubpagesTest {
             waitAllTextDisplayed(
                 context.getString(firstGroup.titleResId),
                 context.getString(firstGroup.summaryResId),
-                context.getString(lastGroup.titleResId)
+                context.getString(lastGroup.titleResId),
             )
             waitDisplayed(By.text(context.getString(lastGroup.summaryResId))) { it.click() }
 
@@ -232,24 +232,24 @@ class SafetyCenterSubpagesTest {
                 safetySourceTestData.buildSafetySourceDataWithSummary(
                     severityLevel = SafetySourceData.SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_1_TITLE,
-                    entrySummary = SAFETY_SOURCE_1_SUMMARY
-                )
+                    entrySummary = SAFETY_SOURCE_1_SUMMARY,
+                ),
             )
             setData(
                 SOURCE_ID_2,
                 safetySourceTestData.buildSafetySourceDataWithSummary(
                     severityLevel = SafetySourceData.SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_2_TITLE,
-                    entrySummary = SAFETY_SOURCE_2_SUMMARY
-                )
+                    entrySummary = SAFETY_SOURCE_2_SUMMARY,
+                ),
             )
             setData(
                 SOURCE_ID_3,
                 safetySourceTestData.buildSafetySourceDataWithSummary(
                     severityLevel = SafetySourceData.SEVERITY_LEVEL_INFORMATION,
                     entryTitle = SAFETY_SOURCE_3_TITLE,
-                    entrySummary = SAFETY_SOURCE_3_SUMMARY
-                )
+                    entrySummary = SAFETY_SOURCE_3_SUMMARY,
+                ),
             )
         }
         val firstGroup = safetyCenterTestConfigs.multipleSourcesConfig.safetySourcesGroups[0]
@@ -263,7 +263,7 @@ class SafetyCenterSubpagesTest {
                     SAFETY_SOURCE_1_TITLE,
                     SAFETY_SOURCE_1_SUMMARY,
                     SAFETY_SOURCE_2_TITLE,
-                    SAFETY_SOURCE_2_SUMMARY
+                    SAFETY_SOURCE_2_SUMMARY,
                 )
             }
 
@@ -287,7 +287,7 @@ class SafetyCenterSubpagesTest {
                 waitButtonDisplayed("Exit test activity") { it.click() }
                 waitAllTextDisplayed(
                     context.getString(source.titleResId),
-                    context.getString(source.summaryResId)
+                    context.getString(source.summaryResId),
                 )
             }
         }
@@ -370,7 +370,7 @@ class SafetyCenterSubpagesTest {
             openPageAndExit(context.getString(sourcesGroup.titleResId)) {
                 waitAllTextDisplayed(
                     context.getString(source.titleResId),
-                    context.getString(source.summaryResId)
+                    context.getString(source.summaryResId),
                 )
             }
 
@@ -380,15 +380,15 @@ class SafetyCenterSubpagesTest {
                     safetySourceTestData.buildSafetySourceDataWithSummary(
                         severityLevel = SafetySourceData.SEVERITY_LEVEL_RECOMMENDATION,
                         entryTitle = "Updated title",
-                        entrySummary = "Updated summary"
+                        entrySummary = "Updated summary",
                     )
-                )
+                ),
             )
 
             openPageAndExit(context.getString(sourcesGroup.titleResId)) {
                 waitAllTextNotDisplayed(
                     context.getString(source.titleResId),
-                    context.getString(source.summaryResId)
+                    context.getString(source.summaryResId),
                 )
                 waitAllTextDisplayed("Updated title", "Updated summary")
             }
@@ -405,7 +405,7 @@ class SafetyCenterSubpagesTest {
             openPageAndExit(context.getString(sourcesGroup.titleResId)) {
                 waitAllTextDisplayed(
                     context.getString(source.titleResId),
-                    context.getString(source.summaryResId)
+                    context.getString(source.summaryResId),
                 )
 
                 SafetySourceReceiver.setResponse(
@@ -414,15 +414,15 @@ class SafetyCenterSubpagesTest {
                         safetySourceTestData.buildSafetySourceDataWithSummary(
                             severityLevel = SafetySourceData.SEVERITY_LEVEL_RECOMMENDATION,
                             entryTitle = "Updated title",
-                            entrySummary = "Updated summary"
+                            entrySummary = "Updated summary",
                         )
-                    )
+                    ),
                 )
                 UiAutomatorUtils2.getUiDevice().rotate()
 
                 waitAllTextDisplayed(
                     context.getString(source.titleResId),
-                    context.getString(source.summaryResId)
+                    context.getString(source.summaryResId),
                 )
                 waitAllTextNotDisplayed("Updated title", "Updated summary")
             }
@@ -489,7 +489,7 @@ class SafetyCenterSubpagesTest {
         // Clear the data when action is triggered to simulate resolution.
         SafetySourceReceiver.setResponse(
             Request.ResolveAction(SINGLE_SOURCE_ID),
-            Response.ClearData
+            Response.ClearData,
         )
 
         context.launchSafetyCenterActivity(withReceiverPermission = true) {
@@ -921,7 +921,7 @@ class SafetyCenterSubpagesTest {
             waitPageTitleDisplayed(context.getString(sourcesGroup.titleResId))
             waitAllTextDisplayed(
                 context.getString(source.titleResId),
-                context.getString(source.summaryResId)
+                context.getString(source.summaryResId),
             )
         }
     }
@@ -952,7 +952,7 @@ class SafetyCenterSubpagesTest {
                 waitAllTextDisplayed(
                     context.getString(source.titleResId),
                     context.getString(source.summaryResId),
-                    safetyCenterResourcesApk.getStringByName("test_single_source_group_id_footer")
+                    safetyCenterResourcesApk.getStringByName("test_single_source_group_id_footer"),
                 )
             }
         }
@@ -975,7 +975,7 @@ class SafetyCenterSubpagesTest {
     private fun checkOnDismissedIssue(
         sourcesGroup: SafetySourcesGroup,
         issue: SafetySourceIssue,
-        block: () -> Unit
+        block: () -> Unit,
     ) {
         val safetyCenterIssueId = SafetyCenterTestData.issueId(SINGLE_SOURCE_ID, issue.id)
         safetyCenterTestHelper.dismissSafetyCenterIssue(safetyCenterIssueId)

@@ -23,30 +23,30 @@ import androidx.annotation.RequiresApi
 import androidx.preference.Preference.OnPreferenceClickListener
 import com.android.car.ui.preference.CarUiPreference
 import com.android.permissioncontroller.R
-import com.android.permissioncontroller.permission.ui.legacy.PermissionUsageDetailsViewModelLegacy
 import com.android.permissioncontroller.permission.ui.model.v31.PermissionUsageDetailsViewModel
+import com.android.permissioncontroller.permission.ui.model.v31.PermissionUsageDetailsViewModel.AppPermissionAccessUiInfo
 
 /** Preference that displays a permission usage for an app. */
 @RequiresApi(Build.VERSION_CODES.S)
 class AutoPermissionHistoryPreference(
     context: Context,
-    historyPreferenceData: PermissionUsageDetailsViewModelLegacy.HistoryPreferenceData
+    historyPreferenceData: AppPermissionAccessUiInfo,
 ) : CarUiPreference(context) {
 
     init {
-        title = historyPreferenceData.preferenceTitle
+        title = historyPreferenceData.packageLabel
         summary =
             if (historyPreferenceData.summaryText != null) {
                 context.getString(
                     R.string.auto_permission_usage_timeline_summary,
                     DateFormat.getTimeFormat(context).format(historyPreferenceData.accessEndTime),
-                    historyPreferenceData.summaryText
+                    historyPreferenceData.summaryText,
                 )
             } else {
                 DateFormat.getTimeFormat(context).format(historyPreferenceData.accessEndTime)
             }
-        if (historyPreferenceData.appIcon != null) {
-            icon = historyPreferenceData.appIcon
+        if (historyPreferenceData.badgedPackageIcon != null) {
+            icon = historyPreferenceData.badgedPackageIcon
         }
 
         onPreferenceClickListener = OnPreferenceClickListener {
@@ -56,12 +56,12 @@ class AutoPermissionHistoryPreference(
                 PermissionUsageDetailsViewModel.createHistoryPreferenceClickIntent(
                     context = context,
                     userHandle = historyPreferenceData.userHandle,
-                    packageName = historyPreferenceData.pkgName,
+                    packageName = historyPreferenceData.packageName,
                     permissionGroup = historyPreferenceData.permissionGroup,
                     accessEndTime = historyPreferenceData.accessEndTime,
                     accessStartTime = historyPreferenceData.accessStartTime,
                     showingAttribution = historyPreferenceData.showingAttribution,
-                    attributionTags = historyPreferenceData.attributionTags.toSet()
+                    attributionTags = historyPreferenceData.attributionTags.toSet(),
                 )
             )
             true

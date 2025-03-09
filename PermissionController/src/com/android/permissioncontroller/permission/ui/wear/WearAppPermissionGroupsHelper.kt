@@ -19,6 +19,7 @@ package com.android.permissioncontroller.permission.ui.wear
 import android.content.Context
 import android.content.pm.PackageManager
 import android.content.pm.PermissionInfo
+import android.health.connect.HealthPermissions.HEALTH_PERMISSION_GROUP
 import android.os.Build
 import android.os.UserHandle
 import android.util.ArraySet
@@ -319,6 +320,10 @@ class WearAppPermissionGroupsHelper(
         ) {
             // Redirect to location controller extra package settings.
             LocationUtils.startLocationControllerExtraPackageSettings(context, user)
+        } else if (permGroupName.equals(HEALTH_PERMISSION_GROUP)
+            && android.permission.flags.Flags.replaceBodySensorPermissionEnabled()) {
+            // Redirect to Health&Fitness UI
+            Utils.navigateToAppHealthConnectSettings(fragment.requireContext(), packageName, user)
         } else {
             val args =
                 WearAppPermissionFragment.createArgs(

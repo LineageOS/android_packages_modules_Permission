@@ -62,7 +62,6 @@ class AppPermissionsTest {
             Manifest.permission.GRANT_RUNTIME_PERMISSIONS,
             Manifest.permission.MANAGE_ONE_TIME_PERMISSION_SESSIONS,
             Manifest.permission.REVOKE_RUNTIME_PERMISSIONS,
-            Manifest.permission.CREATE_VIRTUAL_DEVICE
         )
 
     private lateinit var persistentDeviceId: String

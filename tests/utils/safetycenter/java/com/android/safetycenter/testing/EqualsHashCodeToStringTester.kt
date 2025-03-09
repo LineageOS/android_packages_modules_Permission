@@ -45,7 +45,7 @@ private constructor(
     private val ignoreHashCode: Boolean = false,
     private val ignoreToString: Boolean = false,
     private val parcelRoundTripEqualsEquivalence: Equivalence<T>? = null,
-    private val createCopy: ((T) -> T)? = null
+    private val createCopy: ((T) -> T)? = null,
 ) {
 
     private val equalsTester = EqualsTester()
@@ -85,13 +85,13 @@ private constructor(
             parcelableCreator: Parcelable.Creator<T>,
             ignoreHashCode: Boolean = false,
             ignoreToString: Boolean = false,
-            createCopy: ((T) -> T)? = null
+            createCopy: ((T) -> T)? = null,
         ): EqualsHashCodeToStringTester<T> =
             EqualsHashCodeToStringTester(
                 ignoreHashCode,
                 ignoreToString,
                 parcelRoundTripEqualsEquivalence(parcelableCreator),
-                createCopy
+                createCopy,
             )
 
         /**
@@ -103,13 +103,13 @@ private constructor(
         fun <T> of(
             ignoreHashCode: Boolean = false,
             ignoreToString: Boolean = false,
-            createCopy: ((T) -> T)? = null
+            createCopy: ((T) -> T)? = null,
         ): EqualsHashCodeToStringTester<T> =
             EqualsHashCodeToStringTester(
                 ignoreHashCode,
                 ignoreToString,
                 parcelRoundTripEqualsEquivalence = null,
-                createCopy
+                createCopy,
             )
 
         /**

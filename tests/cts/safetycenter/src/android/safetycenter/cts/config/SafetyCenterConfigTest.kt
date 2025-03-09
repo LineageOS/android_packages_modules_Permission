@@ -36,7 +36,7 @@ class SafetyCenterConfigTest {
         assertThat(BASE.safetySourcesGroups)
             .containsExactly(
                 SafetySourcesGroupTest.STATELESS_INFERRED,
-                SafetySourcesGroupTest.HIDDEN_INFERRED
+                SafetySourcesGroupTest.HIDDEN_INFERRED,
             )
             .inOrder()
     }
@@ -65,7 +65,7 @@ class SafetyCenterConfigTest {
         assertThat(sourceGroups)
             .containsExactly(
                 SafetySourcesGroupTest.STATELESS_INFERRED,
-                SafetySourcesGroupTest.HIDDEN_INFERRED
+                SafetySourcesGroupTest.HIDDEN_INFERRED,
             )
             .inOrder()
     }
@@ -99,14 +99,14 @@ class SafetyCenterConfigTest {
     ) =
         EqualsHashCodeToStringTester.ofParcelable(
                 parcelableCreator = SafetyCenterConfig.CREATOR,
-                createCopy = createCopyFromBuilder
+                createCopy = createCopyFromBuilder,
             )
             .addEqualityGroup(
                 BASE,
                 SafetyCenterConfig.Builder()
                     .addSafetySourcesGroup(SafetySourcesGroupTest.STATELESS_INFERRED)
                     .addSafetySourcesGroup(SafetySourcesGroupTest.HIDDEN_INFERRED)
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 SafetyCenterConfig.Builder()

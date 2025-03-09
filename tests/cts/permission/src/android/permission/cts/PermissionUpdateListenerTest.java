@@ -22,10 +22,8 @@ import static com.android.compatibility.common.util.SystemUtil.runWithShellPermi
 
 import static com.google.common.truth.Truth.assertThat;
 
-import static org.junit.Assume.assumeNotNull;
-
 import android.companion.virtual.VirtualDeviceManager;
-import android.companion.virtual.VirtualDeviceParams;
+import android.companion.virtual.VirtualDeviceManager.VirtualDevice;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.OnPermissionsChangedListener;
@@ -34,12 +32,11 @@ import android.platform.test.annotations.AppModeFull;
 import android.platform.test.annotations.RequiresFlagsEnabled;
 import android.platform.test.flag.junit.CheckFlagsRule;
 import android.platform.test.flag.junit.DeviceFlagsValueProvider;
-import android.virtualdevice.cts.common.FakeAssociationRule;
+import android.virtualdevice.cts.common.VirtualDeviceRule;
 
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner;
 import androidx.test.platform.app.InstrumentationRegistry;
 
-import com.android.compatibility.common.util.AdoptShellPermissionsRule;
 import com.android.compatibility.common.util.SystemUtil;
 
 import org.junit.After;
@@ -71,15 +68,8 @@ public class PermissionUpdateListenerTest {
 
     private int mTestAppUid;
 
-    private VirtualDeviceManager mVirtualDeviceManager;
-
     @Rule
-    public FakeAssociationRule mFakeAssociationRule = new FakeAssociationRule();
-
-    @Rule
-    public AdoptShellPermissionsRule mAdoptShellPermissionsRule = new AdoptShellPermissionsRule(
-            InstrumentationRegistry.getInstrumentation().getUiAutomation(),
-            android.Manifest.permission.CREATE_VIRTUAL_DEVICE);
+    public VirtualDeviceRule mVirtualDeviceRule = VirtualDeviceRule.createDefault();
 
     @Rule
     public final CheckFlagsRule mCheckFlagsRule = DeviceFlagsValueProvider.createCheckFlagsRule();
@@ -92,7 +82,6 @@ public class PermissionUpdateListenerTest {
         SystemUtil.waitForBroadcasts();
         Thread.sleep(1000);
         mTestAppUid = mPackageManager.getPackageUid(PACKAGE_NAME, 0);
-        mVirtualDeviceManager = mDefaultContext.getSystemService(VirtualDeviceManager.class);
     }
 
     @After
@@ -127,11 +116,7 @@ public class PermissionUpdateListenerTest {
     @RequiresFlagsEnabled({Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED,
             Flags.FLAG_DEVICE_AWARE_PERMISSIONS_ENABLED})
     public void testVirtualDeviceGrantPermissionNotifyListener() throws InterruptedException {
-        assumeNotNull(mVirtualDeviceManager);
-        VirtualDeviceManager.VirtualDevice virtualDevice =
-                mVirtualDeviceManager.createVirtualDevice(
-                        mFakeAssociationRule.getAssociationInfo().getId(),
-                        new VirtualDeviceParams.Builder().build());
+        VirtualDevice virtualDevice = mVirtualDeviceRule.createManagedVirtualDevice();
         Context deviceContext = mDefaultContext.createDeviceContext(virtualDevice.getDeviceId());
         testGrantPermissionNotifyListener(deviceContext, virtualDevice.getPersistentDeviceId());
     }
@@ -172,11 +157,7 @@ public class PermissionUpdateListenerTest {
     @RequiresFlagsEnabled({Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED,
             Flags.FLAG_DEVICE_AWARE_PERMISSIONS_ENABLED})
     public void testVirtualDeviceRevokePermissionNotifyListener() throws InterruptedException {
-        assumeNotNull(mVirtualDeviceManager);
-        VirtualDeviceManager.VirtualDevice virtualDevice =
-                mVirtualDeviceManager.createVirtualDevice(
-                        mFakeAssociationRule.getAssociationInfo().getId(),
-                        new VirtualDeviceParams.Builder().build());
+        VirtualDevice virtualDevice = mVirtualDeviceRule.createManagedVirtualDevice();
         Context deviceContext = mDefaultContext.createDeviceContext(virtualDevice.getDeviceId());
         testRevokePermissionNotifyListener(
                 deviceContext, virtualDevice.getPersistentDeviceId());
@@ -213,11 +194,7 @@ public class PermissionUpdateListenerTest {
     @RequiresFlagsEnabled({Flags.FLAG_DEVICE_AWARE_PERMISSION_APIS_ENABLED,
             Flags.FLAG_DEVICE_AWARE_PERMISSIONS_ENABLED})
     public void testVirtualDeviceUpdatePermissionFlagsNotifyListener() throws InterruptedException {
-        assumeNotNull(mVirtualDeviceManager);
-        VirtualDeviceManager.VirtualDevice virtualDevice =
-                mVirtualDeviceManager.createVirtualDevice(
-                        mFakeAssociationRule.getAssociationInfo().getId(),
-                        new VirtualDeviceParams.Builder().build());
+        VirtualDevice virtualDevice = mVirtualDeviceRule.createManagedVirtualDevice();
         Context deviceContext = mDefaultContext.createDeviceContext(virtualDevice.getDeviceId());
         testUpdatePermissionFlagsNotifyListener(
                 deviceContext, virtualDevice.getPersistentDeviceId());

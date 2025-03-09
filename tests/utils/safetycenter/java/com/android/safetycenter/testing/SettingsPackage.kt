@@ -38,7 +38,7 @@ object SettingsPackage {
                             PackageManager.MATCH_DIRECT_BOOT_AWARE or
                             PackageManager.MATCH_DIRECT_BOOT_UNAWARE)
                         .toLong()
-                )
+                ),
             )!!
             .activityInfo
             .packageName

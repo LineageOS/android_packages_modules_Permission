@@ -209,7 +209,7 @@
     <string name="unused_apps_label_v2" msgid="7058776770056517980">"न वापरल्यास अ‍ॅप अ‍ॅक्टिव्हिटी थांबवा"</string>
     <string name="unused_apps_label_v3" msgid="693340578642156657">"वापरले नसल्यास ॲप व्यवस्थापित करा"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"परवानग्या काढून टाका, तात्पुरत्या फाइल हटवा आणि सूचना थांबवा"</string>
-    <string name="unused_apps_summary_v2" msgid="5011313200815115802">"परवानग्या काढून टाका, तात्पुरत्या फाइल हटवा, सूचना थांबवा आणि ॲप संग्रहित करा"</string>
+    <string name="unused_apps_summary_v2" msgid="5011313200815115802">"परवानग्या काढून टाका, तात्पुरत्या फाइल हटवा, नोटिफिकेशन थांबवा आणि ॲप संग्रहित करा"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"तुमच्या डेटाचे संरक्षण करण्यासाठी, अ‍ॅप काही महिन्यांत वापरले गेले नसल्यास, या अ‍ॅपच्या परवानग्या काढल्या जातील."</string>
     <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"तुमच्या डेटाचे संरक्षण करण्यासाठी, अ‍ॅप काही महिन्यांत वापरले गेले नसल्यास, पुढील परवानग्या काढल्या जातील: <xliff:g id="PERMS">%1$s</xliff:g>"</string>
     <string name="auto_revoked_apps_page_summary" msgid="6594753657893756536">"तुमच्या डेटाचे संरक्षण करण्यासाठी, तुम्ही काही महिन्यांत न वापरलेल्या ॲप्समधून परवानग्या काढल्या गेल्या आहेत."</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"प्रतिबंधित सेटिंग्जना अनुमती द्या"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"प्रतिबंधित सेटिंग"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"तुमच्या सुरक्षेसाठी, हे सेटिंग सध्या उपलब्ध नाही."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"फोन कॉलवर असताना कृती उपलब्ध नाही"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"फोन कॉलदरम्यान ॲप्सना इतर ॲप्स इंस्टॉल करण्याची अनुमती नाही.\n\n घोटाळेबाज व्यक्ती फोन कॉल संभाषणांदरम्यान, याप्रकारच्या कृतीची विनंती करतात, यामुळे तुमचे संरक्षण करण्यासाठी ती ब्लॉक केली आहे. तुम्ही ओळखत नसलेल्या एखाद्या व्यक्तीने ही कारवाई करण्यासाठी तुम्हाला मार्गदर्शन केले जात असल्यास, हा घोटाळा असू शकतो."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"अ‍ॅपचा <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> साठीचा अ‍ॅक्सेस नाकारला गेला आहे"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"ॲपने संवेदनशील परवानगीसाठी अ‍ॅक्सेसची विनंती केली आहे, ज्यामुळे तुमची वैयक्तिक आणि आर्थिक माहिती धोक्यात येऊ शकते.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>या प्रतिबंधित परवानगीशिवाय ॲप कदाचित योग्यरीत्या काम करणार नाही. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;अ‍ॅक्सेसला अनुमती कशी द्यावी हे जाणून घ्या&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"अ‍ॅपचा डीफॉल्ट <xliff:g id="ROLE_NAME">%1$s</xliff:g> असण्यासाठीचा अ‍ॅक्सेस नाकारला गेला आहे"</string>

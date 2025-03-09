@@ -110,6 +110,7 @@ bootclasspath_fragment {
         package_prefixes: [
             "android.app.role",
             "android.app.ecm",
+            "android.permission.internal",
             "android.permission.jarjar",
             "android.safetycenter",
             "android.safetylabel",

@@ -24,6 +24,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceViewHolder
 import com.android.permissioncontroller.R
 import com.android.permissioncontroller.safetycenter.ui.view.MoreIssuesHeaderView
+import com.android.settingslib.widget.GroupSectionDividerMixin
 
 /** A preference that displays a card linking to a list of more {@link SafetyCenterIssue}. */
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
@@ -34,8 +35,8 @@ internal class MoreIssuesCardPreference(
     private var newMoreIssuesCardData: MoreIssuesCardData,
     private val dismissedOnly: Boolean,
     val isStaticHeader: Boolean,
-    private val onClickListener: () -> Unit
-) : Preference(context), ComparablePreference {
+    private val onClickListener: () -> Unit,
+) : Preference(context), ComparablePreference, GroupSectionDividerMixin {
 
     init {
         layoutResource = R.layout.preference_more_issues_card
@@ -44,11 +45,12 @@ internal class MoreIssuesCardPreference(
     override fun onBindViewHolder(holder: PreferenceViewHolder) {
         super.onBindViewHolder(holder)
 
-        val issueHeaderView = holder.itemView as MoreIssuesHeaderView
+        val issueHeaderView =
+            holder.itemView.requireViewById<MoreIssuesHeaderView>(R.id.more_issues_card)
         if (isStaticHeader) {
             issueHeaderView.showStaticHeader(
                 context.getString(R.string.safety_center_dismissed_issues_card_title),
-                newMoreIssuesCardData.severityLevel
+                newMoreIssuesCardData.severityLevel,
             )
         } else {
             issueHeaderView.showExpandableHeader(
@@ -62,7 +64,7 @@ internal class MoreIssuesCardPreference(
                     }
                 ),
                 overrideChevronIconResId,
-                onClickListener
+                onClickListener,
             )
         }
     }
@@ -94,5 +96,5 @@ internal class MoreIssuesCardPreference(
 internal data class MoreIssuesCardData(
     val severityLevel: Int,
     val hiddenIssueCount: Int,
-    val isExpanded: Boolean
+    val isExpanded: Boolean,
 )

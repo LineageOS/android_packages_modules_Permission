@@ -362,7 +362,7 @@
     <string name="role_browser_request_title" msgid="2895200507835937192">"Definir <xliff:g id="APP_NAME">%1$s</xliff:g> como navegador padrão?"</string>
     <string name="role_browser_request_description" msgid="5888803407905985941">"Nenhuma permissão necessária"</string>
     <string name="role_dialer_label" msgid="1100224146343237968">"App de telefone padrão"</string>
-    <string name="role_dialer_short_label" msgid="7186888549465352489">"App de Telefone"</string>
+    <string name="role_dialer_short_label" msgid="7186888549465352489">"App de telefone"</string>
     <string name="role_dialer_description" msgid="8768708633696539612">"Apps que permitem fazer e receber chamadas no seu dispositivo."</string>
     <string name="role_dialer_request_title" msgid="5959618560705912058">"Definir <xliff:g id="APP_NAME">%1$s</xliff:g> como seu app de telefone padrão?"</string>
     <string name="role_dialer_request_description" msgid="6288839625724909320">"Este app poderá acessar contatos, câmera, microfone, telefone e SMS"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Permitir configurações restritas"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Configuração restrita"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Para sua segurança, essa configuração está indisponível no momento."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Ação indisponível durante uma ligação"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Não é possível permitir que apps instalem outros apps durante uma ligação.\n\n Golpistas costumam pedir esse tipo de ação durante ligações, então ela fica bloqueada para sua proteção. Se você está recebendo instruções de uma pessoa desconhecida para realizar essa ação, isso pode ser um golpe."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"O app não recebeu a seguinte permissão de acesso: <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"O app solicitou acesso a uma permissão sensível que pode colocar suas informações pessoais e financeiras em risco.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>É possível que o app não funcione corretamente sem essa permissão restrita. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Aprenda a conceder acesso&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"O app não recebeu o acesso para ser a escolha padrão de: <xliff:g id="ROLE_NAME">%1$s</xliff:g>"</string>

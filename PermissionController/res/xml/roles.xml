@@ -107,6 +107,7 @@
         defaultHolders="config_defaultAssistant"
         description="@string/role_assistant_description"
         exclusive="true"
+        exclusivity="user"
         fallBackToDefaultHolder="true"
         showNone="true"
         label="@string/role_assistant_label"
@@ -173,6 +174,7 @@
         defaultHolders="config_defaultBrowser"
         description="@string/role_browser_description"
         exclusive="true"
+        exclusivity="user"
         label="@string/role_browser_label"
         overrideUserWhenGranting="true"
         requestDescription="@string/role_browser_request_description"
@@ -216,6 +218,7 @@
         defaultHolders="config_defaultDialer"
         description="@string/role_dialer_description"
         exclusive="true"
+        exclusivity="user"
         fallBackToDefaultHolder="true"
         label="@string/role_dialer_label"
         overrideUserWhenGranting="true"
@@ -304,6 +307,7 @@
         defaultHolders="config_defaultSms"
         description="@string/role_sms_description"
         exclusive="true"
+        exclusivity="user"
         label="@string/role_sms_label"
         overrideUserWhenGranting="true"
         requestDescription="@string/role_sms_request_description"
@@ -394,6 +398,7 @@
         behavior="EmergencyRoleBehavior"
         description="@string/role_emergency_description"
         exclusive="true"
+        exclusivity="user"
         label="@string/role_emergency_label"
         overrideUserWhenGranting="true"
         requestDescription="@string/role_emergency_request_description"
@@ -426,6 +431,7 @@
         behavior="HomeRoleBehavior"
         description="@string/role_home_description"
         exclusive="true"
+        exclusivity="user"
         label="@string/role_home_label"
         overrideUserWhenGranting="true"
         requestDescription="@string/role_home_request_description"
@@ -472,6 +478,7 @@
         defaultHolders="config_defaultCallRedirection"
         description="@string/role_call_redirection_description"
         exclusive="true"
+        exclusivity="user"
         label="@string/role_call_redirection_label"
         overrideUserWhenGranting="true"
         requestDescription="@string/role_call_redirection_request_description"
@@ -493,6 +500,7 @@
         defaultHolders="config_defaultCallScreening"
         description="@string/role_call_screening_description"
         exclusive="true"
+        exclusivity="user"
         label="@string/role_call_screening_label"
         overrideUserWhenGranting="true"
         requestDescription="@string/role_call_screening_request_description"
@@ -518,6 +526,7 @@
         name="android.app.role.SYSTEM_GALLERY"
         defaultHolders="config_systemGallery"
         exclusive="true"
+        exclusivity="user"
         static="true"
         systemOnly="true"
         visible="false">
@@ -537,6 +546,7 @@
         behavior="v31.AutomotiveRoleBehavior"
         defaultHolders="config_systemAutomotiveCluster"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -554,6 +564,7 @@
         behavior="v31.CompanionDeviceWatchRoleBehavior"
         description="@string/role_watch_description"
         exclusive="false"
+        exclusivity="none"
         minSdkVersion="31"
         systemOnly="false"
         visible="false">
@@ -582,6 +593,7 @@
         name="android.app.role.SYSTEM_AUTOMOTIVE_PROJECTION"
         defaultHolders="config_systemAutomotiveProjection"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -619,13 +631,13 @@
         behavior="v31.SystemShellRoleBehavior"
         defaultHolders="config_systemShell"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
         visible="false">
         <permissions>
             <!-- Used for CTS testing -->
-            <permission name="android.permission.CREATE_VIRTUAL_DEVICE" minSdkVersion="33" />
             <permission name="android.permission.ACCESS_RCS_USER_CAPABILITY_EXCHANGE" />
             <permission name="android.permission.ACCESS_AMBIENT_CONTEXT_EVENT" minSdkVersion="33"/>
             <permission name="android.permission.PERFORM_IMS_SINGLE_REGISTRATION" />
@@ -642,8 +654,6 @@
                 minSdkVersion="33" />
             <permission name="android.permission.MANAGE_SAFETY_CENTER"
                 minSdkVersion="33" />
-            <permission name="android.permission.ADD_TRUSTED_DISPLAY" minSdkVersion="33" />
-            <permission name="android.permission.ADD_ALWAYS_UNLOCKED_DISPLAY" minSdkVersion="33" />
             <permission name="android.permission.SUBSCRIBE_TO_KEYGUARD_LOCKED_STATE"
                 minSdkVersion="33" />
             <permission name="android.permission.MANAGE_DEVICE_POLICY_ACCOUNT_MANAGEMENT"
@@ -710,6 +720,10 @@
                 featureFlag="android.app.appfunctions.flags.Flags.enableAppFunctionManager" />
             <permission name="android.permission.EXECUTE_APP_FUNCTIONS_TRUSTED"
                 featureFlag="android.app.appfunctions.flags.Flags.enableAppFunctionManager" />
+            <permission name="android.permission.COPY_ACCOUNTS"
+                featureFlag="android.app.admin.flags.Flags.splitCreateManagedProfileEnabled" />
+            <permission name="android.permission.REMOVE_ACCOUNTS"
+                featureFlag="android.app.admin.flags.Flags.splitCreateManagedProfileEnabled" />
         </permissions>
     </role>
 
@@ -717,6 +731,7 @@
         name="android.app.role.SYSTEM_CONTACTS"
         defaultHolders="config_systemContacts"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -733,6 +748,7 @@
         allowBypassingQualification="true"
         defaultHolders="config_systemSpeechRecognizer"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -754,6 +770,7 @@
         name="android.app.role.SYSTEM_WIFI_COEX_MANAGER"
         defaultHolders="config_systemWifiCoexManager"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -768,6 +785,7 @@
         name="android.app.role.SYSTEM_WELLBEING"
         defaultHolders="config_systemWellbeing"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -796,6 +814,7 @@
         behavior="v31.TelevisionRoleBehavior"
         defaultHolders="config_systemTelevisionNotificationHandler"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -814,6 +833,7 @@
         name="android.app.role.SYSTEM_COMPANION_DEVICE_PROVIDER"
         defaultHolders="config_systemCompanionDeviceProvider"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -835,7 +855,8 @@
       ~ In addition, packages MUST NOT:
       ~ - Request INTERNET permission. Instead packages MUST access the internet through
       ~   well-defined APIs in an open source project.
-      ~ - Perform direct binds to other applications, except the following system packages:
+      ~ - Perform direct binds to other applications, except the following system packages or
+      ~   other preloaded packages conforming with the requirements here:
       ~   - Bluetooth
       ~   - Contacts
       ~   - Media
@@ -849,6 +870,7 @@
         name="android.app.role.SYSTEM_UI_INTELLIGENCE"
         defaultHolders="config_systemUiIntelligence"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -904,6 +926,7 @@
         name="android.app.role.SYSTEM_AMBIENT_AUDIO_INTELLIGENCE"
         defaultHolders="config_systemAmbientAudioIntelligence"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -950,6 +973,7 @@
         name="android.app.role.SYSTEM_AUDIO_INTELLIGENCE"
         defaultHolders="config_systemAudioIntelligence"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -996,6 +1020,7 @@
         name="android.app.role.SYSTEM_NOTIFICATION_INTELLIGENCE"
         defaultHolders="config_systemNotificationIntelligence"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -1038,6 +1063,7 @@
         name="android.app.role.SYSTEM_TEXT_INTELLIGENCE"
         defaultHolders="config_systemTextIntelligence"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -1078,6 +1104,7 @@
         name="android.app.role.SYSTEM_VISUAL_INTELLIGENCE"
         defaultHolders="config_systemVisualIntelligence"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -1103,6 +1130,7 @@
         name="android.app.role.SYSTEM_DOCUMENT_MANAGER"
         behavior="v33.DocumentManagerRoleBehavior"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="33"
         static="true"
         systemOnly="true"
@@ -1135,6 +1163,7 @@
         allowBypassingQualification="true"
         defaultHolders="config_systemActivityRecognizer"
         exclusive="false"
+        exclusivity="none"
         static="true"
         systemOnly="true"
         visible="false">
@@ -1154,6 +1183,7 @@
         name="android.app.role.SYSTEM_UI"
         defaultHolders="config_systemUi"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -1180,6 +1210,7 @@
         behavior="v31.TelevisionRoleBehavior"
         defaultHolders="config_systemTelevisionRemoteService"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="31"
         static="true"
         systemOnly="true"
@@ -1199,6 +1230,7 @@
         behavior="v33.CompanionDeviceAppStreamingRoleBehavior"
         description="@string/role_app_streaming_description"
         exclusive="false"
+        exclusivity="none"
         minSdkVersion="33"
         systemOnly="true"
         visible="false">
@@ -1207,7 +1239,9 @@
             <permission-set name="virtual_device" />
             <!-- For capturing audio from the app on the device. -->
             <permission name="android.permission.RECORD_AUDIO" />
-
+            <permission
+                name="android.permission.ADD_MIRROR_DISPLAY"
+                featureFlag="android.companion.virtualdevice.flags.Flags.enableLimitedVdmRole" />
             <!--TODO(b/201605314) For calling Telecom framework API for audio streaming-->
             <!--<permission name="android.permission.PROVIDE_CALL_ENDPOINTS" />-->
        </permissions>
@@ -1223,6 +1257,7 @@
         behavior="v33.CompanionDeviceComputerRoleBehavior"
         description="@string/role_companion_device_computer_description"
         exclusive="false"
+        exclusivity="none"
         minSdkVersion="33"
         systemOnly="true"
         visible="false">
@@ -1242,6 +1277,7 @@
         name="android.app.role.COMPANION_DEVICE_GLASSES"
         behavior="v34.CompanionDeviceGlassesRoleBehavior"
         exclusive="false"
+        exclusivity="none"
         minSdkVersion="34"
         systemOnly="false"
         visible="false">
@@ -1268,12 +1304,15 @@
         name="android.app.role.COMPANION_DEVICE_NEARBY_DEVICE_STREAMING"
         allowBypassingQualification="true"
         exclusive="false"
+        exclusivity="none"
         minSdkVersion="34"
         systemOnly="true"
         visible="false">
         <permissions>
             <permission-set name="nearby_devices" />
             <permission-set name="virtual_device" />
+            <permission-set name="notifications"
+                featureFlag="android.companion.virtualdevice.flags.Flags.notificationsForDeviceStreaming" />
         </permissions>
     </role>
 
@@ -1281,6 +1320,7 @@
         name="android.app.role.SYSTEM_SUPERVISION"
         defaultHolders="config_systemSupervision"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="33"
         static="true"
         systemOnly="true"
@@ -1291,6 +1331,46 @@
             <permission name="android.permission.MANAGE_DEFAULT_APPLICATIONS" minSdkVersion="34"/>
             <permission name="android.permission.SUSPEND_APPS"/>
             <permission name="android.permission.SYSTEM_APPLICATION_OVERLAY"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_ACCOUNT_MANAGEMENT"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_APP_RESTRICTIONS"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_APPS_CONTROL"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_DEBUGGING_FEATURES"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_DISPLAY"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_FACTORY_RESET"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_FUN"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_INSTALL_UNKNOWN_SOURCES"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_KEYGUARD"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_LOCATION"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_LOCK"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_LOCK_CREDENTIALS"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_LOCK_TASK"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_MODIFY_USERS"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_PACKAGE_STATE"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_RESET_PASSWORD"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_RUNTIME_PERMISSIONS"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_SAFE_BOOT"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_TIME"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
+            <permission name="android.permission.MANAGE_PROFILE_AND_DEVICE_OWNERS"
+                featureFlag="android.permission.flags.Flags.supervisionRolePermissionUpdateEnabled"/>
         </permissions>
     </role>
 
@@ -1303,6 +1383,7 @@
         behavior="v33.DevicePolicyManagementRoleBehavior"
         defaultHolders="config_devicePolicyManagement"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="33"
         static="true"
         systemOnly="false"
@@ -1408,6 +1489,12 @@
             <permission name="android.permission.MANAGE_DEVICE_POLICY_DISPLAY" minSdkVersion="35" />
             <permission name="android.permission.MANAGE_DEVICE_POLICY_LOCALE" minSdkVersion="35" />
             <permission name="android.permission.MANAGE_DEVICE_POLICY_SMS" minSdkVersion="35" />
+            <permission name="android.permission.MANAGE_DEVICE_POLICY_APP_FUNCTIONS"
+                featureFlag="android.app.appfunctions.flags.Flags.enableAppFunctionManager" />
+            <permission name="android.permission.COPY_ACCOUNTS"
+                featureFlag="android.app.admin.flags.Flags.splitCreateManagedProfileEnabled" />
+            <permission name="android.permission.REMOVE_ACCOUNTS"
+                featureFlag="android.app.admin.flags.Flags.splitCreateManagedProfileEnabled" />
         </permissions>
     </role>
 
@@ -1415,6 +1502,7 @@
         name="android.app.role.SYSTEM_APP_PROTECTION_SERVICE"
         defaultHolders="config_systemAppProtectionService"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="33"
         static="true"
         systemOnly="true"
@@ -1443,6 +1531,7 @@
         behavior="v31.AutomotiveRoleBehavior"
         defaultHolders="config_systemAutomotiveCalendarSyncManager"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="33"
         static="true"
         systemOnly="true"
@@ -1464,6 +1553,7 @@
         defaultHolders="config_defaultAutomotiveNavigation"
         description="@string/role_automotive_navigation_description"
         exclusive="true"
+        exclusivity="user"
         label="@string/role_automotive_navigation_label"
         minSdkVersion="33"
         overrideUserWhenGranting="true"
@@ -1537,6 +1627,7 @@
         name="android.app.role.SYSTEM_SETTINGS_INTELLIGENCE"
         defaultHolders="config_systemSettingsIntelligence"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="33"
         static="true"
         systemOnly="true"
@@ -1554,6 +1645,7 @@
         name="android.app.role.SYSTEM_BLUETOOTH_STACK"
         defaultHolders="config_systemBluetoothStack"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="33"
         static="true"
         systemOnly="true"
@@ -1578,6 +1670,7 @@
     <role
         name="android.app.role.FINANCED_DEVICE_KIOSK"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="34"
         visible="false">
         <permissions>
@@ -1593,6 +1686,7 @@
         name="android.app.role.SYSTEM_FINANCED_DEVICE_CONTROLLER"
         defaultHolders="config_systemFinancedDeviceController"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="34"
         static="true"
         systemOnly="true"
@@ -1620,6 +1714,7 @@
         behavior="v33.SystemWearHealthServiceRoleBehavior"
         defaultHolders="config_systemWearHealthService"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="33"
         static="true"
         systemOnly="true"
@@ -1629,6 +1724,12 @@
             <permission-set name="location" />
             <permission name="android.permission.ACCESS_BACKGROUND_LOCATION" />
             <permission name="android.permission.ACTIVITY_RECOGNITION" />
+            <permission
+                name="android.permission.health.READ_HEART_RATE"
+                featureFlag="android.permission.flags.Flags.replaceBodySensorPermissionEnabled" />
+            <permission
+                name="android.permission.health.READ_HEALTH_DATA_IN_BACKGROUND"
+                featureFlag="android.permission.flags.Flags.replaceBodySensorPermissionEnabled"  />
         </permissions>
     </role>
 
@@ -1641,6 +1742,7 @@
         defaultHolders="config_defaultNotes"
         description="@string/role_notes_description"
         exclusive="true"
+        exclusivity="user"
         label="@string/role_notes_label"
         minSdkVersion="34"
         overrideUserWhenGranting="true"
@@ -1682,6 +1784,7 @@
         allowBypassingQualification="true"
         defaultHolders="config_systemCallStreaming"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="34"
         static="true"
         systemOnly="true"
@@ -1704,6 +1807,7 @@
         behavior="v35.RetailDemoRoleBehavior"
         defaultHolders="config_defaultRetailDemo"
         exclusive="true"
+        exclusivity="user"
         minSdkVersion="35"
         static="true"
         visible="false">
@@ -1730,6 +1834,7 @@
         defaultHolders="config_defaultWallet"
         description="@string/role_wallet_description"
         exclusive="true"
+        exclusivity="user"
         label="@string/role_wallet_label"
         minSdkVersion="35"
         overrideUserWhenGranting="true"
@@ -1740,5 +1845,85 @@
         shortLabel="@string/role_wallet_short_label"
         uiBehavior="v35.WalletRoleUiBehavior"/>
 
+    <role
+        name="android.app.role.SYSTEM_DEPENDENCY_INSTALLER"
+        allowBypassingQualification="true"
+        defaultHolders="config_systemDependencyInstaller"
+        exclusive="true"
+        exclusivity="user"
+        featureFlag="android.content.pm.Flags.sdkDependencyInstaller"
+        static="true"
+        systemOnly="true"
+        visible="false">
+        <required-components>
+            <service permission="android.permission.BIND_DEPENDENCY_INSTALLER">
+                <intent-filter>
+                    <action name="android.content.pm.action.INSTALL_DEPENDENCY" />
+                </intent-filter>
+            </service>
+        </required-components>
+        <permissions>
+            <permission name="android.permission.ACCESS_SHARED_LIBRARIES" />
+            <permission name="android.permission.INSTALL_DEPENDENCY_SHARED_LIBRARIES" />
+        </permissions>
+    </role>
 
+    <!---
+      ~ A role for testing cross-user roles (exclusivity="profileGroup"). This should never be used
+      ~ to gate any actual functionality.
+      -->
+    <role
+        name="android.app.role.RESERVED_FOR_TESTING_PROFILE_GROUP_EXCLUSIVITY"
+        behavior="ReservedForTestingProfileGroupExclusivityRoleBehavior"
+        description="@string/role_for_testing_profile_group_exclusivity_description"
+        exclusive="true"
+        exclusivity="profileGroup"
+        fallBackToDefaultHolder="true"
+        featureFlag="com.android.permission.flags.Flags.crossUserRoleEnabled"
+        label="@string/role_for_testing_profile_group_exclusivity_label"
+        requestable="true"
+        requestDescription="@string/role_for_testing_profile_group_exclusivity_request_description"
+        requestTitle="@string/role_for_testing_profile_group_exclusivity_request_title"
+        shortLabel="@string/role_for_testing_profile_group_exclusivity_short_label"
+        showNone="true"
+        visible="true"/>
+
+    <!---
+      ~ A role for the vendor package that provides privacy-preserving intelligent processor for
+      ~ vendor specific features.
+      ~
+      ~ A package holding this role MUST comply with requirements outlined in the Android CDD
+      ~ section "9.8.6 Content Capture".
+      ~ Example link for Android 15:
+      ~ https://source.android.com/docs/compatibility/15/android-15-cdd#986_os-level_and_ambient_data
+      ~
+      ~ In addition, packages MUST NOT:
+      ~ - Request INTERNET permission. Instead packages MUST access the internet through
+      ~   well-defined APIs in an open source project.
+      ~ - Perform direct binds to other applications, except the following system packages or
+      ~   other preloaded packages conforming with the requirements here:
+      ~   - Bluetooth
+      ~   - Contacts
+      ~   - Media
+      ~   - Telephony
+      ~   - System UI
+      ~   - Component providing internet APIs (see above)
+      ~   To achieve this packages MUST set up explicit <allow-association> configuration in the
+      ~   system config.
+      -->
+    <role
+        name="android.app.role.SYSTEM_VENDOR_INTELLIGENCE"
+        defaultHolders="config_systemVendorIntelligence"
+        exclusive="true"
+        exclusivity="user"
+        featureFlag="android.permission.flags.Flags.systemVendorIntelligenceRoleEnabled"
+        static="true"
+        systemOnly="true"
+        visible="false">
+        <permissions>
+            <permission name="android.permission.READ_GLOBAL_APP_SEARCH_DATA" />
+            <permission name="android.permission.EXECUTE_APP_FUNCTIONS_TRUSTED"
+                featureFlag="android.app.appfunctions.flags.Flags.enableAppFunctionManager" />
+        </permissions>
+    </role>
 </roles>

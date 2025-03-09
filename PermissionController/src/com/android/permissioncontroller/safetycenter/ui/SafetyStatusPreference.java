@@ -40,6 +40,7 @@ import com.android.permissioncontroller.R;
 import com.android.permissioncontroller.safetycenter.ui.model.SafetyCenterViewModel;
 import com.android.permissioncontroller.safetycenter.ui.model.StatusUiData;
 import com.android.permissioncontroller.safetycenter.ui.view.StatusCardView;
+import com.android.settingslib.widget.GroupSectionDividerMixin;
 
 import kotlin.Pair;
 
@@ -48,7 +49,8 @@ import java.util.Objects;
 
 /** Preference which displays a visual representation of {@link SafetyCenterStatus}. */
 @RequiresApi(TIRAMISU)
-public class SafetyStatusPreference extends Preference implements ComparablePreference {
+public class SafetyStatusPreference extends Preference
+        implements ComparablePreference, GroupSectionDividerMixin {
 
     private static final String TAG = "SafetyStatusPreference";
 
@@ -82,7 +84,8 @@ public class SafetyStatusPreference extends Preference implements ComparablePref
         }
 
         Context context = getContext();
-        StatusCardView statusCardView = (StatusCardView) holder.itemView;
+        StatusCardView statusCardView = holder.itemView.requireViewById(R.id.status_card);
+
         configureButtons(context, statusCardView);
         statusCardView
                 .getTitleAndSummaryContainerView()

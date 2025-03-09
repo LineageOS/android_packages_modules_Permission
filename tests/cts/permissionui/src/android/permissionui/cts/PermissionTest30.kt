@@ -77,7 +77,8 @@ class PermissionTest30 : BaseUsePermissionTest() {
             // Verify there's no location accuracy options
             val locationAccuracyOptions =
                 waitFindObjectOrNull(
-                    By.res("com.android.permissioncontroller:id/permission_location_accuracy"),
+                    By.res("com.android.permissioncontroller:id/permission_location_accuracy")
+                            .displayId(displayId),
                     1000L
                 )
             assertNull(

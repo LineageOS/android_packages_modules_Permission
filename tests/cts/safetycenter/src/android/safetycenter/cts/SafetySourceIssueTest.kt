@@ -238,7 +238,7 @@ class SafetySourceIssueTest {
                 Action.Builder("action_id", "Action label", pendingIntent1)
                     .setConfirmationDialogDetails(confirmationDialogDetails)
                     .setWillResolve(false)
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 Action.Builder("action_id", "Action label", pendingIntent1)
@@ -270,8 +270,8 @@ class SafetySourceIssueTest {
                             context,
                             0,
                             Intent("Other action PendingIntent"),
-                            FLAG_IMMUTABLE
-                        )
+                            FLAG_IMMUTABLE,
+                        ),
                     )
                     .setConfirmationDialogDetails(confirmationDialogDetails)
                     .build()
@@ -465,7 +465,7 @@ class SafetySourceIssueTest {
     fun notification_equalsHashCodeToString_usingEqualsHashCodeToStringTester() {
         EqualsHashCodeToStringTester.ofParcelable(
                 parcelableCreator = Notification.CREATOR,
-                createCopy = { Notification.Builder(it).build() }
+                createCopy = { Notification.Builder(it).build() },
             )
             .addEqualityGroup(
                 Notification.Builder("Title", "Text").build(),
@@ -477,7 +477,7 @@ class SafetySourceIssueTest {
             .addEqualityGroup(Notification.Builder("Title", "Text").addAction(action2).build())
             .addEqualityGroup(
                 Notification.Builder("Title", "Text").addAction(action1).addAction(action2).build(),
-                Notification.Builder("Title", "Text").addActions(listOf(action1, action2)).build()
+                Notification.Builder("Title", "Text").addActions(listOf(action1, action2)).build(),
             )
             .test()
     }
@@ -538,7 +538,7 @@ class SafetySourceIssueTest {
             )
             .addEqualityGroup(
                 ConfirmationDialogDetails("Title", "Text", "Accept", "Deny"),
-                ConfirmationDialogDetails("Title", "Text", "Accept", "Deny")
+                ConfirmationDialogDetails("Title", "Text", "Accept", "Deny"),
             )
             .addEqualityGroup(ConfirmationDialogDetails("Other title", "Text", "Accept", "Deny"))
             .addEqualityGroup(ConfirmationDialogDetails("Title", "Other text", "Accept", "Deny"))
@@ -555,7 +555,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -571,7 +571,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -587,7 +587,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -603,7 +603,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .setSubtitle("Issue subtitle")
                 .addAction(action1)
@@ -620,7 +620,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -637,7 +637,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -654,7 +654,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .setAttributionTitle("attribution title")
@@ -672,7 +672,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -689,7 +689,7 @@ class SafetySourceIssueTest {
                 "Issue title",
                 "Issue summary",
                 SEVERITY_LEVEL_INFORMATION,
-                "issue_type_id"
+                "issue_type_id",
             )
 
         assertFails { safetySourceIssueBuilder.setAttributionTitle("title") }
@@ -703,7 +703,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -719,7 +719,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -735,7 +735,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .setIssueCategory(ISSUE_CATEGORY_DEVICE)
@@ -753,7 +753,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .setIssueCategory(SafetySourceIssue.ISSUE_CATEGORY_PASSWORDS)
@@ -771,7 +771,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .addAction(action2)
@@ -788,7 +788,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .addAction(action2)
@@ -806,7 +806,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
         val actions = safetySourceIssueBuilder.build().actions
@@ -824,7 +824,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .addAction(action2)
@@ -843,7 +843,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -859,7 +859,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .setOnDismissPendingIntent(pendingIntentService)
@@ -877,7 +877,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -894,7 +894,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .setDeduplicationId("deduplication_id")
@@ -912,7 +912,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -929,7 +929,7 @@ class SafetySourceIssueTest {
                 "Issue title",
                 "Issue summary",
                 SEVERITY_LEVEL_INFORMATION,
-                "issue_type_id"
+                "issue_type_id",
             )
 
         assertFails { safetySourceIssueBuilder.setDeduplicationId("id") }
@@ -943,7 +943,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -960,7 +960,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -977,7 +977,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .setCustomNotification(
@@ -1004,7 +1004,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -1021,7 +1021,7 @@ class SafetySourceIssueTest {
                 "Issue title",
                 "Issue summary",
                 SEVERITY_LEVEL_INFORMATION,
-                "issue_type_id"
+                "issue_type_id",
             )
 
         assertFails { safetySourceIssueBuilder.setCustomNotification(null) }
@@ -1036,7 +1036,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -1054,7 +1054,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .setNotificationBehavior(SafetySourceIssue.NOTIFICATION_BEHAVIOR_NEVER)
@@ -1073,7 +1073,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -1090,7 +1090,7 @@ class SafetySourceIssueTest {
                 "Issue title",
                 "Issue summary",
                 SEVERITY_LEVEL_INFORMATION,
-                "issue_type_id"
+                "issue_type_id",
             )
 
         val exception =
@@ -1110,7 +1110,7 @@ class SafetySourceIssueTest {
                 "Issue title",
                 "Issue summary",
                 SEVERITY_LEVEL_INFORMATION,
-                "issue_type_id"
+                "issue_type_id",
             )
 
         assertFails { safetySourceIssueBuilder.setNotificationBehavior(0) }
@@ -1125,7 +1125,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -1143,7 +1143,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .setIssueActionability(SafetySourceIssue.ISSUE_ACTIONABILITY_AUTOMATIC)
@@ -1162,7 +1162,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .build()
@@ -1179,7 +1179,7 @@ class SafetySourceIssueTest {
                 "Issue title",
                 "Issue summary",
                 SEVERITY_LEVEL_INFORMATION,
-                "issue_type_id"
+                "issue_type_id",
             )
 
         val exception =
@@ -1199,7 +1199,7 @@ class SafetySourceIssueTest {
                 "Issue title",
                 "Issue summary",
                 SEVERITY_LEVEL_INFORMATION,
-                "issue_type_id"
+                "issue_type_id",
             )
 
         assertFails { safetySourceIssueBuilder.setIssueActionability(0) }
@@ -1213,7 +1213,7 @@ class SafetySourceIssueTest {
                 "Issue title",
                 "Issue summary",
                 SEVERITY_LEVEL_INFORMATION,
-                "issue_type_id"
+                "issue_type_id",
             )
         }
     }
@@ -1226,7 +1226,7 @@ class SafetySourceIssueTest {
                 Generic.asNull(),
                 "Issue summary",
                 SEVERITY_LEVEL_INFORMATION,
-                "issue_type_id"
+                "issue_type_id",
             )
         }
     }
@@ -1239,7 +1239,7 @@ class SafetySourceIssueTest {
                 "Issue title",
                 Generic.asNull(),
                 SEVERITY_LEVEL_INFORMATION,
-                "issue_type_id"
+                "issue_type_id",
             )
         }
     }
@@ -1253,7 +1253,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_UNSPECIFIED,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
             }
         assertThat(exception)
@@ -1270,7 +1270,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     -1,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
             }
         assertThat(exception)
@@ -1286,7 +1286,7 @@ class SafetySourceIssueTest {
                 "Issue title",
                 "Issue summary",
                 SEVERITY_LEVEL_INFORMATION,
-                Generic.asNull()
+                Generic.asNull(),
             )
         }
     }
@@ -1299,7 +1299,7 @@ class SafetySourceIssueTest {
                 "Issue title",
                 "Issue summary",
                 SEVERITY_LEVEL_INFORMATION,
-                "issue_type_id"
+                "issue_type_id",
             )
 
         val exception =
@@ -1319,7 +1319,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
 
@@ -1339,7 +1339,7 @@ class SafetySourceIssueTest {
                 "Issue title",
                 "Issue summary",
                 SEVERITY_LEVEL_INFORMATION,
-                "issue_type_id"
+                "issue_type_id",
             )
         val exception =
             assertFailsWith(IllegalArgumentException::class) {
@@ -1348,7 +1348,7 @@ class SafetySourceIssueTest {
                         context,
                         /* requestCode = */ 0,
                         Intent("PendingIntent activity"),
-                        FLAG_IMMUTABLE
+                        FLAG_IMMUTABLE,
                     )
                 )
             }
@@ -1365,7 +1365,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .addAction(action1)
@@ -1385,7 +1385,7 @@ class SafetySourceIssueTest {
                 "Issue title",
                 "Issue summary",
                 SEVERITY_LEVEL_INFORMATION,
-                "issue_type_id"
+                "issue_type_id",
             )
 
         val exception =
@@ -1410,7 +1410,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .addAction(action1)
                 .addAction(action2)
@@ -1432,7 +1432,7 @@ class SafetySourceIssueTest {
                 "Issue title",
                 "Issue summary",
                 SEVERITY_LEVEL_INFORMATION,
-                "issue_type_id"
+                "issue_type_id",
             )
 
         val exception =
@@ -1452,7 +1452,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .setIssueActionability(SafetySourceIssue.ISSUE_ACTIONABILITY_TIP)
                 .build()
@@ -1469,7 +1469,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .setIssueActionability(SafetySourceIssue.ISSUE_ACTIONABILITY_AUTOMATIC)
                 .build()
@@ -1485,7 +1485,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .setSubtitle("Issue subtitle")
                 .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
@@ -1505,7 +1505,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .setSubtitle("Issue subtitle")
                 .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
@@ -1526,7 +1526,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .setSubtitle("Issue subtitle")
                 .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
@@ -1553,7 +1553,7 @@ class SafetySourceIssueTest {
                     "Issue title",
                     "Issue summary",
                     SEVERITY_LEVEL_INFORMATION,
-                    "issue_type_id"
+                    "issue_type_id",
                 )
                 .setSubtitle("Issue subtitle")
                 .setIssueCategory(SafetySourceIssue.ISSUE_CATEGORY_DATA)
@@ -1601,7 +1601,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
@@ -1622,7 +1622,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
@@ -1641,7 +1641,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
@@ -1655,7 +1655,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
@@ -1663,7 +1663,7 @@ class SafetySourceIssueTest {
                     .addAction(action2)
                     .setOnDismissPendingIntent(pendingIntentService)
                     .setAttributionTitle("attribution title")
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 SafetySourceIssue.Builder(
@@ -1671,7 +1671,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_CRITICAL_WARNING,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setAttributionTitle("Other issue attribution title")
                     .addAction(action1)
@@ -1683,7 +1683,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
@@ -1698,7 +1698,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
@@ -1707,7 +1707,7 @@ class SafetySourceIssueTest {
                     .setOnDismissPendingIntent(pendingIntentService)
                     .setAttributionTitle("attribution title")
                     .setDeduplicationId("deduplication_id")
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 SafetySourceIssue.Builder(
@@ -1715,7 +1715,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
@@ -1732,7 +1732,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Other issue subtitle")
                     .setIssueCategory(SafetySourceIssue.ISSUE_CATEGORY_DATA)
@@ -1745,7 +1745,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Other issue subtitle")
                     .setIssueCategory(SafetySourceIssue.ISSUE_CATEGORY_PASSWORDS)
@@ -1758,7 +1758,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Other issue subtitle")
                     .setIssueCategory(SafetySourceIssue.ISSUE_CATEGORY_PERSONAL_SAFETY)
@@ -1771,7 +1771,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setIssueActionability(SafetySourceIssue.ISSUE_ACTIONABILITY_MANUAL)
                     .addAction(action1)
@@ -1786,7 +1786,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setIssueActionability(SafetySourceIssue.ISSUE_ACTIONABILITY_TIP)
                     .addAction(action1)
@@ -1796,11 +1796,11 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setIssueActionability(SafetySourceIssue.ISSUE_ACTIONABILITY_TIP)
                     .addAction(action1)
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 SafetySourceIssue.Builder(
@@ -1808,7 +1808,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setIssueActionability(SafetySourceIssue.ISSUE_ACTIONABILITY_AUTOMATIC)
                     .addAction(action1)
@@ -1820,7 +1820,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setIssueActionability(SafetySourceIssue.ISSUE_ACTIONABILITY_AUTOMATIC)
                     .build()
@@ -1831,7 +1831,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setNotificationBehavior(SafetySourceIssue.NOTIFICATION_BEHAVIOR_DELAYED)
                     .setIssueActionability(SafetySourceIssue.ISSUE_ACTIONABILITY_AUTOMATIC)
@@ -1843,7 +1843,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
@@ -1864,7 +1864,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
@@ -1889,7 +1889,7 @@ class SafetySourceIssueTest {
     ) =
         EqualsHashCodeToStringTester.ofParcelable(
                 parcelableCreator = SafetySourceIssue.CREATOR,
-                createCopy = createCopyFromBuilder
+                createCopy = createCopyFromBuilder,
             )
             .addEqualityGroup(
                 SafetySourceIssue.Builder(
@@ -1897,7 +1897,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
@@ -1910,14 +1910,14 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
                     .addAction(action1)
                     .addAction(action2)
                     .setOnDismissPendingIntent(pendingIntentService)
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 SafetySourceIssue.Builder(
@@ -1925,7 +1925,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .addAction(action1)
                     .build()
@@ -1936,7 +1936,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .addAction(action1)
                     .build()
@@ -1947,7 +1947,7 @@ class SafetySourceIssueTest {
                         "Other issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .addAction(action1)
                     .build()
@@ -1958,7 +1958,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Different issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .addAction(action1)
                     .build()
@@ -1969,7 +1969,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_CRITICAL_WARNING,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .addAction(action1)
                     .build()
@@ -1980,7 +1980,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "other_issue_type_id"
+                        "other_issue_type_id",
                     )
                     .addAction(action1)
                     .build()
@@ -1991,7 +1991,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .addAction(action2)
                     .build()
@@ -2002,7 +2002,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Other issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_ACCOUNT)
@@ -2017,7 +2017,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Other issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_DEVICE)
@@ -2032,7 +2032,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Other issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_DEVICE)
@@ -2047,7 +2047,7 @@ class SafetySourceIssueTest {
                         "Issue title",
                         "Issue summary",
                         SEVERITY_LEVEL_INFORMATION,
-                        "issue_type_id"
+                        "issue_type_id",
                     )
                     .setSubtitle("Other issue subtitle")
                     .setIssueCategory(ISSUE_CATEGORY_DEVICE)
@@ -2058,7 +2058,7 @@ class SafetySourceIssueTest {
                             context,
                             0,
                             Intent("Other PendingIntent service"),
-                            FLAG_IMMUTABLE
+                            FLAG_IMMUTABLE,
                         )
                     )
                     .build()
@@ -2069,14 +2069,14 @@ class SafetySourceIssueTest {
     ) =
         EqualsHashCodeToStringTester.ofParcelable(
                 parcelableCreator = Action.CREATOR,
-                createCopy = createCopyFromBuilder
+                createCopy = createCopyFromBuilder,
             )
             .addEqualityGroup(
                 Action.Builder("action_id", "Action label", pendingIntent1).build(),
                 Action.Builder("action_id", "Action label", pendingIntent1).build(),
                 Action.Builder("action_id", "Action label", pendingIntent1)
                     .setWillResolve(false)
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 Action.Builder("action_id", "Action label", pendingIntent1)
@@ -2102,8 +2102,8 @@ class SafetySourceIssueTest {
                             context,
                             0,
                             Intent("Other action PendingIntent"),
-                            FLAG_IMMUTABLE
-                        )
+                            FLAG_IMMUTABLE,
+                        ),
                     )
                     .build()
             )

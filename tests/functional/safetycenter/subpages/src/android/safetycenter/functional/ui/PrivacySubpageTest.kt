@@ -47,9 +47,9 @@ import com.android.safetycenter.testing.UiTestHelper.waitAllTextDisplayed
 import com.android.safetycenter.testing.UiTestHelper.waitAllTextNotDisplayed
 import com.android.safetycenter.testing.UiTestHelper.waitButtonDisplayed
 import com.android.safetycenter.testing.UiTestHelper.waitDisplayed
-import com.android.safetycenter.testing.UiTestHelper.waitPageTitleDisplayed
 import com.android.safetycenter.testing.UiTestHelper.waitSourceIssueDisplayed
 import com.android.safetycenter.testing.UiTestHelper.waitSourceIssueNotDisplayed
+import java.util.regex.Pattern
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -98,7 +98,7 @@ class PrivacySubpageTest {
                 context.getString(firstSource.summaryResId),
                 "Controls",
                 context.getString(lastSource.titleResId),
-                context.getString(lastSource.summaryResId)
+                context.getString(lastSource.summaryResId),
             )
         }
     }
@@ -117,7 +117,7 @@ class PrivacySubpageTest {
             waitButtonDisplayed("Exit test activity") { it.click() }
             waitAllTextDisplayed(
                 context.getString(source.titleResId),
-                context.getString(source.summaryResId)
+                context.getString(source.summaryResId),
             )
         }
     }
@@ -156,16 +156,16 @@ class PrivacySubpageTest {
         context.launchSafetyCenterActivity(extras) {
             waitAllText(
                 displayed = sensorPrivacyManager.supportsSensorToggle(CAMERA),
-                text = "Camera access"
+                text = "Camera access",
             )
             waitAllText(
                 displayed = sensorPrivacyManager.supportsSensorToggle(MICROPHONE),
-                text = "Microphone access"
+                text = "Microphone access",
             )
             waitAllTextDisplayed("Show clipboard access")
             waitAllText(
                 displayed = getPermissionControllerBool("config_display_show_password_toggle"),
-                text = "Show passwords"
+                text = "Show passwords",
             )
             waitAllTextDisplayed("Location access")
         }
@@ -179,16 +179,14 @@ class PrivacySubpageTest {
         val source: SafetySource = sourcesGroup.safetySources.first()
         val extras = Bundle()
         extras.putString(EXTRA_SAFETY_SOURCES_GROUP_ID, sourcesGroup.id)
+        val containsLocationPattern = Pattern.compile(".*[Ll]ocation.*") // NOTYPO
 
         context.launchSafetyCenterActivity(extras) {
-            openPageAndExit("Location access") {
-                waitPageTitleDisplayed("Location")
-                waitAllTextDisplayed("Use location")
-            }
+            openPageAndExit("Location access") { waitDisplayed(By.text(containsLocationPattern)) }
 
             waitAllTextDisplayed(
                 context.getString(source.titleResId),
-                context.getString(source.summaryResId)
+                context.getString(source.summaryResId),
             )
         }
     }
@@ -225,7 +223,7 @@ class PrivacySubpageTest {
             permissionControllerContext.resources.getIdentifier(
                 resourceName,
                 "bool",
-                "com.android.permissioncontroller"
+                "com.android.permissioncontroller",
             )
         return permissionControllerContext.resources.getBoolean(resourceId)
     }

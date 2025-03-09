@@ -22,7 +22,6 @@ import android.safetycenter.SafetyCenterErrorDetails
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
-import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceScreen
 import androidx.recyclerview.widget.RecyclerView
 import com.android.permissioncontroller.Constants.EXTRA_SESSION_ID
@@ -33,10 +32,12 @@ import com.android.permissioncontroller.safetycenter.ui.model.LiveSafetyCenterVi
 import com.android.permissioncontroller.safetycenter.ui.model.SafetyCenterUiData
 import com.android.permissioncontroller.safetycenter.ui.model.SafetyCenterViewModel
 import com.android.safetycenter.resources.SafetyCenterResourcesApk
+import com.android.settingslib.widget.SettingsBasePreferenceFragment
+import com.android.settingslib.widget.SettingsThemeHelper
 
 /** A base fragment that represents a page in Safety Center. */
 @RequiresApi(TIRAMISU)
-abstract class SafetyCenterFragment : PreferenceFragmentCompat() {
+abstract class SafetyCenterFragment : SettingsBasePreferenceFragment() {
 
     lateinit var safetyCenterViewModel: SafetyCenterViewModel
     lateinit var sameTaskSourceIds: List<String>
@@ -51,12 +52,17 @@ abstract class SafetyCenterFragment : PreferenceFragmentCompat() {
 
     override fun onCreateAdapter(
         preferenceScreen: PreferenceScreen
-    ): RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    ): RecyclerView.Adapter<out RecyclerView.ViewHolder> {
         /* The scroll-to-result functionality for settings search is currently implemented only for
          * subpages i.e. non expand-and-collapse type entries. Hence, we check that the flag is
          * enabled before using an adapter that does the highlighting and scrolling. */
-        val adapter: RecyclerView.Adapter<RecyclerView.ViewHolder> =
-            if (SafetyCenterUiFlags.getShowSubpages()) {
+        val adapter: RecyclerView.Adapter<out RecyclerView.ViewHolder> =
+            if (
+                SafetyCenterUiFlags.getShowSubpages() &&
+                    !SettingsThemeHelper.isExpressiveTheme(requireContext())
+            ) {
+                // TODO: b/378433878 - Create highlight adapter for settings expressive theme, which
+                // has a different base class.
                 highlightManager.createAdapter(preferenceScreen)
             } else {
                 super.onCreateAdapter(preferenceScreen)
@@ -80,7 +86,7 @@ abstract class SafetyCenterFragment : PreferenceFragmentCompat() {
         safetyCenterViewModel =
             ViewModelProvider(
                     requireActivity(),
-                    LiveSafetyCenterViewModelFactory(requireActivity().getApplication())
+                    LiveSafetyCenterViewModelFactory(requireActivity().getApplication()),
                 )
                 .get(SafetyCenterViewModel::class.java)
         safetyCenterViewModel.safetyCenterUiLiveData.observe(this) { uiData: SafetyCenterUiData? ->
@@ -177,7 +183,7 @@ abstract class SafetyCenterFragment : PreferenceFragmentCompat() {
             safetyCenterViewModel.interactionLogger.recordForIssue(
                 Action.SAFETY_CENTER_VIEWED,
                 maybeIssue,
-                isDismissed = false
+                isDismissed = false,
             )
         }
     }

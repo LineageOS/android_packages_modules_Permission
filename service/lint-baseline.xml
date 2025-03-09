@@ -35,17 +35,6 @@
     </issue>
 
     <issue
-        id="NewApi"
-        message="Call requires API level 31 (current min is 30): `android.os.UserHandle#getUid`"
-        errorLine1="        return UserHandle.of(userId).getUid(appId);"
-        errorLine2="                                     ~~~~~~">
-        <location
-            file="packages/modules/Permission/service/java/com/android/permission/compat/UserHandleCompat.java"
-            line="57"
-            column="38"/>
-    </issue>
-
-    <issue
         id="FlaggedApi"
         message="Method `RolesState()` is a flagged API and should be inside an `if (Flags.systemServerRoleControllerEnabled())` check (or annotate the surrounding method `writeFile` with `@FlaggedApi(Flags.FLAG_SYSTEM_SERVER_ROLE_CONTROLLER_ENABLED) to transfer requirement to caller`)"
         errorLine1="            roles = new RolesState(mVersion, packagesHash,"

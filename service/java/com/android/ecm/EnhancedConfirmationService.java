@@ -19,11 +19,15 @@ package com.android.ecm;
 import android.Manifest;
 import android.annotation.FlaggedApi;
 import android.annotation.IntDef;
+import android.annotation.NonNull;
+import android.annotation.Nullable;
+import android.annotation.SuppressLint;
 import android.annotation.UserIdInt;
 import android.app.AppOpsManager;
 import android.app.ecm.EnhancedConfirmationManager;
 import android.app.ecm.IEnhancedConfirmationManager;
 import android.app.role.RoleManager;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.InstallSourceInfo;
@@ -31,25 +35,33 @@ import android.content.pm.PackageInstaller;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.SignedPackage;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Binder;
 import android.os.Build;
 import android.os.SystemConfigManager;
 import android.os.UserHandle;
 import android.permission.flags.Flags;
+import android.provider.ContactsContract;
+import android.provider.ContactsContract.CommonDataKinds.StructuredName;
+import android.provider.ContactsContract.PhoneLookup;
+import android.telecom.Call;
+import android.telecom.PhoneAccount;
+import android.telephony.TelephonyManager;
 import android.util.ArrayMap;
 import android.util.ArraySet;
 import android.util.Log;
 
 import androidx.annotation.Keep;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
 import com.android.internal.util.Preconditions;
 import com.android.permission.util.UserUtils;
+import com.android.server.LocalManagerRegistry;
 import com.android.server.SystemService;
 
 import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -66,15 +78,34 @@ import java.util.Set;
 @Keep
 @FlaggedApi(Flags.FLAG_ENHANCED_CONFIRMATION_MODE_APIS_ENABLED)
 @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
+@SuppressLint("MissingPermission")
 public class EnhancedConfirmationService extends SystemService {
     private static final String LOG_TAG = EnhancedConfirmationService.class.getSimpleName();
 
     private Map<String, List<byte[]>> mTrustedPackageCertDigests;
     private Map<String, List<byte[]>> mTrustedInstallerCertDigests;
+    // A map of call ID to call type
+    private final Map<String, Integer> mOngoingCalls = new ArrayMap<>();
+
+    private static final int CALL_TYPE_UNTRUSTED = 0;
+    private static final int CALL_TYPE_TRUSTED = 1;
+    private static final int CALL_TYPE_EMERGENCY = 2;
+    @IntDef(flag = true, value = {
+            CALL_TYPE_UNTRUSTED,
+            CALL_TYPE_TRUSTED,
+            CALL_TYPE_EMERGENCY
+    })
+    @Retention(RetentionPolicy.SOURCE)
+    @interface CallType {}
 
     public EnhancedConfirmationService(@NonNull Context context) {
         super(context);
+        LocalManagerRegistry.addManager(EnhancedConfirmationManagerLocal.class,
+                new EnhancedConfirmationManagerLocalImpl(this));
     }
+
+    private ContentResolver mContentResolver;
+    private TelephonyManager mTelephonyManager;
 
     @Override
     public void onStart() {
@@ -87,6 +118,8 @@ public class EnhancedConfirmationService extends SystemService {
                 systemConfigManager.getEnhancedConfirmationTrustedInstallers());
 
         publishBinderService(Context.ECM_ENHANCED_CONFIRMATION_SERVICE, new Stub());
+        mContentResolver = getContext().getContentResolver();
+        mTelephonyManager = getContext().getSystemService(TelephonyManager.class);
     }
 
     private Map<String, List<byte[]>> toTrustedPackageMap(Set<SignedPackage> signedPackages) {
@@ -97,6 +130,97 @@ public class EnhancedConfirmationService extends SystemService {
             certDigests.add(signedPackage.getCertificateDigest());
         }
         return trustedPackageMap;
+    }
+
+    void addOngoingCall(Call call) {
+        if (!Flags.enhancedConfirmationInCallApisEnabled()) {
+            return;
+        }
+        if (call.getDetails() == null) {
+            return;
+        }
+        mOngoingCalls.put(call.getDetails().getId(), getCallType(call));
+    }
+
+    void removeOngoingCall(String callId) {
+        if (!Flags.enhancedConfirmationInCallApisEnabled()) {
+            return;
+        }
+        Integer returned = mOngoingCalls.remove(callId);
+        if (returned == null) {
+            // TODO b/379941144: Capture a bug report whenever this happens.
+        }
+    }
+
+    void clearOngoingCalls() {
+        mOngoingCalls.clear();
+    }
+
+    private @CallType int getCallType(Call call) {
+        String number = getPhoneNumber(call);
+        try {
+            if (number != null && mTelephonyManager.isEmergencyNumber(number)) {
+                return CALL_TYPE_EMERGENCY;
+            }
+        } catch (IllegalStateException | UnsupportedOperationException e) {
+            // If either of these are thrown, the telephony service is not available on the current
+            // device, either because the device lacks telephony calling, or the telephony service
+            // is unavailable.
+        }
+        if (number != null) {
+            return hasContactWithPhoneNumber(number) ? CALL_TYPE_TRUSTED : CALL_TYPE_UNTRUSTED;
+        } else {
+            return hasContactWithDisplayName(call.getDetails().getCallerDisplayName())
+                    ? CALL_TYPE_TRUSTED : CALL_TYPE_UNTRUSTED;
+        }
+    }
+
+    private String getPhoneNumber(Call call) {
+        Uri handle = call.getDetails().getHandle();
+        if (handle == null || handle.getScheme() == null) {
+            return null;
+        }
+        if (!handle.getScheme().equals(PhoneAccount.SCHEME_TEL)) {
+            return null;
+        }
+        return handle.getSchemeSpecificPart();
+    }
+
+    private boolean hasContactWithPhoneNumber(String phoneNumber) {
+        if (phoneNumber == null) {
+            return false;
+        }
+        Uri uri = Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI,
+                Uri.encode(phoneNumber));
+        String[] projection = new String[]{
+                PhoneLookup.DISPLAY_NAME,
+                ContactsContract.PhoneLookup._ID
+        };
+        try (Cursor res = mContentResolver.query(uri, projection, null, null)) {
+            return res != null && res.getCount() > 0;
+        }
+    }
+
+    private boolean hasContactWithDisplayName(String displayName) {
+        if (displayName == null) {
+            return false;
+        }
+        Uri uri = ContactsContract.Data.CONTENT_URI;
+        String[] projection = new String[]{PhoneLookup._ID};
+        String selection = StructuredName.DISPLAY_NAME + " = ?";
+        String[] selectionArgs = new String[]{displayName};
+        try (Cursor res = mContentResolver.query(uri, projection, selection, selectionArgs, null)) {
+            return res != null && res.getCount() > 0;
+        }
+    }
+
+    private boolean hasCallOfType(@CallType int callType) {
+        for (int ongoingCallType : mOngoingCalls.values()) {
+            if (ongoingCallType == callType) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private class Stub extends IEnhancedConfirmationManager.Stub {
@@ -114,6 +238,10 @@ public class EnhancedConfirmationService extends SystemService {
         }
 
         private static final ArraySet<String> PROTECTED_SETTINGS = new ArraySet<>();
+
+        // Settings restricted when an untrusted call is ongoing. These must also be added to
+        // PROTECTED_SETTINGS
+        private static final ArraySet<String> UNTRUSTED_CALL_RESTRICTED_SETTINGS = new ArraySet<>();
 
         static {
             // Runtime permissions
@@ -135,6 +263,13 @@ public class EnhancedConfirmationService extends SystemService {
             // Default application roles.
             PROTECTED_SETTINGS.add(RoleManager.ROLE_DIALER);
             PROTECTED_SETTINGS.add(RoleManager.ROLE_SMS);
+
+            if (Flags.unknownCallPackageInstallBlockingEnabled()) {
+                // Requesting package installs, limited during phone calls
+                PROTECTED_SETTINGS.add(AppOpsManager.OPSTR_REQUEST_INSTALL_PACKAGES);
+                UNTRUSTED_CALL_RESTRICTED_SETTINGS.add(
+                        AppOpsManager.OPSTR_REQUEST_INSTALL_PACKAGES);
+            }
         }
 
         private final @NonNull Context mContext;
@@ -163,8 +298,13 @@ public class EnhancedConfirmationService extends SystemService {
                     "settingIdentifier cannot be null or empty");
 
             try {
-                return isSettingEcmProtected(settingIdentifier) && isPackageEcmGuarded(packageName,
-                        userId);
+                if (!isSettingEcmProtected(settingIdentifier)) {
+                    return false;
+                }
+                if (isSettingProtectedGlobally(settingIdentifier)) {
+                    return true;
+                }
+                return isPackageEcmGuarded(packageName, userId);
             } catch (NameNotFoundException e) {
                 throw new IllegalArgumentException(e);
             }
@@ -227,8 +367,21 @@ public class EnhancedConfirmationService extends SystemService {
             }
         }
 
+        private boolean isUntrustedCallOngoing() {
+            if (!Flags.unknownCallPackageInstallBlockingEnabled()) {
+                return false;
+            }
+
+            if (hasCallOfType(CALL_TYPE_EMERGENCY)) {
+                // If we have an emergency call, return false always.
+                return false;
+            }
+            return hasCallOfType(CALL_TYPE_UNTRUSTED);
+        }
+
         private void enforcePermissions(@NonNull String methodName, @UserIdInt int userId) {
-            UserUtils.enforceCrossUserPermission(userId, false, methodName, mContext);
+            UserUtils.enforceCrossUserPermission(userId, /* allowAll= */ false,
+                    /* enforceForProfileGroup= */ false, methodName, mContext);
             mContext.enforceCallingOrSelfPermission(
                     android.Manifest.permission.MANAGE_ENHANCED_CONFIRMATION_STATES, methodName);
         }
@@ -322,6 +475,7 @@ public class EnhancedConfirmationService extends SystemService {
             return (applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0;
         }
 
+        @SuppressLint("WrongConstant")
         private void setAppEcmState(@NonNull String packageName, @EcmState int ecmState,
                 @UserIdInt int userId) throws NameNotFoundException {
             int packageUid = getPackageUid(packageName, userId);
@@ -356,6 +510,14 @@ public class EnhancedConfirmationService extends SystemService {
                 return true;
             }
             // TODO(b/310218979): Add role selections as protected settings
+            return false;
+        }
+
+        private boolean isSettingProtectedGlobally(@NonNull String settingIdentifier) {
+            if (UNTRUSTED_CALL_RESTRICTED_SETTINGS.contains(settingIdentifier)) {
+                return isUntrustedCallOngoing();
+            }
+
             return false;
         }
 

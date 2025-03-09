@@ -369,7 +369,7 @@
     <string name="role_dialer_search_keywords" msgid="3324448983559188087">"çevirici"</string>
     <string name="role_sms_label" msgid="8456999857547686640">"Varsayılan SMS uygulaması"</string>
     <string name="role_sms_short_label" msgid="4371444488034692243">"SMS uygulaması"</string>
-    <string name="role_sms_description" msgid="3424020199148153513">"Kısa mesajlar, fotoğraflar, videolar ve başka içerikler göndermek ve almak için telefon numaranızı kullanmanıza olanak tanıyan uygulamalar"</string>
+    <string name="role_sms_description" msgid="3424020199148153513">"Kısa mesaj, fotoğraf ve video gibi içerikleri göndermek ve almak için telefon numaranızı kullanabileceğiniz uygulamalar"</string>
     <string name="role_sms_request_title" msgid="7953552109601185602">"<xliff:g id="APP_NAME">%1$s</xliff:g> varsayılan SMS uygulamanız olarak ayarlansın mı?"</string>
     <string name="role_sms_request_description" msgid="2691004766132144886">"Bu uygulama Kamera, Kişiler, Dosyalar ve medya, Mikrofon, Telefon ve SMS\'inize erişebilecek"</string>
     <string name="role_sms_search_keywords" msgid="8022048144395047352">"kısa mesaj, kısa mesaj gönderme, mesajlar, mesajlaşma"</string>
@@ -381,7 +381,7 @@
     <string name="role_emergency_search_keywords" msgid="1920007722599213358">"acil durumda"</string>
     <string name="role_home_label" msgid="3871847846649769412">"Varsayılan ana ekran uygulaması"</string>
     <string name="role_home_short_label" msgid="8544733747952272337">"Ana ekran uygulaması"</string>
-    <string name="role_home_description" msgid="7997371519626556675">"Android cihazınızın Ana ekranı yerine geçen ve cihazınızın içeriklerine ve özelliklerine erişmenizi sağlayan, genellikle başlatıcı olarak adlandırılan uygulamalar"</string>
+    <string name="role_home_description" msgid="7997371519626556675">"Android cihazınızın ana ekranı yerine geçen, cihazınızın içeriklerine ve özelliklerine erişmenizi sağlayan, genellikle başlatıcılar olarak adlandırılan uygulamalar"</string>
     <string name="role_home_request_title" msgid="738136983453341081">"<xliff:g id="APP_NAME">%1$s</xliff:g>, varsayılan ana ekran uygulamanız olarak ayarlansın mı?"</string>
     <string name="role_home_request_description" msgid="2658833966716057673">"Herhangi bir izin gerekli değil"</string>
     <string name="role_home_search_keywords" msgid="3830755001192666285">"başlatıcı"</string>
@@ -454,7 +454,7 @@
     <string name="incident_report_channel_name" msgid="3144954065936288440">"Hata Ayıklama Verilerini Paylaş"</string>
     <string name="incident_report_notification_title" msgid="4635984625656519773">"Ayrıntılı hata ayıklama verileri paylaşılsın mı?"</string>
     <string name="incident_report_notification_text" msgid="3376480583513587923">"<xliff:g id="APP_NAME">%1$s</xliff:g>, hata ayıklama bilgilerini yüklemek istiyor."</string>
-    <string name="incident_report_dialog_title" msgid="669104389325204095">"Hata ayıklama Verileri Paylaşılsın mı?"</string>
+    <string name="incident_report_dialog_title" msgid="669104389325204095">"Hata ayıklama verileri paylaşılsın mı?"</string>
     <string name="incident_report_dialog_intro" msgid="5897733669850951832">"Sistem bir sorun algıladı."</string>
     <string name="incident_report_dialog_text" msgid="5675553296891757523">"<xliff:g id="APP_NAME_0">%1$s</xliff:g>, bu cihazda <xliff:g id="DATE">%2$s</xliff:g> saat <xliff:g id="TIME">%3$s</xliff:g> itibarıyla kaydedilen hata raporunu yüklemek istiyor. Hata raporları cihazınızla ilgili veya uygulamalar tarafından günlüğe kaydedilmiş kişisel bilgiler (örneğin kullanıcı adları, konum verisi, cihaz tanımlayıcılar ve ağ bilgileri) içerir. Hata raporlarını yalnızca bu bilgileri verme konusunda güvendiğiniz kişi ve uygulamalarla paylaşın. <xliff:g id="APP_NAME_1">%4$s</xliff:g> uygulamasının hata raporu yüklemesine izin verilsin mi?"</string>
     <string name="incident_report_error_dialog_text" msgid="4189647113387092272">"<xliff:g id="APP_NAME">%1$s</xliff:g> hata raporunu işlemeyle ilgili sorun oluştu. Ayrıntılı hata ayıklama verilerinin paylaşılması reddedildi. Kesinti için üzgünüz."</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Kısıtlanmış ayarlara izin verme"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Kısıtlanmış ayar"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Güvenliğiniz için bu ayar şu anda kullanılamıyor."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"İşlem, telefon görüşmesi sırasında yapılamaz"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Telefon görüşmesi sırasında uygulamaların başka uygulama yüklemesine izin verilmez.\n\n Dolandırıcıların genellikle telefon görüşmesi sırasında talep ettiği bu tür işlemler sizi korumak için engellenir. Tanımadığınız biri tarafından bu işlemi yapmanız isteniyorsa dolandırılıyor olabilirsiniz."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"Uygulamanın <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> iznine erişimi reddedildi"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"Uygulama, kişisel ve finansal bilgilerinizi riske atabilecek hassas bir izne erişim istedi.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Bu kısıtlı izin olmadan uygulama düzgün çalışmayabilir. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Erişime nasıl izin vereceğinizi öğrenin&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"Uygulamanın varsayılan <xliff:g id="ROLE_NAME">%1$s</xliff:g> olarak kullanılma erişimi reddedildi"</string>

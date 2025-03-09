@@ -23,12 +23,13 @@ import android.annotation.SystemApi;
 import android.annotation.SystemApi.Client;
 import android.permission.flags.Flags;
 
+import java.util.Collections;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
 /**
- * State of all roles.
+ * State of all roles for a user.
  *
  * TODO(b/147914847): Remove @hide when it becomes the default.
  * @hide
@@ -59,6 +60,12 @@ public final class RolesState {
     private final Set<String> mFallbackEnabledRoles;
 
     /**
+     * The active users for cross user roles.
+     */
+    @NonNull
+    private final Map<String, Integer> mActiveUserIds;
+
+    /**
      * Create a new instance of this class.
      *
      * @param version the version of the roles
@@ -81,10 +88,27 @@ public final class RolesState {
     @FlaggedApi(Flags.FLAG_SYSTEM_SERVER_ROLE_CONTROLLER_ENABLED)
     public RolesState(int version, @Nullable String packagesHash,
             @NonNull Map<String, Set<String>> roles, @NonNull Set<String> fallbackEnabledRoles) {
+        this(version, packagesHash, roles, fallbackEnabledRoles, Collections.emptyMap());
+    }
+
+    /**
+     * Create a new instance of this class.
+     *
+     * @param version the version of the roles
+     * @param packagesHash the hash of all packages in the system
+     * @param roles the roles
+     * @param fallbackEnabledRoles the roles with fallback enabled
+     * @param activeUserIds the active users for cross user roles
+     * @hide
+     */
+    public RolesState(int version, @Nullable String packagesHash,
+            @NonNull Map<String, Set<String>> roles, @NonNull Set<String> fallbackEnabledRoles,
+            @NonNull Map<String, Integer> activeUserIds) {
         mVersion = version;
         mPackagesHash = packagesHash;
         mRoles = roles;
         mFallbackEnabledRoles = fallbackEnabledRoles;
+        mActiveUserIds = activeUserIds;
     }
 
     /**
@@ -127,6 +151,17 @@ public final class RolesState {
         return mFallbackEnabledRoles;
     }
 
+    /**
+     * Get the active users for cross user roles.
+     *
+     * @return active users for cross user roles
+     * @hide
+     */
+    @NonNull
+    public Map<String, Integer> getActiveUserIds() {
+        return mActiveUserIds;
+    }
+
     @Override
     public boolean equals(Object object) {
         if (this == object) {
@@ -139,11 +174,12 @@ public final class RolesState {
         return mVersion == that.mVersion
                 && Objects.equals(mPackagesHash, that.mPackagesHash)
                 && Objects.equals(mRoles, that.mRoles)
-                && Objects.equals(mFallbackEnabledRoles, that.mFallbackEnabledRoles);
+                && Objects.equals(mFallbackEnabledRoles, that.mFallbackEnabledRoles)
+                && Objects.equals(mActiveUserIds, that.mActiveUserIds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(mVersion, mPackagesHash, mRoles, mFallbackEnabledRoles);
+        return Objects.hash(mVersion, mPackagesHash, mRoles, mFallbackEnabledRoles, mActiveUserIds);
     }
 }

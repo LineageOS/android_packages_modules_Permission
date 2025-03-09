@@ -256,7 +256,7 @@
     <string name="allowed_storage_scoped" msgid="5383645873719086975">"مجاز فقط برای دسترسی به رسانه‌ها"</string>
     <string name="allowed_storage_full" msgid="5356699280625693530">"مجاز برای مدیریت همه فایل‌ها"</string>
     <string name="ask_header" msgid="2633816846459944376">"هربار پرسیده شود"</string>
-    <string name="denied_header" msgid="903209608358177654">"مجاز نبودن"</string>
+    <string name="denied_header" msgid="903209608358177654">"مجاز نیست"</string>
     <string name="permission_group_name_with_device_name" msgid="8798741850536024820">"<xliff:g id="PERM_GROUP_NAME">%1$s</xliff:g> در <xliff:g id="DEVICE_NAME">%2$s</xliff:g>"</string>
     <string name="storage_footer_hyperlink_text" msgid="8873343987957834810">"دیدن برنامه‌های دیگری که به همه فایل‌ها دسترسی دارند"</string>
     <string name="days" msgid="609563020985571393">"{count,plural, =1{یک روز}one{# روز}other{# روز}}"</string>
@@ -320,7 +320,7 @@
     <string name="permission_subtitle_only_in_foreground" msgid="9068389431267377564">"تنها هنگام استفاده از برنامه"</string>
     <string name="permission_subtitle_media_only" msgid="8917869683764720717">"رسانه"</string>
     <string name="permission_subtitle_all_files" msgid="4982613338298067862">"همه فایل‌ها"</string>
-    <string name="permission_subtitle_background" msgid="8916750995309083180">"همیشه مجاز بودن"</string>
+    <string name="permission_subtitle_background" msgid="8916750995309083180">"همیشه مجاز است"</string>
     <string name="app_perms_24h_access" msgid="99069906850627181">"آخرین زمان دسترسی: <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
     <string name="app_perms_24h_access_yest" msgid="5411926024794555022">"آخرین زمان دسترسی دیروز ساعت <xliff:g id="TIME_DATE">%1$s</xliff:g>"</string>
     <string name="app_perms_7d_access" msgid="4945055548894683751">"آخرین دسترسی: <xliff:g id="TIME_DATE_0">%1$s</xliff:g> ساعت <xliff:g id="TIME_DATE_1">%2$s</xliff:g>"</string>
@@ -381,7 +381,7 @@
     <string name="role_emergency_search_keywords" msgid="1920007722599213358">"ice"</string>
     <string name="role_home_label" msgid="3871847846649769412">"برنامه صفحه اصلی پیش‌فرض"</string>
     <string name="role_home_short_label" msgid="8544733747952272337">"برنامه صفحه اصلی"</string>
-    <string name="role_home_description" msgid="7997371519626556675">"‏برنامه‌های عموماً موسوم به راه‌انداز، که جایگزین صفحه‌های اصلی در دستگاه Android می‌شوند و امکان دسترسی به محتواها و ویژگی‌های دستگاه را می‌دهند"</string>
+    <string name="role_home_description" msgid="7997371519626556675">"‏برنامه‌هایی (موسوم به راه‌انداز) که جایگزین صفحه‌های اصلی در دستگاه Android می‌شوند و امکان دسترسی به محتواها و ویژگی‌های دستگاه را می‌دهند"</string>
     <string name="role_home_request_title" msgid="738136983453341081">"<xliff:g id="APP_NAME">%1$s</xliff:g> به‌عنوان برنامه صفحه اصلی پیش‌فرض تنظیم شود؟"</string>
     <string name="role_home_request_description" msgid="2658833966716057673">"اجازه لازم نیست"</string>
     <string name="role_home_search_keywords" msgid="3830755001192666285">"راه‌انداز"</string>
@@ -471,7 +471,7 @@
     <string name="permgrouprequest_device_aware_storage_isolated" msgid="6463062962458809752">"به «<xliff:g id="APP_NAME">%1$s</xliff:g>» اجازه می‌دهید به عکس‌ها و رسانه‌های «<xliff:g id="DEVICE_NAME">%2$s</xliff:g>» دسترسی داشته باشد؟"</string>
     <string name="permgrouprequest_contacts" msgid="8391550064551053695">"‏به &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; اجازه دسترسی به مخاطبینتان می‌دهید؟"</string>
     <string name="permgrouprequest_device_aware_contacts" msgid="731025863972535928">"به «<xliff:g id="APP_NAME">%1$s</xliff:g>» اجازه می‌دهید به مخاطبین شما در «<xliff:g id="DEVICE_NAME">%2$s</xliff:g>» دسترسی داشته باشد؟"</string>
-    <string name="permgrouprequest_location" msgid="6990232580121067883">"‏به &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; اجازه دسترسی به مکان این دستگاه می‌دهید؟"</string>
+    <string name="permgrouprequest_location" msgid="6990232580121067883">"‏به &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; اجازه دسترسی به مکان این دستگاه را می‌دهید؟"</string>
     <string name="permgrouprequest_device_aware_location" msgid="6075412127429878638">"به «<xliff:g id="APP_NAME">%1$s</xliff:g>» اجازه می‌دهید به مکان «<xliff:g id="DEVICE_NAME">%2$s</xliff:g>» دسترسی داشته باشد؟"</string>
     <string name="permgrouprequestdetail_location" msgid="2635935335778429894">"این برنامه فقط وقتی از آن استفاده می‌کنید، به مکان دسترسی خواهد داشت"</string>
     <string name="permgroupbackgroundrequest_location" msgid="1085680897265734809">"‏به &lt;b&gt;<xliff:g id="APP_NAME">%1$s</xliff:g>&lt;/b&gt; اجازه داده شود به مکان این دستگاه دسترسی پیدا کند؟"</string>
@@ -581,7 +581,7 @@
     <string name="sensor_permissions_qs" msgid="1022267900031317472">"اجازه‌ها"</string>
     <string name="safety_privacy_qs_tile_title" msgid="727301867710374052">"امنیت و حریم خصوصی"</string>
     <string name="safety_privacy_qs_tile_subtitle" msgid="3621544532041936749">"بررسی وضعیت"</string>
-    <string name="privacy_controls_qs" msgid="5780144882040591169">"تنظیمات حریم خصوصی شما"</string>
+    <string name="privacy_controls_qs" msgid="5780144882040591169">"کنترل‌های حریم خصوصی شما"</string>
     <string name="security_settings_button_label_qs" msgid="8280343822465962330">"تنظیمات بیشتر"</string>
     <string name="camera_toggle_label_qs" msgid="3880261453066157285">"دسترسی به دوربین"</string>
     <string name="microphone_toggle_label_qs" msgid="8132912469813396552">"دسترسی به میکروفون"</string>
@@ -601,7 +601,7 @@
     <string name="active_app_usage_2_qs" msgid="6107866785243565283">"<xliff:g id="APP_NAME">%1$s</xliff:g> درحال استفاده از آن است (<xliff:g id="ATTRIBUTION_LABEL">%2$s</xliff:g> • <xliff:g id="PROXY_LABEL">%3$s</xliff:g>)"</string>
     <string name="recent_app_usage_2_qs" msgid="3591205954235694403">"اخیراً <xliff:g id="APP_NAME">%1$s</xliff:g> از آن استفاده کرده است (<xliff:g id="ATTRIBUTION_LABEL">%2$s</xliff:g> • <xliff:g id="PROXY_LABEL">%3$s</xliff:g>)"</string>
     <string name="media_confirm_dialog_positive_button" msgid="9020793594051526399">"تأیید"</string>
-    <string name="media_confirm_dialog_negative_button" msgid="226987376924861785">"برگشت"</string>
+    <string name="media_confirm_dialog_negative_button" msgid="226987376924861785">"برگشتن"</string>
     <string name="media_confirm_dialog_title_a_to_p_aural_allow" msgid="8560601114044699903">"دسترسی به فایل‌های دیگر نیز مجاز می‌شود"</string>
     <string name="media_confirm_dialog_title_a_to_p_aural_deny" msgid="7841428716317307685">"دسترسی به فایل‌های دیگر نیز مجاز نمی‌شود"</string>
     <string name="media_confirm_dialog_title_a_to_p_visual_allow" msgid="6469086448310893751">"دسترسی به فایل‌های دیگر نیز مجاز می‌شود"</string>
@@ -624,7 +624,7 @@
     <string name="safety_center_background_location_access_reminder_summary" msgid="7431657777510537658">"این برنامه همیشه می‌تواند به مکانتان دسترسی داشته باشد، حتی وقتی بسته باشد.\n\nبرخی‌از برنامه‌های ایمنی و اضطراری برای اینکه عملکرد موردانتظار را داشته باشند باید به مکان شما در پس‌زمینه دسترسی داشته باشند."</string>
     <string name="safety_center_background_location_access_revoked" msgid="6972274943343442213">"دسترسی تغییر کرد"</string>
     <string name="safety_center_view_recent_location_access" msgid="3524391299490678243">"دیدن استفاده اخیر از مکان"</string>
-    <string name="privacy_controls_title" msgid="7605929972256835199">"تنظیمات حریم خصوصی"</string>
+    <string name="privacy_controls_title" msgid="7605929972256835199">"کنترل‌های حریم خصوصی"</string>
     <string name="camera_toggle_title" msgid="1251201397431837666">"دسترسی به دوربین"</string>
     <string name="mic_toggle_title" msgid="2649991093496110162">"دسترسی به میکروفون"</string>
     <string name="perm_toggle_description" msgid="7801326363741451379">"برای برنامه‌ها و سرویس‌ها"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"مجاز کردن تنظیمات محدودشده"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"تنظیم محدودشده"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"برای حفظ امنیت شما، درحال‌حاضر این تنظیم دردسترس نیست."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"اقدام درطول تماس تلفنی دردسترس نیست"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"درطول تماس تلفنی، اجازه دادن به برنامه‌ها برای نصب برنامه‌های دیگر مجاز نیست.\n\n افراد کلاهبردار اغلب این نوع اقدامات را درطول مکالمه‌های تلفنی درخواست می‌کنند، بنابراین این کار برای محافظت از شما مسدود شده است. اگر شخص ناآشنایی شما را ترغیب به انجام این اقدام می‌کند، ممکن است موضوع کلاهبرداری باشد."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"درخواست برنامه برای دسترسی به <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> رد شد"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"‏این برنامه درخواست دسترسی به اجازه‌ای حساس را داشته است که می‌تواند اطلاعات شخصی و مالی‌تان را درمعرض خطر قرار دهد.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>ممکن است برنامه بدون این اجازه محدودشده به‌درستی کار نکند. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;با نحوه اعطای دسترسی آشنا شوید&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"درخواست دسترسی برنامه برای تبدیل شدن به <xliff:g id="ROLE_NAME">%1$s</xliff:g> پیش‌فرض رد شد"</string>

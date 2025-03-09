@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
-package com.android.permissioncontroller.permission.ui.handheld
+package com.android.permissioncontroller.permission.ui.handheld.v36
 
 import android.content.Context
+import android.os.Build
 import android.util.AttributeSet
 import android.widget.ImageView
 import androidx.annotation.AttrRes
 import androidx.annotation.DrawableRes
+import androidx.annotation.RequiresApi
 import androidx.annotation.StyleRes
 import androidx.preference.PreferenceViewHolder
 import com.android.permissioncontroller.R
@@ -32,6 +34,7 @@ import com.android.settingslib.widget.TwoTargetPreference
  * - Propagates the supplied `app:extraWidgetIcon` drawable to the second target
  * - Allows defining a click listener on the second target (the icon on the right)
  */
+@RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
 class PermissionTwoTargetPreference : TwoTargetPreference {
     constructor(context: Context) : super(context) {
         init(context, null)
@@ -44,7 +47,7 @@ class PermissionTwoTargetPreference : TwoTargetPreference {
     constructor(
         context: Context,
         attrs: AttributeSet?,
-        @AttrRes defStyleAttr: Int
+        @AttrRes defStyleAttr: Int,
     ) : super(context, attrs, defStyleAttr) {
         init(context, attrs)
     }
@@ -53,12 +56,13 @@ class PermissionTwoTargetPreference : TwoTargetPreference {
         context: Context,
         attrs: AttributeSet?,
         @AttrRes defStyleAttr: Int,
-        @StyleRes defStyleRes: Int
+        @StyleRes defStyleRes: Int,
     ) : super(context, attrs, defStyleAttr, defStyleRes) {
         init(context, attrs)
     }
 
     private fun init(context: Context, attrs: AttributeSet?) {
+        layoutResource = R.layout.permission_preference_two_target
         extraWidgetIconRes =
             ResourceUtils.getResourceIdByAttr(context, attrs, R.attr.extraWidgetIcon)
     }

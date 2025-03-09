@@ -16,8 +16,43 @@
 
 package com.android.permissioncontroller.permission.ui.wear.elements
 
-public enum class ToggleChipToggleControl {
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.role
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
+import com.android.permissioncontroller.R
+
+enum class ToggleChipToggleControl {
     Switch,
     Radio,
-    Checkbox
+    Checkbox,
+}
+
+@Composable
+fun Modifier.toggleControlSemantics(
+    toggleControl: ToggleChipToggleControl,
+    checked: Boolean,
+): Modifier {
+    val semanticsRole =
+        when (toggleControl) {
+            ToggleChipToggleControl.Switch -> Role.Switch
+            ToggleChipToggleControl.Radio -> Role.RadioButton
+            ToggleChipToggleControl.Checkbox -> Role.Checkbox
+        }
+    val stateDescriptionSemantics =
+        stringResource(
+            if (checked) {
+                R.string.on
+            } else {
+                R.string.off
+            }
+        )
+
+    return semantics {
+        role = semanticsRole
+        stateDescription = stateDescriptionSemantics
+    }
 }

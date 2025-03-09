@@ -29,11 +29,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.semantics.role
-import androidx.compose.ui.semantics.semantics
-import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.wear.compose.material.ChipDefaults
@@ -44,7 +39,6 @@ import androidx.wear.compose.material.ToggleChip
 import androidx.wear.compose.material.ToggleChipColors
 import androidx.wear.compose.material.ToggleChipDefaults
 import androidx.wear.compose.material.contentColorFor
-import com.android.permissioncontroller.R
 
 /**
  * This component is an alternative to [ToggleChip], providing the following:
@@ -67,7 +61,7 @@ fun ToggleChip(
     secondaryLabelMaxLine: Int? = null,
     colors: ToggleChipColors = ToggleChipDefaults.toggleChipColors(),
     enabled: Boolean = true,
-    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() }
+    interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
 ) {
     val hasSecondaryLabel = secondaryLabel != null
 
@@ -78,7 +72,7 @@ fun ToggleChip(
             textAlign = TextAlign.Start,
             overflow = TextOverflow.Ellipsis,
             maxLines = labelMaxLine ?: if (hasSecondaryLabel) 1 else 2,
-            style = MaterialTheme.typography.button
+            style = MaterialTheme.typography.button,
         )
     }
 
@@ -89,7 +83,7 @@ fun ToggleChip(
                     text = secondaryLabel,
                     overflow = TextOverflow.Ellipsis,
                     maxLines = secondaryLabelMaxLine ?: 1,
-                    style = MaterialTheme.typography.caption2
+                    style = MaterialTheme.typography.caption2,
                 )
             }
         }
@@ -110,7 +104,7 @@ fun ToggleChip(
                     IconRtlMode.Mirrored
                 } else {
                     IconRtlMode.Default
-                }
+                },
         )
     }
 
@@ -123,42 +117,23 @@ fun ToggleChip(
                         tint = iconColor,
                         contentDescription = null,
                         modifier = Modifier.size(ChipDefaults.IconSize).clip(CircleShape),
-                        rtlMode = iconRtlMode
+                        rtlMode = iconRtlMode,
                     )
                 }
             }
         }
 
-    val semanticsRole =
-        when (toggleControl) {
-            ToggleChipToggleControl.Switch -> Role.Switch
-            ToggleChipToggleControl.Radio -> Role.RadioButton
-            ToggleChipToggleControl.Checkbox -> Role.Checkbox
-        }
-
-    val stateDescriptionSemantics =
-        stringResource(
-            if (checked) {
-                R.string.on
-            } else {
-                R.string.off
-            }
-        )
     ToggleChip(
         checked = checked,
         onCheckedChange = onCheckedChanged,
         label = labelParam,
         toggleControl = toggleControlParam,
-        modifier =
-            modifier.fillMaxWidth().semantics {
-                role = semanticsRole
-                stateDescription = stateDescriptionSemantics
-            },
+        modifier = modifier.fillMaxWidth().toggleControlSemantics(toggleControl, checked),
         appIcon = iconParam,
         secondaryLabel = secondaryLabelParam,
         colors = colors,
         enabled = enabled,
-        interactionSource = interactionSource
+        interactionSource = interactionSource,
     )
 }
 
@@ -198,7 +173,7 @@ fun toggleChipDisabledColors(): ToggleChipColors {
         uncheckedSecondaryContentColor =
             uncheckedSecondaryContentColor.copy(alpha = ContentAlpha.disabled),
         uncheckedToggleControlColor =
-            uncheckedToggleControlColor.copy(alpha = ContentAlpha.disabled)
+            uncheckedToggleControlColor.copy(alpha = ContentAlpha.disabled),
     )
 }
 
@@ -236,6 +211,6 @@ fun toggleChipBackgroundColors(): ToggleChipColors {
         uncheckedEndBackgroundColor = uncheckedEndBackgroundColor,
         uncheckedContentColor = uncheckedContentColor,
         uncheckedSecondaryContentColor = uncheckedSecondaryContentColor,
-        uncheckedToggleControlColor = uncheckedToggleControlColor
+        uncheckedToggleControlColor = uncheckedToggleControlColor,
     )
 }

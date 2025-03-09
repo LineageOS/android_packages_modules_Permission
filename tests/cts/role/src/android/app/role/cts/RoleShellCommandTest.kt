@@ -19,15 +19,19 @@ package android.app.role.cts
 import android.app.role.RoleManager
 import android.os.Build
 import android.os.UserHandle
+import android.platform.test.annotations.RequiresFlagsEnabled
+import android.platform.test.flag.junit.DeviceFlagsValueProvider
 import androidx.test.InstrumentationRegistry
 import androidx.test.filters.SdkSuppress
 import androidx.test.runner.AndroidJUnit4
 import com.android.compatibility.common.util.SystemUtil.callWithShellPermissionIdentity
 import com.android.compatibility.common.util.SystemUtil.runShellCommandOrThrow
+import com.android.permission.flags.Flags
 import com.google.common.truth.Truth.assertThat
 import org.junit.After
 import org.junit.Assert.assertThrows
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -43,8 +47,23 @@ class RoleShellCommandTest {
     private var roleHolder: String? = null
     private var wasBypassingRoleQualification: Boolean = false
 
+    @get:Rule val flagsRule = DeviceFlagsValueProvider.createCheckFlagsRule()
+
     @Before
-    fun saveRoleHolder() {
+    public fun setUp() {
+        saveRoleHolder()
+        saveBypassingRoleQualification()
+        installApp()
+    }
+
+    @After
+    public fun tearDown() {
+        uninstallApp()
+        restoreBypassingRoleQualification()
+        restoreRoleHolder()
+    }
+
+    private fun saveRoleHolder() {
         roleHolder = getRoleHolders().firstOrNull()
         if (roleHolder == APP_PACKAGE_NAME) {
             removeRoleHolder()
@@ -52,31 +71,30 @@ class RoleShellCommandTest {
         }
     }
 
-    @Before
-    fun saveBypassingRoleQualification() {
+    private fun saveBypassingRoleQualification() {
         wasBypassingRoleQualification = isBypassingRoleQualification()
     }
 
-    @After
-    fun restoreRoleHolder() {
+    private fun restoreRoleHolder() {
         removeRoleHolder()
         roleHolder?.let { addRoleHolder(it) }
         assertIsRoleHolder(false)
     }
 
-    @After
-    fun restoreBypassingRoleQualification() {
+    private fun restoreBypassingRoleQualification() {
         setBypassingRoleQualification(wasBypassingRoleQualification)
     }
 
-    @Before
-    fun installApp() {
+    private fun installApp() {
         installPackage(APP_APK_PATH)
+        // Install CtsRoleTestAppClone as default role holder for browser role
+        // in case no browser is installed on system
+        installPackage(APP_CLONE_APK_PATH)
     }
 
-    @After
-    fun uninstallApp() {
+    private fun uninstallApp() {
         uninstallPackage(APP_PACKAGE_NAME)
+        uninstallPackage(APP_CLONE_PACKAGE_NAME)
     }
 
     @Test
@@ -144,6 +162,31 @@ class RoleShellCommandTest {
         assertThat(isBypassingRoleQualification()).isFalse()
     }
 
+    @RequiresFlagsEnabled(Flags.FLAG_CROSS_USER_ROLE_ENABLED)
+    @SdkSuppress(minSdkVersion = Build.VERSION_CODES.BAKLAVA, codeName = "Baklava")
+    @Test
+    fun setActiveUserForProfileGroupExclusiveRoleAsUser() {
+        val activeUser = userId
+        setActiveUserForRole(PROFILE_GROUP_EXCLUSIVITY_ROLE_NAME, activeUser)
+
+        val currentActiveUserId = getActiveUserForRole(PROFILE_GROUP_EXCLUSIVITY_ROLE_NAME)
+        assertThat(currentActiveUserId).isEqualTo(activeUser)
+    }
+
+    @RequiresFlagsEnabled(Flags.FLAG_CROSS_USER_ROLE_ENABLED)
+    @SdkSuppress(minSdkVersion = Build.VERSION_CODES.BAKLAVA, codeName = "Baklava")
+    @Test
+    fun setActiveUserForNonProfileGroupExclusiveRoleThenFails() {
+        assertThrows(AssertionError::class.java) { setActiveUserForRole(ROLE_NAME, userId) }
+    }
+
+    @RequiresFlagsEnabled(Flags.FLAG_CROSS_USER_ROLE_ENABLED)
+    @SdkSuppress(minSdkVersion = Build.VERSION_CODES.BAKLAVA, codeName = "Baklava")
+    @Test
+    fun getActiveUserForNonProfileGroupExclusiveRoleThenFails() {
+        assertThrows(AssertionError::class.java) { getActiveUserForRole(ROLE_NAME) }
+    }
+
     private fun addRoleHolder(packageName: String = APP_PACKAGE_NAME) {
         runShellCommandOrThrow("cmd role add-role-holder --user $userId $ROLE_NAME $packageName")
     }
@@ -192,9 +235,25 @@ class RoleShellCommandTest {
         callWithShellPermissionIdentity { roleManager.setBypassingRoleQualification(value) }
     }
 
+    private fun getActiveUserForRole(roleName: String): Int? {
+        return runShellCommandOrThrow("cmd role get-active-user-for-role --user $userId $roleName")
+            .trim()
+            .toIntOrNull()
+    }
+
+    private fun setActiveUserForRole(roleName: String, activeUserId: Int) {
+        runShellCommandOrThrow(
+            "cmd role set-active-user-for-role --user $userId $roleName $activeUserId"
+        )
+    }
+
     companion object {
         private const val ROLE_NAME = RoleManager.ROLE_BROWSER
+        private const val PROFILE_GROUP_EXCLUSIVITY_ROLE_NAME =
+            RoleManager.ROLE_RESERVED_FOR_TESTING_PROFILE_GROUP_EXCLUSIVITY
         private const val APP_APK_PATH = "/data/local/tmp/cts-role/CtsRoleTestApp.apk"
         private const val APP_PACKAGE_NAME = "android.app.role.cts.app"
+        private const val APP_CLONE_APK_PATH = "/data/local/tmp/cts-role/CtsRoleTestAppClone.apk"
+        private const val APP_CLONE_PACKAGE_NAME = "android.app.role.cts.appClone"
     }
 }

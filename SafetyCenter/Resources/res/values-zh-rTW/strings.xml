@@ -23,7 +23,7 @@
     <string name="lock_screen_title" msgid="4069104894527169877">"螢幕鎖定"</string>
     <string name="lock_screen_summary_disabled" msgid="354071230916616692">"目前還沒有任何資訊"</string>
     <string name="lock_screen_search_terms" msgid="2678486357779794826">"裝置鎖定,螢幕鎖定,將螢幕鎖定,鎖定螢幕,密碼,PIN 碼,圖案"</string>
-    <string name="biometrics_title" msgid="5859504610285212938">"生物特徵辨識"</string>
+    <string name="biometrics_title" msgid="5859504610285212938">"生物辨識"</string>
     <string name="biometrics_search_terms" msgid="6040319118762671981">"指紋,手指,新增指紋,人臉解鎖,人臉"</string>
     <string name="privacy_sources_title" msgid="4061110826457365957">"隱私權"</string>
     <string name="privacy_sources_summary" msgid="4089719981155120864">"資訊主頁、權限、控制選項"</string>

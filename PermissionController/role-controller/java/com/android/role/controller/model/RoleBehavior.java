@@ -32,6 +32,14 @@ import java.util.List;
 public interface RoleBehavior {
 
     /**
+     * @see Role#getExclusivity()
+     */
+    @Nullable
+    default Integer getExclusivity() {
+        return null;
+    }
+
+    /**
      * @see Role#onRoleAddedAsUser(UserHandle, Context)
      */
     default void onRoleAddedAsUser(@NonNull Role role, @NonNull UserHandle user,

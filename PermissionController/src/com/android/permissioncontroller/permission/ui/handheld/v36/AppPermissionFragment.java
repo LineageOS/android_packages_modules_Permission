@@ -79,11 +79,10 @@ import com.android.permissioncontroller.permission.ui.GrantPermissionsViewHandle
 import com.android.permissioncontroller.permission.ui.handheld.AllAppPermissionsFragment;
 import com.android.permissioncontroller.permission.ui.handheld.AppPermissionGroupsFragment;
 import com.android.permissioncontroller.permission.ui.handheld.PermissionAppsFragment;
+import com.android.permissioncontroller.permission.ui.handheld.PermissionFooterPreference;
 import com.android.permissioncontroller.permission.ui.handheld.PermissionPreference;
 import com.android.permissioncontroller.permission.ui.handheld.PermissionPreferenceCategory;
-import com.android.permissioncontroller.permission.ui.handheld.PermissionSelectorWithWidgetPreference;
 import com.android.permissioncontroller.permission.ui.handheld.PermissionSwitchPreference;
-import com.android.permissioncontroller.permission.ui.handheld.PermissionTwoTargetPreference;
 import com.android.permissioncontroller.permission.ui.handheld.SettingsWithLargeHeader;
 import com.android.permissioncontroller.permission.ui.model.AppPermissionViewModel;
 import com.android.permissioncontroller.permission.ui.model.AppPermissionViewModel.ButtonState;
@@ -133,10 +132,10 @@ public class AppPermissionFragment extends SettingsWithLargeHeader
     private @NonNull SelectorWithWidgetPreference mDenyForegroundButton;
     private @NonNull PermissionSwitchPreference mLocationAccuracySwitch;
     private @NonNull PermissionTwoTargetPreference mDetails;
-    private @NonNull PermissionPreference mFooterLink1;
-    private @NonNull PermissionPreference mFooterLink2;
-    private @NonNull PermissionPreference mFooterStorageSpecialAppAccess;
-    private @NonNull PermissionPreference mAdditionalInfo;
+    private @NonNull AppPermissionFooterLinkPreference mFooterLink1;
+    private @NonNull AppPermissionFooterLinkPreference mFooterLink2;
+    private @NonNull PermissionFooterPreference mFooterStorageSpecialAppAccess;
+    private @NonNull PermissionFooterPreference mAdditionalInfo;
 
     private @NonNull String mPackageName;
     private @NonNull String mPermGroupName;
@@ -268,7 +267,7 @@ public class AppPermissionFragment extends SettingsWithLargeHeader
         if (exemptedPackages.contains(mPackageName)) {
             int additional_info_label = Utils.isStatusBarIndicatorPermission(mPermGroupName)
                     ? R.string.exempt_mic_camera_info_label : R.string.exempt_info_label;
-            mAdditionalInfo.setSummary(context.getString(additional_info_label, mPackageLabel));
+            mAdditionalInfo.setTitle(context.getString(additional_info_label, mPackageLabel));
             mAdditionalInfo.setVisible(true);
         } else {
             mAdditionalInfo.setVisible(false);

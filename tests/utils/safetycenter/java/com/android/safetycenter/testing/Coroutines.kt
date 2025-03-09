@@ -56,14 +56,14 @@ object Coroutines {
     /** Shorthand for [runBlocking] combined with [withTimeoutOrNull] */
     fun <T> runBlockingWithTimeoutOrNull(
         timeout: Duration = TIMEOUT_LONG,
-        block: suspend () -> T
+        block: suspend () -> T,
     ): T? = runBlocking { withTimeoutOrNull(timeout.toMillis()) { block() } }
 
     /** Check a condition using coroutines with a timeout. */
     fun waitForWithTimeout(
         timeout: Duration = TIMEOUT_LONG,
         checkPeriod: Duration = CHECK_PERIOD,
-        condition: () -> Boolean
+        condition: () -> Boolean,
     ) {
         runBlockingWithTimeout(timeout) { waitFor(checkPeriod, condition) }
     }
@@ -72,7 +72,7 @@ object Coroutines {
     fun waitForSuccessWithTimeout(
         timeout: Duration = TIMEOUT_LONG,
         checkPeriod: Duration = CHECK_PERIOD,
-        fallibleAction: () -> Unit
+        fallibleAction: () -> Unit,
     ) {
         waitForWithTimeout(timeout, checkPeriod) {
             try {

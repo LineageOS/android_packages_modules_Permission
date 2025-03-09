@@ -44,10 +44,11 @@ class PermissionReviewTapjackingTest : BaseUsePermissionTest() {
         installPackage(APP_APK_PATH_22)
         installPackage(HELPER_APP_OVERLAY)
 
-        Thread.sleep(1000)
+        SystemUtil.waitForBroadcasts()
 
+        val userId = context.getUserId()
         SystemUtil.runShellCommandOrThrow(
-            "appops set $HELPER_PACKAGE_NAME android:system_alert_window allow"
+            "appops set --user $userId $HELPER_PACKAGE_NAME android:system_alert_window allow"
         )
     }
 
@@ -78,11 +79,12 @@ class PermissionReviewTapjackingTest : BaseUsePermissionTest() {
 
         if (isWatch) {
             waitFindObject(
-                By.text(getPermissionControllerString("review_button_cancel")),
+                By.text(getPermissionControllerString("review_button_cancel")).displayId(displayId),
                 TIMEOUT_MILLIS * 2
             )
         } else {
-            waitFindObject(By.res("com.android.permissioncontroller:id/permissions_message"))
+            waitFindObject(By.res("com.android.permissioncontroller:id/permissions_message")
+                    .displayId(displayId))
         }
 
         try {
@@ -96,5 +98,5 @@ class PermissionReviewTapjackingTest : BaseUsePermissionTest() {
         findOverlay()
     }
 
-    private fun findOverlay() = waitFindObject(By.text("Find me!"))
+    private fun findOverlay() = waitFindObject(By.text("Find me!").displayId(displayId))
 }

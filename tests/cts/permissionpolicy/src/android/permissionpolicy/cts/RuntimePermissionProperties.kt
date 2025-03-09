@@ -33,6 +33,7 @@ import android.Manifest.permission.NEARBY_WIFI_DEVICES
 import android.Manifest.permission.PACKAGE_USAGE_STATS
 import android.Manifest.permission.POST_NOTIFICATIONS
 import android.Manifest.permission.PROCESS_OUTGOING_CALLS
+import android.Manifest.permission.RANGING
 import android.Manifest.permission.READ_CALENDAR
 import android.Manifest.permission.READ_CALL_LOG
 import android.Manifest.permission.READ_CELL_BROADCASTS
@@ -58,7 +59,9 @@ import android.app.AppOpsManager.permissionToOp
 import android.content.pm.PackageManager.GET_PERMISSIONS
 import android.content.pm.PermissionInfo.PROTECTION_DANGEROUS
 import android.content.pm.PermissionInfo.PROTECTION_FLAG_APPOP
+import android.health.connect.HealthPermissions
 import android.os.Build
+import android.permission.flags.Flags
 import android.permission.PermissionManager
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4
@@ -187,6 +190,24 @@ class RuntimePermissionProperties {
         // runtime permission
         expectedPerms.add(READ_MEDIA_VISUAL_USER_SELECTED)
 
-        assertThat(expectedPerms).containsExactlyElementsIn(platformRuntimePerms.map { it.name })
+        // Add runtime permissions added in B which were _not_ split from a previously existing
+        // runtime permission
+        if (Flags.rangingPermissionEnabled()) {
+            expectedPerms.add(RANGING)
+        }
+
+        // Separately check health permissions.
+        if (Flags.replaceBodySensorPermissionEnabled()) {
+            assertThat(expectedPerms).contains(HealthPermissions.READ_HEART_RATE);
+            assertThat(expectedPerms).contains(HealthPermissions.READ_HEALTH_DATA_IN_BACKGROUND);
+
+            // Remove these from the expected list once we've confirmed their
+            // present. These are not permissions owned by "android" so won't be
+            // in the list of platform runtime permissions.
+            expectedPerms.remove(HealthPermissions.READ_HEART_RATE);
+            expectedPerms.remove(HealthPermissions.READ_HEALTH_DATA_IN_BACKGROUND);
+        }
+
+        assertThat(platformRuntimePerms.map { it.name }).containsExactlyElementsIn(expectedPerms)
     }
 }

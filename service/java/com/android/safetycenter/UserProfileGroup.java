@@ -21,14 +21,11 @@ import static java.util.Objects.requireNonNull;
 import android.annotation.IntDef;
 import android.annotation.UserIdInt;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.os.Binder;
-import android.os.Process;
 import android.os.UserHandle;
 import android.os.UserManager;
+import android.permission.internal.compat.UserHandleCompat;
 import android.util.Log;
-
-import androidx.annotation.Nullable;
 
 import com.android.permission.util.UserUtils;
 
@@ -49,8 +46,6 @@ import java.util.Objects;
 public final class UserProfileGroup {
 
     private static final String TAG = "UserProfileGroup";
-    // UserHandle#USER_NULL is a @TestApi so it cannot be accessed from the mainline module.
-    public static final @UserIdInt int USER_NULL = -10000;
 
     @UserIdInt private final int mProfileParentUserId;
     private final int[] mManagedProfilesUserIds;
@@ -134,20 +129,16 @@ public final class UserProfileGroup {
      * is disabled.
      */
     public static UserProfileGroup fromUser(Context context, @UserIdInt int userId) {
-        UserManager userManager = getUserManagerForUser(userId, context);
-        List<UserHandle> userProfiles = getEnabledUserProfiles(userManager);
-        UserHandle profileParent = getProfileParent(userManager, userId);
-        int profileParentUserId = userId;
-        if (profileParent != null) {
-            profileParentUserId = profileParent.getIdentifier();
-        }
+        Context userContext = UserUtils.getUserContext(userId, context);
+        List<UserHandle> userProfiles = UserUtils.getUserProfiles(userContext);
+        int profileParentUserId = UserUtils.getProfileParentIdOrSelf(userId, userContext);
 
         int[] managedProfilesUserIds = new int[userProfiles.size()];
         int[] managedRunningProfilesUserIds = new int[userProfiles.size()];
         int managedProfilesUserIdsLen = 0;
         int managedRunningProfilesUserIdsLen = 0;
 
-        int privateProfileUserId = USER_NULL;
+        int privateProfileUserId = UserHandleCompat.USER_NULL;
         boolean privateProfileRunning = false;
 
         for (int i = 0; i < userProfiles.size(); i++) {
@@ -192,21 +183,8 @@ public final class UserProfileGroup {
     }
 
     private static UserManager getUserManagerForUser(@UserIdInt int userId, Context context) {
-        Context userContext = getUserContext(context, UserHandle.of(userId));
+        Context userContext = UserUtils.getUserContext(userId, context);
         return requireNonNull(userContext.getSystemService(UserManager.class));
-    }
-
-    private static Context getUserContext(Context context, UserHandle userHandle) {
-        if (Process.myUserHandle().equals(userHandle)) {
-            return context;
-        } else {
-            try {
-                return context.createPackageContextAsUser(
-                        context.getPackageName(), /* flags= */ 0, userHandle);
-            } catch (PackageManager.NameNotFoundException doesNotHappen) {
-                throw new IllegalStateException(doesNotHappen);
-            }
-        }
     }
 
     private static boolean isProfile(@UserIdInt int userId, Context context) {
@@ -215,27 +193,6 @@ public final class UserProfileGroup {
         try {
             UserManager userManager = getUserManagerForUser(userId, context);
             return userManager.isProfile();
-        } finally {
-            Binder.restoreCallingIdentity(callingId);
-        }
-    }
-
-    private static List<UserHandle> getEnabledUserProfiles(UserManager userManager) {
-        // This call requires the QUERY_USERS permission.
-        final long callingId = Binder.clearCallingIdentity();
-        try {
-            return userManager.getUserProfiles();
-        } finally {
-            Binder.restoreCallingIdentity(callingId);
-        }
-    }
-
-    @Nullable
-    private static UserHandle getProfileParent(UserManager userManager, @UserIdInt int userId) {
-        // This call requires the INTERACT_ACROSS_USERS permission.
-        final long callingId = Binder.clearCallingIdentity();
-        try {
-            return userManager.getProfileParent(UserHandle.of(userId));
         } finally {
             Binder.restoreCallingIdentity(callingId);
         }
@@ -262,7 +219,7 @@ public final class UserProfileGroup {
                 /* destPos= */ 1,
                 mManagedProfilesUserIds.length);
 
-        if (mPrivateProfileUserId != USER_NULL) {
+        if (mPrivateProfileUserId != UserHandleCompat.USER_NULL) {
             allProfileIds[allProfileIds.length - 1] = mPrivateProfileUserId;
         }
 
@@ -303,7 +260,7 @@ public final class UserProfileGroup {
             case PROFILE_TYPE_MANAGED:
                 return mManagedProfilesUserIds;
             case PROFILE_TYPE_PRIVATE:
-                return mPrivateProfileUserId != USER_NULL
+                return mPrivateProfileUserId != UserHandleCompat.USER_NULL
                         ? new int[]{mPrivateProfileUserId} : new int[]{};
             default:
                 Log.w(TAG, "profiles requested for unexpected profile type " + profileType);
@@ -342,7 +299,7 @@ public final class UserProfileGroup {
     private int getNumProfiles() {
         return 1
                 + mManagedProfilesUserIds.length
-                + (mPrivateProfileUserId == USER_NULL ? 0 : 1);
+                + (mPrivateProfileUserId == UserHandleCompat.USER_NULL ? 0 : 1);
     }
 
     /**
@@ -395,7 +352,8 @@ public final class UserProfileGroup {
             }
         }
 
-        return USER_NULL != mPrivateProfileUserId && userId == mPrivateProfileUserId;
+        return UserHandleCompat.USER_NULL != mPrivateProfileUserId
+            && userId == mPrivateProfileUserId;
     }
 
     @Override

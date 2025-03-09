@@ -48,7 +48,37 @@
             <item type="style" name="PermissionFooterPreferenceTitleTextStyle" />
             <item type="style" name="PermissionFooterPreferenceLearnMoreTextStyle" />
 
+            <item type="style" name="PermissionSelectorWithWidgetPreferenceRootLayoutStyle" />
+            <item type="style" name="PermissionSelectorWithWidgetPreferenceWidgetFrameStyle" />
+            <item type="style" name="PermissionSelectorWithWidgetPreferenceIconFrameStyle" />
+            <item type="style" name="PermissionSelectorWithWidgetPreferenceIconStyle" />
+            <item type="style" name="PermissionSelectorWithWidgetPreferenceTextContainerStyle" />
+            <item type="style" name="PermissionSelectorWithWidgetPreferenceTitleStyle" />
+            <item type="style" name="PermissionSelectorWithWidgetPreferenceSummaryContainerStyle" />
+            <item type="style" name="PermissionSelectorWithWidgetPreferenceSummaryStyle" />
+            <item type="style" name="PermissionSelectorWithWidgetPreferenceAppendixStyle" />
+            <item type="style" name="PermissionSelectorWithWidgetPreferenceExtraWidgetContainerStyle" />
+            <item type="style" name="PermissionSelectorWithWidgetPreferenceExtraWidgetDividerStyle" />
+            <item type="style" name="PermissionSelectorWithWidgetPreferenceExtraWidgetImageStyle" />
+            <item type="style" name="PermissionSelectorWithWidgetPreferenceWidgetRadioButton" />
+
+            <item type="style" name="PermissionTwoTargetPreferenceRootLayoutStyle" />
+            <item type="style" name="PermissionTwoTargetPreferenceTextContainerStyle" />
+            <item type="style" name="PermissionTwoTargetPreferenceTitleStyle" />
+            <item type="style" name="PermissionTwoTargetPreferenceSummaryStyle" />
+            <item type="style" name="PermissionTwoTargetPreferenceWidgetFrameStyle" />
+            <item type="style" name="PermissionTwoTargetPreferenceIconFrameStyle" />
+            <item type="style" name="PermissionTwoTargetPreferenceIconStyle" />
+            <item type="style" name="PermissionTwoTargetPreferenceDividerContainerStyle" />
+            <item type="style" name="PermissionTwoTargetPreferenceDividerStyle" />
+
+            <item type="style" name="AppPermissionFooterLinkPreferenceRootLayoutStyle" />
+            <item type="style" name="AppPermissionFooterLinkPreferenceTextLayoutStyle" />
+            <item type="style" name="AppPermissionFooterLinkPreferenceSummaryStyle" />
+
+            <item type="bool" name="config_usePreferenceForAppPermissionSettings" />
             <item type="bool" name="config_permissionFooterPreferenceIconVisible" />
+            <item type="bool" name="config_appPermissionFooterLinkPreferenceSummaryUnderlined" />
             <item type="dimen" name="permission_preference_app_icon_size" />
             <item type="dimen" name="permission_preference_permission_group_icon_size" />
 
@@ -431,7 +461,7 @@
             <item type="style" name="AppDataSharingUpdateSettingsIcon" />
             <!-- END SAFETY LABELS STYLE -->
 
-            <!--START WEAR SPECIFIC FONT STRINGS -->
+            <!--START WEAR SPECIFIC MATERIAL2 FONT STRINGS -->
             <item type="string" name="wear_material_compose_display_1_font_family" />
             <item type="string" name="wear_material_compose_display_2_font_family" />
             <item type="string" name="wear_material_compose_display_3_font_family" />
@@ -444,7 +474,75 @@
             <item type="string" name="wear_material_compose_caption_1_font_family" />
             <item type="string" name="wear_material_compose_caption_2_font_family" />
             <item type="string" name="wear_material_compose_caption_3_font_family" />
-            <!--END WEAR SPECIFIC FONT STRINGS -->
+            <!--END WEAR SPECIFIC MATERIAL2 FONT STRINGS -->
+
+            <!--START WEAR SPECIFIC MATERIAL3 FONT FACE TOKENS-->
+            <item type="string" name="wear_compose_material3_arc_small_font_family" />
+            <item type="string" name="wear_compose_material3_arc_medium_font_family" />
+            <item type="string" name="wear_compose_material3_arc_large_font_family" />
+
+            <item type="string" name="wear_compose_material3_body_extra_small_font_family" />
+            <item type="string" name="wear_compose_material3_body_small_font_family" />
+            <item type="string" name="wear_compose_material3_body_medium_font_family" />
+            <item type="string" name="wear_compose_material3_body_large_font_family" />
+
+            <item type="string" name="wear_compose_material3_display_small_font_family" />
+            <item type="string" name="wear_compose_material3_display_medium_font_family" />
+            <item type="string" name="wear_compose_material3_display_large_font_family" />
+
+            <item type="string" name="wear_compose_material3_label_small_font_family" />
+            <item type="string" name="wear_compose_material3_label_medium_font_family" />
+            <item type="string" name="wear_compose_material3_label_large_font_family" />
+
+            <item type="string" name="wear_compose_material3_numeral_extra_small_font_family" />
+            <item type="string" name="wear_compose_material3_numeral_small_font_family" />
+            <item type="string" name="wear_compose_material3_numeral_medium_font_family" />
+            <item type="string" name="wear_compose_material3_numeral_large_font_family" />
+            <item type="string" name="wear_compose_material3_numeral_extra_large_font_family" />
+
+            <item type="string" name="wear_compose_material3_title_small_font_family" />
+            <item type="string" name="wear_compose_material3_title_medium_font_family" />
+            <item type="string" name="wear_compose_material3_title_large_font_family" />
+            <!--END WEAR SPECIFIC MATERIAL3 FONT FACE TOKENS-->
+
+
+            <!--START WEAR SPECIFIC MATERIAL3 FONT SIZE TOKENS-->
+            <item type="dimen" name="wear_compose_material3_arc_small_font_size" />
+            <item type="dimen" name="wear_compose_material3_arc_medium_font_size" />
+            <item type="dimen" name="wear_compose_material3_arc_large_font_size" />
+
+            <item type="dimen" name="wear_compose_material3_body_extra_small_font_size" />
+            <item type="dimen" name="wear_compose_material3_body_small_font_size" />
+            <item type="dimen" name="wear_compose_material3_body_medium_font_size" />
+            <item type="dimen" name="wear_compose_material3_body_large_font_size" />
+
+            <item type="dimen" name="wear_compose_material3_display_small_font_size" />
+            <item type="dimen" name="wear_compose_material3_display_medium_font_size" />
+            <item type="dimen" name="wear_compose_material3_display_large_font_size" />
+
+            <item type="dimen" name="wear_compose_material3_label_small_font_size" />
+            <item type="dimen" name="wear_compose_material3_label_medium_font_size" />
+            <item type="dimen" name="wear_compose_material3_label_large_font_size" />
+
+            <item type="dimen" name="wear_compose_material3_numeral_extra_small_font_size" />
+            <item type="dimen" name="wear_compose_material3_numeral_small_font_size" />
+            <item type="dimen" name="wear_compose_material3_numeral_medium_font_size" />
+            <item type="dimen" name="wear_compose_material3_numeral_large_font_size" />
+            <item type="dimen" name="wear_compose_material3_numeral_extra_large_font_size" />
+
+            <item type="dimen" name="wear_compose_material3_title_small_font_size" />
+            <item type="dimen" name="wear_compose_material3_title_medium_font_size" />
+            <item type="dimen" name="wear_compose_material3_title_large_font_size" />
+            <!--END WEAR SPECIFIC MATERIAL3 FONT SIZE TOKENS-->
+
+            <!--START WEAR SPECIFIC MATERIAL3 SHAPE TOKENS-->
+            <item type="dimen" name="wear_compose_material3_shape_corner_extra_small_size" />
+            <item type="dimen" name="wear_compose_material3_shape_corner_small_size" />
+            <item type="dimen" name="wear_compose_material3_shape_corner_medium_size" />
+            <item type="dimen" name="wear_compose_material3_shape_corner_large_size" />
+            <item type="dimen" name="wear_compose_material3_shape_corner_extra_large_size" />
+            <!--END WEAR SPECIFIC MATERIAL3 SHAPE TOKENS-->
+
 
             <!-- START ENHANCED CONFIRMATION DIALOG -->
             <item type="style" name="Theme.EnhancedConfirmationDialog" />

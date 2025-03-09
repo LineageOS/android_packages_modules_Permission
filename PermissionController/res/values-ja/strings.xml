@@ -74,7 +74,7 @@
     <string name="days_ago" msgid="6650359081551335629">"{count,plural, =0{今日}=1{1 日前}other{# 日前}}"</string>
     <string name="app_disable_dlg_positive" msgid="7418444149981904940">"アプリを無効にする"</string>
     <string name="app_disable_dlg_text" msgid="3126943217146120240">"このアプリを無効にすると、Android などの他のアプリが正しく動作しなくなるおそれがあります。このアプリはデバイスにプリインストールされているため、削除できません。無効にするには、このアプリをオフにし、デバイスにアプリが表示されないようにします。"</string>
-    <string name="app_permission_manager" msgid="3903811137630909550">"権限マネージャ"</string>
+    <string name="app_permission_manager" msgid="3903811137630909550">"権限マネージャー"</string>
     <string name="never_ask_again" msgid="4728762438198560329">"今後表示しない"</string>
     <string name="no_permissions" msgid="3881676756371148563">"権限がありません"</string>
     <string name="additional_permissions" msgid="5801285469338873430">"その他の権限"</string>
@@ -185,7 +185,7 @@
     <string name="app_permission_usage_summary" msgid="390383661936709672">"アクセス: <xliff:g id="NUM">%1$s</xliff:g> 回。合計時間: <xliff:g id="DURATION">%2$s</xliff:g>。最終使用: <xliff:g id="TIME">%3$s</xliff:g>前。"</string>
     <string name="app_permission_usage_summary_no_duration" msgid="3698475875179457400">"アクセス: <xliff:g id="NUM">%1$s</xliff:g> 回。最終使用: <xliff:g id="TIME">%2$s</xliff:g>前。"</string>
     <string name="app_permission_button_allow" msgid="5808039516494774647">"許可する"</string>
-    <string name="app_permission_button_allow_all_files" msgid="1792232272599018825">"すべてのファイルの管理を許可"</string>
+    <string name="app_permission_button_allow_all_files" msgid="1792232272599018825">"すべての管理を許可"</string>
     <string name="app_permission_button_allow_media_only" msgid="2834282724426046154">"アクセスのみ許可"</string>
     <string name="app_permission_button_allow_always" msgid="4573292371734011171">"常に許可"</string>
     <string name="app_permission_button_allow_foreground" msgid="1991570451498943207">"アプリの使用中のみ許可"</string>
@@ -211,7 +211,7 @@
     <string name="unused_apps_summary" msgid="8839466950318403115">"権限と一時ファイルを削除し、通知を停止します"</string>
     <string name="unused_apps_summary_v2" msgid="5011313200815115802">"権限と一時ファイルを削除し、通知を停止し、アプリをアーカイブします"</string>
     <string name="auto_revoke_summary" msgid="5867548789805911683">"データ保護のため、このアプリが数か月使用されていない場合はアプリの権限が取り消されます。"</string>
-    <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"データ保護のため、アプリが数か月使用されていない場合は以下の権限が取り消されます。<xliff:g id="PERMS">%1$s</xliff:g>"</string>
+    <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"データ保護のため、アプリが数か月使用されていない場合は次の権限が取り消されます。<xliff:g id="PERMS">%1$s</xliff:g>"</string>
     <string name="auto_revoked_apps_page_summary" msgid="6594753657893756536">"データ保護のため、数か月使用していないアプリの権限を削除しました。"</string>
     <string name="auto_revoke_open_app_message" msgid="8075556291711205039">"もう一度権限を許可するには、アプリを開いてください。"</string>
     <string name="auto_revoke_disabled" msgid="8697684442991567188">"このアプリでは現在、自動削除は無効になっています。"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"制限付き設定を許可"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"制限付き設定"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"セキュリティ保護のため、この設定は現在利用できません。"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"この操作は通話中はできません"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"通話中にアプリが他のアプリをインストールすることはできません。\n\n このような操作は、詐欺師が電話での会話中に要求することが多いため、ユーザー保護を目的に禁止されています。知らない相手からこのような操作を求められた場合は、詐欺の可能性があります。"</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"アプリは<xliff:g id="PERMISSION_NAME">%1$s</xliff:g>へのアクセスを拒否されました"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"機密情報に関わる権限へのアクセスをアプリがリクエストしました。この権限へのアクセスは、あなたの個人情報や財務情報を危険にさらす恐れがあります。<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>この制限付きの権限がないとアプリは正しく動作しない可能性があります。&lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;アクセスを許可する方法の詳細&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"アプリはデフォルトの<xliff:g id="ROLE_NAME">%1$s</xliff:g>としてのアクセスを拒否されました"</string>

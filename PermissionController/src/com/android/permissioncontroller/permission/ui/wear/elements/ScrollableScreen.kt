@@ -63,7 +63,10 @@ import androidx.wear.compose.material.TimeText
 import androidx.wear.compose.material.Vignette
 import androidx.wear.compose.material.VignettePosition
 import androidx.wear.compose.material.scrollAway
+import com.android.permissioncontroller.permission.ui.wear.elements.material3.WearPermissionScaffold
 import com.android.permissioncontroller.permission.ui.wear.elements.rotaryinput.rotaryWithScroll
+import com.android.permissioncontroller.permission.ui.wear.theme.WearPermissionMaterialUIVersion
+import com.android.permissioncontroller.permission.ui.wear.theme.WearPermissionMaterialUIVersion.MATERIAL2_5
 import com.android.permissioncontroller.permission.ui.wear.theme.WearPermissionTheme
 
 /**
@@ -74,6 +77,7 @@ import com.android.permissioncontroller.permission.ui.wear.theme.WearPermissionT
  */
 @Composable
 fun ScrollableScreen(
+    materialUIVersion: WearPermissionMaterialUIVersion = MATERIAL2_5,
     showTimeText: Boolean = true,
     title: String? = null,
     subtitle: CharSequence? = null,
@@ -103,7 +107,8 @@ fun ScrollableScreen(
 
     if (getBackStackEntryCount(activity) > 0) {
         SwipeToDismissBox(state = state) { isBackground ->
-            Scaffold(
+            WearPermissionScaffold(
+                materialUIVersion,
                 showTimeText,
                 title,
                 subtitle,
@@ -111,11 +116,12 @@ fun ScrollableScreen(
                 isLoading = isLoading || isBackground || dismissed,
                 content,
                 titleTestTag,
-                subtitleTestTag
+                subtitleTestTag,
             )
         }
     } else {
-        Scaffold(
+        WearPermissionScaffold(
+            materialUIVersion,
             showTimeText,
             title,
             subtitle,
@@ -123,13 +129,13 @@ fun ScrollableScreen(
             isLoading,
             content,
             titleTestTag,
-            subtitleTestTag
+            subtitleTestTag,
         )
     }
 }
 
 @Composable
-internal fun Scaffold(
+internal fun Wear2Scaffold(
     showTimeText: Boolean,
     title: String?,
     subtitle: CharSequence?,
@@ -165,14 +171,14 @@ internal fun Scaffold(
             start = titleHorizontalPadding,
             top = 4.dp,
             bottom = titleBottomPadding,
-            end = titleHorizontalPadding
+            end = titleHorizontalPadding,
         )
     val subTitlePaddingValues =
         PaddingValues(
             start = subtitleHorizontalPadding,
             top = 4.dp,
             bottom = subtitleBottomPadding,
-            end = subtitleHorizontalPadding
+            end = subtitleHorizontalPadding,
         )
     val initialCenterIndex = 0
     val centerHeightDp = Dp(LocalConfiguration.current.screenHeightDp / 2.0f)
@@ -191,14 +197,14 @@ internal fun Scaffold(
             modifier =
                 Modifier.rotaryWithScroll(
                     scrollableState = listState,
-                    focusRequester = focusRequester
+                    focusRequester = focusRequester,
                 ),
             timeText = {
                 if (showTimeText && !isLoading) {
                     TimeText(
                         modifier =
                             Modifier.scrollAway(listState, initialCenterIndex, scrollAwayOffset)
-                                .padding(top = timeTextTopPadding),
+                                .padding(top = timeTextTopPadding)
                     )
                 }
             },
@@ -208,7 +214,7 @@ internal fun Scaffold(
                     { PositionIndicator(scalingLazyListState = listState) }
                 } else {
                     null
-                }
+                },
         ) {
             Box(modifier = Modifier.fillMaxSize()) {
                 if (isLoading) {
@@ -225,8 +231,8 @@ internal fun Scaffold(
                                 start = scrollContentHorizontalPadding,
                                 end = scrollContentHorizontalPadding,
                                 top = scrollContentTopPadding,
-                                bottom = scrollContentBottomPadding
-                            )
+                                bottom = scrollContentBottomPadding,
+                            ),
                     ) {
                         staticItem()
                         image?.let {
@@ -238,7 +244,7 @@ internal fun Scaffold(
                                             painter = painterResource(id = image),
                                             contentDescription = null,
                                             contentScale = ContentScale.Crop,
-                                            modifier = imageModifier
+                                            modifier = imageModifier,
                                         )
                                     }
                                 is Drawable ->
@@ -247,7 +253,7 @@ internal fun Scaffold(
                                             painter = rememberDrawablePainter(image),
                                             contentDescription = null,
                                             contentScale = ContentScale.Crop,
-                                            modifier = imageModifier
+                                            modifier = imageModifier,
                                         )
                                     }
                                 else -> {}
@@ -263,7 +269,7 @@ internal fun Scaffold(
                                     Text(
                                         text = title,
                                         textAlign = TextAlign.Center,
-                                        modifier = modifier
+                                        modifier = modifier,
                                     )
                                 }
                             }
@@ -282,6 +288,7 @@ internal fun Scaffold(
                                             color = MaterialTheme.colors.onSurfaceVariant
                                         ),
                                     modifier = modifier,
+                                    shouldCapitalize = true,
                                 )
                             }
                         }

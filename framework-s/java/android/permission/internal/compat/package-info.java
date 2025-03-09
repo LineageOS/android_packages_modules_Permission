@@ -19,4 +19,4 @@
  * TODO(b/146466118) remove this javadoc tag
  */
 @android.annotation.Hide
-package com.android.permission.compat;
+package android.permission.internal.compat;

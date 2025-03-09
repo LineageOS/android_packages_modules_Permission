@@ -233,8 +233,8 @@ private constructor(
      *   user
      */
     private fun isUserSet(permissionState: Map<String, PermState>): Boolean {
-        val flagMask =
-            PackageManager.FLAG_PERMISSION_USER_SET or PackageManager.FLAG_PERMISSION_USER_FIXED
+        val flagMask = PackageManager.FLAG_PERMISSION_USER_SET or
+            PackageManager.FLAG_PERMISSION_USER_FIXED or PackageManager.FLAG_PERMISSION_ONE_TIME
         return permissionState.any { (it.value.permFlags and flagMask) != 0 }
     }
 

@@ -90,26 +90,6 @@ class HealthConnectAllAppPermissionFragmentTest : BasePermissionUiTest() {
         }
     }
 
-    @Test
-    fun invalidGrantedUsedHealthConnectPermissionsAreListed() {
-        installInvalidTestAppThatUsesHealthConnectPermission()
-        grantTestAppPermission(HEALTH_CONNECT_PERMISSION_READ_FLOORS_CLIMBED)
-
-        startManageAppPermissionsActivity()
-
-        // Ensure that Health Connect permission group permissions are present if a single one is
-        // already granted, regardless of whether the intent filters are incorrectly or not setup
-        // for the app
-        eventually {
-            waitFindObject(By.text(HEALTH_CONNECT_LABEL))
-            waitFindObject(By.text(HEALTH_CONNECT_PERMISSION_READ_FLOORS_CLIMBED_LABEL))
-
-            // READ_STEPS is not granted, but should still be present due to READ_FLOORS_CLIMBED
-            // being granted
-            waitFindObject(By.text(HEALTH_CONNECT_PERMISSION_READ_STEPS_LABEL))
-        }
-    }
-
     private fun startManageAppPermissionsActivity() {
         uiDevice.performActionAndWait(
             {

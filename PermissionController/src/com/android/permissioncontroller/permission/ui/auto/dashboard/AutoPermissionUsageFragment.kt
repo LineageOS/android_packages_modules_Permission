@@ -46,7 +46,7 @@ class AutoPermissionUsageFragment : AutoSettingsFrameFragment() {
                 Manifest.permission_group.CAMERA,
                 1,
                 Manifest.permission_group.MICROPHONE,
-                2
+                2,
             )
         private const val DEFAULT_ORDER: Int = 3
     }
@@ -54,7 +54,6 @@ class AutoPermissionUsageFragment : AutoSettingsFrameFragment() {
     private val SESSION_ID_KEY = (AutoPermissionUsageFragment::class.java.name + KEY_SESSION_ID)
 
     private var showSystem = false
-    private var finishedInitialLoad = false
     private var hasSystemApps = false
 
     /** Unique Id of a request */
@@ -89,7 +88,7 @@ class AutoPermissionUsageFragment : AutoSettingsFrameFragment() {
             PermissionControllerStatsLog.write(
                 PERMISSION_USAGE_FRAGMENT_INTERACTION,
                 sessionId,
-                PERMISSION_USAGE_FRAGMENT_INTERACTION__ACTION__SHOW_SYSTEM_CLICKED
+                PERMISSION_USAGE_FRAGMENT_INTERACTION__ACTION__SHOW_SYSTEM_CLICKED,
             )
         }
         showSystem = !showSystem
@@ -133,13 +132,13 @@ class AutoPermissionUsageFragment : AutoSettingsFrameFragment() {
             Comparator.comparing { permissionGroupWithUsageCount: Map.Entry<String, Int> ->
                     PERMISSION_GROUP_ORDER.getOrDefault(
                         permissionGroupWithUsageCount.key,
-                        DEFAULT_ORDER
+                        DEFAULT_ORDER,
                     )
                 }
                 .thenComparing { permissionGroupWithUsageCount: Map.Entry<String, Int> ->
                     mViewModel.getPermissionGroupLabel(
                         requireContext(),
-                        permissionGroupWithUsageCount.key
+                        permissionGroupWithUsageCount.key,
                     )
                 }
         )
@@ -153,11 +152,10 @@ class AutoPermissionUsageFragment : AutoSettingsFrameFragment() {
                 permissionGroupWithUsageCountsEntries[i].value,
                 showSystem,
                 sessionId,
-                false
+                false,
             )
             getPreferenceScreen().addPreference(permissionUsagePreference)
         }
-        finishedInitialLoad = true
         setLoading(false)
     }
 }

@@ -105,7 +105,7 @@ class SafetySourceDataFixesTest {
                         .addAction(
                             safetySourceTestData.action(
                                 id = targetActionId,
-                                pendingIntent = originalPendingIntent
+                                pendingIntent = originalPendingIntent,
                             )
                         )
                         .build()
@@ -126,6 +126,7 @@ class SafetySourceDataFixesTest {
             )
         assertThat(intentsFilterEqual(overriddenPendingIntent, expectedPendingIntent)).isTrue()
     }
+
     @Test
     @SdkSuppress(minSdkVersion = UPSIDE_DOWN_CAKE)
     fun defaultActionOverride_notification_overridesMatchingActions() {
@@ -143,7 +144,7 @@ class SafetySourceDataFixesTest {
                             notification(
                                 safetySourceTestData.action(
                                     id = targetActionId,
-                                    pendingIntent = originalPendingIntent
+                                    pendingIntent = originalPendingIntent,
                                 )
                             )
                         )
@@ -183,7 +184,7 @@ class SafetySourceDataFixesTest {
                         .addAction(
                             safetySourceTestData.action(
                                 id = targetActionId,
-                                pendingIntent = originalPendingIntent
+                                pendingIntent = originalPendingIntent,
                             )
                         )
                         .build()
@@ -192,7 +193,7 @@ class SafetySourceDataFixesTest {
 
         safetyCenterTestHelper.setData(
             SOURCE_ID_2, // Different source ID
-            dataWithoutActionToOverride
+            dataWithoutActionToOverride,
         )
 
         val actualPendingIntent =
@@ -219,7 +220,7 @@ class SafetySourceDataFixesTest {
                         .addAction(
                             safetySourceTestData.action(
                                 id = "DifferentActionId",
-                                pendingIntent = originalPendingIntent
+                                pendingIntent = originalPendingIntent,
                             )
                         )
                         .build()
@@ -253,7 +254,7 @@ class SafetySourceDataFixesTest {
                         .addAction(
                             safetySourceTestData.action(
                                 id = targetActionId,
-                                pendingIntent = originalPendingIntent
+                                pendingIntent = originalPendingIntent,
                             )
                         )
                         .build()
@@ -289,7 +290,7 @@ class SafetySourceDataFixesTest {
 
         private fun intentsFilterEqual(
             actualPendingIntent: PendingIntent,
-            expectedPendingIntent: PendingIntent?
+            expectedPendingIntent: PendingIntent?,
         ) =
             callWithShellPermissionIdentity("android.permission.GET_INTENT_SENDER_INTENT") {
                 actualPendingIntent.intentFilterEquals(expectedPendingIntent)

@@ -23,8 +23,11 @@ import android.health.connect.HealthPermissions.HEALTH_PERMISSION_GROUP
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.map
 import androidx.navigation.fragment.findNavController
+import com.android.permission.flags.Flags
 import com.android.permissioncontroller.R
 import com.android.permissioncontroller.permission.data.PermGroupsPackagesLiveData
 import com.android.permissioncontroller.permission.data.PermGroupsPackagesUiInfoLiveData
@@ -45,7 +48,21 @@ import com.android.permissioncontroller.permission.utils.navigateSafe
 class ManageStandardPermissionsViewModel(private val app: Application) : AndroidViewModel(app) {
 
     val uiDataLiveData = PermGroupsPackagesUiInfoLiveData(app, StandardPermGroupNamesLiveData)
+    val usedStandardPermGroupsUiInfo =
+        PermGroupsPackagesUiInfoLiveData(
+            app,
+            if (Flags.declutteredPermissionManagerEnabled()) UsedStandardPermGroupNamesLiveData(app)
+            else MutableLiveData<List<String>>(),
+        )
     val numCustomPermGroups = NumCustomPermGroupsWithPackagesLiveData()
+    val numUnusedStandardPermGroups =
+        MediatorLiveData<Int>().apply {
+            if (Flags.declutteredPermissionManagerEnabled()) {
+                addSource(UnusedStandardPermGroupNamesLiveData(app)) { groupNames ->
+                    value = groupNames.size
+                }
+            }
+        }
     val numAutoRevoked = unusedAutoRevokePackagesLiveData.map { it?.size ?: 0 }
 
     /**
@@ -96,5 +113,49 @@ class NumCustomPermGroupsWithPackagesLiveData() : SmartUpdateMediatorLiveData<In
 
     override fun onUpdate() {
         value = customPermGroupPackages.value?.size ?: 0
+    }
+}
+
+/**
+ * A LiveData that tracks the names of the platform-defined permission groups, such that at least
+ * one of the permissions in the group has been requested at runtime by at least one non-system
+ * application.
+ *
+ * @param app The current application of the fragment
+ */
+class UsedStandardPermGroupNamesLiveData(private val app: Application) :
+    SmartUpdateMediatorLiveData<List<String>>() {
+    init {
+        addSource(PermGroupsPackagesUiInfoLiveData(app, StandardPermGroupNamesLiveData)) {
+            permGroups ->
+            if (permGroups.values.any { it != null }) {
+                value =
+                    permGroups.filterValues { it != null && it.nonSystemTotal > 0 }.keys.toList()
+            }
+        }
+    }
+
+    override fun onUpdate() {
+        /* No op override */
+    }
+}
+
+/**
+ * A LiveData that tracks the names of the platform-defined permission groups, such that none of the
+ * the permissions in the group has been requested at runtime by any non-system application.
+ *
+ * @param app The current application of the fragment
+ */
+class UnusedStandardPermGroupNamesLiveData(private val app: Application) :
+    SmartUpdateMediatorLiveData<List<String>>() {
+    init {
+        addSource(PermGroupsPackagesUiInfoLiveData(app, StandardPermGroupNamesLiveData)) {
+            permGroups ->
+            value = permGroups.filterValues { it != null && it.nonSystemTotal == 0 }.keys.toList()
+        }
+    }
+
+    override fun onUpdate() {
+        /* No op override */
     }
 }

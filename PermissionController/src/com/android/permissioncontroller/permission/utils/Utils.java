@@ -126,6 +126,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 import java.util.Set;
+import java.util.function.Supplier;
 
 public final class Utils {
 
@@ -1566,18 +1567,40 @@ public final class Utils {
     public static String getEnterpriseString(@NonNull Context context,
             @NonNull String updatableStringId, int defaultStringId, @NonNull Object... formatArgs) {
         return SdkLevel.isAtLeastT()
-                ? getUpdatableEnterpriseString(
-                        context, updatableStringId, defaultStringId, formatArgs)
+                ? getUpdatableEnterpriseString(context, updatableStringId,
+                        () -> context.getString(defaultStringId, formatArgs), formatArgs)
                 : context.getString(defaultStringId, formatArgs);
+    }
+
+    /**
+     * Selects the appropriate enterprise string for the provided resource ID and a fallback string
+     */
+    @NonNull
+    public static String getEnterpriseString(@NonNull Context context,
+            @NonNull String updatableStringId, @NonNull String defaultString) {
+        return SdkLevel.isAtLeastT()
+                ? getUpdatableEnterpriseString(context, updatableStringId, () -> defaultString)
+                : defaultString;
     }
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     @NonNull
     private static String getUpdatableEnterpriseString(@NonNull Context context,
-            @NonNull String updatableStringId, int defaultStringId, @NonNull Object... formatArgs) {
+            @NonNull String updatableStringId, @NonNull Supplier<String> defaultStringLoader,
+            @NonNull Object... formatArgs) {
         DevicePolicyManager dpm = getSystemServiceSafe(context, DevicePolicyManager.class);
-        return  dpm.getResources().getString(updatableStringId, () -> context.getString(
-                defaultStringId, formatArgs), formatArgs);
+        return dpm.getResources().getString(updatableStringId, defaultStringLoader, formatArgs);
+    }
+
+    /**
+     * Returns the profile label from the {@link UserManager} for the provided profile
+     */
+    @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
+    @NonNull
+    public static String getProfileLabel(@NonNull UserHandle profile, @NonNull Context context) {
+        Context profileContext = context.createContextAsUser(profile, 0);
+        UserManager profileUserManager = profileContext.getSystemService(UserManager.class);
+        return profileUserManager.getProfileLabel();
     }
 
     /**

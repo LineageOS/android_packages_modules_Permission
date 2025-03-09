@@ -694,7 +694,8 @@ public final class SafetyCenterService extends SystemService {
         /** Enforces cross user permission and returns whether the user is valid. */
         private boolean enforceCrossUserPermission(String message, @UserIdInt int userId) {
             UserUtils.enforceCrossUserPermission(
-                    userId, /* allowAll= */ false, message, getContext());
+                    userId, /* allowAll= */ false, /* enforceForProfileGroup= */ false, message,
+                    getContext());
             if (!UserUtils.isUserExistent(userId, getContext())) {
                 Log.w(
                         TAG,

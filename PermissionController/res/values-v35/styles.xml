@@ -197,5 +197,221 @@
         <item name="android:visibility">gone</item>
     </style>
 
+    <style name="PermissionSelectorWithWidgetPreferenceRootLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">?android:attr/listPreferredItemHeightSmall</item>
+        <item name="android:paddingEnd">?android:attr/listPreferredItemPaddingEnd</item>
+    </style>
+
+    <style name="PermissionSelectorWithWidgetPreferenceWidgetFrameStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minWidth">56dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="PermissionSelectorWithWidgetPreferenceIconFrameStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minWidth">32dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="PermissionSelectorWithWidgetPreferenceIconStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="maxWidth">@dimen/secondary_app_icon_size</item>
+        <item name="maxHeight">@dimen/secondary_app_icon_size</item>
+    </style>
+
+    <style name="PermissionSelectorWithWidgetPreferenceTextContainerStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:paddingEnd">?android:attr/listPreferredItemPaddingEnd</item>
+    </style>
+
+    <style name="PermissionSelectorWithWidgetPreferenceTitleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:hyphenationFrequency">normalFast</item>
+        <item name="android:lineBreakWordStyle">phrase</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceListItem</item>
+    </style>
+
+    <style name="PermissionSelectorWithWidgetPreferenceSummaryContainerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="PermissionSelectorWithWidgetPreferenceSummaryStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:hyphenationFrequency">normalFast</item>
+        <item name="android:lineBreakWordStyle">phrase</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="PermissionSelectorWithWidgetPreferenceAppendixStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:textAlignment">viewEnd</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="PermissionSelectorWithWidgetPreferenceExtraWidgetContainerStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="PermissionSelectorWithWidgetPreferenceExtraWidgetDividerStyle">
+        <item name="android:layout_width">.75dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:background">?android:attr/dividerVertical</item>
+    </style>
+
+    <style name="PermissionSelectorWithWidgetPreferenceExtraWidgetImageStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:minWidth">@dimen/two_target_min_width</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:src">@drawable/ic_settings_accent</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="PermissionSelectorWithWidgetPreferenceWidgetRadioButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@null</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <style name="PermissionTwoTargetPreferenceRootLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">?android:attr/listPreferredItemHeightSmall</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:paddingStart">?android:attr/listPreferredItemPaddingStart</item>
+        <item name="android:paddingEnd">?android:attr/listPreferredItemPaddingEnd</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+
+    <style name="PermissionTwoTargetPreferenceTextContainerStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+
+    <style name="PermissionTwoTargetPreferenceTitleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:hyphenationFrequency">normalFast</item>
+        <item name="android:lineBreakWordStyle">phrase</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceListItem</item>
+        <item name="android:ellipsize">marquee</item>
+    </style>
+
+    <style name="PermissionTwoTargetPreferenceSummaryStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@android:id/title</item>
+        <item name="android:layout_alignStart">@android:id/title</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceListItemSecondary</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:hyphenationFrequency">normalFast</item>
+        <item name="android:lineBreakWordStyle">phrase</item>
+        <item name="android:maxLines">10</item>
+    </style>
+
+    <style name="PermissionTwoTargetPreferenceWidgetFrameStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:minWidth">@dimen/two_target_min_width</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="PermissionTwoTargetPreferenceIconFrameStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="PermissionTwoTargetPreferenceIconStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="maxWidth">48dp</item>
+        <item name="maxHeight">48dp</item>
+    </style>
+
+    <style name="PermissionTwoTargetPreferenceDividerContainerStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">?android:attr/listPreferredItemPaddingEnd</item>
+        <item name="android:paddingLeft">?android:attr/listPreferredItemPaddingEnd</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+
+    <style name="PermissionTwoTargetPreferenceDividerStyle">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+    <style name="AppPermissionFooterLinkPreferenceRootLayoutStyle"
+        parent="PermissionPreferenceRootLayoutStyle" />
+
+    <style name="AppPermissionFooterLinkPreferenceTextLayoutStyle"
+        parent="PermissionPreferenceTextRelativeLayoutStyle" />
+
+    <style name="AppPermissionFooterLinkPreferenceSummaryStyle"
+        parent="PermissionPreferenceSummaryTextStyle" />
+
     <!-- END PREFERENCE STYLES -->
 </resources>

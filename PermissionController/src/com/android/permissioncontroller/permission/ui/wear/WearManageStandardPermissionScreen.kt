@@ -17,6 +17,7 @@
 package com.android.permissioncontroller.permission.ui.wear
 
 import android.graphics.drawable.Drawable
+import android.permission.flags.Flags
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -77,7 +78,13 @@ internal fun getPermGroupChipParams(
         }
     return permissionGroups
         // Removing Health Connect from the list of permissions to fix b/331260850
-        .filterNot { Utils.isHealthPermissionGroup(it.key) }
+        .let {
+            if (Flags.replaceBodySensorPermissionEnabled()) {
+                it
+            } else {
+                it.filterNot { Utils.isHealthPermissionGroup(it.key) }
+            }
+        }
         .mapNotNull {
             val uiInfo = it.value ?: return@mapNotNull null
             PermGroupChipParam(

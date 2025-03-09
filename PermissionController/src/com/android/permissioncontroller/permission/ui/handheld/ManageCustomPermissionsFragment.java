@@ -24,6 +24,8 @@ import android.view.MenuItem;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import com.android.permission.flags.Flags;
+import com.android.permissioncontroller.permission.data.PermGroupsPackagesUiInfoLiveData;
 import com.android.permissioncontroller.permission.ui.model.ManageCustomPermissionsViewModel;
 import com.android.permissioncontroller.permission.ui.model.ManageCustomPermissionsViewModelFactory;
 
@@ -48,6 +50,14 @@ public class ManageCustomPermissionsFragment extends ManagePermissionsFragment {
         return arguments;
     }
 
+    private PermGroupsPackagesUiInfoLiveData getPermGroupsLiveData() {
+        if (Flags.declutteredPermissionManagerEnabled()) {
+            return mViewModel.getAdditionaPermGroupsUiInfo();
+        } else {
+            return mViewModel.getUiDataLiveData();
+        }
+    }
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -56,9 +66,9 @@ public class ManageCustomPermissionsFragment extends ManagePermissionsFragment {
                 new ManageCustomPermissionsViewModelFactory(getActivity().getApplication());
         mViewModel = new ViewModelProvider(this, factory)
                 .get(ManageCustomPermissionsViewModel.class);
-        mPermissionGroups = mViewModel.getUiDataLiveData().getValue();
+        mPermissionGroups = getPermGroupsLiveData().getValue();
 
-        mViewModel.getUiDataLiveData().observe(this, permissionGroups -> {
+        getPermGroupsLiveData().observe(this, permissionGroups -> {
             if (permissionGroups == null) {
                 mPermissionGroups = new HashMap<>();
             } else {

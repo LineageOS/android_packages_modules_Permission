@@ -16,6 +16,7 @@
 
 package com.android.role.controller.service;
 
+import android.annotation.UserIdInt;
 import android.app.role.RoleControllerService;
 import android.app.role.RoleManager;
 import android.content.Context;
@@ -34,6 +35,7 @@ import com.android.role.controller.model.Roles;
 import com.android.role.controller.util.CollectionUtils;
 import com.android.role.controller.util.LegacyRoleFallbackEnabledUtils;
 import com.android.role.controller.util.PackageUtils;
+import com.android.role.controller.util.RoleFlags;
 import com.android.role.controller.util.UserUtils;
 
 import java.util.ArrayList;
@@ -49,10 +51,20 @@ public class RoleControllerServiceImpl extends RoleControllerService {
 
     private static final boolean DEBUG = false;
 
+    public static volatile SetActiveUserForRoleMethod sSetActiveUserForRoleMethod;
 
     private UserHandle mUser;
     private Context mContext;
     private RoleManager mUserRoleManager;
+
+    /** Method for setting active user from role controller */
+    public interface SetActiveUserForRoleMethod {
+        /**
+         * Sets user as active for the given role.
+         * @see RoleManager#setActiveUserForRole(String, UserHandle, int)
+         */
+        void setActiveUserForRole(@NonNull String roleName, @UserIdInt int userId, int flags);
+    }
 
     public RoleControllerServiceImpl() {}
 
@@ -120,6 +132,19 @@ public class RoleControllerServiceImpl extends RoleControllerService {
             Role role = roles.get(rolesIndex);
 
             String roleName = role.getName();
+
+            if (RoleFlags.isProfileGroupExclusivityAvailable()
+                    && role.getExclusivity() == Role.EXCLUSIVITY_PROFILE_GROUP) {
+                if (mUserRoleManager.getActiveUserForRole(roleName) == null) {
+                    UserHandle profileParent = UserUtils.getProfileParentOrSelf(mUser, mContext);
+                    if (Objects.equals(mUser, profileParent)) {
+                        Log.i(LOG_TAG, "No active user for role: " + roleName + ", setting "
+                                + "active user to user: " + mUser.getIdentifier());
+                        sSetActiveUserForRoleMethod.setActiveUserForRole(roleName,
+                                mUser.getIdentifier(), 0);
+                    }
+                }
+            }
 
             // For each of the current holders, check if it is still qualified, redo grant if so, or
             // remove it otherwise.
@@ -232,6 +257,11 @@ public class RoleControllerServiceImpl extends RoleControllerService {
 
         boolean added = false;
         if (role.isExclusive()) {
+            if (role.getExclusivity() == Role.EXCLUSIVITY_PROFILE_GROUP) {
+                sSetActiveUserForRoleMethod.setActiveUserForRole(roleName, mUser.getIdentifier(),
+                        flags);
+            }
+
             List<String> currentPackageNames = mUserRoleManager.getRoleHolders(roleName);
             int currentPackageNamesSize = currentPackageNames.size();
             for (int i = 0; i < currentPackageNamesSize; i++) {

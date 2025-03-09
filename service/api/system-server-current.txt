@@ -1,4 +1,18 @@
 // Signature format: 2.0
+package com.android.ecm {
+
+  @FlaggedApi("android.permission.flags.enhanced_confirmation_in_call_apis_enabled") public class EnhancedConfirmationCallTrackerService extends android.telecom.InCallService {
+    ctor public EnhancedConfirmationCallTrackerService();
+  }
+
+  @FlaggedApi("android.permission.flags.enhanced_confirmation_in_call_apis_enabled") public interface EnhancedConfirmationManagerLocal {
+    method public void addOngoingCall(@NonNull android.telecom.Call);
+    method public void clearOngoingCalls();
+    method public void removeOngoingCall(@NonNull String);
+  }
+
+}
+
 package com.android.permission.persistence {
 
   public interface RuntimePermissionsPersistence {

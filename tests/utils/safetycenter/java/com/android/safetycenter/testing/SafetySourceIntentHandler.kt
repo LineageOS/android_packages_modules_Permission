@@ -114,7 +114,7 @@ class SafetySourceIntentHandler {
 
     private suspend fun SafetyCenterManager.processRefreshSafetySources(
         intent: Intent,
-        userId: Int
+        userId: Int,
     ) {
         val broadcastId = intent.getStringExtra(EXTRA_REFRESH_SAFETY_SOURCES_BROADCAST_ID)
         if (broadcastId.isNullOrEmpty()) {
@@ -190,7 +190,7 @@ class SafetySourceIntentHandler {
 
     private fun createResolveActionSuccessEvent(
         sourceIssueId: String,
-        sourceIssueActionId: String
+        sourceIssueActionId: String,
     ) =
         SafetyEvent.Builder(SAFETY_EVENT_TYPE_RESOLVING_ACTION_SUCCEEDED)
             .setSafetySourceIssueId(sourceIssueId)
@@ -218,7 +218,7 @@ class SafetySourceIntentHandler {
 
     private suspend fun SafetyCenterManager.processRequest(
         request: Request,
-        safetyEventForResponse: (Response) -> SafetyEvent
+        safetyEventForResponse: (Response) -> SafetyEvent,
     ) {
         val response = mutex.withLock { requestsToResponses[request] } ?: return
         val safetyEvent = response.overrideSafetyEvent ?: safetyEventForResponse(response)
@@ -242,25 +242,25 @@ class SafetySourceIntentHandler {
         /** Creates a refresh [Request] based on the given [sourceId] and [userId]. */
         data class Refresh(
             override val sourceId: String,
-            override val userId: Int = UserHandle.myUserId()
+            override val userId: Int = UserHandle.myUserId(),
         ) : Request
 
         /** Creates a rescan [Request] based on the given [sourceId] and [userId]. */
         data class Rescan(
             override val sourceId: String,
-            override val userId: Int = UserHandle.myUserId()
+            override val userId: Int = UserHandle.myUserId(),
         ) : Request
 
         /** Creates a resolve action [Request] based on the given [sourceId] and [userId]. */
         data class ResolveAction(
             override val sourceId: String,
-            override val userId: Int = UserHandle.myUserId()
+            override val userId: Int = UserHandle.myUserId(),
         ) : Request
 
         /** Creates an issue dismissal [Request] based on the given [sourceId] and [userId]. */
         data class DismissIssue(
             override val sourceId: String,
-            override val userId: Int = UserHandle.myUserId()
+            override val userId: Int = UserHandle.myUserId(),
         ) : Request
     }
 
@@ -295,7 +295,7 @@ class SafetySourceIntentHandler {
         data class SetData(
             val safetySourceData: SafetySourceData,
             val overrideBroadcastId: String? = null,
-            override val overrideSafetyEvent: SafetyEvent? = null
+            override val overrideSafetyEvent: SafetyEvent? = null,
         ) : Response
     }
 

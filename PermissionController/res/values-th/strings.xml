@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"อนุญาตการตั้งค่าที่จำกัด"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"การตั้งค่าที่จำกัด"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"การตั้งค่านี้ใช้ไม่ได้ในตอนนี้เพื่อความปลอดภัยของคุณ"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"การดำเนินการไม่พร้อมใช้งานขณะกำลังโทรศัพท์"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"ไม่อนุญาตให้แอปติดตั้งแอปอื่นๆ ระหว่างการโทร\n\n สแกมเมอร์มักขอการดำเนินการประเภทนี้ระหว่างการโทร ดังนั้นระบบจึงบล็อกไว้เพื่อปกป้องคุณ หากมีคนที่คุณไม่รู้จักบอกให้คุณดำเนินการดังกล่าว นั่นอาจเป็นการหลอกลวง"</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"แอปถูกปฏิเสธไม่ให้เข้าถึง <xliff:g id="PERMISSION_NAME">%1$s</xliff:g>"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"แอปขอเข้าถึงสิทธิ์ที่มีความละเอียดอ่อนซึ่งอาจทำให้ข้อมูลส่วนบุคคลและข้อมูลทางการเงินของคุณมีความเสี่ยง<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>แอปอาจทำงานได้ไม่ถูกต้องหากไม่มีสิทธิ์ที่จำกัดนี้ &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;ดูวิธีอนุญาตให้เข้าถึง&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"แอปถูกปฏิเสธไม่ให้เข้าถึงเพื่อเป็น<xliff:g id="ROLE_NAME">%1$s</xliff:g> เริ่มต้น"</string>

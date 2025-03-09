@@ -175,7 +175,7 @@ object UiTestHelper {
     fun waitGroupShownOnHomepage(context: Context, group: SafetySourcesGroup) {
         waitAllTextDisplayed(
             context.getString(group.titleResId),
-            context.getString(group.summaryResId)
+            context.getString(group.summaryResId),
         )
     }
 

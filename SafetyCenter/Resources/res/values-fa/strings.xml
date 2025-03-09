@@ -33,9 +33,9 @@
     <string name="permission_manager_title" msgid="5277347862821255015">"مدیر اجازه‌ها"</string>
     <string name="permission_manager_summary" msgid="8099852107340970790">"کنترل دسترسی برنامه به داده‌های شما"</string>
     <string name="permission_manager_search_terms" msgid="2895147613099694722">"اجازه‌ها، مدیر اجازه‌ها"</string>
-    <string name="privacy_controls_title" msgid="5322875777945432395">"تنظیمات حریم خصوصی"</string>
+    <string name="privacy_controls_title" msgid="5322875777945432395">"کنترل‌های حریم خصوصی"</string>
     <string name="privacy_controls_summary" msgid="2402066941190435424">"کنترل دسترسی دستگاه به میکروفون، دوربین، و غیره"</string>
-    <string name="privacy_controls_search_terms" msgid="3774472175934304165">"حریم خصوصی، تنظیمات حریم خصوصی"</string>
+    <string name="privacy_controls_search_terms" msgid="3774472175934304165">"حریم خصوصی، کنترل‌های حریم خصوصی"</string>
     <string name="advanced_title" msgid="8745436380690561172">"تنظیمات بیشتر"</string>
     <string name="advanced_security_title" msgid="1126833338772188155">"تنظیمات ایمنی بیشتر"</string>
     <string name="advanced_security_summary" msgid="6172253327022425123">"رمزگذاری، اطلاعات اعتباری، و غیره"</string>

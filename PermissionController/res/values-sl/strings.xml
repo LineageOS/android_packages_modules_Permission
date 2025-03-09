@@ -206,7 +206,7 @@
     <string name="unused_apps_category_title" msgid="2988455616845243901">"Nastavitve neuporabljenih aplikacij"</string>
     <string name="auto_revoke_label" msgid="5068393642936571656">"Odstrani dovoljenja, če aplikacija ni v uporabi"</string>
     <string name="unused_apps_label" msgid="2595428768404901064">"Odstrani dovoljenja in sprosti prostor"</string>
-    <string name="unused_apps_label_v2" msgid="7058776770056517980">"Zaustavi dejavnost aplikacije ob neuporabi"</string>
+    <string name="unused_apps_label_v2" msgid="7058776770056517980">"Zaustavi aplikacijo ob neuporabi"</string>
     <string name="unused_apps_label_v3" msgid="693340578642156657">"Upravljanje aplikacije ob neuporabi"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Dovoljenja se odstranijo, začasne datoteke se izbrišejo in prikazovanje obvestil se ustavi."</string>
     <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Odstranitev dovoljenj, izbris začasnih datotek, ustavitev prikazovanja obvestil in arhiviranje aplikacije"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Dovoli omejene nastavitve"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Omejena nastavitev"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Zaradi vaše varnosti ta nastavitev trenutno ni na voljo."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Dejanje ni na voljo med telefonskim klicem"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Med telefonskim klicem ne morete aplikacijam omogočiti nameščanja drugih aplikacij.\n\n Prevaranti med pogovori v telefonskih klicih pogosto zahtevajo to vrsto dejanja, zato je to dejanje blokirano zaradi vaše zaščite. Če vas k temu dejanju napeljuje nekdo, ki ga ne poznate, gre morda za poskus prevare."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"Aplikaciji je bil zavrnjen dostop do dovoljenja »<xliff:g id="PERMISSION_NAME">%1$s</xliff:g>«"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"Aplikacija je zahtevala dostop do občutljivega dovoljenja, ki lahko ogrozi vaše osebne in finančne podatke.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>Aplikacija morda ne bo pravilno delovala brez tega omejenega dovoljenja. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Preberite, kako omogočite dostop&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"Aplikaciji je bil zavrnjen dostop do privzete vloge »<xliff:g id="ROLE_NAME">%1$s</xliff:g>«"</string>

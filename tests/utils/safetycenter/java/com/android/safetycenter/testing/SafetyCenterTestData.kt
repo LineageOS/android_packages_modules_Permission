@@ -80,7 +80,7 @@ class SafetyCenterTestData(context: Context) {
                     ),
                     safetyCenterResourcesApk.getStringByName(
                         "overall_severity_level_ok_review_summary"
-                    )
+                    ),
                 )
                 .setSeverityLevel(OVERALL_SEVERITY_LEVEL_UNKNOWN)
                 .build()
@@ -91,7 +91,7 @@ class SafetyCenterTestData(context: Context) {
      */
     fun safetyCenterStatusOneAlert(
         statusResource: String,
-        overallSeverityLevel: Int
+        overallSeverityLevel: Int,
     ): SafetyCenterStatus = safetyCenterStatusNAlerts(statusResource, overallSeverityLevel, 1)
 
     /**
@@ -105,7 +105,7 @@ class SafetyCenterTestData(context: Context) {
     ): SafetyCenterStatus =
         SafetyCenterStatus.Builder(
                 safetyCenterResourcesApk.getStringByName(statusResource),
-                getAlertString(numAlerts)
+                getAlertString(numAlerts),
             )
             .setSeverityLevel(overallSeverityLevel)
             .build()
@@ -114,12 +114,10 @@ class SafetyCenterTestData(context: Context) {
      * Returns an information [SafetyCenterStatus] that has "Tip(s) available" as a summary for the
      * given [numTipIssues].
      */
-    fun safetyCenterStatusTips(
-        numTipIssues: Int,
-    ): SafetyCenterStatus =
+    fun safetyCenterStatusTips(numTipIssues: Int): SafetyCenterStatus =
         SafetyCenterStatus.Builder(
                 safetyCenterResourcesApk.getStringByName("overall_severity_level_ok_title"),
-                getIcuPluralsString("overall_severity_level_tip_summary", numTipIssues)
+                getIcuPluralsString("overall_severity_level_tip_summary", numTipIssues),
             )
             .setSeverityLevel(OVERALL_SEVERITY_LEVEL_OK)
             .build()
@@ -128,15 +126,13 @@ class SafetyCenterTestData(context: Context) {
      * Returns an information [SafetyCenterStatus] that has "Action(s) taken" as a summary for the
      * given [numAutomaticIssues].
      */
-    fun safetyCenterStatusActionsTaken(
-        numAutomaticIssues: Int,
-    ): SafetyCenterStatus =
+    fun safetyCenterStatusActionsTaken(numAutomaticIssues: Int): SafetyCenterStatus =
         SafetyCenterStatus.Builder(
                 safetyCenterResourcesApk.getStringByName("overall_severity_level_ok_title"),
                 getIcuPluralsString(
                     "overall_severity_level_action_taken_summary",
-                    numAutomaticIssues
-                )
+                    numAutomaticIssues,
+                ),
             )
             .setSeverityLevel(OVERALL_SEVERITY_LEVEL_OK)
             .build()
@@ -150,7 +146,7 @@ class SafetyCenterTestData(context: Context) {
                 safetyCenterResourcesApk.getStringByName(
                     "overall_severity_level_critical_safety_warning_title"
                 ),
-                getAlertString(numAlerts)
+                getAlertString(numAlerts),
             )
             .setSeverityLevel(OVERALL_SEVERITY_LEVEL_CRITICAL_WARNING)
             .build()
@@ -165,7 +161,7 @@ class SafetyCenterTestData(context: Context) {
         userId: Int = UserHandle.myUserId(),
         title: CharSequence = "OK",
         pendingIntent: PendingIntent? =
-            safetySourceTestData.createTestActivityRedirectPendingIntent()
+            safetySourceTestData.createTestActivityRedirectPendingIntent(),
     ) =
         SafetyCenterEntry.Builder(entryId(sourceId, userId), title)
             .setSeverityLevel(ENTRY_SEVERITY_LEVEL_UNKNOWN)
@@ -183,7 +179,7 @@ class SafetyCenterTestData(context: Context) {
         userId: Int = UserHandle.myUserId(),
         title: CharSequence = "OK",
         pendingIntent: PendingIntent? =
-            safetySourceTestData.createTestActivityRedirectPendingIntent()
+            safetySourceTestData.createTestActivityRedirectPendingIntent(),
     ) = safetyCenterEntryDefaultBuilder(sourceId, userId, title, pendingIntent).build()
 
     /**
@@ -194,7 +190,7 @@ class SafetyCenterTestData(context: Context) {
     fun safetyCenterEntryDefaultStaticBuilder(
         sourceId: String,
         userId: Int = UserHandle.myUserId(),
-        title: CharSequence = "OK"
+        title: CharSequence = "OK",
     ) =
         SafetyCenterEntry.Builder(entryId(sourceId, userId), title)
             .setSeverityLevel(ENTRY_SEVERITY_LEVEL_UNSPECIFIED)
@@ -219,7 +215,7 @@ class SafetyCenterTestData(context: Context) {
     fun safetyCenterEntryUnspecified(
         sourceId: String,
         pendingIntent: PendingIntent? =
-            safetySourceTestData.createTestActivityRedirectPendingIntent()
+            safetySourceTestData.createTestActivityRedirectPendingIntent(),
     ) =
         SafetyCenterEntry.Builder(entryId(sourceId), "Unspecified title")
             .setSeverityLevel(ENTRY_SEVERITY_LEVEL_UNSPECIFIED)
@@ -237,7 +233,7 @@ class SafetyCenterTestData(context: Context) {
     fun safetyCenterEntryOkBuilder(
         sourceId: String,
         userId: Int = UserHandle.myUserId(),
-        title: CharSequence = "Ok title"
+        title: CharSequence = "Ok title",
     ) =
         SafetyCenterEntry.Builder(entryId(sourceId, userId), title)
             .setSeverityLevel(ENTRY_SEVERITY_LEVEL_OK)
@@ -252,7 +248,7 @@ class SafetyCenterTestData(context: Context) {
     fun safetyCenterEntryOk(
         sourceId: String,
         userId: Int = UserHandle.myUserId(),
-        title: CharSequence = "Ok title"
+        title: CharSequence = "Ok title",
     ) = safetyCenterEntryOkBuilder(sourceId, userId, title).build()
 
     /**
@@ -262,7 +258,7 @@ class SafetyCenterTestData(context: Context) {
      */
     fun safetyCenterEntryRecommendation(
         sourceId: String,
-        summary: String = "Recommendation summary"
+        summary: String = "Recommendation summary",
     ) =
         SafetyCenterEntry.Builder(entryId(sourceId), "Recommendation title")
             .setSeverityLevel(ENTRY_SEVERITY_LEVEL_RECOMMENDATION)
@@ -291,12 +287,12 @@ class SafetyCenterTestData(context: Context) {
         sourceId: String,
         userId: Int = UserHandle.myUserId(),
         attributionTitle: String? = "OK",
-        groupId: String? = SINGLE_SOURCE_GROUP_ID
+        groupId: String? = SINGLE_SOURCE_GROUP_ID,
     ) =
         SafetyCenterIssue.Builder(
                 issueId(sourceId, INFORMATION_ISSUE_ID, userId = userId),
                 "Information issue title",
-                "Information issue summary"
+                "Information issue summary",
             )
             .setSeverityLevel(ISSUE_SEVERITY_LEVEL_OK)
             .setShouldConfirmDismissal(false)
@@ -307,10 +303,10 @@ class SafetyCenterTestData(context: Context) {
                                 sourceId,
                                 INFORMATION_ISSUE_ID,
                                 INFORMATION_ISSUE_ACTION_ID,
-                                userId
+                                userId,
                             ),
                             "Review",
-                            safetySourceTestData.createTestActivityRedirectPendingIntent()
+                            safetySourceTestData.createTestActivityRedirectPendingIntent(),
                         )
                         .build()
                 )
@@ -332,12 +328,12 @@ class SafetyCenterTestData(context: Context) {
         userId: Int = UserHandle.myUserId(),
         attributionTitle: String? = "OK",
         groupId: String? = SINGLE_SOURCE_GROUP_ID,
-        confirmationDialog: Boolean = false
+        confirmationDialog: Boolean = false,
     ) =
         SafetyCenterIssue.Builder(
                 issueId(sourceId, RECOMMENDATION_ISSUE_ID, userId = userId),
                 "Recommendation issue title",
-                "Recommendation issue summary"
+                "Recommendation issue summary",
             )
             .setSeverityLevel(ISSUE_SEVERITY_LEVEL_RECOMMENDATION)
             .setActions(
@@ -347,10 +343,10 @@ class SafetyCenterTestData(context: Context) {
                                 sourceId,
                                 RECOMMENDATION_ISSUE_ID,
                                 RECOMMENDATION_ISSUE_ACTION_ID,
-                                userId
+                                userId,
                             ),
                             "See issue",
-                            safetySourceTestData.createTestActivityRedirectPendingIntent()
+                            safetySourceTestData.createTestActivityRedirectPendingIntent(),
                         )
                         .apply {
                             if (confirmationDialog && SdkLevel.isAtLeastU()) {
@@ -359,7 +355,7 @@ class SafetyCenterTestData(context: Context) {
                                         "Confirmation title",
                                         "Confirmation text",
                                         "Confirmation yes",
-                                        "Confirmation no"
+                                        "Confirmation no",
                                     )
                                 )
                             }
@@ -384,12 +380,12 @@ class SafetyCenterTestData(context: Context) {
         isActionInFlight: Boolean = false,
         userId: Int = UserHandle.myUserId(),
         attributionTitle: String? = "OK",
-        groupId: String? = SINGLE_SOURCE_GROUP_ID
+        groupId: String? = SINGLE_SOURCE_GROUP_ID,
     ) =
         SafetyCenterIssue.Builder(
                 issueId(sourceId, CRITICAL_ISSUE_ID, userId = userId),
                 "Critical issue title",
-                "Critical issue summary"
+                "Critical issue summary",
             )
             .setSeverityLevel(ISSUE_SEVERITY_LEVEL_CRITICAL_WARNING)
             .setActions(
@@ -399,10 +395,10 @@ class SafetyCenterTestData(context: Context) {
                                 sourceId,
                                 CRITICAL_ISSUE_ID,
                                 CRITICAL_ISSUE_ACTION_ID,
-                                userId
+                                userId,
                             ),
                             "Solve issue",
-                            safetySourceTestData.criticalIssueActionPendingIntent
+                            safetySourceTestData.criticalIssueActionPendingIntent,
                         )
                         .setWillResolve(true)
                         .setIsInFlight(isActionInFlight)
@@ -432,7 +428,7 @@ class SafetyCenterTestData(context: Context) {
         val messageFormat =
             MessageFormat(
                 safetyCenterResourcesApk.getStringByName(name, formatArgs),
-                Locale.getDefault()
+                Locale.getDefault(),
             )
         val arguments = ArrayMap<String, Any>()
         arguments["count"] = count
@@ -448,7 +444,7 @@ class SafetyCenterTestData(context: Context) {
                     .build(),
                 emptyList(),
                 emptyList(),
-                emptyList()
+                emptyList(),
             )
 
         /** Creates an ID for a Safety Center entry. */
@@ -465,7 +461,7 @@ class SafetyCenterTestData(context: Context) {
             sourceId: String,
             sourceIssueId: String,
             issueTypeId: String = ISSUE_TYPE_ID,
-            userId: Int = UserHandle.myUserId()
+            userId: Int = UserHandle.myUserId(),
         ) =
             SafetyCenterIds.encodeToString(
                 SafetyCenterIssueId.newBuilder()
@@ -485,7 +481,7 @@ class SafetyCenterTestData(context: Context) {
             sourceId: String,
             sourceIssueId: String,
             sourceIssueActionId: String,
-            userId: Int = UserHandle.myUserId()
+            userId: Int = UserHandle.myUserId(),
         ) =
             SafetyCenterIds.encodeToString(
                 SafetyCenterIssueActionId.newBuilder()
@@ -546,7 +542,7 @@ class SafetyCenterTestData(context: Context) {
         private fun SafetyCenterData.copy(
             issues: List<SafetyCenterIssue> = this.issues,
             dismissedIssues: List<SafetyCenterIssue> = this.dismissedIssues,
-            extras: Bundle = this.extras
+            extras: Bundle = this.extras,
         ): SafetyCenterData =
             SafetyCenterData.Builder(status)
                 .apply {

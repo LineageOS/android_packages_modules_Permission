@@ -21,6 +21,7 @@ import android.app.AppOpsManager
 import android.os.UserHandle
 import android.permission.flags.Flags
 import com.android.modules.utils.build.SdkLevel
+import com.android.permissioncontroller.PermissionControllerApplication
 import com.android.permissioncontroller.appops.data.model.v31.DiscretePackageOpsModel
 import com.android.permissioncontroller.appops.data.model.v31.DiscretePackageOpsModel.DiscreteOpModel
 import com.android.permissioncontroller.appops.data.repository.v31.AppOpRepository
@@ -29,6 +30,7 @@ import com.android.permissioncontroller.permission.domain.model.v31.PermissionTi
 import com.android.permissioncontroller.permission.domain.model.v31.PermissionTimelineUsageModelWrapper
 import com.android.permissioncontroller.permission.ui.model.v31.PermissionUsageDetailsViewModel.Companion.CLUSTER_SPACING_MINUTES
 import com.android.permissioncontroller.permission.ui.model.v31.PermissionUsageDetailsViewModel.Companion.ONE_MINUTE_MS
+import com.android.permissioncontroller.permission.utils.LocationUtils
 import com.android.permissioncontroller.permission.utils.PermissionMapping
 import com.android.permissioncontroller.pm.data.repository.v31.PackageRepository
 import com.android.permissioncontroller.role.data.repository.v31.RoleRepository
@@ -48,6 +50,9 @@ class GetPermissionGroupUsageDetailsUseCase(
     private val appOpRepository: AppOpRepository,
     private val roleRepository: RoleRepository,
     private val userRepository: UserRepository,
+    // Allow tests to inject as on T- READ_DEVICE_CONFIG permission check is enforced.
+    private val attributionLabelFix: Boolean =
+        com.android.permission.flags.Flags.permissionTimelineAttributionLabelFix(),
 ) {
     operator fun invoke(coroutineScope: CoroutineScope): Flow<PermissionTimelineUsageModelWrapper> {
         val opNames = requireNotNull(permissionGroupToOpNames[permissionGroup])
@@ -72,7 +77,7 @@ class GetPermissionGroupUsageDetailsUseCase(
                                 permissionGroup,
                                 packageOps.userId,
                                 permissionRepository,
-                                packageRepository
+                                packageRepository,
                             )
                         packageOps
                     }
@@ -86,43 +91,61 @@ class GetPermissionGroupUsageDetailsUseCase(
         }
     }
 
+    // show attribution on T+ for location provider only..
+    private fun shouldShowAttributionLabel(packageName: String): Boolean {
+        return if (attributionLabelFix) {
+            SdkLevel.isAtLeastT() &&
+                LocationUtils.isLocationProvider(PermissionControllerApplication.get(), packageName)
+        } else true
+    }
+
     /** Group app op accesses by attribution label if it is available and user visible. */
     private suspend fun List<DiscretePackageOpsModel>.groupByAttributionLabelIfNeeded() =
         map { packageOps ->
-                val attributionInfo =
-                    packageRepository.getPackageAttributionInfo(
-                        packageOps.packageName,
-                        UserHandle.of(packageOps.userId)
-                    )
-                if (attributionInfo != null) {
-                    if (attributionInfo.areUserVisible && attributionInfo.tagResourceMap != null) {
-                        val attributionLabelOpsMap: Map<String?, List<DiscreteOpModel>> =
-                            packageOps.appOpAccesses
-                                .map { appOpEntry ->
-                                    val resourceId =
-                                        attributionInfo.tagResourceMap[appOpEntry.attributionTag]
-                                    val label = attributionInfo.resourceLabelMap?.get(resourceId)
-                                    label to appOpEntry
-                                }
-                                .groupBy { labelAppOpEntryPair -> labelAppOpEntryPair.first }
-                                .mapValues { (_, values) ->
-                                    values.map { labelAppOpEntryPair -> labelAppOpEntryPair.second }
-                                }
+                if (!shouldShowAttributionLabel(packageOps.packageName)) {
+                    listOf(packageOps)
+                } else {
+                    val attributionInfo =
+                        packageRepository.getPackageAttributionInfo(
+                            packageOps.packageName,
+                            UserHandle.of(packageOps.userId),
+                        )
+                    if (attributionInfo != null) {
+                        if (
+                            attributionInfo.areUserVisible && attributionInfo.tagResourceMap != null
+                        ) {
+                            val attributionLabelOpsMap: Map<String?, List<DiscreteOpModel>> =
+                                packageOps.appOpAccesses
+                                    .map { appOpEntry ->
+                                        val resourceId =
+                                            attributionInfo.tagResourceMap[
+                                                    appOpEntry.attributionTag]
+                                        val label =
+                                            attributionInfo.resourceLabelMap?.get(resourceId)
+                                        label to appOpEntry
+                                    }
+                                    .groupBy { labelAppOpEntryPair -> labelAppOpEntryPair.first }
+                                    .mapValues { (_, values) ->
+                                        values.map { labelAppOpEntryPair ->
+                                            labelAppOpEntryPair.second
+                                        }
+                                    }
 
-                        attributionLabelOpsMap.map { labelAppOpsEntry ->
-                            DiscretePackageOpsModel(
-                                packageOps.packageName,
-                                packageOps.userId,
-                                appOpAccesses = labelAppOpsEntry.value,
-                                attributionLabel = labelAppOpsEntry.key,
-                                isUserSensitive = packageOps.isUserSensitive,
-                            )
+                            attributionLabelOpsMap.map { labelAppOpsEntry ->
+                                DiscretePackageOpsModel(
+                                    packageOps.packageName,
+                                    packageOps.userId,
+                                    appOpAccesses = labelAppOpsEntry.value,
+                                    attributionLabel = labelAppOpsEntry.key,
+                                    isUserSensitive = packageOps.isUserSensitive,
+                                )
+                            }
+                        } else {
+                            listOf(packageOps)
                         }
                     } else {
                         listOf(packageOps)
                     }
-                } else {
-                    listOf(packageOps)
                 }
             }
             .flatten()
@@ -147,7 +170,7 @@ class GetPermissionGroupUsageDetailsUseCase(
                             packageOps.userId,
                             currentCluster.toMutableList(),
                             packageOps.attributionLabel,
-                            packageOps.isUserSensitive
+                            packageOps.isUserSensitive,
                         )
                     )
                     currentCluster.clear()
@@ -164,7 +187,7 @@ class GetPermissionGroupUsageDetailsUseCase(
                         packageOps.userId,
                         currentCluster.toMutableList(),
                         packageOps.attributionLabel,
-                        packageOps.isUserSensitive
+                        packageOps.isUserSensitive,
                     )
                 )
             }
@@ -220,7 +243,7 @@ class GetPermissionGroupUsageDetailsUseCase(
 
     private fun canAccessBeAddedToCluster(
         currentAccess: DiscreteOpModel,
-        clusteredAccesses: List<DiscreteOpModel>
+        clusteredAccesses: List<DiscreteOpModel>,
     ): Boolean {
         val clusterOp = clusteredAccesses.last().opName
         if (
@@ -282,7 +305,7 @@ class GetPermissionGroupUsageDetailsUseCase(
                 listOf(
                     Manifest.permission_group.CAMERA,
                     Manifest.permission_group.LOCATION,
-                    Manifest.permission_group.MICROPHONE
+                    Manifest.permission_group.MICROPHONE,
                 )
             permissionGroups.forEach { permissionGroup ->
                 val opNames =

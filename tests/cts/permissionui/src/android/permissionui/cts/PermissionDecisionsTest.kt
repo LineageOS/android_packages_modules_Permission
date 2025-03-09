@@ -52,8 +52,10 @@ class PermissionDecisionsTest : BaseUsePermissionTest() {
 
         openPermissionDecisions()
         waitFindObject(
-            By.hasChild(By.text("You gave $APP_PACKAGE_NAME access to location"))
-                .hasChild(By.text("Today"))
+            By.hasChild(
+                    By.text("You gave $APP_PACKAGE_NAME access to location").displayId(displayId))
+                .hasChild(By.text("Today").displayId(displayId))
+                .displayId(displayId)
         )
     }
 
@@ -66,8 +68,10 @@ class PermissionDecisionsTest : BaseUsePermissionTest() {
 
         openPermissionDecisions()
         waitFindObject(
-            By.hasChild(By.text("You denied $APP_PACKAGE_NAME access to location"))
-                .hasChild(By.text("Today"))
+            By.hasChild(
+                    By.text("You denied $APP_PACKAGE_NAME access to location").displayId(displayId))
+                .hasChild(By.text("Today").displayId(displayId))
+                .displayId(displayId)
         )
     }
 
@@ -82,8 +86,10 @@ class PermissionDecisionsTest : BaseUsePermissionTest() {
         openPermissionDecisions()
         assertNull(
             waitFindObjectOrNull(
-                By.hasChild(By.text("You denied $APP_PACKAGE_NAME access to location"))
-                    .hasChild(By.text("Today")),
+                By.hasChild(By.text("You denied $APP_PACKAGE_NAME access to location")
+                        .displayId(displayId))
+                    .hasChild(By.text("Today").displayId(displayId))
+                    .displayId(displayId),
                 ASSERT_ABSENT_SELECTOR_TIMEOUT_MS
             )
         )
@@ -99,21 +105,25 @@ class PermissionDecisionsTest : BaseUsePermissionTest() {
         openPermissionDecisions()
 
         waitFindObject(
-                By.hasChild(By.text("You gave $APP_PACKAGE_NAME access to location"))
-                    .hasChild(By.text("Today"))
+                By.hasChild(By.text("You gave $APP_PACKAGE_NAME access to location")
+                        .displayId(displayId))
+                    .hasChild(By.text("Today").displayId(displayId))
+                    .displayId(displayId)
             )
             .click()
 
-        waitFindObject(By.text(APP_PACKAGE_NAME))
-        waitFindObject(By.text("Location access for this app"))
+        waitFindObject(By.text(APP_PACKAGE_NAME).displayId(displayId))
+        waitFindObject(By.text("Location access for this app").displayId(displayId))
 
         // change the permission on the app permission screen and verify that updates the decision
         // page
-        waitFindObject(By.text("Don’t allow")).click()
+        waitFindObject(By.text("Don’t allow").displayId(displayId)).click()
         pressBack()
         waitFindObject(
-            By.hasChild(By.text("You denied $APP_PACKAGE_NAME access to location"))
-                .hasChild(By.text("Today"))
+            By.hasChild(
+                    By.text("You denied $APP_PACKAGE_NAME access to location").displayId(displayId))
+                .hasChild(By.text("Today").displayId(displayId))
+                .displayId(displayId)
         )
     }
 

@@ -17,6 +17,9 @@ package {
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
+// Any place that role-controller is added as a dependency must also include
+// "com.android.permission.flags-aconfig-java" or
+// "com.android.permission.flags-aconfig-java-export",
 java_library {
     name: "role-controller",
     srcs: [
@@ -24,13 +27,17 @@ java_library {
     ],
     libs: [
         "androidx.annotation_annotation",
+        "com.android.permission.flags-aconfig-java",
+        "framework-annotations-lib",
     ],
     static_libs: [
         "modules-utils-build_system",
         "android.app.appfunctions.exported-flags-aconfig-java",
         "android.companion.virtualdevice.flags-aconfig-java-export",
+        "android.content.pm.flags-aconfig-java-export",
         "android.permission.flags-aconfig-java-export",
         "android.os.flags-aconfig-java-export",
+        "device_policy_aconfig_flags_java_export",
     ],
     apex_available: [
         "com.android.permission",

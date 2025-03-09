@@ -210,7 +210,7 @@
     <string name="unused_apps_label_v3" msgid="693340578642156657">"Gerir app se não for usada"</string>
     <string name="unused_apps_summary" msgid="8839466950318403115">"Remover autorizações, eliminar ficheiros temporários e parar notificações"</string>
     <string name="unused_apps_summary_v2" msgid="5011313200815115802">"Remove autorizações, elimina ficheiros temporários, interrompe notificações e arquiva a app"</string>
-    <string name="auto_revoke_summary" msgid="5867548789805911683">"Para proteger os seus dados, as autorizações desta app serão removidas se a mesma não for utilizada durante alguns meses."</string>
+    <string name="auto_revoke_summary" msgid="5867548789805911683">"Para proteger os seus dados, as autorizações desta app serão removidas se a mesma não for usada durante alguns meses."</string>
     <string name="auto_revoke_summary_with_permissions" msgid="389712086597285013">"Para proteger os seus dados, se a app não for utilizada há alguns meses, serão removidas as seguintes autorizações: <xliff:g id="PERMS">%1$s</xliff:g>"</string>
     <string name="auto_revoked_apps_page_summary" msgid="6594753657893756536">"Para proteger os seus dados, foram removidas as autorizações para as apps que não utiliza há alguns meses."</string>
     <string name="auto_revoke_open_app_message" msgid="8075556291711205039">"Se pretender permitir novamente as autorizações, abra a app."</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"Permitir definições restritas"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"Definição restrita"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"Para sua segurança, esta definição está indisponível atualmente."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"Ação não disponível durante uma chamada"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"Não é permitido permitir que as apps instalem outras apps durante uma chamada telefónica.\n\n Os autores de esquemas pedem frequentemente este tipo de ação durante as conversas telefónicas, por isso, a opção é bloqueada para sua proteção. Se alguém que não conhece lhe pedir para realizar esta ação, pode tratar-se de um esquema."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"O acesso a <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> foi negado à app"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"A app pediu acesso a uma autorização confidencial que pode pôr em risco as suas informações pessoais e financeiras.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>É possível que a app não funcione corretamente sem esta autorização restrita. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;Saiba como permitir o acesso&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"O acesso à função predefinida <xliff:g id="ROLE_NAME">%1$s</xliff:g> foi negado à app"</string>

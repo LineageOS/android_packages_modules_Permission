@@ -27,8 +27,9 @@ import androidx.wear.compose.material.ChipDefaults
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.SwipeToDismissBox
 import com.android.permissioncontroller.permission.ui.wear.elements.Chip
-import com.android.permissioncontroller.permission.ui.wear.elements.Scaffold
+import com.android.permissioncontroller.permission.ui.wear.elements.material3.WearPermissionScaffold
 import com.android.permissioncontroller.permission.ui.wear.model.LocationProviderInterceptDialogArgs
+import com.android.permissioncontroller.permission.ui.wear.theme.WearPermissionMaterialUIVersion
 
 @Composable
 fun LocationProviderDialogScreen(args: LocationProviderInterceptDialogArgs?) {
@@ -41,7 +42,8 @@ fun LocationProviderDialogScreen(args: LocationProviderInterceptDialogArgs?) {
             }
         }
         SwipeToDismissBox(state = state) { isBackground ->
-            Scaffold(
+            WearPermissionScaffold(
+                materialUIVersion = WearPermissionMaterialUIVersion.MATERIAL2_5,
                 showTimeText = false,
                 image = iconId,
                 title = stringResource(titleId),
@@ -54,7 +56,7 @@ fun LocationProviderDialogScreen(args: LocationProviderInterceptDialogArgs?) {
                             onClick = onLocationSettingsClick,
                             modifier = Modifier.fillMaxWidth(),
                             textColor = MaterialTheme.colors.surface,
-                            colors = ChipDefaults.primaryChipColors()
+                            colors = ChipDefaults.primaryChipColors(),
                         )
                     }
                     item {
@@ -64,7 +66,7 @@ fun LocationProviderDialogScreen(args: LocationProviderInterceptDialogArgs?) {
                             modifier = Modifier.fillMaxWidth(),
                         )
                     }
-                }
+                },
             )
         }
     }

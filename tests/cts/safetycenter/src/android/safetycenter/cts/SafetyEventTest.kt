@@ -203,7 +203,7 @@ class SafetyEventTest {
     ) =
         EqualsHashCodeToStringTester.ofParcelable(
                 parcelableCreator = SafetyEvent.CREATOR,
-                createCopy = createCopyFromBuilder
+                createCopy = createCopyFromBuilder,
             )
             .addEqualityGroup(SafetyEvent.Builder(SAFETY_EVENT_TYPE_SOURCE_STATE_CHANGED).build())
             .addEqualityGroup(
@@ -212,7 +212,7 @@ class SafetyEventTest {
                     .build(),
                 SafetyEvent.Builder(SAFETY_EVENT_TYPE_REFRESH_REQUESTED)
                     .setRefreshBroadcastId(REFRESH_BROADCAST_ID)
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 SafetyEvent.Builder(SAFETY_EVENT_TYPE_RESOLVING_ACTION_SUCCEEDED)
@@ -222,7 +222,7 @@ class SafetyEventTest {
                 SafetyEvent.Builder(SAFETY_EVENT_TYPE_RESOLVING_ACTION_SUCCEEDED)
                     .setSafetySourceIssueId(SAFETY_SOURCE_ISSUE_ID)
                     .setSafetySourceIssueActionId(SAFETY_SOURCE_ISSUE_ACTION_ID)
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 SafetyEvent.Builder(SAFETY_EVENT_TYPE_RESOLVING_ACTION_FAILED)
@@ -232,7 +232,7 @@ class SafetyEventTest {
                 SafetyEvent.Builder(SAFETY_EVENT_TYPE_RESOLVING_ACTION_FAILED)
                     .setSafetySourceIssueId(SAFETY_SOURCE_ISSUE_ID)
                     .setSafetySourceIssueActionId(SAFETY_SOURCE_ISSUE_ACTION_ID)
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(SafetyEvent.Builder(SAFETY_EVENT_TYPE_DEVICE_REBOOTED).build())
             .addEqualityGroup(SafetyEvent.Builder(SAFETY_EVENT_TYPE_DEVICE_LOCALE_CHANGED).build())

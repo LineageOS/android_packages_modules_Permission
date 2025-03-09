@@ -26,7 +26,7 @@ import android.view.ViewGroup;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceViewHolder;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.permissioncontroller.R;
 import com.android.permissioncontroller.safetycenter.ui.model.PrivacyControlsViewModel;
@@ -38,7 +38,7 @@ import com.android.permissioncontroller.safetycenter.ui.model.PrivacyControlsVie
  * method will not register any changes while it appears disabled.
  */
 @RequiresApi(TIRAMISU)
-public class ClickableDisabledSwitchPreference extends SwitchPreference {
+public class ClickableDisabledSwitchPreference extends SwitchPreferenceCompat {
 
     private boolean mAppearDisabled;
 

@@ -88,6 +88,35 @@
          android:protectionLevel="signature|privileged"
          android:label="@string/car_permission_label_mileage"
          android:description="@string/car_permission_desc_mileage"/>
+    <permission android:name="android.car.permission.CAR_MILEAGE_3P"
+        android:permissionGroup="android.permission-group.LOCATION"
+        android:protectionLevel="dangerous"
+        android:label="@string/car_permission_label_mileage_3p"
+        android:description="@string/car_permission_desc_mileage_3p"
+        android:featureFlag="android.car.feature.android_b_vehicle_properties" />
+    <permission android:name="android.car.permission.READ_CAR_HORN"
+        android:permissionGroup="android.car.permission-group.CAR_MONITORING"
+        android:protectionLevel="dangerous"
+        android:label="@string/car_permission_label_read_car_horn"
+        android:description="@string/car_permission_desc_read_car_horn"
+        android:featureFlag="android.car.feature.android_b_vehicle_properties" />
+    <permission android:name="android.car.permission.CONTROL_CAR_HORN"
+        android:protectionLevel="signature|privileged"
+        android:label="@string/car_permission_label_control_car_horn"
+        android:description="@string/car_permission_desc_control_car_horn"
+        android:featureFlag="android.car.feature.android_b_vehicle_properties" />
+    <permission android:name="android.car.permission.READ_CAR_PEDALS"
+        android:permissionGroup="android.car.permission-group.CAR_MONITORING"
+        android:protectionLevel="dangerous"
+        android:label="@string/car_permission_label_read_car_pedals"
+        android:description="@string/car_permission_desc_read_car_pedals"
+        android:featureFlag="android.car.feature.android_b_vehicle_properties" />
+    <permission android:name="android.car.permission.READ_BRAKE_INFO"
+        android:permissionGroup="android.car.permission-group.CAR_MONITORING"
+        android:protectionLevel="dangerous"
+        android:label="@string/car_permission_label_read_brake_info"
+        android:description="@string/car_permission_desc_read_brake_info"
+        android:featureFlag="android.car.feature.android_b_vehicle_properties" />
     <permission android:name="android.car.permission.CAR_TIRES"
          android:protectionLevel="signature|privileged"
          android:label="@string/car_permission_label_car_tires"
@@ -186,6 +215,12 @@
          android:protectionLevel="signature|privileged"
          android:label="@string/car_permission_label_control_car_exterior_lights"
          android:description="@string/car_permission_desc_control_car_exterior_lights"/>
+    <permission android:name="android.car.permission.READ_CAR_EXTERIOR_LIGHTS"
+        android:permissionGroup="android.car.permission-group.CAR_MONITORING"
+        android:protectionLevel="dangerous"
+        android:label="@string/car_permission_label_read_car_exterior_lights"
+        android:description="@string/car_permission_desc_car_read_exterior_lights"
+        android:featureFlag="android.car.feature.android_b_vehicle_properties" />
     <permission android:name="android.car.permission.READ_CAR_INTERIOR_LIGHTS"
          android:protectionLevel="signature|privileged"
          android:label="@string/car_permission_label_car_interior_lights"
@@ -620,4 +655,16 @@
         android:protectionLevel="signature|privileged"
         android:label="@string/car_permission_label_bind_app_card_provider"
         android:description="@string/car_permission_desc_bind_app_card_provider" />
+    <permission
+        android:name="android.car.permission.RECORD_VEHICLE_PROPERTIES"
+        android:protectionLevel="signature"
+        android:label="@string/car_permission_label_record_vehicle_properties"
+        android:description="@string/car_permission_desc_record_vehicle_properties"
+        android:featureFlag="android.car.feature.car_property_simulation" />
+    <permission
+        android:name="android.car.permission.INJECT_VEHICLE_PROPERTIES"
+        android:protectionLevel="signature"
+        android:label="@string/car_permission_label_inject_vehicle_properties"
+        android:description="@string/car_permission_desc_inject_vehicle_properties"
+        android:featureFlag="android.car.feature.car_property_simulation" />
 </manifest>

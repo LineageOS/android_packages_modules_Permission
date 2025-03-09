@@ -28,11 +28,12 @@ import androidx.preference.PreferenceViewHolder
 import com.android.permissioncontroller.Constants.EXTRA_SESSION_ID
 import com.android.permissioncontroller.R
 import com.android.permissioncontroller.safetycenter.SafetyCenterConstants
+import com.android.settingslib.widget.GroupSectionDividerMixin
 
 /** A preference that displays the Security and Privacy brand name on a Safety Center subpage. */
 @RequiresApi(UPSIDE_DOWN_CAKE)
 internal class SafetyBrandChipPreference(context: Context, attrs: AttributeSet) :
-    Preference(context, attrs) {
+    Preference(context, attrs), GroupSectionDividerMixin {
 
     init {
         setLayoutResource(R.layout.preference_brand_chip)
@@ -67,7 +68,7 @@ internal class SafetyBrandChipPreference(context: Context, attrs: AttributeSet) 
         fun closeSubpage(
             fragmentActivity: FragmentActivity,
             fragmentContext: Context,
-            sessionId: Long
+            sessionId: Long,
         ) {
             val openedFromHomepage =
                 fragmentActivity

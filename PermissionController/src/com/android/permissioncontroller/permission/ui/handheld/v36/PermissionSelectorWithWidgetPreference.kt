@@ -14,14 +14,16 @@
  * limitations under the License.
  */
 
-package com.android.permissioncontroller.permission.ui.handheld
+package com.android.permissioncontroller.permission.ui.handheld.v36
 
 import android.content.Context
+import android.os.Build
 import android.util.AttributeSet
 import android.widget.ImageView
 import androidx.annotation.AttrRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.IdRes
+import androidx.annotation.RequiresApi
 import androidx.preference.PreferenceViewHolder
 import com.android.permissioncontroller.R
 import com.android.permissioncontroller.permission.utils.ResourceUtils
@@ -34,6 +36,7 @@ import com.android.settingslib.widget.SelectorWithWidgetPreference
  * - Propagates the supplied `app:checkboxId` id to the checkbox (or radio button, on the left)
  * - Allows defining a "disabled click listener" handler that handles clicks when disabled
  */
+@RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
 class PermissionSelectorWithWidgetPreference : SelectorWithWidgetPreference {
     constructor(context: Context) : super(context) {
         init(context, null)
@@ -46,7 +49,7 @@ class PermissionSelectorWithWidgetPreference : SelectorWithWidgetPreference {
     constructor(
         context: Context,
         attrs: AttributeSet?,
-        @AttrRes defStyleAttr: Int
+        @AttrRes defStyleAttr: Int,
     ) : super(context, attrs, defStyleAttr) {
         init(context, attrs)
     }
@@ -56,6 +59,8 @@ class PermissionSelectorWithWidgetPreference : SelectorWithWidgetPreference {
     }
 
     private fun init(context: Context, attrs: AttributeSet?) {
+        layoutResource = R.layout.permission_preference_selector_with_widget
+        widgetLayoutResource = R.layout.permission_preference_widget_radiobutton
         extraWidgetIconRes =
             ResourceUtils.getResourceIdByAttr(context, attrs, R.attr.extraWidgetIcon)
         extraWidgetIdRes = ResourceUtils.getResourceIdByAttr(context, attrs, R.attr.extraWidgetId)
@@ -69,9 +74,10 @@ class PermissionSelectorWithWidgetPreference : SelectorWithWidgetPreference {
 
     override fun onBindViewHolder(holder: PreferenceViewHolder) {
         super.onBindViewHolder(holder)
-        val extraWidget = holder.findViewById(
-            com.android.settingslib.widget.preference.selector.R.id.selector_extra_widget
-        ) as? ImageView
+        val extraWidget =
+            holder.findViewById(
+                com.android.settingslib.widget.preference.selector.R.id.selector_extra_widget
+            ) as? ImageView
         val checkbox = holder.findViewById(android.R.id.checkbox)
         if (extraWidgetIconRes != 0) {
             extraWidget?.setImageResource(extraWidgetIconRes)

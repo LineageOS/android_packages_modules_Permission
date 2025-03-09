@@ -104,11 +104,11 @@ class SafetyCenterStaticEntryGroupTest {
             )
             .addEqualityGroup(
                 staticEntryGroup,
-                SafetyCenterStaticEntryGroup("a title", listOf(staticEntry1, staticEntry2))
+                SafetyCenterStaticEntryGroup("a title", listOf(staticEntry1, staticEntry2)),
             )
             .addEqualityGroup(
                 SafetyCenterStaticEntryGroup("a title", listOf(staticEntry1)),
-                SafetyCenterStaticEntryGroup("a title", listOf(staticEntry1))
+                SafetyCenterStaticEntryGroup("a title", listOf(staticEntry1)),
             )
             .addEqualityGroup(
                 SafetyCenterStaticEntryGroup("a different title", listOf(staticEntry1))

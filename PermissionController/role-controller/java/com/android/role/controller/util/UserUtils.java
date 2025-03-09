@@ -24,6 +24,7 @@ import android.os.UserHandle;
 import android.os.UserManager;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.android.modules.utils.build.SdkLevel;
 
@@ -110,5 +111,25 @@ public final class UserUtils {
         } else {
             return context.createContextAsUser(user, 0);
         }
+    }
+
+    /**
+     * Returns the parent of a given user, or user if it has no parent (e.g. it is the primary
+     * user)
+     */
+    @NonNull
+    public static UserHandle getProfileParentOrSelf(@NonNull UserHandle user,
+            @NonNull Context context) {
+        UserHandle profileParent = getProfileParent(user, context);
+        // If profile parent user is null, then original user is the parent
+        return profileParent != null ? profileParent : user;
+    }
+
+    /** Returns the parent of a given user. */
+    @Nullable
+    private static UserHandle getProfileParent(UserHandle user, @NonNull Context context) {
+        Context userContext = getUserContext(context, user);
+        UserManager userManager = userContext.getSystemService(UserManager.class);
+        return userManager.getProfileParent(user);
     }
 }

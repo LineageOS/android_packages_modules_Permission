@@ -31,7 +31,9 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 
 import com.android.modules.utils.build.SdkLevel;
+import com.android.permission.flags.Flags;
 import com.android.permissioncontroller.R;
+import com.android.permissioncontroller.permission.data.PermGroupsPackagesUiInfoLiveData;
 import com.android.permissioncontroller.permission.ui.UnusedAppsFragment;
 import com.android.permissioncontroller.permission.ui.model.ManageStandardPermissionsViewModel;
 import com.android.permissioncontroller.permission.utils.StringUtils;
@@ -58,6 +60,14 @@ public final class ManageStandardPermissionsFragment extends ManagePermissionsFr
         return arguments;
     }
 
+    private PermGroupsPackagesUiInfoLiveData getPermGroupsLiveData() {
+        if (Flags.declutteredPermissionManagerEnabled()) {
+            return mViewModel.getUsedStandardPermGroupsUiInfo();
+        } else {
+            return mViewModel.getUiDataLiveData();
+        }
+    }
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -65,12 +75,12 @@ public final class ManageStandardPermissionsFragment extends ManagePermissionsFr
         final Application application = getActivity().getApplication();
         mViewModel = new ViewModelProvider(this, AndroidViewModelFactory.getInstance(application))
                 .get(ManageStandardPermissionsViewModel.class);
-        mPermissionGroups = mViewModel.getUiDataLiveData().getValue();
+        mPermissionGroups = getPermGroupsLiveData().getValue();
 
-        mViewModel.getUiDataLiveData().observe(this, permissionGroups -> {
+        getPermGroupsLiveData().observe(this, permissionGroups -> {
             // Once we have loaded data for the first time, further loads should be staggered,
             // for performance reasons.
-            mViewModel.getUiDataLiveData().setLoadStaggered(true);
+            getPermGroupsLiveData().setLoadStaggered(true);
             if (permissionGroups != null) {
                 mPermissionGroups = permissionGroups;
                 updatePermissionsUi();
@@ -80,13 +90,18 @@ public final class ManageStandardPermissionsFragment extends ManagePermissionsFr
             }
 
             // If we've loaded all LiveDatas, no need to prioritize loading any particular one
-            if (!mViewModel.getUiDataLiveData().isStale()) {
-                mViewModel.getUiDataLiveData().setFirstLoadGroup(null);
+            if (!getPermGroupsLiveData().isStale()) {
+                getPermGroupsLiveData().setFirstLoadGroup(null);
             }
         });
 
         mViewModel.getNumCustomPermGroups().observe(this, permNames -> updatePermissionsUi());
         mViewModel.getNumAutoRevoked().observe(this, show -> updatePermissionsUi());
+        if (Flags.declutteredPermissionManagerEnabled()) {
+            mViewModel.getNumUnusedStandardPermGroups().observe(
+                    this, show -> updatePermissionsUi()
+            );
+        }
     }
 
     @Override
@@ -117,6 +132,14 @@ public final class ManageStandardPermissionsFragment extends ManagePermissionsFr
         int numExtraPermissions = 0;
         if (mViewModel.getNumCustomPermGroups().getValue() != null) {
             numExtraPermissions = mViewModel.getNumCustomPermGroups().getValue();
+        }
+        if (Flags.declutteredPermissionManagerEnabled()) {
+            if (mViewModel.getNumUnusedStandardPermGroups().getValue() != null) {
+                // When decluttered permission manager is enabled, unused
+                // permission groups will also be displayed in the additional
+                // permissions screen.
+                numExtraPermissions += mViewModel.getNumUnusedStandardPermGroups().getValue();
+            }
         }
 
         Preference additionalPermissionsPreference = screen.findPreference(EXTRA_PREFS_KEY);
@@ -198,7 +221,7 @@ public final class ManageStandardPermissionsFragment extends ManagePermissionsFr
     public void showPermissionApps(String permissionGroupName) {
         // If we return to this page within a reasonable time, prioritize loading data from the
         // permission group whose page we are going to, as that is group most likely to have changed
-        mViewModel.getUiDataLiveData().setFirstLoadGroup(permissionGroupName);
+        getPermGroupsLiveData().setFirstLoadGroup(permissionGroupName);
         mViewModel.showPermissionApps(this, PermissionAppsFragment.createArgs(
                 permissionGroupName, getArguments().getLong(EXTRA_SESSION_ID)));
     }

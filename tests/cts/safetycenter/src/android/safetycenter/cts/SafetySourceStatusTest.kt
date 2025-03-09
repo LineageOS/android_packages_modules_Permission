@@ -98,7 +98,7 @@ class SafetySourceStatusTest {
         EqualsHashCodeToStringTester.ofParcelable(parcelableCreator = IconAction.CREATOR)
             .addEqualityGroup(
                 IconAction(ICON_TYPE_GEAR, pendingIntent1),
-                IconAction(ICON_TYPE_GEAR, pendingIntent1)
+                IconAction(ICON_TYPE_GEAR, pendingIntent1),
             )
             .addEqualityGroup(IconAction(ICON_TYPE_INFO, pendingIntent1))
             .addEqualityGroup(IconAction(ICON_TYPE_GEAR, pendingIntent2))
@@ -195,7 +195,7 @@ class SafetySourceStatusTest {
             SafetySourceStatus.Builder(
                 Generic.asNull(),
                 "Status summary",
-                SEVERITY_LEVEL_INFORMATION
+                SEVERITY_LEVEL_INFORMATION,
             )
         }
     }
@@ -229,7 +229,7 @@ class SafetySourceStatusTest {
                         context,
                         /* requestCode = */ 0,
                         Intent("PendingIntent service"),
-                        FLAG_IMMUTABLE
+                        FLAG_IMMUTABLE,
                     )
                 )
             }
@@ -298,13 +298,13 @@ class SafetySourceStatusTest {
     ) =
         EqualsHashCodeToStringTester.ofParcelable(
                 parcelableCreator = SafetySourceStatus.CREATOR,
-                createCopy = createCopyFromBuilder
+                createCopy = createCopyFromBuilder,
             )
             .addEqualityGroup(
                 SafetySourceStatus.Builder(
                         "Status title",
                         "Status summary",
-                        SEVERITY_LEVEL_INFORMATION
+                        SEVERITY_LEVEL_INFORMATION,
                     )
                     .setPendingIntent(pendingIntent1)
                     .setIconAction(iconAction1)
@@ -313,18 +313,18 @@ class SafetySourceStatusTest {
                 SafetySourceStatus.Builder(
                         "Status title",
                         "Status summary",
-                        SEVERITY_LEVEL_INFORMATION
+                        SEVERITY_LEVEL_INFORMATION,
                     )
                     .setPendingIntent(pendingIntent1)
                     .setIconAction(iconAction1)
                     .setEnabled(true)
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(
                 SafetySourceStatus.Builder(
                         "Status title",
                         "Status summary",
-                        SEVERITY_LEVEL_INFORMATION
+                        SEVERITY_LEVEL_INFORMATION,
                     )
                     .build()
             )
@@ -332,7 +332,7 @@ class SafetySourceStatusTest {
                 SafetySourceStatus.Builder(
                         "Other status title",
                         "Status summary",
-                        SEVERITY_LEVEL_INFORMATION
+                        SEVERITY_LEVEL_INFORMATION,
                     )
                     .build()
             )
@@ -340,7 +340,7 @@ class SafetySourceStatusTest {
                 SafetySourceStatus.Builder(
                         "Status title",
                         "Other status summary",
-                        SEVERITY_LEVEL_INFORMATION
+                        SEVERITY_LEVEL_INFORMATION,
                     )
                     .build()
             )
@@ -348,7 +348,7 @@ class SafetySourceStatusTest {
                 SafetySourceStatus.Builder(
                         "Status title",
                         "Status summary",
-                        SEVERITY_LEVEL_CRITICAL_WARNING
+                        SEVERITY_LEVEL_CRITICAL_WARNING,
                     )
                     .build()
             )
@@ -356,7 +356,7 @@ class SafetySourceStatusTest {
                 SafetySourceStatus.Builder(
                         "Status title",
                         "Status summary",
-                        SEVERITY_LEVEL_CRITICAL_WARNING
+                        SEVERITY_LEVEL_CRITICAL_WARNING,
                     )
                     .setPendingIntent(pendingIntent2)
                     .build()
@@ -365,7 +365,7 @@ class SafetySourceStatusTest {
                 SafetySourceStatus.Builder(
                         "Status title",
                         "Status summary",
-                        SEVERITY_LEVEL_CRITICAL_WARNING
+                        SEVERITY_LEVEL_CRITICAL_WARNING,
                     )
                     .setIconAction(iconAction2)
                     .build()
@@ -374,7 +374,7 @@ class SafetySourceStatusTest {
                 SafetySourceStatus.Builder(
                         "Status title",
                         "Status summary",
-                        SEVERITY_LEVEL_UNSPECIFIED
+                        SEVERITY_LEVEL_UNSPECIFIED,
                     )
                     .setEnabled(false)
                     .build()

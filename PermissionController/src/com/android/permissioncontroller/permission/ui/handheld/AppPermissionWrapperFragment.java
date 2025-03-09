@@ -29,7 +29,7 @@ public class AppPermissionWrapperFragment extends PermissionsCollapsingToolbarBa
     @NonNull
     @Override
     public PreferenceFragmentCompat createPreferenceFragment() {
-        return AppPermissionFragmentCompat.createFragment();
+        return AppPermissionFragmentCompat.createFragment(getContext());
     }
 
     @Override

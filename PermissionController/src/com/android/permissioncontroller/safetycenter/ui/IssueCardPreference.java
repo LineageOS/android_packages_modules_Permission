@@ -52,6 +52,7 @@ import androidx.preference.PreferenceViewHolder;
 import com.android.modules.utils.build.SdkLevel;
 import com.android.permissioncontroller.R;
 import com.android.permissioncontroller.safetycenter.ui.model.SafetyCenterViewModel;
+import com.android.settingslib.widget.GroupSectionDividerMixin;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.shape.AbsoluteCornerSize;
@@ -62,7 +63,8 @@ import java.util.Objects;
 
 /** A preference that displays a card representing a {@link SafetyCenterIssue}. */
 @RequiresApi(TIRAMISU)
-public class IssueCardPreference extends Preference implements ComparablePreference {
+public class IssueCardPreference extends Preference
+        implements ComparablePreference, GroupSectionDividerMixin {
 
     public static final String TAG = IssueCardPreference.class.getSimpleName();
 
@@ -101,12 +103,13 @@ public class IssueCardPreference extends Preference implements ComparablePrefere
     public void onBindViewHolder(PreferenceViewHolder holder) {
         super.onBindViewHolder(holder);
 
-        holder.itemView.setBackgroundResource(mPositionInCardList.getBackgroundDrawableResId());
+        View issueCardView = holder.itemView.requireViewById(R.id.issue_card);
+        issueCardView.setBackgroundResource(mPositionInCardList.getBackgroundDrawableResId());
         int topMargin = getTopMargin(mPositionInCardList, getContext());
-        MarginLayoutParams layoutParams = (MarginLayoutParams) holder.itemView.getLayoutParams();
+        MarginLayoutParams layoutParams = (MarginLayoutParams) issueCardView.getLayoutParams();
         if (layoutParams.topMargin != topMargin) {
             layoutParams.topMargin = topMargin;
-            holder.itemView.setLayoutParams(layoutParams);
+            issueCardView.setLayoutParams(layoutParams);
         }
 
         // Set default group visibility in case view is being reused
@@ -202,19 +205,20 @@ public class IssueCardPreference extends Preference implements ComparablePrefere
     private void configureSafetyProtectionView(PreferenceViewHolder holder) {
         View safetyProtectionSectionView =
                 holder.findViewById(R.id.issue_card_protected_by_android);
+        View issueCard = holder.findViewById(R.id.issue_card);
         if (safetyProtectionSectionView.getVisibility() == View.GONE) {
-            holder.itemView.setPaddingRelative(
-                    holder.itemView.getPaddingStart(),
-                    holder.itemView.getPaddingTop(),
-                    holder.itemView.getPaddingEnd(),
+            issueCard.setPaddingRelative(
+                    issueCard.getPaddingStart(),
+                    issueCard.getPaddingTop(),
+                    issueCard.getPaddingEnd(),
                     /* bottom= */ getContext()
                             .getResources()
                             .getDimensionPixelSize(R.dimen.sc_card_margin_bottom));
         } else {
-            holder.itemView.setPaddingRelative(
-                    holder.itemView.getPaddingStart(),
-                    holder.itemView.getPaddingTop(),
-                    holder.itemView.getPaddingEnd(),
+            issueCard.setPaddingRelative(
+                    issueCard.getPaddingStart(),
+                    issueCard.getPaddingTop(),
+                    issueCard.getPaddingEnd(),
                     /* bottom= */ 0);
         }
     }
@@ -427,9 +431,7 @@ public class IssueCardPreference extends Preference implements ComparablePrefere
             TypedValue buttonThemeValue = new TypedValue();
             mContext.getTheme()
                     .resolveAttribute(
-                            R.attr.scActionButtonTheme,
-                            buttonThemeValue,
-                            /* resolveRefs= */ false);
+                            R.attr.scActionButtonTheme, buttonThemeValue, /* resolveRefs= */ false);
             mContextThemeWrapper = new ContextThemeWrapper(context, buttonThemeValue.data);
         }
 

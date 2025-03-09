@@ -17,16 +17,21 @@
 package com.android.permissioncontroller.permission.ui.handheld
 
 import android.content.Context
+import android.util.AttributeSet
 import android.view.View
 import com.android.modules.utils.build.SdkLevel
 import com.android.permissioncontroller.R
 import com.android.settingslib.widget.FooterPreference
 
-class PermissionFooterPreference(c: Context) : FooterPreference(c) {
+class PermissionFooterPreference : FooterPreference {
+    constructor(context: Context) : super(context)
+
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
+
     init {
         if (SdkLevel.isAtLeastV()) {
             layoutResource = R.layout.permission_footer_preference
-            if (c.resources.getBoolean(R.bool.config_permissionFooterPreferenceIconVisible)) {
+            if (context.resources.getBoolean(R.bool.config_permissionFooterPreferenceIconVisible)) {
                 setIconVisibility(View.VISIBLE)
             } else {
                 setIconVisibility(View.GONE)

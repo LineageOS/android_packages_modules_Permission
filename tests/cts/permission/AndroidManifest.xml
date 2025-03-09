@@ -51,6 +51,9 @@
          android:label="@string/perm_group_c"
          android:name="android.permission.cts.groupC"/>
 
+    <!-- for android.permission.cts.DevicePermissionsTest -->
+    <uses-permission android:name="android.permission.CREATE_VIRTUAL_DEVICE"/>
+
     <uses-permission android:name="android.permission.INJECT_EVENTS"/>
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
     <application>

@@ -30,9 +30,12 @@ android_test {
     static_libs: [
         "android.permission.flags-aconfig-java-export",
         "androidx.test.rules",
+        "com.android.permission.flags-aconfig-java-export",
         "compatibility-device-util-axt",
         "ctstestrunner-axt",
         "Harrier",
+        "bedstead-multiuser",
+        "flag-junit",
         "platform-test-annotations",
         "truth",
     ],
@@ -48,6 +51,6 @@ android_test {
         ":CtsRoleTestApp",
         ":CtsRoleTestApp28",
         ":CtsRoleTestApp33WithoutInCallService",
-        ":CtsRoleTestAppForProfile",
+        ":CtsRoleTestAppClone",
     ],
 }

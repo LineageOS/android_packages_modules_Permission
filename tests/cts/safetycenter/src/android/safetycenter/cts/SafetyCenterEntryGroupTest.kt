@@ -175,7 +175,7 @@ class SafetyCenterEntryGroupTest {
     fun equalsHashCodeToString_usingEqualsHashCodeToStringTester() {
         EqualsHashCodeToStringTester.ofParcelable(
                 parcelableCreator = SafetyCenterEntryGroup.CREATOR,
-                createCopy = { SafetyCenterEntryGroup.Builder(it).build() }
+                createCopy = { SafetyCenterEntryGroup.Builder(it).build() },
             )
             .addEqualityGroup(
                 entryGroup1,
@@ -183,7 +183,7 @@ class SafetyCenterEntryGroupTest {
                     .setSummary("A group summary")
                     .setSeverityLevel(SafetyCenterEntry.ENTRY_SEVERITY_LEVEL_OK)
                     .setEntries(listOf(entry1))
-                    .build()
+                    .build(),
             )
             .addEqualityGroup(entryGroup2)
             .addEqualityGroup(

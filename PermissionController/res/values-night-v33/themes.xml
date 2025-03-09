@@ -52,6 +52,8 @@
             @style/SecondarySafetyCenterActionButton.Responsive
         </item>
 
+        <item name="scCardSideMargin">@dimen/sc_spacing_large</item>
+
         <item name="textColorScActionButton">@color/sc_primary_action_button_text</item>
         <item name="textColorScSecondaryActionButton">?android:attr/textColorPrimary</item>
 

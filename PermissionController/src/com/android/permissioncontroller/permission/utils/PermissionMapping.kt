@@ -139,6 +139,12 @@ object PermissionMapping {
             PLATFORM_PERMISSIONS[Manifest.permission.NEARBY_WIFI_DEVICES] =
                 Manifest.permission_group.NEARBY_DEVICES
         }
+        // Ranging permission will be supported from Android B+, update this when isAtLeastB()
+        // is available.
+        if (SdkLevel.isAtLeastV() && Flags.rangingPermissionEnabled()) {
+            PLATFORM_PERMISSIONS[Manifest.permission.RANGING] =
+                Manifest.permission_group.NEARBY_DEVICES
+        }
 
         // Any updates to the permissions for the CALL_LOG permission group must also be made in
         // Permissions {@link com.android.role.controller.model.Permissions} in the role

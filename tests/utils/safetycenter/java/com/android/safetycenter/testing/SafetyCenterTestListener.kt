@@ -58,7 +58,7 @@ class SafetyCenterTestListener : OnSafetyCenterDataChangedListener {
      */
     fun receiveSafetyCenterData(
         timeout: Duration = TIMEOUT_LONG,
-        matching: (SafetyCenterData) -> Boolean = { true }
+        matching: (SafetyCenterData) -> Boolean = { true },
     ): SafetyCenterData =
         runBlockingWithTimeout(timeout) {
             var safetyCenterData = dataChannel.receive()
@@ -78,7 +78,7 @@ class SafetyCenterTestListener : OnSafetyCenterDataChangedListener {
      */
     fun waitForSafetyCenterRefresh(
         timeout: Duration = TIMEOUT_LONG,
-        withErrorEntry: Boolean? = null
+        withErrorEntry: Boolean? = null,
     ): SafetyCenterData {
         receiveSafetyCenterData(timeout) {
             it.status.refreshStatus == SafetyCenterStatus.REFRESH_STATUS_DATA_FETCH_IN_PROGRESS ||

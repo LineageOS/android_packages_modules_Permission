@@ -23,6 +23,7 @@ import android.os.UserHandle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.VisibleForTesting;
 
 import com.android.modules.utils.build.SdkLevel;
 import com.android.role.controller.util.PackageUtils;
@@ -130,7 +131,8 @@ public class AppOp {
         return Permissions.setAppOpUidModeAsUser(packageName, mName, defaultMode, user, context);
     }
 
-    boolean isAvailableByFeatureFlagAndSdkVersion() {
+    @VisibleForTesting
+    public boolean isAvailableByFeatureFlagAndSdkVersion() {
         if (mFeatureFlag != null && !mFeatureFlag.get()) {
             return false;
         }

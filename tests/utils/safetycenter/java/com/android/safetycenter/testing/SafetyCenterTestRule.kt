@@ -23,7 +23,7 @@ import org.junit.runners.model.Statement
 /** A JUnit [TestRule] that performs setup and reset steps before and after Safety Center tests. */
 class SafetyCenterTestRule(
     private val safetyCenterTestHelper: SafetyCenterTestHelper,
-    private val withNotifications: Boolean = false
+    private val withNotifications: Boolean = false,
 ) : TestRule {
 
     override fun apply(base: Statement, description: Description): Statement {

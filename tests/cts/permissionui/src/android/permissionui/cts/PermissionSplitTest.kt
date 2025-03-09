@@ -17,15 +17,22 @@
 package android.permissionui.cts
 
 import android.os.Build
+import android.permission.flags.Flags
+import android.platform.test.annotations.RequiresFlagsDisabled
+import android.platform.test.flag.junit.DeviceFlagsValueProvider
 import androidx.test.filters.FlakyTest
 import androidx.test.filters.SdkSuppress
 import org.junit.Assume.assumeFalse
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 
 /** Runtime permission behavior tests for permission splits. */
 @FlakyTest
 class PermissionSplitTest : BaseUsePermissionTest() {
+
+    @Rule @JvmField val mCheckFlagsRule = DeviceFlagsValueProvider.createCheckFlagsRule()
+
     @Before
     fun assumeNotTv() {
         assumeFalse(isTv)
@@ -56,6 +63,7 @@ class PermissionSplitTest : BaseUsePermissionTest() {
     }
 
     @SdkSuppress(minSdkVersion = Build.VERSION_CODES.TIRAMISU, codeName = "Tiramisu")
+    @RequiresFlagsDisabled(Flags.FLAG_REPLACE_BODY_SENSOR_PERMISSION_ENABLED)
     @Test
     fun testBodySensorSplit() {
         installPackage(APP_APK_PATH_31)
@@ -63,6 +71,7 @@ class PermissionSplitTest : BaseUsePermissionTest() {
     }
 
     @SdkSuppress(minSdkVersion = Build.VERSION_CODES.TIRAMISU, codeName = "Tiramisu")
+    @RequiresFlagsDisabled(Flags.FLAG_REPLACE_BODY_SENSOR_PERMISSION_ENABLED)
     @Test
     fun testBodySensorSplit32() {
         installPackage(APP_APK_PATH_32)
@@ -70,6 +79,7 @@ class PermissionSplitTest : BaseUsePermissionTest() {
     }
 
     @SdkSuppress(minSdkVersion = Build.VERSION_CODES.TIRAMISU, codeName = "Tiramisu")
+    @RequiresFlagsDisabled(Flags.FLAG_REPLACE_BODY_SENSOR_PERMISSION_ENABLED)
     @Test
     fun testBodySensorNonSplit() {
         installPackage(APP_APK_PATH_LATEST)

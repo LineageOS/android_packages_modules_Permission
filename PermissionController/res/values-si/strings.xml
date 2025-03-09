@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"සීමා කළ සැකසීම්වලට ඉඩ දෙන්න"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"සීමා කළ සැකසීම"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"ඔබේ ආරක්ෂාව සඳහා, මෙම සැකසීම දැනට නොමැත."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"දුරකථන ඇමතුමක සිටින අතරතුර ක්‍රියාව ලබා ගත නොහැක."</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"දුරකථන ඇමතුමක් අතරතුර යෙදුම් වලට වෙනත් යෙදුම් ස්ථාපනය කිරීමට ඉඩ නොදෙයි.\n\n වංචාකරුවන් බොහෝ විට දුරකථන ඇමතුම් සංවාද අතරතුර මෙවැනි ක්‍රියාමාර්ග ඉල්ලා සිටින බැවින්, ඔබව ආරක්ෂා කිරීමට එය අවහිර කර ඇත. ඔබ නොදන්නා කෙනෙකු විසින් මෙම ක්‍රියාමාර්ගය ගැනීමට ඔබට මඟ පෙන්වනු ලැබුවහොත්, එය වංචාවක් විය හැක."</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"යෙදුම <xliff:g id="PERMISSION_NAME">%1$s</xliff:g> වෙත ප්‍රවේශය ප්‍රතික්ෂේප කරන ලදි"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"යෙදුම ඔබේ පුද්ගලික සහ මූල්‍ය තොරතුරු අවදානමට ලක් කළ හැකි සංවේදී අවසරයකට ප්‍රවේශය ඉල්ලා ඇත.<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>මෙම සීමා කළ අවසරය නොමැතිව යෙදුම නිසි ලෙස ක්‍රියා නොකරනු ඇත. &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;ප්‍රවේශයට ඉඩ දෙන ආකාරය දැන ගන්න&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"යෙදුම පෙරනිමි <xliff:g id="ROLE_NAME">%1$s</xliff:g> වීමට ප්‍රවේශය ප්‍රතික්ෂේප කරන ලදි"</string>

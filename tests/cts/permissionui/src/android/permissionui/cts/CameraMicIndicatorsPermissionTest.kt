@@ -28,6 +28,7 @@ import android.os.Build
 import android.os.Process
 import android.os.SystemClock
 import android.os.SystemProperties
+import android.os.UserManager
 import android.permission.PermissionManager
 import android.permission.cts.MtsIgnore
 import android.platform.test.annotations.AsbSecurityTest
@@ -161,6 +162,8 @@ class CameraMicIndicatorsPermissionTest : StsExtraBusinessLogicTestCase {
 
     @Before
     fun setUp() {
+        // Camera and Mic are not supported for secondary user visible as a background user.
+        assumeFalse(isAutomotiveWithVisibleBackgroundUser())
         runWithShellPermissionIdentity {
             screenTimeoutBeforeTest =
                 Settings.System.getLong(context.contentResolver, Settings.System.SCREEN_OFF_TIMEOUT)
@@ -209,6 +212,9 @@ class CameraMicIndicatorsPermissionTest : StsExtraBusinessLogicTestCase {
 
     @After
     fun tearDown() {
+        if (isAutomotiveWithVisibleBackgroundUser()) {
+            return
+        }
         uninstall()
         if (isCar) {
             // Deselect the indicator since it persists otherwise
@@ -775,4 +781,10 @@ class CameraMicIndicatorsPermissionTest : StsExtraBusinessLogicTestCase {
 
     private fun byOneOfText(vararg textValues: String) =
         By.text(Pattern.compile(textValues.joinToString(separator = "|") { Pattern.quote(it) }))
+
+    fun isAutomotiveWithVisibleBackgroundUser(): Boolean {
+        val userManager = context.getSystemService(UserManager::class.java)
+        return packageManager.hasSystemFeature(PackageManager.FEATURE_AUTOMOTIVE) &&
+                userManager.isVisibleBackgroundUsersSupported()
+    }
 }

@@ -362,14 +362,14 @@
     <string name="role_browser_request_title" msgid="2895200507835937192">"要將 <xliff:g id="APP_NAME">%1$s</xliff:g> 設為預設瀏覽器應用程式嗎？"</string>
     <string name="role_browser_request_description" msgid="5888803407905985941">"無需任何權限"</string>
     <string name="role_dialer_label" msgid="1100224146343237968">"預設電話應用程式"</string>
-    <string name="role_dialer_short_label" msgid="7186888549465352489">"手機應用程式"</string>
+    <string name="role_dialer_short_label" msgid="7186888549465352489">"電話應用程式"</string>
     <string name="role_dialer_description" msgid="8768708633696539612">"此類應用程式允許你使用自己的裝置撥打和接聽電話"</string>
     <string name="role_dialer_request_title" msgid="5959618560705912058">"要將「<xliff:g id="APP_NAME">%1$s</xliff:g>」設為預設手機應用程式嗎？"</string>
     <string name="role_dialer_request_description" msgid="6288839625724909320">"此應用程式將可存取你的相機、通訊錄、麥克風、電話及短訊"</string>
     <string name="role_dialer_search_keywords" msgid="3324448983559188087">"撥號器"</string>
     <string name="role_sms_label" msgid="8456999857547686640">"預設短訊應用程式"</string>
     <string name="role_sms_short_label" msgid="4371444488034692243">"短訊應用程式"</string>
-    <string name="role_sms_description" msgid="3424020199148153513">"此類應用程式允許你使用自己手機號碼傳送和接收短訊、相片、影片和其他資料"</string>
+    <string name="role_sms_description" msgid="3424020199148153513">"此類應用程式允許你使用自己的手機號碼傳送和接收短訊、相片、影片和其他資料"</string>
     <string name="role_sms_request_title" msgid="7953552109601185602">"要將「<xliff:g id="APP_NAME">%1$s</xliff:g>」設為預設短訊應用程式嗎？"</string>
     <string name="role_sms_request_description" msgid="2691004766132144886">"此應用程式將可存取你的相機、通訊錄、檔案和媒體、麥克風、電話及短訊"</string>
     <string name="role_sms_search_keywords" msgid="8022048144395047352">"短訊, 發短訊, 訊息, 傳送短訊"</string>
@@ -456,7 +456,7 @@
     <string name="incident_report_notification_text" msgid="3376480583513587923">"「<xliff:g id="APP_NAME">%1$s</xliff:g>」要求上載偵錯資料。"</string>
     <string name="incident_report_dialog_title" msgid="669104389325204095">"分享偵錯資料？"</string>
     <string name="incident_report_dialog_intro" msgid="5897733669850951832">"系統偵測到問題。"</string>
-    <string name="incident_report_dialog_text" msgid="5675553296891757523">"「<xliff:g id="APP_NAME_0">%1$s</xliff:g>」要求上載此裝置於 <xliff:g id="DATE">%2$s</xliff:g><xliff:g id="TIME">%3$s</xliff:g>傳送的錯誤報告。錯誤報告包括你的裝置或應用程式記錄的個人資料，例如使用者名稱、位置資料、裝置識別碼和網絡資訊。只與你信任可存取這些資料的使用者和應用程式分享錯誤報告。要允許「<xliff:g id="APP_NAME_1">%4$s</xliff:g>」上載錯誤報告嗎？"</string>
+    <string name="incident_report_dialog_text" msgid="5675553296891757523">"「<xliff:g id="APP_NAME_0">%1$s</xliff:g>」要求上載此裝置於 <xliff:g id="DATE">%2$s</xliff:g> <xliff:g id="TIME">%3$s</xliff:g> 傳送的錯誤報告。錯誤報告包括你的裝置或應用程式記錄的個人資料，例如使用者名稱、位置資料、裝置識別碼和網絡資訊。只與你信任可存取這些資料的使用者和應用程式分享錯誤報告。要允許「<xliff:g id="APP_NAME_1">%4$s</xliff:g>」上載錯誤報告嗎？"</string>
     <string name="incident_report_error_dialog_text" msgid="4189647113387092272">"系統處理「<xliff:g id="APP_NAME">%1$s</xliff:g>」的錯誤報告時發生錯誤，因此已拒絕分享詳細的偵錯資料。很抱歉發生中斷情況。"</string>
     <string name="incident_report_dialog_allow_label" msgid="2970242967721155239">"允許"</string>
     <string name="incident_report_dialog_deny_label" msgid="3535314290677579383">"拒絕"</string>
@@ -674,9 +674,11 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"允許受限設定"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"受限設定"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"為安全起見，系統目前不提供此設定。"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"通話期間無法執行此操作"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"通話期間，應用程式不可安裝其他應用程式。\n\n由於騙徒經常在電話對話中要求這類操作，因此我們封鎖此功能以保障你的安全。如果有陌生人引導你執行此操作，那可能是詐騙。"</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"系統已拒絕授予應用程式「<xliff:g id="PERMISSION_NAME">%1$s</xliff:g>」存取權"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"應用程式要求存取敏感資料權限，授予此權限可能會危害你的個人和財務資料。<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>如沒有此受限制權限，應用程式可能無法正常運作。&lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;進一步瞭解如何授予存取權&lt;/a&gt;"</string>
-    <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"系統已拒絕授予應用程式預設<xliff:g id="ROLE_NAME">%1$s</xliff:g>存取權"</string>
+    <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"系統已拒絕授予應用程式作為預設<xliff:g id="ROLE_NAME">%1$s</xliff:g>的存取權"</string>
     <string name="enhanced_confirmation_dialog_desc_role" msgid="6369601947905234551">"應用程式要求存取敏感資料權限，授予此權限可能會危害你的個人和財務資料。<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>如沒有此受限制權限，應用程式可能無法正常運作。&lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;進一步瞭解如何授予存取權&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_settings_default" msgid="1858092969721041576">"系統已拒絕授予應用程式存取權"</string>
     <string name="enhanced_confirmation_dialog_desc_settings_default" msgid="6911632348359332981">"授予此權限可能會危害你的個人和財務資料。<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>如沒有此受限制權限，應用程式可能無法正常運作。&lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;進一步瞭解如何授予存取權&lt;/a&gt;"</string>

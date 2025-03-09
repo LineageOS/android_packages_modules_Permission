@@ -56,4 +56,7 @@ message RoleProto {
 
   // Whether fallback holders are enabled for this role.
   optional bool fallback_enabled = 3;
+
+  // The active user id of this cross user role.
+  optional int32 active_user_id = 4;
 }

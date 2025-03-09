@@ -62,6 +62,13 @@ is optional and defaults to `false`.
 the Java method on the `Flags` class which will be invoked via reflection. Note that any new
 aconfig library dependency will need corresponding jarjar rules for PermissionController and the
 system service JAR.
+- `ignoreDisabledSystemPackageWhenGranting`: Whether the role should ignore the requested
+permissions of the disabled system package (if any) when granting permissions. If `false`, the
+permission will need to be requested by the disabled system package as well, if there is one. This
+attribute is optional and defaults to the opposite of `systemOnly` on Android S+, or `true` below
+Android S. **Note:** Extra care should be taken when adding a runtime permission to a role with
+this attribute explicitly set to `true`, because that may allow apps to update and silently obtain
+a new runtime permission.
 - `label`: The string resource for the label of the role, e.g. `@string/role_sms_label`, which says
 "Default SMS app". For default apps, this string will appear in the default app detail page as the
 title. This attribute is required if the role is `visible`.

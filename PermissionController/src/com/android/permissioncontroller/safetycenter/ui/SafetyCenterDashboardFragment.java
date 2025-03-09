@@ -56,6 +56,7 @@ import com.android.permissioncontroller.safetycenter.ui.model.SafetyCenterUiData
 import com.android.permissioncontroller.safetycenter.ui.model.StatusUiData;
 import com.android.safetycenter.internaldata.SafetyCenterBundles;
 import com.android.safetycenter.resources.SafetyCenterResourcesApk;
+import com.android.settingslib.widget.SettingsThemeHelper;
 
 import kotlin.Unit;
 
@@ -121,12 +122,16 @@ public final class SafetyCenterDashboardFragment extends SafetyCenterFragment {
         mEntriesGroup = getPreferenceScreen().findPreference(ENTRIES_GROUP_KEY);
         mStaticEntriesGroup = getPreferenceScreen().findPreference(STATIC_ENTRIES_GROUP_KEY);
 
+        Preference spacerPreference = getPreferenceScreen().findPreference(SPACER_KEY);
+        if (SettingsThemeHelper.isExpressiveTheme(requireContext())) {
+            getPreferenceScreen().removePreference(spacerPreference);
+        }
+
         if (mIsQuickSettingsFragment) {
             getPreferenceScreen().removePreference(mEntriesGroup);
             mEntriesGroup = null;
             getPreferenceScreen().removePreference(mStaticEntriesGroup);
             mStaticEntriesGroup = null;
-            Preference spacerPreference = getPreferenceScreen().findPreference(SPACER_KEY);
             getPreferenceScreen().removePreference(spacerPreference);
         }
         getSafetyCenterViewModel().getStatusUiLiveData().observe(this, this::updateStatus);

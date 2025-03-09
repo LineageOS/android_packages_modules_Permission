@@ -60,7 +60,7 @@
     <string name="grant_dialog_button_allow_all_files" msgid="4955436994954829894">"ସମସ୍ତ ଫାଇଲର ପରିଚାଳନା ପାଇଁ ଅନୁମତି ଦିଅନ୍ତୁ"</string>
     <string name="grant_dialog_button_allow_media_only" msgid="4832877658422573832">"ମିଡିଆ ଫାଇଲଗୁଡ଼ିକୁ ଆକ୍ସେସ୍ ଅନୁମତି ଦିଅନ୍ତୁ"</string>
     <string name="app_permissions_breadcrumb" msgid="5136969550489411650">"ଆପ୍ସ"</string>
-    <string name="app_permissions" msgid="3369917736607944781">"ଆପ ଅନୁମତିଗୁଡ଼ିକ"</string>
+    <string name="app_permissions" msgid="3369917736607944781">"ଆପ ଅନୁମତି"</string>
     <string name="unused_apps" msgid="2058057455175955094">"ଅବ୍ୟବହୃତ ଆପ୍ସ"</string>
     <string name="edit_photos_description" msgid="5540108003480078892">"ଏହି ଆପ ପାଇଁ ଚୟନିତ ଫଟୋଗୁଡ଼ିକୁ ଏଡିଟ କରନ୍ତୁ"</string>
     <string name="no_unused_apps" msgid="12809387670415295">"କୌଣସି ଅବ୍ୟବହୃତ ଆପ୍ ନାହିଁ"</string>
@@ -674,6 +674,8 @@
     <string name="allow_restricted_settings" msgid="8073000189478396881">"ପ୍ରତିବନ୍ଧିତ ସେଟିଂସକୁ ଅନୁମତି ଦିଅନ୍ତୁ"</string>
     <string name="enhanced_confirmation_dialog_title" msgid="7562437438040966351">"ପ୍ରତିବନ୍ଧିତ ସେଟିଂ"</string>
     <string name="enhanced_confirmation_dialog_desc" msgid="5921240234843839219">"ଆପଣଙ୍କ ସୁରକ୍ଷା ପାଇଁ ଏହି ସେଟିଂ ବର୍ତ୍ତମାନ ଅନୁପଲବ୍ଧ ଅଟେ।"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_title" msgid="5230100829862738467">"କୌଣସି ଫୋନ କଲରେ ଥିବା ସମୟରେ କାର୍ଯ୍ୟ ଉପଲବ୍ଧ ନାହିଁ"</string>
+    <string name="enhanced_confirmation_phone_state_dialog_desc" msgid="8782160971908273849">"କୌଣସି ଫୋନ କଲ ସମୟରେ ଅନ୍ୟ ଆପ୍ସକୁ ଇନଷ୍ଟଲ କରିବା ପାଇଁ ଆପ୍ସକୁ ଅନୁମତି ଦିଆଯାଏ ନାହିଁ।\n\n ଫୋନ କଲ ବାର୍ତ୍ତାଳାପ ସମୟରେ ସ୍କାମରମାନେ ପ୍ରାୟତଃ ଏହି ପ୍ରକାରର କାର୍ଯ୍ୟ ପାଇଁ ଅନୁରୋଧ କରନ୍ତି, ତେଣୁ ଆପଣଙ୍କୁ ସୁରକ୍ଷିତ ରଖିବା ପାଇଁ ଏହାକୁ ବ୍ଲକ କରାଯାଏ। ଯଦି ଆପଣଙ୍କୁ ଏହି ପଦକ୍ଷେପ ନେବାକୁ ଆପଣ ଜାଣିନଥିବା ବ୍ୟକ୍ତିଙ୍କ ଦ୍ୱାରା ମାର୍ଗଦର୍ଶନ କରାଯାଉଛି, ତେବେ ଏହା ଏକ ସ୍କାମ ହୋଇପାରେ।"</string>
     <string name="enhanced_confirmation_dialog_title_permission" msgid="2149144789394238266">"<xliff:g id="PERMISSION_NAME">%1$s</xliff:g>କୁ ଆପର ଆକ୍ସେସକୁ ଅଗ୍ରାହ୍ୟ କରାଯାଇଛି"</string>
     <string name="enhanced_confirmation_dialog_desc_permission" msgid="3150778951946468945">"ଆପଣଙ୍କ ବ୍ୟକ୍ତିଗତ ଏବଂ ଆର୍ଥିକ ସୂଚନାକୁ ବିପଦରେ ପକାଇପାରୁଥିବା ଏକ ସମ୍ବେଦନଶୀଳ ଅନୁମତିକୁ ଆକ୍ସେସ କରିବା ପାଇଁ ଏହି ଆପଟି ଅନୁରୋଧ କରିଛି।<xliff:g id="ID_1">&lt;br&gt;&lt;br&gt;</xliff:g>ଏହା ସମ୍ଭବ ଯେ ଏହି ପ୍ରତିବନ୍ଧିତ ଅନୁମତି ବିନା ଆପ ସଠିକ ଭାବେ କାର୍ଯ୍ୟ କରିବ ନାହିଁ। &lt;a href=<xliff:g id="LEARN_MORE_LINK">%1$s</xliff:g>&gt;ଆକ୍ସେସକୁ କିପରି ଅନୁମତି ଦେବେ ତାହା ଜାଣନ୍ତୁ&lt;/a&gt;"</string>
     <string name="enhanced_confirmation_dialog_title_role" msgid="1737023798483772780">"ଡିଫଲ୍ଟ <xliff:g id="ROLE_NAME">%1$s</xliff:g> ହେବା ପାଇଁ ଆପର ଆକ୍ସେସକୁ ଅଗ୍ରାହ୍ୟ କରାଯାଇଛି"</string>

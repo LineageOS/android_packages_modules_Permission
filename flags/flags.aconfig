@@ -104,7 +104,52 @@ flag {
     name: "app_permission_fragment_uses_preferences"
     is_exported: true
     namespace: "permissions"
-    description: "This flag enables AppPermissionFragment rather than LegacyAppPermissionFragment (to support BC25)"
+    description: "This flag enables AppPermissionFragment rather than LegacyAppPermissionFragment"
     bug: "349675008"
+    is_fixed_read_only: true
+}
+
+flag {
+    name: "cross_user_role_enabled"
+    is_exported: true
+    namespace: "permissions"
+    description: "This flag enables cross-user roles support and API"
+    bug: "367732307"
+    is_fixed_read_only: true
+}
+
+flag {
+    name: "permission_timeline_attribution_label_fix"
+    is_exported: true
+    namespace: "permissions"
+    description: "This flag is used for the attribution label fix on permission timeline page"
+    bug: "369606734"
+    is_fixed_read_only: true
+}
+
+flag {
+    name: "wear_compose_material3"
+    is_exported: true
+    namespace: "permissions"
+    description: "This flag enables material3 design system for wear ui components"
+    bug: "370489422"
+    is_fixed_read_only: true
+}
+
+flag {
+    name: "decluttered_permission_manager_enabled"
+    is_exported: true
+    namespace: "permissions"
+    description: "Enables displaying unused permission groups in the additional page, instead of displaying them in the main permission manager page"
+    bug: "365823624"
+    is_fixed_read_only: true
+}
+
+flag {
+    name: "expressive_design_enabled"
+    is_exported: true
+    namespace: "permissions"
+    description: "This flag is used to enable Expressive Design for Settings pages inside PermissionController"
+    bug: "375480184"
     is_fixed_read_only: true
 }

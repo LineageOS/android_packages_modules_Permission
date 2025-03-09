@@ -11,5 +11,15 @@
                 }
             ]
         }
+    ],
+    "postsubmit": [
+        {
+            "name": "PermissionControllerMockingTests",
+            "options": [
+                {
+                    "include-filter": "com.android.permissioncontroller.tests.mocking.hibernation"
+                }
+            ]
+        }
     ]
 }

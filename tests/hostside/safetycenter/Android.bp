@@ -33,7 +33,7 @@ java_test_host {
     static_libs: [
         "cts-statsd-atom-host-test-utils",
     ],
-    data: [":SafetyCenterHostSideTestsHelper"],
+    device_common_data: [":SafetyCenterHostSideTestsHelper"],
     test_suites: [
         "general-tests",
         "mts-permission",

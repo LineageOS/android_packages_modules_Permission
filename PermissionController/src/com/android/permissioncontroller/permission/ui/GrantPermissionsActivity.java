@@ -46,7 +46,6 @@ import android.app.KeyguardManager;
 import android.app.ecm.EnhancedConfirmationManager;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageItemInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
@@ -195,7 +194,7 @@ public class GrantPermissionsActivity extends SettingsActivity
     /** A list of permissions requested on an app's behalf by the system. Usually Implicitly
      * requested, although this isn't necessarily always the case.
      */
-    private List<String> mSystemRequestedPermissions = new ArrayList<>();
+    private final List<String> mSystemRequestedPermissions = new ArrayList<>();
     /** A copy of the list of permissions originally requested in the intent to this activity */
     private String[] mOriginalRequestedPermissions = new String[0];
 
@@ -209,7 +208,7 @@ public class GrantPermissionsActivity extends SettingsActivity
      * A list of other GrantPermissionActivities for the same package which passed their list of
      * permissions to this one. They need to be informed when this activity finishes.
      */
-    private List<GrantPermissionsActivity> mFollowerActivities = new ArrayList<>();
+    private final List<GrantPermissionsActivity> mFollowerActivities = new ArrayList<>();
 
     /** Whether this activity has asked another GrantPermissionsActivity to show on its behalf */
     private boolean mDelegated;
@@ -235,7 +234,7 @@ public class GrantPermissionsActivity extends SettingsActivity
 
     private PackageManager mPackageManager;
 
-    private ActivityResultLauncher<Intent> mShowWarningDialog =
+    private final ActivityResultLauncher<Intent> mShowWarningDialog =
             registerForActivityResult(
                     new ActivityResultContracts.StartActivityForResult(),
                     result -> {
@@ -284,7 +283,7 @@ public class GrantPermissionsActivity extends SettingsActivity
                 return;
             }
             try {
-                PackageInfo packageInfo = mPackageManager.getPackageInfo(mTargetPackage, 0);
+                mPackageManager.getPackageInfo(mTargetPackage, 0);
             } catch (PackageManager.NameNotFoundException e) {
                 Log.e(LOG_TAG, "Unable to get package info for the calling package.", e);
                 finishAfterTransition();
@@ -314,20 +313,23 @@ public class GrantPermissionsActivity extends SettingsActivity
                         .getPackageManager();
             }
 
-            // When the dialog is streamed to a remote device, verify requested permissions are all
-            // device aware and target device is the same as the remote device. Otherwise show a
-            // warning dialog.
+            // When the permission grant dialog is streamed to a virtual device, and when requested
+            // permissions include both device-aware permissions and non-device aware permissions,
+            // device-aware permissions will use virtual device id and non-device aware permissions
+            // will use default device id for granting. If flag is not enabled, we would show a
+            // warning dialog for this use case.
             if (getDeviceId() != ContextCompat.DEVICE_ID_DEFAULT) {
                 boolean showWarningDialog = mTargetDeviceId != getDeviceId();
 
                 for (String permission : mRequestedPermissions) {
-                    if (!MultiDeviceUtils.isPermissionDeviceAware(
-                            getApplicationContext(), mTargetDeviceId, permission)) {
+                    if (!MultiDeviceUtils.isPermissionDeviceAware(getApplicationContext(),
+                            mTargetDeviceId, permission)) {
                         showWarningDialog = true;
+                        break;
                     }
                 }
 
-                if (showWarningDialog) {
+                if (showWarningDialog && !Flags.allowHostPermissionDialogsOnVirtualDevices()) {
                     mShowWarningDialog.launch(
                             new Intent(this, PermissionDialogStreamingBlockedActivity.class));
                     return;
@@ -1115,9 +1117,17 @@ public class GrantPermissionsActivity extends SettingsActivity
 
             if ((mDelegated || (mViewModel != null && mViewModel.shouldReturnPermissionState()))
                     && mTargetPackage != null) {
+                PackageManager defaultDevicePackageManager = SdkLevel.isAtLeastV()
+                        && mTargetDeviceId != ContextCompat.DEVICE_ID_DEFAULT
+                        ? createDeviceContext(ContextCompat.DEVICE_ID_DEFAULT).getPackageManager()
+                        : mPackageManager;
+                PackageManager targetDevicePackageManager = mPackageManager;
                 for (int i = 0; i < resultPermissions.length; i++) {
-                    grantResults[i] =
-                            mPackageManager.checkPermission(resultPermissions[i], mTargetPackage);
+                    String permission = resultPermissions[i];
+                    PackageManager pm = MultiDeviceUtils.isPermissionDeviceAware(
+                            getApplicationContext(), mTargetDeviceId, permission)
+                            ? targetDevicePackageManager : defaultDevicePackageManager;
+                    grantResults[i] = pm.checkPermission(resultPermissions[i], mTargetPackage);
                 }
             } else {
                 grantResults = new int[0];

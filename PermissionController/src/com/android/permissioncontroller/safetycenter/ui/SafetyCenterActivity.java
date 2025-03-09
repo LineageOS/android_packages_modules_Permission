@@ -29,6 +29,8 @@ import static com.android.permissioncontroller.safetycenter.SafetyCenterConstant
 import static com.android.permissioncontroller.safetycenter.SafetyCenterConstants.PRIVATE_PROFILE_SUFFIX;
 import static com.android.permissioncontroller.safetycenter.SafetyCenterConstants.WORK_PROFILE_SUFFIX;
 
+import static java.util.Objects.requireNonNull;
+
 import android.app.ActionBar;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -60,6 +62,7 @@ import com.android.permissioncontroller.permission.utils.Utils;
 import com.android.permissioncontroller.safetycenter.ui.model.PrivacyControlsViewModel.Pref;
 import com.android.settingslib.activityembedding.ActivityEmbeddingUtils;
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+import com.android.settingslib.widget.SettingsThemeHelper;
 
 import java.util.List;
 import java.util.Objects;
@@ -78,10 +81,10 @@ public final class SafetyCenterActivity extends CollapsingToolbarBaseActivity {
     private static final String EXTRA_PREVENT_TRAMPOLINE_TO_SETTINGS =
             "com.android.permissioncontroller.safetycenter.extra.PREVENT_TRAMPOLINE_TO_SETTINGS";
 
-    private SafetyCenterManager mSafetyCenterManager;
+    @Nullable private SafetyCenterManager mSafetyCenterManager;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mSafetyCenterManager = getSystemService(SafetyCenterManager.class);
 
@@ -93,18 +96,25 @@ public final class SafetyCenterActivity extends CollapsingToolbarBaseActivity {
             return;
         }
 
+        if (SettingsThemeHelper.isExpressiveTheme(this)) {
+            // Setting a theme programmatically causes standard preferences to display weirdly.
+            // See b/377519324.
+            setTheme(R.style.Theme_SafetyCenterExpressive);
+        }
+
         Fragment frag;
+        Intent intent = getIntent();
         final boolean maybeOpenSubpage =
                 SafetyCenterUiFlags.getShowSubpages()
-                        && getIntent().getAction().equals(ACTION_SAFETY_CENTER);
-        if (maybeOpenSubpage && getIntent().hasExtra(EXTRA_SAFETY_SOURCES_GROUP_ID)) {
-            String groupId = getIntent().getStringExtra(EXTRA_SAFETY_SOURCES_GROUP_ID);
+                        && Objects.equals(intent.getAction(), ACTION_SAFETY_CENTER);
+        if (maybeOpenSubpage && intent.hasExtra(EXTRA_SAFETY_SOURCES_GROUP_ID)) {
+            String groupId = intent.getStringExtra(EXTRA_SAFETY_SOURCES_GROUP_ID);
             frag = openRelevantSubpage(groupId);
-        } else if (maybeOpenSubpage && getIntent().hasExtra(EXTRA_SETTINGS_FRAGMENT_ARGS_KEY)) {
-            String preferenceKey = getIntent().getStringExtra(EXTRA_SETTINGS_FRAGMENT_ARGS_KEY);
+        } else if (maybeOpenSubpage && intent.hasExtra(EXTRA_SETTINGS_FRAGMENT_ARGS_KEY)) {
+            String preferenceKey = intent.getStringExtra(EXTRA_SETTINGS_FRAGMENT_ARGS_KEY);
             String groupId = getParentGroupId(preferenceKey);
             frag = openRelevantSubpage(groupId);
-        } else if (getIntent().getAction().equals(PRIVACY_CONTROLS_ACTION)) {
+        } else if (Objects.equals(intent.getAction(), PRIVACY_CONTROLS_ACTION)) {
             setTitle(R.string.privacy_controls_title);
             frag = PrivacyControlsFragment.newInstance();
         } else {
@@ -306,7 +316,8 @@ public final class SafetyCenterActivity extends CollapsingToolbarBaseActivity {
             return PRIVACY_SOURCES_GROUP_ID;
         }
 
-        SafetyCenterConfig safetyCenterConfig = mSafetyCenterManager.getSafetyCenterConfig();
+        SafetyCenterConfig safetyCenterConfig =
+                requireNonNull(mSafetyCenterManager).getSafetyCenterConfig();
         String[] splitKey;
         if (preferenceKey.endsWith(PERSONAL_PROFILE_SUFFIX)) {
             splitKey = preferenceKey.split("_" + PERSONAL_PROFILE_SUFFIX);

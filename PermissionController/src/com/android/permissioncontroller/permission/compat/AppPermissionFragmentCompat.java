@@ -19,6 +19,7 @@ package com.android.permissioncontroller.permission.compat;
 import static com.android.permissioncontroller.Constants.EXTRA_SESSION_ID;
 import static com.android.permissioncontroller.permission.ui.ManagePermissionsActivity.EXTRA_CALLER_NAME;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -29,6 +30,7 @@ import androidx.preference.PreferenceFragmentCompat;
 
 import com.android.modules.utils.build.SdkLevel;
 import com.android.permission.flags.Flags;
+import com.android.permissioncontroller.R;
 import com.android.permissioncontroller.permission.ui.handheld.max35.LegacyAppPermissionFragment;
 import com.android.permissioncontroller.permission.ui.handheld.v36.AppPermissionFragment;
 
@@ -41,8 +43,10 @@ public class AppPermissionFragmentCompat {
      * Create an instance of this fragment
      */
     @NonNull
-    public static PreferenceFragmentCompat createFragment() {
-        if (SdkLevel.isAtLeastV() && Flags.appPermissionFragmentUsesPreferences()) {
+    public static PreferenceFragmentCompat createFragment(@NonNull Context context) {
+        if (SdkLevel.isAtLeastV() && (Flags.appPermissionFragmentUsesPreferences()
+                || context.getResources().getBoolean(
+                R.bool.config_usePreferenceForAppPermissionSettings))) {
             return new AppPermissionFragment();
         } else {
             return new LegacyAppPermissionFragment();

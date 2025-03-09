@@ -54,16 +54,14 @@ class SafetyCenterEnabledChangedReceiver(private val context: Context) : Broadca
 
     fun setSafetyCenterEnabledWithReceiverPermissionAndWait(
         value: Boolean,
-        timeout: Duration = TIMEOUT_LONG
+        timeout: Duration = TIMEOUT_LONG,
     ): Boolean =
         callWithShellPermissionIdentity(READ_SAFETY_CENTER_STATUS) {
             SafetyCenterFlags.isEnabled = value
             receiveSafetyCenterEnabledChanged(timeout)
         }
 
-    fun setSafetyCenterEnabledWithoutReceiverPermissionAndWait(
-        value: Boolean,
-    ) {
+    fun setSafetyCenterEnabledWithoutReceiverPermissionAndWait(value: Boolean) {
         SafetyCenterFlags.isEnabled = value
         WaitForBroadcasts.waitForBroadcasts()
         receiveSafetyCenterEnabledChanged(TIMEOUT_SHORT)

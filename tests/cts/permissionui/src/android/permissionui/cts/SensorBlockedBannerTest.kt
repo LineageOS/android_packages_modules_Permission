@@ -30,6 +30,7 @@ import androidx.test.filters.FlakyTest
 import androidx.test.filters.SdkSuppress
 import androidx.test.uiautomator.By
 import com.android.compatibility.common.util.SystemUtil.callWithShellPermissionIdentity
+import com.android.compatibility.common.util.SystemUtil.eventually
 import com.android.compatibility.common.util.SystemUtil.runWithShellPermissionIdentity
 import com.android.modules.utils.build.SdkLevel
 import java.util.regex.Pattern
@@ -142,7 +143,9 @@ class SensorBlockedBannerTest : BaseUsePermissionTest() {
         click(By.res(CHANGE_BUTTON))
         // Enable global camera toggle and verify
         waitFindObject(By.text(CAMERA_TOGGLE_LABEL)).click()
-        assertTrue(!isSensorPrivacyEnabled(CAMERA))
+        eventually {
+            assertTrue(!isSensorPrivacyEnabled(CAMERA))
+        }
     }
 
     private fun setSensor(sensor: Int, enable: Boolean) {

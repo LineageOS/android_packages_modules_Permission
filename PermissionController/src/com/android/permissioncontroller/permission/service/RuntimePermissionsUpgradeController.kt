@@ -566,10 +566,11 @@ object RuntimePermissionsUpgradeController {
                         appPermGroup.permissions[permission.ACCESS_MEDIA_LOCATION] ?: continue
 
                     if (
+                        !perm.isGranted &&
                         !perm.isUserSet &&
-                            !perm.isSystemFixed &&
-                            !perm.isPolicyFixed &&
-                            !perm.isGranted
+                        !perm.isOneTime &&
+                        !perm.isSystemFixed &&
+                        !perm.isPolicyFixed
                     ) {
                         grants.add(
                             Grant(false, appPermGroup, listOf(permission.ACCESS_MEDIA_LOCATION))
@@ -610,20 +611,21 @@ object RuntimePermissionsUpgradeController {
                 // Upon upgrading to platform 33, for all targetSdk>=33 apps, do the following:
                 // If STORAGE is granted, and the user has not set READ_MEDIA_AURAL or
                 // READ_MEDIA_VISUAL, grant READ_MEDIA_AURAL and READ_MEDIA_VISUAL
-                val storageAppPermGroups =
+                val grantedStorageAppPermGroups =
                     storageAndMediaAppPermGroups.filter {
                         it.packageInfo.targetSdkVersion >= Build.VERSION_CODES.TIRAMISU &&
                             it.permGroupInfo.name == permission_group.STORAGE &&
                             it.isGranted &&
                             it.isUserSet
                     }
-                for (storageAppPermGroup in storageAppPermGroups) {
+                for (storageAppPermGroup in grantedStorageAppPermGroups) {
                     val pkgName = storageAppPermGroup.packageInfo.packageName
                     val auralAppPermGroup =
                         storageAndMediaAppPermGroups.firstOrNull {
                             it.packageInfo.packageName == pkgName &&
                                 it.permGroupInfo.name == permission_group.READ_MEDIA_AURAL &&
                                 !it.isUserSet &&
+                                !it.isOneTime &&
                                 !it.isUserFixed
                         }
                     val visualAppPermGroup =
@@ -632,7 +634,8 @@ object RuntimePermissionsUpgradeController {
                                 it.permGroupInfo.name == permission_group.READ_MEDIA_VISUAL &&
                                 !it.permissions
                                     .filter { it.key != permission.ACCESS_MEDIA_LOCATION }
-                                    .any { it.value.isUserSet || it.value.isUserFixed }
+                                    .any { it.value.isUserSet || it.value.isOneTime ||
+                                        it.value.isUserFixed }
                         }
 
                     if (auralAppPermGroup != null) {

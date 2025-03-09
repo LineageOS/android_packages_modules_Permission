@@ -24,7 +24,9 @@ import android.permission.PermissionManager;
 import androidx.fragment.app.FragmentActivity;
 
 import com.android.modules.utils.build.SdkLevel;
+import com.android.permissioncontroller.R;
 import com.android.permissioncontroller.permission.utils.Utils;
+import com.android.settingslib.widget.SettingsThemeHelper;
 
 /** Activity for the Safety Center Quick Settings Activity */
 public class SafetyCenterQsActivity extends FragmentActivity {
@@ -37,6 +39,12 @@ public class SafetyCenterQsActivity extends FragmentActivity {
         if (!SdkLevel.isAtLeastT()) {
             finish();
             return;
+        }
+
+        if (SettingsThemeHelper.isExpressiveTheme(this)) {
+            // Safe to set expressive theme here since QS doesn't display vanilla preferences.
+            // See b/377519324.
+            setTheme(R.style.Theme_SafetyCenterQsExpressive);
         }
 
         configureFragment();

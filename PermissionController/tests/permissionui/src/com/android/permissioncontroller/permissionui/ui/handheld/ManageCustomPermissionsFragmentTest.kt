@@ -26,10 +26,12 @@ import androidx.test.uiautomator.By
 import com.android.compatibility.common.util.SystemUtil.eventually
 import com.android.compatibility.common.util.SystemUtil.runWithShellPermissionIdentity
 import com.android.compatibility.common.util.UiAutomatorUtils2.waitFindObject
+import com.android.compatibility.common.util.UiAutomatorUtils2.waitFindObjectOrNull
 import com.android.permissioncontroller.permissionui.getUsageCountsFromUi
 import com.android.permissioncontroller.permissionui.wakeUpScreen
 import com.google.common.truth.Truth.assertThat
 import org.junit.After
+import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -47,6 +49,7 @@ class ManageCustomPermissionsFragmentTest : BaseHandheldPermissionUiTest() {
     private val PERM_LABEL = "Permission A"
     private val PERM = "com.android.permissioncontroller.tests.A"
     private val ADDITIONAL_PERMISSIONS_LABEL = "Additional permissions"
+    private val BODY_SENSORS_LABEL = "Body sensors"
 
     @Before
     fun setup() {
@@ -90,6 +93,14 @@ class ManageCustomPermissionsFragmentTest : BaseHandheldPermissionUiTest() {
 
         revokePermission(USER_PKG, PERM)
         eventually { assertThat(getUsageCountsFromUi(PERM_LABEL)).isEqualTo(original) }
+    }
+
+    @Test
+    fun bodySensorsEitherDisplayedInMainPageOrInAdditional() {
+        if (waitFindObjectOrNull(By.textContains(BODY_SENSORS_LABEL)) == null) {
+            waitFindObject(By.textContains(ADDITIONAL_PERMISSIONS_LABEL)).click()
+            assertNotNull(waitFindObjectOrNull(By.textContains(BODY_SENSORS_LABEL)))
+        }
     }
 
     @After

@@ -36,6 +36,7 @@ java_aconfig_library {
     libs: ["framework-configinfrastructure.stubs.module_lib"],
     visibility: [
         "//packages/modules/Permission:__subpackages__",
+        "//vendor:__subpackages__",
     ],
     apex_available: [
         "com.android.permission",

@@ -155,23 +155,6 @@ public final class NfcPermissionTest {
     }
 
     /**
-     * Verifies that isTagIntentAppPreferenceSupported() requires Permission.
-     * <p>
-     * Requires Permission: {@link android.Manifest.permission.WRITE_SECURE_SETTINGS}.
-     */
-    @Test
-    @AppModeFull
-    public void testIsTagIntentAppPreferenceSupported() {
-        try {
-            mNfcAdapter.isTagIntentAppPreferenceSupported();
-            fail("mNfcAdapter.isTagIntentAppPreferenceSupported() did not throw SecurityException"
-                    + " as expected");
-        } catch (SecurityException se) {
-            // Expected Exception
-        }
-    }
-
-    /**
      * Verifies that getTagIntentAppPreferenceForUser() requires Permission.
      * <p>
      * Requires Permission: {@link android.Manifest.permission.WRITE_SECURE_SETTINGS}.
