@@ -51,6 +51,7 @@ import android.view.inputmethod.InputMethodManager;
 
 import androidx.annotation.GuardedBy;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.util.Consumer;
 
 import com.android.modules.utils.build.SdkLevel;
@@ -104,6 +105,10 @@ public class GrantPermissionsActivity extends SettingsActivity
     public static final int DIALOG_WITH_FINE_LOCATION_ONLY = 4;
     public static final int DIALOG_WITH_COARSE_LOCATION_ONLY = 5;
 
+    // The maximum number of dialogs we will allow the same package, on the same task, to launch
+    // simultaneously
+    public static final int MAX_DIALOGS_PER_PKG_TASK = 10;
+
     public static final Map<String, Integer> PERMISSION_TO_BIT_SHIFT =
             new HashMap<String, Integer>() {{
                 put(ACCESS_COARSE_LOCATION, 0);
@@ -145,6 +150,8 @@ public class GrantPermissionsActivity extends SettingsActivity
     private List<GrantPermissionsActivity> mFollowerActivities = new ArrayList<>();
     /** Whether this activity has asked another GrantPermissionsActivity to show on its behalf */
     private boolean mDelegated;
+    /** Whether this activity has been triggered by the system */
+    private boolean mIsSystemTriggered = false;
     /** The set result code, or MAX_VALUE if it hasn't been set yet */
     private int mResultCode = Integer.MAX_VALUE;
     /** Package that shall have permissions granted */
@@ -175,6 +182,7 @@ public class GrantPermissionsActivity extends SettingsActivity
                 .getStringArrayExtra(PackageManager.EXTRA_REQUEST_PERMISSIONS_NAMES);
 
         if (PackageManager.ACTION_REQUEST_PERMISSIONS_FOR_OTHER.equals(getIntent().getAction())) {
+            mIsSystemTriggered = true;
             mTargetPackage = getIntent().getStringExtra(Intent.EXTRA_PACKAGE_NAME);
             if (mTargetPackage == null) {
                 Log.e(LOG_TAG, "null EXTRA_PACKAGE_NAME. Must be set for "
@@ -205,21 +213,40 @@ public class GrantPermissionsActivity extends SettingsActivity
         }
         mOriginalRequestedPermissions = mRequestedPermissions;
 
+        GrantPermissionsViewModelFactory factory =
+                new GrantPermissionsViewModelFactory(
+                        getApplication(),
+                        mTargetPackage,
+                        mRequestedPermissions,
+                        mSessionId,
+                        icicle);
+        mViewModel = factory.create(GrantPermissionsViewModel.class);
+
         synchronized (sCurrentGrantRequests) {
             mKey = new Pair<>(mTargetPackage, getTaskId());
-            if (!sCurrentGrantRequests.containsKey(mKey)) {
+            GrantPermissionsActivity current = sCurrentGrantRequests.get(mKey);
+            if (current == null) {
                 sCurrentGrantRequests.put(mKey, this);
                 finishSystemStartedDialogsOnOtherTasksLocked();
-            } else if (getCallingPackage() == null) {
-                // The trampoline doesn't require results. Delegate, and finish.
-                sCurrentGrantRequests.get(mKey).onNewFollowerActivity(null,
-                        mRequestedPermissions);
+            } else if (mIsSystemTriggered) {
+                // The system triggered dialog doesn't require results. Delegate, and finish.
+                current.onNewFollowerActivity(null, Arrays.asList(mRequestedPermissions), false);
                 finishAfterTransition();
                 return;
-            } else {
+            } else if (current.mIsSystemTriggered) {
+                // merge into the system triggered dialog, which has task overlay set
                 mDelegated = true;
-                sCurrentGrantRequests.get(mKey).onNewFollowerActivity(this,
-                        mRequestedPermissions);
+                current.onNewFollowerActivity(this,  Arrays.asList(mRequestedPermissions), false);
+            } else {
+                // this + current + current.mFollowerActivities
+                if ((current.mFollowerActivities.size() + 2) > MAX_DIALOGS_PER_PKG_TASK) {
+                    // If there are too many dialogs for the same package, in the same task, cancel
+                    finishAfterTransition();
+                    return;
+                }
+                // Merge the old dialogs into the new
+                onNewFollowerActivity(current,  Arrays.asList(current.mRequestedPermissions), true);
+                sCurrentGrantRequests.put(mKey, this);
             }
         }
 
@@ -242,10 +269,9 @@ public class GrantPermissionsActivity extends SettingsActivity
                     Process.myUserHandle()).setResultListener(this);
         }
 
-        GrantPermissionsViewModelFactory factory = new GrantPermissionsViewModelFactory(
-                getApplication(), mTargetPackage, mRequestedPermissions, mSessionId, icicle);
-        mViewModel = factory.create(GrantPermissionsViewModel.class);
-        mViewModel.getRequestInfosLiveData().observe(this, this::onRequestInfoLoad);
+        if (!mDelegated) {
+            mViewModel.getRequestInfosLiveData().observe(this, this::onRequestInfoLoad);
+        }
 
         mRootView = mViewHandler.createView();
         mRootView.setVisibility(View.GONE);
@@ -278,7 +304,7 @@ public class GrantPermissionsActivity extends SettingsActivity
         // as the UI behaves differently for updates and initial creations.
         if (icicle != null) {
             mViewHandler.loadInstanceState(icicle);
-        } else {
+        } else if (mRootView == null || mRootView.getVisibility() != View.VISIBLE) {
             // Do not show screen dim until data is loaded
             window.setDimAmount(0f);
         }
@@ -291,14 +317,24 @@ public class GrantPermissionsActivity extends SettingsActivity
      *                 activity finishing
      * @param newPermissions The new permissions requested in the activity
      */
-    private void onNewFollowerActivity(GrantPermissionsActivity follower, String[] newPermissions) {
+    private void onNewFollowerActivity(@Nullable GrantPermissionsActivity follower,
+            @NonNull List<String> newPermissions, boolean followerIsOlder) {
         if (follower != null) {
             // Ensure the list of follower activities is a stack
             mFollowerActivities.add(0, follower);
+            follower.mViewModel = mViewModel;
+            if (followerIsOlder) {
+                follower.mDelegated = true;
+            }
         }
 
-        boolean isShowingGroup = mRootView != null && mRootView.getVisibility() == View.VISIBLE;
-        List<RequestInfo> currentGroups = mViewModel.getRequestInfosLiveData().getValue();
+        // If the follower is older, examine it to find the pre-merge group
+        GrantPermissionsActivity olderActivity = follower != null && followerIsOlder
+                ? follower : this;
+        boolean isShowingGroup = olderActivity.mRootView != null
+                && olderActivity.mRootView.getVisibility() == View.VISIBLE;
+        List<RequestInfo> currentGroups =
+                olderActivity.mViewModel.getRequestInfosLiveData().getValue();
         if (mPreMergeShownGroupName == null && isShowingGroup
                 && currentGroups != null && !currentGroups.isEmpty()) {
             mPreMergeShownGroupName = currentGroups.get(0).getGroupName();
@@ -311,6 +347,19 @@ public class GrantPermissionsActivity extends SettingsActivity
                 currentPermissions.add(newPerm);
                 newPermission = true;
             }
+        }
+
+        if (isShowingGroup && mPreMergeShownGroupName != null
+                && followerIsOlder && currentGroups != null) {
+            // Load a request from the old activity
+            mRequestInfos = currentGroups;
+            showNextRequest();
+            olderActivity.mRootView.setVisibility(View.GONE);
+        }
+        if (follower != null && followerIsOlder) {
+            follower.mFollowerActivities.forEach((oldFollower) ->
+                    onNewFollowerActivity(oldFollower, new ArrayList<>(), true));
+            follower.mFollowerActivities.clear();
         }
 
         if (!newPermission) {
@@ -363,7 +412,7 @@ public class GrantPermissionsActivity extends SettingsActivity
     }
 
     private void showNextRequest() {
-        if (mRequestInfos == null || mRequestInfos.isEmpty()) {
+        if (mRequestInfos == null || mRequestInfos.isEmpty() || mDelegated) {
             return;
         }
 
@@ -654,13 +703,16 @@ public class GrantPermissionsActivity extends SettingsActivity
     private boolean setResultIfNeeded(int resultCode) {
         if (!isResultSet()) {
             String[] oldRequestedPermissions = mRequestedPermissions;
+            mResultCode = resultCode;
             removeActivityFromMap();
             // If a new merge request came in before we managed to remove this activity from the
             // map, then cancel the result set for now.
             if (!Arrays.equals(oldRequestedPermissions, mRequestedPermissions)) {
+                // Reset the result code back to its starting value of MAX_VALUE;
+                mResultCode = Integer.MAX_VALUE;
                 return false;
             }
-            mResultCode = resultCode;
+
             if (mViewModel != null) {
                 mViewModel.logRequestedPermissionGroups();
             }
