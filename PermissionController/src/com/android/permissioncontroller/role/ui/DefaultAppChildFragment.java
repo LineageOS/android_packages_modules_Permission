@@ -180,8 +180,6 @@ public class DefaultAppChildFragment<PF extends PreferenceFragmentCompat
         }
 
         if (Flags.defaultAppsRecommendationEnabled() && !recommendedApplicationItems.isEmpty()) {
-            String recommendedTitle =
-                    RoleUiBehaviorUtils.getRecommendedApplicationsTitle(mRole, context);
             addApplicationPreferenceCategory(oldRecommendedPreferenceCategory, true,
                     preferenceScreen, false, recommendedApplicationItems, oldPreferences, context);
             if (mRole.shouldShowNone() || !otherApplicationItems.isEmpty()) {
