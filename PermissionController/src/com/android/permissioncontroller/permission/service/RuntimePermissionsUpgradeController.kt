@@ -393,9 +393,15 @@ internal object RuntimePermissionsUpgradeController {
                         perm.flags or FLAG_PERMISSION_RESTRICTION_UPGRADE_EXEMPT,
                         perm.foregroundPerms)
 
-                bgAppsWithExemption[pkgName] = LightAppPermGroup(bgApp.packageInfo,
-                        bgApp.permGroupInfo, allPermissionsWithxemption,
-                        bgApp.hasInstallToRuntimeSplit, bgApp.specialLocationGrant)
+                bgAppsWithExemption[pkgName] =
+                    LightAppPermGroup(
+                        bgApp.packageInfo,
+                        bgApp.permGroupInfo,
+                        allPermissionsWithxemption,
+                        bgApp.hasInstallToRuntimeSplit,
+                        bgApp.specialLocationGrant,
+                        bgApp.specialFixedStorageGrant,
+                    )
             }
 
             exemptions.addAll(bgLocExemptions)
