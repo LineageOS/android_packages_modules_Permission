@@ -33,5 +33,7 @@
   <string name="private_space_title" description="The title of the entry for Private Space">Private Space</string>
   <string name="private_space_summary" description="The summary of the entry for Private Space settings, which describes the page contents">Setup Private Space, and more</string>
   <string name="private_space_search_terms" description="Search keywords of the entry for Private Space settings">Private Space</string>
+  <string name="google_advanced_protection_title">Advanced Protection</string>
+  <string name="google_advanced_protection_summary">Protection for your device and Google Account</string>
 
 </resources>
