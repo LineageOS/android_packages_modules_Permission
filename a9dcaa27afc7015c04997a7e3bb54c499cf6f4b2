@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b89f9ea8_c1603417",
+        "filename": "SafetyCenter/Resources/res/raw-v36/safety_center_config.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 32197
+      },
+      "writtenOn": "2025-07-21T05:38:33Z",
+      "side": 1,
+      "message": "@basam.aryan@gmail.com shouldn\u0027t this be com.android.safetycenter.resources instead?",
+      "range": {
+        "startLine": 188,
+        "startChar": 24,
+        "endLine": 188,
+        "endChar": 65
+      },
+      "revId": "a9dcaa27afc7015c04997a7e3bb54c499cf6f4b2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "deb9370e_1fb7f614",
+        "filename": "SafetyCenter/Resources/res/raw-v36/safety_center_config.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 32197
+      },
+      "writtenOn": "2025-07-21T05:38:33Z",
+      "side": 1,
+      "message": "This one as well",
+      "range": {
+        "startLine": 189,
+        "startChar": 26,
+        "endLine": 189,
+        "endChar": 67
+      },
+      "revId": "a9dcaa27afc7015c04997a7e3bb54c499cf6f4b2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
