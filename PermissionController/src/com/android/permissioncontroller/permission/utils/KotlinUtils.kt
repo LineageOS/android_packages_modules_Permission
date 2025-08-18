@@ -776,14 +776,8 @@ object KotlinUtils {
                     perm.foregroundPerms
                 )
         }
-        return LightAppPermGroup(
-            group.packageInfo,
-            group.permGroupInfo,
-            newPerms,
-            group.hasInstallToRuntimeSplit,
-            group.specialLocationGrant,
-            group.specialFixedStorageGrant,
-        )
+        return LightAppPermGroup(group.packageInfo, group.permGroupInfo, newPerms,
+            group.hasInstallToRuntimeSplit, group.specialLocationGrant)
     }
 
     /**
@@ -896,15 +890,8 @@ object KotlinUtils {
                 KILL_REASON_APP_OP_CHANGE
             )
         }
-        val newGroup =
-            LightAppPermGroup(
-                group.packageInfo,
-                group.permGroupInfo,
-                newPerms,
-                group.hasInstallToRuntimeSplit,
-                group.specialLocationGrant,
-                group.specialFixedStorageGrant,
-            )
+        val newGroup = LightAppPermGroup(group.packageInfo, group.permGroupInfo, newPerms,
+            group.hasInstallToRuntimeSplit, group.specialLocationGrant)
         // If any permission in the group is one time granted, start one time permission session.
         if (newGroup.permissions.any { it.value.isOneTime && it.value.isGranted }) {
             if (SdkLevel.isAtLeastT()) {
@@ -1177,15 +1164,8 @@ object KotlinUtils {
             )
         }
 
-        val newGroup =
-            LightAppPermGroup(
-                group.packageInfo,
-                group.permGroupInfo,
-                newPerms,
-                group.hasInstallToRuntimeSplit,
-                group.specialLocationGrant,
-                group.specialFixedStorageGrant,
-            )
+        val newGroup = LightAppPermGroup(group.packageInfo, group.permGroupInfo, newPerms,
+            group.hasInstallToRuntimeSplit, group.specialLocationGrant)
 
         if (wasOneTime && !anyPermsOfPackageOneTimeGranted(app, newGroup.packageInfo)) {
             // Create a new context with the given deviceId so that permission updates will be bound
