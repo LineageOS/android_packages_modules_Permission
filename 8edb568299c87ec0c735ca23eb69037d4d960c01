@@ -52,6 +52,23 @@
       "parentUuid": "1a17f23d_68db2842",
       "revId": "8edb568299c87ec0c735ca23eb69037d4d960c01",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a63df5e_414b4168",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2025-08-24T22:03:05Z",
+      "side": 1,
+      "message": "It\u0027s fine with latest mtg",
+      "revId": "8edb568299c87ec0c735ca23eb69037d4d960c01",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
