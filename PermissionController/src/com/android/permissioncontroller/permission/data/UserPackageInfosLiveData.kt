@@ -77,7 +77,22 @@ class UserPackageInfosLiveData private constructor(
         val packageInfos = app.applicationContext.packageManager
             .getInstalledPackagesAsUser(GET_PERMISSIONS or MATCH_ALL, user.identifier)
 
-        postValue(packageInfos.map { packageInfo -> LightPackageInfo(packageInfo) })
+        postValue(
+            packageInfos.map { packageInfo ->
+                val mergedPackageInfo =
+                    if (packageInfo.sharedUserId != null) {
+                        val otherPackages =
+                            packageInfos.filter { it.sharedUserId == packageInfo.sharedUserId }
+                        LightPackageInfoLiveData.mergePermissionsInSharedUid(
+                            packageInfo,
+                            otherPackages,
+                        )
+                    } else {
+                        packageInfo
+                    }
+                LightPackageInfo(mergedPackageInfo)
+            }
+        )
     }
 
     override fun onActive() {
