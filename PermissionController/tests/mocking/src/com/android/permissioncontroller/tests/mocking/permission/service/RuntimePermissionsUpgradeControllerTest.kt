@@ -78,6 +78,7 @@ import org.mockito.Mockito.`when` as whenever
 import org.mockito.MockitoAnnotations.initMocks
 import org.mockito.MockitoSession
 import org.mockito.quality.Strictness.LENIENT
+import java.util.concurrent.TimeUnit
 
 @RunWith(AndroidJUnit4::class)
 class RuntimePermissionsUpgradeControllerTest {
@@ -265,7 +266,7 @@ class RuntimePermissionsUpgradeControllerTest {
                 application,
                 Runnable { completionCallback.complete(Unit) }
             )
-            completionCallback.join()
+            completionCallback.get(30L, TimeUnit.SECONDS)
         }
     }
 
