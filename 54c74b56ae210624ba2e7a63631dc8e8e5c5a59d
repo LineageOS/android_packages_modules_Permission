@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d13291bf_b69d1d3d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6360
+      },
+      "writtenOn": "2026-02-15T05:52:57Z",
+      "side": 1,
+      "message": "This fixes crash in privacy dashboard.",
+      "revId": "54c74b56ae210624ba2e7a63631dc8e8e5c5a59d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
