@@ -473,6 +473,7 @@
             <permission name="android.permission.READ_HOME_APP_SEARCH_DATA" minSdkVersion="33" />
             <permission name="android.permission.ALLOW_SLIPPERY_TOUCHES" minSdkVersion="33" optionalMinSdkVersion="30" />
             <permission name="android.permission.RECEIVE_SENSITIVE_NOTIFICATIONS" minSdkVersion="35" />
+            <permission name="android.permission.DEVICE_POWER" />
         </permissions>
         <app-ops>
             <app-op name="android:receive_sensitive_notifications" mode="allowed" minSdkVersion="35"/>
