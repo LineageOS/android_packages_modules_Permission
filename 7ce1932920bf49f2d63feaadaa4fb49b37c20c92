@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df5b89dc_d54c9e73",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29080
+      },
+      "writtenOn": "2026-03-19T14:11:54Z",
+      "side": 1,
+      "message": "This is probably not safe, I\u0027ll try to create a new role specifically for our launcher",
+      "revId": "7ce1932920bf49f2d63feaadaa4fb49b37c20c92",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
