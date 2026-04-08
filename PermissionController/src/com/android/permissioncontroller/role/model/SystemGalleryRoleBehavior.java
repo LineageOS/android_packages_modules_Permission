@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.role.controller.behavior;
+package com.android.permissioncontroller.role.model;
 
 import android.content.Context;
 import android.os.Build;
