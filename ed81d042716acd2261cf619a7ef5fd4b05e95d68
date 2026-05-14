@@ -16,6 +16,24 @@
       "message": "https://review.lineageos.org/c/LineageOS/android_packages_modules_Permission/+/457880 😢",
       "revId": "ed81d042716acd2261cf619a7ef5fd4b05e95d68",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51a36374_13b7c1f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-05-14T14:30:30Z",
+      "side": 1,
+      "message": "you only added a single reviewer, and the busiest one we have sadly.\n\nPlease add more people next time or poke the change a few times to bubble it to the top.\n\nNot your fault, just a quirk of FOSS - thank you for your submission.",
+      "parentUuid": "6b3fb664_27fd0db6",
+      "revId": "ed81d042716acd2261cf619a7ef5fd4b05e95d68",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
