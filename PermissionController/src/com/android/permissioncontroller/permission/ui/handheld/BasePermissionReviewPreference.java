@@ -41,6 +41,7 @@ import com.android.permissioncontroller.permission.ui.model.ReviewPermissionsVie
 import com.android.permissioncontroller.permission.ui.model.ReviewPermissionsViewModel.PermissionTarget;
 import com.android.permissioncontroller.permission.ui.model.ReviewPermissionsViewModel.SummaryMessage;
 import com.android.permissioncontroller.permission.utils.LocationUtils;
+import com.android.permissioncontroller.permission.utils.PermissionMapping;
 import com.android.permissioncontroller.permission.utils.Utils;
 import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
@@ -139,6 +140,13 @@ class BasePermissionReviewPreference extends MultiTargetSwitchPreference {
             if (appPermGroup.getHasBackgroundGroup()) {
                 mState = PermissionTarget.PERMISSION_BOTH;
             }
+        } else if (PermissionMapping.isSpecialRuntimePermissionGroup(
+                appPermGroup.getPermGroupName())
+                && appPermGroup.getForeground().isGranted()) {
+            // Special runtime permissions are granted by default without being marked as
+            // review-required. Show their real state: a preference left unchecked here gets
+            // its permissions revoked when the review is confirmed.
+            mState = PermissionTarget.PERMISSION_FOREGROUND;
         }
     }
 
